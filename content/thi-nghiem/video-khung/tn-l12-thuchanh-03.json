@@ -2,7 +2,7 @@
   "id": "tn-l12-thuchanh-03",
   "ten": "Phễu nước đá và dây điện trở: đo λ qua hai giai đoạn",
   "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-thuchanh-03-20261113-2.mp4",
-  "tong_giay": 49.8,
+  "tong_giay": 49.5,
   "o": [
     {
       "khoa": "gia_thuyet",
@@ -12,32 +12,32 @@
     },
     {
       "khoa": "du_doan",
-      "giay": 4.0,
-      "chu": "Chưa cấp điện, hứng nước 300 s. So với khi cấp điện (cũng 300 s), cốc có bao nhiêu nước?"
+      "giay": 3.6,
+      "chu": "Chưa cấp điện, hứng nước 300 s: cốc có bao nhiêu nước?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 9.9,
+      "giay": 9.5,
       "chu": "Phễu nước đá có dây điện trở nối nguồn; cốc hứng nước đặt trên cân; đồng hồ bấm giây."
     },
     {
       "khoa": "quan_sat",
-      "giay": 18.0,
-      "chu": "Chưa cấp điện, cốc vẫn có 5,0 g nước sau 300 s; cấp điện: 36,4 g."
+      "giay": 20.1,
+      "chu": "Chưa cấp điện: 5,0 g; cấp điện: 36,4 g."
     },
     {
       "khoa": "rut_ra",
-      "giay": 23.4,
+      "giay": 30.5,
       "chu": "Môi trường làm tan đá cả hai lần; do dây: 31,4 g, λ ≈ 3,44·10⁵ J/kg."
     },
     {
       "khoa": "chua_noi",
-      "giay": 28.8,
-      "chu": "Chưa đo được phần nhiệt của dây thất thoát ra phễu, không khí; chưa kiểm phòng có ấm dần trong 600 s không."
+      "giay": 38.2,
+      "chu": "Chưa đo phần nhiệt dây làm ấm phễu và không khí."
     }
   ],
   "dung_dua": {
-    "giay": 9.75,
+    "giay": 9.3,
     "cau_hoi": "Giai đoạn 1 chưa cấp điện, hứng nước 300 s. So với giai đoạn 2 (cấp điện, cũng 300 s), lượng nước trong cốc ở giai đoạn 1:",
     "chon": [
       "A. Bằng 0, vì chưa cấp điện thì đá không tan",
@@ -48,5 +48,22 @@
     "dung": 1,
     "giai_thich_dung": "Đá đang tan ở 0 °C vẫn nhận nhiệt từ không khí trong phòng nên vẫn tan chậm: 5,0 g sau 300 s, còn khi cấp điện là 36,4 g.",
     "giai_thich_sai": "Chưa cấp điện, đá còn nhận nhiệt từ đâu? Không khí trong phòng ấm hơn 0 °C."
+  },
+  "cau_chot": {
+    "giay": 43.2,
+    "cau_hoi": "Làm lại thí nghiệm, nhưng phòng ấm dần lên trong giai đoạn 2; vẫn trừ m₁ = 5,0 g đo ở giai đoạn 1. So với khi phòng giữ nguyên nhiệt độ, λ tính ra sẽ:",
+    "chon": [
+      "A. Lệch lên",
+      "B. Lệch xuống",
+      "C. Không đổi",
+      "D. Không tính được"
+    ],
+    "dung": 1,
+    "giai_thich": [
+      "Phòng ấm thì môi trường làm tan nhiều hơn 5,0 g, nên m₂ lớn hơn mà vẫn chỉ trừ 5,0 g. Mẫu số m₂ − m₁ to ra, λ tính ra nhỏ đi.",
+      "Ở giai đoạn 2, phòng ấm làm môi trường tan nhiều hơn 5,0 g. Trừ 5,0 g là trừ thiếu, nên m₂ − m₁ lớn hơn phần do dây và λ = U·I·τ/(m₂ − m₁) nhỏ đi.",
+      "λ chỉ giữ nguyên khi phần do môi trường ở hai giai đoạn bằng nhau. Phòng ấm dần thì phần đó ở giai đoạn 2 lớn hơn 5,0 g.",
+      "Vẫn tính được λ = U·I·τ/(m₂ − m₁), chỉ là số ra bị lệch, vì m₁ = 5,0 g không còn đúng cho giai đoạn 2."
+    ]
   }
 }

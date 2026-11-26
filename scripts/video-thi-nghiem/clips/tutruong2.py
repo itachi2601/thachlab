@@ -21,7 +21,19 @@
 #   Dap so: kim quay nua vong; dau N chi sang PHAI, van ve phia cuc S (nay o ben phai). Goi y: du kien doi.
 from engine import *
 
-NOTE = (70, 75, 95)
+NOTE = (70, 75, 95); EMPTY = (148, 140, 128); DORANGE = (176, 64, 8)
+
+def pill(d, cx, cy, s, fill, alpha=1.0, size=58):
+    pw = tw(d, s, F(size)) + 60
+    card(d, (cx - pw / 2, cy - 40, cx + pw / 2, cy + 40), fill=A(fill, alpha), r=38)
+    text(d, (cx, cy), s, size, WHITE, alpha=alpha)
+
+def seg_bar(d, y, t, t0, t1, col, a=1.0):
+    p = clamp((t - t0) / (t1 - t0)); on = 5 - int(p * 5 + 1e-9)
+    for i in range(5):
+        x = 175 + i * 150
+        if i < on: card(d, (x, y, x + 130, y + 70), fill=A(col, a), r=18)
+        else: card(d, (x, y, x + 130, y + 70), fill=A(WHITE, a), outline=A(EMPTY, a), r=18, w=4)
 CX, CY = 540, 630                 # tam thanh nam cham tren hinh
 BL, BH = 320, 70                  # dai, cao thanh (px)
 PQ = 138                          # hai cuc tu (N +, S -) o x = +-PQ trong than thanh
@@ -74,7 +86,7 @@ def dashed(d, pts, col, w=4, seg=14, gap=9):
             on, acc, cur = not on, 0.0, [b]
     if on and len(cur) > 1: d.line(cur, fill=col, width=w)
 
-def chev(d, x, y, ang, col, s=18, w=5):
+def chev(d, x, y, ang, col, s=26, w=6):
     for sg in (1, -1):
         a = ang + math.pi - sg * math.radians(30)
         d.line([(x, y), (x + s * math.cos(a), y + s * math.sin(a))], fill=col, width=w)
@@ -82,13 +94,13 @@ def chev(d, x, y, ang, col, s=18, w=5):
 def field(d, k, a=1.0, hole=None):
     """Ve duong suc (k = phan da ve, tu phia N), chevron o dinh cung khi ve xong. Truc: ra N sang phai, vao S tu trai."""
     if k <= 0 or a <= 0: return
-    col = A(PURPLE, 0.7 * a)
+    col = A(PURPLE, 0.9 * a)
     for ln in LINES:
         pts = [P(q) for q in ln][: max(2, int(len(ln) * k))]
         run = []
         for q in pts + [None]:                         # bo diem trong thanh va quanh kim (hole) -> tach thanh doan
             if q is not None and not inbar(q) and not (hole and math.dist(q, hole) < 66): run.append(q); continue
-            if len(run) > 1: dashed(d, run, col)
+            if len(run) > 1: dashed(d, run, col, w=6)
             run = []
         if k >= 1:
             j = min(range(len(ln)), key=lambda n: -abs(ln[n][1]))
@@ -101,7 +113,7 @@ def field(d, k, a=1.0, hole=None):
     if k >= 1:
         chev(d, CX + 270, CY, 0, col); chev(d, CX - 250, CY, 0, col)
 
-def magnet(d, n_right=True, cx=CX, cy=CY, L=BL, H=BH, fs=48, alpha=1.0):
+def magnet(d, n_right=True, cx=CX, cy=CY, L=BL, H=BH, fs=60, alpha=1.0):
     lc, rc = (BLUE, RED) if n_right else (RED, BLUE)
     d.rectangle([cx - L / 2, cy - H / 2, cx, cy + H / 2], fill=A(lc, alpha))
     d.rectangle([cx, cy - H / 2, cx + L / 2, cy + H / 2], fill=A(rc, alpha))
@@ -133,29 +145,22 @@ def xmark(d, p, alpha=1.0, q=True, r=62, lab="X"):
     x, y = P(p)
     for i in range(24):
         if i % 2 == 0: d.arc((x - r, y - r, x + r, y + r), i * 15, i * 15 + 15, fill=A(PURPLE, alpha), width=4)
-    if q: text(d, (x, y), "?", 50, PURPLE, alpha=alpha)
-    if lab: text(d, (x + r + 16, y - r + 10), lab, 48, PURPLE, anchor="lm", alpha=alpha)
+    if q: text(d, (x, y), "?", 60, PURPLE, alpha=alpha)
+    if lab: text(d, (x + r + 16, y - r + 10), lab, 60, PURPLE, anchor="lm", alpha=alpha)
 
-# ---------------- canh 1: Du doan ----------------
+# ---------------- canh 1: Du doan (K10: chi cau hoi + hinh, khong nut A-D) ----------------
 def s_hook(img, d, t, sc):
     M = sc["M"]
     paper(d); magnet(d); xmark(d, PTS[IX], appear(t, 0.6))
-    a = appear(t, M[0] + 3.0, 0.5)
+    a = appear(t, M[1] - 0.2, 0.5)
     if a <= 0: return
-    y0 = 1030 + (1 - a) * 40
-    card(d, (50, y0, 1030, y0 + 530), fill=A(WHITE, a), outline=A(PURPLE, a), w=6)
-    pw = tw(d, "DỰ ĐOÁN", F(40)) + 52
-    card(d, (W / 2 - pw / 2, y0 + 26, W / 2 + pw / 2, y0 + 90), fill=A(PURPLE, a), r=32)
-    text(d, (W / 2, y0 + 58), "DỰ ĐOÁN", 40, WHITE, alpha=a)
-    text(d, (W / 2, y0 + 165), "Đặt kim nam châm nhỏ tại X", 46, INK, alpha=a)
-    text(d, (W / 2, y0 + 235), "(cạnh thân, ngang giữa thanh).", 42, NOTE, alpha=a)
-    text(d, (W / 2, y0 + 320), "Đầu N của kim chỉ hướng nào?", 46, INK, alpha=a)
-    text(d, (W / 2, y0 + 410), "Chọn đáp án ở khung câu hỏi", 40, MUTED, bold=False, alpha=a * appear(t, M[0] + 3.6))
-    tc, tend = M[0] + 3.7, sc["T"] - 0.15
-    if t > tc:
-        p = clamp((t - tc) / (tend - tc))
-        d.rounded_rectangle([140, y0 + 470, 940, y0 + 484], radius=7, fill=A(LIGHT, a))
-        if p < 1: d.rounded_rectangle([140, y0 + 470, 140 + 800 * (1 - p), y0 + 484], radius=7, fill=A(PURPLE, a))
+    y0 = 1030 + (1 - a) * 30
+    card(d, (50, y0, 1030, y0 + 540), fill=A(WHITE, a), outline=A(PURPLE, a), w=6)
+    pill(d, W / 2, y0 + 62, "DỰ ĐOÁN", PURPLE, a)
+    text(d, (W / 2, y0 + 170), "Đặt kim nhỏ tại X,", 64, INK, alpha=a)
+    text(d, (W / 2, y0 + 255), "cạnh thân, ngang giữa thanh.", 58, NOTE, alpha=a)
+    text(d, (W / 2, y0 + 345), "Đầu N của kim chỉ đâu?", 64, PURPLE, alpha=a)
+    seg_bar(d, y0 + 435, t, M[1] + 0.4, sc["T"] - 0.3, PURPLE, a)
 
 # ---------------- canh 2: Tien hanh: dat kim o 8 diem, ke doan theo dau N ----------------
 STEP, T0 = 1.0, 0.5
@@ -169,12 +174,12 @@ def kim_state(t, i):
     return al, g, clamp((u - 0.62) / 0.2)
 
 def legend(d, a=1.0):
-    needle(d, 130, 312, 0, L=90, hw=13, alpha=a)
-    text(d, (196, 312), "kim nhỏ: đầu đỏ là N", 40, NOTE, anchor="lm", alpha=a)
+    needle(d, 130, 318, 0, L=90, hw=13, alpha=a)
+    text(d, (196, 318), "kim nhỏ: đầu đỏ là N", 58, NOTE, anchor="lm", alpha=a)
 
 def s_do(img, d, t, sc):
     paper(d); legend(d)
-    for p in PTS: dot(d, *P(p), 7, GRAY)
+    for p in PTS: dot(d, *P(p), 13, NOTE)
     magnet(d)
     for i, p in enumerate(PTS):
         al, g, ks = kim_state(t, i)
@@ -182,7 +187,7 @@ def s_do(img, d, t, sc):
         if al > 0: needle(d, *P(p), g, alpha=al)
     card(d, (60, 1040, 1020, 1280), fill=(250, 248, 255), outline=LIGHT, w=3)
     n = sum(1 for i in range(8) if kim_state(t, i)[2] >= 1)
-    text(d, (W / 2, 1120), f"Đã kẻ: {n}/8 điểm", 48, PURPLE)
+    text(d, (W / 2, 1120), f"Đã kẻ: {n}/8 điểm", 60, PURPLE)
     d.rounded_rectangle([140, 1200, 940, 1224], radius=12, fill=LIGHT)
     if n: d.rounded_rectangle([140, 1200, 140 + 100 * n, 1224], radius=12, fill=PURPLE)
 
@@ -190,21 +195,19 @@ def s_do(img, d, t, sc):
 def s_noi(img, d, t, sc):
     M = sc["M"]
     paper(d)
-    kf = ease((t - M[1] - 0.1) / 1.7)
+    kf = ease((t - 1.6) / 1.2)
     field(d, kf, hole=P(PTS[IX]))
     for i, p in enumerate(PTS):
         if i != IX: seg(d, p, ANG[i])
     magnet(d)
-    ka = appear(t, 0.3, 0.4)
-    needle(d, *P(PTS[IX]), ANG[IX], alpha=ka * (1 - 0.6 * appear(t, M[1], 0.4)))
-    xmark(d, PTS[IX], ka * (1 - appear(t, M[1], 0.4)), q=False)
-    s = "ĐÁP ÁN · dọc thân, chỉ về phía cực S"
-    pw = tw(d, s, F(40)) + 56
-    card(d, (W / 2 - pw / 2, 1040, W / 2 + pw / 2, 1106), fill=A(NAVY, ka), r=33)
-    text(d, (W / 2, 1073), s, 40, WHITE, alpha=ka)
-    k2 = appear(t, M[1] + 1.9, 0.45)
-    card(d, (60, 1150, 1020, 1330), fill=A(WHITE, k2), outline=A(PURPLE, k2), w=4)
-    text(d, (W / 2, 1240), "Ra ở cực N, vào ở cực S", 50, PURPLE, alpha=k2)
+    u = t - 0.3                                            # kim o X: dao dong roi dung dung huong (dap an)
+    g = ANG[IX] + (math.radians(70) * math.exp(-u / 0.35) * math.cos(2 * math.pi * u / 0.5) if u > 0 else math.radians(70))
+    needle(d, *P(PTS[IX]), g, alpha=1 - 0.6 * appear(t, M[1], 0.4))
+    card(d, (60, 1040, 1020, 1170), fill=WHITE, outline=NAVY, w=5)
+    text(d, (W / 2, 1105), "Dọc thân, chỉ về phía S", 62, NAVY)
+    k2 = appear(t, M[1] + 1.4, 0.45)
+    card(d, (60, 1210, 1020, 1350), fill=A(WHITE, k2), outline=A(PURPLE, k2), w=4)
+    text(d, (W / 2, 1280), "Ra ở cực N, vào ở cực S", 62, PURPLE, alpha=k2)
 
 # ---------------- canh 4: Rut ra (moi diem mot huong) + chua noi duoc ----------------
 def s_rut(img, d, t, sc):
@@ -217,63 +220,59 @@ def s_rut(img, d, t, sc):
     g = ANG[IX] + (math.radians(-80) * math.exp(-u / 0.25) * math.cos(2 * math.pi * u / 0.4) if u > 0 else math.radians(-80))
     needle(d, *P(PTS[IX]), g)
     a = appear(t, M[0] + 0.9, 0.45)
-    card(d, (60, 1040, 1020, 1160), fill=A(WHITE, a), outline=A(BLUE, a), w=4)
-    text(d, (W / 2, 1100), "Đặt lại: vẫn một hướng ấy", 46, BLUE, alpha=a)
-    b = appear(t, M[0] + 2.4, 0.45)
-    card(d, (60, 1200, 1020, 1510), fill=A((245, 243, 255), b), outline=A(PURPLE, b), w=4)
-    text(d, (W / 2, 1255), "Chưa nói được", 44, PURPLE, alpha=b)
-    text(d, (W / 2, 1340), "Độ lớn B", 44, INK, alpha=b)
-    text(d, (W / 2, 1430), "Đường sức trong thanh", 44, INK, alpha=appear(t, M[0] + 3.0, 0.45))
+    card(d, (60, 1040, 1020, 1170), fill=A(WHITE, a), outline=A(BLUE, a), w=4)
+    text(d, (W / 2, 1105), "Đặt lại: vẫn hướng ấy", 62, BLUE, alpha=a)
+    b = appear(t, M[1], 0.45)
+    card(d, (60, 1210, 1020, 1520), fill=A(WHITE, b), outline=A(NAVY, b), w=5)
+    pill(d, W / 2, 1280, "CHƯA NÓI ĐƯỢC", NAVY, b)
+    text(d, (W / 2, 1380), "Độ lớn B", 60, INK, alpha=b)
+    text(d, (W / 2, 1460), "Đường sức trong thanh", 60, INK, alpha=b)
 
 # ---------------- canh 5: Bay "kim luon chi ve cuc N cua thanh" ----------------
 BP = (0, 1)                                                # hai diem soi: tren truc canh N, cheo tren canh N
 def s_bay(img, d, t, sc):
     M = sc["M"]
-    k0 = appear(t, 0.05, 0.35); mk = M[0] + 2.4; kc = appear(t, mk + 0.2, 0.45)
+    k0 = 1.0; mk = M[1]; kc = appear(t, mk + 0.2, 0.45)
     paper(d); field(d, 1.0, kc); magnet(d)
     for i in BP:
         xmark(d, PTS[i], k0 * (1 - kc), lab=None, r=58)
         needle(d, *P(PTS[i]), ANG[i], alpha=kc)
     y = 1030
-    card(d, (40, y, 1040, y + 300 + 150 * kc), fill=A(WHITE, k0), outline=A(RED, k0), w=6)
-    pw = tw(d, "BẪY", F(40)) + 52
-    card(d, (W / 2 - pw / 2, y + 26, W / 2 + pw / 2, y + 90), fill=A(RED, k0), r=32)
-    text(d, (W / 2, y + 58), "BẪY", 40, WHITE, alpha=k0)
-    q = "“Kim luôn chỉ về cực N của thanh”"
-    ks = clamp((t - mk) / 0.4); f = F(46); lw = tw(d, q, f); yy = y + 180
-    text(d, (W / 2, yy), q, 46, mix(INK, GRAY, ks), alpha=k0)
-    if ks > 0: d.line([(W / 2 - lw / 2 - 6, yy + 2), (W / 2 - lw / 2 - 6 + (lw + 12) * ks, yy + 2)], fill=A(RED, 0.85 * k0), width=5)
-    if kc > 0: text(d, (W / 2, y + 330), "Kim nằm dọc đường sức tại chỗ đặt", 44, NAVY, alpha=kc)
+    card(d, (40, y, 1040, y + 300 + 140 * kc), fill=WHITE, outline=RED, w=6)
+    pill(d, W / 2, y + 70, "BẪY", RED)
+    q = "“Kim luôn chỉ về cực N”"
+    ks = clamp((t - mk) / 0.4); f = F(60); lw = tw(d, q, f); yy = y + 200
+    text(d, (W / 2, yy), q, 60, mix(INK, GRAY, ks))
+    if ks > 0: d.line([(W / 2 - lw / 2 - 6, yy + 2), (W / 2 - lw / 2 - 6 + (lw + 12) * ks, yy + 2)], fill=A(RED, 0.85), width=6)
+    if kc > 0: text(d, (W / 2, y + 340), "Kim nằm dọc đường sức", 62, DORANGE, alpha=kc)
 
-# ---------------- canh 6: Chot + cau hoi tu nho lai ----------------
-def _end_body(d, t, k):
-    magnet(d, n_right=False, cx=540, cy=1190, L=260, H=58, fs=40, alpha=k)
-    x, y, r = 540, 1080, 36
-    for i in range(24):
-        if i % 2 == 0: d.arc((x - r, y - r, x + r, y + r), i * 15, i * 15 + 15, fill=A(PURPLE, k), width=4)
-    text(d, (x, y), "?", 42, PURPLE, alpha=k); text(d, (x + r + 14, y), "X", 44, PURPLE, anchor="lm", alpha=k)
-
+# ---------------- canh 6: THU NGHI (cau chot o khung: quay thanh nua vong) ----------------
 def s_end(img, d, t, sc):
-    M = sc["M"]
-    chot_hoi(d, t, sc, "Kim nhỏ dò hướng tại từng điểm",
-             "Quay thanh nửa vòng: N và S đổi chỗ. Kim ở X quay thế nào?", None, body=_end_body)
-    kh = appear(t, M[0] + 2.6, 0.5)
-    if kh > 0:
-        card(d, (110, 1320, 970, 1540), fill=A((255, 247, 237), kh), r=24)
-        ctext(d, 1368, "Gợi ý", 40, MUTED, bold=False, alpha=kh)
-        ctext(d, 1460, "X giữ nguyên, chỉ thanh quay", 44, ORANGE, maxw=820, alpha=kh)
+    k = appear(t, 0.15, 0.4)
+    card(d, (40, 210, 1040, 1560), fill=A(WHITE, k), outline=A(ORANGE, k), w=6)
+    pill(d, W / 2, 285, "THỬ NGHĨ", ORANGE, k)
+    magnet(d, n_right=False, cx=540, cy=640, L=470, H=104, fs=60, alpha=k)
+    x, y, r = 540, 470, 62
+    for i in range(24):
+        if i % 2 == 0: d.arc((x - r, y - r, x + r, y + r), i * 15, i * 15 + 15, fill=A(PURPLE, k), width=5)
+    text(d, (x, y), "?", 60, PURPLE, alpha=k); text(d, (x + r + 16, y), "X", 60, PURPLE, anchor="lm", alpha=k)
+    text(d, (W / 2, 850), "Quay thanh nửa vòng:", 64, INK, alpha=k)
+    text(d, (W / 2, 940), "N và S đổi chỗ, X giữ nguyên.", 60, INK, alpha=k)
+    text(d, (W / 2, 1060), "Đầu N của kim chỉ đâu?", 64, DORANGE, alpha=k)
+    seg_bar(d, 1190, t, 1.0, sc["T"] - 0.2, ORANGE, k)
 
 def _cues(clip):
     sc = {s["key"]: s for s in clip["scenes"]}
     h, do, no, ru, b, e = sc["hook"], sc["do"], sc["noi"], sc["rut"], sc["bay"], sc["end"]
-    return ([(h["t0"] + h["M"][0] + 3.0, "open"), (h["t0"] + h["T"] - 0.1, "ding"), (do["t0"] + T0, "tap"),
-             (no["t0"] + 0.3, "ding"), (no["t0"] + no["M"][1] + 0.2, "tap"), (ru["t0"] + ru["M"][0] + 2.4, "tap"),
-             (b["t0"] + b["M"][0], "buzz"), (e["t0"] + e["M"][0] + 0.1, "open")])
+    return ([(h["t0"] + h["M"][1] - 0.2, "open"), (h["t0"] + h["T"] - 0.1, "ding"), (do["t0"] + T0, "tap"),
+             (no["t0"] + 0.3, "ding"), (no["t0"] + no["M"][1] + 0.2, "tap"), (ru["t0"] + ru["M"][1], "tap"),
+             (b["t0"] + b["M"][1], "buzz"), (e["t0"] + 0.15, "open")])
 
 CLIP = dict(id="tn-l12-tutruong-02", header="VẬT LÍ 12 · THÍ NGHIỆM", cues=_cues,
             footer="Khái niệm từ trường · thachlab.id.vn", scenes=[
  dict(key="hook", title="Kim nam châm làm đầu dò", draw=s_hook, tail=0.3, caps=[
-   ("Thanh nam châm trên tờ giấy.", 9.2)]),
+   ("Thanh nam châm trên tờ giấy.", 3.6),
+   ("Dừng lại, tự đoán.", 5.6)]),
  dict(key="do", title="Tiến hành", draw=s_do, tail=0.3, caps=[
    ("Chờ kim đứng yên, kẻ theo đầu N.", 4.6),
    ("Lần lượt 8 điểm quanh thanh.", 4.2)]),
@@ -281,9 +280,11 @@ CLIP = dict(id="tn-l12-tutruong-02", header="VẬT LÍ 12 · THÍ NGHIỆM", cue
    ("Nhìn lại kim ở điểm X.", 3.0),
    ("Nối các đoạn thành đường cong.", 4.4)]),
  dict(key="rut", title="Rút ra", draw=s_rut, tail=0.5, caps=[
-   ("Nhấc kim ra, đặt lại ở X.", 7.0)]),
+   ("Đặt lại kim ở X.", 3.6),
+   ("Kim chưa cho biết gì?", 3.4)]),
  dict(key="bay", title="Bẫy", draw=s_bay, tail=0.7, caps=[
-   ("Đúng hay sai?", 5.2)]),
- dict(key="end", title="Chốt lại", draw=s_end, tail=0.6, caps=[
-   ("Dừng video và trả lời.", 6.8)]),
+   ("Đúng không?", 2.5),
+   ("Sai: tùy chỗ đặt kim.", 3.0)]),
+ dict(key="end", title="Chốt lại", draw=s_end, tail=0.5, caps=[
+   ("Dừng lại, tự đoán.", 6.8)]),
 ])
