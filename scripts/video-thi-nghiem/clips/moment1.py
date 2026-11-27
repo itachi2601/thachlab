@@ -172,13 +172,17 @@ def s_dapan(img, d, t, sc):
     text(d, (930, HY - 70), "60 N", 58, RED)
     kg = clamp((t - 0.2) / 0.8)
     if kg > 0: dash(d, (HX + LD, HY + 34), (HX + LD - (LD + 140) * kg, HY + 34), ORANGE, w=6)
-    text(d, (W / 2, HY + 130), "cánh tay đòn = 0", 58, DGREEN)
-    kr = appear(t, M[1] - 0.1, 0.4)
+    kl = appear(t, M[1], 0.4)
+    text(d, (W / 2 + 50, HY + 130), "Cánh tay đòn", 58, DGREEN, anchor="rm", alpha=kl)
+    text(d, (W / 2 + 62, HY + 130), "= 0", 58, DGREEN, anchor="lm", alpha=kl)
+    text(d, (W / 2, HY + 205), "bản lề tới giá lực", 55, NOTE, alpha=kl)
+    kr = appear(t, M[1] + 2.1, 0.4)
     if kr <= 0: return
     y0 = 960 + (1 - kr) * 30
-    card(d, (40, y0, 1040, y0 + 320), fill=A(WHITE, kr), outline=A(GREEN, kr), w=6)
+    card(d, (40, y0, 1040, y0 + 380), fill=A(WHITE, kr), outline=A(GREEN, kr), w=6)
     pill(d, W / 2, y0 + 70, "RÚT RA", GREEN, kr)
-    text(d, (W / 2, y0 + 210), "Lực × cánh tay đòn = 2 N·m", 58, DGREEN, alpha=kr)
+    text(d, (W / 2, y0 + 190), "Cửa quay khi", 58, DGREEN, alpha=kr)
+    text(d, (W / 2, y0 + 280), "lực × cánh tay đòn ≥ 2 N·m", 58, DGREEN, alpha=kr)
 
 # ---------------- canh 5: Bay + chua noi duoc ----------------
 def s_bay(img, d, t, sc):
@@ -237,16 +241,16 @@ CLIP = dict(id="tn-l10-moment-luc-01", header="VẬT LÍ 10 · THÍ NGHIỆM", f
             cues=_cues, scenes=[
  dict(key="hook", title="Đẩy cửa, nhìn từ trên xuống", draw=s_hook, tail=0.2, caps=[
    ("Đẩy mép cửa: cửa quay.", 3.0),
-   ("Dừng lại, tự đoán.", 6.0)]),
+   ("Dừng lại, tự đoán.", 5.6)]),
  dict(key="do", title="Đẩy vuông góc với cửa", draw=s_do, tail=0.2, caps=[
    ("Tăng lực tới khi cửa vừa quay.", 3.8),
-   ("Dời chỗ đẩy về gần bản lề.", 4.2)]),
+   ("Dời chỗ đẩy về gần bản lề.", 4.0)]),
  dict(key="do2", title="Đổi hướng lực", draw=s_do2, tail=0.3, caps=[
    ("Đẩy xiên 30° với mặt cửa.", 3.4),
    ("Đẩy thẳng vào bản lề.", 3.4)]),
  dict(key="dapan", title="Kết quả", draw=s_dapan, tail=0.3, caps=[
-   ("Đáp án: không quay.", 3.2),
-   ("Nhân lực với khoảng cách.", 3.4)]),
+   ("Đáp án: không quay.", 3.0),
+   ("Cánh tay đòn: bản lề tới giá lực.", 4.4)]),
  dict(key="bay", title="Bẫy hay gặp", draw=s_bay, tail=0.3, caps=[
    ("Đúng không?", 3.2),
    ("Kẻ vuông góc tới giá lực.", 3.6),
