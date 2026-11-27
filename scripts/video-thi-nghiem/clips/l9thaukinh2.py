@@ -219,7 +219,7 @@ def s_bay(img, d, t, sc):
     a2 = appear(t, BAY_R, 0.45)
     if a2 > 0:
         card(d, (40, 1160, 1040, 1350), fill=A(WHITE, a2), outline=A(DGREEN, a2), w=5)
-        paste_pic(img, window_pic(130, inv=True), 170, 1255, a2)
+        paste_pic(img, window_pic(136, inv=True), 165, 1255, a2)        # kiem-v1 muc 4: hinh lon to nhat vua o (vuong 1,35h)
         text(d, (290, 1215), "Ảnh của cửa sổ", FS, DGREEN, anchor="lm", alpha=a2)
         text(d, (290, 1295), "có khung, lộn ngược", FM, INK, anchor="lm", alpha=a2)
         text(d, (960, 1255), "✓", 80, DGREEN, alpha=a2)
@@ -252,6 +252,7 @@ def s_end(img, d, t, sc):
             for x in (x0, x1): d.line([(x, EY + 56), (x, EY + 84)], fill=A(NAVY, k1), width=4)
         text(d, ((240 + ELX - 30) / 2, EY + 120), "2 m", FS, NAVY, alpha=k1)
         d.ellipse([ELX - 22, EY - 130, ELX + 22, EY + 130], fill=A(LBLUE, 0.8 * k1), outline=A(BLUE, k1), width=4)
+        text(d, (ELX, EY - 175), "f = 10 cm", FM, BLUE, alpha=k1)      # kiem-v1 muc 1: mp4 roi van biet f
         d.rounded_rectangle([EPX - 7, EY - 150, EPX + 7, EY + 150], radius=4, fill=A(WHITE, k1), outline=A(NAVY, k1), width=3)
         kq = 0.55 + 0.45 * math.sin(2.4 * t) ** 2
         text(d, ((ELX + EPX) / 2, EY + 120), "? cm", FS, ORANGE, alpha=k1 * kq)
