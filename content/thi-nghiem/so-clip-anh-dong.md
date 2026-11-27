@@ -605,6 +605,17 @@ Duyệt A+C ("Duyệt, sửa cả hộp"): 16 clip đổi URL kho/bài sang `-20
 | moment3 | tn-l10-moment-luc-03 | 124 | 0 | 47,9 | 1834 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-moment-luc-03-20261127.mp4) | chốt mới 2,0 N ở vạch 5 và 25 → 0,40 N·m |
 | thuchanhthl1 | tn-l10-thuchanhthl-01 | 159 | 0 | 49,1 | 1720 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-thuchanhthl-01-20261127.mp4) | Dự đoán F1 = F2 = 2,0 N, α = 120° → lực kế 3 chỉ 2,0 N (suy từ mô hình, ngoài bảng kho) — chấp nhận? |
 
+**Nhóm E L10b (7 clip) — qua cổng A + B (kiem-code 2 vòng, ĐƯỢC MERGE), đã tải `-20261127.{mp4,webp}` HEAD 200 — chờ thầy duyệt**
+| Clip | tn | Từ/phút | LỖI | Giây | KB | mp4 | Điểm cần quyết |
+|---|---|---|---|---|---|---|---|
+| huongtam2 | tn-l10-huongtam-02 | 158 | 0 | 49,8 | 1973 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-huongtam-02-20261127.mp4) | Dự đoán mới 2 xu (nặng gấp đôi, cùng 10 cm) → trượt cùng lúc; suy từ mô hình |
+| huongtam3 | tn-l10-huongtam-03 | 130 | 0 | 50,0 | 1896 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-huongtam-03-20261127.mp4) | cảnh đáp án kẹp nâng lên khi quay nhanh là hình tự dựng (kho không có số) |
+| huongtam4 | tn-l10-huongtam-04 | 139 | 0 | 49,9 | 1406 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-huongtam-04-20261127.mp4) | lần 2 "bi nhanh gấp đôi" (0,4 → 0,8 m/s) |
+| trondeu2 | tn-l10-trondeu-02 | 142 | 0 | 49,9 | 1350 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-trondeu-02-20261127.mp4) | 6,28 r suy từ 2πr (rut_ra kho) |
+| trondeu3 | tn-l10-trondeu-03 | 152 | 0 | 50,0 | 1745 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-trondeu-03-20261127.mp4) | chốt 3 vòng 24 s → ω ≈ 0,79 rad/s (biên T0 = 8 s) |
+| giaibtdlh1 | tn-l10-giaibt-dlh-01 | 154 | 0 | 49,9 | 1410 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-giaibt-dlh-01-20261127.mp4) | chốt hộp 0,4 kg, μ = 0,3 → Fms ≈ 1,0 N |
+| giaibtdlh2 | tn-l10-giaibt-dlh-02 | 139 | 0 | 49,7 | 1328 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-giaibt-dlh-02-20261127.mp4) | Dự đoán T ≈ 0,8 N < 1,0 N (bài mẫu có ý T < P₂, khác số) — giữ? |
+
 ## Cổng mới — L10a (bài 46–62, 27/11/2026) — mẻ 1: 13/29 clip — THẦY DUYỆT 27/11 ("Duyệt, sửa cả hộp"; giữ chốt 9 V antoan1), ĐÃ GHI DB 27/11 17:53
 Nhánh `claude/clip-cong-moi-l10a-d353cc`. 3 agent Opus dựng (sau 11h: 1 dựng + 1 kiem-code song song); cổng A `--do-chu` 0 LỖI; cổng B kiem-code 283 px 1–2 vòng. `xuat-khung.py --kiem` OK, khung có `cau_chot`, trỏ `-20261127`. Tải `tai-cong-moi-l10a.sh` (HEAD 200, log `ra/l10a-tai-1.log`), kho `<tn>.json` trả bản cũ. Bỏ `tn-l10-do-toc-do-03` (không có `data-exp` trong bài nào). Còn 16 clip (dotocdo2, ctbdd1, dog1–3, roitudo2–3, nemngang2, tonghopluc2, dl1newton1, dl2newton1–2, dl3newton1, trongluc1–3) đang dựng/soát.
 
