@@ -64,6 +64,7 @@ export const AREA_ITEMS: Record<AdminArea, AdminNavItem[]> = {
     // Mở lớp học phần mới + nhập danh sách sinh viên nằm ở tab "Danh sách lớp" của dashboard.
     { href: "/dashboard", label: "Lớp học phần & sinh viên", desc: "Mở lớp, nhập danh sách sinh viên", icon: Users, external: true },
     { href: "/quan-tri/tinh-trang-may", label: "Tình trạng máy", desc: "Máy hư, người sửa, thời gian chờ", icon: Gauge },
+    { href: "/quan-tri/abet", label: "ABET — dữ liệu PI", desc: "Link nộp cho chủ PI, tiến độ, % đạt theo PI/SO", icon: ClipboardList },
   ],
 };
 
@@ -86,7 +87,7 @@ const ALL_ITEMS = [OVERVIEW_ITEM, ...AREA_ITEMS.thpt, ...AREA_ITEMS.cttc, ...SHA
 /** Khu vực mà một đường dẫn thuộc về — quyết định tông màu của shell. */
 export function areaOfPath(pathname: string): AdminArea | null {
   if (AREA_ITEMS.thpt.some((item) => pathname.startsWith(item.href) && item.href !== "/dashboard")) return "thpt";
-  if (pathname.startsWith("/quan-tri/cnc-") || pathname.startsWith("/quan-tri/tinh-trang-may")) return "cttc";
+  if (pathname.startsWith("/quan-tri/cnc-") || pathname.startsWith("/quan-tri/tinh-trang-may") || pathname.startsWith("/quan-tri/abet")) return "cttc";
   return null;
 }
 
