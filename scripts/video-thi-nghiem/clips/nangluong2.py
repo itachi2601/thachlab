@@ -185,7 +185,7 @@ def bar(d, y, label, val, col, k):
 
 def s_bay(img, d, t, sc):
     M = sc["M"]
-    k2 = appear(t, M[1] - 0.1, 0.4); k3 = appear(t, M[2] - 0.1, 0.45)
+    k2 = appear(t, M[1] - 0.1, 0.4); k3 = appear(t, M[2] - 0.6, 0.45)
     card(d, (40, 250, 1040, 880), fill=WHITE, outline=LIGHT, w=3)
     text(d, (W / 2, 330), "Đèn ở 9,0 V", 60, INK)
     bar(d, 430, "Nếu R không đổi", round(P_BAY, 1), BARG, 1.0)
@@ -212,11 +212,16 @@ def s_end(img, d, t, sc):
     k = appear(t, 0.15, 0.4)
     card(d, (40, 230, 1040, 1560), fill=A(WHITE, k), outline=A(ORANGE, k), w=6)
     pill(d, W / 2, 305, "THỬ NGHĨ", ORANGE, k)
-    if k > 0.5: lamp(d, 0.9, c=(300, 560), r0=70)
-    card(d, (560, 460, 900, 660), fill=A(BODY, k), r=22)
-    card(d, (575, 475, 885, 570), fill=A(SCR, k), r=10)
-    text(d, (730, 522), "? A", 62, (20, 60, 30), alpha=k)
-    text(d, (730, 615), "ampe kế", 56, WHITE, bold=False, alpha=k)
+    # mach noi tiep: nguon (duoi) - den - ampe ke (tren), noi bang day (kiem v2: hinh phai dung mach noi tiep)
+    c = A(WIRE, k); y1, y2 = 500, 700
+    d.line([(150, y1), (150, y2), (930, y2), (930, y1), (150, y1)], fill=c, width=6)
+    d.ellipse([280, y1 - 50, 380, y1 + 50], fill=A(WHITE, k), outline=A(NAVY, k), width=5)
+    d.line([(295, y1 - 35), (365, y1 + 35)], fill=A(NAVY, k), width=4); d.line([(295, y1 + 35), (365, y1 - 35)], fill=A(NAVY, k), width=4)
+    d.ellipse([674, y1 - 46, 766, y1 + 46], fill=A(WHITE, k), outline=A(BLUE, k), width=6); text(d, (720, y1 + 2), "A", 56, BLUE, alpha=k)
+    text(d, (720, y1 - 100), "? A", 62, BLUE, alpha=k)
+    d.line([(525, y2 - 44), (525, y2 + 44)], fill=A(ORANGE, k), width=7)
+    d.line([(555, y2 - 24), (555, y2 + 24)], fill=A(ORANGE, k), width=14)
+    d.rectangle([528, y2 - 4, 552, y2 + 4], fill=A(WHITE, k))
     text(d, (W / 2, 820), "Đèn 9 V – 4,5 W", 64, INK, alpha=k)
     text(d, (W / 2, 920), "đang sáng bình thường.", 64, INK, alpha=k)
     text(d, (W / 2, 1040), "Ampe kế chỉ bao nhiêu?", 64, DRED, alpha=k)

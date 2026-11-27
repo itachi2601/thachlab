@@ -203,7 +203,7 @@ def s_bay(img, d, t, sc):
     d.line(pc, fill=A(BLUE, 0.85), width=6, joint="curve")
     for u, i, _ in ROWS: dot(d, gx(u), gy(i), 15, BLUE, outline=WHITE)
     text(d, (gx(2.2), gy(i_mod(2.2)) - 60), "đèn", 56, BLUE)
-    k2 = appear(t, M[1] - 0.1, 0.4); k3 = appear(t, M[2] - 0.7, 0.45)
+    k2 = appear(t, M[1] - 0.1, 0.4); k3 = appear(t, M[2] - 0.5, 0.45)
     if k2 > 0:
         dashed(d, (gx(0), gy(0)), (gx(6 * k2), gy(0.50 * k2)), ORANGE, w=6)
         xl, yl = gx(4.6), gy(0.50 * 4.6 / 6) + 145

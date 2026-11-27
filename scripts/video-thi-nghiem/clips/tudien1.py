@@ -4,8 +4,9 @@
 #   i(t) = (U/R).exp(-t/tau) khi nap ; khi phong dong nguoc chieu, cung dang exp.
 # Du doan (khung ben canh, K10 khong ve nut): dong K, pin van noi mai, LED the nao?
 #   A. sang deu ; B. loe roi tat han (DUNG) ; C. mo dan khong bao gio tat ; D. khong sang.
-# Cau chot v3 (TU SUY, phien chinh chot 27/11; kho chi co R co dinh 1 kOhm): tu 2200 uF VA R 0,5 kOhm, pin 9 V
-#   -> tau = 0,5 kOhm . 2200 uF = 1,1 s so voi 1,0 s -> loe lau ~1,1 lan. Clip KHONG chieu tau = RC.
+# Cau chot v4 (luot cuoi 27/11; bai khong day R.C nen bo cau "loe lau gap may lan"): giu tu 1000 uF, pin 9 V,
+#   doi R 1 -> 2 kOhm, cho LED tat han -> tu giu Q = CU = 9000 uC, KHONG DOI (hang 1 so_lieu_mau; R chi doi
+#   thoi gian nap). Clip KHONG chieu Q = 9000 uC, khong viet "tu day".
 # KHONG LO QUIZ sau hop ("Vi sao LED tat han du pin van con noi?" - dap an: tu nap day nen dong ngung):
 #   clip khong viet "tu day"/"het cho"; the "Chua noi duoc" day cau hoi do sang quiz.
 # Bay (cac_buoc.lam buoc 2): phong ma quen dao LED -> LED chan dong, tu VAN con dien tich (hai mach canh nhau).
@@ -17,7 +18,8 @@ from engine import *
 U, C_UF, R_K = 9, 1000, 1
 TAU = R_K * 1e3 * C_UF * 1e-6
 assert abs(TAU - 1.0) < 1e-9 and C_UF * U == 9000              # hang 1 so_lieu_mau
-assert abs(0.5e3 * 2200e-6 / TAU - 1.1) < 1e-9                  # cau chot v3 (tu suy)
+R_CHOT_K = 2
+assert R_CHOT_K != R_K and C_UF * U == 9000                     # cau chot v4: Q khong phu thuoc R
 DIR_NAP, DIR_PHONG = +1, -1
 assert DIR_NAP == -DIR_PHONG
 
@@ -199,16 +201,20 @@ def cap_icon(d, cx, cy, h, a):
     d.line([(cx - 140, cy), (cx - 20, cy)], fill=A(WIRE, a), width=6); d.line([(cx + 20, cy), (cx + 140, cy)], fill=A(WIRE, a), width=6)
     for x in (cx - 18, cx + 18): d.rectangle([x - 7, cy - h, x + 7, cy + h], fill=A(WIRE, a))
 
+def res_icon(d, cx, cy, col, a):
+    d.line([(cx - 150, cy), (cx - 70, cy)], fill=A(WIRE, a), width=6); d.line([(cx + 70, cy), (cx + 150, cy)], fill=A(WIRE, a), width=6)
+    d.rectangle([cx - 70, cy - 28, cx + 70, cy + 28], outline=A(col, a), width=7)
+
 def s_end(img, d, t, sc):
     k = appear(t, 0.15, 0.4)
     card(d, (40, 230, 1040, 1560), fill=A(WHITE, k), outline=A(ORANGE, k), w=6)
     pill(d, W / 2, 305, "THỬ NGHĨ", ORANGE, k)
-    cap_icon(d, 290, 520, 60, k); cap_icon(d, 790, 520, 95, k)
-    text(d, (290, 680), "1000 μF", 58, INK, alpha=k); text(d, (790, 680), "2200 μF", 58, ORANGE, alpha=k)
-    text(d, (290, 750), "1 kΩ", 58, INK, alpha=k); text(d, (790, 750), "0,5 kΩ", 58, ORANGE, alpha=k)
-    text(d, (W / 2, 890), "Thay tụ 2200 μF và điện trở", 62, INK, alpha=k)
-    text(d, (W / 2, 975), "0,5 kΩ, vẫn pin 9 V.", 62, INK, alpha=k)
-    text(d, (W / 2, 1100), "LED loé lâu gấp mấy lần?", 64, DRED, alpha=k)
+    res_icon(d, 290, 520, INK, k); res_icon(d, 790, 520, ORANGE, k)
+    arrow(d, (480, 520), (600, 520), A(ORANGE, k))
+    text(d, (290, 640), "1 kΩ", 62, INK, alpha=k); text(d, (790, 640), "2 kΩ", 62, ORANGE, alpha=k)
+    text(d, (W / 2, 820), "Vẫn tụ 1000 μF, pin 9 V,", 62, INK, alpha=k)
+    text(d, (W / 2, 905), "điện trở đổi thành 2 kΩ.", 62, INK, alpha=k)
+    text(d, (W / 2, 1060), "LED tắt hẳn: Q = ? μC", 64, DRED, alpha=k)
     seg_bar(d, 1260, t, 1.0, sc["T"] - 0.2, ORANGE, k)
 
 def _cues(clip):
