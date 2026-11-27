@@ -11,7 +11,7 @@ Nạp mỗi phiên, giữ dưới 15 KB: hiện trạng + ĐANG CHỜ (1–2 dò
 ## Migration — ĐANG CHỜ (nguồn đúng: `bash scripts/run-migrations.sh --list` + `scripts/logs/`; sau migration chạy `node scripts/gen-database-doc.mjs`)
 - **GCPT bài thuyết trình (27/11)**: migration `20261127150000` ĐÃ CHẠY 27/11 (qua `supabase db query -f`, checkout chính bẩn nên không qua run-migrations.sh → không có log); bài id 228 + đề 1423 đã đăng và BẬT HIỆN 27/11.
 - **GCPT (26/11)**: lớp `gcpt` id 24, 12 bài id 216–227 đã đăng và BẬT HIỆN (26/11); còn: tạo course_offering (chờ tên lớp/năm học), thầy đối chiếu số liệu "tham khảo".
-- **CNCTM 2 (27/11)**: `20261127090000` CHƯA CHẠY; 6 bài `cnctm2-bai-1{4..9}-*` chờ thầy duyệt xem-thu → migration → upload-lesson → published → deploy; thiếu course_offering.
+- **CNCTM 2 (27/11)**: đã đăng 6 bài (lesson 229–234, đề 1424–1429); còn thiếu course_offering (chờ thầy báo lớp/năm học).
 - **AI sửa lỗi → sửa luôn câu gốc ngân hàng (16/11)**: `20261116120000_bank_apply_question_fix` ĐÃ CHẠY 16/11 (hàm tồn tại, chặn người không phải giáo viên). Client đã sửa (ExamSection + services/ai-check-exam) nhưng chưa vào main/deploy; chưa thử bấm AI sửa thật.
 - Điểm học phần CNC (14/11): migration đã chạy, `/lop-hoc/cnc/bang-diem/` đã deploy 18/11; điểm Phay chưa nạp (mẫu `scripts/gui-diem-thi-tien-cnc.mts`, module 'phay').
 - Bài tập ngày 28/10 (đề 1289–1293): chưa rõ đã deploy `ClassRoster.tsx`.
