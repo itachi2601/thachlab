@@ -141,14 +141,14 @@ def _kiem_dong_bo():
     return bad
 
 # ---------------- canh 3: Them gia trong (bang 4 lan do) ----------------
-TX = (200, 520, 850)
+TX = (170, 500, 860)
 def table(d, nrow, y0=700, a_h=1.0):
     card(d, (40, y0, 1040, y0 + 560), fill=WHITE, outline=NAVY, w=4)
-    for x, s, c in zip(TX, ("m (kg)", "bật đi (N)", "trượt (N)"), (INK, DORANGE, DGREEN)):
-        text(d, (x, y0 + 60), s, 55, c, alpha=a_h)
-    d.line([(60, y0 + 110), (1020, y0 + 110)], fill=LIGHT, width=4)
+    for x, (s1, s2), c in zip(TX, (("m", "(kg)"), ("nghỉ cực đại", "(N)"), ("trượt", "(N)")), (INK, DORANGE, DGREEN)):
+        text(d, (x, y0 + 45), s1, 55, c, alpha=a_h); text(d, (x, y0 + 102), s2, 55, c, alpha=a_h)
+    d.line([(60, y0 + 140), (1020, y0 + 140)], fill=LIGHT, width=4)
     for i in range(nrow):
-        m, a, b = ROWS[i]; y = y0 + 170 + i * 100
+        m, a, b = ROWS[i]; y = y0 + 195 + i * 98
         for x, s, c in zip(TX, (vn(m, 2), vn(a), vn(b)), (INK, DORANGE, DGREEN)):
             text(d, (x, y), s, 60, c)
 
@@ -226,7 +226,7 @@ CLIP = dict(id="tn-l10-luc-ma-sat-01", header="VẬT LÍ 10 · THÍ NGHIỆM", f
    ("Hộp bật đi.", 3.0),
    ("Đáp án: số chỉ tụt xuống.", 3.6)]),
  dict(key="bang", title="Thêm gia trọng, đo lại", draw=s_bang, tail=0.3, caps=[
-   ("Mỗi lần thêm một khối.", 2.6),
+   ("Thêm từng khối.", 2.6),
    ("Ghi hai số chỉ.", 2.6),
    ("Tổng 0,80 kg.", 2.6),
    ("Áp lực = trọng lượng hộp.", 3.0)]),
