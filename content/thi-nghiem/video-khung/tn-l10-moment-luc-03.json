@@ -51,19 +51,19 @@
   },
   "cau_chot": {
     "giay": 42.8,
-    "cau_hoi": "Đẩy hai đầu thước 30 cm bằng ngẫu lực, mỗi lực 2,0 N, vuông góc với thước. Moment ngẫu lực bằng bao nhiêu?",
+    "cau_hoi": "Thước 30 cm nằm trên mặt bàn nhẵn. Hai ngón tay đẩy hai lực 2,0 N song song, ngược chiều, vuông góc với thước, đặt ở vạch 5 và vạch 25. Moment ngẫu lực bằng bao nhiêu?",
     "chon": [
-      "A. 0,3 N·m",
-      "B. 0,6 N·m",
-      "C. 1,2 N·m",
-      "D. 60 N·m"
+      "A. 0,40 N·m",
+      "B. 0,20 N·m",
+      "C. 0,60 N·m",
+      "D. 40 N·m"
     ],
-    "dung": 1,
+    "dung": 0,
     "giai_thich": [
-      "0,3 N·m là lấy nửa d, quên lực thứ hai. M = F·d = 2,0 · 0,3 = 0,6 N·m.",
-      "d là khoảng cách hai giá = 0,3 m; M = F·d = 2,0 · 0,3 = 0,6 N·m.",
-      "1,2 N·m là cộng hai lực rồi nhân cả d. Mỗi lực cách tâm d/2: 2,0 · 0,15 + 2,0 · 0,15 = 0,6 N·m.",
-      "60 là để d = 30 cm mà không đổi ra mét. d = 0,3 m nên M = 0,6 N·m."
+      "Khoảng cách giữa hai giá lực d = 25 − 5 = 20 cm = 0,20 m, nên M = F·d = 2,0 · 0,20 = 0,40 N·m.",
+      "0,20 N·m là lấy F·(d/2). Moment ngẫu lực dùng cả khoảng cách giữa hai giá lực: M = 2,0 · 0,20 = 0,40 N·m.",
+      "0,60 N·m là lấy cả chiều dài thước 0,30 m. Hai lực đặt ở vạch 5 và 25 nên d = 0,20 m, M = 0,40 N·m.",
+      "40 N·m là để d theo cm. Đổi 20 cm = 0,20 m: M = 2,0 · 0,20 = 0,40 N·m."
     ]
   }
 }

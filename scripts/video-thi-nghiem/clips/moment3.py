@@ -7,8 +7,8 @@
 #   vi o Quan sat cua hop exp trong bai da ghi san "quay tai cho quanh vach 15 cm, khong truot di".
 #   Vi tri vach 5/20 la lua chon dung hinh (kho chi cho d = 0,15 m) -> bao thay.
 # Bay = hien_tuong_hay_sai[1] (M = F.(d/2)). CHUA NOI: giu co dinh mot diem.
-# Chot (ca tu suy, ban 1 da dung): moi luc 2,0 N (F max tham_so) o hai dau thuoc 30 cm -> M = 2,0 . 0,3 = 0,6 N.m.
-#   Khong trung Cau 5 (20 N, 0,36 m -> 7,2 N.m); 0,6 khong co trong bai.
+# Chot (v2 theo kiem-code + coordinator 27/11): moi luc 2,0 N (F max tham_so) o vach 5 va vach 25 -> d tu doc 0,20 m,
+#   M = 2,0 . 0,20 = 0,40 N.m (khong trung bang 0,15/0,3/0,15; khong trung Cau 5 7,2 N.m). Ca nay chua co trong ghi_chu kho.
 from engine import *
 
 ROWS = [(0.5, 0.3, 0.15), (1.0, 0.3, 0.3), (1.0, 0.15, 0.15)]   # so_lieu_mau
@@ -30,7 +30,7 @@ def _kiem_so():
     assert ts["F"]["max"] == 2 and ts["d"]["max"] == 0.3
     assert (20 - 5) / 100 == ROWS[2][1]                                    # du doan: vach 5 va 20 -> d = 0,15 m
     assert abs(1.0 * 0.10 + 1.0 * 0.05 - ROWS[2][2]) < 1e-9                  # quanh vach 15: 10 cm + 5 cm
-    assert abs(2.0 * 0.3 - 0.6) < 1e-9                                      # ca chot
+    assert abs(2.0 * (25 - 5) / 100 - 0.4) < 1e-9 and 0.4 not in [r[2] for r in ROWS]   # ca chot
 _kiem_so()
 
 _RULER = {}
@@ -69,7 +69,7 @@ def forces(d, c, phi, xa, xb, lab=None, s=1.0, alpha=1.0, fing=True):
         p1 = rot((x, -side * HW * s), phi, c); p2 = rot((x, -side * (HW + ALEN) * s), phi, c)
         arrow(d, p1, p2, A(RED, alpha), w=max(5, int(8 * s)), head=int(30 * s))
         if lab:
-            lp = rot((x - math.copysign(95, x if x else 1) * s, -side * (HW + ALEN * 0.55) * s), phi, c)
+            lp = rot((x - math.copysign(95, x if x else 1) * s, -side * (HW + ALEN * 0.62) * s), phi, c)
             text(d, lp, lab, 55, RED, alpha=alpha)
 
 def pill(d, cx, cy, s, fill, alpha=1.0, size=58):
@@ -209,8 +209,8 @@ def s_end(img, d, t, sc):
     c = (W / 2, 760)
     if k > 0.05:
         ruler(img, c, 0)
-        forces(d, c, 0, X(0), X(30), lab="2,0 N", alpha=k, fing=False)
-    text(d, (W / 2, 1060), "Đẩy hai đầu thước 30 cm.", 60, INK, alpha=k)
+        forces(d, c, 0, X(5), X(25), lab="2,0 N", alpha=k, fing=False)
+    text(d, (W / 2, 1060), "Đẩy ở vạch 5 và vạch 25.", 60, INK, alpha=k)
     text(d, (W / 2, 1160), "Moment ngẫu lực bao nhiêu?", 60, DORANGE, alpha=k)
     seg_bar(d, 1290, t, 1.0, sc["T"] - 0.2, ORANGE, k)
 
