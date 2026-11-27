@@ -1,13 +1,13 @@
 {
   "id": "tn-l10-gia-toc-01",
   "ten": "Xe lăn xuống máng nghiêng: v thay đổi thế nào theo thời gian?",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-gia-toc-01-20261101.mp4",
-  "tong_giay": 49.6,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-gia-toc-01-20261127.mp4",
+  "tong_giay": 49.9,
   "o": [
     {
       "khoa": "gia_thuyet",
       "giay": 0,
-      "chu": "Nhanh dần đều: mỗi 0,2 s, v tăng như nhau.",
+      "chu": "Xe lăn xuống dốc: v đổi thế nào theo t?",
       "kiem": "Mỗi 0,2 s, vận tốc xe đổi thế nào?"
     },
     {
@@ -17,27 +17,27 @@
     },
     {
       "khoa": "dung_cu",
-      "giay": 10.6,
-      "chu": "Máng nghiêng, xe lăn, cảm biến ghi v mỗi 0,2 s."
+      "giay": 9.1,
+      "chu": "Máng nghiêng, xe lăn, cảm biến vận tốc."
     },
     {
       "khoa": "quan_sat",
-      "giay": 17.4,
-      "chu": "v đọc: 0,20; 0,30; 0,40; 0,49; 0,59 m/s.\nMỗi 0,2 s, v tăng thêm 0,09–0,10 m/s."
+      "giay": 19.8,
+      "chu": "v đọc: 0,20; 0,30; 0,40; 0,49; 0,59 m/s.\nBốn bậc Δv gần bằng nhau."
     },
     {
       "khoa": "rut_ra",
-      "giay": 28.6,
-      "chu": "Gia tốc Δv/Δt gần như không đổi."
+      "giay": 27.2,
+      "chu": "Δv/Δt gần như không đổi: xe nhanh dần đều."
     },
     {
       "khoa": "chua_noi",
-      "giay": 32.5,
-      "chu": "Mới có một xe, một độ nghiêng: nghiêng hơn thì a ra sao?"
+      "giay": 38.8,
+      "chu": "Mới thử một độ nghiêng: nghiêng hơn thì a ra sao?"
     }
   ],
   "dung_dua": {
-    "giay": 10.45,
+    "giay": 8.95,
     "cau_hoi": "Lúc t = 0 xe có v = 0,20 m/s, lúc t = 0,2 s có v = 0,30 m/s. Lúc t = 0,8 s, v bằng bao nhiêu?",
     "chon": [
       "A. khoảng 0,30 m/s",
@@ -48,5 +48,22 @@
     "dung": 1,
     "giai_thich_dung": "Cảm biến đo được 0,59 m/s: sau mỗi 0,2 s, v tăng thêm khoảng 0,10 m/s, bốn lần tăng đưa v từ 0,20 lên khoảng 0,60 m/s.",
     "giai_thich_sai": "Lúc t = 0 xe đã có 0,20 m/s, và mỗi 0,2 s v chỉ tăng thêm khoảng 0,10 m/s. Xem các bậc Δv trên đồ thị ở đoạn kế."
+  },
+  "cau_chot": {
+    "giay": 43.8,
+    "cau_hoi": "Cùng máng đó, lượt khác lúc t = 0 xe đã có v = 0,40 m/s. Lúc t = 0,6 s, v bằng bao nhiêu?",
+    "chon": [
+      "A. 0,49 m/s",
+      "B. 0,70 m/s",
+      "C. 0,89 m/s",
+      "D. 1,0 m/s"
+    ],
+    "dung": 1,
+    "giai_thich": [
+      "0,49 m/s là số đo lúc 0,6 s của lượt cũ, khi xe bắt đầu từ 0,20 m/s. Lượt này xe bắt đầu nhanh hơn nên v lúc 0,6 s lớn hơn.",
+      "Cùng máng nên cùng gia tốc a ≈ 0,50 m/s² (theo mô hình, a không phụ thuộc v lúc đầu): mỗi 0,2 s v tăng 0,10 m/s. v = 0,40 + 3 × 0,10 = 0,70 m/s.",
+      "0,89 m/s là lấy 0,40 cộng cả số đo 0,49 m/s. Phần v tăng thêm trong 0,6 s chỉ là a·t = 0,50 × 0,6 = 0,30 m/s, nên v = 0,70 m/s.",
+      "1,0 m/s ứng với a = 1,0 m/s², tức lấy v chia t như ở Bẫy. Gia tốc thật ≈ 0,50 m/s², nên v = 0,40 + 0,50 × 0,6 = 0,70 m/s."
+    ]
   }
 }

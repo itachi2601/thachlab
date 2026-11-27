@@ -31,7 +31,7 @@ def _kiem_so():
 _kiem_so()
 
 C_T, C_V, C_D = (29, 78, 216), (176, 64, 8), (15, 118, 110)
-DRED = (185, 28, 28); EMPTY = (148, 140, 128)
+DRED = (185, 28, 28); DORANGE = (176, 64, 8); EMPTY = (148, 140, 128)
 CART = (100, 116, 139); CART_D = (51, 65, 85); RAIL = (203, 207, 218); RAIL_D = (148, 153, 168)
 
 def vn(x, nd): return f"{x:.{nd}f}".replace(".", ",")
@@ -184,13 +184,15 @@ def s_bay(img, d, t, sc):
     k1 = ease((t - 0.4) / 0.8)
     if k1 > 0:
         te = 0.6 * k1; d.line([(GXt(0), GYv(0)), (GXt(te), GYv(te * 1.0))], fill=DRED, width=9)
+    if t >= 1.4:
+        d.line([(GX0 + 20, GYv(0)), (GX0 + 20, GYv(VD[0]))], fill=DORANGE, width=12)
+        text(d, (GX0 - 22, GYv(VD[0] / 2)), "v₀", 60, DORANGE, anchor="rm", alpha=appear(t, 1.4, 0.4))
     card(d, (40, 915, 1040, 1240), fill=WHITE, outline=DRED, w=6)
     text(d, (W / 2, 1000), "✗ v/t = 0,40 : 0,4", 62, DRED)
     text(d, (W / 2, 1110), "= 1,0 m/s²", 62, DRED)
     if t >= M[1] - 0.1:
         k2 = ease((t - M[1]) / 0.8)
         d.line([(GXt(0), GYv(VD[0])), (GXt(0.8 * k2), GYv(VD[0] + (VD[4] - VD[0]) * k2))], fill=C_D, width=9)
-        d.line([(GX0 + 20, GYv(0)), (GX0 + 20, GYv(VD[0]))], fill=C_V, width=10)
         card(d, (40, 1265, 1040, 1590), fill=WHITE, outline=C_D, w=6)
         text(d, (W / 2, 1350), "✓ Δv/Δt = 0,10 : 0,2", 62, C_D)
         text(d, (W / 2, 1460), "= 0,50 m/s²", 62, C_D)
@@ -213,6 +215,8 @@ def s_gioihan(img, d, t, sc):
     d.polygon([(x0, y0), (x1, 1210), (x0, 1210)], fill=(226, 220, 206))
     d.line([(x0, y0), (x1, 1210)], fill=RAIL_D, width=8)
     text(d, (820, 760), "a = ?", 64, C_D, alpha=appear(t, 2.2, 0.4))
+    d.arc([x1 - 170, 1210 - 170, x1 + 170, 1210 + 170], 180, 180 + ang, fill=DORANGE, width=8)
+    text(d, (x1 - 230, 1170), "α", 62, DORANGE)
 
 # ---------------- canh 7: Chot + THU NGHI (= cau_chot khung web) ----------------
 EX0, EYB = 220, 1340
@@ -223,7 +227,7 @@ def s_end(img, d, t, sc):
     text(d, (W / 2, 400), "Cùng máng, nhưng lúc t = 0", 60, INK, alpha=k)
     text(d, (W / 2, 485), "xe đã có v = 0,40 m/s.", 60, INK, alpha=k)
     text(d, (W / 2, 590), "Lúc t = 0,6 s, v = ?", 64, C_V, alpha=k)
-    sx, sv = 1150, 620                                        # px/s, px/(m/s)
+    sx, sv = 1000, 620                                        # px/s, px/(m/s)
     X_ = lambda tt: EX0 + tt * sx; Y_ = lambda v: EYB - v * sv
     d.line([(EX0, EYB), (X_(0.68), EYB)], fill=A(NAVY, k), width=5); d.line([(EX0, EYB), (EX0, Y_(0.8))], fill=A(NAVY, k), width=5)
     for tt in (0.2, 0.4, 0.6):
@@ -233,8 +237,9 @@ def s_end(img, d, t, sc):
     text(d, (EX0 + 25, Y_(0.8) + 10), "v (m/s)", 58, C_V, anchor="lm", alpha=k)
     text(d, (1020, EYB - 45), "t (s)", 58, C_T, anchor="rm", alpha=k)
     dot(d, X_(0), Y_(0.40), 16, A(C_V, k), WHITE)
-    for xx in range(int(X_(0)) + 16, int(X_(0.2)), 24): d.line([(xx, Y_(0.40)), (min(xx + 12, X_(0.2)), Y_(0.40))], fill=A(C_D, k), width=5)
-    text(d, (X_(0.2) + 50, Y_(0.40) - 70), "?", 80, C_D, alpha=k)
+    for yy in range(int(EYB) - 16, int(Y_(0.75)), -24): d.line([(X_(0.6), yy), (X_(0.6), max(yy - 12, Y_(0.75)))], fill=A(C_D, k), width=5)
+    card(d, (X_(0.6) - 40, Y_(0.75) - 100, X_(0.6) + 40, Y_(0.75)), fill=A(WHITE, k), outline=A(INK, k), r=14, w=5)
+    text(d, (X_(0.6), Y_(0.75) - 50), "?", 66, INK, alpha=k)
     seg_bar(d, 1470, t, 1.0, sc["T"] - 0.2, ORANGE, k)
 
 def _cues(clip):
@@ -265,5 +270,5 @@ CLIP = dict(id="tn-l10-gia-toc-01", header="VẬT LÍ 10 · THÍ NGHIỆM", foot
  dict(key="gioihan", title="Giới hạn", draw=s_gioihan, tail=0.6, caps=[
    ("Mới thử một độ nghiêng.", 3.6)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.3, caps=[
-   ("Nhanh dần đều: v tăng đều theo t.", 6.2)]),
+   ("Thử tính, rồi chọn đáp án.", 6.2)]),
 ])
