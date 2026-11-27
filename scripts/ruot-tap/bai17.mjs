@@ -90,6 +90,7 @@ ${tb('6. Vì sao phóng xạ là ngẫu nhiên, và lộ ra thế nào khi đo?'
 <div class="card soft" style="margin-top:1.5mm;padding:1mm 3mm"><b>Bạn cùng bàn kiểm:</b> nói được ……/6 câu · câu chưa thuộc: ${f(30)} → đọc lại ô Tập ${f(14)}</div>
 ${h3(3, 'Kết quả tự kiểm tra (đề chiếu trên lớp)', '3·3')}
 ${rkHai([2, 3, 4, 5], [6, 7, 8])}
+<div class="card soft" style="margin-top:1mm;padding:1mm 3mm"><b>Đề cuối tiết 1194:</b> điểm ……/20 &nbsp;· câu sai: <span class="fill" style="min-width:30mm"></span></div>
 ${foot(3)}</section>`;
 
 const p4 = `<section class="page">
