@@ -9,17 +9,17 @@ Nạp mỗi phiên, giữ dưới 15 KB: hiện trạng + ĐANG CHỜ (1–2 dò
 - Nền SÁNG mặc định (11/10): token `app/globals.css`, `docs/MAU-NEN-SANG.md`.
 
 ## Migration — ĐANG CHỜ (nguồn đúng: `bash scripts/run-migrations.sh --list` + `scripts/logs/`; sau migration chạy `node scripts/gen-database-doc.mjs`)
+- **GCPT bài thuyết trình (27/11)**: migration `20261127150000` ĐÃ CHẠY 27/11 (qua `supabase db query -f`, checkout chính bẩn nên không qua run-migrations.sh → không có log); bài id 228 + đề 1423 đã đăng và BẬT HIỆN 27/11.
 - **GCPT (26/11)**: lớp `gcpt` id 24, 12 bài id 216–227 đã đăng và BẬT HIỆN (26/11); còn: tạo course_offering (chờ tên lớp/năm học), thầy đối chiếu số liệu "tham khảo".
+- **CNCTM 2 (27/11)**: đã đăng 6 bài (lesson 229–234, đề 1424–1429); còn thiếu course_offering (chờ thầy báo lớp/năm học).
 - **AI sửa lỗi → sửa luôn câu gốc ngân hàng (16/11)**: `20261116120000_bank_apply_question_fix` ĐÃ CHẠY 16/11 (hàm tồn tại, chặn người không phải giáo viên). Client đã sửa (ExamSection + services/ai-check-exam) nhưng chưa vào main/deploy; chưa thử bấm AI sửa thật.
 - Điểm học phần CNC (14/11): migration đã chạy, `/lop-hoc/cnc/bang-diem/` đã deploy 18/11; điểm Phay chưa nạp (mẫu `scripts/gui-diem-thi-tien-cnc.mts`, module 'phay').
 - Bài tập ngày 28/10 (đề 1289–1293): chưa rõ đã deploy `ClassRoster.tsx`.
-- L11 đề 693/701: đã bỏ 11 câu ngoài CT 22/11 (chi tiết STATE-archive 25/11).
 - L11 đề 701 câu 16, 28: có dòng bank 1248678/1248701 (đúng chủ đề) nhưng hash lệch bản trong đề (đề đã sửa định dạng sau) → lưu lại đề 701 một lần ở /quan-tri/sua-de là `sync_exam_to_bank` cập nhật đúng dòng đó.
 - **Vá bảo mật 11/11**: 3 migration ĐÃ CHẠY (bước 2 lúc 12/11 06:40; `20261112070000` kiểm đầu vào điểm CNC lúc 12/11 08:15), client đã deploy; 12/11 đã bấm thử bằng tài khoản admin (sửa đề THPT/CTTC, `/lop-hoc/cnc`, dashboard GV: mọi request 200). Chưa thử bằng tài khoản HS/TA thật; chưa bấm nút nhắc làm bài. Script đăng nhập tài khoản thường mà đọc `exams.questions` phải đổi sang `exams_staff`.
 - **Quiz trắc nghiệm CNC chấm ở server (12/11)**: cả 2 bước ĐÃ CHẠY (bước 2 lúc 08:52), client deploy 12/11 ~08:50 (bản 11/11 19:01 = commit 874bef7f6 + 6 file vá bảo mật). Chưa thử bằng tài khoản SV thật (admin không ghi điểm) → buổi CNC tới xem `cnc_learning_records` có dòng mới của 15 bài có ngân hàng. Đáp án vẫn nằm trong `get_cnc_quiz_banks` (quiz cho xem đáp án và làm lại không giới hạn).
 - Vá bảo mật 22/11 bước 2 ĐÃ CHẠY 23/11; chưa thử HS thật (luyện tập, phụ đạo) — rollback `perf/rollback/*buoc_2.down.sql`.
 - Còn lỗ: bài CNC chấm ở máy (dịch lệnh trả lời ngắn, điền khuyết, viết chương trình, checklist — đáp án nằm trong mã client); `diagnostic_submit` vẫn nhận số đúng/sai từ client (chỉ ảnh hưởng mục phụ đạo của chính em); mật khẩu mặc định chỉ chặn ở client (chặn thật cần Auth/import-roster).
-- **GitHub 12/11 06:46**: có ruleset `bao-ve-main-deploy` (chỉ admin cập nhật `main`/`deploy`) → workflow `gop-claude-vao-main.yml` KHÔNG đẩy được vào main nữa (GH013). Phiên Mac: `git push origin HEAD:main` (fast-forward, sau khi `git merge origin/main`); phiên cloud: không tự vào main được, chờ thầy quyết. Repo vẫn công khai, `nhmkct1`/`zKdKaidO` vẫn quyền ghi.
 - **Sức khỏe mở cho HS/SV (19/11)**: `student` vào được `/suc-khoe` (THPT + CTTC), chương trình riêng không dụng cụ `PROGRAM_HS` (3 buổi ~30′), không thấy Số đo/ngực–eo; link ở `/tai-khoan/them`; localStorage tách theo tài khoản. Chưa deploy, chưa thử bằng tài khoản HS thật.
 - 19/11 RPC gộp trang bài + buổi ôn: đã chạy + deploy; chưa thử bằng HS thật.
 - **Ôn 5 phút (25/11)**: cả 2 migration đã chạy; 81 bài có thẻ + dòng ở /lop-hoc đã vào main, CHƯA deploy (chi tiết `docs/memory/project_thachlab_on_5_phut.md`).
@@ -74,7 +74,8 @@ Nạp mỗi phiên, giữ dưới 15 KB: hiện trạng + ĐANG CHỜ (1–2 dò
 - Cải tiến lý thuyết sau học thử vai HS (26/11, nhánh `claude/theory-improvement-review-5ca7c7`): bài 63 + 35 đã đăng lý thuyết 26/11 22h05 (sao lưu `scripts/logs/ly-thuyet-bai{63,35}-backup-*`); còn 5 quyết định P1–P5 ở `docs/DE-XUAT-CAI-TIEN-LY-THUYET-2026-11-26.md`.
 - Rà quiz + độ dài (26/11, mục 17–20): đã đăng lý thuyết 59, 79, 35, 38, 33, 13, 17, 126 + L12 Ch.3 (10, 11, 12, 125, 127). CHỜ thầy duyệt 8 câu Đ/S + trả lời ngắn mới (đề Luyện tập bài 13, 17, 126); các chương còn lại — memory `project_thachlab_ra_soat_quiz_do_dai`.
 
-- P2/P4 xong 26/11 ~23h30: 74 bài L10–12 + 17 bài KHTN 9 + 8 bài CNC (`cnc_lessons`, dựng từ bản DB chỉ thay dòng mốc để giữ neo `muc-N`) + bài 31; 51, 67 DB đã trùng file; P3 đã chạy trên site. Bài 39 (Chốt mục + data-tap + gợi ý P4) đã đăng 26/11 ~23h35 theo thầy duyệt. 38, 39 đã đổi dòng hai mốc và đăng 23h41. CÒN: file `cnc-*/theory.src.html` thiếu neo `muc-N` đang có trên DB (đăng từ file sẽ mất neo).
+
+- P2/P4 xong 26–27/11: L10–12, KHTN 9, CNC (file nguồn CNC đã khớp DB, có neo `muc-N`), bài 31, 38, 39; P3 đã lên site. Sao lưu `scripts/logs/p2p4-2026-11-26/`, `ly-thuyet-bai*-backup-17957*`.
 - Clip L12 lô 32 (Việc 4): thầy duyệt 27/11; kho + 20 bài đổi `-20261126`, khung gắn lại, dry-run 20/20 sạch; HẸN GHI DB 22:05 27/11 (`dang-lo32.sh --yes --22h05`, tab terminal). Còn treo: lỗi bài tutruong dòng 116 + điểm kho trong sổ clip mục "lô 32".
 
 ## CHƯA làm (roadmap)
