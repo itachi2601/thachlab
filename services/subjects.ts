@@ -14,6 +14,9 @@ export const SUBJECTS: SubjectDefinition[] = [
   { code: "cnc", label: "Gia công CNC", joinPrefix: "CNC", hasCurriculum: true, workshop: "C1.2", isPracticum: true },
   { code: "tien-phay", label: "Tiện – Phay truyền thống", joinPrefix: "TP", hasCurriculum: false, workshop: "C1.1", isPracticum: true },
   { code: "avcn", label: "Anh văn chuyên ngành", joinPrefix: "AVCN", hasCurriculum: false, workshop: "", isPracticum: false },
+  // Học phần "Các phương pháp gia công phi truyền thống" (27/11/2026, CĐ CK 25B): nội dung ở /lop-hoc/gcpt,
+  // lớp học phần có mã tham gia riêng; thêm vào danh mục môn để tạo/chọn lớp trong dashboard GV.
+  { code: "gcpt", label: "Các phương pháp gia công phi truyền thống", joinPrefix: "GCPT", hasCurriculum: false, workshop: "", isPracticum: false },
   { code: "khac", label: "Môn khác (lý thuyết)", joinPrefix: "LOP", hasCurriculum: false, workshop: "", isPracticum: false },
   { code: "gddd-ptnn", label: "Giáo dục đạo đức & phát triển nghề nghiệp", joinPrefix: "GDDD", hasCurriculum: false, workshop: "", isPracticum: false },
 ];
@@ -30,5 +33,6 @@ export function learningHrefOf(subjectCode: string): string {
   if (subjectCode === "cnc") return "/lop-hoc/cnc";
   if (subjectCode === "tien-phay") return "/lop-hoc/tien-phay";
   if (subjectCode === "avcn") return "/lop-hoc/avcn";
+  if (subjectCode === "gcpt") return "/lop-hoc/gcpt";
   return "/tai-khoan";
 }
