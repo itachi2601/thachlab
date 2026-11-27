@@ -81,6 +81,7 @@ Nạp mỗi phiên, giữ dưới 15 KB: hiện trạng + ĐANG CHỜ (1–2 dò
 - Clip L12 lô 32 (Việc 4): ĐÃ GHI DB 27/11 07:20 (20/20 ✓, bài 10 kèm sửa câu Quan sát tutruong-02). 27/11: 150 clip tự dựng L9/L10/L11 chưa qua cổng mới (chưa `cau_chot`) giao 5 phiên nhánh `clip-cong-moi-*` (L9, L10a, L10b, L11a, L11b), mỗi phiên dừng ở lô duyệt.
 - Clip L9 cổng mới (nhánh `claude/clip-cong-moi-l9-896df8`): đợt 1 12/36 ĐÃ GHI DB 27/11 17:53 (bài 89–92, 129, kèm sửa hộp exp); 7 clip tải Storage chờ duyệt; 17 còn dựng (sổ clip mục "Cổng mới — L9").
 - Clip cổng mới L10a (bài 46–62): mẻ 1 13 clip ĐÃ GHI DB 27/11 17:53 (8 bài 46–53, kèm sửa 4 hộp exp lộ Dự đoán); 16 clip còn lại đang dựng/soát, bỏ do-toc-do-03 (không có trong bài). Sổ clip mục "Cổng mới — L10a".
+- Clip cổng mới L10a mẻ 2: 7 clip ĐÃ GHI DB 27/11 22:44 (bài 54, 55, 56, 51; kèm sửa 3 hộp exp ctbdd-01, do-g-02, do-g-03). Nhóm C (9 clip, bài 57–62) đang dựng/soát.
 - Cổng mới L11a: 21 clip L11 ĐÃ GHI DB 27/11 17:54 (12/12 bài, kèm giấu số đọc 5 hộp exp); chi tiết sổ clip mục "Cổng mới — L11a".
 
 ## CHƯA làm (roadmap)
