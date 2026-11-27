@@ -57,7 +57,7 @@ def rig(d, yb, xcm, ruler=True, a=1.0):
         yy = yb - 140 + k * 26; d.line([(WALL - 30, yy + 18), (WALL - 8, yy)], fill=c(NAVY), width=2)
     d.rectangle([WALL, yb, 1040, yb + 20], fill=c((190, 195, 210)), outline=c(NAVY), width=3)
     dash_v(d, OX, yb - 140, yb, c(GRAY), w=4)
-    text(d, (OX - 22, yb - 112), "O", 56, INK, anchor="rm", alpha=a)
+    text(d, (OX - 18, yb - 165), "O", 56, INK, anchor="rm", alpha=a)            # tren dau vach net dut, khong de len vat
     cx = px(xcm)
     spring(d, WALL, cx - BW / 2, yb - BH / 2, c(NAVY))
     card(d, (cx - BW / 2, yb - BH, cx + BW / 2, yb), fill=c(BLUE), outline=c(NAVY), r=12, w=4)
@@ -102,9 +102,10 @@ def s_hook(img, d, t, sc):
     y0 = 860 + (1 - a) * 40
     card(d, (50, y0, 1030, y0 + 640), fill=A(WHITE, a), outline=A(PURPLE, a), w=6)
     pill(d, W / 2, y0 + 64, "DỰ ĐOÁN", 56, WHITE, PURPLE, a)
-    text(d, (W / 2, y0 + 180), "Thả tay, bỏ qua ma sát.", 60, INK, alpha=a)
-    text(d, (W / 2, y0 + 290), "Tới đầu bên kia, vật đã", 62, PURPLE, alpha=a)
-    text(d, (W / 2, y0 + 370), "đi quãng đường bao nhiêu?", 62, PURPLE, alpha=a)
+    text(d, (W / 2, y0 + 160), "Kéo lệch 4 cm rồi thả,", 60, INK, alpha=a)
+    text(d, (W / 2, y0 + 235), "bỏ qua ma sát.", 60, INK, alpha=a)
+    text(d, (W / 2, y0 + 320), "Tới đầu bên kia, vật", 62, PURPLE, alpha=a)
+    text(d, (W / 2, y0 + 395), "đi quãng đường bao nhiêu?", 62, PURPLE, alpha=a)
     seg_bar(d, y0 + 490, t, M[1] + 0.4, sc["T"] - 0.2, PURPLE, a)
 
 # ---------------- canh 2: Tien hanh (quay cham x2, dung o moi moc) ----------------
@@ -219,7 +220,7 @@ def _cues(clip):
 CLIP = dict(id="tn-l11-motadddh-01", header="VẬT LÍ 11 · THÍ NGHIỆM", footer="Mô tả dao động · thachlab.id.vn",
             cues=_cues, scenes=[
  dict(key="hook", title="Kéo lệch rồi thả", draw=s_hook, tail=0.3, caps=[
-   ("O là chỗ vật đứng yên.", 4.0),
+   ("O: chỗ vật đứng yên.", 4.0),
    ("Dừng lại, tự đoán.", 5.4)]),
  dict(key="do", title="Tiến hành", draw=s_do, tail=0.3, caps=[
    ("Thả tay, ghi bốn mốc thời gian.", 4.6),
