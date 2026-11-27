@@ -459,7 +459,7 @@ Danh sách thầy duyệt (mỗi dòng: tên · link · điều cần quyết):
 Sau duyệt (22h hoặc khi thầy bảo): kho + bài đổi sang `-20261121` + `gan-khung-video.mts`, `cap-nhat-ly-thuyet.sh --chi-video` theo mẫu `dang-viec4.sh`.
 - 26/11/2026 · Ch.1 lô B, việc còn treo (thầy chọn cả 3): (1) kho `tn-l11-conangdddh-01` ý sai số 4 ghi "Khi treo thẳng đứng…"; (2) lam-quen-02 (bài 46), sai-so-01 (bài 48): đưa khối video lên TRƯỚC hộp exp (Quan sát/Rút ra lộ đáp án câu Dự đoán) như noinang-02/04; (3) vantocdddh2 chèn bài 22 ngay TRƯỚC Hình 2 (chú thích Hình 2 lộ "v sớm x góc π/2"), gắn khung, tiêu đề hộp "Xem ba đồ thị chạy cùng lúc". Dry-run 12h: ngoài khối video KHÔNG khác cả 3 bài. ĐÃ GHI DB 26/11 12:35 (thầy bảo đăng ngay; item 81, 87, 134; ngoài khối video KHÔNG khác; sao lưu `scripts/logs/ly-thuyet-bai{46,48,22}-backup-179567131*/2*.json`, log `scripts/logs/dang-3bai-20261126.log`). Chưa xem 375px (worktree không có node_modules).
 
-## Việc 4 — lô 32 clip L12 còn lại dựng lại theo cổng mới (26/11/2026) **CHỜ THẦY DUYỆT, CHƯA ĐỔI KHO/BÀI/DB**
+## Việc 4 — lô 32 clip L12 còn lại dựng lại theo cổng mới (26/11/2026) — thầy duyệt 27/11, **ĐÃ GHI DB 27/11 07:20** (20/20 bài, log `ra/lo32-dang.log`)
 Nhánh `claude/motion-graphic-deployment-8b27a0`. 4 agent Opus × 8 clip; cổng A `--do-chu` 0 LỖI cả 32; cổng B kiem-code 283 px 1–2 vòng (nhóm D 6 clip từ hatnhan2 tự soát lúc hết API → kiem-code soát bù). `xuat-khung.py --kiem` OK cả 32, khung có `cau_chot`, trỏ `-20261126`. Đã tải `lesson-clips/clip/<tn>-20261126.{mp4,webp}` (HEAD 200 cả 32, `tai-lo32.sh`, log `ra/lo32-tai.log`); kho `<tn>.json` trả về bản cũ. Bỏ `tdhphantu-04` (không có file nguồn clip).
 
 | Clip | tn | Từ/phút | LỖI | Giây | KB | mp4 | Điểm cần quyết |

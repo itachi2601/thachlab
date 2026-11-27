@@ -75,7 +75,7 @@ Nạp mỗi phiên, giữ dưới 15 KB: hiện trạng + ĐANG CHỜ (1–2 dò
 - Rà quiz + độ dài (26/11, mục 17–20): đã đăng lý thuyết 59, 79, 35, 38, 33, 13, 17, 126 + L12 Ch.3 (10, 11, 12, 125, 127). CHỜ thầy duyệt 8 câu Đ/S + trả lời ngắn mới (đề Luyện tập bài 13, 17, 126); các chương còn lại — memory `project_thachlab_ra_soat_quiz_do_dai`.
 
 - P2/P4 xong 26/11 ~23h30: 74 bài L10–12 + 17 bài KHTN 9 + 8 bài CNC (`cnc_lessons`, dựng từ bản DB chỉ thay dòng mốc để giữ neo `muc-N`) + bài 31; 51, 67 DB đã trùng file; P3 đã chạy trên site. Bài 39 (Chốt mục + data-tap + gợi ý P4) đã đăng 26/11 ~23h35 theo thầy duyệt. 38, 39 đã đổi dòng hai mốc và đăng 23h41. CÒN: file `cnc-*/theory.src.html` thiếu neo `muc-N` đang có trên DB (đăng từ file sẽ mất neo).
-- Clip L12 lô 32 (Việc 4): thầy duyệt 27/11; kho + 20 bài đổi `-20261126`, khung gắn lại, dry-run 20/20 sạch; HẸN GHI DB 22:05 27/11 (`dang-lo32.sh --yes --22h05`, tab terminal). Còn treo: lỗi bài tutruong dòng 116 + điểm kho trong sổ clip mục "lô 32".
+- Clip L12 lô 32 (Việc 4): ĐÃ GHI DB 27/11 07:20 (20/20 ✓, bài 10 kèm sửa câu Quan sát tutruong-02). 27/11: 150 clip tự dựng L9/L10/L11 chưa qua cổng mới (chưa `cau_chot`) giao 5 phiên nhánh `clip-cong-moi-*` (L9, L10a, L10b, L11a, L11b), mỗi phiên dừng ở lô duyệt.
 
 ## CHƯA làm (roadmap)
 - `/luyen-tap` lọc Lớp → Chương → Bài → YCCĐ → mức; `/lo-trinh`; Động học 10 ≥30 câu/bài.
