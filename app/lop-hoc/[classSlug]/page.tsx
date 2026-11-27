@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ClassHubPage from "../page";
-import { MANAGED_CLASSES, AVCN_CLASS_SLUG, CASIO_CLASS_SLUG, WORLDSKILLS_CLASS_SLUG, CNCTM_CLASS_SLUG, GCPT_CLASS_SLUG } from "@/services/classes";
+import { MANAGED_CLASSES, AVCN_CLASS_SLUG, CASIO_CLASS_SLUG, WORLDSKILLS_CLASS_SLUG, CNCTM_CLASS_SLUG, GCPT_CLASS_SLUG, CNCTM2_CLASS_SLUG } from "@/services/classes";
 
 export const dynamicParams = false;
 
@@ -43,6 +43,13 @@ export async function generateMetadata({
     return {
       title: "Công nghệ chế tạo máy 1 — CTTC",
       description: "Nguyên công, gá, bước, dạng sản xuất và các hình thức gia công cơ khí: bài lý thuyết tương tác có câu tự kiểm cho sinh viên Cơ khí.",
+    };
+  }
+
+  if (classSlug === CNCTM2_CLASS_SLUG) {
+    return {
+      title: "Công nghệ chế tạo máy 2 — CTTC",
+      description: "Quy trình công nghệ gia công chi tiết điển hình (trục, càng, bạc, hộp, bánh răng) và công nghệ lắp ráp: bài lý thuyết tương tác có câu tự kiểm cho sinh viên Cơ khí.",
     };
   }
 

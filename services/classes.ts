@@ -29,8 +29,12 @@ export const CNCTM_SUBJECT_CODE = "cnctm";
 export const GCPT_CLASS_SLUG = "gcpt";
 export const GCPT_SUBJECT_CODE = "gcpt";
 
+/** Học phần CTTC "Công nghệ chế tạo máy 2" (27/11/2026): QTCN chi tiết điển hình + lắp ráp (chương 14–19); vào có duyệt; môn 'cnctm2'. */
+export const CNCTM2_CLASS_SLUG = "cnctm2";
+export const CNCTM2_SUBJECT_CODE = "cnctm2";
+
 /** Các lớp thuộc không gian CTTC: gốc đường dẫn về /lop-hoc/cttc, không về bộ chọn lớp THPT. */
-export const CTTC_CLASS_SLUGS: ReadonlySet<string> = new Set([AVCN_CLASS_SLUG, WORLDSKILLS_CLASS_SLUG, CNCTM_CLASS_SLUG, GCPT_CLASS_SLUG]);
+export const CTTC_CLASS_SLUGS: ReadonlySet<string> = new Set([AVCN_CLASS_SLUG, WORLDSKILLS_CLASS_SLUG, CNCTM_CLASS_SLUG, GCPT_CLASS_SLUG, CNCTM2_CLASS_SLUG]);
 export const isCttcClassSlug = (slug: string | null | undefined) => !!slug && CTTC_CLASS_SLUGS.has(slug);
 
 export const MANAGED_CLASSES: ManagedClassSeed[] = [
@@ -101,6 +105,14 @@ export const MANAGED_CLASSES: ManagedClassSeed[] = [
     color: "#7C3AED",
     icon: "⚡",
     sort_order: 10,
+  },
+  // Học phần CTTC "Công nghệ chế tạo máy 2" (27/11/2026): vào có duyệt; mỗi bài một chương (Bài 14–19 theo giáo trình), môn 'cnctm2'.
+  {
+    name: "Công nghệ chế tạo máy 2",
+    slug: CNCTM2_CLASS_SLUG,
+    color: "#334155",
+    icon: "🔩",
+    sort_order: 11,
   },
 ];
 

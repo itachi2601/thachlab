@@ -73,3 +73,78 @@ Không phải trường JSON mới: là cách viết **trong `solution_html`** v
 | P = U²/R | P₂/P₁ = (U₂/U₁)² | Cùng điện trở R (bỏ qua R đổi theo nhiệt độ) | Đèn ghi 220 V–100 W dùng ở 110 V: P = 25 W (¼), không phải 50 W |
 | pV/T = const | p₂V₂/T₂ = p₁V₁/T₁ | Cùng lượng khí (kín), khí lí tưởng, T tính bằng **K** | Dùng °C trong tỉ số |
 | Bán rã N = N₀·2^(−t/T) | N₁/N₂ = 2^((t₂−t₁)/T) | Một chất phóng xạ; trùng điều kiện mẹo **Chia đôi bánh** | Tỉ số hạt con/hạt mẹ là 2^(t/T) − 1, không phải 2^(t/T) |
+
+## HSG KHTN 9 — tra trước khi đặt mẹo vào một chuyên đề của khoá "Vật lí HSG & chuyên" (27/11/2026)
+
+Bài thi HSG là **tự luận**, người chấm cho điểm theo lập luận. Vì vậy ở khoá HSG 9 mẹo chỉ giữ hai vai:
+**định hướng** (trước khi giải: nhìn ra đáp số nằm cỡ nào, đi đường nào) và **soát** (sau khi giải: đáp số có hợp lí không).
+
+**Quy tắc riêng**
+1. Khối 💡 ở bài HSG luôn có dòng cuối: "Mẹo để định hướng và soát đáp số. Bài làm vẫn trình bày đủ phương trình." Không rút gọn lời giải mẫu theo mẹo.
+2. Hạn mức giữ nguyên: mỗi dạng ≤ 1 mẹo, mỗi bài ≤ 2 dạng có 💡. Bài đã đủ 2 (153, 162) thì ý mới đi vào ✓ Soát nhanh hoặc 📈 Đọc hình, không thêm 💡.
+3. Dạng "Mở rộng HSG" vượt chuẩn KHTN 9 (150·d6, 151·d7, 152·d4–d6, 153·d6, 158·d7, 164·d6): không đặt 💡 (mẹo đời thường dễ che mất giả thiết mới), chỉ ✓ Soát nhanh.
+4. Mẹo phương pháp ở bảng B **chưa vẽ, chưa đăng**: muốn gắn thì chuyển hàng lên bảng 💡 chính, điền đủ ⚠ rồi mới vẽ (quy trình đầu file).
+5. Đề thật nặng đọc hình (memory `project_hsg9_phong_cach_de_that`): mỗi chuyên đề nên có ít nhất một dạng dùng quy trình 📈 ở bảng C. Bảng C mới phủ 150, 153, 156, 159, 160, 162, 166; chuyên đề khác thêm hàng khi soạn.
+
+### A. Mẹo 💡 đã có — dùng ở chuyên đề nào
+
+| Mẹo | Chuyên đề · dạng | Tình trạng ở HSG 9 |
+|---|---|---|
+| Đòn bẩy nhiệt | CĐ12 (153) · d1 | Đã gắn. d5 (rót qua lại hai bình) hợp ⚠ nhưng bài đã đủ 2 mẹo → chỉ nhắc lại bằng ✓ Soát nhanh kiểu Cỡ số (nhiệt độ sau mỗi lần rót nằm giữa hai nhiệt độ trước đó) |
+| Quỹ nhiệt | CĐ12 (153) · d2 | Đã gắn |
+| Thang máy dừng tầng | CĐ12 (153) · d3 đọc đồ thị nhiệt độ – thời gian | Không gắn 💡 (bài đủ 2); dùng làm hàng "nhiệt độ – thời gian" ở bảng C |
+| Con sâu qua cổng, Ngồi trên bè | CĐ13 (162) · d3, d4 | Đã gắn |
+| Cổng soát vé | CĐ04 (157) · d1 | Đã gắn. Không dùng cho d5 (mạch cầu): ⚠ đã ghi mạch cầu không rút thành hàng/làn |
+| Xe đẩy vào cát | CĐ06 (151) | Không gắn: các dạng đều định lượng (đã bỏ 151·d1). Chỉ dùng ở phần lý thuyết để nhớ chiều bẻ tia |
+| Bóng đu quay, Chia đôi bánh | — | Ngoài chương trình KHTN 9 |
+
+### B. Mẹo phương pháp — ứng viên cho HSG 9 (chưa vẽ, chưa đăng)
+
+| Tên mẹo | Ý chính | Chuyên đề · dạng hợp | ⚠ Điều kiện dùng (đủ mọi giả thiết) | Chỗ mẹo SAI / dễ dùng nhầm |
+|---|---|---|---|---|
+| **Chập điểm cùng điện thế** | Hai đầu một dây nối, một khoá đang đóng, một ampe kế lí tưởng có cùng điện thế → gọi chung một tên nút rồi vẽ lại mạch | CĐ04 (157) · d3 khoá K nối tắt, d5 mạch cầu cân bằng <br> Không dùng cho d6 (ampe kế mắc nối tiếp một điện trở, không có hai nút nào để chập) | Dây nối và khoá đóng coi như R = 0 <br> Ampe kế lí tưởng (R_A = 0) <br> Mạch cầu chỉ được chập (hoặc bỏ) nhánh giữa khi cầu cân bằng: R₁/R₂ = R₃/R₄, với R₁–R₃ là một nhánh và R₂–R₄ là nhánh kia (đối chiếu tên điện trở theo hình của đề) <br> Mạch chỉ có điện trở thuần, dòng không đổi | Vôn kế lí tưởng thì **bỏ nhánh** (hở mạch), không chập <br> Ampe kế có điện trở thì là một điện trở, không chập được <br> Chập xong mạch vẽ lại không còn ampe kế: số chỉ phải quay về mạch gốc, tính bằng hiệu các dòng tại nút <br> Cầu không cân bằng mà vẫn chập thì sai cả điện trở tương đương lẫn dòng |
+| **Mắt xích yếu nhất** | Nối tiếp: dòng cho phép là I định mức NHỎ nhất. Song song: hiệu điện thế cho phép là U định mức NHỎ nhất | CĐ05 (165) · d4 hai đèn định mức mắc nối tiếp | Điện trở mỗi đèn coi như không đổi, tính từ số định mức R = U²/P <br> Hỏi giá trị lớn nhất để không đèn nào cháy <br> Bộ đèn mắc thẳng vào nguồn, không có biến trở hay điện trở phụ chia bớt | Cộng hai U định mức để ra U tối đa của bộ nối tiếp là sai (chỉ đúng khi hai đèn cùng I định mức) <br> Đèn có P định mức lớn hơn chưa chắc sáng hơn khi nối tiếp: đèn nào R lớn hơn thì sáng hơn <br> Đèn dây tóc thật có R đổi theo nhiệt độ, kết quả chỉ gần đúng |
+| **Gấp giấy qua gương** | Ảnh là điểm đối xứng của vật qua mặt gương, như gấp tờ giấy theo mép gương. Tia từ A phản xạ tới B: nối ảnh A′ với B bằng một đoạn thẳng | CĐ14 (158) · d4 vật hoặc gương dịch chuyển, d5 vùng nhìn thấy, d6 tia qua điểm cho trước | Gương phẳng <br> Lấy đối xứng qua mặt phẳng chứa gương (kể cả phần kéo dài) <br> Môi trường đồng nhất, ánh sáng truyền thẳng | Ảnh luôn có, nhưng mắt chỉ thấy khi điểm tới nằm **trên phần gương thật** → dạng vùng nhìn thấy phải kiểm điểm tới <br> Vật lại gần gương đoạn a thì ảnh lại gần gương a, khoảng cách vật–ảnh giảm 2a <br> Gương tịnh tiến a (vật đứng yên) thì ảnh dịch 2a <br> Gương quay góc α thì tia phản xạ quay 2α, chỉ khi tia tới giữ nguyên và trục quay nằm trong mặt gương, vuông góc với mặt phẳng tới <br> Hai gương hợp góc α: số ảnh 360°/α − 1 chỉ chắc đúng khi 360°/α là số nguyên chẵn; 360°/α nguyên lẻ thì phụ thuộc vật có nằm trên mặt phân giác hay không (158·d7 dùng α = 72°, 360°/α = 5: cần kiểm theo đề) |
+| **Bóng dưới đèn đường** (đã là ứng viên ở KE-HOACH mục 4) | Đèn, đỉnh đầu, đầu bóng thẳng hàng → hai tam giác đồng dạng. Bóng dài L = h·d/(H − h) | CĐ14 (158) · d2 bóng người dưới đèn (chỉ phần một đèn, bóng trên mặt đất) <br> Không dùng công thức L cho 158·d3 (nguồn rộng) và CĐ17 (178): ở đó chỉ còn ý "vẽ cặp tia biên rồi tìm tam giác đồng dạng", đưa vào lời giải, không gắn 💡 | Ánh sáng truyền thẳng <br> Một đèn, coi là nguồn điểm, đứng yên <br> Bóng nằm trọn trên mặt đất phẳng, nằm ngang (bóng leo lên tường thì tính riêng phần trên tường); người đứng thẳng <br> H > h | Tốc độ đầu bóng v·H/(H − h) khác tốc độ dài thêm của bóng v·h/(H − h); đề hỏi cái nào phải đọc kĩ; tốc độ dài thêm chỉ đúng khi người đi thẳng ra xa hoặc lại gần chân đèn <br> Hai đèn: mỗi đèn cho một bóng, tính từng bóng <br> Ánh sáng Mặt Trời coi là song song: dùng góc cao của Mặt Trời, không có tam giác chụm về đèn <br> Nguồn rộng: vẽ hai cặp tia biên (vùng tối và nửa tối); vẽ một tia thì mất vùng nửa tối |
+| **Phần chìm theo tỉ số** | Vật nổi tự do: V_chìm/V = D_vật/D_lỏng. Vật hình hộp hay trụ đứng thẳng thì tỉ số chiều cao chìm cũng bằng thế | CĐ11 (154) · d3 vật nổi, chỉ ý đầu (vật nổi tự do); ý có quả cân đặt lên vật thì thêm trọng lượng quả cân vào phương trình | Vật nổi cân bằng, chỉ có trọng lực và lực đẩy Archimedes (không dây, không lực kế, không vật đè lên, không chạm đáy) <br> Một lớp chất lỏng đồng nhất <br> Vật đặc đồng chất; vật rỗng thì dùng khối lượng riêng trung bình <br> D_vật < D_lỏng | Tỉ số là của **thể tích**; chỉ chuyển sang chiều cao khi tiết diện ngang không đổi theo độ cao (hộp, trụ đứng thẳng), khối cầu hay nón thì không <br> Hai lớp chất lỏng: D_vật·V = D₁V₁ + D₂V₂, không dùng một tỉ số <br> Có dây căng hay lực kế (154·d4) thì thêm lực vào phương trình cân bằng, tỉ số không còn đúng <br> D_vật > D_lỏng: vật chìm, tỉ số lớn hơn 1 là vô nghĩa |
+| **Lợi lực thiệt đường** | Máy cơ đơn giản không cho lợi về công: F·s = P·h. Lợi bao nhiêu lần lực thì dây (hay đường) dài ra bấy nhiêu lần | CĐ01 (161) · d2 máy cơ đơn giản, d4 mặt phẳng nghiêng, d5 palăng (ròng rọc động có khối lượng, lực kéo xiên → chỉ dùng để soát tỉ số quãng đường, lực tính qua H) <br> Không dùng cho CĐ10 (155) · d5: thanh có khối lượng, có phản lực bản lề → quy tắc moment | Máy lí tưởng: bỏ ma sát, bỏ khối lượng ròng rọc, dây và đòn <br> Kéo đều (hoặc rất chậm) <br> Dây không dãn | Có ma sát hay ròng rọc nặng: lực kéo lớn hơn, nhưng tỉ số quãng đường vẫn giữ (do hình học) → dùng H = P·h/(F·s) <br> Palăng: đếm **số đoạn dây đỡ ròng rọc động** chứ không đếm số ròng rọc; hệ mỗi ròng rọc động treo bằng một dây riêng thì lợi 2ⁿ lần, không phải 2n <br> Lực kéo xiên góc với dây hay với mặt nghiêng thì chỉ thành phần dọc đường đi sinh công |
+| **Hai đường trên một hình** (đồ thị x–t) | Vẽ hai chuyển động lên cùng hệ trục x–t: giao điểm là lúc và chỗ gặp nhau, khoảng cách dọc giữa hai đường là khoảng cách hai xe | CĐ13 (162) · d2 hai xe ngược chiều, đuổi kịp; d5 đọc đồ thị <br> Bài đã đủ 2 💡 → dùng ở lý thuyết và ✓ Soát nhanh, không gắn `meo` | Chuyển động thẳng, đều trên từng đoạn (mỗi đoạn một đoạn thẳng) <br> Hai xe đi trên cùng một đường thẳng <br> Hai xe chung gốc toạ độ, chung gốc thời gian, chung chiều dương | Đồ thị x–t không phải hình dạng đường đi <br> Xe xuất phát trễ thì đường bắt đầu ở t₀, không ở gốc <br> Đoạn nằm ngang là đứng yên, đoạn dốc xuống là đi ngược chiều dương <br> Đề cho đồ thị v–t: giao điểm là lúc hai xe **cùng tốc độ**, không phải gặp nhau |
+
+### C. 📈 Đọc hình — quy trình 4 bước cho mọi câu có đồ thị, biểu đồ, bản đồ
+
+1. **Trục**: mỗi trục là đại lượng gì, đơn vị gì, có hệ số ghi ở đầu trục không (×10³, kW hay W, phút hay giây).
+2. **Ô**: một ô nhỏ ứng với bao nhiêu trên mỗi trục (hai trục thường khác nhau).
+3. **Cần gì**: giá trị tại một điểm, độ dốc, diện tích dưới đường, hay giao điểm. Ghi ra trước khi đọc số.
+4. **Đọc và ghi**: điểm không trúng vạch thì nội suy giữa hai vạch gần nhất, ghi dấu ≈ và giữ 2 chữ số có nghĩa; đề chấm theo khoảng nên nêu cách đọc trong bài làm.
+
+| Loại hình | Đọc được gì | Chuyên đề · dạng | Chỗ dễ sai |
+|---|---|---|---|
+| Toạ độ – thời gian (x–t) | Độ dốc = vận tốc; giao điểm = gặp nhau | 162 · d5 | Xem hàng "Hai đường trên một hình" |
+| Vận tốc – thời gian (v–t) | Diện tích dưới đường = quãng đường | 160 · d4 | Lấy v cuối nhân t thay cho diện tích; quên đổi phút sang giờ |
+| U–I | Đường thẳng qua gốc: R = U/I (điểm nào cũng được) | 159 · d4, 160 · d3 | Trục đảo thành I–U thì độ dốc là 1/R <br> Đường cong (bóng đèn): R = U/I tại từng điểm, không lấy độ dốc tiếp tuyến |
+| Nhiệt độ – thời gian | Đoạn nằm ngang = đang chuyển thể; đoạn dốc: độ dốc tỉ lệ P/(mc) khi công suất nhận nhiệt không đổi và bỏ qua hao phí | 153 · d3 | Xem cột sai của Thang máy dừng tầng (đoạn ngang vẫn nhận nhiệt) |
+| Năng lượng – độ cao | W_t là đường thẳng qua gốc (khi mốc thế năng ở h = 0), độ dốc mg; W_đ = W − W_t | 166 · d6 | Có ma sát thì đường cơ năng W không nằm ngang; đọc W_đ bằng hiệu hai đường, không đọc thẳng |
+| Dao động kí của âm | Số ô một chu kì × thời gian mỗi ô = T, rồi f = 1/T; biên độ lớn = âm to | 150 · d2 | Đếm số đỉnh thay cho số khoảng giữa các đỉnh; nhầm ô ngang (thời gian) với ô dọc |
+| Biểu đồ công suất (tua-bin gió, pin Mặt Trời) | Giá trị tại điểm, nội suy giữa hai mốc | Chưa có dạng nào kèm biểu đồ (163·d3, d4 hiện chỉ cho số trong lời đề) → khi soạn lại 163 nên thêm một dạng đọc biểu đồ | Quan hệ không tuyến tính (tua-bin gió: P tỉ lệ D², tỉ lệ v³, chỉ trong khoảng từ gió khởi động tới gió định mức; trên đó công suất giữ ở mức định mức, gió quá mạnh thì dừng máy): nội suy thẳng giữa hai mốc xa bị lệch → chỉ nội suy giữa hai mốc sát nhau, soát lại bằng tỉ số |
+| Bản đồ, sơ đồ tuyến | Quãng đường theo thước tỉ lệ; số chặng, số lần dừng | Chưa có dạng nào (162·d1 không có sơ đồ tuyến) → ứng viên cho bài tự luận kiểu đề thật | Tuyến thẳng, đi một chiều từ ga đầu tới ga cuối: n ga có n − 1 chặng và n − 2 lần dừng ở ga giữa (đếm khoảng, không đếm cọc); tuyến vòng thì n chặng <br> Tốc độ trung bình "có tính lúc dừng" và "không tính" chia cho hai thời gian khác nhau |
+| Giấy ô li dựng ảnh | Vị trí, độ cao ảnh theo số ô | 156 · d1 | Chưa đổi ô ra cm; vẽ tia không qua đúng quang tâm hay tiêu điểm |
+
+### D. ✓ Soát nhanh — ví dụ theo 4 kiểu đã có (không thêm kiểu mới)
+
+| Kiểu | Chuyên đề · dạng | Câu soát |
+|---|---|---|
+| Cỡ số | 153 · d5 rót qua lại | Nhiệt độ sau mỗi lần rót nằm giữa hai nhiệt độ trước khi rót |
+| Cỡ số | 157 · d1, d4 (cụm thuần nối tiếp hoặc thuần song song) | R tương đương của cụm song song nhỏ hơn điện trở nhỏ nhất trong cụm; cụm nối tiếp lớn hơn điện trở lớn nhất <br> Chỉ tính các điện trở còn dòng chạy qua (điện trở bị khoá K nối tắt thì loại ra); không áp cho mạch cầu |
+| Cỡ số | 163, 165 · hiệu suất | Hiệu suất < 100 %; chuỗi nhiều khâu thì hiệu suất chung nhỏ hơn khâu thấp nhất |
+| Giới hạn | 165 · d5 cực đại công suất trên biến trở | R_b → 0 và R_b → ∞ đều cho P → 0, nên cực đại nằm ở giữa: tại R_b = R₀ khi R₀ mắc nối tiếp với biến trở <br> Biến trở không chạy tới R₀ (R_max < R₀) thì cực đại ở đầu mút R_max <br> Có điện trở mắc song song với biến trở thì thay R₀ bằng điện trở tương đương nhìn từ hai đầu biến trở |
+| Giới hạn | 154 · d5 cục đá tan | Đá nguyên chất nổi trong nước ngọt tan hết: mực nước không đổi <br> Đá chứa vật nhẹ hơn nước (sáp, gỗ, bọt khí): mực nước không đổi <br> Đá chứa vật nặng hơn nước (bi sắt): mực nước hạ <br> Đá nước ngọt nổi trong chất lỏng nặng hơn nước (nước muối): mực dâng <br> Bỏ qua nở vì nhiệt, nước không tràn |
+| Dấu và chiều | 156 · d2–d4 thấu kính | Vật thật trước thấu kính phân kì: ảnh luôn ảo, ảnh thẳng (không lộn ngược), nhỏ hơn vật, nằm trong khoảng tiêu cự <br> Vật dịch **dọc trục chính**: ảnh qua thấu kính dịch cùng hướng với vật; qua gương phẳng (vật dịch vuông góc mặt gương) thì ảnh dịch ngược hướng <br> Vật dịch ngang trục chính: xét theo độ phóng đại (ảnh thật ngược chiều thì dịch ngược hướng) |
+| Đơn vị | 159 · d1 R = ρl/S | S đổi mm² → m² (×10⁻⁶) trước khi thế; soát Ω·m·m/m² = Ω |
+
+### E. Thứ tự làm (theo hạn bật Hiện ở `scripts/data/btvn-hsg9/lich-soan-bai.md`)
+
+1. CĐ05 (165), hạn 12/12: Mắt xích yếu nhất ở d4, ✓ Giới hạn ở d5.
+2. CĐ14 (158), CĐ06 (151), CĐ17 (178), hạn 26/12: Gấp giấy qua gương + Bóng dưới đèn đường cho 158 (đủ 2 💡). 151 và 178 không đặt 💡; bảng C và D **chưa có hàng** cho hai bài này → thêm hàng ✓/📈 trước khi soạn.
+3. CĐ07 (156), hạn 02/01: ✓ Dấu và chiều, 📈 giấy ô li.
+4. CĐ08 (152), CĐ09 (163), CĐ15 (150), hạn 16/01: 📈 cho 163 và 150; 152 dùng ⚖ Lập tỉ số (hàng hao phí truyền tải).
+5. Bài đang Hiện (154, 155, 161, 157): Phần chìm theo tỉ số (154·d3), Lợi lực thiệt đường (161·d5), Chập điểm cùng điện thế (157·d5) — làm sau, ghi DB ngoài giờ học sinh.
