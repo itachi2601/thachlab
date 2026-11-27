@@ -1,7 +1,7 @@
 {
   "id": "tn-l10-dt-dctg-02",
   "ten": "Đi bộ trên thước dây: vẽ đồ thị d–t bằng bước chân",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-dt-dctg-02-20261110.mp4",
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-dt-dctg-02-20261127.mp4",
   "tong_giay": 49.9,
   "o": [
     {
@@ -13,31 +13,31 @@
     {
       "khoa": "du_doan",
       "giay": 3.8,
-      "chu": "Đoạn 1, đoạn 2 đã vẽ. Đoạn 3 (bước nhanh về vạch 0) vẽ ra đường nào?"
+      "chu": "Đoạn 1 (đi chậm ra 5 m trong 5 s), đoạn 2 (đứng 3 s) đã vẽ. Đoạn 3: bước nhanh về vạch 0. Đường đoạn 3 thế nào?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 10.8,
-      "chu": "Thước dây 10 m, đồng hồ bấm giây, giấy kẻ ô; chấm điểm (t, d) mỗi giây."
+      "giay": 9.5,
+      "chu": "Thước dây, đồng hồ bấm giây, giấy kẻ ô."
     },
     {
       "khoa": "quan_sat",
-      "giay": 23.5,
-      "chu": "Đoạn 1 xiên lên thoải, đoạn 2 nằm ngang, đoạn 3 xiên xuống dốc hơn, về d = 0."
+      "giay": 17.7,
+      "chu": "Đoạn 1 xiên lên thoải, đoạn 2 nằm ngang, đoạn 3 xiên xuống, về d = 0. Đi 5 m: đoạn 1 mất 5 s, đoạn 3 chỉ 2,5 s."
     },
     {
       "khoa": "rut_ra",
-      "giay": 31.1,
-      "chu": "Độ dốc từng đoạn: 1 m/s; 0; −2 m/s."
+      "giay": 28.3,
+      "chu": "Độ dốc là vận tốc: đi ra 5 m / 5 s = 1 m/s; quay về −5 m / 2,5 s = −2 m/s. Đường đi xuống là d giảm, không phải xuống dốc."
     },
     {
       "khoa": "chua_noi",
-      "giay": 36.6,
-      "chu": "Lúc bắt đầu đi, lúc dừng: góc gãy thật bo tròn ra sao? Số liệu là mô hình, chưa đo thật."
+      "giay": 39.0,
+      "chu": "Số liệu từ mô hình: lúc bắt đầu đi và lúc dừng, chỗ gãy thật bo tròn ra sao chưa đo."
     }
   ],
   "dung_dua": {
-    "giay": 10.6,
+    "giay": 9.35,
     "cau_hoi": "Bạn A đi chậm ra vạch 5 m (5 s), đứng 3 s, rồi bước nhanh về vạch 0 (2,5 s). Đoạn 3 (quay về) vẽ ra đường nào trên đồ thị d–t?",
     "chon": [
       "A. Xiên lên, dốc hơn đoạn 1",
@@ -48,5 +48,22 @@
     "dung": 1,
     "giai_thich_dung": "Quay về thì d giảm nên đường đi xuống; về nhanh (2 m/s) hơn lúc đi ra (1 m/s) nên dốc hơn đoạn 1.",
     "giai_thich_sai": "Xem đoạn kế: quay về làm d giảm từ 5 m về 0 nên đường đi xuống; 5 m chỉ mất 2,5 s nên dốc hơn đoạn 1 (5 m trong 5 s)."
+  },
+  "cau_chot": {
+    "giay": 44.8,
+    "cau_hoi": "Lượt khác: bạn A đi từ vạch 0 ra vạch 4 m, rồi quay lại dừng ở vạch 2 m. Quãng đường bạn A đi được là bao nhiêu?",
+    "chon": [
+      "A. 2 m",
+      "B. 4 m",
+      "C. 6 m",
+      "D. 8 m"
+    ],
+    "dung": 2,
+    "giai_thich": [
+      "2 m là độ dịch chuyển (điểm cuối trừ điểm đầu). Quãng đường cộng độ dài từng đoạn: đi ra 4 m, quay về 2 m, s = 4 + 2 = 6 m.",
+      "4 m là chỗ xa nhất bạn A tới. Đoạn quay về 2 m vẫn là đoạn đã đi, phải cộng thêm: s = 4 + 2 = 6 m.",
+      "Chia hành trình thành hai đoạn: đi ra 4 m (vạch 0 → 4 m), quay về 2 m (vạch 4 m → 2 m). Quãng đường s = 4 + 2 = 6 m.",
+      "8 m ứng với đi ra 4 m rồi về tận vạch 0. Bạn A chỉ về tới vạch 2 m, đoạn về dài 2 m: s = 4 + 2 = 6 m."
+    ]
   }
 }
