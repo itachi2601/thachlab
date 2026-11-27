@@ -10,11 +10,7 @@ LO=(tn-l11-coulomb-01 tn-l11-coulomb-02 tn-l11-cuong-do-dong-dien-02 tn-l11-dien
   tn-l11-dien-truong-deu-02 tn-l11-dien-truong-deu-03 tn-l11-do-sdd-pin-01 tn-l11-do-sdd-pin-02 tn-l11-dotocdoam-01
   tn-l11-dotocdoam-03 tn-l11-nang-luong-dien-02 tn-l11-nang-luong-dien-03 tn-l11-nguon-dien-01 tn-l11-nguon-dien-02
   tn-l11-nguon-dien-03 tn-l11-the-nang-dien-01 tn-l11-tudien-01 tn-l11-tudien-02 tn-l11-tudien-03 tn-l12-tdhphantu-04)
-[ $# -gt 0 ] && LO=(tn-l11-coulomb-01 tn-l11-coulomb-02 tn-l11-cuong-do-dong-dien-02 tn-l11-dien-the-01 tn-l11-dien-the-02
-  tn-l11-dien-tro-ohm-01 tn-l11-dien-tro-ohm-02 tn-l11-dien-tro-ohm-03 tn-l11-dien-truong-02 tn-l11-dien-truong-deu-01
-  tn-l11-dien-truong-deu-02 tn-l11-dien-truong-deu-03 tn-l11-do-sdd-pin-01 tn-l11-do-sdd-pin-02 tn-l11-dotocdoam-01
-  tn-l11-dotocdoam-03 tn-l11-nang-luong-dien-02 tn-l11-nang-luong-dien-03 tn-l11-nguon-dien-01 tn-l11-nguon-dien-02
-  tn-l11-nguon-dien-03 tn-l11-the-nang-dien-01 tn-l11-tudien-01 tn-l11-tudien-02 tn-l11-tudien-03 tn-l12-tdhphantu-04)
+[ $# -gt 0 ] && LO=("$@")
 LOI=()
 for TN in "${LO[@]}"; do
   MP4="scripts/video-thi-nghiem/ra/$TN.mp4"
