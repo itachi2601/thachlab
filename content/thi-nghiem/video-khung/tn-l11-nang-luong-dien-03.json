@@ -1,52 +1,69 @@
 {
   "id": "tn-l11-nang-luong-dien-03",
   "ten": "Hai pin AA và hộp điện trở: đo hiệu suất nguồn",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-nang-luong-dien-03-20261031-2.mp4",
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-nang-luong-dien-03-20261127.mp4",
   "tong_giay": 49.6,
   "o": [
     {
       "khoa": "gia_thuyet",
       "giay": 0,
       "chu": "H = U/E = R/(R + r): R càng lớn so với r, H càng gần 1 nhưng không chạm.",
-      "kiem": "Đổi R thì hiệu suất pin thay đổi ra sao?"
+      "kiem": "Hiệu suất của pin phụ thuộc điện trở R ra sao?"
     },
     {
       "khoa": "du_doan",
-      "giay": 4.6,
-      "chu": "Lần lượt đặt R = 1,0; 2,0; 4,0; 9,0 Ω. Ở R nào, hiệu suất H của pin lớn nhất?"
+      "giay": 3.6,
+      "chu": "Đặt R = 1,0 Ω, bằng r của pin. Hiệu suất H khoảng bao nhiêu?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 10.7,
+      "giay": 9.5,
       "chu": "Hai pin AA (E = 3,0 V, r = 1,0 Ω), hộp điện trở R, ampe kế nối tiếp, vôn kế song song với R, khoá K."
     },
     {
       "khoa": "quan_sat",
-      "giay": 20.0,
-      "chu": "R tăng: I giảm, U tăng; H = U/E: 0,50 → 0,667 → 0,80 → 0,90."
+      "giay": 21.7,
+      "chu": "R = 1,0 → 9,0 Ω: I giảm 1,50 → 0,30 A, U tăng 1,50 → 2,70 V, H = U/E tăng 0,50 → 0,90."
     },
     {
       "khoa": "rut_ra",
-      "giay": 24.2,
-      "chu": "Bốn điểm nằm trên đường H = R/(R + r). Luôn có r > 0 (hao phí I²r trong pin) nên H không chạm 1 (100 phần trăm)."
+      "giay": 30.1,
+      "chu": "Một phần E luôn mất trên r (toả nhiệt trong pin), nên H = R/(R + r) luôn dưới 1; R lớn thì H gần 1."
     },
     {
       "khoa": "chua_noi",
-      "giay": 37.0,
-      "chu": "Chưa biết đo r của pin thế nào; pin dùng lâu thì E, r có đổi không. Lưu ý: R = r cho P = UI lớn nhất, nhưng H chỉ 0,50."
+      "giay": 38.7,
+      "chu": "Chưa đo được r của pin; pin dùng lâu thì E và r đổi thế nào."
     }
   ],
   "dung_dua": {
-    "giay": 10.55,
-    "cau_hoi": "Lần lượt đặt R = 1,0; 2,0; 4,0; 9,0 Ω. Ở R nào, hiệu suất H của pin lớn nhất?",
+    "giay": 9.35,
+    "cau_hoi": "Hai pin AA (E = 3,0 V, r = 1,0 Ω) nối với hộp điện trở. Đặt R = 1,0 Ω, bằng r. Hiệu suất H của pin khoảng bao nhiêu?",
     "chon": [
-      "A. R = 1,0 Ω (bằng r)",
-      "B. R = 2,0 Ω",
-      "C. R = 9,0 Ω",
-      "D. Như nhau ở cả bốn giá trị R"
+      "A. Khoảng 100 %",
+      "B. Khoảng 75 %",
+      "C. Khoảng 50 %",
+      "D. Khoảng 25 %"
     ],
     "dung": 2,
-    "giai_thich_dung": "H đo được 50 %; 66,7 %; 80 %; 90 %: R càng lớn so với r = 1,0 Ω thì phần hao phí trong pin càng nhỏ, H = R/(R + r) càng gần 100 %.",
-    "giai_thich_sai": "R = r là lúc công suất mạch ngoài P = UI lớn nhất (2,25 W), không phải lúc H lớn nhất; khi đó H chỉ 50 %. H = U/E đi theo U, mà U tăng khi R tăng."
+    "giai_thich_dung": "Đo được U = 1,50 V trong khi E = 3,0 V, nên H = U/E = 50 %: nửa kia toả nhiệt ngay trong pin vì R bằng r.",
+    "giai_thich_sai": "Vôn kế chỉ U = 1,50 V, E = 3,0 V, nên H = U/E = 50 %. R bằng r thì năng lượng chia đôi: nửa ra mạch ngoài, nửa toả nhiệt trong pin."
+  },
+  "cau_chot": {
+    "giay": 44.7,
+    "cau_hoi": "Thay bằng hai pin rất cũ có r = 3,0 Ω (E vẫn 3,0 V), vẫn đặt R = 9,0 Ω. Hiệu suất H của pin khoảng:",
+    "chon": [
+      "A. 90 %",
+      "B. 75 %",
+      "C. 25 %",
+      "D. 33 %"
+    ],
+    "dung": 1,
+    "giai_thich": [
+      "90 % là của pin r = 1,0 Ω trong bảng. Pin cũ có r = 3,0 Ω nên phần mất trong pin lớn hơn: H = R/(R + r) = 9,0/12 = 75 %.",
+      "H = R/(R + r) = 9,0/(9,0 + 3,0) = 0,75 = 75 %. Kiểm: I = 3,0/12 = 0,25 A, U = 0,25 · 9,0 = 2,25 V, U/E = 2,25/3,0 = 75 %.",
+      "25 % = r/(R + r) là phần năng lượng mất trong pin, không phải hiệu suất. Hiệu suất là phần còn lại: 9,0/12 = 75 %.",
+      "33 % = r/R, không phải công thức nào. Hiệu suất là R/(R + r) = 9,0/12 = 75 %."
+    ]
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": "tn-l11-tudien-01",
   "ten": "Tụ, pin và đèn LED mắc nối tiếp",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-tudien-01-20261116.mp4",
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-tudien-01-20261127.mp4",
   "tong_giay": 49.8,
   "o": [
     {
@@ -12,33 +12,33 @@
     },
     {
       "khoa": "du_doan",
-      "giay": 4.2,
-      "chu": "Đóng khoá K, pin vẫn nối mãi. Đèn LED sẽ thế nào?"
+      "giay": 3.6,
+      "chu": "Đóng K, pin vẫn nối mãi. Đèn LED sẽ thế nào?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 10.9,
-      "chu": "Pin 9 V, tụ 1000 μF, LED, điện trở 1 kΩ."
+      "giay": 10.1,
+      "chu": "Pin 9 V, tụ 1000 μF, LED, khoá K."
     },
     {
       "khoa": "quan_sat",
-      "giay": 16.5,
-      "chu": "Pin vẫn nối: LED loé rồi tắt hẳn."
+      "giay": 17.6,
+      "chu": "Còn pin: LED loé rồi tắt. Tháo pin: LED loé lại."
     },
     {
       "khoa": "rut_ra",
-      "giay": 22.3,
-      "chu": "Dòng giảm dần, LED tối. Nối tụ với LED đảo chiều: LED loé lại rồi mờ dần. Tụ giữ rồi phóng điện tích."
+      "giay": 26.4,
+      "chu": "Tụ giữ điện tích rồi phóng ra được; dòng phóng ngược chiều dòng nạp."
     },
     {
       "khoa": "chua_noi",
-      "giay": 31.5,
-      "chu": "Vì sao dòng về 0 dù pin còn nối? Tụ giữ bao nhiêu điện tích?"
+      "giay": 38.0,
+      "chu": "Vì sao dòng về 0 dù pin còn nối? Tụ giữ được bao nhiêu điện tích?"
     }
   ],
   "dung_dua": {
-    "giay": 10.8,
-    "cau_hoi": "Đóng khoá K, pin vẫn nối mãi. Đèn LED sẽ thế nào?",
+    "giay": 9.6,
+    "cau_hoi": "Pin 9 V, tụ 1000 μF và đèn LED mắc nối tiếp. Đóng khoá K, pin vẫn nối mãi. Đèn LED sẽ thế nào?",
     "chon": [
       "A. Sáng đều suốt lúc pin còn nối",
       "B. Loé lên rồi tắt hẳn",
@@ -46,7 +46,24 @@
       "D. Không sáng lúc nào"
     ],
     "dung": 1,
-    "giai_thich_dung": "Clip chiếu dòng qua LED giảm dần rồi LED tối dù pin vẫn nối; sau đó tháo pin, nối tụ với LED đảo chiều thì LED loé lại.",
-    "giai_thich_sai": "Xem cảnh kết quả: nhìn độ sáng LED từ lúc đóng khoá tới khi pin vẫn nối, rồi so với lúc nối tụ vào LED."
+    "giai_thich_dung": "Clip chiếu dòng qua LED giảm dần về 0 rồi LED tối dù pin vẫn nối; tháo pin, nối tụ với LED đảo chiều thì LED loé lại.",
+    "giai_thich_sai": "Xem cảnh Tiến hành: nhìn độ sáng LED và đồ thị dòng điện từ lúc đóng khoá, trong khi pin vẫn nối."
+  },
+  "cau_chot": {
+    "giay": 42.1,
+    "cau_hoi": "Thay tụ 1000 μF bằng tụ 2200 μF, vẫn pin 9 V và cùng đèn LED (điện trở 1 kΩ). Lúc nạp, LED loé lâu gấp khoảng mấy lần so với khi dùng tụ 1000 μF?",
+    "chon": [
+      "A. Bằng như cũ, vì vẫn pin 9 V",
+      "B. Lâu hơn khoảng 2,2 lần",
+      "C. Lâu hơn khoảng 4,8 lần",
+      "D. Ngắn hơn, chỉ còn khoảng 0,45 lần"
+    ],
+    "dung": 1,
+    "giai_thich": [
+      "Pin quyết định dòng lúc đầu (U/R như cũ), không quyết định thời gian loé. Tụ 2200 μF chứa được nhiều điện tích hơn ở cùng 9 V, nên phải nạp lâu hơn.",
+      "Cùng 9 V, tụ 2200 μF chứa gấp 2,2 lần điện tích (Q = CU). Dòng lúc đầu vẫn bằng U/R như cũ, nên dòng cần lâu hơn khoảng 2,2 lần mới giảm tới mức LED tắt (theo mô hình, thời gian nạp tỉ lệ R·C).",
+      "4,8 lần là bình phương 2,2 (nhầm với năng lượng ½CU²). Điện tích cần nạp chỉ tăng theo C, tức 2,2 lần.",
+      "Tụ lớn hơn không nạp nhanh hơn: cùng hiệu điện thế, nó chứa nhiều điện tích hơn nên LED loé lâu hơn, không ngắn hơn."
+    ]
   }
 }
