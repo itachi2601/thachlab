@@ -1,7 +1,7 @@
 # Clip: tn-l11-coulomb-02 - Can dien tu do luc Coulomb theo khoang cach (ban 3 cong moi, 27/11/2026)
 # So lieu lay nguyen tu content/thi-nghiem/tn-l11-coulomb-02.json (kho ghi "khong phai so do that" -> nhan "mô phỏng"):
 #   so_lieu_mau (r cm, so can g, F.r2 10^-6 N.m2): 2 0,92 3,61 ; 3 0,41 3,62 ; 4 0,23 3,61 ; 5 0,15 3,68 ; 6 0,10 3,53
-#   tham_so: r 2-8 cm (cau chot dung r = 8 cm, KHONG hien so can o 8 cm; do thi chi toi r = 7 truc, diem toi r = 6).
+#   tham_so: r 2-8 cm, q 5-40 nC (cau chot 27/11 v2: giu r = 2 cm, q moi qua 20 -> 40 nC: F x 4 -> 0,92 x 4 = 3,7 g, KHONG hien).
 #   Tu suy (mo hinh kho F.r2 = 3,6e-6): o r = 8 cm so can = 3,6e-6/(9,8e-3 . 64e-4) = 0,057 g -> can chi 0,06 g = dap so chot.
 #   Bay (tu suy): doc so can la luc; o r = 3 cm 0,41 g -> F = 0,41e-3 . 9,8 = 4,0e-3 N (khong dung cap 2 -> 4 cua Du doan).
 #   Khong ghi 20 nC: qua cau ve ban kinh 0,68 cm -> chi ve dau (+) tren hai qua.
@@ -18,7 +18,7 @@ def _kiem_so():
     k = json.load(open(os.path.join(HERE, "..", "..", "content", "thi-nghiem", "tn-l11-coulomb-02.json")))
     assert [tuple(r) for r in k["so_lieu_mau"]["hang"]] == ROWS
     assert abs(0.41e-3 * 9.8 - 4.0e-3) < 0.05e-3                         # bay
-    assert round(3.6e-6 / (9.8e-3 * 0.08 ** 2), 2) == 0.06                 # dap so chot (khong hien)
+    assert round(0.92 * 4, 1) == 3.7                                        # dap so chot (khong hien): q1q2 x 4
     for (r1, m1, _), (r2, m2, _) in ((ROWS[0], ROWS[2]), (ROWS[1], ROWS[4])):
         assert r2 == 2 * r1 and abs(m1 / m2 - 4) < 0.25                     # hai cap r x 2 -> so can chia ~4
 _kiem_so()
@@ -197,48 +197,47 @@ def s_dapan(img, d, t, sc):
         pill(d, "RÚT RA", y + 65, kr, ORANGE)
         text(d, (W / 2, y + 180), "F tỉ lệ nghịch với r²", 64, INK, alpha=kr)
 
-# ---------------- canh 4: Bay roi Chua noi duoc ----------------
+# ---------------- canh 4: Bay (hai cot sai | dung, nhip 0 / 3,0) roi Chua noi duoc (M1-0,1) ----------------
 def s_bay(img, d, t, sc):
     M = sc["M"]
     k2 = appear(t, M[1] - 0.1, 0.45)
-    a1 = appear(t, 0.2, 0.45) * (1 - k2)
+    a1 = appear(t, 0.0, 0.2) * (1 - k2)
     rig(d, 3, "0,41 g", rlabel=False, force=True)
+    y0 = 1040
     if a1 > 0:
-        y0 = 1040
         card(d, (40, y0, 1040, y0 + 540), fill=A(WHITE, a1), outline=A(DRED, a1), w=6)
         pill(d, "BẪY", y0 + 65, a1, DRED)
-        q = "“F = 0,41 N”"
-        ks = clamp((t - 1.4) / 0.4); f = F(64); lw = tw(d, q, f); yy = y0 + 180
-        text(d, (W / 2, yy), q, 64, mix(DRED, GRAY, ks), alpha=a1)
-        if ks > 0: d.line([(W / 2 - lw / 2 - 6, yy + 2), (W / 2 - lw / 2 - 6 + (lw + 12) * ks, yy + 2)], fill=A(DRED, a1), width=6)
-        ka = a1 * appear(t, 2.3, 0.45)
-        if ka > 0:
-            text(d, (220, y0 + 330), "0,41 g", 66, INK, alpha=ka)
-            arrow(d, (360, y0 + 330), (640, y0 + 330), A(DGREEN, ka), w=7, head=22)
-            text(d, (500, y0 + 270), "×10⁻³ ×9,8", 56, DGREEN, alpha=ka)
-            text(d, (835, y0 + 330), "4,0·10⁻³ N", 62, DGREEN, alpha=ka)
-            text(d, (W / 2, y0 + 450), "✓ đổi kg, nhân g", 58, DGREEN, alpha=ka)
+        d.line([(540, y0 + 130), (540, y0 + 510)], fill=A(LIGHT, a1), width=4)
+        cxl, cxr = 290, 790                         # cot trai: cach doc sai (hien ngay) ; cot phai: doi don vi (nhip 2)
+        text(d, (cxl, y0 + 190), "✗ F = 0,41 N", 60, DRED, alpha=a1)
+        text(d, (cxl, y0 + 300), "lấy số cân", 56, INK, alpha=a1)
+        text(d, (cxl, y0 + 370), "làm lực", 56, INK, alpha=a1)
+        kc = a1 * appear(t, 3.0, 0.4)
+        if kc > 0:
+            d.rectangle([548, y0 + 135, 1030, y0 + 510], fill=A((236, 253, 243), kc))
+            text(d, (cxr, y0 + 190), "✓ 0,41 gam", 60, DGREEN, alpha=kc)
+            text(d, (cxr, y0 + 280), "= 4,1·10⁻⁴ kg", 56, INK, alpha=kc)
+            text(d, (cxr, y0 + 360), "× 9,8 m/s²", 56, INK, alpha=kc)
+            text(d, (cxr, y0 + 445), "≈ 4,0·10⁻³ N", 60, DGREEN, alpha=kc)
     if k2 > 0:
-        y0 = 1040 + (1 - k2) * 30
         card(d, (40, y0, 1040, y0 + 540), fill=A(WHITE, k2), outline=A(NAVY, k2), w=6)
         pill(d, "CHƯA NÓI ĐƯỢC", y0 + 65, k2, NAVY)
-        text(d, (W / 2, y0 + 210), "Hai cầu khác dấu?", 62, INK, alpha=k2)
-        kb = k2 * appear(t, M[1] + 2.2, 0.45)
-        text(d, (W / 2, y0 + 360), "r rất nhỏ thì sao?", 62, INK, alpha=kb)
+        text(d, (W / 2, y0 + 250), "Hai cầu khác dấu: chưa đo.", 60, INK, alpha=k2)
 
-# ---------------- canh 5: THU NGHI (cau chot o khung: r = 8 cm -> 0,06 g) ----------------
+# ---------------- canh 5: THU NGHI (cau chot o khung: giu r = 2 cm, q moi qua gap doi -> 0,92 x 4 = 3,7 g) ----------------
 def s_end(img, d, t, sc):
     M = sc["M"]; k = appear(t, 0.15, 0.4)
     card(d, (40, 230, 1040, 1570), fill=A(WHITE, k), outline=A(ORANGE, k), w=6)
     pill(d, "THỬ NGHĨ", 305, k, ORANGE)
-    text(d, (W / 2, 470), "Ở r = 2 cm, cân chỉ 0,92 g.", 62, INK, alpha=k)
-    text(d, (W / 2, 570), "Nâng B lên r = 8 cm.", 62, INK, alpha=k)
-    text(d, (W / 2, 690), "Cân chỉ khoảng bao nhiêu?", 64, DORANGE, alpha=k)
-    seg_bar(d, 820, t, 1.0, sc["T"] - 0.2, ORANGE, k)
+    text(d, (W / 2, 455), "Ở r = 2 cm, cân chỉ 0,92 g.", 62, INK, alpha=k)
+    text(d, (W / 2, 545), "Giữ r, điện tích mỗi quả", 62, INK, alpha=k)
+    text(d, (W / 2, 625), "tăng gấp đôi.", 62, INK, alpha=k)
+    text(d, (W / 2, 725), "Cân chỉ bao nhiêu?", 64, DORANGE, alpha=k)
+    seg_bar(d, 830, t, 1.0, sc["T"] - 0.2, ORANGE, k)
     kh = appear(t, M[0] + 3.0, 0.5)
     if kh > 0:
-        card(d, (110, 1000, 970, 1140), fill=A((255, 247, 237), kh), outline=A(ORANGE, kh), r=24, w=4)
-        text(d, (W / 2, 1070), "Gợi ý: r gấp mấy lần?", 60, DORANGE, alpha=kh)
+        card(d, (60, 1000, 1020, 1140), fill=A((255, 247, 237), kh), outline=A(ORANGE, kh), r=24, w=4)
+        text(d, (W / 2, 1070), "Gợi ý: cái gì đổi?", 60, DORANGE, alpha=kh)
 
 def _cues(clip):
     sc = {s["key"]: s for s in clip["scenes"]}
@@ -260,9 +259,9 @@ CLIP = dict(id="tn-l11-coulomb-02", header="VẬT LÍ 11 · THÍ NGHIỆM", foot
  dict(key="dapan", title="Kết quả", draw=s_dapan, tail=0.8, caps=[
    ("So hai lần đọc cân.", 4.2),
    ("Cặp 3 cm và 6 cm cũng vậy.", 4.8)]),
- dict(key="bay", title="Bẫy và giới hạn", draw=s_bay, tail=0.6, caps=[
-   ("Bẫy thường gặp.", 4.2),
-   ("Mới đo một cặp cùng dấu.", 4.6)]),
- dict(key="end", title="Chốt lại", draw=s_end, tail=0.6, caps=[
+ dict(key="bay", title="Bẫy và giới hạn", draw=s_bay, tail=0.4, caps=[
+   ("Bẫy thường gặp.", 5.8),
+   ("Giới hạn.", 3.6)]),
+ dict(key="end", title="Chốt lại", draw=s_end, tail=1.0, caps=[
    ("Dừng lại, tự tính.", 7.2)]),
 ])

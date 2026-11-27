@@ -1,8 +1,8 @@
 {
   "id": "tn-l11-dien-the-01",
   "ten": "Vôn kế trong khay nước muối: số chỉ ở mỗi điểm",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-dien-the-01-20261030-2.mp4",
-  "tong_giay": 49.2,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-dien-the-01-20261127.mp4",
+  "tong_giay": 49.6,
   "o": [
     {
       "khoa": "gia_thuyet",
@@ -12,32 +12,32 @@
     },
     {
       "khoa": "du_doan",
-      "giay": 4.2,
+      "giay": 3.6,
       "chu": "Dời que đỏ song song với lá đồng, số chỉ vôn kế thay đổi thế nào?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 10.8,
-      "chu": "Hai lá đồng cách 10 cm, nguồn 6,0 V. Que đen chạm lá âm, que đỏ nhúng cách lá âm x."
+      "giay": 10.4,
+      "chu": "Hai lá đồng cách 10 cm, nguồn 6,0 V."
     },
     {
       "khoa": "quan_sat",
-      "giay": 19.4,
-      "chu": "Số chỉ tăng theo x: 1,18; 2,43; 3,57; 4,84 V. Dời ngang ở 4 cm: vẫn 2,43 V."
+      "giay": 18.0,
+      "chu": "x = 2; 4; 6; 8 cm: số chỉ 1,18; 2,43; 3,57; 4,84 V. Dời ngang ở 4 cm: vẫn 2,43 V."
     },
     {
       "khoa": "rut_ra",
-      "giay": 26.6,
+      "giay": 26.2,
       "chu": "Song song lá đồng: cùng điện thế.\nV giảm theo chiều đường sức; V/x ≈ U/d = 60 V/m."
     },
     {
       "khoa": "chua_noi",
-      "giay": 36.7,
-      "chu": "Sát mép lá, đường sức cong: chưa đo. Muối không đều: chưa thử."
+      "giay": 36.9,
+      "chu": "Sát mép lá, đường sức cong: chưa đo. Mới đo một khay nước muối."
     }
   ],
   "dung_dua": {
-    "giay": 10.3,
+    "giay": 9.8,
     "cau_hoi": "Dời que đỏ song song với lá đồng, số chỉ vôn kế…",
     "chon": [
       "A. tăng dần",
@@ -48,5 +48,22 @@
     "dung": 2,
     "giai_thich_dung": "Dời ngang ở x = 4 cm, số chỉ vẫn 2,43 V: mọi điểm cách lá âm như nhau có cùng điện thế, đường song song lá đồng là đường đẳng thế.",
     "giai_thich_sai": "Số chỉ chỉ đổi khi que đỏ lại gần hay ra xa lá âm, tức đi dọc đường sức. Xem đoạn kế: que đỏ dời ngang ở x = 4 cm."
+  },
+  "cau_chot": {
+    "giay": 41.4,
+    "cau_hoi": "Que đen chạm lá dương, que đỏ ở x = 9 cm (cách lá âm). Vôn kế chỉ khoảng…",
+    "chon": [
+      "A. +5,4 V",
+      "B. −0,6 V",
+      "C. +0,6 V",
+      "D. −5,4 V"
+    ],
+    "dung": 1,
+    "giai_thich": [
+      "5,4 V là điện thế que đỏ so với lá âm. Que đen giờ ở lá dương (6,0 V), không còn ở mốc 0 V.",
+      "Vôn kế chỉ V(đỏ) − V(đen) = 60 V/m · 0,09 m − 6,0 V = 5,4 − 6,0 = −0,6 V.",
+      "Độ lớn đúng nhưng que đỏ ở điện thế thấp hơn que đen, nên số chỉ phải âm.",
+      "Lấy nhầm điện thế que đỏ so với lá âm rồi đổi dấu; hiệu hai que chỉ cách nhau 1 cm dọc E."
+    ]
   }
 }

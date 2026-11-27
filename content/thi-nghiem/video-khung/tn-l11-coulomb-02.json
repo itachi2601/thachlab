@@ -2,7 +2,7 @@
   "id": "tn-l11-coulomb-02",
   "ten": "Cân điện tử đo lực đẩy giữa hai quả cầu",
   "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-coulomb-02-20261127.mp4",
-  "tong_giay": 48.7,
+  "tong_giay": 49.5,
   "o": [
     {
       "khoa": "gia_thuyet",
@@ -32,8 +32,8 @@
     },
     {
       "khoa": "chua_noi",
-      "giay": 35.2,
-      "chu": "Hai cầu khác dấu thì sao? Ở r rất nhỏ, quả cầu còn là điện tích điểm không?"
+      "giay": 37.0,
+      "chu": "Hai cầu khác dấu thì lực và số cân ra sao: chưa đo."
     }
   ],
   "dung_dua": {
@@ -50,20 +50,20 @@
     "giai_thich_sai": "Xem cảnh Kết quả: so số cân ở r = 2 cm với r = 4 cm, rồi lấy số lớn chia số nhỏ."
   },
   "cau_chot": {
-    "giay": 42.2,
-    "cau_hoi": "Ở r = 2 cm, cân chỉ 0,92 g. Nâng B lên r = 8 cm, điện tích hai quả giữ nguyên. Cân chỉ khoảng:",
+    "giay": 41.6,
+    "cau_hoi": "Ở r = 2 cm, cân chỉ 0,92 g. Giữ nguyên r, điện tích mỗi quả cầu tăng gấp đôi. Cân chỉ khoảng:",
     "chon": [
-      "A. 0,23 g",
-      "B. 0,12 g",
-      "C. 0,06 g",
-      "D. 0,00 g"
+      "A. 0,92 g",
+      "B. 1,84 g",
+      "C. 3,7 g",
+      "D. 0,23 g"
     ],
     "dung": 2,
     "giai_thich": [
-      "0,23 g là chia 4 vì r gấp 4 lần, tức coi lực tỉ lệ nghịch với r. Lực tỉ lệ nghịch với r² nên phải chia 4² = 16.",
-      "0,12 g là chia 8, không ứng với quy luật nào đã đo. r từ 2 cm lên 8 cm gấp 4 lần, lực giảm 4² = 16 lần.",
-      "r gấp 4 lần nên lực, tức số cân, giảm 4² = 16 lần: 0,92 : 16 ≈ 0,057 g, cân đọc 0,01 g nên chỉ khoảng 0,06 g.",
-      "Lực nhỏ đi nhiều nhưng chưa về 0: 0,92 : 16 ≈ 0,057 g, vẫn lớn hơn mức đọc 0,01 g của cân nên cân chỉ khoảng 0,06 g."
+      "Số cân không chỉ phụ thuộc r: lực đẩy còn tỉ lệ với tích hai điện tích, mà tích này đã đổi.",
+      "1,84 g là nhân 2, như thể chỉ một quả tăng điện tích. Cả hai quả cùng gấp đôi nên tích q₁q₂ gấp 4.",
+      "F tỉ lệ với q₁q₂; cả hai quả gấp đôi nên tích gấp 4, r giữ nguyên: 0,92 · 4 ≈ 3,7 g.",
+      "0,23 g là chia 4: nhầm hướng. Điện tích tăng thì lực đẩy tăng, số cân phải lớn hơn 0,92 g."
     ]
   }
 }

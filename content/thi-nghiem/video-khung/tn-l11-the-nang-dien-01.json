@@ -1,8 +1,8 @@
 {
   "id": "tn-l11-the-nang-dien-01",
   "ten": "Khay nước muối, hai lá đồng: thế năng của 1 C ở mỗi điểm",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-the-nang-dien-01-20261030-2.mp4",
-  "tong_giay": 48.4,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-the-nang-dien-01-20261127.mp4",
+  "tong_giay": 48.3,
   "o": [
     {
       "khoa": "gia_thuyet",
@@ -17,27 +17,27 @@
     },
     {
       "khoa": "dung_cu",
-      "giay": 10.4,
-      "chu": "Hai lá đồng cách 10,0 cm, nguồn 6,0 V. Vôn kế nối lá âm và que đo cách lá âm x."
+      "giay": 10.3,
+      "chu": "Hai lá đồng cách 10 cm, nguồn 6,0 V."
     },
     {
       "khoa": "quan_sat",
-      "giay": 18.2,
-      "chu": "Số chỉ tăng đều theo x: 1,18; 2,43; 3,57; 4,84 V."
+      "giay": 15.0,
+      "chu": "x = 2; 4; 6; 8 cm: số chỉ 1,18; 2,43; 3,57; 4,84 V."
     },
     {
       "khoa": "rut_ra",
-      "giay": 25.4,
+      "giay": 24.3,
       "chu": "Với 1 C, số vôn bằng số jun: thế năng tăng tỉ lệ x.\nE đều giữa hai lá: W = qEx, E ≈ 60 V/m."
     },
     {
       "khoa": "chua_noi",
-      "giay": 35.6,
-      "chu": "Vùng gần mép lá chưa đo. Lực lên 1 C không đo trực tiếp."
+      "giay": 35.7,
+      "chu": "Que chỉ dời giữa hai lá: vùng sát mép lá chưa đo."
     }
   ],
   "dung_dua": {
-    "giay": 10.0,
+    "giay": 9.7,
     "cau_hoi": "Đi từ lá âm sang lá dương, thế năng của 1 C (mốc ở lá âm)…",
     "chon": [
       "A. như nhau ở mọi điểm vì điện trường đều",
@@ -48,5 +48,22 @@
     "dung": 1,
     "giai_thich_dung": "Số chỉ vôn kế là thế năng của 1 C (mốc ở lá âm): 1,18; 2,43; 3,57; 4,84 V ở x = 2; 4; 6; 8 cm, tỉ số V/x gần như không đổi quanh 60 V/m.",
     "giai_thich_sai": "Xem bảng ở đoạn kế: so số chỉ ở x = 2 cm với x = 8 cm. Điện trường đều là lực như nhau ở mọi điểm, không phải thế năng như nhau."
+  },
+  "cau_chot": {
+    "giay": 40.6,
+    "cau_hoi": "Đổi mốc thế năng sang lá dương. Tại x = 2 cm (cách lá âm), thế năng của 1 C là…",
+    "chon": [
+      "A. +1,2 J",
+      "B. −4,8 J",
+      "C. +4,8 J",
+      "D. −1,2 J"
+    ],
+    "dung": 1,
+    "giai_thich": [
+      "1,18 J là thế năng khi mốc ở lá âm. Đổi mốc thì con số đổi theo.",
+      "Lá dương có W = 6,0 J khi mốc ở lá âm. Mốc mới ở lá dương: W = 1,18 − 6,0 ≈ −4,8 J.",
+      "Độ lớn đúng nhưng điểm x = 2 cm thấp hơn lá dương, nên W so với lá dương phải âm.",
+      "Đổi mốc là trừ đi thế năng của lá dương (6,0 J), không phải chỉ đổi dấu số 1,18 J."
+    ]
   }
 }

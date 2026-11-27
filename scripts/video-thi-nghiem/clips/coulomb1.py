@@ -180,41 +180,40 @@ def s_dapan(img, d, t, sc):
     M = sc["M"]
     ka = appear(t, 0.15, 0.4)
     pill(d, "ĐÁP ÁN: lăn về phía thước", 320, ka)
-    card(d, (40, 390, 1040, 780), fill=WHITE, outline=LIGHT, w=3)       # doi chung: thuoc CHUA co, giay nam yen
+    card(d, (40, 390, 1040, 780), fill=WHITE, outline=LIGHT, w=3)       # doi chung: thuoc CHUA co, giay + lon nam yen
     d.rectangle([60, 730, 1020, 758], fill=TABLE)
     ruler(d, 140, 560, charged=False, length=560)
     for i, (x, ph) in enumerate(PAPERS):
         pp = [(x - 19, 710), (x + 19, 710), (x + 19, 729), (x - 19, 729)]
         d.polygon(pp, fill=PAPER); d.line(pp + [pp[0]], fill=PAPER_D, width=3)
-    kc = appear(t, 2.3, 0.45)
-    if kc > 0:
-        card(d, (560, 640, 1000, 720), fill=A(WHITE, kc), outline=A(NAVY, kc), r=20, w=4)
-        text(d, (780, 680), "không hút", 56, NAVY, alpha=kc)
-    a1 = appear(t, M[1] - 0.1, 0.45)                # BAY: hinh khe ho tu giai thich
+    can(d, 830, 730 - 75, 75)                       # lon nam yen canh dau thuoc (khe 55 px)
+    text(d, (400, 470), "thước chưa cọ", 56, NAVY, alpha=ka)
+    text(d, (830, 470), "đều nằm yên", 56, NAVY, alpha=ka)
+    a1 = appear(t, M[1] - 0.1, 0.45)                # BAY nhip 1: cau sai + hinh khe ho (lon chua lan)
     if a1 <= 0: return
     y = 810 + (1 - a1) * 20
     card(d, (40, y, 1040, y + 750), fill=A(WHITE, a1), outline=A(DRED, a1), w=6)
     pill(d, "BẪY", y + 62, a1, DRED)
-    ks = clamp((t - M[1] - 1.3) / 0.4)
-    for j, q in enumerate(("“Phải chạm thước,", "lon mới nhiễm điện”")):
-        f = F(60); lw = tw(d, q, f); yy = y + 170 + j * 82
-        text(d, (W / 2, yy), q, 60, mix(INK, GRAY, ks), alpha=a1)
-        if ks > 0:
-            d.line([(W / 2 - lw / 2 - 6, yy + 2), (W / 2 - lw / 2 - 6 + (lw + 12) * ks, yy + 2)],
-                   fill=A(DRED, 0.85 * a1), width=6)
-    kp = appear(t, M[1] + 2.3, 0.45)                # hinh: lon lan toi, van con khe ho voi thuoc
-    if kp > 0:
-        yb = y + 640
-        d.rectangle([90, yb, 990, yb + 22], fill=A(TABLE, kp))
-        r2 = 75; cx = 280 + 110 * ease(clamp((t - M[1] - 2.3) / 1.6)); cy = yb - r2
-        can(d, cx, cy, r2, alpha=kp)
-        ruler(d, 640, cy, charged=False, length=300, alpha=kp)
-        gx0, gx1 = cx + r2 + 4, 636
-        if gx1 - gx0 > 30:
-            arrow(d, ((gx0 + gx1) / 2, cy - r2 - 18), (gx0, cy - r2 - 18), A(DRED, kp), w=5, head=16)
-            arrow(d, ((gx0 + gx1) / 2, cy - r2 - 18), (gx1, cy - r2 - 18), A(DRED, kp), w=5, head=16)
-        text(d, (560, y + 400), "không chạm", 56, DRED, alpha=kp)
-        text(d, (W / 2, yb + 75), "✓ vẫn lăn tới", 56, DGREEN, alpha=kp)
+    t2 = M[1] + 2.9                                  # nhip 2 (>= 3 s sau nhip 1): lon lan toi + gach cau sai + dau tick
+    ks = clamp((t - t2) / 0.4)
+    q = "“Phải chạm mới nhiễm điện”"
+    f = F(60); lw = tw(d, q, f); yy = y + 175
+    text(d, (W / 2, yy), q, 60, INK, alpha=a1)
+    if ks > 0:
+        d.line([(W / 2 - lw / 2 - 6, yy + 2), (W / 2 - lw / 2 - 6 + (lw + 12) * ks, yy + 2)], fill=A(DRED, a1), width=4)
+    yb = y + 600
+    d.rectangle([90, yb, 990, yb + 22], fill=A(TABLE, a1))
+    r2 = 75; cx = 280 + 110 * ease(clamp((t - t2) / 1.6)); cy = yb - r2
+    can(d, cx, cy, r2, alpha=a1)
+    ruler(d, 640, cy, charged=False, length=300, alpha=a1)
+    gx0, gx1 = cx + r2 + 4, 636
+    if gx1 - gx0 > 30:
+        arrow(d, ((gx0 + gx1) / 2, cy - r2 - 18), (gx0, cy - r2 - 18), A(DRED, a1), w=5, head=16)
+        arrow(d, ((gx0 + gx1) / 2, cy - r2 - 18), (gx1, cy - r2 - 18), A(DRED, a1), w=5, head=16)
+    text(d, (560, y + 330), "không chạm", 56, DRED, alpha=a1)
+    kt = appear(t, t2, 0.4)
+    if kt > 0:
+        text(d, (W / 2, yb + 75), "✓ vẫn lăn tới", 56, DGREEN, alpha=a1 * kt)
 
 # ---------------- canh 4: Rut ra (huong ung) + chua noi duoc ----------------
 SIGN_RULER, SIGN_NEAR, SIGN_FAR = -1, +1, -1
@@ -268,7 +267,7 @@ def s_end(img, d, t, sc):
     kh = appear(t, M[0] + 2.9, 0.5)
     if kh > 0:
         card(d, (90, 1060, 990, 1200), fill=A((255, 247, 237), kh), outline=A(ORANGE, kh), r=24, w=4)
-        text(d, (W / 2, 1130), "Gợi ý: electron dời đi đâu?", 58, DORANGE, alpha=kh)
+        text(d, (W / 2, 1130), "Gợi ý: thước đi xa, điều gì đổi?", 58, DORANGE, alpha=kh)
     seg_bar(d, 1300, t, 1.0, sc["T"] - 0.2, ORANGE, k)
 
 def _cues(clip):
@@ -276,7 +275,7 @@ def _cues(clip):
     h, do, da, rr, e = sc["hook"], sc["do"], sc["dapan"], sc["rutra"], sc["end"]
     return ([(h["t0"] + h["M"][1] - 0.2, "open"), (h["t0"] + h["T"] - 0.6, "ding")]
             + [(do["t0"] + 1.5, "tap"), (do["t0"] + do["M"][1] + 1.3, "tap")]
-            + [(da["t0"] + 0.15, "ding"), (da["t0"] + da["M"][1] + 1.3, "buzz"), (rr["t0"] + rr["M"][1], "tap"),
+            + [(da["t0"] + 0.15, "ding"), (da["t0"] + da["M"][1] - 0.1, "buzz"), (rr["t0"] + rr["M"][1], "tap"),
                (e["t0"] + 0.15, "open")])
 
 CLIP = dict(id="tn-l11-coulomb-01", header="VẬT LÍ 11 · THÍ NGHIỆM", footer="Lực Coulomb · thachlab.id.vn",
@@ -288,11 +287,11 @@ CLIP = dict(id="tn-l11-coulomb-01", header="VẬT LÍ 11 · THÍ NGHIỆM", foot
    ("Đưa thước lại gần giấy vụn.", 4.0),
    ("Rồi lại gần lon, không chạm.", 5.4)]),
  dict(key="dapan", title="Kết quả và bẫy", draw=s_dapan, tail=0.5, caps=[
-   ("Đối chứng: thước chưa cọ.", 4.0),
+   ("Đối chứng: không cọ thước.", 4.0),
    ("Bẫy thường gặp.", 5.6)]),
  dict(key="rutra", title="Vì sao lon bị hút?", draw=s_rutra, tail=0.6, caps=[
    ("Hai đầu lon trái dấu.", 3.0),
-   ("Đầu gần ở sát thước hơn.", 3.4),
+   ("Đầu gần sát thước hơn.", 3.4),
    ("Chỉ thấy hút: chưa đủ.", 3.4)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.6, caps=[
    ("Dừng lại, tự trả lời.", 7.2)]),
