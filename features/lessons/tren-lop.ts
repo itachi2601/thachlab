@@ -15,6 +15,7 @@ export const BAN_CHIEU_TREN_LOP: BanChieuTrenLop[] = [
   { lessonId: 40, slug: "l11-tu-dien", ten: "Vật lí 11 · Bài 21 · Tụ điện", ghiChu: "23 màn · cuối tiết đề 1216 (QR)" },
   { lessonId: 41, slug: "l11-cuong-do-dong-dien", ten: "Vật lí 11 · Bài 22 · Cường độ dòng điện", ghiChu: "22 màn · cuối tiết đề 1217 (QR)" },
   { lessonId: 42, slug: "l11-dien-tro-dinh-luat-ohm", ten: "Vật lí 11 · Bài 23 · Điện trở. Định luật Ohm", ghiChu: "24 màn · cuối tiết đề 1218 (QR)" },
+  { lessonId: 43, slug: "l11-nguon-dien", ten: "Vật lí 11 · Bài 24 · Nguồn điện", ghiChu: "23 màn · cuối tiết đề 1219 (QR)" },
   { lessonId: 15, slug: "l12-hat-nhan-mo-hinh-nguyen-tu", ten: "Vật lí 12 · Bài 14 · Hạt nhân và mô hình nguyên tử", ghiChu: "27 màn · cuối tiết đề 1191 (QR)" },
   { lessonId: 16, slug: "l12-nang-luong-lien-ket", ten: "Vật lí 12 · Bài 15 · Năng lượng liên kết", ghiChu: "24 màn · cuối tiết đề 1192 (QR)" },
   { lessonId: 17, slug: "l12-phan-hach-nhiet-hach", ten: "Vật lí 12 · Bài 16 · Phân hạch, nhiệt hạch", ghiChu: "24 màn · cuối tiết đề 1193 (QR)" },
