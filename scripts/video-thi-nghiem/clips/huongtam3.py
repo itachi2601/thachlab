@@ -132,8 +132,8 @@ def s_hook(img, d, t, sc):
     y0 = 1085 + (1 - k) * 30
     card(d, (40, y0, 1040, y0 + 500), fill=A(WHITE, k), outline=A(PURPLE, k), w=6)
     pill(d, W / 2, y0 + 70, "DỰ ĐOÁN", PURPLE, k)
-    for j, s1 in enumerate(("Giữ quả nặng, quay nhanh hơn.", "Kẹp đi lên hay xuống?")):
-        text(d, (W / 2, y0 + 190 + j * 85), s1, 60, PURPLE if j == 1 else INK, alpha=k)
+    for j, s1 in enumerate(("Giữ nguyên quả nặng,", "quay nút nhanh hơn.", "Kẹp đi lên hay xuống?")):
+        text(d, (W / 2, y0 + 165 + j * 75), s1, 58, PURPLE if j == 2 else INK, alpha=k)
     seg_bar(d, y0 + 400, t, M[1] + 0.4, sc["T"] - 0.3, PURPLE, k)
 
 # ---------------- canh 2: Tien hanh ----------------
@@ -205,9 +205,11 @@ def s_rutra(img, d, t, sc):
     if g > 0: arrow(d, (770, cy - 40), (770 - 330 * g, cy - 40), A(RED, k1), w=8, head=24)
     # cot Mg canh cot m.v^2/r (khong ghi so)
     card(d, (40, 1030, 1040, 1590), fill=WHITE, outline=LIGHT, w=3)
-    eqr(d, 300, 1100, "Mg (N)", 58, DRED, alpha=k1)
-    eqr(d, 740, 1100, "m·v^{2}/r (N)", 58, PURPLE, alpha=k1)
-    text(d, (130, 1180), "số quả", 55, INK, anchor="lm", alpha=k1)
+    eqr(d, 300, 1080, "Mg (N)", 58, DRED, alpha=k1)
+    eqr(d, 740, 1080, "m·v^{2}/r (N)", 58, PURPLE, alpha=k1)
+    text(d, (300, 1150), "trọng lượng", 55, DRED, alpha=k1)
+    text(d, (740, 1150), "lực hướng tâm", 55, PURPLE, alpha=k1)
+    text(d, (130, 1215), "số quả", 55, INK, anchor="lm", alpha=k1)
     ga = clamp((t - 0.4) / 2.0); gb = clamp((t - M[1]) / 2.0)
     for i in range(3):
         y = 1270 + i * 105
@@ -278,7 +280,7 @@ def _cues(clip):
 CLIP = dict(id="tn-l10-huongtam-03", header="VẬT LÍ 10 · THÍ NGHIỆM", footer="Lực hướng tâm · thachlab.id.vn",
             cues=_cues, scenes=[
  dict(key="hook", title="Nút quay trên ống", draw=s_hook, tail=0.2, caps=[
-   ("Nhìn nghiêng.", 2.5),
+   ("Nhìn nghiêng.", 2.3),
    ("Dừng lại, tự đoán.", 5.6)]),
  dict(key="do", title="Tiến hành", draw=s_do, tail=0.3, caps=[
    ("Bấm giờ 10 vòng, giữ kẹp yên.", 4.2),
@@ -288,9 +290,9 @@ CLIP = dict(id="tn-l10-huongtam-03", header="VẬT LÍ 10 · THÍ NGHIỆM", foo
    ("Đáp án: kẹp đi lên, r tăng.", 3.4)]),
  dict(key="rutra", title="Rút ra", draw=s_rutra, tail=0.3, caps=[
    ("Lực căng = Mg, đóng vai lực hướng tâm.", 4.2),
-   ("So Mg với m·v²/r.", 3.2)]),
+   ("So Mg với m·v²/r.", 3.0)]),
  dict(key="bay", title="Bẫy hay gặp", draw=s_bay, tail=0.3, caps=[
-   ("Đo r từ bàn tay?", 3.0),
+   ("Đo r từ bàn tay?", 3.2),
    ("Đo từ trục ống.", 3.0),
    ("Mới thử một bán kính.", 2.8)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.3, caps=[
