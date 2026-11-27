@@ -8,8 +8,8 @@
 #   (Bai da co bang 4 hang ngay duoi clip -> khong hoi so chi 4 qua nhu ban cu.)
 # Bay = hien_tuong_hay_sai[1]: P/m hang dau 10,0 lech -> tuong sai luat; hai thanh P canh nhau, cung o do "1 vach".
 # Chua noi duoc: chi do o mot noi (P doi khi g doi chua thay) -> hai luc ke "o day" / "dinh nui ?".
-# Chot (khung web A-D): luc ke 0-2,5 N, toi da may qua 50 g? -> 5 qua (theo mo hinh P = m.g: 0,25 kg -> 2,45 N;
-#   6 qua 2,94 N vuot thang). So 5 khong hien tren man (thanh dem lien, khong chia o).
+# Chot (khung web A-D, kiem-v1 27/11): luc ke 0-2,5 N, toi da may qua 120 g (khoi luong CHUA chieu, m trong 0,05-0,25 kg kho)?
+#   P = m.g: 1 qua 1,18 N, 2 qua 0,24 kg -> 2,35 N, 3 qua 3,53 N vuot -> 2 qua. Khong cong 0,50 N/qua tu bang duoc.
 from engine import *
 
 ROWS = [(0.05, 0.50, "10,0"), (0.10, 0.95, "9,5"), (0.15, 1.45, "9,67"), (0.20, 1.95, "9,75")]   # so_lieu_mau
@@ -24,7 +24,7 @@ def _kiem_so():
         assert abs(m - h[0]) < 1e-9 and abs(p - h[2]) < 1e-9 and abs(float(pm.replace(",", ".")) - h[3]) < 0.01, (m, h)
     ts = {p["ky_hieu"]: p for p in k["tham_so"]}
     assert ts["g"]["gia_tri"] == G and ts["P"]["sai_so_do"] == VACH and ts["m"]["max"] == 0.25
-    assert 5 * 0.05 * G <= FMAX < 6 * 0.05 * G                                 # dap so chot: 5 qua
+    assert 2 * 0.12 * G <= FMAX < 3 * 0.12 * G and 2 * 0.12 <= ts["m"]["max"]   # dap so chot: 2 qua 120 g
 _kiem_so()
 
 BRASS = (226, 186, 110); BRASS_D = (150, 110, 50); DGREEN = (21, 110, 55); DRED = (185, 28, 28)
@@ -57,12 +57,12 @@ def stand(d):
     d.rounded_rectangle([50, 1560, 470, 1600], radius=10, fill=(176, 124, 74))
     d.line([(LX, 282), (LX, 300)], fill=NAVY, width=5)
 
-def mass(d, cx, ytop, alpha=1.0, lbl=True):
+def mass(d, cx, ytop, alpha=1.0, lbl=True, ten="50 g"):
     """Mot qua nang 50 g co moc: vong moc tren, than tru dong thau, moc duoi."""
     d.arc([cx - 12, ytop, cx + 12, ytop + 22], 180, 360, fill=A(NAVY, alpha), width=4)
     d.line([(cx, ytop + 10), (cx, ytop + 18)], fill=A(NAVY, alpha), width=4)
     d.rounded_rectangle([cx - 76, ytop + 18, cx + 76, ytop + 84], radius=12, fill=A(BRASS, alpha), outline=A(BRASS_D, alpha), width=3)
-    if lbl: text(d, (cx, ytop + 51), "50 g", 56, INK, alpha=alpha)
+    if lbl: text(d, (cx, ytop + 51), ten, 56, INK, alpha=alpha)
     d.line([(cx, ytop + 84), (cx, ytop + UNIT)], fill=A(NAVY, alpha), width=4)
 
 def scale(d, f_read, n, extra=None, ex_a=0.0, tag=None, yh=YH, lx=LX, an=False, alpha=1.0, so=(0, 1, 2)):
@@ -193,6 +193,7 @@ def s_bay(img, d, t, sc):
     k1 = appear(t, M[0] + 1.7, 0.45)
     card(d, (60, 270, 1020, 380), fill=A((254, 242, 242), k1), outline=A(DRED, k1), r=24, w=6)
     text(d, (W / 2, 325), "✗ Dễ tưởng: P không tỉ lệ m", 58, DRED, alpha=k1)
+    text(d, (W / 2, 1300), "1 vạch = 0,05 N", 58, INK, alpha=k1)            # kiem-v1: noi vach truoc ngoac do
     kb = appear(t, M[1] - 0.1, 0.45)
     for j, (i, pct, y) in enumerate(((0, "10%", 560), (3, "2,6%", 900))):
         m, p, pm = ROWS[i]
@@ -236,12 +237,12 @@ def s_end(img, d, t, sc):
     yh = 380 + BODY + 36 + 14
     d.rounded_rectangle([140, 354, 460, 380], radius=8, fill=A((150, 155, 172), k1))
     d.line([(LX, 380), (LX, 398)], fill=A(NAVY, k1), width=5)
-    scale(d, 0.0, 0, yh=yh, alpha=k1, so=(0, 1, 2, 2.5))
-    for i in range(2): mass(d, LX, yh + 12 + i * UNIT, alpha=0.45 * k1, lbl=i == 0)
+    scale(d, 0.0, 0, yh=yh, alpha=k1, so=(0, 1, 2))                   # kiem-v1: bo so 2,5 chong chu N
+    for i in range(2): mass(d, LX, yh + 12 + i * UNIT, alpha=0.45 * k1, lbl=i == 0, ten="120 g")
     text(d, (LX + 130, yh + 12 + UNIT), "?", 96, DORANGE, alpha=k1)
     text(d, (760, 560), "Lực kế chỉ", 60, INK, alpha=k1)
     text(d, (760, 650), "tới 2,5 N.", 60, INK, alpha=k1)
-    text(d, (W / 2, 1180), "Treo tối đa mấy quả 50 g?", 64, DORANGE, alpha=k1)
+    text(d, (W / 2, 1180), "Treo tối đa mấy quả 120 g?", 64, DORANGE, alpha=k1)
     think_bar(d, t, 1.0, sc["T"] - 0.2, 1330, k1, col=DORANGE)
 
 def _cues(clip):
@@ -269,7 +270,7 @@ CLIP = dict(id="tn-l10-trong-luc-luc-cang-02", header="VẬT LÍ 10 · THÍ NGHI
  dict(key="gioihan", title="Giới hạn", draw=s_gioihan, tail=0.6, caps=[
    ("Chỉ đo ở một nơi.", 3.6)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.3, caps=[
-   ("P tỉ lệ với m: P = m·g.", 5.8)]),
+   ("Thử tính, rồi chọn đáp án.", 5.8)]),
 ])
 
 _b = _kiem_dong_bo(); assert not _b, _b
