@@ -1,52 +1,69 @@
 {
   "id": "tn-l11-baitapdaodong-03",
   "ten": "Quay chậm con lắc lò xo và đếm khung hình qua ba vạch",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-baitapdaodong-03-20261031-2.mp4",
-  "tong_giay": 48.9,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-baitapdaodong-03-20261127.mp4",
+  "tong_giay": 49.2,
   "o": [
     {
       "khoa": "gia_thuyet",
       "giay": 0,
-      "chu": "Đếm khung hình quay chậm: O → A/2 mất T/12, A/2 → A mất T/6.",
-      "kiem": "Hai đoạn: thời gian đi có bằng nhau?"
+      "chu": "Thời gian đi từ O tới A/2 do góc quét trên vòng tròn pha quyết định, không do quãng đường.",
+      "kiem": "Đổi biên độ thì thời gian O → A/2 có đổi?"
     },
     {
       "khoa": "du_doan",
-      "giay": 4.2,
-      "chu": "Thả vật từ biên 4 cm, bỏ qua ma sát. Đoạn O → 2 cm và 2 → 4 cm: đoạn nào có nhiều khung hơn?"
+      "giay": 4.6,
+      "chu": "Thả từ 4 cm đếm khung O → 2 cm; thả từ 8 cm đếm khung O → 4 cm. Số khung lần sau so với lần đầu?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 10.6,
-      "chu": "Băng dính đánh dấu, điện thoại quay chậm."
+      "giay": 10.5,
+      "chu": "Con lắc lò xo, băng dính, điện thoại."
     },
     {
       "khoa": "quan_sat",
       "giay": 16.8,
-      "chu": "Lần 1: O → 2 cm 16 khung; 2 → 4 cm 32 khung."
+      "chu": "Thả 4 cm: O → 2 cm mất 16 khung. Thả 8 cm: O → 4 cm cũng 16 khung (theo mô hình)."
     },
     {
       "khoa": "rut_ra",
-      "giay": 22.0,
-      "chu": "16 khung ≈ T/12. Gần biên, vật đi chậm."
+      "giay": 24.2,
+      "chu": "Cùng góc quét 30°: O → A/2 luôn mất T/12, mọi biên độ."
     },
     {
       "khoa": "chua_noi",
-      "giay": 26.8,
-      "chu": "Mới thử một biên độ, một chu kì. Biên độ lớn: lò xo còn đàn hồi? Ray có ma sát?"
+      "giay": 28.6,
+      "chu": "Kéo 8 cm lò xo còn đàn hồi tốt? Đã bỏ qua ma sát trên ray."
     }
   ],
   "dung_dua": {
-    "giay": 10.4,
-    "cau_hoi": "Thả vật từ biên 4 cm, bỏ qua ma sát. Đoạn nào có nhiều khung hơn?",
+    "giay": 10.3,
+    "cau_hoi": "Con lắc T = 0,80 s, quay 240 khung/s. Thả từ 4 cm, đếm khung đoạn O → 2 cm. Thả từ 8 cm, đếm khung đoạn O → 4 cm. Số khung lần sau so với lần đầu:",
     "chon": [
-      "A. Bằng nhau, mỗi đoạn T/8",
-      "B. Đoạn O → 2 cm nhiều khung hơn",
-      "C. Đoạn 2 → 4 cm nhiều khung hơn",
-      "D. Tuỳ lần thả, lúc đoạn này lúc đoạn kia"
+      "A. Bằng nhau",
+      "B. Gấp đôi",
+      "C. Bằng một nửa",
+      "D. Gấp bốn"
     ],
-    "dung": 2,
-    "giai_thich_dung": "Gần biên vật đi chậm: đoạn 2 → 4 cm mất khoảng 32 khung (T/6), gấp đôi 16 khung (T/12) của đoạn O → 2 cm.",
-    "giai_thich_sai": "Nửa quãng đường không phải nửa thời gian: gần O vật nhanh, gần biên vật chậm nên đoạn 2 → 4 cm nhiều khung hơn, và ba lần thả cho kết quả gần như nhau. Xem đoạn kế: bảng đếm khung."
+    "dung": 0,
+    "giai_thich_dung": "Cả hai đoạn đều từ O tới nửa biên độ, ứng với góc quét 30° trên vòng tròn pha, tức T/12. Chu kì không đổi nên số khung bằng nhau (16 khung).",
+    "giai_thich_sai": "Đường dài gấp đôi nhưng vật cũng chạy nhanh gấp đôi, nên thời gian như cũ. Gấp đôi là quên tốc độ cũng tăng; một nửa hay gấp bốn đều không có cơ sở. Xem đoạn kế: đếm khung hai lần thả."
+  },
+  "cau_chot": {
+    "giay": 42.8,
+    "cau_hoi": "Con lắc lò xo khác có T = 1,0 s, thả từ 4 cm, quay chậm 240 khung/s. Đoạn từ 2 cm tới 4 cm mất khoảng mấy khung?",
+    "chon": [
+      "A. 20 khung",
+      "B. 40 khung",
+      "C. 30 khung",
+      "D. 32 khung"
+    ],
+    "dung": 1,
+    "giai_thich": [
+      "20 khung là T/12 · 240, thời gian đoạn O → 2 cm. Đoạn 2 → 4 cm quét 90° − 30° = 60°, tức T/6: 1,0/6 · 240 = 40 khung.",
+      "Đoạn 2 cm → 4 cm (A/2 → A) quét 90° − 30° = 60° trên vòng tròn pha, tức T/6 = 1,0/6 s. Số khung: 240/6 = 40 khung.",
+      "30 khung là coi nửa đường mất nửa thời gian (T/8 · 240). Gần biên vật đi chậm: đoạn này là T/6, 40 khung.",
+      "32 khung là chép số của con lắc trong clip (T = 0,80 s). Chu kì mới 1,0 s: T/6 · 240 = 40 khung."
+    ]
   }
 }

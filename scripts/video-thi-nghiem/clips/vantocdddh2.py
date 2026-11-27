@@ -1,14 +1,16 @@
-# Clip: tn-l11-vantocdddh-02 - Ba do thi x, v, a khi pha ban dau bang 0 (vi_du, ve tu mo hinh) (9/11/2026, L11 Ch.1)
-# So lieu lay nguyen tu content/thi-nghiem/tn-l11-vantocdddh-02.json:
+# Clip: tn-l11-vantocdddh-02 - Ba do thi x, v, a khi pha ban dau bang 0 (vi_du, ve tu mo hinh)
+# (9/11/2026; dung lai 27/11/2026 theo cong moi: --do-chu 0 LOI, chu >= 56 px khi ve, K10, cau chot A-D ra khung web).
+# So lieu lay nguyen tu content/thi-nghiem/tn-l11-vantocdddh-02.json (_kiem_so() doi chieu):
 #   tham_so: A = 4 cm, T = 0,8 s, phi = 0 ; mo_hinh: x = A cos(wt), v = -Aw sin(wt), a = -Aw^2 cos(wt), w = 2pi/0,8.
 #   so_lieu_mau (t s; x cm; v cm/s; a cm/s2): 0 4 0 -246,7 ; 0,2 0 -31,42 0 ; 0,4 -4 0 246,7 ; 0,6 0 31,42 0.
-#   rut_ra: v som x mot goc pi/2 ; a nguoc pha voi x. Hinh 2 cua bai (anh OpenStax, data-exp = id nay) la cho dat.
-#   hien_tuong_hay_sai[0] (v trung x) -> Du doan ; [1] (a cung pha v) -> Bay (t = 0,2 s: |v| lon nhat, a = 0).
-#   Cau chot: A = 2 cm (trong khoang tham_so, chua hien), T giu 0,8 s, t = 0,4 s -> a = +123,4 cm/s2 (KHONG hien;
-#     phan xa sai: -123,4 hoac 246,7). Khong neu "a_max o bien am" bang loi (cau trac nghiem ngay sau Hinh 2 trong bai).
-# Bo cuc: ba do thi xep doc cung truc t (0..0,8 s), con tro thoi gian dung o 4 moc, bang so ben duoi.
-# Canh: Du doan (K10: chi cau hoi + hinh; truc v trong) -> Tien hanh -> Dap an + Rut ra -> Bay roi Chua noi duoc
-#       -> Chot + cau hoi tu nho lai (goi y tre 2,5 s).
+# Khoi video nam TRUOC Hinh 2 nhung SAU muc 1 ("v som x goc pi/2") va cong thuc a (muc 2) -> ca cu "do thi v dang the nao
+#   so voi x" da co dap an trong bai. DOI 27/11: Du doan = DAU cua v va a luc t = 0,3 s (3T/8, giua hai moc kho; chi hoi
+#   dau, khong hien so le) -> trai dau: v < 0, a > 0 (vat dang ra bien am, cham dan). Nguon: hien_tuong_hay_sai[1].
+# Bay = hien_tuong_hay_sai[1] "a cung pha v": t = 0,2 s v = -31,42 (cuc tieu) ma a = 0 -> a som v goc pi/2 (rut_ra[1]).
+# Chua noi duoc: gia_thiet "phi = 0 tren hinh" -> hinh x truot khi phi doi, "phi khac 0 thi sao?".
+# Thu nghi (= cau_chot khung web): giu A = 4 cm, doi T = 1,6 s (trong dai tham_so 0,4..2), t = 0,8 s = T/2 -> x = -A
+#   -> a = +A(2pi/1,6)^2 = +61,7 cm/s2 (theo mo hinh; can 3 buoc: t = T/2, dau, omega^2 giam 4 lan). KHONG hien dap so.
+#   Nhieu: -246,7 (doc thang do thi cu tai 0,8 s), -61,7 (sai dau), +123,4 (chia 2 thay vi 4).
 from engine import *
 
 AMP, PER = 4.0, 0.8
@@ -16,82 +18,107 @@ VM, AM = 31.42, 246.7                                       # |v|max, |a|max tro
 OMG = 2 * math.pi / PER
 ROWS = [("0", "4", "0", "−246,7"), ("0,2", "0", "−31,42", "0"), ("0,4", "−4", "0", "246,7"), ("0,6", "0", "31,42", "0")]
 TS = [0.0, 0.2, 0.4, 0.6]
+TQ = 0.3                                                    # moc du doan (chi hoi dau)
 def xf(t): return AMP * math.cos(OMG * t)
 def vf(t): return -VM * math.sin(OMG * t)
 def af(t): return -AM * math.cos(OMG * t)
-DGREEN = (21, 110, 55); DRED = (185, 28, 28); DBLUE = (29, 78, 216)
 
-# ---------------- ba do thi (khung nguon 1080x1920; vung thay y 200..1690) ----------------
-GX0, GSX = 210, 850                  # t = 0 o px 210 ; 0,8 s = 680 px
-H2 = 110                             # nua chieu cao duong cong
+def _kiem_so():
+    import json
+    k = json.load(open(os.path.join(HERE, "..", "..", "content", "thi-nghiem", "tn-l11-vantocdddh-02.json")))
+    tp = {p["ky_hieu"]: p for p in k["tham_so"]}
+    assert tp["A"]["mac_dinh"] == AMP and tp["T"]["mac_dinh"] == PER and tp["phi"]["mac_dinh"] == 0
+    for r, h in zip(ROWS, k["so_lieu_mau"]["hang"]):
+        assert [float(s.replace(",", ".").replace("−", "-")) for s in r] == [float(v) for v in h], (r, h)
+        t = h[0]
+        assert abs(xf(t) - h[1]) < 6e-3 and abs(vf(t) - h[2]) < 6e-3 and abs(af(t) - h[3]) < 0.06
+    assert vf(TQ) < 0 and af(TQ) > 0                       # dap an du doan
+    assert tp["T"]["min"] <= 1.6 <= tp["T"]["max"]
+    assert abs(-AMP * (2 * math.pi / 1.6) ** 2 * math.cos(2 * math.pi / 1.6 * 0.8) - 61.7) < 0.05   # cau chot
+_kiem_so()
+
+DGREEN = (21, 110, 55); DRED = (185, 28, 28); DBLUE = (29, 78, 216); DTEAL = (15, 118, 110); EMPTY = (148, 140, 128)
+BLOCK = (59, 130, 246); RAILC = (120, 125, 145)
+
+# ---------------- ba do thi (khung nguon 1080x1920; mp4 x = 65 + 0,88 x) ----------------
+GX0, GSX = 230, 837.5               # t = 0 o px 230 ; 0,8 s o px 900
+H2 = 85                             # nua chieu cao duong cong
 def gx(t): return GX0 + t * GSX
-SER = {   # khoa: (tam y, ham, dinh, nhan truc, mau, nhan dinh)
-    "x": (430, xf, AMP, "x (cm)", TEAL, ("4", "−4")),
-    "v": (750, vf, VM, "v (cm/s)", BLUE, ("31,42", "−31,42")),
-    "a": (1070, af, AM, "a (cm/s²)", RED, ("246,7", "−246,7")),
+SER = {   # khoa: (tam y, ham, dinh, ten, don vi, mau)
+    "x": (350, xf, AMP, "x", "cm", DTEAL),
+    "v": (590, vf, VM, "v", "cm/s", DBLUE),
+    "a": (830, af, AM, "a", "cm/s²", DRED),
 }
+TLAB = 965
 def gy(k, val):
     c, _, pk, *_ = SER[k]
     return c - val / pk * H2
 
-def axes(d, keys, tlab_y, a=1.0):
-    top = SER[keys[0]][0] - 150; bot = SER[keys[-1]][0] + 130
+def axes(d, a=1.0, tlab=True):
+    top = SER["x"][0] - 110; bot = SER["a"][0] + 105
     for tt in (0.2, 0.4, 0.6, 0.8):
-        for yy in range(int(top + 20), int(bot), 26): d.line([(gx(tt), yy), (gx(tt), yy + 12)], fill=A(LIGHT, a), width=3)
-    for k in keys:
-        c, _, pk, lab, col, (lp, ln) = SER[k]
-        arrow(d, (GX0, c + 130), (GX0, c - 150), A(NAVY, a), w=4, head=16)
-        arrow(d, (GX0, c), (gx(0.86), c), A(NAVY, a), w=4, head=16)
-        text(d, (GX0 + 16, c - 150), lab, 40, col, anchor="lm", alpha=a)
-        for yy, s in ((c - H2, lp), (c + H2, ln)):
-            d.line([(GX0 - 8, yy), (GX0 + 8, yy)], fill=A(NAVY, a), width=3)
-            text(d, (GX0 - 32, yy), s, 40, NAVY, anchor="rm", alpha=a)       # cach cham o t = 0 (ban kinh 14)
-    for tt in (0.2, 0.4, 0.6, 0.8):
-        text(d, (gx(tt), tlab_y), f"{tt:.1f}".replace(".", ","), 40, NAVY, alpha=a)
-    text(d, (GX0, tlab_y), "0", 40, NAVY, alpha=a)
-    text(d, (gx(0.86) + 12, tlab_y), "t (s)", 40, INK, anchor="lm", alpha=a)
+        for yy in range(int(top), int(bot), 26): d.line([(gx(tt), yy), (gx(tt), yy + 12)], fill=A(LIGHT, a), width=3)
+    for k, (c, _, pk, nm, un, col) in SER.items():
+        arrow(d, (GX0, c + 100), (GX0, c - 112), A(NAVY, a), w=4, head=16)
+        arrow(d, (GX0, c), (gx(0.88), c), A(NAVY, a), w=4, head=16)
+        text(d, (115, c - 34), nm, 64, col, alpha=a)
+        text(d, (115, c + 36), un, 56, col, alpha=a)
+    if tlab:
+        for tt in (0.2, 0.4, 0.6):
+            text(d, (gx(tt), TLAB), f"{tt:.1f}".replace(".", ","), 56, NAVY, alpha=a)
+        text(d, (GX0, TLAB), "0", 56, NAVY, alpha=a)
+        text(d, (gx(0.8) + 20, TLAB), "0,8 s", 56, NAVY, alpha=a)
 
-def labels_top(d, keys=("x", "v", "a")):
-    """Ve lai ten truc tren nen BG, de con tro thoi gian khong cat ngang chu."""
-    for k in keys:
-        c, _, _, lab, col, _ = SER[k]
-        w = tw(d, lab, F(40))
-        d.rectangle([GX0 + 8, c - 174, GX0 + 24 + w, c - 126], fill=BG)
-        text(d, (GX0 + 16, c - 150), lab, 40, col, anchor="lm")
-
-def curve(d, k, t1, a=1.0, w=6):
+def curve(d, k, t1, a=1.0, w=7, phi=0.0):
     if t1 <= 0: return
-    c, f, _, _, col, _ = SER[k]
+    c, f, pk, _, _, col = SER[k]
     n = max(2, int(t1 * 300))
-    d.line([(gx(t1 * i / n), gy(k, f(t1 * i / n))) for i in range(n + 1)], fill=A(col, a), width=w, joint="curve")
+    pts = []
+    for i in range(n + 1):
+        tt = t1 * i / n
+        val = f(tt) if phi == 0 else pk * math.cos(OMG * tt + phi)
+        pts.append((gx(tt), c - val / pk * H2))
+    d.line(pts, fill=A(col, a), width=w, joint="curve")
 
-def pill(d, cx, cy, s, size, fg, bg, a=1.0):
-    pw = tw(d, s, F(size)) + 52
-    card(d, (cx - pw / 2, cy - size * 0.85, cx + pw / 2, cy + size * 0.85), fill=A(bg, a), r=int(size * 0.85))
-    text(d, (cx, cy), s, size, fg, alpha=a)
+def cursor(d, tt, keys=("x", "v", "a"), col=PURPLE, a=1.0):
+    d.line([(gx(tt), SER["x"][0] - 105), (gx(tt), SER["a"][0] + 100)], fill=A(col, 0.85 * a), width=5)
+    for k in keys:
+        dot(d, gx(tt), gy(k, SER[k][1](tt)), 15, A(SER[k][5], a), outline=A(WHITE, a))
 
-# ---------------- canh 1: Du doan (K10: chi cau hoi + hinh; truc v trong, chua ve truc a) ----------------
+def seg_bar(d, y, t, t0, t1, col, a=1.0, x0=170, n=5):
+    """Thanh dem 5 o cao 70 px, tat lan luot tu PHAI sang TRAI; o da tat: nen trang, vien dam."""
+    p = clamp((t - t0) / (t1 - t0)); on = n - int(p * n + 1e-9)
+    for i in range(n):
+        x = x0 + i * 152
+        if i < on: card(d, (x, y, x + 130, y + 70), fill=A(col, a), r=16)
+        else: card(d, (x, y, x + 130, y + 70), fill=A(WHITE, a), outline=A(EMPTY, a), r=16, w=4)
+
+def pill(d, cy, s, col, a=1.0, size=56):
+    pw = tw(d, s, F(size)) + 64
+    card(d, (W / 2 - pw / 2, cy - 40, W / 2 + pw / 2, cy + 40), fill=A(col, a), r=40)
+    text(d, (W / 2, cy), s, size, WHITE, alpha=a)
+
+# ---------------- canh 1: Du doan (K10: chi cau hoi + hinh; v, a de trong) ----------------
 def s_hook(img, d, t, sc):
     M = sc["M"]
-    axes(d, ["x", "v"], 920)
-    curve(d, "x", PER * clamp((t - 0.6) / 1.6))
-    kq = appear(t, 2.4, 0.4)
-    if kq > 0: text(d, (gx(0.4), SER["v"][0] - 60), "v = ?", 56, PURPLE, alpha=kq)
+    axes(d)
+    curve(d, "x", PER * clamp((t - 0.6) / 1.8))
+    kq = appear(t, 2.8, 0.45)
+    if kq > 0:
+        d.line([(gx(TQ), SER["x"][0] - 105), (gx(TQ), SER["a"][0] + 100)], fill=A(PURPLE, 0.85 * kq), width=5)
+        dot(d, gx(TQ), gy("x", xf(TQ)), 15, A(DTEAL, kq), outline=A(WHITE, kq))
+        for k in ("v", "a"): text(d, (gx(TQ) + 90, SER[k][0] - 45), "?", 64, PURPLE, alpha=kq)
     a = appear(t, M[1] - 0.2, 0.5)
     if a <= 0: return
-    y0 = 1010 + (1 - a) * 40
-    card(d, (50, y0, 1030, y0 + 500), fill=A(WHITE, a), outline=A(PURPLE, a), w=6)
-    pill(d, W / 2, y0 + 60, "DỰ ĐOÁN", 40, WHITE, PURPLE, a)
-    ctext(d, y0 + 165, "φ = 0: lúc t = 0 vật ở biên +A.", 44, MUTED, maxw=940, alpha=a)
-    ctext(d, y0 + 315, "Đồ thị v có dạng thế nào\nso với đồ thị x?", 52, INK, maxw=920, alpha=a)
-    tc, tend = M[1] + 0.6, sc["T"] - 0.3
-    if t > tc:
-        p = clamp((t - tc) / (tend - tc))
-        d.rounded_rectangle([140, y0 + 450, 940, y0 + 462], radius=6, fill=A(LIGHT, a))
-        d.rounded_rectangle([140, y0 + 450, 140 + 800 * (1 - p), y0 + 462], radius=6, fill=A(PURPLE, a))
+    y0 = 1050 + (1 - a) * 30
+    card(d, (50, y0, 1030, y0 + 520), fill=A(WHITE, a), outline=A(PURPLE, a), w=6)
+    pill(d, y0 + 70, "DỰ ĐOÁN", PURPLE, a)
+    text(d, (W / 2, y0 + 190), "Lúc t = 0,3 s,", 62, INK, alpha=a)
+    text(d, (W / 2, y0 + 285), "v và a cùng dấu hay trái dấu?", 60, PURPLE, alpha=a)
+    seg_bar(d, y0 + 400, t, M[1] + 0.4, sc["T"] - 0.3, PURPLE, a)
 
-# ---------------- canh 2: Tien hanh (con tro thoi gian dung o 4 moc) ----------------
-D0, HOLD, MOVE = 0.4, 1.0, 0.9
+# ---------------- canh 2: Tien hanh (con tro dung o 4 moc kho, dien bang) ----------------
+D0, HOLD, MOVE = 0.4, 1.2, 0.9
 def phase(v):
     """-> (t do thi, so cot bang da co, chi so moc dang dung hoac None)."""
     if v < D0: return 0.0, 0, None
@@ -103,131 +130,147 @@ def phase(v):
         u -= MOVE
     return PER, 4, None
 
-def table(d, ncol, cur=None, y0=1300):
-    card(d, (40, y0, 1040, y0 + 270), fill=WHITE, outline=NAVY, r=20, w=3)
-    labs = ("t (s)", "x (cm)", "v (cm/s)", "a (cm/s²)"); cols = (INK, TEAL, DBLUE, DRED)
+TY0 = 1060
+def table(d, ncol, cur=None):
+    card(d, (40, TY0, 1040, TY0 + 330), fill=WHITE, outline=NAVY, r=20, w=3)
+    labs = ("t", "x", "v", "a"); cols = (INK, DTEAL, DBLUE, DRED)
     for r in range(4):
-        y = y0 + 40 + r * 64
-        if r: d.line([(56, y - 32), (1024, y - 32)], fill=LIGHT, width=2)
-        text(d, (145, y), labs[r], 38, cols[r])
+        y = TY0 + 48 + r * 78
+        if r: d.line([(56, y - 39), (1024, y - 39)], fill=LIGHT, width=2)
+        text(d, (110, y), labs[r], 60, cols[r])
         for i in range(4):
-            cx = 355 + i * 190
+            cx = 290 + i * 215
             if r == 0:
-                if cur == i: card(d, (cx - 95, y0 + 8, cx + 95, y0 + 262), fill=(255, 237, 213), r=14)
-                text(d, (cx, y), ROWS[i][0], 40, INK)
-            elif i < ncol: text(d, (cx, y), ROWS[i][r], 40, cols[r])
-
-def cursor(d, tt, keys=("x", "v", "a"), col=PURPLE):
-    d.line([(gx(tt), SER["x"][0] - 140), (gx(tt), SER["a"][0] + 125)], fill=A(col, 0.85), width=4)
-    for k in keys:
-        dot(d, gx(tt), gy(k, SER[k][1](tt)), 12, SER[k][4], outline=WHITE)
+                if cur == i: card(d, (cx - 104, TY0 + 8, cx + 104, TY0 + 322), fill=(255, 237, 213), r=14)
+                text(d, (cx, y), ROWS[i][0], 58, INK)
+            elif i < ncol: text(d, (cx, y), ROWS[i][r], 58, cols[r])
 
 def s_do(img, d, t, sc):
     tt, n, cur = phase(t)
-    axes(d, ["x", "v", "a"], 1240)
+    axes(d)
     for k in ("x", "v", "a"): curve(d, k, tt)
-    if t >= D0: cursor(d, tt); labels_top(d)
+    if t >= D0: cursor(d, tt)
     table(d, n, cur)
 
-# ---------------- canh 3: Dap an + Rut ra ----------------
+def _kiem_dong_bo():
+    bad = []
+    for i, ts in enumerate(TS):
+        tt, n, cur = phase(D0 + i * (HOLD + MOVE) + 0.5)
+        if not (abs(tt - ts) < 1e-9 and n == i + 1 and cur == i): bad.append((i, tt, n, cur))
+    return bad
+
+# ---------------- canh 3: Dap an (dau tai t = 0,3 s) + co che ----------------
+XO, PX = 560, 70
+def mini(d, y, x_cm, a=1.0):
+    d.rectangle([60, y - 50, 78, y + 50], fill=A(GRAY, a))
+    d.rectangle([60, y + 42, 1020, y + 54], fill=A(RAILC, a))
+    for yy in range(y - 56, y + 42, 18): d.line([(XO, yy), (XO, yy + 9)], fill=A(NAVY, a), width=3)
+    xc = XO + x_cm * PX
+    pts = [(78, y)]; L = xc - 45 - 78
+    for i in range(1, 16): pts.append((78 + L * i / 16, y + (16 if i % 2 else -16)))
+    pts.append((xc - 45, y)); d.line(pts, fill=A(NAVY, a), width=4)
+    d.rounded_rectangle([xc - 45, y - 36, xc + 45, y + 36], radius=10, fill=A(BLOCK, a), outline=A(NAVY, a), width=3)
+    return xc
+
 def s_dapan(img, d, t, sc):
     M = sc["M"]
-    axes(d, ["x", "v", "a"], 1240)
+    axes(d)
     for k in ("x", "v", "a"): curve(d, k, PER)
-    ka = appear(t, 0.1, 0.5)
-    pill(d, W / 2, 1310, "ĐÁP ÁN · như x, dịch sang trái T/4", 42, WHITE, NAVY, ka)
-    kp = appear(t, 0.8, 0.45)                                  # dinh v (0,6 s) truoc dinh x (0,8 s)
-    if kp > 0:
-        yv, yx = gy("v", VM), gy("x", AMP)
-        for tt, y, col in ((0.6, yv, BLUE), (0.8, yx, TEAL)):
-            dot(d, gx(tt), y, 14, A(col, kp), outline=WHITE)
-        for yy in range(int(yx - 60), int(yv), 24): d.line([(gx(0.6), yy), (gx(0.6), yy + 12)], fill=A(BLUE, kp), width=4)
-        d.line([(gx(0.8), yx - 60), (gx(0.8), yx - 14)], fill=A(TEAL, kp), width=4)
-        y = yx - 50
-        arrow(d, (gx(0.6) + 4, y), (gx(0.8) - 4, y), A(ORANGE, kp), w=5, head=16)
-        arrow(d, (gx(0.8) - 4, y), (gx(0.6) + 4, y), A(ORANGE, kp), w=5, head=16)
-        text(d, (gx(0.6) - 16, y - 2), "0,2 s", 40, ORANGE, anchor="rm", alpha=kp)
-    k1 = appear(t, M[1] - 0.05, 0.45)
-    if k1 > 0:                                                 # a lat nguoc x: hai cham luc t = 0
-        dot(d, gx(0), gy("x", AMP), 14, A(TEAL, k1), outline=WHITE)
-        dot(d, gx(0), gy("a", -AM), 14, A(RED, k1), outline=WHITE)
-        card(d, (60, 1380, 1020, 1600), fill=A((236, 253, 243), k1), outline=A(GREEN, k1), r=24, w=4)
-        text(d, (W / 2, 1440), "v sớm x một góc π/2", 46, DBLUE, alpha=k1)
-        text(d, (W / 2, 1540), "a ngược pha với x", 46, DRED, alpha=appear(t, M[1] + 0.6, 0.45))
+    cursor(d, TQ)
+    k1 = appear(t, 0.4, 0.4)
+    if k1 > 0:
+        text(d, (gx(TQ) + 40, 695), "v < 0", 60, DBLUE, anchor="lm", alpha=k1)
+        text(d, (gx(TQ) - 40, 770), "a > 0", 60, DRED, anchor="rm", alpha=k1)
+    kb = appear(t, M[1] - 0.1, 0.4)
+    if kb > 0: pill(d, 1075, "ĐÁP ÁN · trái dấu", NAVY, kb)
+    km = appear(t, M[1] + 2.4, 0.45)                       # vat that: 0,2 -> 0,4 s di tu O ra bien am
+    if km > 0:
+        card(d, (40, 1160, 1040, 1560), fill=A(WHITE, km), outline=A(LIGHT, km), w=3)
+        u = clamp((t - M[1] - 2.4) / 2.0)
+        tt = 0.2 + 0.2 * u * 0.75                           # 0,2 -> 0,35 s: con dang ra bien, chua dung
+        xc = mini(d, 1300, xf(tt), km)
+        lv = 40 + 140 * abs(vf(tt)) / VM; la = 40 + 140 * af(tt) / AM
+        arrow(d, (xc, 1210), (xc - lv, 1210), A(BLUE, km), w=8, head=24)
+        text(d, (xc + 30, 1210), "v", 60, DBLUE, anchor="lm", alpha=km)
+        arrow(d, (xc, 1400), (xc + la, 1400), A(RED, km), w=8, head=24)
+        text(d, (xc - 30, 1400), "a", 60, DRED, anchor="rm", alpha=km)
+        text(d, (XO, 1490), "O", 58, NAVY, alpha=km)
+        d.line([(XO - 4 * PX, 1352), (XO - 4 * PX, 1440)], fill=A(NAVY, km), width=5)
+        text(d, (XO - 4 * PX, 1490), "biên −4 cm", 58, NAVY, alpha=km)
 
-# ---------------- canh 4: Bay roi Chua noi duoc ----------------
+# ---------------- canh 4: Bay (a cung pha v?) ----------------
 def s_bay(img, d, t, sc):
     M = sc["M"]
-    axes(d, ["x", "v", "a"], 1240)
+    axes(d)
     for k in ("x", "v", "a"): curve(d, k, PER)
-    kc = appear(t, 1.8, 0.4)                                  # con tro 0,2 s hien CUNG luc chu ✓
-    if kc > 0:
-        d.line([(gx(0.2), SER["x"][0] - 140), (gx(0.2), SER["a"][0] + 125)], fill=A(PURPLE, 0.85 * kc), width=4)
-        dot(d, gx(0.2), gy("v", -VM), 14, A(BLUE, kc), outline=WHITE)
-        dot(d, gx(0.2), gy("a", 0), 14, A(RED, kc), outline=WHITE)
-        labels_top(d)
-    a1 = appear(t, 0.0, 0.3) * (1 - appear(t, M[1] - 0.3, 0.2))
-    if a1 > 0:
-        y0 = 1290
-        card(d, (40, y0, 1040, y0 + 380), fill=A(WHITE, a1), outline=A(DRED, a1), w=6)
-        pill(d, W / 2, y0 + 56, "BẪY", 40, WHITE, DRED, a1)
-        q = "“a cùng pha với v”"
-        yy = y0 + 170; f = F(48); lw = tw(d, q, f)
-        text(d, (W / 2, yy), q, 48, DRED, alpha=a1)
-        ks = clamp((t - 1.4) / 0.4)
-        if ks > 0: d.line([(W / 2 - lw / 2 - 6, yy + 2), (W / 2 - lw / 2 - 6 + (lw + 12) * ks, yy + 2)], fill=A((140, 15, 15), a1), width=4)
-        ctext(d, y0 + 290, "✓ t = 0,2 s: v = −31,42 cm/s, a = 0", 44, DGREEN, maxw=940, alpha=a1 * kc)
-    k2 = appear(t, M[1] - 0.1, 0.45)
+    card(d, (60, 1060, 1020, 1180), fill=(254, 242, 242), outline=DRED, r=24, w=6)
+    text(d, (W / 2, 1120), "✗ Dễ tưởng: a cùng pha với v", 58, DRED)
+    for k, tp, val, col in (("v", 0.6, VM, BLUE), ("a", 0.4, AM, RED)):   # dinh cua tung duong de so bang mat
+        px_, py_ = gx(tp), gy(k, val)
+        for yy in range(int(py_) + 14, 960, 22): d.line([(px_, yy), (px_, yy + 11)], fill=col, width=4)
+        d.ellipse([px_ - 14, py_ - 14, px_ + 14, py_ + 14], fill=col, outline=WHITE, width=3)
+    k2 = appear(t, M[1] - 0.1, 0.45)                       # nhip 2: con tro truot toi 0,2 s
     if k2 > 0:
-        y0 = 1290 + (1 - k2) * 30
-        card(d, (40, y0, 1040, y0 + 380), fill=A(WHITE, k2), outline=A(NAVY, k2), w=6)
-        text(d, (W / 2, y0 + 65), "Chưa nói được", 46, NAVY, alpha=k2)
-        for j, l1 in enumerate(("• Mới vẽ một ca φ = 0", "• Bỏ qua ma sát")):
-            kk = k2 * appear(t, M[1] + 0.3 + 0.5 * j, 0.4)
-            text(d, (90, y0 + 170 + j * 100), l1, 44, INK, anchor="lm", alpha=kk)
+        tt = 0.2 * ease((t - M[1] + 0.1) / 1.0)
+        cursor(d, tt, keys=("v", "a"), a=k2)
+        if tt >= 0.2 - 1e-9:
+            text(d, (gx(0.2) + 40, gy("v", -VM) + 10), "v = −31,42", 58, DBLUE, anchor="lm")
+            text(d, (gx(0.2) - 30, 780), "a = 0", 58, DRED, anchor="rm")
+        card(d, (60, 1220, 1020, 1340), fill=A((236, 253, 243), k2), outline=A(GREEN, k2), r=24, w=6)
+        text(d, (W / 2, 1280), "✓ v cực tiểu thì a = 0", 58, DGREEN, alpha=k2)
 
-# ---------------- canh 5: Chot + cau hoi tu nho lai ----------------
-def _end_body(sc):
-    M = sc["M"]
-    def body(d, t, k1):
-        kq = appear(t, M[0] + 0.4, 0.5)
-        for j, (lab, val) in enumerate((("A (cm)", "2"), ("t (s)", "0,4"), ("a (cm/s²)", "?"))):
-            x0 = 90 + j * 310
-            card(d, (x0, 1040, x0 + 280, 1210), fill=A((245, 243, 255), kq), outline=A(PURPLE, kq), r=18, w=3)
-            text(d, (x0 + 140, 1085), lab, 38, MUTED, bold=False, alpha=kq)
-            text(d, (x0 + 140, 1155), val, 48, PURPLE if val == "?" else INK, alpha=kq)
-        kh = appear(t, M[0] + 0.4 + 2.5, 0.5)                 # goi y tre 2,5 s sau cau hoi
-        card(d, (110, 1300, 970, 1530), fill=A((255, 247, 237), kh), r=24)
-        ctext(d, 1360, "Gợi ý", 40, INK, alpha=kh)
-        ctext(d, 1450, "Tìm x lúc đó trước, rồi xét dấu", 42, ORANGE, maxw=820, alpha=kh)
-    return body
+# ---------------- canh 5: Chua noi duoc (phi khac 0) ----------------
+def s_gioihan(img, d, t, sc):
+    axes(d, tlab=False)
+    phi = math.pi / 2 * (0.5 - 0.5 * math.cos(2 * math.pi * t / 3.2))   # minh hoa: phi doi -> duong x truot (khong so)
+    curve(d, "x", PER, phi=phi)
+    card(d, (40, 1040, 1040, 1380), fill=WHITE, outline=NAVY, w=6)
+    text(d, (W / 2, 1125), "Chưa nói được", 64, NAVY)
+    text(d, (W / 2, 1270), "φ khác 0 thì sao?", 62, INK)
 
+# ---------------- canh 6: Chot + THU NGHI (= cau_chot khung web) ----------------
 def s_end(img, d, t, sc):
-    chot_hoi(d, t, sc, "v sớm x góc π/2.\na ngược pha với x.",
-             "Cùng T = 0,8 s, đổi A = 2 cm.\nLúc t = 0,4 s, a bằng bao nhiêu?", body=_end_body(sc))
+    k1 = appear(t, 0.15, 0.4)
+    card(d, (40, 215, 1040, 1560), fill=A(WHITE, k1), outline=A(ORANGE, k1), w=6)
+    pill(d, 290, "THỬ NGHĨ", ORANGE, k1)
+    for j, (lab, val) in enumerate((("A", "4 cm"), ("T", "1,6 s"), ("t", "0,8 s"), ("φ", "0"))):
+        x0 = 70 + j * 240
+        card(d, (x0, 400, x0 + 220, 610), fill=A((245, 243, 255), k1), outline=A(PURPLE, k1), r=18, w=3)
+        text(d, (x0 + 110, 455), lab, 62, PURPLE, alpha=k1)
+        text(d, (x0 + 110, 550), val, 60, INK, alpha=k1)
+    kq = appear(t, 2.6, 0.45)
+    if kq > 0:
+        text(d, (W / 2, 760), "Giữ A, đổi T thành 1,6 s.", 60, INK, alpha=kq)
+        text(d, (W / 2, 870), "Lúc t = 0,8 s, a bằng bao nhiêu?", 60, DRED, alpha=kq)
+        seg_bar(d, 1010, t, 3.2, sc["T"] - 0.2, ORANGE, kq)
 
 def _cues(clip):
     sc = {s["key"]: s for s in clip["scenes"]}
     h, do, da, b, e = sc["hook"], sc["do"], sc["dapan"], sc["bay"], sc["end"]
     out = [(h["t0"] + h["M"][1] - 0.2, "open"), (do["t0"] + D0, "tap")]
     out += [(do["t0"] + D0 + i * (HOLD + MOVE), "tick") for i in (1, 2, 3)]
-    out += [(da["t0"] + 0.1, "ding"), (b["t0"] + 0.2, "buzz"), (e["t0"] + e["M"][0] + 0.1, "open")]
+    out += [(da["t0"] + da["M"][1] - 0.1, "ding"), (b["t0"] + 0.3, "buzz"), (e["t0"] + 2.6, "open")]
     return out
 
 CLIP = dict(id="tn-l11-vantocdddh-02", header="VẬT LÍ 11 · VÍ DỤ", footer="Vận tốc, gia tốc · thachlab.id.vn",
             cues=_cues, scenes=[
- dict(key="hook", title="Ba đồ thị, một trục thời gian", draw=s_hook, tail=0.6, caps=[
-   ("A = 4 cm, T = 0,8 s.", 3.4),
-   ("Tự đoán trước khi xem tiếp.", 5.6)]),
- dict(key="do", title="Tiến hành", draw=s_do, tail=0.6, caps=[
+ dict(key="hook", title="Ba đồ thị, một trục thời gian", draw=s_hook, tail=0.3, caps=[
+   ("A = 4 cm, T = 0,8 s, φ = 0.", 3.6),
+   ("Dừng lại, tự đoán.", 5.8)]),
+ dict(key="do", title="Tiến hành", draw=s_do, tail=0.3, caps=[
    ("Dừng ở mỗi mốc 0,2 s, đọc số.", 4.2),
-   ("Ba chấm cùng một thời điểm.", 4.2)]),
- dict(key="dapan", title="Kết quả", draw=s_dapan, tail=0.8, caps=[
-   ("Đỉnh v đến trước đỉnh x.", 4.2),
-   ("Đường a lật ngược đường x.", 4.4)]),
- dict(key="bay", title="Bẫy và giới hạn", draw=s_bay, tail=0.8, caps=[
-   ("Bẫy khi so v với a.", 4.4),
-   ("Kết quả này còn giới hạn.", 3.8)]),
- dict(key="end", title="Chốt lại", draw=s_end, tail=1.4, caps=[
-   ("Dừng video, tự trả lời.", 7.6)]),
+   ("Ba chấm cùng một thời điểm.", 4.0)]),
+ dict(key="dapan", title="Kết quả", draw=s_dapan, tail=0.3, caps=[
+   ("Đọc dấu tại t = 0,3 s.", 3.6),
+   ("Vật đang ra biên âm, chậm dần.", 4.8)]),
+ dict(key="bay", title="Bẫy: so v với a", draw=s_bay, tail=0.4, caps=[
+   ("Hai đỉnh có trùng nhau không?", 3.4),
+   ("a sớm v một góc π/2.", 3.6)]),
+ dict(key="gioihan", title="Giới hạn", draw=s_gioihan, tail=0.4, caps=[
+   ("Ở đây mới vẽ ca φ = 0.", 3.6)]),
+ dict(key="end", title="Chốt lại", draw=s_end, tail=0.3, caps=[
+   ("Đọc cả ba đồ thị ở cùng một t.", 3.4),
+   ("Dừng lại, tự tính.", 4.4)]),
 ])
+
+_b = _kiem_dong_bo(); assert not _b, _b

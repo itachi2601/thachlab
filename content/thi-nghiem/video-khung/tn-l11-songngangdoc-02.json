@@ -1,40 +1,39 @@
 {
   "id": "tn-l11-songngangdoc-02",
   "ten": "Sóng dọc trên lò xo slinky: đổi nhịp đẩy – kéo thì sao?",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-songngangdoc-02-20261119.mp4",
-  "poster": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-songngangdoc-02-20261119.webp",
-  "tong_giay": 49.3,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-songngangdoc-02-20261127.mp4",
+  "tong_giay": 50.0,
   "o": [
     {
       "khoa": "gia_thuyet",
       "giay": 0,
-      "chu": "Vòng lò xo dao động dọc theo phương truyền; đẩy – kéo càng nhanh thì các vùng nén càng sít nhau.",
+      "chu": "Sóng dọc lan đi thành chuỗi vùng nén, vùng dãn; nhịp đẩy – kéo có thể ảnh hưởng tới khoảng cách giữa hai vùng nén.",
       "kiem": "Đổi nhịp đẩy – kéo, vùng nén ra sao?"
     },
     {
       "khoa": "du_doan",
-      "giay": 4.2,
-      "chu": "Tăng nhịp: 2 Hz → 5 Hz. Hai vùng nén liền nhau sẽ ra sao?"
+      "giay": 4.0,
+      "chu": "Đang đẩy – kéo 2 Hz. Tăng lên 5 Hz: hai vùng nén liền nhau sẽ ra sao?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 10.5,
-      "chu": "Lò xo slinky dài 4 m, băng màu, thước."
+      "giay": 10.1,
+      "chu": "Lò xo slinky 4 m, băng màu, thước."
     },
     {
       "khoa": "quan_sat",
-      "giay": 20.9,
-      "chu": "Nén – nén: 2 Hz là 3,5 m; 3,5 Hz là 2,0 m; 5 Hz là 1,4 m."
+      "giay": 19.9,
+      "chu": "Nhịp 2 → 3,5 → 5 Hz: nén – nén 3,5 → 2,0 → 1,4 m."
     },
     {
       "khoa": "rut_ra",
-      "giay": 26.2,
-      "chu": "Nhịp tăng 2,5 lần, nén – nén ngắn đi 2,5 lần. Lực đàn hồi đẩy chỗ nén đi tiếp."
+      "giay": 24.2,
+      "chu": "Nhịp gấp 2,5 lần, nén – nén ngắn đi 2,5 lần: đẩy – kéo càng nhanh, vùng nén càng sít."
     },
     {
       "khoa": "chua_noi",
-      "giay": 36.0,
-      "chu": "Mới đổi f. Đẩy mạnh hơn thì sao?"
+      "giay": 39.0,
+      "chu": "Mới đổi nhịp. Đẩy mạnh hơn (biên độ lớn hơn) thì sao?"
     }
   ],
   "dung_dua": {
@@ -49,5 +48,22 @@
     "dung": 2,
     "giai_thich_dung": "Tốc độ sóng trên lò xo không đổi, nhịp nhanh hơn thì vùng nén sau theo sát vùng trước: 3,5 m còn 1,4 m.",
     "giai_thich_sai": "Ở 5 Hz các vùng nén vẫn chạy dọc lò xo nhưng sít lại: 3,5 m còn 1,4 m."
+  },
+  "cau_chot": {
+    "giay": 43.5,
+    "cau_hoi": "Cũng lò xo này nhưng đủ dài, đẩy – kéo đều 1 Hz. Hai vùng nén liền nhau cách nhau bao xa?",
+    "chon": [
+      "A. 1,75 m",
+      "B. 3,5 m",
+      "C. 7,0 m",
+      "D. 14 m"
+    ],
+    "dung": 2,
+    "giai_thich": [
+      "1,75 m là coi nén – nén tỉ lệ thuận với nhịp. Bảng cho thấy ngược lại: nhịp giảm từ 2 Hz xuống 1 Hz thì nén – nén dài gấp đôi, 3,5 m thành 7,0 m.",
+      "3,5 m là số đo ở 2 Hz. Nhịp còn một nửa thì vùng nén sau tới chậm gấp đôi, nên cách vùng trước gấp đôi: 7,0 m.",
+      "Nhịp × nén – nén không đổi: 2 Hz × 3,5 m = 7,0 m/s, chính là tốc độ sóng trên lò xo. Ở 1 Hz: 7,0 : 1 = 7,0 m, dài hơn lò xo 4 m của clip.",
+      "14 m là nhân 4 lần, như thể nén – nén tỉ lệ với bình phương. Nhịp chỉ giảm 2 lần (2 Hz → 1 Hz) nên nén – nén chỉ dài gấp đôi: 7,0 m."
+    ]
   }
 }

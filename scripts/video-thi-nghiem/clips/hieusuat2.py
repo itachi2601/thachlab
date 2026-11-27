@@ -112,14 +112,14 @@ def legend(d):
     card(d, (60, 290, 600, 480), fill=WHITE, outline=LIGHT, w=3)
     d.line([(90, 345), (170, 345)], fill=WOOD_D, width=10)
     text(d, (190, 345), "ván thoải 15°", 56, INK, anchor="lm")
-    dash(d, (90, 425), (170, 425), NAVY, w=5)
+    dash(d, (90, 425), (170, 425), NAVY, w=8)
     text(d, (190, 425), "ván dốc 45°", 56, INK, anchor="lm")
 
 def s_hook(img, d, t, sc):
     M = sc["M"]
     rig_card(d); shelf(d)
-    ramp(d, 45, ghost=True)
     Q, L = ramp(d, 15)
+    Qg, Lg = ramp_q(45); dash(d, Qg(0), Qg(Lg), NAVY, w=8)
     qa, qb = CL / 2 + 8, L - CL / 2; p = clamp((t - 0.6) / 2.4); q = lerp(qa, qb, p)
     cart(d, Q, q); meter(d, Q, q, None)
     legend(d)
@@ -156,7 +156,7 @@ def table(d, rows, hl=None, y=975):
     text(d, (XS[0], y + 58), "góc", 56, INK)
     text(d, (XS[1], y + 58), "F (N)", 56, INK)
     text(d, (XS[2], y + 58), "s (cm)", 56, INK)
-    rs(d, XS[3], y + 52, "W_{tp} (J)", 64, ORANGE)
+    text(d, (XS[3], y + 58), "F·s (J)", 56, ORANGE)
     d.line([(70, y + 110), (1010, y + 110)], fill=LIGHT, width=3)
     for j in range(4):
         yy = y + 165 + j * 90
@@ -216,13 +216,15 @@ def s_dapan(img, d, t, sc):
 def s_bay(img, d, t, sc):
     M = sc["M"]; mk = M[1]
     # thanh so sanh: co ich nam TRONG toan phan (goc 15 do), hien tu dau
-    card(d, (40, 260, 1040, 560), fill=WHITE, outline=LIGHT, w=3)
+    card(d, (40, 250, 1040, 620), fill=WHITE, outline=LIGHT, w=3)
     x0, x1 = 90, 990; xc = x0 + (x1 - x0) * WCI / ROWS[0][3]
-    d.rectangle([x0, 330, x1, 450], fill=(255, 237, 213), outline=ORANGE, width=4)
-    d.rectangle([x0, 330, xc, 450], fill=GREEN)
-    rs(d, (x0 + xc) / 2, 384, "W_{ci} 0,80 J", 64, WHITE)
-    rs(d, (xc + x1) / 2, 384, "1,55 J", 64, DORANGE)
-    rs(d, x0, 510, "góc 15°: toàn phần W_{tp}", 64, INK, anchor="l")
+    rs(d, x0, 310, "15°: toàn phần W_{tp} = 1,55 J", 60, INK, anchor="l")
+    d.line([(x0, 380), (x0, 400)], fill=INK, width=4); d.line([(x1, 380), (x1, 400)], fill=INK, width=4)
+    d.line([(x0, 380), (x1, 380)], fill=INK, width=4)
+    d.rectangle([x0, 420, x1, 540], fill=(255, 237, 213), outline=ORANGE, width=4)
+    d.rectangle([x0, 420, xc, 540], fill=GREEN)
+    rs(d, (x0 + xc) / 2, 474, "W_{ci} 0,80 J", 64, WHITE)
+    rs(d, (xc + x1) / 2, 474, "0,75 J", 64, DORANGE)
     k0 = appear(t, 0.2, 0.4); k3 = appear(t, M[2] - 0.1, 0.45); a1 = k0 * (1 - k3); y = 1000
     ks = clamp((t - mk) / 0.4)
     if a1 > 0:
