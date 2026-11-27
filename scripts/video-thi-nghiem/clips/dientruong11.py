@@ -128,6 +128,7 @@ def s_do(img, d, t, sc):
     elif t >= tt:
         reading, dm = "… g", None
     settled = abs(r - round(r)) < 0.02 and round(r) in (3, 4, 6)
+    if tt <= t < tt + 2.2: settled = False       # luc cham q: an nhan r (tranh doc "r = 6, q = 5")
     rig(d, round(r) if settled else r, q, reading, dm, show_r=settled, neu_x=neu)
     table(d, n)
 
@@ -179,8 +180,9 @@ def s_bay(img, d, t, sc):
     pill(d, "BẪY", 305, 1.0, DRED)
     q = "“Khác nhau: E phụ thuộc q”"
     ks = clamp((t - 0.3) / 0.4); f = F(60); lw = tw(d, q, f); yy = 410
-    text(d, (W / 2, yy), q, 60, mix(DRED, GRAY, ks))
-    if ks > 0: d.line([(W / 2 - lw / 2 - 6, yy + 2), (W / 2 - lw / 2 - 6 + (lw + 12) * ks, yy + 2)], fill=DRED, width=6)
+    text(d, (W / 2, yy), q, 60, DRED)
+    if ks > 0:                                  # gach cheo manh, chu van doc ro
+        x0 = W / 2 - lw / 2 - 6; d.line([(x0, yy + 30), (x0 + (lw + 12) * ks, yy + 30 - 64 * ks)], fill=A(DRED, 0.8), width=4)
     base, top, Hh = 850, 3.0, 300                   # hai cot E (x10^5 V/m) + thanh sai so doc can
     d.line([(120, base), (960, base)], fill=NAVY, width=4)
     ke = appear(t, 3.0, 0.45)
@@ -192,7 +194,7 @@ def s_bay(img, d, t, sc):
             dh = Hh * E * rel / top
             for yv in (base - h - dh, base - h + dh): d.line([(cx - 40, yv), (cx + 40, yv)], fill=A(NAVY, ke), width=6)
             d.line([(cx, base - h - dh), (cx, base - h + dh)], fill=A(NAVY, ke), width=6)
-        text(d, (cx + 130, base - h + 10), vn(E), 56, INK)
+        text(d, (cx + 150, base - h - 20), vn(E), 56, INK)
     text(d, (W / 2, base + 115), "E (×10⁵ V/m)", 56, NAVY)
     if ke > 0:
         d.rectangle([180, base - Hh * EB[1][0] * (1 + EB[1][1]) / top, 900, base - Hh * EB[0][0] * (1 - EB[0][1]) / top],
@@ -217,7 +219,7 @@ def s_end(img, d, t, sc):
     kh = appear(t, M[0] + 3.0, 0.5)
     if kh > 0:
         card(d, (90, 1000, 990, 1140), fill=A(PEACH, kh), outline=A(ORANGE, kh), r=24, w=4)
-        text(d, (W / 2, 1070), "Gợi ý: lực điện giờ hướng nào?", 58, DORANGE, alpha=kh)
+        text(d, (W / 2, 1070), "Gợi ý: dấu của Q và q?", 58, DORANGE, alpha=kh)
 
 def _cues(clip):
     sc = {s["key"]: s for s in clip["scenes"]}

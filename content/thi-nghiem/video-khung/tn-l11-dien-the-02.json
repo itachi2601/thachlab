@@ -51,19 +51,19 @@
   },
   "cau_chot": {
     "giay": 41.4,
-    "cau_hoi": "Pin 1,5 V để hở. Que đỏ chạm cực (−), que đen chạm dây đồng nối cực (+). Vôn kế chỉ…",
+    "cau_hoi": "Nối thêm pin 1,5 V thứ hai: dây đồng nối cực (+) pin trái với cực (−) pin phải. Que đỏ chạm cực (+) pin phải, que đen chạm cực (−) pin trái. Vôn kế chỉ…",
     "chon": [
-      "A. 0,00 V",
-      "B. +1,5 V",
-      "C. −1,5 V",
+      "A. 1,5 V",
+      "B. 3,0 V",
+      "C. 0,00 V",
       "D. −3,0 V"
     ],
-    "dung": 2,
+    "dung": 1,
     "giai_thich": [
-      "0 V chỉ khi hai que cùng ở trên dây. Ở đây một que ở cực (−), một que ở dây.",
-      "Độ lớn khớp nhưng que đỏ đang ở chỗ điện thế thấp hơn que đen, nên số chỉ âm.",
-      "Dây cùng điện thế với cực (+), nên số chỉ = V(−) − V(+) = −1,5 V, như lần 2.",
-      "Dây không cộng thêm 1,5 V nữa: mọi điểm trên dây cùng điện thế với cực (+)."
+      "1,5 V là hiệu của một pin. Ở đây giữa hai que có hai pin.",
+      "Chọn mốc ở cực (−) pin trái: cực (+) pin trái 1,5 V; dây đồng cùng điện thế nên cực (−) pin phải cũng 1,5 V; cực (+) pin phải 3,0 V. Số chỉ = 3,0 − 0 = 3,0 V.",
+      "0 V chỉ đúng khi hai que cùng chạm một dây dẫn. Hai que ở đây cách nhau hai pin.",
+      "Que đỏ ở điểm có điện thế cao hơn que đen nên số chỉ dương."
     ]
   }
 }

@@ -152,6 +152,7 @@ def s_do(img, d, t, sc):
     if ph == 1 and kp >= 1: n = 1
     if ph == 2: n = 1 + (1 if roll > 0.8 * ROLL_MAX else 0)
     obs_table(d, 1020, n)
+    if n >= 2: pill(d, "ĐÁP ÁN ↑", 1490, 1.0)   # cong B v2: chi hang "lăn về phía thước" ngay tren, luc lon lan
 
 def obs_table(d, y, n):
     card(d, (40, y, 1040, y + 110 + 3 * 96), fill=WHITE, outline=NAVY, w=4)
@@ -179,7 +180,6 @@ def _kiem_dong_bo():
 def s_dapan(img, d, t, sc):
     M = sc["M"]
     ka = appear(t, 0.15, 0.4)
-    pill(d, "ĐÁP ÁN: lăn về phía thước", 320, ka)
     card(d, (40, 390, 1040, 780), fill=WHITE, outline=LIGHT, w=3)       # doi chung: thuoc CHUA co, giay + lon nam yen
     d.rectangle([60, 730, 1020, 758], fill=TABLE)
     ruler(d, 140, 560, charged=False, length=560)
@@ -211,6 +211,7 @@ def s_dapan(img, d, t, sc):
         arrow(d, ((gx0 + gx1) / 2, cy - r2 - 18), (gx0, cy - r2 - 18), A(DRED, a1), w=5, head=16)
         arrow(d, ((gx0 + gx1) / 2, cy - r2 - 18), (gx1, cy - r2 - 18), A(DRED, a1), w=5, head=16)
     text(d, (560, y + 330), "không chạm", 56, DRED, alpha=a1)
+    text(d, (790, cy - 62), "thước đã cọ", 56, NAVY, alpha=a1)
     kt = appear(t, t2, 0.4)
     if kt > 0:
         text(d, (W / 2, yb + 75), "✓ vẫn lăn tới", 56, DGREEN, alpha=a1 * kt)

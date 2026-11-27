@@ -3,8 +3,9 @@
 #   so_lieu_mau (lan, que do, que den, U): 1 cuc+ cuc- 1,5 ; 2 cuc- cuc+ -1,5 ; 3 day diem1 day diem2 0,00
 #   tham_so: E_pin 1,5 V (dieu chinh 1,2-9 V). mo_hinh: pin ho mach, von ke dien tro rat lon -> khong co dong.
 #   hien_tuong_hay_sai (kho khong co sai_so_thuong_gap): von ke do dien the MOT diem; day noi cuc + co U = 1,5 V.
-#   Cau chot (27/11/2026, o khung, khong hien): que do cham cuc (-), que den cham DAY DONG -> V_do - V_den = 0 - 1,5 = -1,5 V
-#     (buoc moi: day cung dien the cuc (+), ghep voi lan 2).
+#   Cau chot (cong B v1, o khung, khong hien): hai pin 1,5 V noi tiep bang day dong (+ pin trai -> - pin phai); que do
+#     cham (+) pin phai, que den cham (-) pin trai -> 1,5 + 0 + 1,5 = 3,0 V (buoc moi: day giua hai pin la MOT dien the,
+#     moi pin them 1,5 V; so 3,0 khong co trong bang).
 # Canh: Du doan (K10: chi cau hoi + hinh, que tren day dong) -> Tien hanh 3 lan (bang) + "Dap an · 0,00 V" ->
 #       Rut ra (so chi = V_do - V_den, doi dau, cung day U ~ 0) -> Bay (von ke do V mot diem) roi Chua noi duoc ->
 #       Chot + cau hoi tu nho lai.
@@ -119,17 +120,18 @@ def s_do(img, d, t, sc):
         if kw > 0: d.rounded_rectangle([W1[0] - 40, 425, W2[0] + 40, 520], radius=24, fill=A((250, 204, 21), 0.8 * kw))
 
 # ---------------- canh 3: Rut ra ----------------
-def kcard(d, y, title, color, k, h=200, hl=0.0):
+def kcard(d, y, title, color, k, h=200, hl=0.0, sub=None):
     if k <= 0: return
     yy = y + (1 - k) * 30
     fill = mix(WHITE, (237, 233, 254), hl) if hl > 0 else WHITE
     card(d, (60, yy, 1020, yy + h), fill=A(fill, k), outline=A(color, k), w=6)
-    text(d, (W / 2, yy + h / 2), title, 60, color, alpha=k)
+    text(d, (W / 2, yy + h / 2 - (38 if sub else 0)), title, 60, color, alpha=k)
+    if sub: text(d, (W / 2, yy + h / 2 + 50), sub, 56, INK, alpha=k)
 
 def s_rut(img, d, t, sc):
     M = sc["M"]
     k1, k2, k3 = appear(t, 0.3, 0.45), appear(t, 2.8, 0.45), appear(t, M[1] + 0.5, 0.45)
-    kcard(d, 330, "Số chỉ = V đỏ − V đen", GREEN, k1)
+    kcard(d, 330, "Số chỉ = V đỏ − V đen", GREEN, k1, sub="V: điện thế")
     kcard(d, 640, "Đổi que: số chỉ đổi dấu", ORANGE, k2)
     kcard(d, 950, "Cùng dây dẫn: U ≈ 0", PURPLE, k3, hl=appear(t, M[1] + 2.4, 0.5))
     kp = appear(t, M[1] + 2.4, 0.5)               # nhip hinh: day dong + hai diem cung mau (khong chu)
@@ -150,8 +152,9 @@ def s_bay(img, d, t, sc):
         pill(d, "BẪY", y0 + 65, a1, DRED)
         q = "“Cực (+) có điện thế 1,5 V”"
         ks = clamp((t - 0.3) / 0.4); f = F(58); lw = tw(d, q, f); yy = y0 + 200
-        text(d, (W / 2, yy), q, 58, mix(DRED, GRAY, ks), alpha=a1)
-        if ks > 0: d.line([(W / 2 - lw / 2 - 6, yy + 2), (W / 2 - lw / 2 - 6 + (lw + 12) * ks, yy + 2)], fill=A(DRED, a1), width=6)
+        text(d, (W / 2, yy), q, 58, DRED, alpha=a1)
+        if ks > 0:                              # gach cheo manh, chu van doc ro
+            x0 = W / 2 - lw / 2 - 6; d.line([(x0, yy + 30), (x0 + (lw + 12) * ks, yy + 30 - 64 * ks)], fill=A(DRED, 0.8 * a1), width=4)
         kc = a1 * appear(t, 3.0, 0.4)
         if kc > 0:
             card(d, (90, y0 + 290, 990, y0 + 410), fill=A((236, 253, 243), kc), r=20)
@@ -161,21 +164,34 @@ def s_bay(img, d, t, sc):
         pill(d, "CHƯA NÓI ĐƯỢC", y0 + 65, k2, NAVY)
         text(d, (W / 2, y0 + 250), "Dây có dòng lớn: chưa thử.", 60, INK, alpha=k2)
 
-# ---------------- canh 5: THU NGHI (cau chot o khung: do o cuc (-), den o day dong -> -1,5 V, khong hien) ----------------
+# ---------------- canh 5: THU NGHI (cau chot o khung: hai pin noi tiep, do o (+) pin phai, den o (-) pin trai -> 3,0 V) ----------------
+def cell(d, x0, w=250):
+    """Pin 1,5 V nam ngang: mat (-) phang ben trai, num (+) ben phai."""
+    d.rounded_rectangle([x0, 400, x0 + w, 544], radius=18, fill=BODY, outline=NAVY, width=3)
+    d.rectangle([x0 - 14, 418, x0, 526], fill=METAL)
+    d.rounded_rectangle([x0 + w, 446, x0 + w + 32, 498], radius=6, fill=METAL, outline=NAVY, width=2)
+    text(d, (x0 + w / 2 + 6, 472), "1,5 V", 56, WHITE)
+    text(d, (x0 + 30, 470), "−", 60, WHITE); text(d, (x0 + w - 26, 470), "+", 56, WHITE)
+
+CA, CB = 90, 570                                  # x0 pin trai, pin phai
 def s_end(img, d, t, sc):
     M = sc["M"]; k = appear(t, 0.15, 0.4)
-    setup(d, MINUS, W1, "?", la=k, lbl=False)
+    cell(d, CA); cell(d, CB)
+    d.line([(CA + 282, 472), (CB - 14, 472)], fill=COPPER, width=12)          # day dong: (+) pin trai -> (-) pin phai
+    text(d, ((CA + 282 + CB - 14) / 2, 368), "dây đồng", 56, DCOP, alpha=k)
+    probe(d, (CA - 6, 522), BLACKP, 800)                                       # den: mat (-) pin trai
+    probe(d, (CB + 266, 497), RED, 772)                                        # do: num (+) pin phai
+    meter(d, "?", lbl=False)
     y0 = 1100
     card(d, (40, y0, 1040, 1600), fill=A(WHITE, k), outline=A(ORANGE, k), w=6)
     pill(d, "THỬ NGHĨ", y0 + 55, k, ORANGE)
-    text(d, (W / 2, y0 + 140), "Đỏ chạm cực (−),", 60, INK, alpha=k)
-    text(d, (W / 2, y0 + 212), "đen chạm dây đồng.", 60, INK, alpha=k)
-    text(d, (W / 2, y0 + 284), "Vôn kế chỉ bao nhiêu?", 62, (176, 64, 8), alpha=k)
+    text(d, (W / 2, y0 + 150), "Nối thêm pin thứ hai.", 60, INK, alpha=k)
+    text(d, (W / 2, y0 + 250), "Vôn kế chỉ bao nhiêu?", 62, (176, 64, 8), alpha=k)
     seg_bar(d, y0 + 330, t, 1.0, sc["T"] - 0.2, ORANGE, k)
     kh = appear(t, M[0] + 3.0, 0.5)
     if kh > 0:
         card(d, (110, 1508, 970, 1590), fill=A((255, 237, 213), kh), outline=A(ORANGE, kh), r=24, w=4)
-        text(d, (W / 2, 1549), "Gợi ý: dây ở điện thế nào?", 58, (176, 64, 8), alpha=kh)
+        text(d, (W / 2, 1549), "Gợi ý: điện thế từng điểm?", 58, (176, 64, 8), alpha=kh)
 
 def _cues(clip):
     sc = {s["key"]: s for s in clip["scenes"]}
@@ -196,7 +212,7 @@ CLIP = dict(id="tn-l11-dien-the-02", header="VẬT LÍ 11 · THÍ NGHIỆM", foo
    ("Lần 1 và 2: que chạm hai cực.", 5.4),
    ("Lần 3: hai que trên dây đồng.", 4.4)]),
  dict(key="rut", title="Rút ra", draw=s_rut, tail=0.6, caps=[
-   ("Đổi que là đổi thứ tự hai điểm.", 4.4),
+   ("Đổi que là đổi thứ tự.", 4.4),
    ("Mọi điểm trên dây cùng điện thế.", 4.2)]),
  dict(key="bay", title="Bẫy và giới hạn", draw=s_bay, tail=0.4, caps=[
    ("Bẫy thường gặp.", 5.8),

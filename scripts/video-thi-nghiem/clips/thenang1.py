@@ -98,8 +98,7 @@ def seg_bar(d, y, t, t0, t1, col, a=1.0):
 # ---------------- canh 1: Du doan (K10: chi cau hoi + hinh, khong nut) ----------------
 def s_hook(img, d, t, sc):
     M = sc["M"]
-    tok = refl(1.5 + 1.6 * t, 1.5, 8.5)          # dien tich +1 C truot qua lai, cach moi la >= 1,5 cm
-    tray(d, token=tok)
+    tray(d, token=2.6)                            # +1 C dung yen gan la am (cong B v1: bo chuyen dong thua luc HS doan)
     a = appear(t, M[1] - 0.2, 0.5)
     if a <= 0: return
     y0 = 1040 + (1 - a) * 40
@@ -185,9 +184,10 @@ def s_bay(img, d, t, sc):
         pill(d, "BẪY", y0 + 65, a1, DRED)
         q = "“W = 1,18 J”"
         ks = clamp((t - 0.3) / 0.4); f = F(60); lw = tw(d, q, f); yy = y0 + 185
-        text(d, (W / 2, yy), q, 60, mix(DRED, GRAY, ks), alpha=a1)
+        text(d, (W / 2, yy), q, 60, DRED, alpha=a1)
         text(d, (W / 2, yy + 80), "không nói mốc", 58, DRED, alpha=a1)
-        if ks > 0: d.line([(W / 2 - lw / 2 - 6, yy + 2), (W / 2 - lw / 2 - 6 + (lw + 12) * ks, yy + 2)], fill=A(DRED, a1), width=6)
+        if ks > 0:                              # gach cheo manh, chu van doc ro
+            x0 = W / 2 - lw / 2 - 6; d.line([(x0, yy + 30), (x0 + (lw + 12) * ks, yy + 30 - 64 * ks)], fill=A(DRED, 0.8 * a1), width=4)
         text(d, (W / 2, y0 + 410), "✓ 1,18 J, mốc ở lá âm", 58, DGREEN, alpha=a1 * appear(t, 3.0, 0.4))
     if k2 > 0:
         card(d, (40, y0, 1040, y0 + 500), fill=A(WHITE, k2), outline=A(NAVY, k2), w=6)

@@ -11,13 +11,13 @@
 #   chieu E tai tam huong tu (+) sang (-).
 # Bay = hien_tuong_hay_sai[1] (o mep duong suc cung thang deu). KHONG dung [0] (gan ban duong manh hon) vi trung cau Tu kiem tra.
 # Chua noi duoc = gia_thiet "hat bot chi dinh huong": hat cho thay huong, khong do duoc E.
-# Thu nghi (cong moi 27/11): giu 2 cm, U len 30 kV -> E vung giua? Dap an 1 500 000 V/m (ghi_chu kho; khong hien tren man).
-#   Mot buoc clip chua chieu: U gap doi -> E gap doi (tu hang 2 cm, 15 kV, 750 000 V/m). Goi y tre, khong co cong thuc.
+# Thu nghi (cong B v1, 27/11): giu 15 kV, dua hai la con 1 cm -> E vung giua? Dap an 1 500 000 V/m (khong hien tren man).
+#   Mot buoc clip chua chieu: lai halve d lan nua (2 -> 1 cm) -> E gap doi tu 750 000. Clip chi doi d nen KHONG hoi doi U.
 from engine import *
 
 ROWS = [(4, 15, 375000), (2, 15, 750000)]           # hai hang chieu trong clip
 ROW3 = (4, 30, 750000)                               # hang 3 kho (khong chieu)
-CHOT = (2, 30, 1500000)                              # dap an cau chot (ghi_chu kho), khong hien tren man
+CHOT = (1, 15, 1500000)                              # dap an cau chot (ghi_chu kho), khong hien tren man
 def num(n): return f"{n:,}".replace(",", " ")
 
 def _kiem_so():
@@ -136,16 +136,16 @@ def tray(d, dcm, k, show_lines=0.0, arrows=0.0, d_lbl=True, edge_hl=0.0, mid_hl=
             arrow(d, (xp + 30, yy), (xm - 30, yy), A(PURPLE, arrows), w=6, head=20)
         card(d, (CX - 30, CY - 115, CX + 30, CY - 55), fill=A(OIL, arrows), r=12)   # nam giua hai duong suc -57 / -114 px
         text(d, (CX, CY - 85), "E", 56, PURPLE, alpha=arrows)
-    if d_lbl:
+    if edge_hl > 0:
+        for s in (1, -1):
+            yy = CY + s * (HALF + 20)
+            d.ellipse([CX - 250, yy - 75, CX + 250, yy + 75], outline=A(DGREEN, edge_hl), width=4)
+    if d_lbl:                                   # ve sau vong elip: nhan "4 cm" nam tren, khong bi cat
         yy = CY + HALF + 30
         d.line([(xp, yy), (xm, yy)], fill=NAVY, width=3)
         for x in (xp, xm): d.line([(x, yy - 14), (x, yy + 14)], fill=NAVY, width=3)
         card(d, (CX - 110, yy + 8, CX + 110, yy + 74), fill=OIL, r=14)
         text(d, (CX, yy + 41), f"{dcm} cm", 56, INK)
-    if edge_hl > 0:
-        for s in (1, -1):
-            yy = CY + s * (HALF + 20)
-            d.ellipse([CX - 250, yy - 75, CX + 250, yy + 75], outline=A(DGREEN, edge_hl), width=6)
 
 def etable(d, y, n, hl=-1, ratio=0.0, fade=0.0):
     card(d, (40, y, 1040, y + 120 + 2 * 90), fill=WHITE, outline=NAVY, w=4)
@@ -159,7 +159,7 @@ def etable(d, y, n, hl=-1, ratio=0.0, fade=0.0):
         text(d, (xs[0], yy), str(dc), 58, INK); text(d, (xs[1], yy), str(U), 58, INK); text(d, (xs[2], yy), num(E), 58, BLUE)
     if ratio > 0:
         yy = y + 200
-        text(d, (xs[0] - 98, yy), "÷2", 58, ORANGE, alpha=ratio); text(d, (xs[2] + 205, yy), "×2", 58, ORANGE, alpha=ratio)
+        text(d, (xs[0] - 80, yy), "÷2", 58, ORANGE, alpha=ratio); text(d, (xs[2] + 205, yy), "×2", 58, ORANGE, alpha=ratio)
 
 def pill(d, s, y, a, color=NAVY, size=58):
     pw = tw(d, s, F(size)) + 60
@@ -243,9 +243,9 @@ def s_bay(img, d, t, sc):
         pill(d, "BẪY", y + 65, a1, DRED)
         ks = clamp((t - 0.3) / 0.4)
         q = "“Ở mép, đường cũng thẳng đều”"; f = F(58); lw = tw(d, q, f); yy = y + 190
-        text(d, (W / 2, yy), q, 58, mix(INK, GRAY, ks), alpha=a1)
-        if ks > 0:
-            d.line([(W / 2 - lw / 2 - 6, yy + 2), (W / 2 - lw / 2 - 6 + (lw + 12) * ks, yy + 2)], fill=A(DRED, 0.85 * a1), width=6)
+        text(d, (W / 2, yy), q, 58, DRED, alpha=a1)
+        if ks > 0:                              # gach cheo manh, chu van doc ro
+            x0 = W / 2 - lw / 2 - 6; d.line([(x0, yy + 30), (x0 + (lw + 12) * ks, yy + 30 - 64 * ks)], fill=A(DRED, 0.8 * a1), width=4)
         text(d, (W / 2, y + 310), "✓ Gần mép: đường cong ra", 58, DGREEN, alpha=a1 * appear(t, 3.0, 0.4))
     if k3 > 0:
         card(d, (40, y, 1040, y + 400), fill=A(WHITE, k3), outline=A(NAVY, k3), w=6)
@@ -253,13 +253,13 @@ def s_bay(img, d, t, sc):
         text(d, (W / 2, y + 190), "Hạt chỉ cho thấy hướng,", 58, INK, alpha=k3)
         text(d, (W / 2, y + 300), "chưa đo được E.", 58, INK, alpha=k3)
 
-# ---------------- canh 5: THU NGHI (cau chot o khung: 2 cm, 30 kV -> 1 500 000 V/m, khong hien) ----------------
+# ---------------- canh 5: THU NGHI (cau chot o khung: 1 cm, 15 kV -> 1 500 000 V/m, khong hien) ----------------
 def s_end(img, d, t, sc):
     M = sc["M"]; k = appear(t, 0.15, 0.4)
     tray(d, 2, 1.0, d_lbl=False)
     card(d, (40, 1020, 1040, 1580), fill=A(WHITE, k), outline=A(ORANGE, k), w=6)
     pill(d, "THỬ NGHĨ", 1085, k, ORANGE)
-    text(d, (W / 2, 1190), "U lên 30 kV, vẫn 2 cm.", 60, INK, alpha=k)
+    text(d, (W / 2, 1190), "Giữ 15 kV, hai lá còn 1 cm.", 60, INK, alpha=k)
     text(d, (W / 2, 1280), "E vùng giữa bao nhiêu?", 62, (176, 64, 8), alpha=k)
     seg_bar(d, 1360, t, 1.0, sc["T"] - 0.2, ORANGE, k)
     kh = appear(t, M[0] + 3.0, 0.5)

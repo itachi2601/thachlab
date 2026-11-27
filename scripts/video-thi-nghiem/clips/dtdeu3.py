@@ -189,22 +189,36 @@ def s_dapan(img, d, t, sc):
     tube(d, YC2, beams=[(ROWS[0][1], FAINT), (ROWS[1][1], FAINT), (ROWS[2][1], GLOW)], show_e=kf, show_f=kf)
     kr = appear(t, 2.4, 0.45)
     utable(d, 1080, 3, ratio=kr, fade=kf)
+    if kf > 0:                                  # chu giai E, F hien cung mui ten (cong B v1)
+        text(d, (300, 1500), "E: điện trường", 58, ORANGE, alpha=kf)
+        text(d, (790, 1500), "F: lực lên e", 58, PURPLE, alpha=kf)
 
 # ---------------- canh 4: Bay + chua noi duoc ----------------
 def s_bay(img, d, t, sc):
     M = sc["M"]
     card(d, (40, 260, 1040, 990), fill=WHITE, outline=LIGHT, w=3)
-    tube(d, YC, beams=[(ROWS[2][1], FAINT), (ROWS[0][1], GLOW)], scale=False)
     k3 = appear(t, M[1] - 0.1, 0.45); a1 = 1.0 - k3
+    kv = appear(t, 3.0, 0.4)                    # nhip 2: tia thang U = 0 chay ra, tia cong mo lai co nhan U = 60 V
+    tube(d, YC, beams=[(ROWS[1][1], mix(GLOW, FAINT, kv))], scale=False)
+    if t >= 3.0: _beam(d, YC, 0.0, clamp((t - 3.0) / 0.8), GLOW, head=t < 3.8)
+    xr = XL + LPX - 16; yc60 = YC + ypx(ROWS[1][1], LPX)
+    def tag(s, y, col, a):
+        if a <= 0: return
+        wl = tw(d, s, F(56)) + 30
+        card(d, (xr - wl, y - 34, xr, y + 34), fill=A(WHITE, 0.9 * a), outline=A(col, a), r=14, w=3)
+        text(d, (xr - wl / 2, y), s, 56, col, alpha=a)
+    tag("U = ?", yc60 + 70, INK, 1.0 - kv)
+    tag("U = 60 V", yc60 + 70, INK, kv)
+    tag("U = 0", YC - 70, DGREEN, kv)
     y = 1030
     if a1 > 0:
         card(d, (40, y, 1040, y + 420), fill=A(WHITE, a1), outline=A(DRED, a1), w=6)
         pill(d, "BẪY", y + 65, a1, DRED)
         ks = clamp((t - 0.3) / 0.4)
         q = "“Tia lệch xuống do trọng lực”"; f = F(58); lw = tw(d, q, f); yy = y + 190
-        text(d, (W / 2, yy), q, 58, mix(INK, GRAY, ks), alpha=a1)
-        if ks > 0:
-            d.line([(W / 2 - lw / 2 - 6, yy + 2), (W / 2 - lw / 2 - 6 + (lw + 12) * ks, yy + 2)], fill=A(DRED, 0.85 * a1), width=6)
+        text(d, (W / 2, yy), q, 58, DRED, alpha=a1)
+        if ks > 0:                              # gach cheo manh, chu van doc ro
+            x0 = W / 2 - lw / 2 - 6; d.line([(x0, yy + 30), (x0 + (lw + 12) * ks, yy + 30 - 64 * ks)], fill=A(DRED, 0.8 * a1), width=4)
         text(d, (W / 2, y + 320), "✓ U = 0 thì tia đi thẳng", 58, DGREEN, alpha=a1 * appear(t, 3.0, 0.4))
     if k3 > 0:
         card(d, (40, y, 1040, y + 420), fill=A(WHITE, k3), outline=A(NAVY, k3), w=6)
@@ -219,6 +233,12 @@ def s_end(img, d, t, sc):
     card(d, (40, 260, 1040, 990), fill=WHITE, outline=LIGHT, w=3)
     tube(d, YC, scale=False, gun=8.5)
     y0 = 1020; k = appear(t, 0.15, 0.4)
+    yg, yb = YC + DEFL * 8.5 * VS, YC + 10 * VS          # truc sung / mat ban (+): khe 1,5 mm
+    if k > 0:
+        xk = XL + 24
+        d.line([(xk, yg), (xk, yb)], fill=A(NAVY, k), width=4)
+        for yy in (yg, yb): d.line([(xk - 12, yy), (xk + 12, yy)], fill=A(NAVY, k), width=4)
+        text(d, (xk + 26, yg + 6), "1,5 mm", 56, INK, anchor="lm", alpha=k)
     card(d, (40, y0, 1040, 1590), fill=A(WHITE, k), outline=A(ORANGE, k), w=6)
     pill(d, "THỬ NGHĨ", y0 + 60, k, ORANGE)
     for j, s in enumerate(("U = 60 V, vào giữa: lệch 1,65 mm.", "Vào cách bản (+) 1,5 mm:", "tia có ra khỏi hai bản?")):

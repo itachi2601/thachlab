@@ -5,7 +5,8 @@
 #   so_lieu_mau (x cm, V li thuyet, V do, V/x V/m): 2 1,2 1,18 59,0 ; 4 2,4 2,43 60,8 ; 6 3,6 3,57 59,5 ; 8 4,8 4,84 60,5
 #   quan_sat: di que do song song la dong -> so chi gan nhu khong doi (ve so chi dung yen 2,43 V o x = 4 cm).
 #   hien_tuong_hay_sai[1]: lay U = E.MN khi hai que dat xien -> bay; U = 3,57 - 1,18 ~ 2,4 V (= V li thuyet 3,6 - 1,2).
-#   Cau chot (27/11/2026, o khung, khong hien): que den cham LA DUONG, que do o x = 9 cm -> U = V_do - V_den = 5,4 - 6,0 = -0,6 V.
+#   Cau chot (cong B v1, o khung, khong hien): que den o x = 3 cm (V ~ 60 V/m . 0,03 m = 1,8 V), que do cham la duong (6,0 V)
+#   -> so chi = V_do - V_den = 6,0 - 1,8 = 4,2 V. Mot von ke duy nhat (trong hinh) o canh Tien hanh.
 # Khac clip thenang1 (cung khay): khay VE DOC (la duong tren, la am duoi, thuoc dung ben trai, von ke ben phai), khong
 #   co dien tich +1 C, khong do thi W theo x; Du doan hoi so chi khi di que SONG SONG la dong (dap an C: gan nhu khong
 #   doi), bay "hai que xien -> U = E.MN", chot hoi U giua hai que deu khong cham la am.
@@ -89,13 +90,6 @@ def marks(d, n, ka=1.0):
         x, v = ROWS[i]
         text(d, (PX_COL - 28, py(x)), vn(v) + " V", 56, DGREEN, anchor="rm", alpha=ka)
 
-def bigread(d, reading, note=None):
-    """Man so phong to cua von ke (duoi khay)."""
-    card(d, (190, 1000, 890, 1300), fill=(70, 78, 100), r=26)
-    card(d, (230, 1035, 850, 1195), fill=(220, 240, 225), r=16)
-    text(d, (540, 1115), reading if reading else "", 96, (20, 60, 30))
-    if note: text(d, (540, 1250), note, 56, WHITE, bold=False)
-
 # ---------------- canh 1: Du doan (K10: chi cau hoi + hinh, khong nut) ----------------
 def s_hook(img, d, t, sc):
     M = sc["M"]
@@ -129,30 +123,28 @@ def xbar(d, x, ka=1.0):      # thuoc do x tu la am toi que do (ben phai cot que)
 def s_do(img, d, t, sc):
     M = sc["M"]
     if t < M[1]:                              # que do toi x = 2 cm, lam cham
-        if t < 0.4: tray(d); bigread(d, ""); return
+        if t < 0.4: tray(d); return
         x = lerp(0.5, 2.0, ease((t - 0.4) / 1.1))
         rd = "1,18 V" if t >= 2.1 else ""
         tray(d, red=(PX_COL, py(x)), reading=rd)
         if t >= 1.6: xbar(d, 2.0, appear(t, 1.6, 0.4))
         if t >= 2.1: marks(d, 1)
-        bigread(d, rd, "que đỏ: x = 2 cm" if t >= 2.1 else None)
         return
     u = t - M[1]
     if u < SL0:                               # 4, 6, 8 cm: so chi chi hien khi que da dung o diem do
         pill(d, "tua nhanh", 955, 1.0, ORANGE, size=56, cx=250)
         v = u - FF0
         if v < 0:
-            tray(d, red=(PX_COL, py(2)), reading="1,18 V"); marks(d, 1); bigread(d, "1,18 V", "que đỏ: x = 2 cm"); return
+            tray(d, red=(PX_COL, py(2)), reading="1,18 V"); marks(d, 1); return
         j = 1 + max(0, min(2, int(v // FFW))); w = v - (j - 1) * FFW
         x, val = ROWS[j]
         if v >= 3 * FFW:                      # tro lai 4 cm truoc khi di ngang (dang chay: an so)
-            tray(d, red=(PX_COL, py(lerp(8.0, 4.0, ease((v - 3 * FFW) / 0.2))))); marks(d, 4); bigread(d, ""); return
+            tray(d, red=(PX_COL, py(lerp(8.0, 4.0, ease((v - 3 * FFW) / 0.2))))); marks(d, 4); return
         xp = lerp(ROWS[j - 1][0], x, ease(w / 0.45))
         st = w >= 0.5                         # que da dung han o x
         rd = vn(val) + " V" if st else ""
         tray(d, red=(PX_COL, py(xp)), reading=rd)
         marks(d, j + (1 if st else 0))
-        bigread(d, rd, f"que đỏ: x = {x} cm" if st else None)
         return
     # o 4 cm, di que do sang ngang (ve phia phai, tranh cot so): so chi dung yen
     s = u - SL0
@@ -163,7 +155,7 @@ def s_do(img, d, t, sc):
     arrow(d, (540, ya), (505, ya), ORANGE, w=4, head=16); arrow(d, (670, ya), (705, ya), ORANGE, w=4, head=16)
     tray(d, red=(xs, py(4)), reading="2,43 V")
     marks(d, 4)
-    bigread(d, "2,43 V", "dời ngang, vẫn x = 4 cm")
+    text(d, (W / 2, 1060), "dời ngang, vẫn x = 4 cm", 58, ORANGE)
 
 # ---------------- canh 3: Dap an + rut ra ----------------
 def eqline(d, x, v, k):
@@ -215,25 +207,27 @@ def s_bay(img, d, t, sc):
         pill(d, "BẪY", y0 + 65, a1, DRED)
         q = "“U = E · MN”"
         ks = clamp((t - 0.3) / 0.4); f = F(60); lw = tw(d, q, f); yy = y0 + 210
-        text(d, (W / 2, yy), q, 60, mix(DRED, GRAY, ks), alpha=a1)
-        if ks > 0: d.line([(W / 2 - lw / 2 - 6, yy + 2), (W / 2 - lw / 2 - 6 + (lw + 12) * ks, yy + 2)], fill=A(DRED, a1), width=6)
+        text(d, (W / 2, yy), q, 60, DRED, alpha=a1)
+        if ks > 0:                              # gach cheo manh, chu van doc ro
+            x0 = W / 2 - lw / 2 - 6; d.line([(x0, yy + 30), (x0 + (lw + 12) * ks, yy + 30 - 64 * ks)], fill=A(DRED, 0.8 * a1), width=4)
         text(d, (W / 2, y0 + 400), "✓ Chỉ tính 4 cm dọc E", 56, DGREEN, alpha=a1 * kt)
     if k2 > 0:
         card(d, (40, y0, 1040, y0 + 500), fill=A(WHITE, k2), outline=A(NAVY, k2), w=6)
         pill(d, "CHƯA NÓI ĐƯỢC", y0 + 65, k2, NAVY)
         text(d, (W / 2, y0 + 250), "Sát mép: đường sức cong.", 60, INK, alpha=k2)
 
-# ---------------- canh 5: THU NGHI (cau chot o khung: que den o la duong, que do x = 9 cm -> -0,6 V, khong hien) ----------------
+# ---------------- canh 5: THU NGHI (cong B v1: que den o x = 3 cm, que do cham la duong -> 6,0 - 1,8 = 4,2 V, khong hien;
+#                  khong trung chot thenang1 la doi moc -> so am) ----------------
 def s_end(img, d, t, sc):
     M = sc["M"]; k = appear(t, 0.15, 0.4)
-    tray(d, red=(PX_COL, py(9)), black=(620, YP), reading="? V", field=False, ww=3, lbl=False)
-    y9 = py(9)
-    d.line([(222, y9), (PX_COL - 20, y9)], fill=A(ORANGE, k), width=4)
+    tray(d, red=(620, YP), black=(PX_COL, py(3)), reading="? V", field=False, ww=3, lbl=False)
+    y3 = py(3)
+    d.line([(222, y3), (PX_COL - 20, y3)], fill=A(ORANGE, k), width=4)
     y0 = 1010
     card(d, (40, y0, 1040, 1590), fill=A(WHITE, k), outline=A(ORANGE, k), w=6)
     pill(d, "THỬ NGHĨ", y0 + 60, k, ORANGE)
-    text(d, (W / 2, y0 + 160), "Que đen chạm lá dương,", 60, INK, alpha=k)
-    text(d, (W / 2, y0 + 240), "que đỏ ở x = 9 cm.", 60, INK, alpha=k)
+    text(d, (W / 2, y0 + 160), "Que đen ở x = 3 cm,", 60, INK, alpha=k)
+    text(d, (W / 2, y0 + 240), "que đỏ chạm lá dương.", 60, INK, alpha=k)
     text(d, (W / 2, y0 + 320), "Vôn kế chỉ bao nhiêu?", 62, (176, 64, 8), alpha=k)
     seg_bar(d, y0 + 380, t, 1.0, sc["T"] - 0.2, ORANGE, k)
     kh = appear(t, M[0] + 3.0, 0.5)

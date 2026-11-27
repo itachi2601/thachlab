@@ -3,7 +3,8 @@
 #   so_lieu_mau (x cm, V V, V/x V/m): 1 1,5 150 ; 2 3,0 150 ; 3 4,5 150 ; 4 6,0 150 ; 5 7,5 150
 #   tham_so / dung_cu: U = 9,0 V (dieu chinh 3-12 V), d = 6,0 cm, von ke +-0,1 V.
 #   ket_qua_ky_vong: dE = 10 V/m o x = 1 cm, 2 V/m o x = 5 cm. hien_tuong_hay_sai: de d bang cm -> 1,5.
-#   Cau hoi chot: U = 12 V (max tham_so), d = 6,0 cm -> E = 200 V/m (chua tung hien tren man).
+#   Cau hoi chot (cong B v1): d = 4,0 cm, U = 9,0 V, que o x = 2 cm -> E = 225 V/m, so chi 4,5 V (buoc chua chieu:
+#   doi d roi tinh lai V = E.x; khong chi doi so trong E = U/d vua chieu).
 # Canh: Du doan (K10: chi cau hoi + hinh) -> Tien hanh (que duong do x = 1..5 cm, bang x - V) -> Dap an B (do thi V theo x
 #       thang qua goc, cot V/x = 150 = U/d; hang x = 1 cm lech nhieu nhat) -> Bay (d de cm) roi Chua noi duoc ->
 #       THU NGHI (12 V, khong hop chot, goi y 'doi d ra met', khong cong thuc).
@@ -28,26 +29,28 @@ def probe(d, x, a=1.0):
     d.line([(tx + 26, 692), (tx + 58, 764)], fill=A(RED, a), width=22)                # than que do (cheo xuong phai)
     dot(d, tx, PY, 9, A(YELLOW, a), outline=A(NAVY, a))
 
-def setup(d, x=None, reading="– – –", show_d=False, pa=1.0, u="9,0", span=0.0, vk=True):
+def setup(d, x=None, reading="– – –", show_d=False, pa=1.0, u="9,0", span=0.0, vk=True, dc=6):
+    """dc: khoang cach hai thanh (cm); clip do o 6, canh Thu nghi ve 4."""
     d.line([(XN, 410), (XN, 300), (440, 300)], fill=NAVY, width=5)
-    d.line([(bx(6), 410), (bx(6), 300), (480, 300)], fill=NAVY, width=5)
-    d.line([(440, 278), (440, 322)], fill=NAVY, width=12)          # ban ngan, day: cuc am
-    d.line([(480, 258), (480, 342)], fill=NAVY, width=5)           # ban dai: cuc duong
-    text(d, (460, 240), f"U = {u} V", 56, INK)
+    d.line([(bx(dc), 410), (bx(dc), 300), (480, 300)], fill=NAVY, width=5)
+    d.line([(440, 284), (440, 316)], fill=NAVY, width=12)          # ban ngan, day: cuc am
+    d.line([(480, 268), (480, 332)], fill=NAVY, width=5)           # ban dai: cuc duong (ngan lai, khong cat nhan U)
+    text(d, (460, 222), f"U = {u} V", 56, INK)          # tren ban dai cua pin (258), khong bi cat
     d.rectangle([110, 380, 810, 900], fill=PAPER)
     if span > 0: d.rectangle([bx(1), 390, bx(1) + 200 * span, 890], fill=A((255, 214, 110), 0.6))
-    d.rectangle([XN + 12, 535, bx(6) - 12, 615], fill=RULER)       # thuoc nam TREN hang que do (y 640)
-    for i in range(7):
+    d.rectangle([XN + 12, 535, bx(dc) - 12, 615], fill=RULER)      # thuoc nam TREN hang que do (y 640)
+    for i in range(dc + 1):
         d.line([(bx(i), 535), (bx(i), 552)], fill=NAVY, width=3)
-        if 1 <= i <= 5: text(d, (bx(i), 585), str(i), 56, INK)
+        if 1 <= i <= dc - 1: text(d, (bx(i), 585), str(i), 56, INK)
     text(d, (XN + 60, 668), "cm", 56, WHITE, bold=False)
-    for xc in (XN, bx(6)):
+    for xc in (XN, bx(dc)):
         d.rectangle([xc - 12, 410, xc + 12, 870], fill=COPPER, outline=NAVY, width=3)
-    text(d, (XN + 46, 440), "−", 58, WHITE); text(d, (bx(6) - 46, 440), "+", 58, WHITE)
+    text(d, (XN + 46, 440), "−", 58, WHITE); text(d, (bx(dc) - 46, 440), "+", 58, WHITE)
     if show_d:
-        arrow(d, (460, 480), (XN + 16, 480), WHITE, w=4, head=18); arrow(d, (460, 480), (bx(6) - 16, 480), WHITE, w=4, head=18)
-        card(d, (290, 410, 630, 470), fill=PAPER, r=10)
-        text(d, (460, 440), "d = 6,0 cm", 56, WHITE)
+        cx = (XN + bx(dc)) / 2
+        arrow(d, (cx, 480), (XN + 16, 480), WHITE, w=4, head=18); arrow(d, (cx, 480), (bx(dc) - 16, 480), WHITE, w=4, head=18)
+        card(d, (cx - 170, 410, cx + 170, 470), fill=PAPER, r=10)
+        text(d, (cx, 440), f"d = {dc},0 cm", 56, WHITE)
     d.line([(420, 935), (420, 915), (XN, 915), (XN, 870)], fill=WIRE_NEG, width=6)
     card(d, (360, 935, 720, 1095), fill=(70, 78, 100), r=22)
     card(d, (390, 952, 690, 1075), fill=(220, 240, 225), r=12)
@@ -162,29 +165,33 @@ def s_bay(img, d, t, sc):
         card(d, (40, y0, 1040, y0 + 450), fill=A(WHITE, a1), outline=A(DRED, a1), w=6)
         pill(d, "BẪY", y0 + 65, a1, DRED)
         q = "E = 9,0 : 6,0 = 1,5 V/m"
-        ks = clamp((t - 0.3) / 0.4); f = F(58); lw = tw(d, q, f); yy = y0 + 200
-        text(d, (W / 2, yy), q, 58, mix(DRED, GRAY, ks), alpha=a1)
-        if ks > 0: d.line([(W / 2 - lw / 2 - 6, yy + 2), (W / 2 - lw / 2 - 6 + (lw + 12) * ks, yy + 2)], fill=A(DRED, a1), width=6)
-        text(d, (W / 2, y0 + 330), "✓ 9,0 : 0,060 = 150 V/m", 58, (10, 80, 40), alpha=a1 * appear(t, 3.0, 0.4))
+        ks = clamp((t - 0.3) / 0.4); f = F(58); lw = tw(d, q, f); yy = y0 + 165
+        text(d, (W / 2, yy), q, 58, DRED, alpha=a1)
+        if ks > 0:                              # gach cheo manh, chu van doc ro
+            x0 = W / 2 - lw / 2 - 6; d.line([(x0, yy + 30), (x0 + (lw + 12) * ks, yy + 30 - 64 * ks)], fill=A(DRED, 0.8 * a1), width=4)
+        kv = appear(t, 3.0, 0.4)                # cung nhip voi dau tick: d doi ra met
+        text(d, (W / 2, y0 + 255), "d = 6,0 cm", 56, INK, alpha=a1 * (1 - kv))
+        text(d, (W / 2, y0 + 255), "d = 6,0 cm = 0,060 m", 56, (10, 80, 40), alpha=a1 * kv)
+        text(d, (W / 2, y0 + 360), "✓ 9,0 : 0,060 = 150 V/m", 58, (10, 80, 40), alpha=a1 * kv)
     if k2 > 0:
         card(d, (40, y0, 1040, y0 + 450), fill=A(WHITE, k2), outline=A(NAVY, k2), w=6)
         pill(d, "CHƯA NÓI ĐƯỢC", y0 + 65, k2, NAVY)
         text(d, (W / 2, y0 + 200), "Sát mép thanh, E còn đều?", 58, INK, alpha=k2)
 
-# ---------------- canh 5: THU NGHI (cau chot o khung: 12 V, 6,0 cm -> 200 V/m, khong hien) ----------------
+# ---------------- canh 5: THU NGHI (cong B v1: hai thanh 4,0 cm, 9,0 V, que o x = 2 cm -> E = 225 V/m, 4,5 V; khong hien) ----------------
 def s_end(img, d, t, sc):
     M = sc["M"]; k = appear(t, 0.15, 0.4)
-    setup(d, None, "– – –", u="12", vk=False)
+    setup(d, 2, "? V", show_d=k >= 0.98, vk=False, dc=4)       # nhan d hien cung the, khong thanh khoi chu rieng
     y0 = 1110
     card(d, (40, y0, 1040, 1590), fill=A(WHITE, k), outline=A(ORANGE, k), w=6)
     pill(d, "THỬ NGHĨ", y0 + 60, k, ORANGE)
-    text(d, (W / 2, y0 + 155), "Nguồn 12 V, vẫn d = 6,0 cm.", 58, INK, alpha=k)
-    text(d, (W / 2, y0 + 240), "E giữa hai thanh bao nhiêu?", 60, (176, 64, 8), alpha=k)
+    text(d, (W / 2, y0 + 155), "Hai thanh cách 4,0 cm, vẫn 9,0 V.", 58, INK, alpha=k)
+    text(d, (W / 2, y0 + 240), "Que ở 2 cm: số chỉ bao nhiêu?", 58, (176, 64, 8), alpha=k)
     seg_bar(d, y0 + 290, t, 1.0, sc["T"] - 0.2, ORANGE, k)
     kh = appear(t, M[0] + 3.0, 0.5)
     if kh > 0:
         card(d, (90, y0 + 380, 990, y0 + 470), fill=A((255, 237, 213), kh), outline=A(ORANGE, kh), r=24, w=4)
-        text(d, (W / 2, y0 + 425), "Gợi ý: U và d giờ là bao nhiêu?", 58, (176, 64, 8), alpha=kh)
+        text(d, (W / 2, y0 + 425), "Gợi ý: E giờ bao nhiêu V/m?", 58, (176, 64, 8), alpha=kh)
 
 def _cues(clip):
     sc = {s["key"]: s for s in clip["scenes"]}
