@@ -7,7 +7,8 @@
 #   bay = hien_tuong_hay_sai[1] (U x4 thi U.I x4). chua noi duoc = mo_hinh.gia_thiet[1].
 # Cau 1 cua bai (lam gi cho U.I dang tin hon) KHONG duoc goi y: khong noi do lap, do chia ampe ke.
 # Du doan (K10): dat 3,0 V vao den -> tich U.I khoang? -> khoang 1 W (0,99).
-# THU NGHI = cau_chot khung web: dat 5,0 V, ampe ke chi 0,45 A (mo_hinh: 0,5.(5/6)^0,6 = 0,448 -> 0,45) -> U.I = 2,25 W.
+# THU NGHI = cau_chot khung web (v2 theo kiem-v1 + phien chinh): dat 5,0 V, KHONG cho I. Buoc suy luan chua chieu:
+#   0,42 A (4,5 V) < I < 0,50 A (6 V) -> 2,1 W < U.I < 2,5 W -> khoang 2,3 W (mo_hinh: I = 0,448 A, U.I = 2,24 W).
 #   CHUA co trong kho ghi_chu (tinh tu mo_hinh) -> bao phien chinh. Man chot KHONG in 2,25.
 import copy, json, math, os
 from engine import *
@@ -234,6 +235,7 @@ def s_bay(img, d, t, sc):
     if a2 > 0:
         card(d, (550, 470, 1040, 1260), fill=A(WHITE, a2), outline=A(DGREEN, a2), w=5)
         text(d, (795, 540), "U·I (W) đo", FS, DGREEN, alpha=a2)
+        text(d, (795, 615), f"I: {vn(ROWS[0][1], 2)} → {vn(ROWS[3][1], 2)}", FS, BLUE, alpha=a2)
         bars(d, 560, (("1,5", ROWS[0][2]), ("6", ROWS[3][2])), DGREEN, appear(t, BAY_R, 0.9), a2)
         text(d, (795, 1195), "✓ gấp khoảng 9", FS, DGREEN, alpha=a2)
     k3 = appear(t, BAY_C, 0.45)
@@ -248,16 +250,16 @@ END_Q, END_C = 0.2, 3.0
 def s_end(img, d, t, sc):
     k0 = appear(t, END_C, 0.5)
     card(d, (50, 265, 1030, 415), fill=A((236, 253, 243), k0), outline=A(GREEN, k0), w=6)
-    text(d, (W / 2, 340), "Đủ 3 W chỉ khi đúng 6 V", FS, DGREEN, alpha=k0)
+    text(d, (W / 2, 340), "P = U·I là công suất điện", FS, DGREEN, alpha=k0)
     k1 = appear(t, END_Q, 0.5)
     card(d, (40, 450, 1040, 1580), fill=A(WHITE, k1), outline=A(ORANGE, k1), w=6)
     pw = tw(d, "THỬ NGHĨ", F(FS)) + 60
     card(d, (W / 2 - pw / 2, 478, W / 2 + pw / 2, 558), fill=A(ORANGE, k1), r=40)
     text(d, (W / 2, 518), "THỬ NGHĨ", FS, WHITE, alpha=k1)
     text(d, (W / 2, 650), "Đặt 5,0 V vào đèn.", FL, INK, alpha=k1)
-    text(d, (W / 2, 735), "Tích U·I bằng bao nhiêu?", FL, INK, alpha=k1)
+    text(d, (W / 2, 735), "Tích U·I khoảng bao nhiêu?", FL, INK, alpha=k1)
     if k1 > 0.5: bulb(d, W / 2, 920, 70, 2)
-    for x0, lab, val, col in ((40, "U", "5,0 V", PURPLE), (550, "I", "0,45 A", BLUE)):
+    for x0, lab, val, col in ((40, "U", "5,0 V", PURPLE), (550, "I", "? A", BLUE)):
         card(d, (x0 + 30, 1070, x0 + 460, 1210), fill=A(BODY, k1), r=22)
         text(d, (x0 + 95, 1140), lab, 64, WHITE, alpha=k1)
         card(d, (x0 + 150, 1095, x0 + 440, 1185), fill=A(SCREEN, k1), r=12)
@@ -284,7 +286,7 @@ CLIP = dict(id="tn-l9-congsuat-01", header="KHTN 9 · VẬT LÍ · THÍ NGHIỆM
  dict(key="do", title="Tiến hành", draw=s_do, tail=0.3, caps=[
    ("Đóng K, tăng U từng nấc.", 3.4),
    ("Mỗi nấc: đọc I, xem đèn.", 3.4),
-   ("Nấc cuối: đúng 6 V.", 3.2)]),
+   ("Tăng tiếp lên 6 V.", 3.2)]),
  dict(key="dapan", title="Kết quả", draw=s_dapan, tail=0.3, caps=[
    ("Nhân U với I mỗi lần.", 3.0),
    ("Tích U·I là công suất.", 3.0)]),

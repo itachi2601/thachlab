@@ -99,7 +99,7 @@ def readings(closed):
 
 
 PANEL = (("V", PURPLE, PURPLE, " V", 1), ("A", BLUE, BLUE, " A", 2), ("A1", BLUE, C1, " A", 2), ("A2", BLUE, C2, " A", 2))
-def panel(d, closed, hl=None, y=1030):
+def panel(d, closed, hl=None, y=1030, shown=(0, 1, 2, 3)):
     vals = readings(closed)
     for j, ((ch, col, lcol, unit, nd), v) in enumerate(zip(PANEL, vals)):
         x = 40 + 510 * (j % 2); yy = y + 190 * (j // 2)
@@ -107,7 +107,7 @@ def panel(d, closed, hl=None, y=1030):
         d.ellipse([x + 30, yy + 35, x + 130, yy + 135], fill=WHITE, outline=lcol, width=6)
         text(d, (x + 80, yy + 87), ch, FS if len(ch) == 1 else 50 + 6, lcol)
         card(d, (x + 160, yy + 40, x + 460, yy + 130), fill=SCREEN, r=12)
-        text(d, (x + 310, yy + 87), vn(v, nd) + unit, 60, SCR_INK)
+        text(d, (x + 310, yy + 87), (vn(v, nd) + unit) if (j in shown or not closed) else "…", 60, SCR_INK)
 
 
 # ---------------- canh 1: Du doan ----------------
@@ -133,22 +133,29 @@ def s_hook(img, d, t, sc):
 
 
 # ---------------- canh 2: Tien hanh ----------------
-T_CLOSE, T_HL, HL_STEP = 0.9, 1.6, 1.7
+# soi lan luot khop phu de (gop y kiem-v1 muc 1-2): von ke luc "Von ke do giua A va B" (3,8), A1, A2 luc
+#   "Moi nhanh mot ampe ke" (7,2), ampe ke mach chinh cuoi; o chua toi luot ghi "…".
+T_CLOSE = 0.9
+HL = ((3.8, 0), (7.2, 2), (8.4, 3), (9.4, 1))
+T_HL, HL_STEP = HL[0][0], 1.0
 def do_closed(t): return t >= T_CLOSE
 def do_hl(t):
-    if t < T_HL: return None
-    k = int((t - T_HL) / HL_STEP); return k if k < 4 else None
+    k = None
+    for ts, j in HL:
+        if t >= ts: k = j
+    return k
+def do_shown(t): return tuple(j for ts, j in HL if t >= ts)
 
 
 def s_do(img, d, t, sc):
     c = do_closed(t)
-    circuit(d, c); panel(d, c, hl=do_hl(t))
+    circuit(d, c); panel(d, c, hl=do_hl(t), shown=do_shown(t))
 
 
 def _kiem_dong_bo():
     clip = copy.deepcopy(CLIP); build(clip)
     sc = [s for s in clip["scenes"] if s["key"] == "do"][0]; t = 0.0; bad = []
-    if sc["T"] < T_HL + 4 * HL_STEP: bad.append(("canh ngan hon 4 lan soi", round(sc["T"], 2)))
+    if sc["T"] < HL[-1][0] + 0.9: bad.append(("canh ngan hon 4 lan soi", round(sc["T"], 2)))
     while t < sc["T"]:
         c = do_closed(t); r = readings(c)
         if not c and any(r): bad.append((round(t, 2), "K mo ma co so"))
@@ -224,7 +231,7 @@ def s_bay(img, d, t, sc):
     a2 = appear(t, BAY_R, 0.45)
     if a2 > 0:
         card(d, (550, 470, 1040, 1260), fill=A(WHITE, a2), outline=A(DGREEN, a2), w=5)
-        for j, s in enumerate(("song song:", "R = 6 Ω", "6 V : 6 Ω", "= 1,00 A")):
+        for j, s in enumerate(("10·15 : 25", "= 6 Ω", "6 V : 6 Ω", "= 1,00 A")):
             text(d, (795, 570 + j * 110), s, FL, DGREEN if j % 2 else INK, alpha=a2)
         text(d, (795, 1170), "✓ khớp", FS, DGREEN, alpha=a2)
     k3 = appear(t, BAY_C, 0.45)

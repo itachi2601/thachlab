@@ -187,7 +187,7 @@ def s_dapan(img, d, t, sc):
     k1 = appear(t, M[1] - 0.1, 0.5)
     if k1 > 0:
         card(d, (60, 1235, 1020, 1400), fill=A((236, 253, 243), k1), outline=A(GREEN, k1), r=24, w=4)
-        text(d, (W / 2, 1318), "song song: 1,0 − 0,5 = 0,5", 64, DGREEN, alpha=k1)
+        text(d, (W / 2, 1318), "song song: 1 A − 0,5 A = 0,5 A", 60, DGREEN, alpha=k1)
 
 
 # ---------------- canh 4: Rut ra ----------------

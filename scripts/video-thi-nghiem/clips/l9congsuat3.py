@@ -118,9 +118,11 @@ def readouts(d, vals):
     for k, (lab, val, col) in enumerate(vals):
         x0 = 40 + k * 340
         card(d, (x0, 785, x0 + 320, 935), fill=BODY, r=22)
-        text(d, (x0 + 58, 860), lab, FS, WHITE)
-        card(d, (x0 + 110, 812, x0 + 300, 908), fill=SCREEN, r=12)
-        text(d, (x0 + 205, 860), val, FS, SCR_INK)
+        if "_" in lab:   # chi so cung co chu (>= 48 px), mau vang, ha thap: U_X / I_Y
+            text(d, (x0 + 36, 850), lab[0], FS, WHITE); text(d, (x0 + 76, 874), lab[3], FS, YELLOW)
+        else: text(d, (x0 + 58, 860), lab, FS, WHITE)
+        card(d, (x0 + 118, 812, x0 + 308, 908), fill=SCREEN, r=12)
+        text(d, (x0 + 213, 860), val, FS, SCR_INK)
 
 
 # bang do sang 2x2: hang noi tiep / song song, cot X / Y, o = hinh bong
@@ -168,10 +170,10 @@ def do_state(t):
 def do_read(mode, closed):
     x, y = (ROWS[0], ROWS[1]) if mode == "nt" else (ROWS[2], ROWS[3])
     if mode == "nt":
-        if not closed: return [("I", "0,00 A", BLUE), ("X", "0,0 V", PURPLE), ("Y", "0,0 V", PURPLE)]
-        return [("I", vn(x[3], 2) + " A", BLUE), ("X", vn(x[2]) + " V", PURPLE), ("Y", vn(y[2]) + " V", PURPLE)]
-    if not closed: return [("U", "0,0 V", PURPLE), ("X", "0,00 A", BLUE), ("Y", "0,00 A", BLUE)]
-    return [("U", vn(x[2]) + " V", PURPLE), ("X", vn(x[3], 2) + " A", BLUE), ("Y", vn(y[3], 2) + " A", BLUE)]
+        if not closed: return [("I", "0,00 A", BLUE), ("U_{X}", "0,0 V", PURPLE), ("U_{Y}", "0,0 V", PURPLE)]
+        return [("I", vn(x[3], 2) + " A", BLUE), ("U_{X}", vn(x[2]) + " V", PURPLE), ("U_{Y}", vn(y[2]) + " V", PURPLE)]
+    if not closed: return [("U", "0,0 V", PURPLE), ("I_{X}", "0,00 A", BLUE), ("I_{Y}", "0,00 A", BLUE)]
+    return [("U", vn(x[2]) + " V", PURPLE), ("I_{X}", vn(x[3], 2) + " A", BLUE), ("I_{Y}", vn(y[3], 2) + " A", BLUE)]
 
 
 def s_do(img, d, t, sc):
@@ -253,7 +255,8 @@ def s_rutra(img, d, t, sc):
     for cx, nm, r in ((400, "X", R_X), (680, "Y", R_Y)):
         bulb(d, cx, y0, 50, LOOK[("nt", nm)], alpha=k1)
         text(d, (cx, y0 + 120), f"{vn(r, 0)} Ω", FL, INK, alpha=k1)
-    text(d, (W / 2, 790), "R lớn → P lớn", FL, (154, 52, 18), alpha=k1)
+    text(d, (W / 2, 722), "R = 6² : P", FS, INK, alpha=k1)
+    text(d, (W / 2, 805), "R lớn → P lớn", FL, (154, 52, 18), alpha=k1)
     k2 = appear(t, M[1] - 0.1, 0.45)
     if k2 > 0:
         y2 = 900 + (1 - k2) * 30

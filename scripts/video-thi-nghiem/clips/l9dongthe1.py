@@ -241,7 +241,7 @@ def s_rutra(img, d, t, sc):
     x, y, hit, ti = ball_path(50, 20, tau)
     dx = slide(tau - ti, 8.0 * PXCM) if hit else 0.0
     if hit: x += 0.3 * dx
-    rig(d, 50, 20, x, y, dx, ghost=dx > 0, hl=20, label=False, plabels=False, marks=(20,))
+    rig(d, 50, 20, x, y, dx, ghost=dx > 0, hl=20, label=False, plabels=True, marks=(20,))
     k1 = appear(t, 0.2, 0.45)
     card(d, (40, 965, 1040, 1205), fill=A((236, 253, 243), k1), outline=A(GREEN, k1), w=5)
     text(d, (W / 2, 1045), "Động năng", 72, DGREEN, alpha=k1)
@@ -250,21 +250,22 @@ def s_rutra(img, d, t, sc):
     if k2 > 0:
         y2 = 1250 + (1 - k2) * 30
         card(d, (40, y2, 1040, y2 + 300), fill=A((255, 247, 237), k2), outline=A(ORANGE, k2), w=5)
-        text(d, (W / 2, y2 + 95), "Nặng hơn, cao hơn", FL, (154, 52, 18), alpha=k2)
+        text(d, (W / 2, y2 + 95), "Cao hơn → bi nhanh hơn", FL, (154, 52, 18), alpha=k2)
         text(d, (W / 2, y2 + 200), "→ gỗ đi xa hơn", FL, (154, 52, 18), alpha=k2)
 
 
 # ---------------- canh 5: Bay (hai bieu do canh nhau) roi Chua noi duoc ----------------
 BAY_R, BAY_C = 3.4, 6.4
 def vbars(d, x0, vals, col, k, ka):
-    base = 1060
+    base = 1000
     d.line([(x0 + 40, base), (x0 + 430, base)], fill=A(INK, ka), width=4)
     for j, (g, v) in enumerate(vals):
         cx = x0 + 145 + 190 * j; h = 330 * v / 8.0 * k
         if h > 0: d.rectangle([cx - 55, base - h, cx + 55, base], fill=A(col, ka))
         text(d, (cx, base - 330 * v / 8.0 - 42), vn(v), FL, mix(col, INK, 0.3), alpha=ka * k)
         r = rad(g) * 1.3
-        d.ellipse([cx - r, base + 60 - r, cx + r, base + 60 + r], fill=A(STEEL, ka), outline=A(STEEL_D, ka), width=4)
+        d.ellipse([cx - r, base + 50 - r, cx + r, base + 50 + r], fill=A(STEEL, ka), outline=A(STEEL_D, ka), width=4)
+        text(d, (cx, base + 125), f"{g} g", FS, NAVY, alpha=ka)
 
 
 def s_bay(img, d, t, sc):
@@ -276,13 +277,13 @@ def s_bay(img, d, t, sc):
     card(d, (40, 470, 530, 1260), fill=A(WHITE, a1), outline=A(DRED, a1), w=5)
     text(d, (285, 540), "s (cm) nghĩ", FS, DRED, alpha=a1)
     vbars(d, 50, ((50, RUNS[0][2]), (100, RUNS[0][2])), DRED, appear(t, 0.6, 1.0), a1)
-    text(d, (285, 1195), "✗ như nhau", FS, DRED, alpha=a1)
+    text(d, (285, 1212), "✗ như nhau", FS, DRED, alpha=a1)
     a2 = appear(t, BAY_R, 0.45)
     if a2 > 0:
         card(d, (550, 470, 1040, 1260), fill=A(WHITE, a2), outline=A(DGREEN, a2), w=5)
         text(d, (795, 540), "s (cm) đo", FS, DGREEN, alpha=a2)
         vbars(d, 560, ((50, RUNS[0][2]), (100, RUNS[2][2])), DGREEN, appear(t, BAY_R, 0.9), a2)
-        text(d, (795, 1195), "✓ xa hơn", FS, DGREEN, alpha=a2)
+        text(d, (795, 1212), "✓ xa hơn", FS, DGREEN, alpha=a2)
     k3 = appear(t, BAY_C, 0.45)
     if k3 > 0:
         card(d, (40, 1300, 1040, 1560), fill=A(WHITE, k3), outline=A(NAVY, k3), w=5)
@@ -344,13 +345,13 @@ CLIP = dict(id="tn-l9-dongthe-01", header="KHTN 9 · THÍ NGHIỆM", footer="Đ�
    ("Khối lượng có tác dụng.", 3.0)]),
  dict(key="rutra", title="Rút ra", draw=s_rutra, tail=0.3, caps=[
    ("Vì sao gỗ đi?", 3.0),
-   ("Khi nào nó lớn?", 3.4)]),
+   ("Khi nào nó lớn?", 3.8)]),
  dict(key="bay", title="Bẫy và giới hạn", draw=s_bay, tail=0.2, caps=[
    ("Nghe hợp lí?", 3.0),
    ("Đo thử xem.", 3.0),
    ("Còn bỏ ngỏ.", 3.4)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.2, caps=[
-   ("Dừng lại, tự ước lượng.", 6.4)]),
+   ("Dừng lại, tự ước lượng.", 6.0)]),
 ])
 
 _b = _kiem_dong_bo(); assert not _b, _b

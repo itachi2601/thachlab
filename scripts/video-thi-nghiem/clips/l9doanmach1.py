@@ -234,6 +234,7 @@ def s_dapan(img, d, t, sc):
     pill(d, "ĐÁP ÁN: vẫn 0,10 A", 310, appear(t, 0.15, 0.4))
     kb = appear(t, 0.4, 0.4)
     card(d, (40, 390, 1040, 900), fill=A(WHITE, kb), outline=A(LIGHT, kb), w=3)
+    text(d, (W / 2, 440), "nguồn 3 V", FS, INK, alpha=appear(t, 0.15, 0.4))
     y = 600
     d.line([(80, y), (1000, y)], fill=A(WIRE, kb), width=6)
     resistor(d, *R1X, y, "R1", R1, a=kb); resistor(d, *R2X, y, "R2", R2, a=kb)
