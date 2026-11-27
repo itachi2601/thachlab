@@ -170,7 +170,10 @@ def s_do(img, d, t, sc):
     tray(d, [(WX, dp)]); ruler(d); shelf(d)
     tau = t - REL[i]
     if tau < fall_T(h) + SINK: height_mark(d, WX, h, ORANGE)
-    for g, cx, yb in objs: weight(d, cx, yb, g, label=(cx == WX))
+    for g, cx, yb in objs:
+        weight(d, cx, yb, g, label=(cx == WX))
+        if cx != WX and abs(yb - SHELF_Y) < 1:      # qua nam tren ke: nhan ngay khi hien (kiem-v1 muc 3)
+            text(d, (cx, yb - WH[g] - 70), f"{g} g", FS, INK)
     if show is not None:
         y1 = SAND + dp; xm = WX - WW / 2 - 26
         d.line([(xm, SAND), (xm, y1)], fill=RED, width=5)
@@ -203,7 +206,7 @@ def s_dapan(img, d, t, sc):
 
 
 # ---------------- canh 4: Bay + chua noi duoc ----------------
-BAY_X, BAY_ST, BAY_E = 3.4, 5.6, 8.2
+BAY_X, BAY_ST, BAY_E = 3.0, 6.0, 8.6       # moi nhip >= 2,6 s; the gach/✓ sau khay 2 dung 3 s (kiem-v1 muc 1)
 def mini(d, x0, g, xc, col, ka, k):
     """O nho: khay cat + qua nang roi tu 20 cm, lom xc cm (k = tien do roi)."""
     sy = 960; hh = WH[g] * 0.8; top = sy - 20 * PXCM
@@ -243,7 +246,7 @@ END_Q, END_C = 0.2, 3.0
 def s_end(img, d, t, sc):
     k0 = appear(t, END_C, 0.5)
     card(d, (50, 265, 1030, 425), fill=A((236, 253, 243), k0), outline=A(GREEN, k0), w=6)
-    text(d, (W / 2, 345), "Nặng hơn, cao hơn: lõm sâu hơn", FS, DGREEN, alpha=k0)
+    text(d, (W / 2, 345), "Lõm tuỳ cả khối lượng lẫn độ cao", FS, DGREEN, alpha=k0)
     k1 = appear(t, END_Q, 0.5)
     card(d, (40, 455, 1040, 1600), fill=A(WHITE, k1), outline=A(ORANGE, k1), w=6)
     pill(d, "THỬ NGHĨ", 518, k1, ORANGE)
