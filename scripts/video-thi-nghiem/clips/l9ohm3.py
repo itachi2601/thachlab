@@ -250,7 +250,7 @@ def s_bay(img, d, t, sc):
     a2 = appear(t, BAY_R, 0.45)
     if a2 > 0:
         card(d, (550, 470, 1040, 1260), fill=A(WHITE, a2), outline=A(DGREEN, a2), w=5)
-        text(d, (795, 540), "R (Ω) đo", FL, DGREEN, alpha=a2)
+        text(d, (795, 540), "R (Ω) tính", FL, DGREEN, alpha=a2)
         bars(d, 560, tuple((ROWS[j][0], ROWS[j][4]) for j in range(3)), DGREEN, appear(t, BAY_R, 0.9), a2)
         text(d, (795, 1195), "✓ R khác nhau", FS, DGREEN, alpha=a2)
     k3 = appear(t, BAY_C, 0.45)
@@ -274,11 +274,11 @@ def s_end(img, d, t, sc):
     text(d, (W / 2, 650), "Nichrome dài 1,5 m, S = 0,2 mm².", FL, INK, alpha=k1)
     text(d, (W / 2, 735), "Vẫn 1,5 V: ampe kế chỉ?", FL, INK, alpha=k1)
     # day moc (4) va day moi, ve cung ti le
-    text(d, (115, 890), "(4)", FL, mix(NIC, INK, 0.3), alpha=k1)
-    sample(d, 205, 890, 1.0, 0.1, NIC, k1, px=380)
+    text(d, (70, 890), "(4)", FL, mix(NIC, INK, 0.3), anchor="lm", alpha=k1)
+    sample(d, 235, 890, 1.0, 0.1, NIC, k1, px=380)
     text(d, (870, 890), "11 Ω", FL, INK, alpha=k1)
-    text(d, (115, 1050), "mới", FL, mix(NIC, INK, 0.3), alpha=k1)
-    sample(d, 205, 1050, 1.5, 0.2, NIC, k1, px=380)
+    text(d, (70, 1050), "mới", FL, mix(NIC, INK, 0.3), anchor="lm", alpha=k1)
+    sample(d, 235, 1050, 1.5, 0.2, NIC, k1, px=380)
     card(d, (240, 1180, 840, 1320), fill=A(SCREEN, k1), r=20)
     text(d, (540, 1250), "? A", 72, ORANGE, alpha=k1)
 

@@ -17,7 +17,7 @@ ROWS = [(1.5, 0.08, 18.75), (3.0, 0.15, 20.0), (4.5, 0.22, 20.45), (6.0, 0.30, 2
 R = 20.0
 U_C0, I_C0, I_C, U_C = 2.0, 0.05, 0.12, 4.8   # cau chot: day khac 2,0 V -> 0,05 A (R = 40 Ohm); 0,12 A -> U = 4,8 V
 def vn(x, nd=1): return f"{x:.{nd}f}".replace(".", ",")
-def vq(x): return vn(x, 2) if abs(x * 10 - round(x * 10)) > 1e-6 else vn(x, 1)        # 18,75 ; 20,0 ; 20,45
+def vq(x): return vn(math.floor(x * 10 + 0.5 + 1e-9) / 10, 1)        # 18,75 -> 18,8 ; 20,45 -> 20,5 (gop y kiem-v1 muc 2)
 
 
 def _kiem_so():
@@ -293,7 +293,7 @@ def chip(d, x0, y0, val, lab, col, a):
 def s_end(img, d, t, sc):
     k0 = appear(t, END_C, 0.5)
     card(d, (50, 265, 1030, 415), fill=A((236, 253, 243), k0), outline=A(GREEN, k0), w=6)
-    text(d, (W / 2, 340), "Cùng dây: I tỉ lệ thuận với U", FS, DGREEN, alpha=k0)
+    text(d, (W / 2, 340), "Đồ thị I–U: thẳng, qua O", FS, DGREEN, alpha=k0)
     k1 = appear(t, END_Q, 0.5)
     card(d, (40, 450, 1040, 1580), fill=A(WHITE, k1), outline=A(ORANGE, k1), w=6)
     pw = tw(d, "THỬ NGHĨ", F(FS)) + 60
@@ -335,7 +335,7 @@ CLIP = dict(id="tn-l9-ohm-02", header="KHTN 9 · VẬT LÍ · THÍ NGHIỆM", fo
    ("Tính U chia I mỗi lần.", 3.0),
    ("Đó là định luật Ohm.", 3.6)]),
  dict(key="bay", title="Bẫy và giới hạn", draw=s_bay, tail=0.2, caps=[
-   ("Nối gấp khúc có đúng?", 3.0),
+   ("Nối từng điểm có đúng?", 3.0),
    ("Thẳng, qua gốc.", 3.0),
    ("Còn bỏ ngỏ.", 3.4)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.2, caps=[
