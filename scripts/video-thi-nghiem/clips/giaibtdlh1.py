@@ -173,9 +173,11 @@ def forces(d, c, cm, show_comp=False, alpha=1.0):
 BX0, BSC = 330, 320                       # cot bat dau x ; px moi N (2,0 N -> 640 px)
 def bars(d, t, t0, kx):
     card(d, (40, 1030, 1040, 1590), fill=WHITE, outline=LIGHT, w=3)
-    mtext(d, (300, 1090), "P·sinα", 55, DORANGE)
-    text(d, (720, 1090), "Fms", 55, DRED)
-    d.line([(BX0, 1140), (BX0, 1560)], fill=NAVY, width=4)
+    text(d, (300, 1075), "kéo xuống dốc", 55, DORANGE)
+    text(d, (760, 1075), "ma sát", 55, DRED)
+    mtext(d, (300, 1140), "P·sinα", 55, DORANGE)
+    text(d, (760, 1140), "Fms", 55, DRED)
+    d.line([(BX0, 1175), (BX0, 1560)], fill=NAVY, width=4)
     g = ease(clamp((t - t0) / 1.8))
     for i, (nm, kg, _) in enumerate(MASS):
         m = (0.1, 0.4)[i]; y = 1210 + i * 200
@@ -194,11 +196,10 @@ def s_dapan(img, d, t, sc):
     bars(d, t, 0.5, appear(t, M[1], 0.4))
     ka = appear(t, M[1], 0.45)
     if ka <= 0: return
-    yk = 265 + (1 - ka) * 30
-    card(d, (40, yk, 1040, yk + 400), fill=A(WHITE, ka), outline=A(NAVY, ka), w=6)
-    pill(d, W / 2, yk + 75, "ĐÁP ÁN", NAVY, ka)
-    text(d, (W / 2, yk + 205), "ma sát gấp 4", 64, BLUE, alpha=ka)
-    mtext(d, (W / 2, yk + 315), "Fms = μ·mg·cosα", 58, DGREEN, alpha=ka)
+    yk = 290 + (1 - ka) * 30                                                 # v2: goc tren-phai, khong che hop + Fms
+    card(d, (580, yk, 1025, yk + 250), fill=A(WHITE, ka), outline=A(NAVY, ka), w=6)
+    pill(d, 802, yk + 70, "ĐÁP ÁN", NAVY, ka)
+    text(d, (802, yk + 175), "ma sát gấp 4", 58, BLUE, alpha=ka)
 
 # ---------------- canh 4: Rut ra (so do luc + dinh luat II) ----------------
 def pieces(d, cy, parts, size, alpha=1.0, strike=0.0):
@@ -268,7 +269,7 @@ def s_end(img, d, t, sc):
     sb = 0.1 + 0.25 * ease(clamp((t - 0.4) / 3.0))
     box(d, top, 640, sb, True)
     text(d, (820, 500), "0,4 kg", 58, NAVY, alpha=k)
-    mtext(d, (820, 580), "μ = 0,3", 58, NAVY, alpha=k)
+    mtext(d, (820, 580), "hệ số μ = 0,3", 58, NAVY, alpha=k)
     text(d, (820, 660), "g = 10 m/s²", 58, NAVY, alpha=k)
     card(d, (40, 1030, 1040, 1585), fill=A(WHITE, k), outline=A(ORANGE, k), w=6)
     pill(d, W / 2, 1100, "THỬ NGHĨ", ORANGE, k)
@@ -303,5 +304,5 @@ CLIP = dict(id="tn-l10-giaibt-dlh-01", header="VẬT LÍ 10 · THÍ NGHIỆM", f
    ("Không: N = mg·cosα.", 3.0),
    ("Đáy khác chất thì sao?", 3.0)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.3, caps=[
-   ("Dừng lại, tự trả lời.", 5.6)]),
+   ("Dừng lại, tự trả lời.", 6.0)]),
 ])
