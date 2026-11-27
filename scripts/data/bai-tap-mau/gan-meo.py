@@ -17,6 +17,7 @@ def _meo():
     from meo_chia_doi_banh import chia_doi_banh
     from meo_xe_day_vao_cat import xe_day_vao_cat
     from meo_thang_may_dung_tang import thang_may_dung_tang
+    from meo_mat_xich_yeu_nhat import mat_xich_yeu_nhat
     # lesson_id: {chỉ số dạng (đếm từ 1): mẹo}
     return {
         2: {  # L12 Bài 1 (đợt 2, thầy chốt 7/11/2026)
@@ -29,6 +30,13 @@ def _meo():
                 "<p>Ở dạng này: đi từ dưới lên, chỗ dừng thứ nhất ($BC$) là nóng chảy, chỗ dừng thứ hai ($DE$) là sôi, "
                 "dù $DE$ dài hơn. Phút đề hỏi rơi vào giữa lúc dừng (không phải đúng mốc đầu, mốc cuối) thì hai thể cùng có mặt; "
                 "ở đoạn dốc thì chỉ một thể đang nóng lên.</p>"),
+        },
+        165: {  # HSG 9 CĐ05 (27/11/2026) — mẹo chỉ định hướng + soát, lời giải giữ đủ (BANG-MEO-GIAI mục HSG KHTN 9)
+            4: mat_xich_yeu_nhat(
+                "<p>Ở dạng này: đổi mỗi đèn ra dòng định mức trước. Câu b: dòng tối đa của bộ nối tiếp là số nhỏ hơn, "
+                "rồi nhân với tổng điện trở; không cộng hai hiệu điện thế định mức. Câu c: muốn cả hai đèn đủ sáng thì "
+                "phần dòng chênh giữa hai số định mức phải rẽ qua $R_x$, nên $R_x$ mắc song song với đèn có dòng định mức nhỏ.</p>"
+                "<p>Mẹo để định hướng và soát đáp số. Bài làm vẫn trình bày đủ phương trình.</p>"),
         },
         162: {
             3: con_sau_qua_cong(
