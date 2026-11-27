@@ -5,7 +5,9 @@
 // 5 dạng bài tập mẫu. Đáp số Bài tương tự (tuongTu.dap) và các ô "em tự tính" tính bằng Python 12/11/2026.
 // Chạy: node scripts/ruot-tap/l12-bai3.mjs [file.pdf]       → scripts/ruot-tap/out/ruot-tap-vl12-bai3.pdf
 //       node scripts/ruot-tap/l12-bai3.mjs --hinh           → chụp từng hình ở cỡ in (46 mm) vào out/hinh-l12-bai3/ để soát chữ/nét
-import { khoiTao, m, lines, wl, fill as f, nw, ck, box, opt, chon, rkHai } from './khung.mjs';
+import { khoiTao, m, lines, wl, fill as f, nw, ck, box, opt, chon, rkHai, MOC } from './khung.mjs';
+// Kiểu mộc (RUOT_TAP_KIEU=moc): bỏ ô tick tự đánh giá (ô tick là lựa chọn trả lời thì giữ), nhãn viết như lời nói thường
+const ckM = MOC ? '' : ck;
 import { hinhL12b3 as H } from './hinh-l12-bai3.mjs';
 
 if (process.argv[2] === '--hinh') {
@@ -36,9 +38,9 @@ if (process.argv[2] === '--hinh') {
 const K = khoiTao({ bai: 3, lid: 4, ten: 'NỘI NĂNG · ĐỊNH LUẬT 1 NHIỆT ĐỘNG LỰC HỌC', lop: 12, baiDau: 1, sub: 'Vật lí 12 · Chương 1: Vật lí nhiệt' });
 const { head, h3, foot } = K;
 const fs = (w, extra = '') => `grid-template-columns:1fr ${w}mm;${extra}`;
-const tb = (s) => `<div><b>${s}</b><span class="ck" style="float:right;margin:0"></span></div>`;
+const tb = (s) => `<div><b>${s}</b>${MOC ? '' : '<span class="ck" style="float:right;margin:0"></span>'}</div>`;
 const cau = (s, k) => `<div style="padding-top:1mm;line-height:1.35">${s}</div>${lines(k)}`;
-const dong = (s) => `<div style="margin:.3mm 0">${s}</div>`;
+const dong = (s) => `<div style="margin:.3mm 0">${MOC ? '– ' : ''}${s}</div>`;
 const J = (s) => nw(m(`${s}\\ \\mathrm J`));
 const cs = (s) => `${m('c')}<sub>${s}</sub>`;
 const cN = nw(`${cs('nước')} ${m('=4200\\ \\mathrm{J/(kg{\\cdot}K)}')}`);
@@ -52,11 +54,11 @@ const ttCss = '<style>.yo{display:flex;justify-content:space-between;align-items
 
 const p1 = `${ttCss}<section class="page">
 ${head('BÀI 3 · NỘI NĂNG · ĐỊNH LUẬT 1 NHIỆT ĐỘNG LỰC HỌC', K.sub)}
-${h3(1, 'Mục tiêu', '1·1')}
+${h3(1, MOC ? 'Học xong bài này, em làm được' : 'Mục tiêu', '1·1')}
 <div class="card soft">
-${dong(`${ck}Nêu được <b>nội năng</b> là gì, đơn vị, nội năng phụ thuộc vào những gì`)}
-${dong(`${ck}Kể được hai cách làm biến đổi nội năng; tính nhiệt lượng ${m('Q=mc\\Delta t')}`)}
-${dong(`${ck}Vận dụng <b>định luật 1</b> ${m('\\Delta U=A+Q')} với đúng quy ước dấu`)}
+${dong(`${ckM}Nêu được <b>nội năng</b> là gì, đơn vị, nội năng phụ thuộc vào những gì`)}
+${dong(`${ckM}Kể được hai cách làm biến đổi nội năng; tính nhiệt lượng ${m('Q=mc\\Delta t')}`)}
+${dong(`${ckM}Vận dụng <b>định luật 1</b> ${m('\\Delta U=A+Q')} với đúng quy ước dấu`)}
 </div>
 ${h3(2, 'Dự đoán trước khi học', '1·2')}
 <div class="card">
@@ -70,7 +72,7 @@ ${opt('D', 'Không so sánh được')}
 ${H.haiAm()}</div>
 </div>
 ${h3(3, 'Học xong, em sửa lại', '1·3')}
-<div class="card soft"><div>Đáp án đúng là: ${f()} &nbsp; Em đoán ${ck}đúng &nbsp;${ck}sai &nbsp;· <span class="hint">Điều em hiểu sai hoặc mới biết:</span></div>${lines(1)}</div>
+<div class="card soft"><div>Đáp án đúng là: ${f()}${MOC ? '. ' : ` &nbsp; Em đoán ${ck}đúng &nbsp;${ck}sai &nbsp;· `}<span class="hint">Điều em hiểu sai hoặc mới biết:</span></div>${lines(1)}</div>
 ${h3(4, 'II.1 · Nội năng', '1·4')}
 <div class="card" style="padding:1.2mm 3mm">
 <div>Nội năng là tổng ${f(22)} và ${f(22)} của các phân tử cấu tạo nên vật.</div>
@@ -147,9 +149,9 @@ const p4 = `<section class="page">
 ${head('BA CÁI BẪY · TRẢ BÀI · TỰ KIỂM TRA')}
 ${h3(1, 'III · Ba cái bẫy hay sập', '4·1')}
 <div class="card fig-side" style="${fs(38)};padding:1mm 3mm"><div>
-<div class="trap">${ck}<span><b>“Vật nhiều nội năng hơn thì nóng hơn.”</b> Điền bảng dưới rồi trả lời câu hỏi ở hình.</span></div>
-<div class="trap">${ck}<span><b>“Vật có nhiệt lượng 500 J.”</b> Vật có <b>nội năng</b>; nhiệt lượng chỉ có trong lúc truyền.</span></div>
-<div class="trap">${ck}<span><b>Dấu của ${A}.</b> “Khí sinh công 80 J” là ${m('A=-80')} J, không phải ${m('+80')} J.</span></div></div>
+<div class="trap">${MOC ? '<b>1.</b>' : ck}<span><b>“Vật nhiều nội năng hơn thì nóng hơn.”</b> Điền bảng dưới rồi trả lời câu hỏi ở hình.</span></div>
+<div class="trap">${MOC ? '<b>2.</b>' : ck}<span><b>“Vật có nhiệt lượng 500 J.”</b> Vật có <b>nội năng</b>; nhiệt lượng chỉ có trong lúc truyền.</span></div>
+<div class="trap">${MOC ? '<b>3.</b>' : ck}<span><b>Dấu của ${A}.</b> “Khí sinh công 80 J” là ${m('A=-80')} J, không phải ${m('+80')} J.</span></div></div>
 ${H.satVaBe()}</div>
 <table>
 <tr><th style="width:52mm"></th><th>Nhiệt độ</th><th>Nội năng</th></tr>
@@ -164,7 +166,7 @@ ${tb('4. Nhiệt dung riêng cho biết gì? Vì sao nước dùng làm mát?')}
 ${tb('5. Phát biểu định luật 1, viết hệ thức.')}${lines(2)}
 ${tb('6. Vì sao khí bị nén nhanh lại nóng lên?')}${lines(2)}
 ${tb(`7. Nhiệt kế đo °C thì ${dt} có phải đổi sang K không?`)}${lines(1)}`)}
-<div class="card soft" style="margin-top:.8mm;padding:.8mm 3mm"><b>Bạn cùng bàn kiểm:</b> ……/7 câu · chưa thuộc: ${f(25)} ${nw(`→ đọc lại ô ${f(12)} Tập`)}</div>
+<div class="card soft" style="margin-top:.8mm;padding:.8mm 3mm"><b>Bạn cùng bàn kiểm:</b> ……/7 câu${MOC ? `. Câu chưa thuộc: ${f(22)}, lật lại trang: ${f(14)}` : ` · chưa thuộc: ${f(25)} ${nw(`→ đọc lại ô ${f(12)} Tập`)}`}</div>
 ${h3(3, 'Kết quả tự kiểm tra (đề chiếu trên lớp)', '4·3')}
 ${rkHai([1, 2, 3], [4, 5])}
 ${foot(4)}</section>`;
@@ -180,12 +182,12 @@ ${h3(1, 'V · Bài toán mẫu: bơm xe đạp', '5·1')}
 </table>
 <div class="fig-side" style="${fs(42)};margin-top:1mm"><div style="background:#fff;border:.3mm solid var(--navy);border-radius:1.5mm;padding:0 3mm">
 ${wl(`Hệ: ……………… · Đặt dấu: ${A} = …… ; ${Q} = ……`, 1)}${wl(`a) ${dU} =`, 1)}${wl('b)', 1)}</div>${H.bomMau()}</div>
-${h3(2, 'Điền bước còn thiếu: lần ấn này công 75 J, nhiệt truyền ra ngoài 25 J', '5·2')}
+${h3(2, MOC ? 'Làm tiếp: lần ấn này công 75 J, nhiệt truyền ra ngoài 25 J' : 'Điền bước còn thiếu: lần ấn này công 75 J, nhiệt truyền ra ngoài 25 J', '5·2')}
 <div style="background:#fff;border:.3mm solid var(--navy);border-radius:1.5mm;padding:0 3mm">
 <div class="ln"><b>Bước 1 (cho sẵn):</b> khí nhận công ${m('A=+75')} J; khí toả nhiệt ${m('Q=-25')} J</div>
 ${wl(`Bước 2: ${dU} =`, 1)}${wl('Bước 3: khí nóng lên hay lạnh đi, vì sao?', 1)}</div>
 ${K.btvn().replace('<i>1</i>', '<i>3</i>')}
-${h3(4, 'Thử thách phân tầng', '5·4')}
+${h3(4, MOC ? 'Thử sức' : 'Thử thách phân tầng', '5·4')}
 ${box(cau(`${m('\\bigstar')} Đun ${kg('1{,}5')} nước từ ${oC('20')} lên ${oC('80')}, ${cN}. Tính nhiệt lượng cần.`, 1)
  + cau(`${m('\\bigstar\\bigstar')} Khối nhôm 400 g ở ${oC('250')} thả vào ${kg('0{,}80')} nước ở ${oC('25')}; ${nw(`${cs('nhôm')} ${m('=880')}`)}, ${nw(`${cs('nước')} ${m('=4200')}`)} ${cDv}. Bỏ qua mất mát, tìm nhiệt độ cân bằng.`, 1)
  + cau(`${m('\\bigstar\\bigstar\\bigstar')} ${kg('0{,}500')} nước đá ở ${oC('0')}, bếp 500 W: tan hết sau 334 s, suốt lúc đó nhiệt độ đứng yên ở ${oC('0')}. Vì sao? Tính nhiệt lượng làm tan 1 kg nước đá.`, 1))}
