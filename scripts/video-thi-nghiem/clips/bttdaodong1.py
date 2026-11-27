@@ -293,9 +293,10 @@ def s_end(img, d, t, sc):
     xo = A_CHOT * PXC
     ruler(d, piv=EP, bx=EP[0] + xo, alpha=k1, kmax=9, lab=A_CHOT)
     pendulum(d, xo, piv=EP, alpha=k1)
-    text(d, (W / 2, 1230), "Kéo lệch 8 cm, thả.", 62, INK, alpha=k1)
-    eq(d, W / 2, 1320, "v_{max} = ?", 66, DORANGE, alpha=k1)
-    seg_bar(d, 1420, t, 0.8, sc["T"] - 0.2, ORANGE, k1)
+    text(d, (W / 2, 1255), "Vẫn dây 36 cm.", 62, INK, alpha=k1)
+    text(d, (W / 2, 1335), "Kéo lệch 8 cm, thả.", 62, INK, alpha=k1)
+    eq(d, W / 2, 1420, "v_{max} = ?", 66, DORANGE, alpha=k1)
+    seg_bar(d, 1490, t, 0.8, sc["T"] - 0.2, ORANGE, k1)
 
 def _cues(clip):
     sc = {s["key"]: s for s in clip["scenes"]}
