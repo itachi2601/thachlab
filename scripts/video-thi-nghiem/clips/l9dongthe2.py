@@ -66,7 +66,9 @@ def rig(d, x, heavy, blocked, m_txt, dt_txt, ca=1.0, lbl=True):
     track(d, blocked=blocked)
     d.line([(GATE + 9, TY + 42), (760, TY + 42), (760, 700)], fill=GRAY, width=5)
     cart(d, x, heavy, ca)
-    if lbl: text(d, (760, 330), "chắn rộng 2,0 cm", FS, INK)
+    if lbl:                                      # nhan chi vao tam chan TREN XE (kiem-v1 muc 5)
+        text(d, (250, 335), "tấm chắn rộng 2,0 cm", FS, INK, anchor="lm")
+        arrow(d, (300, 372), (x + FW / 2 + 8, 430), INK, w=5, head=16)
     card(d, (60, 700, 470, 810), fill=WHITE, outline=NAVY, r=24, w=4)
     text(d, (265, 755), "m = " + m_txt + " kg", FS, INK)
     card(d, (500, 700, 1020, 810), fill=NAVY, r=24)
@@ -79,18 +81,25 @@ def s_hook(img, d, t, sc):
     rig(d, X0, 0, False, "0,20", "0,0000")
     a = appear(t, M[1] - 0.2, 0.5)
     if a <= 0: return
-    y0 = 880 + (1 - a) * 40
-    card(d, (50, y0, 1030, y0 + 520), fill=A(WHITE, a), outline=A(PURPLE, a), w=6)
+    y0 = 850 + (1 - a) * 40
+    card(d, (50, y0, 1030, y0 + 650), fill=A(WHITE, a), outline=A(PURPLE, a), w=6)
     pw = tw(d, "DỰ ĐOÁN", F(56)) + 56
     card(d, (W / 2 - pw / 2, y0 + 22, W / 2 + pw / 2, y0 + 96), fill=A(PURPLE, a), r=36)
     text(d, (W / 2, y0 + 59), "DỰ ĐOÁN", 56, WHITE, alpha=a)
-    for j, s in enumerate(("Xe 0,20 kg: vẽ Wđ theo v.", "Nối gốc O với 2 lần đẩy,", "được đường gì?")):
-        text(d, (W / 2, y0 + 165 + j * 80), s, 60, INK, alpha=a)
+    text(d, (W / 2, y0 + 150), "Xe 0,20 kg: vẽ Wđ theo v.", 60, INK, alpha=a)
+    ox, oy = 330, y0 + 420                      # khung truc trong (kiem-v1 muc 6): chi co goc O, khong lo hinh dang
+    d.line([(ox, oy), (ox + 420, oy)], fill=A(NAVY, a), width=5)
+    d.line([(ox, oy), (ox, oy - 150)], fill=A(NAVY, a), width=5)
+    dot(d, ox, oy, 12, A(C02, a))
+    text(d, (ox - 22, oy), "O", FS, DINK, anchor="rm", alpha=a)
+    text(d, (ox + 460, oy), "v", 60, INK, alpha=a)
+    text(d, (ox + 20, oy - 150), "Wđ", 60, INK, anchor="lm", alpha=a)
+    text(d, (W / 2, y0 + 495), "Nối O với 2 lần đẩy: đường gì?", 58, INK, alpha=a)
     tc, tend = M[1] + 0.3, sc["T"] - 0.1
     if t > tc:
         p = clamp((t - tc) / (tend - tc))
-        d.rounded_rectangle([110, y0 + 390, 970, y0 + 490], radius=45, fill=A((237, 233, 254), a))
-        if p < 1: d.rounded_rectangle([110, y0 + 390, 110 + max(90, 860 * (1 - p)), y0 + 490], radius=45, fill=A(DPURP, a))
+        d.rounded_rectangle([110, y0 + 540, 970, y0 + 630], radius=45, fill=A((237, 233, 254), a))
+        if p < 1: d.rounded_rectangle([110, y0 + 540, 110 + max(90, 860 * (1 - p)), y0 + 630], radius=45, fill=A(DPURP, a))
 
 
 # ---------------- canh 2: Tien hanh, 4 lan day ----------------
@@ -118,12 +127,13 @@ def do_state(t):
 TX = (160, 400, 660, 900)
 def table(d, n, y0=860):
     card(d, (40, y0, 1040, y0 + 100 + 4 * 84 + 20), fill=WHITE, outline=LIGHT, w=3)
-    for x, s in zip(TX, ("m", "Δt", "v", "Wđ")): text(d, (x, y0 + 50), s, 60, NAVY)
+    for x, s in zip(TX, ("m (kg)", "Δt (s)", "v (m/s)", "Wđ (J)")): text(d, (x, y0 + 50), s, 56, NAVY)
     d.line([(70, y0 + 98), (1010, y0 + 98)], fill=LIGHT, width=3)
     for j in range(n):
         m, dt, v, w = ROWS[j]; yy = y0 + 145 + 84 * j; col = C02 if m < 0.3 else C04
         for x, s in zip(TX, (fm(m), fm(dt, 4), fm(v), fm(w, 3))): text(d, (x, yy), s, FS, col)
-    text(d, (W / 2, y0 + 520), "v = d : Δt  ·  Wđ = ½·m·v²", FS, DINK)
+    text(d, (W / 2, y0 + 510), "v = d : Δt", FS, DINK)          # hai dong, khong dung "·" ngan (kiem-v1 muc 3)
+    text(d, (W / 2, y0 + 590), "Wđ = ½·m·v²", FS, DINK)
 
 
 def s_do(img, d, t, sc):
@@ -148,8 +158,8 @@ def axes(d):
         d.line([(GX0 + 4, y), (GX0 + 2.35 * PXV, y)], fill=(236, 230, 220), width=2)
         text(d, (GX0 - 24, y), fm(w, 1), FS, DINK, anchor="rm")
     text(d, (GX0 - 30, GY0 + 50), "O", FS, DINK)
-    text(d, (GX0 + 2.4 * PXV, GY0 + 52), "v", 60, INK)
-    text(d, (GX0 + 30, GY0 - 0.9 * PYJ), "Wđ", 60, INK, anchor="lm")
+    text(d, (1030, GY0 - 48), "v (m/s)", 58, INK, anchor="rm")
+    text(d, (GX0 + 30, GY0 - 0.9 * PYJ), "Wđ (J)", 58, INK, anchor="lm")
 
 
 def curve(d, m, col, k, vmax):
@@ -168,14 +178,14 @@ def s_dapan(img, d, t, sc):
     for j, (v, w) in enumerate(((0, 0), (ROWS[0][2], ROWS[0][3]), (ROWS[1][2], ROWS[1][3]))):
         k = appear(t, 0.6 + 0.6 * j, 0.3)
         if k > 0: x, y = gp(v, w); dot(d, x, y, 17, A(C02, k), outline=A(WHITE, k))
-    text(d, (GX0 + 170, 650), "xe 0,20 kg", FS, C02, anchor="lm", alpha=a)
+    text(d, (GX0 + 250, 650), "xe 0,20 kg", FS, C02, anchor="lm", alpha=a)
     k2 = appear(t, M[1], 0.4)
     if k2 > 0:
         curve(d, 0.40, C04, ease((t - M[1]) / 1.2), 2.08)
         for j in (2, 3):
             x, y = gp(ROWS[j][2], ROWS[j][3]); kk = appear(t, M[1] + 0.3 * (j - 1), 0.3)
             dot(d, x, y, 17, A(C04, kk), outline=A(WHITE, kk))
-        text(d, (GX0 + 170, 570), "xe 0,40 kg", FS, C04, anchor="lm", alpha=k2)
+        text(d, (GX0 + 250, 570), "xe 0,40 kg", FS, C04, anchor="lm", alpha=k2)
     k3 = appear(t, M[1] + 2.6, 0.45)
     if k3 > 0:
         card(d, (50, 1490, 1030, 1595), fill=A((236, 253, 243), k3), outline=A(GREEN, k3), r=26, w=4)
@@ -183,7 +193,7 @@ def s_dapan(img, d, t, sc):
 
 
 # ---------------- canh 4: Bay + chua noi duoc ----------------
-BAY_X, BAY_ST, BAY_E = 2.4, 5.2, 7.8
+BAY_X, BAY_ST, BAY_E = 2.4, 5.2, 8.2       # the xanh >= 3 s truoc "Chua noi duoc" (kiem-v1 muc 4)
 def bars(d, x0, vals, lab, col, k, ka):
     text(d, (x0 + 230, 520), lab, 60, col, alpha=ka)
     base = 1080
@@ -202,12 +212,12 @@ def s_bay(img, d, t, sc):
     text(d, (W / 2, 300), "BẪY", 56, WHITE, alpha=a1)
     text(d, (W / 2, 410), "“Lấy Δt chia cho d”", 60, INK, alpha=a1)
     card(d, (50, 460, 530, 1290), fill=A(WHITE, a1), outline=A(DRED, a1), w=5)
-    bars(d, 60, BAY, "Δt : d", DRED, appear(t, 0.6, 1.0), a1)
+    bars(d, 60, BAY, "Δt : d (s/m)", DRED, appear(t, 0.6, 1.0), a1)
     text(d, (290, 1225), "✗ mạnh mà nhỏ", 56, DRED, alpha=appear(t, BAY_X, 0.45))
     a2 = appear(t, BAY_ST, 0.45)
     if a2 > 0:
         card(d, (550, 460, 1030, 1290), fill=A(WHITE, a2), outline=A(DGREEN, a2), w=5)
-        bars(d, 560, ((ROWS[0][2], fm(ROWS[0][2])), (ROWS[1][2], fm(ROWS[1][2]))), "d : Δt", DGREEN, appear(t, BAY_ST, 0.8), a2)
+        bars(d, 560, ((ROWS[0][2], fm(ROWS[0][2])), (ROWS[1][2], fm(ROWS[1][2]))), "d : Δt (m/s)", DGREEN, appear(t, BAY_ST, 0.8), a2)
         text(d, (790, 1225), "✓ mạnh thì lớn", 56, DGREEN, alpha=a2)
     k3 = appear(t, BAY_E, 0.45)
     if k3 > 0:
@@ -233,7 +243,7 @@ def s_end(img, d, t, sc):
     if k1 > 0:   # hinh: xe 3 tang gia trong qua cong quang, khong ghi dap so
         ty = 1260
         track(d, ty=ty, gate=640, a=k1)
-        cart(d, 200 + 45 * t, 1.0, k1, ty=ty, n_mass=2)   # xe tu tu lan toi cong (chua qua)
+        cart(d, min(200 + 45 * t, 430), 1.0, k1, ty=ty, n_mass=2)   # xe lan toi, dung truoc cong (kiem-v1 muc 7)
         text(d, (800, ty - 230), "Wđ = ?", 62, ORANGE, alpha=k1)
 
 
