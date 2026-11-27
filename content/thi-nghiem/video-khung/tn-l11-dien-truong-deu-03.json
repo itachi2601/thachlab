@@ -1,9 +1,9 @@
 {
   "id": "tn-l11-dien-truong-deu-03",
   "ten": "Tia electron bay giữa hai bản khi tăng hiệu điện thế",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-dien-truong-deu-03-20261118.mp4",
-  "poster": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-dien-truong-deu-03-20261118.webp",
-  "tong_giay": 48.8,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-dien-truong-deu-03-20261127.mp4",
+  "poster": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-dien-truong-deu-03-20261127.webp",
+  "tong_giay": 49.9,
   "o": [
     {
       "khoa": "gia_thuyet",
@@ -13,32 +13,32 @@
     },
     {
       "khoa": "du_doan",
-      "giay": 4.2,
+      "giay": 4.0,
       "chu": "Bản dưới (+), bản trên (−). Tăng U: tia lệch về đâu?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 10.5,
+      "giay": 10.3,
       "chu": "Súng electron, hai bản, nguồn U, lưới mm."
     },
     {
       "khoa": "quan_sat",
-      "giay": 17.5,
+      "giay": 17.3,
       "chu": "U = 0: tia đi thẳng. U = 60 V: lệch 1,65 mm. U = 120 V: lệch 3,30 mm."
     },
     {
       "khoa": "rut_ra",
-      "giay": 25.7,
+      "giay": 23.3,
       "chu": "Tia cong về bản (+) như vật ném ngang. U gấp đôi thì độ lệch gấp đôi."
     },
     {
       "khoa": "chua_noi",
-      "giay": 35.4,
+      "giay": 36.6,
       "chu": "Mới đổi U. Còn yếu tố nào nữa?"
     }
   ],
   "dung_dua": {
-    "giay": 10.3,
+    "giay": 10.1,
     "cau_hoi": "Bản dưới (+), bản trên (−). Tăng U: tia lệch về đâu?",
     "chon": [
       "A. Lên, về bản (−)",
@@ -48,5 +48,22 @@
     "dung": 1,
     "giai_thich_dung": "Electron mang điện âm nên bị bản (+) hút: tia cong xuống về bản dưới, và càng cong khi U tăng.",
     "giai_thich_sai": "Electron điện âm chịu lực hướng về bản (+), nên tia không đi thẳng và cũng không lên về bản (−)."
+  },
+  "cau_chot": {
+    "giay": 41.7,
+    "cau_hoi": "U = 60 V, electron vào cách bản (+) 1,5 mm (khi vào giữa thì lệch 1,65 mm). Electron…",
+    "chon": [
+      "A. ra khỏi hai bản, lệch 1,65 mm",
+      "B. chạm bản (+), không ra được",
+      "C. ra khỏi hai bản, đi thẳng",
+      "D. chạm bản (−), không ra được"
+    ],
+    "dung": 1,
+    "giai_thich": [
+      "Muốn lệch đủ 1,65 mm về bản (+) thì phải có chỗ, nhưng chỉ còn 1,5 mm tới bản.",
+      "Tia vẫn lệch về bản (+) như lúc vào giữa. Cần lệch 1,65 mm mà chỉ còn 1,5 mm nên chạm bản (+) trước khi ra.",
+      "Có U thì có lực điện, tia phải cong, không đi thẳng.",
+      "Electron mang điện âm bị bản (+) hút, không lệch về bản (−)."
+    ]
   }
 }

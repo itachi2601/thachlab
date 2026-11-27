@@ -1,9 +1,9 @@
 {
   "id": "tn-l11-coulomb-01",
   "ten": "Thước nhựa đã cọ tóc, giấy vụn và lon nhôm",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-coulomb-01-20261118.mp4",
-  "poster": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-coulomb-01-20261118.webp",
-  "tong_giay": 48.2,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-coulomb-01-20261127.mp4",
+  "poster": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-coulomb-01-20261127.webp",
+  "tong_giay": 49.7,
   "o": [
     {
       "khoa": "gia_thuyet",
@@ -18,27 +18,27 @@
     },
     {
       "khoa": "dung_cu",
-      "giay": 10.1,
+      "giay": 9.9,
       "chu": "Thước nhựa, tóc khô, giấy vụn, lon nhôm."
     },
     {
       "khoa": "quan_sat",
-      "giay": 16.0,
+      "giay": 17.2,
       "chu": "Giấy vụn bay lên bám thước. Lon nhôm lăn về phía thước dù không bị chạm."
     },
     {
       "khoa": "rut_ra",
-      "giay": 31.5,
-      "chu": "Hưởng ứng: đầu gần hút mạnh, đầu xa đẩy yếu."
+      "giay": 34.1,
+      "chu": "Hưởng ứng: đầu gần hút mạnh hơn đầu xa."
     },
     {
       "khoa": "chua_noi",
-      "giay": 35.4,
-      "chu": "Chỉ thấy hút: chưa biết thước dấu gì. Dấu (−) trong hình chỉ là giả sử."
+      "giay": 37.4,
+      "chu": "Chỉ thấy hút thì chưa biết thước mang dấu gì."
     }
   ],
   "dung_dua": {
-    "giay": 9.6,
+    "giay": 9.7,
     "cau_hoi": "Thước đã cọ lại gần lon nhôm, không chạm. Lon sẽ thế nào?",
     "chon": [
       "A. Đứng yên tại chỗ",
@@ -48,5 +48,22 @@
     "dung": 1,
     "giai_thich_dung": "Lon trung hoà vẫn nhiễm điện do hưởng ứng: đầu gần thước bị hút mạnh hơn đầu xa bị đẩy, nên lon lăn về phía thước dù không bị chạm.",
     "giai_thich_sai": "Không cần chạm: lon trung hoà vẫn bị hút về phía thước đã cọ, nên đứng yên hay lăn ra xa đều không khớp thí nghiệm."
+  },
+  "cau_chot": {
+    "giay": 43.8,
+    "cau_hoi": "Thước đã cọ đặt gần làm lon nhôm nhiễm điện do hưởng ứng. Đưa thước ra thật xa, không chạm lon. Lúc này lon nhôm:",
+    "chon": [
+      "A. Vẫn nhiễm điện như khi thước ở gần",
+      "B. Trung hoà trở lại như lúc đầu",
+      "C. Nhiễm điện âm, cùng dấu với thước",
+      "D. Nhiễm điện dương, trái dấu với thước"
+    ],
+    "dung": 1,
+    "giai_thich": [
+      "Điện tích hai đầu lon chỉ có khi thước còn ở gần: thước hút electron về một đầu. Thước đi xa thì không còn gì giữ electron ở đó.",
+      "Hưởng ứng chỉ làm electron dời chỗ trong lon, không thêm hay bớt electron. Thước ra xa, electron trở về phân bố đều, lon trung hoà như lúc đầu.",
+      "Lon chỉ nhiễm điện cùng dấu thước khi electron đi qua chỗ chạm (nhiễm điện do tiếp xúc). Ở đây lon không chạm thước nên không nhận thêm electron.",
+      "Lon không mất electron nào ra ngoài vì không chạm vật gì. Tổng điện tích của lon vẫn bằng 0, nên khi thước đi xa lon trung hoà."
+    ]
   }
 }

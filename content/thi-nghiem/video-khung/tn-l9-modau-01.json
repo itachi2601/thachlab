@@ -1,44 +1,44 @@
 {
   "id": "tn-l9-modau-01",
   "ten": "Một dòng điện qua đèn, đọc trên ba thang đo",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-modau-01-20261118.mp4",
-  "poster": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-modau-01-20261118.webp",
-  "tong_giay": 49.8,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-modau-01-20261127.mp4",
+  "poster": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-modau-01-20261127.webp",
+  "tong_giay": 49.4,
   "o": [
     {
       "khoa": "gia_thuyet",
       "giay": 0,
-      "chu": "Đổi thang đo, dòng điện trong mạch không đổi; chỉ cách hiện số trên màn hình đổi.",
-      "kiem": "Đổi thang, màn hình hiện số nào?"
+      "chu": "Đổi thang đo không làm thay đổi dòng điện chạy qua đèn.",
+      "kiem": "Đổi thang, màn hình hiện gì?"
     },
     {
       "khoa": "du_doan",
-      "giay": 3.8,
+      "giay": 3.1,
       "chu": "Thang 10 A: 0,15 A. Chuyển sang thang 200 mA, màn hình hiện gì?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 9.5,
+      "giay": 9.0,
       "chu": "Nguồn 3 V, khoá K, đèn, đồng hồ đa năng."
     },
     {
       "khoa": "quan_sat",
-      "giay": 17.0,
+      "giay": 17.3,
       "chu": "Thang 10 A: 0.15. Thang 200 mA: 153.2. Thang 20 mA: hiện 1 ở bên trái."
     },
     {
       "khoa": "rut_ra",
-      "giay": 37.7,
-      "chu": "Dòng điện không đổi; số 1 bên trái là quá thang."
+      "giay": 24.2,
+      "chu": "Đổi thang, dòng điện không đổi (đèn sáng như nhau). Số 1 bên trái là quá thang."
     },
     {
       "khoa": "chua_noi",
-      "giay": 42.0,
-      "chu": "Số liệu minh hoạ. Bỏ qua điện trở của đồng hồ."
+      "giay": 39.3,
+      "chu": "Bỏ qua điện trở của đồng hồ (chưa đo ảnh hưởng). Số liệu minh hoạ."
     }
   ],
   "dung_dua": {
-    "giay": 9.3,
+    "giay": 8.7,
     "cau_hoi": "Thang 10 A: 0,15 A. Chuyển sang thang 200 mA, màn hình hiện gì?",
     "chon": [
       "A. 0.15",
@@ -49,5 +49,22 @@
     "dung": 1,
     "giai_thich_dung": "Dòng khoảng 0,153 A, tức khoảng 153 mA; thang 200 mA đọc theo mA nên màn hình hiện 153.2.",
     "giai_thich_sai": "Đổi thang không đổi dòng điện: dòng thật khoảng 0,153 A = 153 mA (thang 10 A chỉ làm tròn thành 0.15), nên thang 200 mA phải hiện số cỡ 153, không phải 0.15, 1.53 hay 15.3."
+  },
+  "cau_chot": {
+    "giay": 43.3,
+    "cau_hoi": "Ở thang 200 mA, màn hình hiện 18.5. Ngắt khoá, vặn sang thang 20 mA (que đỏ vẫn ở lỗ VΩmA) rồi đóng khoá. Màn hình hiện gì?",
+    "chon": [
+      "A. 1 (quá thang)",
+      "B. 18.50 (mA)",
+      "C. 1.85 (mA)",
+      "D. 185.0 (mA)"
+    ],
+    "dung": 1,
+    "giai_thich": [
+      "Số 1 bên trái chỉ hiện khi dòng lớn hơn giới hạn thang. Dòng 18,5 mA nhỏ hơn 20 mA nên không quá thang.",
+      "Dòng vẫn 18,5 mA, nhỏ hơn 20 mA nên đo được. Thang 20 mA hiện tới 0,01 mA nên màn hình hiện 18.50.",
+      "1.85 là dời dấu phẩy như khi đổi đơn vị. Hai thang 200 mA và 20 mA đều đọc theo mA nên số vẫn cỡ 18,5.",
+      "185.0 là nhân thêm 10. Đổi thang không làm dòng điện đổi; thang 20 mA vẫn đọc theo mA nên số vẫn cỡ 18,5."
+    ]
   }
 }

@@ -1,8 +1,8 @@
 {
   "id": "tn-l11-nguon-dien-03",
   "ten": "Nối tắt pin mới rồi pin đã dùng, cùng 1,5 V",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-nguon-dien-03-20261116.mp4",
-  "tong_giay": 49.5,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-nguon-dien-03-20261127.mp4",
+  "tong_giay": 49.6,
   "o": [
     {
       "khoa": "gia_thuyet",
@@ -12,41 +12,58 @@
     },
     {
       "khoa": "du_doan",
-      "giay": 3.0,
-      "chu": "Nối tắt pin mới, rồi pin đã dùng (cùng 1,5 V khi hở mạch). Hai dòng so với nhau thế nào?"
+      "giay": 3.8,
+      "chu": "Nối tắt pin mới, rồi pin đã dùng (cùng 1,5 V khi hở mạch). Dòng nào lớn hơn?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 9.2,
-      "chu": "Dây đồng mảnh, ampe kế 10 A, kẹp cách điện; chỉ nối 3 giây rồi tháo, sau đó đổi pin. Không tự làm ở nhà."
+      "giay": 9.7,
+      "chu": "Dây đồng mảnh, ampe kế, kẹp cách điện; nối đúng 3 giây rồi tháo, sau đó đổi pin."
     },
     {
       "khoa": "quan_sat",
-      "giay": 18.4,
-      "chu": "Pin mới 5,0 A, pin đã dùng 1,5 A."
+      "giay": 18.9,
+      "chu": "Pin mới 5,0 A, pin đã dùng 1,5 A; dây đồng nóng đỏ rõ hơn với pin mới."
     },
     {
       "khoa": "rut_ra",
-      "giay": 21.4,
-      "chu": "Cùng 1,5 V, chỉ r khác nhau: r nhỏ thì dòng lớn, I ≈ E/r."
+      "giay": 26.9,
+      "chu": "Cùng 1,5 V, chỉ r khác nhau. Dây gần 0 Ω nên chỉ còn r chặn dòng: I = ℰ/r, r nhỏ thì dòng lớn."
     },
     {
       "khoa": "chua_noi",
-      "giay": 27.8,
-      "chu": "Giữ lâu, r có đổi?"
+      "giay": 37.7,
+      "chu": "Giữ lâu hơn 3 giây thì r của pin có đổi không?"
     }
   ],
   "dung_dua": {
-    "giay": 9.1,
-    "cau_hoi": "Nối tắt pin mới, rồi pin đã dùng (cùng 1,5 V khi hở mạch). Hai dòng so với nhau thế nào?",
+    "giay": 9.55,
+    "cau_hoi": "Nối tắt 3 giây một pin AA mới, rồi một pin AA đã dùng (cả hai đều 1,5 V khi hở mạch). Dòng điện lần nào lớn hơn?",
     "chon": [
       "A. Bằng nhau, vì cùng 1,5 V",
       "B. Pin mới lớn hơn hẳn",
       "C. Pin đã dùng lớn hơn hẳn",
-      "D. Pin mới lớn hơn chút ít, gần bằng nhau"
+      "D. Pin mới chỉ lớn hơn chút ít"
     ],
     "dung": 1,
-    "giai_thich_dung": "Pin mới cho 5,0 A, pin đã dùng 1,5 A: cùng 1,5 V mà dòng khác nhau xa.",
-    "giai_thich_sai": "Xem số ampe kế ở hai lần nối tắt, so pin mới với pin đã dùng."
+    "giai_thich_dung": "Pin mới cho 5,0 A, pin đã dùng chỉ 1,5 A: cùng 1,5 V mà dòng khác nhau hơn ba lần, vì pin mới có r nhỏ hơn.",
+    "giai_thich_sai": "Ampe kế chỉ 5,0 A với pin mới và 1,5 A với pin đã dùng. Cùng 1,5 V nhưng r của pin mới nhỏ hơn nhiều, nên dòng đoản mạch lớn hơn hẳn."
+  },
+  "cau_chot": {
+    "giay": 44.7,
+    "cau_hoi": "Không nối tắt nữa: mỗi pin (cùng ℰ = 1,5 V) nối với điện trở R = 1,0 Ω. Pin mới r = 0,3 Ω, pin đã dùng r = 1,0 Ω. Dòng qua pin mới gấp khoảng mấy lần dòng qua pin đã dùng?",
+    "chon": [
+      "A. Khoảng 3,3 lần, như lúc nối tắt",
+      "B. Khoảng 1,5 lần, vì R cũng chặn",
+      "C. Bằng nhau, vì cùng ℰ = 1,5 V",
+      "D. Khoảng 2,5 lần, nhỏ hơn lúc nối tắt"
+    ],
+    "dung": 1,
+    "giai_thich": [
+      "3,3 lần (5,0 A so với 1,5 A) chỉ đúng khi nối tắt, lúc chỉ còn r chặn dòng. Có thêm R = 1,0 Ω thì R cũng chặn dòng: pin mới 1,5/1,3 ≈ 1,15 A, pin đã dùng 1,5/2,0 = 0,75 A, chỉ gấp khoảng 1,5 lần.",
+      "I = ℰ/(R + r): pin mới 1,5/(1,0 + 0,3) ≈ 1,15 A, pin đã dùng 1,5/(1,0 + 1,0) = 0,75 A, gấp khoảng 1,5 lần. R lớn so với r thì r khác nhau ít ảnh hưởng hơn lúc nối tắt.",
+      "Cùng ℰ nhưng r khác nên tổng điện trở khác: 1,3 Ω so với 2,0 Ω. Dòng 1,15 A so với 0,75 A, pin mới vẫn lớn hơn khoảng 1,5 lần.",
+      "2,5 lần không ứng với phép tính nào đúng. I = ℰ/(R + r): 1,5/1,3 ≈ 1,15 A và 1,5/2,0 = 0,75 A, gấp khoảng 1,5 lần."
+    ]
   }
 }

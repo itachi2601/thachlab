@@ -1,44 +1,44 @@
 {
   "id": "tn-l9-taitao-01",
   "ten": "Tua-bin gió mô hình đặt trước quạt bàn",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-taitao-01-20261118.mp4",
-  "poster": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-taitao-01-20261118.webp",
-  "tong_giay": 49.9,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-taitao-01-20261127.mp4",
+  "poster": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-taitao-01-20261127.webp",
+  "tong_giay": 49.2,
   "o": [
     {
       "khoa": "gia_thuyet",
       "giay": 0,
-      "chu": "Gió mạnh gấp 1,5 lần thì hiệu điện thế phát ra tăng nhiều hơn 1,5 lần; công suất tăng còn nhanh hơn.",
+      "chu": "Gió càng mạnh, cánh quay càng nhanh nên hiệu điện thế phát ra càng lớn.",
       "kiem": "Gió tăng, vôn kế chỉ thế nào?"
     },
     {
       "khoa": "du_doan",
-      "giay": 3.4,
+      "giay": 3.1,
       "chu": "Gió tăng từ 2 lên 3 m/s (gấp 1,5 lần). U gấp mấy lần?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 9.9,
+      "giay": 9.5,
       "chu": "Tua-bin gió mini, quạt bàn, điện trở 10 Ω, vôn kế."
     },
     {
       "khoa": "quan_sat",
-      "giay": 16.5,
+      "giay": 17.2,
       "chu": "Gió 2; 3; 4 m/s cho U = 0,60; 1,20; 1,80 V."
     },
     {
       "khoa": "rut_ra",
-      "giay": 30.4,
-      "chu": "Gió tăng 1,5 lần: U gấp 2, P tăng nhanh hơn U. U theo gió là đường thẳng không qua gốc."
+      "giay": 24.2,
+      "chu": "Gió tăng 1,5 lần: U gấp 2. Công suất điện còn tăng nhanh hơn U."
     },
     {
       "khoa": "chua_noi",
-      "giay": 38.1,
-      "chu": "Tua-bin đồ chơi, số minh hoạ."
+      "giay": 39.1,
+      "chu": "Tua-bin thật thế nào: chưa nói được. Số liệu minh hoạ."
     }
   ],
   "dung_dua": {
-    "giay": 9.8,
+    "giay": 9.3,
     "cau_hoi": "Gió tăng từ 2 lên 3 m/s (gấp 1,5 lần). U gấp mấy lần?",
     "chon": [
       "A. U không đổi",
@@ -49,5 +49,22 @@
     "dung": 2,
     "giai_thich_dung": "Số đo cho U từ 0,60 V lên 1,20 V, tức gấp 2 lần dù gió chỉ tăng 1,5 lần.",
     "giai_thich_sai": "U không tăng theo đúng tỉ lệ với gió: số đo là 0,60 V ở gió 2 m/s và 1,20 V ở gió 3 m/s, gấp 2 lần chứ không phải 1,5 hay 3 lần."
+  },
+  "cau_chot": {
+    "giay": 43.0,
+    "cau_hoi": "Cùng tua-bin, cùng điện trở 10 Ω. Gió chỉ còn 1 m/s. Vôn kế chỉ khoảng bao nhiêu?",
+    "chon": [
+      "A. Khoảng 0 V",
+      "B. Khoảng 0,15 V",
+      "C. Khoảng 0,30 V",
+      "D. Khoảng 0,60 V"
+    ],
+    "dung": 0,
+    "giai_thich": [
+      "Ba điểm đo thẳng hàng: gió giảm 1 m/s thì U giảm 0,60 V. Từ 0,60 V ở 2 m/s, giảm thêm 1 m/s còn khoảng 0 V: gió quá yếu, cánh gần như không phát điện.",
+      "0,15 V là chia 0,60 V cho 4 như thể U tăng theo bình phương gió. Số đo cho thấy U giảm đều 0,60 V mỗi 1 m/s, nên ở 1 m/s còn khoảng 0 V.",
+      "0,30 V là coi U tỉ lệ thuận với gió. Nhưng từ 2 lên 3 m/s U gấp 2 chứ không gấp 1,5: U giảm đều 0,60 V mỗi 1 m/s, nên ở 1 m/s còn khoảng 0 V.",
+      "Gió yếu đi thì U phải giảm. Ba điểm đo cho thấy mỗi 1 m/s U giảm 0,60 V, nên ở 1 m/s còn khoảng 0 V."
+    ]
   }
 }

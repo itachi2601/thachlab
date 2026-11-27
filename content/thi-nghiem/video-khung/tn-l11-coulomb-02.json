@@ -1,8 +1,8 @@
 {
   "id": "tn-l11-coulomb-02",
   "ten": "Cân điện tử đo lực đẩy giữa hai quả cầu",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-coulomb-02-20261030-2.mp4",
-  "tong_giay": 47.8,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-coulomb-02-20261127.mp4",
+  "tong_giay": 49.5,
   "o": [
     {
       "khoa": "gia_thuyet",
@@ -17,27 +17,27 @@
     },
     {
       "khoa": "dung_cu",
-      "giay": 10.4,
-      "chu": "A trên cân đọc 0,01 g, trừ bì khi B ở rất xa. Hạ B thẳng phía trên; r đo tâm–tâm."
+      "giay": 9.9,
+      "chu": "Cân đọc 0,01 g, hai quả cầu (+), thước."
     },
     {
       "khoa": "quan_sat",
-      "giay": 19.3,
-      "chu": "Số cân giảm nhanh khi r tăng: 0,92; 0,41; 0,23; 0,15; 0,10 g ở r = 2 đến 6 cm."
+      "giay": 19.0,
+      "chu": "Số cân giảm khi r tăng: 0,92; 0,41; 0,23; 0,15; 0,10 g ở r = 2 đến 6 cm."
     },
     {
       "khoa": "rut_ra",
-      "giay": 25.8,
-      "chu": "Tích F·r² gần như không đổi: r gấp đôi, lực còn một phần tư.\nHai hàng cuối lệch nhất do làm tròn 0,01 g."
+      "giay": 27.5,
+      "chu": "F tỉ lệ nghịch với r²: r gấp đôi thì số cân còn một phần tư."
     },
     {
       "khoa": "chua_noi",
-      "giay": 34.9,
-      "chu": "Hai cầu khác dấu thì sao? Ở r rất nhỏ, quả cầu còn là điện tích điểm không?"
+      "giay": 37.0,
+      "chu": "Hai cầu khác dấu thì lực và số cân ra sao: chưa đo."
     }
   ],
   "dung_dua": {
-    "giay": 10.2,
+    "giay": 9.7,
     "cau_hoi": "Nâng B từ r = 2 cm lên r = 4 cm, số cân (đang 0,92 g)…",
     "chon": [
       "A. còn một nửa",
@@ -47,6 +47,23 @@
     ],
     "dung": 1,
     "giai_thich_dung": "Số cân từ 0,92 g ở r = 2 cm còn 0,23 g ở r = 4 cm, đúng một phần tư: lực tỉ lệ nghịch với r², tích F·r² gần như không đổi.",
-    "giai_thich_sai": "Xem đồ thị ở đoạn kế: so số cân ở r = 2 cm với r = 4 cm, rồi lấy số lớn chia số nhỏ."
+    "giai_thich_sai": "Xem cảnh Kết quả: so số cân ở r = 2 cm với r = 4 cm, rồi lấy số lớn chia số nhỏ."
+  },
+  "cau_chot": {
+    "giay": 41.6,
+    "cau_hoi": "Ở r = 2 cm, cân chỉ 0,92 g. Giữ nguyên r, điện tích mỗi quả cầu tăng gấp đôi. Cân chỉ khoảng:",
+    "chon": [
+      "A. 0,92 g",
+      "B. 1,84 g",
+      "C. 3,7 g",
+      "D. 0,23 g"
+    ],
+    "dung": 2,
+    "giai_thich": [
+      "Số cân không chỉ phụ thuộc r: lực đẩy còn tỉ lệ với tích hai điện tích, mà tích này đã đổi.",
+      "1,84 g là nhân 2, như thể chỉ một quả tăng điện tích. Cả hai quả cùng gấp đôi nên tích q₁q₂ gấp 4.",
+      "F tỉ lệ với q₁q₂; cả hai quả gấp đôi nên tích gấp 4, r giữ nguyên: 0,92 · 4 ≈ 3,7 g.",
+      "0,23 g là chia 4: nhầm hướng. Điện tích tăng thì lực đẩy tăng, số cân phải lớn hơn 0,92 g."
+    ]
   }
 }
