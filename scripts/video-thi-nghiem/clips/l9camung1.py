@@ -168,8 +168,11 @@ def mini(d, box, v, k, t):
     ph = (t % 1.6) / 1.6; u = ease(clamp(ph / 0.7))            # 0 -> 1 trong 70 % chu ki, roi lap lai
     mid = (x0 + x1) / 2; off = (-60 + 120 * u) if v > 0 else (60 - 120 * u)
     mx, my = mid + off - 40, y0 + 170
-    d.rounded_rectangle([mx - 100, my - 26, mx, my + 26], radius=8, fill=A(BLUE, k))
-    d.rounded_rectangle([mx, my - 26, mx + 100, my + 26], radius=8, fill=A(RED, k))
+    d.rounded_rectangle([mx - 100, my - 32, mx, my + 32], radius=8, fill=A(BLUE, k))
+    d.rounded_rectangle([mx, my - 32, mx + 100, my + 32], radius=8, fill=A(RED, k))
+    text(d, (mx - 50, my + 1), "S", 56, WHITE, alpha=k); text(d, (mx + 50, my + 1), "N", 56, WHITE, alpha=k)   # du cap cuc (kiem-v1 muc 4)
+    if v > 0: arrow(d, (mid - 150, y0 + 105), (mid + 30, y0 + 105), A(PURPLE, k), w=6, head=18)   # chieu chuyen dong (muc 3)
+    else:     arrow(d, (mid + 30, y0 + 105), (mid - 150, y0 + 105), A(PURPLE, k), w=6, head=18)
     cxl = x1 - 50                                             # mep cuon day nho ben phai
     for j in range(4): d.arc([cxl - 12 + 10 * j - 14, my - 50, cxl - 12 + 10 * j + 14, my + 50], 270, 90, fill=A(ORANGE, k), width=5)
     cx, cy, r = (x0 + x1) / 2, y1 - 45, 150
@@ -195,15 +198,16 @@ def s_dapan(img, d, t, sc):
 
 
 # ---------------- canh 4: Bay (cuon day ho) + Chua noi duoc ----------------
-BAY_X, BAY_ST, BAY_E = 2.6, 5.2, 7.8
+BAY_X, BAY_ST, BAY_E = 3.4, 6.4, 9.2       # moi nhip >= 2,8 s (kiem-v1 muc 1)
 def circuit(d, x0, kin, ka, t, kk):
     """O nho: nam cham chay qua lai truoc cuon day; kin = mach kin hay ho mot dau."""
     card(d, (x0, 470, x0 + 480, 1240), fill=A(WHITE, ka), outline=A(NAVY, ka), w=5)
     text(d, (x0 + 240, 530), "nối kín" if kin else "hở một đầu", 58, NAVY, alpha=ka)
     ph = (t % 1.6) / 1.6; s = math.sin(2 * math.pi * ph) * kk
     mx, my = x0 + 150 + 50 * s, 680
-    d.rounded_rectangle([mx - 90, my - 24, mx, my + 24], radius=8, fill=A(BLUE, ka))
-    d.rounded_rectangle([mx, my - 24, mx + 90, my + 24], radius=8, fill=A(RED, ka))
+    d.rounded_rectangle([mx - 90, my - 32, mx, my + 32], radius=8, fill=A(BLUE, ka))
+    d.rounded_rectangle([mx, my - 32, mx + 90, my + 32], radius=8, fill=A(RED, ka))
+    text(d, (mx - 45, my + 1), "S", 56, WHITE, alpha=ka); text(d, (mx + 45, my + 1), "N", 56, WHITE, alpha=ka)
     cl = x0 + 330
     for j in range(5): d.arc([cl + 22 * j - 12, my - 60, cl + 22 * j + 12, my + 60], 270, 90, fill=A(ORANGE, ka), width=6)
     cx, cy, r = x0 + 240, 1100, 140
@@ -213,7 +217,8 @@ def circuit(d, x0, kin, ka, t, kk):
     else:   # dut mot doan tren day thu hai
         d.line([(cl + 88, my + 60), (cl + 88, 910), (cx + 120, 910)], fill=A(NAVY, ka), width=5)
         d.line([(cx + 75, 910), (cx + 60, 910), (cx + 60, ty)], fill=A(NAVY, ka), width=5)
-        dot(d, cx + 120, 910, 9, A(DRED, ka)); dot(d, cx + 75, 910, 9, A(DRED, ka))
+        dot(d, cx + 120, 910, 16, A(DRED, ka)); dot(d, cx + 75, 910, 16, A(DRED, ka))   # cho hở to, co chu (muc 5)
+        text(d, (cx + 112, 975), "hở", 56, DRED, alpha=ka)
     d.arc([cx - r, cy - r, cx + r, cy + r], 270 - 50, 270 + 50, fill=A(NAVY, ka), width=4)
     ang = math.radians(35 * math.cos(2 * math.pi * ph) * kk) if kin else 0.0     # kim ~ toc do nam cham
     d.line([(cx, cy), (cx + (r - 10) * math.sin(ang), cy - (r - 10) * math.cos(ang))], fill=A(RED, ka), width=7)
@@ -245,7 +250,7 @@ END_Q, END_C = 0.2, 3.0
 def s_end(img, d, t, sc):
     k0 = appear(t, END_C, 0.5)
     card(d, (50, 265, 1030, 425), fill=A((236, 253, 243), k0), outline=A(GREEN, k0), w=6)
-    text(d, (W / 2, 345), "Nam châm chuyển động: có dòng", 58, DGREEN, alpha=k0)
+    text(d, (W / 2, 345), "Lại gần, ra xa: lệch đâu?", 58, DGREEN, alpha=k0)
     k1 = appear(t, END_Q, 0.5)
     card(d, (40, 455, 1040, 1600), fill=A(WHITE, k1), outline=A(ORANGE, k1), w=6)
     pill(d, "THỬ NGHĨ", 518, k1, ORANGE)
@@ -256,11 +261,10 @@ def s_end(img, d, t, sc):
         mx = 420 + 70 * s
         d.rounded_rectangle([mx - 130, my - 34, mx, my + 34], radius=10, fill=A(BLUE, k1))
         d.rounded_rectangle([mx, my - 34, mx + 130, my + 34], radius=10, fill=A(RED, k1))
-        text(d, (mx + 65, my), "N", 58, WHITE, alpha=k1)
+        text(d, (mx + 65, my), "N", 58, WHITE, alpha=k1); text(d, (mx - 65, my), "S", 58, WHITE, alpha=k1)
         for j in range(7): d.arc([700 + 26 * j - 15, my - 100, 700 + 26 * j + 15, my + 100], 270, 90, fill=A(ORANGE, k1), width=8)
         arrow(d, (300, my - 120), (520, my - 120), A(PURPLE, k1), w=6, head=20)
         arrow(d, (520, my + 120), (300, my + 120), A(PURPLE, k1), w=6, head=20)
-        text(d, (W / 2, 1450), "kim = ?", 62, ORANGE, alpha=k1)
 
 
 def _cues(clip):
@@ -277,10 +281,10 @@ CLIP = dict(id="tn-l9-camung-01", header="KHTN 9 · THÍ NGHIỆM", footer="Cả
  dict(key="hook", title="Nam châm và cuộn dây", draw=s_hook, tail=THINK_END, caps=[
    ("Cuộn dây kín nối điện kế.", 3.0),
    ("Dừng lại, tự đoán.", 5.2)]),
- dict(key="do", title="Tiến hành", draw=s_do, tail=0.8, caps=[
+ dict(key="do", title="Tiến hành", draw=s_do, tail=0.4, caps=[
    ("Nam châm đứng yên.", 2.6),
-   ("Đưa lại gần trong 1 giây.", 3.6),
-   ("Kéo ra xa trong 1 giây.", 3.6)]),
+   ("Đưa lại gần trong 1 giây.", 3.4),
+   ("Kéo ra xa trong 1 giây.", 3.4)]),
  dict(key="dapan", title="Kết quả", draw=s_dapan, tail=0.6, caps=[
    ("Ngược phía lúc lại gần.", 3.6),
    ("Đó là dòng điện cảm ứng.", 4.6)]),
