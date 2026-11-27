@@ -1,8 +1,8 @@
 {
   "id": "tn-l10-sai-so-01",
   "ten": "Bấm giờ 10 dao động con lắc đơn, đo 5 lần: các số đo ra sao?",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-sai-so-01-20261109.mp4",
-  "tong_giay": 49.6,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-sai-so-01-20261127.mp4",
+  "tong_giay": 50.0,
   "o": [
     {
       "khoa": "gia_thuyet",
@@ -17,27 +17,27 @@
     },
     {
       "khoa": "dung_cu",
-      "giay": 8.9,
-      "chu": "Con lắc dây 1,000 m, lệch khoảng 5°; đồng hồ số chia 0,01 s; bấm 10 dao động, 5 lần."
+      "giay": 9.0,
+      "chu": "Con lắc 1,000 m, đồng hồ số chia 0,01 s."
     },
     {
       "khoa": "quan_sat",
-      "giay": 16.8,
+      "giay": 16.9,
       "chu": "Nhỏ nhất 19,85 s, lớn nhất 20,23 s."
     },
     {
       "khoa": "rut_ra",
-      "giay": 21.0,
+      "giay": 21.2,
       "chu": "Lấy trung bình: t̄ = 100,35 : 5 = 20,07 s. Các số tản quanh giá trị này."
     },
     {
       "khoa": "chua_noi",
-      "giay": 30.6,
+      "giay": 31.7,
       "chu": "Chưa xét đếm nhầm số dao động và góc lệch lớn. Số liệu minh hoạ."
     }
   ],
   "dung_dua": {
-    "giay": 8.75,
+    "giay": 8.85,
     "cau_hoi": "Đồng hồ số chia 0,01 s. Bấm giờ 10 dao động của con lắc đơn, đo 5 lần. 5 số đo lệch nhau cỡ bao nhiêu?",
     "chon": [
       "A. Trùng nhau, không lệch",
@@ -47,6 +47,23 @@
     ],
     "dung": 2,
     "giai_thich_dung": "Đồng hồ hiện tới 0,01 s, nhưng tay bấm lúc sớm lúc muộn: 5 số trải từ 19,85 s đến 20,23 s.",
-    "giai_thich_sai": "Độ chia 0,01 s chỉ là phần của đồng hồ; phần lớn độ lệch đến từ tay bấm. Xem năm chấm cam trên trục thời gian ở đoạn kế."
+    "giai_thich_sai": "Độ chia 0,01 s chỉ là phần của đồng hồ; phần lớn độ lệch đến từ tay bấm. Xem năm chấm trên trục thời gian ở đoạn kế: trải từ 19,85 s đến 20,23 s."
+  },
+  "cau_chot": {
+    "giay": 45.7,
+    "cau_hoi": "Thay vì 10, em bấm giờ 20 dao động; tay bấm vẫn lệch như cũ. Sai số của một chu kì T đổi thế nào?",
+    "chon": [
+      "A. Giữ nguyên như cũ",
+      "B. Còn khoảng một nửa",
+      "C. Tăng lên gấp đôi",
+      "D. Còn khoảng 1/20"
+    ],
+    "dung": 1,
+    "giai_thich": [
+      "Phần lệch của t do tay bấm gần như giữ nguyên, nhưng T = t chia cho số dao động. Chia cho 20 thay vì 10 nên sai số của T nhỏ đi.",
+      "Tay bấm lệch như cũ nên sai số của t gần như giữ nguyên; T = t : 20 thay vì t : 10, nên sai số của T còn khoảng một nửa. Vì vậy người ta đếm nhiều dao động rồi mới chia.",
+      "t dài gấp đôi nhưng phần lệch do tay bấm không lớn lên; còn chia cho 20 nên sai số của T nhỏ đi, không tăng.",
+      "So với lúc bấm 10 dao động, số chia chỉ tăng gấp đôi (10 → 20), không tăng 20 lần, nên sai số của T chỉ giảm khoảng một nửa."
+    ]
   }
 }
