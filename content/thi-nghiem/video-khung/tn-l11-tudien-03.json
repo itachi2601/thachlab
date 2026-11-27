@@ -32,8 +32,8 @@
     },
     {
       "khoa": "chua_noi",
-      "giay": 38.6,
-      "chu": "Dây đo, tay cầm có góp thêm điện dung không?"
+      "giay": 38.0,
+      "chu": "Dây đo có góp thêm điện dung không?"
     }
   ],
   "dung_dua": {
@@ -51,19 +51,19 @@
   },
   "cau_chot": {
     "giay": 42.7,
-    "cau_hoi": "Tụ gốc (hai tấm chồng kín, khe 1 mm, không khí) có C = 354 pF. Trượt lệch còn nửa phần đối diện, đồng thời chèn tấm nhựa ε = 3 kín khe 1 mm ở phần đối diện. C bây giờ khoảng:",
+    "cau_hoi": "Vẫn hai tấm nhôm chồng kín nhau như lần gốc (354 pF, khe 1 mm). Nới khe ra 4 mm rồi chèn tấm nhựa ε = 3 kín khe. Đồng hồ chỉ khoảng bao nhiêu?",
     "chon": [
-      "A. Khoảng 177 pF",
-      "B. Khoảng 531 pF",
-      "C. Khoảng 1061 pF",
-      "D. Khoảng 2120 pF"
+      "A. Khoảng 1061 pF",
+      "B. Khoảng 88 pF",
+      "C. Khoảng 265 pF",
+      "D. Khoảng 4240 pF"
     ],
-    "dung": 1,
+    "dung": 2,
     "giai_thich": [
-      "177 pF mới tính phần lệch nửa tấm (S giảm một nửa), quên tấm nhựa làm C tăng 3 lần.",
-      "S đối diện còn một nửa (× 0,5) và ε = 3 (× 3), d giữ 1 mm: C ≈ 354 · 0,5 · 3 = 531 pF.",
-      "1061 pF là lúc chèn nhựa khi hai tấm còn chồng kín. Ở đây phần đối diện chỉ còn một nửa nên C cũng chỉ còn một nửa của 1061.",
-      "2120 pF là coi lệch nửa tấm làm C gấp đôi. S đối diện giảm thì C giảm theo, không tăng."
+      "1061 pF là chỉ tính tấm nhựa (× 3) mà quên khe đã rộng gấp 4. Khe rộng ra thì C giảm.",
+      "88 pF là chỉ tính khe 4 mm (354 : 4) mà quên tấm nhựa. Nhựa kín khe làm C gấp 3.",
+      "C tỉ lệ nghịch với d: khe gấp 4 thì C còn 1/4. Nhựa ε = 3 kín khe thì C gấp 3. 354 · 3/4 ≈ 265 pF (tự suy từ mô hình C = εS/(9·10⁹·4πd)).",
+      "4240 pF là nhân cả hai: coi khe rộng làm C tăng. Clip cho thấy khe 2 mm thì C còn một nửa, nên khe 4 mm phải chia cho 4."
     ]
   }
 }

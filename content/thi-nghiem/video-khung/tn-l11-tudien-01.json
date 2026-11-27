@@ -32,7 +32,7 @@
     },
     {
       "khoa": "chua_noi",
-      "giay": 38.0,
+      "giay": 37.4,
       "chu": "Vì sao dòng về 0 dù pin còn nối?"
     }
   ],
@@ -51,19 +51,19 @@
   },
   "cau_chot": {
     "giay": 42.1,
-    "cau_hoi": "Thay tụ 1000 μF bằng tụ 2200 μF, vẫn pin 9 V và cùng đèn LED (điện trở 1 kΩ). Lúc nạp, LED loé lâu gấp khoảng mấy lần so với khi dùng tụ 1000 μF?",
+    "cau_hoi": "Thay tụ 1000 μF bằng tụ 2200 μF, đồng thời thay điện trở 1 kΩ bằng điện trở 0,5 kΩ, vẫn pin 9 V. Lúc nạp, LED loé lâu gấp khoảng mấy lần so với lúc đầu?",
     "chon": [
-      "A. Bằng như cũ, vì vẫn pin 9 V",
-      "B. Lâu hơn khoảng 2,2 lần",
-      "C. Lâu hơn khoảng 4,8 lần",
-      "D. Lâu hơn, chưa tới 2 lần"
+      "A. Khoảng 2,2 lần",
+      "B. Khoảng 0,5 lần",
+      "C. Khoảng 1,1 lần",
+      "D. Khoảng 4,4 lần"
     ],
-    "dung": 1,
+    "dung": 2,
     "giai_thich": [
-      "Pin quyết định dòng lúc đầu (U/R như cũ), không quyết định thời gian loé. Tụ 2200 μF chứa được nhiều điện tích hơn ở cùng 9 V, nên phải nạp lâu hơn.",
-      "Cùng 9 V, tụ 2200 μF chứa gấp 2,2 lần điện tích (Q = CU). Dòng lúc đầu vẫn bằng U/R như cũ, nên dòng cần lâu hơn khoảng 2,2 lần mới giảm tới mức LED tắt (theo mô hình, thời gian nạp tỉ lệ R·C).",
-      "4,8 lần là bình phương 2,2 (nhầm với năng lượng ½CU²). Điện tích cần nạp chỉ tăng theo C, tức 2,2 lần.",
-      "Dòng lúc đầu do pin và điện trở 1 kΩ quyết định (U/R), không đổi khi thay tụ. Tụ 2200 μF phải nhận gấp 2,2 lần điện tích với dòng lúc đầu như cũ, nên LED loé lâu hơn khoảng 2,2 lần, không phải dưới 2 lần."
+      "2,2 lần là chỉ xét tụ. Điện trở giảm còn một nửa thì dòng nạp lớn gấp đôi, tụ đầy nhanh hơn, nên thời gian không tăng đủ 2,2 lần.",
+      "0,5 lần là chỉ xét điện trở. Tụ 2200 μF cần nhận nhiều điện tích hơn (gấp 2,2 lần ở cùng 9 V), nên LED không tắt sớm gấp đôi.",
+      "Thời gian loé tỉ lệ với R·C (mô hình, tự suy): R·C = 0,5 kΩ · 2200 μF = 1,1 s, so với 1 kΩ · 1000 μF = 1,0 s, nên lâu hơn khoảng 1,1 lần.",
+      "4,4 lần là lấy 2,2 chia 0,5: coi điện trở nhỏ đi làm loé lâu hơn. Điện trở nhỏ thì dòng lớn, nạp nhanh hơn; phải nhân 2,2 với 0,5."
     ]
   }
 }

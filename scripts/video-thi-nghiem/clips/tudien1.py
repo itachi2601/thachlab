@@ -4,8 +4,8 @@
 #   i(t) = (U/R).exp(-t/tau) khi nap ; khi phong dong nguoc chieu, cung dang exp.
 # Du doan (khung ben canh, K10 khong ve nut): dong K, pin van noi mai, LED the nao?
 #   A. sang deu ; B. loe roi tat han (DUNG) ; C. mo dan khong bao gio tat ; D. khong sang.
-# Cau chot (kho ghi_chu "ca tu suy cho cau chot clip", hang 2): tu 2200 uF, pin 9 V -> tau 2,2 s so voi 1,0 s
-#   -> LED loe lau hon khoang 2,2 lan. Clip KHONG chieu tau, khong chieu Q = CU, khong chieu so 2,2.
+# Cau chot v3 (TU SUY, phien chinh chot 27/11; kho chi co R co dinh 1 kOhm): tu 2200 uF VA R 0,5 kOhm, pin 9 V
+#   -> tau = 0,5 kOhm . 2200 uF = 1,1 s so voi 1,0 s -> loe lau ~1,1 lan. Clip KHONG chieu tau = RC.
 # KHONG LO QUIZ sau hop ("Vi sao LED tat han du pin van con noi?" - dap an: tu nap day nen dong ngung):
 #   clip khong viet "tu day"/"het cho"; the "Chua noi duoc" day cau hoi do sang quiz.
 # Bay (cac_buoc.lam buoc 2): phong ma quen dao LED -> LED chan dong, tu VAN con dien tich (hai mach canh nhau).
@@ -17,7 +17,7 @@ from engine import *
 U, C_UF, R_K = 9, 1000, 1
 TAU = R_K * 1e3 * C_UF * 1e-6
 assert abs(TAU - 1.0) < 1e-9 and C_UF * U == 9000              # hang 1 so_lieu_mau
-assert abs(R_K * 1e3 * 2200e-6 - 2.2) < 1e-9                    # hang 2 (cau chot)
+assert abs(0.5e3 * 2200e-6 / TAU - 1.1) < 1e-9                  # cau chot v3 (tu suy)
 DIR_NAP, DIR_PHONG = +1, -1
 assert DIR_NAP == -DIR_PHONG
 
@@ -100,7 +100,7 @@ def panel(d, x0, y0, kind, tp, a=1.0, rev=0.0):
     arrow(d, (ox + PW - 120, ax), (ox + PW - 100, ax), A(NAVY, a), w=4, head=16)
     text(d, (ox - 40, y0 + (120 if kind == "nap" else 400)), "i", 60, INK, alpha=a)
     text(d, (x0 + PW / 2 + 20, y0 + (55 if kind == "nap" else 470)), "nạp" if kind == "nap" else "phóng", 58, ARR if kind == "nap" else BLUE, alpha=a)
-    if kind == "phong" and rev > 0: text(d, (x0 + PW / 2, y0 + 565), "i < 0: dòng ngược", 56, BLUE, alpha=a * rev)
+    if kind == "phong" and rev > 0: text(d, (x0 + PW / 2, y0 + 578), "i < 0: dòng ngược", 58, BLUE, alpha=a * rev)
     for t in (1, 2, 3, 4):
         d.line([(xs(t), ax - 9), (xs(t), ax + 9)], fill=A(NAVY, a), width=4)
         if t % 2 == 0: text(d, (xs(t), ax + (48 if kind == "nap" else -45)), str(t), 56, INK, alpha=a)
@@ -152,8 +152,8 @@ def s_dapan(img, d, t, sc):
     M = sc["M"]
     panel(d, 50, 290, "nap", T_RUN); panel(d, 550, 290, "phong", T_RUN, rev=appear(t, sc["M"][1] + 0.3, 0.4))
     ka = appear(t, 0.4, 0.4)
-    card(d, (40, 900, 1040, 1080), fill=A(WHITE, ka), outline=A(NAVY, ka), w=6)
-    text(d, (W / 2, 990), "Loé rồi tắt hẳn", 66, NAVY, alpha=ka)
+    card(d, (40, 920, 1040, 1080), fill=A(NAVY, ka), r=40)
+    text(d, (W / 2, 1000), "ĐÁP ÁN · loé rồi tắt hẳn", 62, WHITE, alpha=ka)
     k1 = appear(t, M[1] + 0.3, 0.4)
     if k1 > 0:
         card(d, (40, 1130, 1040, 1310), fill=A((236, 253, 243), k1), outline=A(GREEN, k1), w=5)
@@ -188,7 +188,7 @@ def s_bay(img, d, t, sc):
         text(d, (810, 1000), "tối", 60, DRED, alpha=lit)
         c = A(DRED, lit)
         d.line([(1010, 560), (1060, 660)], fill=c, width=10); d.line([(1060, 560), (1010, 660)], fill=c, width=10)
-    k3 = appear(t, M[2] - 0.1, 0.4)
+    k3 = appear(t, M[2] - 0.7, 0.4)
     if k3 > 0:
         card(d, (40, 1100, 1040, 1440), fill=A(WHITE, k3), outline=A(NAVY, k3), w=6)
         pill(d, W / 2, 1170, "CHƯA NÓI ĐƯỢC", NAVY, k3)
@@ -204,10 +204,11 @@ def s_end(img, d, t, sc):
     card(d, (40, 230, 1040, 1560), fill=A(WHITE, k), outline=A(ORANGE, k), w=6)
     pill(d, W / 2, 305, "THỬ NGHĨ", ORANGE, k)
     cap_icon(d, 290, 520, 60, k); cap_icon(d, 790, 520, 95, k)
-    text(d, (290, 690), "1000 μF", 58, INK, alpha=k); text(d, (790, 690), "2200 μF", 58, ORANGE, alpha=k)
-    text(d, (W / 2, 860), "Thay tụ 2200 μF,", 64, INK, alpha=k)
-    text(d, (W / 2, 950), "vẫn pin 9 V, LED như cũ.", 64, INK, alpha=k)
-    text(d, (W / 2, 1080), "LED loé lâu gấp mấy lần?", 64, DRED, alpha=k)
+    text(d, (290, 680), "1000 μF", 58, INK, alpha=k); text(d, (790, 680), "2200 μF", 58, ORANGE, alpha=k)
+    text(d, (290, 750), "1 kΩ", 58, INK, alpha=k); text(d, (790, 750), "0,5 kΩ", 58, ORANGE, alpha=k)
+    text(d, (W / 2, 890), "Thay tụ 2200 μF và điện trở", 62, INK, alpha=k)
+    text(d, (W / 2, 975), "0,5 kΩ, vẫn pin 9 V.", 62, INK, alpha=k)
+    text(d, (W / 2, 1100), "LED loé lâu gấp mấy lần?", 64, DRED, alpha=k)
     seg_bar(d, 1260, t, 1.0, sc["T"] - 0.2, ORANGE, k)
 
 def _cues(clip):

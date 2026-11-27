@@ -125,7 +125,7 @@ GX0, GY0, GX1, GY1 = 200, 860, 900, 380
 def s_dapan(img, d, t, sc):
     M = sc["M"]
     card(d, (40, 250, 1040, 990), fill=WHITE, outline=LIGHT, w=3)
-    text(d, (1010, 300), "số liệu mô phỏng", 56, MUTED, bold=False, anchor="rm")
+    text(d, (1010, 300), "số liệu mô phỏng", 56, (60, 64, 84), anchor="rm")
     gx, gy = axes(d, GX0, GY0, GX1, GY1, 55, 1400, ly="mAh", lx="t (phút)")
     for q in (500, 1000):
         d.line([(GX0 - 12, gy(q)), (GX0, gy(q))], fill=NAVY, width=4)
@@ -162,7 +162,7 @@ def s_bay(img, d, t, sc):
         card(d, (60, 680, 1020, 840), fill=A((236, 253, 243), k1), outline=A(GREEN, k1), r=24, w=5)
         text(d, (470, 760), "1,50 · 600 = 900 C", 64, DGREEN, alpha=k1)
         text(d, (900, 760), "✓", 100, DGREEN, alpha=k1)
-    k3 = appear(t, M[2] - 0.1, 0.4)
+    k3 = appear(t, M[2] - 0.4, 0.4)
     if k3 > 0:
         card(d, (40, 960, 1040, 1300), fill=A(WHITE, k3), outline=A(NAVY, k3), w=6)
         pill(d, W / 2, 1030, "CHƯA NÓI ĐƯỢC", NAVY, k3)
@@ -206,7 +206,7 @@ CLIP = dict(id="tn-l11-cuong-do-dong-dien-02", header="VẬT LÍ 11 · THÍ NGHI
  dict(key="bay", title="Bẫy và giới hạn", draw=s_bay, tail=0.4, caps=[
    ("Bẫy: nhân với số phút.", 3.6),
    ("10 phút là 600 giây.", 3.6),
-   ("Mới đo khi pin còn xa đầy.", 3.0)]),
+   ("Mới đo lúc pin còn vơi.", 3.0)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.7, caps=[
    ("Dừng lại, tự trả lời.", 7.2)]),
 ])

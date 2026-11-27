@@ -11,11 +11,10 @@
 # KHONG tra loi san cau trong bai: q4 (vi sao R den 7,7 Ohm o 2 V nhung 12 Ohm o 6 V -> clip KHONG noi nguyen nhan
 #   nhiet do; "Vi sao U/I tang?" de o the Chua noi duoc), q3 (sai so tung hang -> khong noi).
 # Bay = hien_tuong_hay_sai[2] (dien tro nguoi va sang bang nhau) duoi dang "den 6 V - 3 W luon la 12 Ohm".
-# Cau chot (ca tu suy, ghi trong ghi_chu kho): den noi tiep dien tro 10 Ohm, nguon 6,3 V. Thu hang: 3,0 + 10.0,33 = 6,3
-#   -> von ke tren dien tro chi 3,3 V (hon 3,0 V cua den), I = 0,33 A. Hang khac: 2 + 2,6 = 4,6 ; 4 + 3,9 = 7,9 -> duy nhat.
-#   So 6,3 V va 3,3 V chua tung hien tren man.
+# Cau chot v2 (tu suy tu hang 4,0 V / 0,39 A cua kho; khong can nho bang): den noi tiep 10 Ohm, von ke tren den 4,0 V,
+#   ampe ke 0,39 A (ca hai HIEN tren man chot) -> U_R = 0,39.10 = 3,9 V -> nguon 4,0 + 3,9 = 7,9 V (chua hien).
 # Bo cuc: bong den ve that + 2 dong ho o tren, bang doc 6 hang o duoi; dap an = thanh so sanh; do thi chi o canh bay.
-# Nhieu cau chot: 3,15 V (chia doi 6,3, coi den nhu dien tro 10 Ohm) ; 5,0 V (10 . 0,50 A) ; 2,6 V (10 . 0,26 A).
+# Nhieu cau chot v2: 3,9 V (quen den) ; 4,4 V (cong 4,0 + 0,39) ; 14 V (cong 4,0 + 10).
 from engine import *
 
 ROWS = [(1.0, 0.17, 5.9), (2.0, 0.26, 7.7), (3.0, 0.33, 9.1), (4.0, 0.39, 10.3), (5.0, 0.45, 11.1), (6.0, 0.50, 12.0)]
@@ -27,7 +26,7 @@ def _kiem_so():
 assert not _kiem_so()
 assert ROWS[2][1] > ROWS[5][1] / 2                                       # dap an B: hon mot nua
 _SER = [round(u + 10 * i, 2) for u, i, _ in ROWS]
-assert _SER.count(6.3) == 1 and abs(6.3 - ROWS[2][0] - 10 * ROWS[2][1]) < 1e-9   # cau chot: duy nhat hang 3,0 V
+assert abs(ROWS[3][0] + 10 * ROWS[3][1] - 7.9) < 1e-9                    # cau chot v2: hang 4,0 V
 
 NOTE = (60, 64, 84); SCREEN = (220, 240, 225); SCR_INK = (20, 60, 30); BODY = (70, 78, 100); DRED = (185, 28, 28)
 GLASS = (235, 240, 248); FIL = (90, 80, 70); DGREEN = (21, 110, 55); EMPTY = (148, 140, 128); WIRE = (60, 66, 92)
@@ -192,7 +191,7 @@ def axes(d, note=False):
     arrow(d, (GX0, GY1 - 10), (GX0, GY1 - 36), NAVY, w=4, head=16); arrow(d, (GX1 + 10, GY0), (GX1 + 36, GY0), NAVY, w=4, head=16)
     text(d, (GX0 + 22, GY1 - 40), "I (A)", 56, INK, anchor="lm")
     text(d, (1020, GY0 - 50), "U (V)", 56, INK, anchor="rm")
-    if note: text(d, (1010, 925), "số liệu mô phỏng", 56, NOTE, bold=False, anchor="rm")
+    if note: text(d, (1010, 925), "số liệu mô phỏng", 56, NOTE, anchor="rm")
     for u in range(1, 7):
         d.line([(gx(u), GY0), (gx(u), GY0 + 12)], fill=NAVY, width=3)
         text(d, (gx(u), GY0 + 50), str(u), 56, NOTE)
@@ -204,10 +203,10 @@ def s_bay(img, d, t, sc):
     d.line(pc, fill=A(BLUE, 0.85), width=6, joint="curve")
     for u, i, _ in ROWS: dot(d, gx(u), gy(i), 15, BLUE, outline=WHITE)
     text(d, (gx(2.2), gy(i_mod(2.2)) - 60), "đèn", 56, BLUE)
-    k2 = appear(t, M[1] - 0.1, 0.4); k3 = appear(t, M[2] - 0.1, 0.45)
+    k2 = appear(t, M[1] - 0.1, 0.4); k3 = appear(t, M[2] - 0.7, 0.45)
     if k2 > 0:
         dashed(d, (gx(0), gy(0)), (gx(6 * k2), gy(0.50 * k2)), ORANGE, w=6)
-        xl, yl = gx(4.6), gy(0.50 * 4.6 / 6) + 115
+        xl, yl = gx(4.6), gy(0.50 * 4.6 / 6) + 145
         card(d, (xl - 130, yl - 40, xl + 130, yl + 40), fill=A(WHITE, k2), outline=A(ORANGE, k2), r=18, w=4)
         text(d, (xl, yl), "12 Ω", 56, ORANGE, alpha=k2)
     a1 = 1.0 - k3; y = 300
@@ -219,8 +218,8 @@ def s_bay(img, d, t, sc):
         text(d, (W / 2, yy), q, 58, mix(INK, GRAY, k2), alpha=a1)
         if k2 > 0:
             d.line([(W / 2 - lw / 2 - 6, yy + 2), (W / 2 - lw / 2 - 6 + (lw + 12) * k2, yy + 2)], fill=A(DRED, 0.85 * a1), width=7)
-            text(d, (W / 2, y + 340), "Các điểm đo đều", 58, BLUE, alpha=a1 * k2)
-            text(d, (W / 2, y + 430), "nằm trên đường 12 Ω", 58, BLUE, alpha=a1 * k2)
+            text(d, (W / 2, y + 340), "Chỉ 6,0 V trên đường 12 Ω", 58, BLUE, alpha=a1 * k2)
+            text(d, (W / 2, y + 430), "Các điểm khác ở phía trên", 58, BLUE, alpha=a1 * k2)
     if k3 > 0:
         card(d, (40, y, 1040, y + 520), fill=A(WHITE, k3), outline=A(NAVY, k3), w=6)
         pill(d, W / 2, y + 70, "CHƯA NÓI ĐƯỢC", NAVY, k3)
@@ -228,30 +227,32 @@ def s_bay(img, d, t, sc):
 
 # ---------------- canh 5: THU NGHI ----------------
 def _series(d, k):
-    """So do: nguon 6,3 V - den - dien tro 10 Ohm noi tiep; von ke tren dien tro chi '?'."""
+    """So do v2: den - dien tro 10 Ohm - ampe ke noi tiep; von ke tren DEN chi 4,0 V, ampe ke 0,39 A; nguon '?'."""
     c = A(WIRE, k); y1, y2 = 620, 840
     d.line([(150, y1), (150, y2), (930, y2), (930, y1), (150, y1)], fill=c, width=6)
     d.ellipse([290, y1 - 50, 390, y1 + 50], fill=A(WHITE, k), outline=A(NAVY, k), width=5)
     d.line([(305, y1 - 35), (375, y1 + 35)], fill=A(NAVY, k), width=4); d.line([(305, y1 + 35), (375, y1 - 35)], fill=A(NAVY, k), width=4)
-    text(d, (340, y1 - 95), "đèn", 58, NAVY, alpha=k)
+    text(d, (340, y1 + 90), "đèn", 58, NAVY, alpha=k)
     d.rectangle([620, y1 - 28, 800, y1 + 28], fill=A(WHITE, k), outline=A(NAVY, k), width=5)
     text(d, (710, y1 + 80), "10 Ω", 58, NAVY, alpha=k)
-    d.line([(600, y1), (600, 470), (664, 470)], fill=c, width=4); d.line([(820, y1), (820, 470), (756, 470)], fill=c, width=4)
-    d.ellipse([664, 424, 756, 516], fill=A(WHITE, k), outline=A(PURPLE, k), width=6); text(d, (710, 472), "V", 56, PURPLE, alpha=k)
-    text(d, (850, 430), "?", 70, DRED, alpha=k)
+    d.line([(250, y1), (250, 470), (294, 470)], fill=c, width=4); d.line([(430, y1), (430, 470), (386, 470)], fill=c, width=4)
+    d.ellipse([294, 424, 386, 516], fill=A(WHITE, k), outline=A(PURPLE, k), width=6); text(d, (340, 472), "V", 56, PURPLE, alpha=k)
+    text(d, (440, 400), "4,0 V", 58, PURPLE, anchor="lm", alpha=k)
+    d.ellipse([254, y2 - 46, 346, y2 + 46], fill=A(WHITE, k), outline=A(BLUE, k), width=6); text(d, (300, y2 + 2), "A", 56, BLUE, alpha=k)
+    text(d, (300, y2 + 85), "0,39 A", 58, BLUE, alpha=k)
     d.line([(520, y2 - 44), (520, y2 + 44)], fill=A(ORANGE, k), width=7)
     d.line([(550, y2 - 24), (550, y2 + 24)], fill=A(ORANGE, k), width=14)
     d.rectangle([523, y2 - 4, 547, y2 + 4], fill=A(WHITE, k))
-    text(d, (535, y2 + 85), "6,3 V", 58, ORANGE, alpha=k)
+    text(d, (560, y2 + 85), "nguồn ?", 58, DRED, alpha=k)
 
 def s_end(img, d, t, sc):
-    """THU NGHI: den noi tiep 10 Ohm, nguon 6,3 V -> von ke tren dien tro? (3,3 V, khong hien)."""
+    """THU NGHI v2: den 4,0 V / 0,39 A noi tiep 10 Ohm -> nguon? (4,0 + 3,9 = 7,9 V, khong hien)."""
     k = appear(t, 0.15, 0.4)
     card(d, (40, 230, 1040, 1560), fill=A(WHITE, k), outline=A(ORANGE, k), w=6)
     pill(d, W / 2, 305, "THỬ NGHĨ", ORANGE, k)
     _series(d, k)
-    text(d, (W / 2, 1080), "Đèn này nối tiếp 10 Ω, nguồn 6,3 V.", 58, INK, alpha=k)
-    text(d, (W / 2, 1180), "Vôn kế chỉ bao nhiêu?", 62, DRED, alpha=k)
+    text(d, (W / 2, 1080), "Đèn này nối tiếp 10 Ω.", 60, INK, alpha=k)
+    text(d, (W / 2, 1180), "Nguồn bao nhiêu vôn?", 62, DRED, alpha=k)
     seg_bar(d, 1360, t, 1.0, sc["T"] - 0.2, ORANGE, k)
 
 def _cues(clip):
@@ -273,8 +274,8 @@ CLIP = dict(id="tn-l11-dien-tro-ohm-02", header="VẬT LÍ 11 · THÍ NGHIỆM",
    ("So dòng ở 3,0 V với 6,0 V.", 4.0),
    ("Đèn càng sáng, U/I càng lớn.", 4.0)]),
  dict(key="bay", title="Bẫy và giới hạn", draw=s_bay, tail=0.4, caps=[
-   ("Bẫy với bóng đèn.", 3.6),
-   ("Kẻ thử đường 12 Ω qua gốc.", 3.6),
+   ("Hay nhầm.", 3.6),
+   ("Kẻ thử đường qua gốc.", 3.6),
    ("Chưa đo dưới 1,0 V.", 3.4)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.7, caps=[
    ("Dừng lại, tự trả lời.", 7.2)]),

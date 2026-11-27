@@ -101,7 +101,7 @@ def gy(i): return GY0 - i / 0.6 * (GY0 - GY1)
 
 def axes(d, y_top=880, note=True):
     card(d, (40, y_top, 1040, 1580), fill=WHITE, outline=LIGHT, w=3)
-    if note: text(d, (1010, y_top + 45), "số liệu mô phỏng", 56, NOTE, bold=False, anchor="rm")
+    if note: text(d, (1010, y_top + 45), "số liệu mô phỏng", 56, NOTE, anchor="rm")
     for i in (0.2, 0.4, 0.6):
         d.line([(GX0, gy(i)), (GX1, gy(i))], fill=LIGHT, width=3)
         text(d, (GX0 - 18, gy(i)), vn(i), 56, NOTE, anchor="rm")
@@ -197,10 +197,12 @@ def s_dapan(img, d, t, sc):
 def s_bay(img, d, t, sc):
     M = sc["M"]
     axes(d); line_origin(d, 1.0); pts(d, 5)
-    k2 = appear(t, M[1] - 0.1, 0.4); k3 = appear(t, M[2] - 0.1, 0.45)
+    k2 = appear(t, M[1] - 0.1, 0.4); k3 = appear(t, M[2] - 0.7, 0.45)
     if k2 > 0:
         for j, (u, i, r) in enumerate(ROWS):
-            text(d, (gx(u) - 62, gy(i) - 50), "10 Ω", 56, GREEN, alpha=k2 * (1 - k3))
+            ka = k2 * (1 - k3); cx, cy = gx(u) - 72, gy(i) - 62
+            card(d, (cx - 66, cy - 32, cx + 66, cy + 32), fill=A(WHITE, ka * 0.9), r=14)
+            text(d, (cx, cy), "10 Ω", 56, GREEN, alpha=ka)
     a1 = 1.0 - k3; y = 300
     if a1 > 0:
         card(d, (40, y, 1040, y + 520), fill=A(WHITE, a1), outline=A(DRED, a1), w=6)

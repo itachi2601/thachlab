@@ -32,7 +32,7 @@
     },
     {
       "khoa": "chua_noi",
-      "giay": 35.5,
+      "giay": 34.9,
       "chu": "Vì sao U/I của đèn tăng? Dưới 1,0 V thì sao?"
     }
   ],
@@ -51,19 +51,19 @@
   },
   "cau_chot": {
     "giay": 40.0,
-    "cau_hoi": "Mắc chính bóng đèn này nối tiếp với điện trở 10 Ω vào nguồn 6,3 V. Vôn kế mắc hai đầu điện trở 10 Ω chỉ bao nhiêu? (Dùng bảng đo của đèn.)",
+    "cau_hoi": "Mắc chính đèn này nối tiếp với điện trở 10 Ω rồi nối vào nguồn. Vôn kế mắc song song với đèn chỉ 4,0 V, ampe kế chỉ 0,39 A. Hiệu điện thế của nguồn khoảng bao nhiêu?",
     "chon": [
-      "A. 3,3 V",
-      "B. 3,15 V",
-      "C. 5,0 V",
-      "D. 2,6 V"
+      "A. Khoảng 3,9 V",
+      "B. Khoảng 7,9 V",
+      "C. Khoảng 4,4 V",
+      "D. Khoảng 14 V"
     ],
-    "dung": 0,
+    "dung": 1,
     "giai_thich": [
-      "Hai linh kiện nối tiếp có cùng dòng I, và U đèn + 10·I = 6,3 V. Thử từng hàng bảng: chỉ hàng 3,0 V; 0,33 A khớp (3,0 + 3,3 = 6,3). Vôn kế chỉ 10 · 0,33 = 3,3 V, hơn 3,0 V của đèn.",
-      "3,15 V là chia đôi 6,3 V, coi đèn cũng là 10 Ω. Ở dòng này U/I của đèn chỉ khoảng 9,1 Ω, nên đèn nhận ít hơn một nửa.",
-      "5,0 V là 10 · 0,50 A, lấy dòng của đèn lúc 6,0 V. Khi đó đèn đã chiếm 6,0 V, cộng 5,0 V vượt xa 6,3 V.",
-      "2,6 V là 10 · 0,26 A (hàng 2,0 V). Khi đó tổng chỉ 2,0 + 2,6 = 4,6 V, chưa đủ 6,3 V."
+      "3,9 V mới là hiệu điện thế trên điện trở (0,39 · 10). Nguồn còn phải cấp thêm 4,0 V cho đèn.",
+      "Cùng dòng 0,39 A chạy qua điện trở: U = I · R = 0,39 · 10 = 3,9 V. Nối tiếp nên nguồn = 4,0 + 3,9 ≈ 7,9 V.",
+      "4,4 là cộng 4,0 V với 0,39 A: không cộng được vôn với ampe. Phải đổi dòng ra hiệu điện thế trên điện trở trước.",
+      "14 là cộng 4,0 V với 10 Ω: không cộng được vôn với ôm. Hiệu điện thế trên điện trở là I · R = 3,9 V."
     ]
   }
 }

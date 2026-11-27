@@ -152,7 +152,7 @@ def gy(r): return GY0 - r / 12 * (GY0 - GY1)
 
 def axes(d, note=True):
     card(d, (40, 360, 1040, 990), fill=WHITE, outline=LIGHT, w=3)
-    if note: text(d, (1010, 405), "số liệu mô phỏng", 56, MUTED, bold=False, anchor="rm")
+    if note: text(d, (1010, 405), "số liệu mô phỏng", 56, (60, 64, 84), anchor="rm")
     d.line([(GX0, GY1 - 30), (GX0, GY0)], fill=NAVY, width=4); d.line([(GX0, GY0), (GX1 + 30, GY0)], fill=NAVY, width=4)
     arrow(d, (GX0, GY1 - 10), (GX0, GY1 - 34), NAVY, w=4, head=16); arrow(d, (GX1 + 10, GY0), (GX1 + 34, GY0), NAVY, w=4, head=16)
     text(d, (GX0 + 20, GY1 - 40), "R (kΩ)", 56, INK, anchor="lm")
@@ -204,7 +204,7 @@ def s_bay(img, d, t, sc):
     k2 = appear(t, M[1] - 0.1, 0.4); k3 = appear(t, M[2] - 0.1, 0.45)
     if k2 > 0:
         curve(d, r_cu, k2, ORANGE, w=7)
-        text(d, (GX1, gy(r_cu(55)) - 50), "dây đồng", 56, ORANGE, anchor="rm", alpha=k2)
+        text(d, (GX1, gy(r_cu(55)) + 75), "dây đồng (minh hoạ)", 56, ORANGE, anchor="rm", alpha=k2)
     a1 = 1.0 - k3; y0 = 1030
     if a1 > 0:
         card(d, (40, y0, 1040, y0 + 540), fill=A(WHITE, a1), outline=A(DRED, a1), w=6)
@@ -258,7 +258,7 @@ CLIP = dict(id="tn-l11-dien-tro-ohm-03", header="VẬT LÍ 11 · THÍ NGHIỆM",
    ("Mỗi 10 °C, R giảm ít dần.", 4.6)]),
  dict(key="bay", title="Bẫy và giới hạn", draw=s_bay, tail=1.2, caps=[
    ("Bẫy: nhớ theo kim loại.", 3.6),
-   ("Dây đồng: minh hoạ.", 3.6),
+   ("Ngược kim loại.", 3.6),
    ("Mới đo từ 25 đến 55 °C.", 3.2)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.7, caps=[
    ("Dừng lại, tự trả lời.", 7.2)]),

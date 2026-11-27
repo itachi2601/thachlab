@@ -6,6 +6,7 @@
 #   Du doan: o 6,0 V den tieu thu khoang bao nhieu? -> khoang 8 W (7,80 W).
 #   Bay = hien_tuong_hay_sai[1]: coi R = U_dm^2/P_dm = 6,9 Ohm khong doi -> P(9 V) = 21.(9/12)^2 = 11,8 W (tu suy);
 #     do that 13,95 W, R(9 V) = 5,81 Ohm (so_lieu_mau).
+#   Ca chot 9 V - 4,5 W la TU SUY (kho chi co den 12 V - 21 W; phien chinh quyet khong sua kho).
 #   Chua noi duoc = sai_so_thuong_gap[1]: dong trong vai giay dau khi vua bat.
 #   Cau hoi chot: den 9 V - 4,5 W sang binh thuong -> I = P/U = 0,5 A (tu suy, khong hien trong clip).
 # Mach (vat li): nguon (+) -> ampe ke noi tiep -> den -> (-); von ke song song voi den. Luc xoay num hai dong ho
@@ -21,7 +22,7 @@ def vn(x, nd): return f"{x:.{nd}f}".replace(".", ",")
 def P_of(i): return ROWS[i][0] * ROWS[i][1]
 P_BAY = 9.0 ** 2 / R_DM                                          # 11,81 W (tu suy)
 BODY = (70, 78, 100); SCR = (220, 240, 225); WIRE = (60, 66, 90); DRED = (185, 28, 28)
-OFF = (205, 208, 215); DGREEN = (21, 110, 55); EMPTY = (148, 140, 128)
+OFF = (205, 208, 215); BARG = (95, 100, 118); DGREEN = (21, 110, 55); EMPTY = (148, 140, 128)
 assert abs(P_BAY - 11.81) < 0.01 and abs(4.5 / 9 - 0.5) < 1e-9
 
 def pill(d, cx, cy, s, fill, alpha=1.0, size=58):
@@ -98,7 +99,7 @@ def table(d, n, y=1080, hl=None, pcol=False):
             text(d, (xs[0], yy), vn(uu, 1), 58, INK); text(d, (xs[1], yy), vn(ii, 2), 58, INK)
             if pcol: text(d, (xs[2], yy), vn(P_of(i), 2), 58, BLUE)
         else:
-            for x in xs: text(d, (x, yy), "·", 58, GRAY)
+            d.rounded_rectangle([90, yy - 32, 990, yy + 32], radius=14, fill=(246, 246, 249))
 
 # ---------------- canh 1: Du doan (K10: chi cau hoi + hinh) ----------------
 def s_hook(img, d, t, sc):
@@ -185,9 +186,9 @@ def bar(d, y, label, val, col, k):
 def s_bay(img, d, t, sc):
     M = sc["M"]
     k2 = appear(t, M[1] - 0.1, 0.4); k3 = appear(t, M[2] - 0.1, 0.45)
-    card(d, (40, 250, 1040, 990), fill=WHITE, outline=LIGHT, w=3)
+    card(d, (40, 250, 1040, 880), fill=WHITE, outline=LIGHT, w=3)
     text(d, (W / 2, 330), "Đèn ở 9,0 V", 60, INK)
-    bar(d, 430, "Nếu R không đổi", round(P_BAY, 1), GRAY, 1.0)
+    bar(d, 430, "Nếu R không đổi", round(P_BAY, 1), BARG, 1.0)
     if k2 > 0:
         bar(d, 640, "Đo thật", P_of(1), GREEN, k2)
     a1 = 1.0 - k3; y0 = 1040
@@ -240,7 +241,7 @@ CLIP = dict(id="tn-l11-nang-luong-dien-02", header="VẬT LÍ 11 · THÍ NGHIỆ
    ("Hạ xuống 9,0 V rồi 6,0 V.", 4.6)]),
  dict(key="dapan", title="Kết quả", draw=s_dapan, tail=0.3, caps=[
    ("Nhân U với I ở từng hàng.", 3.6),
-   ("Hàng 6,0 V: đèn đỏ mờ.", 3.6),
+   ("Chưa tới nửa số trên nhãn.", 3.6),
    ("Nhãn ghi số định mức.", 3.0)]),
  dict(key="bay", title="Bẫy", draw=s_bay, tail=0.6, caps=[
    ("Hay nhầm.", 3.6),

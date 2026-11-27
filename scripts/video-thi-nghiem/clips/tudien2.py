@@ -185,7 +185,7 @@ def s_bay(img, d, t, sc):
     if kd > 0:
         card(d, (640, 780, 960, 880), fill=A(SCR, kd), r=12); text(d, (800, 830), "nhỏ hơn", 58, DRED, alpha=kd)
     text(d, (W / 2, 960), "cùng nạp ở 10 V", 58, INK, alpha=k0)
-    k3 = appear(t, M[2] - 0.1, 0.4)
+    k3 = appear(t, M[2] - 0.7, 0.4)
     if k3 > 0:
         card(d, (40, 1080, 1040, 1420), fill=A(WHITE, k3), outline=A(NAVY, k3), w=6)
         pill(d, W / 2, 1150, "CHƯA NÓI ĐƯỢC", NAVY, k3)
@@ -199,7 +199,7 @@ def s_end(img, d, t, sc):
     gx, gy = axes(d, 220, 880, 880, 440, 12.5, 6500, a=k, ticks=(2, 4, 6, 8, 10, 12))
     for u, q in ROWS: dot(d, gx(u), gy(q), 15, A(BLUE, k), outline=WHITE)
     for yy in range(450, 870, 34): d.line([(gx(12), yy), (gx(12), yy + 18)], fill=A(ORANGE, k), width=5)
-    text(d, (gx(12) - 50, 470), "?", 72, DRED, alpha=k)
+    # v3: bo dau "?" tren do thi (dat o do cao ~ dap an 5760 -> uoc luong bang mat duoc)
     text(d, (W / 2, 1060), "Nạp tụ này ở 12 V.", 64, INK, alpha=k)
     text(d, (W / 2, 1160), "Q khoảng bao nhiêu μC?", 64, DRED, alpha=k)
     seg_bar(d, 1330, t, 1.0, sc["T"] - 0.2, ORANGE, k)

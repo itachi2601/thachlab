@@ -5,11 +5,12 @@
 # Du doan (khung, K10): truot lech con nua phan chong nhau -> C ? ; B. con khoang mot nua (DUNG).
 # Bay (hien_tuong_hay_sai[0] "phai noi nguon moi co dien dung"): hai tu canh nhau, da tich dien / chua tich dien,
 #   dong ho deu 354 pF.
-# Cau chot (kho ghi_chu "ca tu suy cho cau chot clip"): lech nua tam VA chen nhua eps = 3 kin khe -> C ~ 531 pF
-#   (gap 1,5 lan 354). Clip khong chieu so 531. Bai: "Bam xem" co 354 va 1060 pF, khong co ca ghep.
+# Cau chot v3 (TU SUY, phien chinh chot 27/11; gia tri CHUA do): khe d = 4 mm (tham_so d max 4) VA nhua eps = 3 kin
+#   khe, S = 0,04 -> C = cap_pf(0,04; 4; 3) ~ 265 pF. Clip khong chieu so 265, khong chieu "x 1/4".
 from engine import *
 
 def cap_pf(S, d_mm, eps): return eps * S / (9e9 * 4 * math.pi * d_mm * 1e-3) * 1e12
+assert abs(cap_pf(0.04, 4, 3) - 265.3) < 0.1   # cau chot v3
 ROWS = [("gốc", 0.04, 1, 1, 354), ("d = 2 mm", 0.04, 2, 1, 177), ("lệch nửa", 0.02, 1, 1, 177), ("chèn nhựa", 0.04, 1, 3, 1061)]
 for _, S, dm, e, c in ROWS: assert round(cap_pf(S, dm, e)) == c
 CHOT = round(cap_pf(0.02, 1, 3)); assert CHOT == 531 and CHOT not in [r[4] for r in ROWS]
@@ -122,7 +123,7 @@ def s_dapan(img, d, t, sc):
     k1 = appear(t, M[1] + 0.3, 0.4)
     if k1 > 0:
         card(d, (40, 1360, 1040, 1520), fill=A((236, 253, 243), k1), outline=A(GREEN, k1), w=5)
-        text(d, (W / 2, 1440), "Chỉ phần đối diện tính", 62, DGREEN, alpha=k1)
+        text(d, (W / 2, 1440), "Chỉ phần đối diện", 62, DGREEN, alpha=k1)
 
 # ---------------- canh 4: Bay + chua noi duoc ----------------
 def mini(d, cx, charged, a):
@@ -145,7 +146,7 @@ def s_bay(img, d, t, sc):
     mini(d, 275, True, k0)
     k1 = appear(t, M[1] - 0.2, 0.4)
     mini(d, 805, False, k1)
-    k3 = appear(t, M[2] - 0.1, 0.4)
+    k3 = appear(t, M[2] - 0.7, 0.4)
     if k3 > 0:
         card(d, (40, 1110, 1040, 1450), fill=A(WHITE, k3), outline=A(NAVY, k3), w=6)
         pill(d, W / 2, 1180, "CHƯA NÓI ĐƯỢC", NAVY, k3)
@@ -156,10 +157,13 @@ def s_end(img, d, t, sc):
     k = appear(t, 0.15, 0.4)
     card(d, (40, 230, 1040, 1560), fill=A(WHITE, k), outline=A(ORANGE, k), w=6)
     pill(d, W / 2, 305, "THỬ NGHĨ", ORANGE, k)
-    rig(d, 1, 1, 1, labels=False, meter=False, a=k, pl_ovl=True)
+    rig(d, 4, 0, 1, labels=False, meter=False, a=k, pl_ovl=True)
     text(d, (420, 660), "nhựa ε = 3", 58, (110, 65, 0), alpha=k)
-    text(d, (W / 2, 960), "Vừa lệch nửa tấm, vừa chèn nhựa.", 60, INK, alpha=k)
-    text(d, (W / 2, 1060), "Gốc 354 pF.", 60, INK, alpha=k)
+    xr = X0 + L + 30
+    arrow(d, (xr + 20, 660), (xr + 20, 562), A(INK, k), w=4, head=12); arrow(d, (xr + 20, 660), (xr + 20, 758), A(INK, k), w=4, head=12)
+    text(d, (xr + 50, 660), "4 mm", 58, INK, anchor="lm", alpha=k)
+    text(d, (W / 2, 960), "Khe 4 mm, nhựa chèn kín khe.", 60, INK, alpha=k)
+    text(d, (W / 2, 1060), "Gốc 354 pF (khe 1 mm).", 60, INK, alpha=k)
     text(d, (W / 2, 1160), "C bây giờ bao nhiêu?", 64, DRED, alpha=k)
     seg_bar(d, 1320, t, 1.0, sc["T"] - 0.2, ORANGE, k)
 
