@@ -1,52 +1,69 @@
 {
   "id": "tn-l11-vantocdddh-01",
   "ten": "Con lắc lò xo ngang: đo biên độ và chu kì",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-vantocdddh-01-20261031-2.mp4",
-  "tong_giay": 48.5,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-vantocdddh-01-20261127.mp4",
+  "tong_giay": 49.9,
   "o": [
     {
       "khoa": "gia_thuyet",
       "giay": 0,
-      "chu": "Từ A và T đo được, tính v_max = Aω và a = −ω²x. Ra biên, tốc độ giảm còn |a| tăng.",
-      "kiem": "Vật đi từ O ra biên: chuyển động đổi thế nào?"
+      "chu": "v_max = Aω với ω = 2π/T, nên sai số tỉ đối của v_max bằng ΔA/A + ΔT/T. Phần nào lớn hơn thì dụng cụ đó quyết định độ chính xác.",
+      "kiem": "Dụng cụ nào quyết định độ chính xác của v_max?"
     },
     {
       "khoa": "du_doan",
       "giay": 3.8,
-      "chu": "Vật đi từ O ra biên +4 cm. Tốc độ và độ lớn gia tốc thay đổi thế nào?"
+      "chu": "Thước lệch 1 mm, bấm giờ lệch vài phần trăm giây. Cái nào làm v_max sai nhiều hơn?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 10.2,
+      "giay": 9.9,
       "chu": "Lò xo, vật, thước mm, đồng hồ bấm giây."
     },
     {
       "khoa": "quan_sat",
-      "giay": 18.7,
-      "chu": "A = 4,0 cm. t10 năm lần: 7,94 đến 8,08 s. T trung bình = 0,800 s, ω = 7,854 rad/s."
+      "giay": 18.3,
+      "chu": "A = 4,0 cm. t10 năm lần từ 7,94 đến 8,08 s.\nT = 0,800 s, ω = 7,854 rad/s, v_max = 31,42 cm/s."
     },
     {
       "khoa": "rut_ra",
-      "giay": 27.3,
-      "chu": "Ra biên: v giảm, |a| tăng. v_max = Aω = 31,42 cm/s; a = −ω²x. Sai số v_max ≈ 1,06 cm/s."
+      "giay": 25.3,
+      "chu": "Thước: 0,1/4,0 = 0,025. Bấm giờ: 0,007/0,800 ≈ 0,009.\nT = t10/10 chia lỗi bấm cho 10, nên thước đo A gây sai nhiều hơn."
     },
     {
       "khoa": "chua_noi",
-      "giay": 36.6,
-      "chu": "Ma sát: đã bỏ qua. Biên độ khác 4,0 cm: chưa đo."
+      "giay": 37.0,
+      "chu": "Đã bỏ qua ma sát, coi biên độ không đổi.\nMa sát lớn thì chưa biết."
     }
   ],
   "dung_dua": {
-    "giay": 10.0,
-    "cau_hoi": "Vật đi từ O ra biên +4 cm. Tốc độ và độ lớn gia tốc…",
+    "giay": 9.8,
+    "cau_hoi": "Đo A bằng thước lệch 1 mm, bấm giờ 10 dao động lệch vài phần trăm giây. Cái nào làm v_max = Aω sai nhiều hơn?",
     "chon": [
-      "A. Cả hai cùng tăng",
-      "B. Tốc độ giảm, độ lớn gia tốc tăng",
-      "C. Tốc độ tăng, độ lớn gia tốc giảm",
-      "D. Cả hai cùng giảm"
+      "A. Thước đo biên độ",
+      "B. Đồng hồ bấm giờ",
+      "C. Hai cái như nhau",
+      "D. Không cái nào đáng kể"
     ],
-    "dung": 1,
-    "giai_thich_dung": "Ra biên, vật chậm dần rồi dừng (v = 0 ở 4 cm) còn |a| = ω²|x| lớn dần, từ 0 đến 246,7 cm/s².",
-    "giai_thich_sai": "Tốc độ lớn nhất ở O (31,42 cm/s) và nhỏ dần ra biên; |a| = ω²|x| lớn nhất ở biên. Xem đoạn kế: ba vị trí x = 0; 2,0; 4,0 cm."
+    "dung": 0,
+    "giai_thich_dung": "Lệch 1 mm trên 4,0 cm đã là 0,1/4,0 = 0,025. Bấm 10 dao động rồi chia 10 làm lỗi bấm giờ nhỏ đi. Xem hai phần sai số ở đoạn kế.",
+    "giai_thich_sai": "So hai tỉ số: lệch của thước trên A và lệch của T trên T. Bấm 10 dao động rồi chia 10 thì lỗi bấm giờ bị chia nhỏ. Xem hai phần sai số ở đoạn kế."
+  },
+  "cau_chot": {
+    "giay": 44.5,
+    "cau_hoi": "Cùng con lắc (T = 0,800 s). Ở x = +2,0 cm thì a = −123,4 cm/s². Khi vật ở x = −3,0 cm, gia tốc bằng:",
+    "chon": [
+      "A. −185,1 cm/s²",
+      "B. +123,4 cm/s²",
+      "C. +185,1 cm/s²",
+      "D. +246,7 cm/s²"
+    ],
+    "dung": 2,
+    "giai_thich": [
+      "Dấu sai: a = −ω²x trái dấu x. Vật ở x âm thì a dương: a = −123,4 × (−3,0/2,0) = +185,1 cm/s².",
+      "123,4 là độ lớn ở x = 2,0 cm. Ở x = −3,0 cm vật xa O hơn 1,5 lần nên |a| cũng lớn hơn 1,5 lần: a = +185,1 cm/s².",
+      "a = −ω²x tỉ lệ với x và trái dấu: a = −123,4 × (−3,0/2,0) = +185,1 cm/s², hướng về O.",
+      "246,7 là độ lớn ở biên x = 4,0 cm. Ở x = −3,0 cm: a = −123,4 × (−3,0/2,0) = +185,1 cm/s²."
+    ]
   }
 }
