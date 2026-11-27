@@ -160,12 +160,12 @@ def s_rut(img, d, t, sc):
         text(d, (cx, base + 62), lab, 56, col)
     ka = appear(t, 1.6, 0.45)
     if ka > 0:
-        card(d, (480, 290, 1020, 370), fill=A((239, 246, 255), ka), r=20)
-        text(d, (750, 330), "mgh ≈ ½mv²", 60, INK, alpha=ka)
+        card(d, (440, 290, 1030, 370), fill=A((239, 246, 255), ka), r=20)
+        text(d, (735, 330), "thế năng ≈ động năng", 56, INK, alpha=ka)
     kb = appear(t, M[1] - 0.1, 0.4)
     if kb > 0:
         card(d, (40, 800, 1040, 1300), fill=A(WHITE, kb), outline=A(LIGHT, kb), w=3)
-        text(d, (W / 2, 860), "½mv² : mgh", 60, INK, alpha=kb)
+        text(d, (W / 2, 860), "động năng : thế năng", 56, INK, alpha=kb)
         x0, x1 = 230, 860
         for j, ((h, _), p) in enumerate(zip(ROWS, PCT)):
             y = 950 + j * 85; g = ease((t - M[1]) / 0.6)
@@ -175,7 +175,7 @@ def s_rut(img, d, t, sc):
                 d.rectangle([x0, y - 32, x0 + (x1 - x0) * p / 100 * g, y + 32], fill=ORANGE)
                 text(d, (x0 + 20, y), fm(p) + " %", 56, WHITE, anchor="lm", alpha=clamp(g * 2 - 1))
         for yy in range(905, 1240, 24): d.line([(x1, yy), (x1, yy + 12)], fill=A(GREEN, kb), width=6)
-        text(d, (x1 + 14, 1235), "100", 56, GREEN, anchor="lm", alpha=kb)
+        text(d, (x1 + 10, 1235), "100 %", 56, GREEN, anchor="lm", alpha=kb)
     kc = appear(t, M[1] + 2.6, 0.4)
     if kc > 0:
         card(d, (40, 1340, 1040, 1480), fill=A((254, 242, 242), kc), outline=A(RED, kc), w=4)
@@ -196,14 +196,15 @@ def s_bay(img, d, t, sc):
     ut = (-math.sin(th1), -math.cos(th1)); uv = (sg * math.cos(th1), -sg * math.sin(th1))
     arrow(d, (bx, by), (bx + 190 * ut[0], by + 190 * ut[1]), PURPLE, w=8, head=26)
     tx, ty = bx + 120 * ut[0] - 55 * uv[0], by + 120 * ut[1] - 55 * uv[1]
-    text(d, (tx, ty), "T", 62, PURPLE)
     arrow(d, (bx, by), (bx + 190 * uv[0], by + 190 * uv[1]), BLUE, w=8, head=26)
-    text(d, (bx + 190 * uv[0] + 10 * sg, by + 190 * uv[1] + 58), "v", 62, BLUE)
     s = 34
     p1 = (bx + s * ut[0], by + s * ut[1]); p3 = (bx + s * uv[0], by + s * uv[1]); p2 = (p1[0] + s * uv[0], p1[1] + s * uv[1])
     d.line([p1, p2, p3], fill=INK, width=5)
     dot(d, bx, by, 30, BOB, BOB_D)
-    k0 = appear(t, 0.2, 0.4); k3 = appear(t, M[2] - 0.1, 0.45); a1 = k0 * (1 - k3); y = 1000
+    card(d, (50, 280, 400, 450), fill=WHITE, outline=LIGHT, w=3)
+    arrow(d, (75, 325), (140, 325), PURPLE, w=8, head=20); text(d, (160, 325), "T lực căng", 56, PURPLE, anchor="lm")
+    arrow(d, (75, 405), (140, 405), BLUE, w=8, head=20); text(d, (160, 405), "v vận tốc", 56, BLUE, anchor="lm")
+    k3 = appear(t, M[2] - 0.1, 0.45); a1 = 1 - k3; y = 1000
     if a1 > 0:
         card(d, (40, y, 1040, y + 420), fill=A(WHITE, a1), outline=A(RED, a1), w=6)
         pill(d, W / 2, y + 70, "BẪY", RED, a1)
@@ -212,11 +213,11 @@ def s_bay(img, d, t, sc):
         text(d, (W / 2, yy), q, 62, mix(INK, GRAY, ks), alpha=a1)
         if ks > 0: d.line([(W / 2 - lw / 2 - 6, yy + 2), (W / 2 - lw / 2 - 6 + (lw + 12) * ks, yy + 2)], fill=A(RED, 0.85 * a1), width=6)
         k2 = appear(t, mk + 0.2, 0.45)
-        if k2 > 0: text(d, (W / 2, y + 320), "Công của T bằng 0", 62, DORANGE, alpha=a1 * k2)
+        if k2 > 0: text(d, (W / 2, y + 320), "T không sinh công", 62, DORANGE, alpha=a1 * k2)
     if k3 > 0:
         card(d, (40, y, 1040, y + 330), fill=A(WHITE, k3), outline=A(NAVY, k3), w=6)
         pill(d, W / 2, y + 70, "CHƯA NÓI ĐƯỢC", NAVY, k3)
-        text(d, (W / 2, y + 210), "Mới thử một quả nặng", 62, INK, alpha=k3)
+        text(d, (W / 2, y + 210), "Mới một quả nặng", 62, INK, alpha=k3)
 
 # ---------------- canh 5: thu nghi (cau chot o khung: 1,26 m/s) ----------------
 def s_end(img, d, t, sc):
@@ -251,11 +252,11 @@ CLIP = dict(id="tn-l10-co-nang-bao-toan-01", header="VẬT LÍ 10 · THÍ NGHI�
    ("Mỗi lần ghi một hàng.", 3.8),
    ("So hàng 5 cm với 20 cm.", 3.4)]),
  dict(key="rut", title="Thế năng thành động năng", draw=s_rut, tail=0.6, caps=[
-   ("Càng xuống thấp, càng nhanh.", 4.0),
-   ("Cả bốn lần đều dưới 100 %.", 4.6)]),
+   ("Xuống thấp, nhanh dần.", 4.0),
+   ("Cả bốn lần dưới 100 %.", 4.6)]),
  dict(key="bay", title="Bẫy và giới hạn", draw=s_bay, tail=0.6, caps=[
    ("Đúng không?", 3.2),
-   ("Sai: lực căng T vuông góc v.", 3.4),
+   ("Sai: T vuông góc với v.", 3.4),
    ("Giới hạn của lần đo.", 3.0)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.6, caps=[
    ("Dừng lại, tự tính.", 6.4)]),

@@ -1,52 +1,69 @@
 {
   "id": "tn-l11-motadddh-02",
   "ten": "Năm lần đọc li độ trên đồ thị x–t",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-motadddh-02-20261031-2.mp4",
-  "tong_giay": 49.2,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-motadddh-02-20261127.mp4",
+  "tong_giay": 49.5,
   "o": [
     {
       "khoa": "gia_thuyet",
       "giay": 0,
-      "chu": "Li độ bám x = A·cos(2πt/T), nên mỗi 0,10 s li độ giảm không đều.",
-      "kiem": "Mỗi 0,10 s, li độ đổi bao nhiêu?"
+      "chu": "Li độ bám x = A·cos(2πt/T): sau nửa chu kì vật tới biên bên kia.",
+      "kiem": "Sau nửa chu kì, vật ở đâu?"
     },
     {
       "khoa": "du_doan",
-      "giay": 3.2,
-      "chu": "Thả từ biên, A = 5,0 cm, T = 1,00 s. Cứ mỗi 0,10 s, li độ giảm một lượng như nhau không?"
+      "giay": 4.6,
+      "chu": "Thả từ biên 5,0 cm, T = 1,00 s. Ở t = 0,50 s, thước chỉ bao nhiêu?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 9.4,
-      "chu": "Lò xo, vật, thước chia mm, đồ thị x–t để ghi."
+      "giay": 10.5,
+      "chu": "Lò xo, vật, thước chia mm, đồ thị x–t."
     },
     {
       "khoa": "quan_sat",
-      "giay": 17.0,
-      "chu": "x đọc: 5,0; 4,0; 1,5; −1,5; −4,0 cm, mỗi 0,10 s."
+      "giay": 18.5,
+      "chu": "x đọc: 5,0; 4,0; 1,5; −1,5; −4,0 cm. Ở 0,50 s: −5,0 cm (mô hình)."
     },
     {
       "khoa": "rut_ra",
-      "giay": 22.7,
-      "chu": "Mỗi 0,10 s li độ giảm 1,0; 2,5; 3,0; 2,5 cm. Gần biên giảm ít, qua VTCB giảm nhiều."
+      "giay": 24.4,
+      "chu": "t = 0,50 s = T/2: vật sang biên âm, x = −5,0 cm."
     },
     {
       "khoa": "chua_noi",
-      "giay": 30.1,
-      "chu": "Thước chia tới 0,1 cm: 4,045 đọc 4,0, lệch 0,045 cm. Sai số bấm giờ, đặt mắt: chưa xét. Mới đọc 0 tới 0,40 s."
+      "giay": 28.8,
+      "chu": "Thước chỉ chia 0,1 cm; sai số bấm giờ, đặt mắt chưa xét."
     }
   ],
   "dung_dua": {
-    "giay": 9.2,
-    "cau_hoi": "Thả từ biên, cứ mỗi 0,10 s li độ…",
+    "giay": 10.3,
+    "cau_hoi": "Con lắc lò xo thả từ biên dương 5,0 cm, chu kì 1,00 s, bỏ qua ma sát. Ở t = 0,50 s, thước chỉ li độ bao nhiêu?",
     "chon": [
-      "A. Giảm đều, mỗi lần như nhau",
-      "B. Giảm ít gần biên, giảm nhiều khi qua VTCB",
-      "C. Giảm nhiều gần biên, giảm ít gần VTCB",
-      "D. Giảm tới 0 rồi đứng yên"
+      "A. −5,0 cm",
+      "B. 0",
+      "C. 5,0 cm",
+      "D. −4,0 cm"
+    ],
+    "dung": 0,
+    "giai_thich_dung": "0,50 s là nửa chu kì: vật đi từ biên dương qua O tới biên âm, x = 5cos(π) = −5,0 cm.",
+    "giai_thich_sai": "Vật qua O lúc T/4 = 0,25 s, không phải lúc 0,50 s; về lại 5,0 cm phải sau cả chu kì 1,00 s; −4,0 cm là số đọc lúc 0,40 s. Xem đoạn kế: đọc từng mốc 0,10 s."
+  },
+  "cau_chot": {
+    "giay": 43.1,
+    "cau_hoi": "Cùng con lắc (A = 5,0 cm, T = 1,00 s, thả từ biên dương). Ở t = 0,05 s, giữa hai lần đọc 5,0 cm và 4,0 cm, thước chỉ khoảng:",
+    "chon": [
+      "A. 4,5 cm",
+      "B. 4,8 cm",
+      "C. 5,0 cm",
+      "D. 4,0 cm"
     ],
     "dung": 1,
-    "giai_thich_dung": "Bốn lần giảm liên tiếp là 1,0; 2,5; 3,0; 2,5 cm: gần biên giảm ít, qua VTCB giảm nhiều.",
-    "giai_thich_sai": "Bốn lần giảm liên tiếp là 1,0; 2,5; 3,0; 2,5 cm, không bằng nhau và không dừng ở 0. Xem đoạn kế: các bậc cam."
+    "giai_thich": [
+      "4,5 cm là nội suy đường thẳng giữa 5,0 và 4,0. Gần biên vật đi chậm, đường côsin cong: x = 5cos(2π·0,05) = 5cos(18°) ≈ 4,76, đọc 4,8 cm.",
+      "x = 5cos(2π·0,05) = 5cos(18°) ≈ 4,76 cm, đọc làm tròn 0,1 cm được 4,8 cm. Gần biên vật đi chậm nên còn gần 5,0.",
+      "5,0 cm là coi vật chưa rời biên. Sau 0,05 s vật đã đi: x = 5cos(18°) ≈ 4,76, đọc 4,8 cm.",
+      "4,0 cm là số đọc lúc 0,10 s. Ở 0,05 s vật mới đi được ít: x = 5cos(18°) ≈ 4,76, đọc 4,8 cm."
+    ]
   }
 }

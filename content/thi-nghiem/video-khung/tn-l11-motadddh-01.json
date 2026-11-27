@@ -1,52 +1,69 @@
 {
   "id": "tn-l11-motadddh-01",
   "ten": "Con lắc lò xo kéo lệch 4 cm rồi thả: bốn mốc li độ",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-motadddh-01-20261031-2.mp4",
-  "tong_giay": 48.3,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-motadddh-01-20261127.mp4",
+  "tong_giay": 49.5,
   "o": [
     {
       "khoa": "gia_thuyet",
       "giay": 0,
-      "chu": "Li độ luôn nằm trong [−A, A]; A là độ lệch cực đại, do cách kéo.",
-      "kiem": "Bên kia O, vật đi tới đâu thì quay lại?"
+      "chu": "Li độ là vị trí so với O, có dấu; quãng đường cộng dồn mọi đoạn vật đã đi, luôn dương.",
+      "kiem": "Li độ và quãng đường có phải một?"
     },
     {
       "khoa": "du_doan",
-      "giay": 3.8,
-      "chu": "Kéo lệch 4 cm rồi thả, bỏ qua ma sát. Phía bên kia O, vật đi xa nhất tới đâu?"
+      "giay": 4.2,
+      "chu": "Kéo lệch 4 cm rồi thả, bỏ qua ma sát. Tới đầu bên kia, vật đã đi quãng đường bao nhiêu?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 10.0,
+      "giay": 10.1,
       "chu": "Lò xo, vật, ray ngang, thước, đồng hồ."
     },
     {
       "khoa": "quan_sat",
-      "giay": 15.8,
-      "chu": "Bốn li độ: 4; 0; −4; 0 cm. Vệt cam phủ hai đầu."
+      "giay": 15.7,
+      "chu": "Lúc t = 1,0 s: x = −4 cm, còn quãng đường đã đi là 8 cm."
     },
     {
       "khoa": "rut_ra",
-      "giay": 20.8,
-      "chu": "Li độ luôn trong [−A, A] với A = 4 cm, lệch lớn nhất, do cách kéo."
+      "giay": 22.4,
+      "chu": "Tới đầu kia: li độ −4 cm, quãng đường 8 cm. Li độ chỉ vị trí."
     },
     {
       "khoa": "chua_noi",
-      "giay": 26.0,
-      "chu": "Mới thử một ca, bỏ ma sát. Có ma sát: A giảm ra sao? Kéo quá xa: lò xo hỏng?"
+      "giay": 28.8,
+      "chu": "Đã bỏ qua ma sát: có ma sát A giảm ra sao? Kéo quá xa lò xo có hỏng?"
     }
   ],
   "dung_dua": {
-    "giay": 9.8,
-    "cau_hoi": "Kéo lệch 4 cm rồi thả, bỏ qua ma sát. Phía bên kia O, vật đi xa nhất tới…",
+    "giay": 9.9,
+    "cau_hoi": "Kéo lệch 4 cm rồi thả, bỏ qua ma sát. Tới đầu bên kia (lần dừng đầu tiên), vật đã đi quãng đường bao nhiêu?",
     "chon": [
-      "A. x = −2 cm",
-      "B. x = −4 cm",
-      "C. x = −8 cm",
-      "D. Chạm đầu ray mới dừng"
+      "A. 8 cm",
+      "B. 4 cm",
+      "C. −4 cm",
+      "D. 0"
+    ],
+    "dung": 0,
+    "giai_thich_dung": "Vật đi từ +4 cm về O (4 cm) rồi từ O tới −4 cm (thêm 4 cm): quãng đường 4 + 4 = 8 cm. Lúc đó li độ là −4 cm.",
+    "giai_thich_sai": "−4 cm là li độ (vị trí so với O), không phải quãng đường; quãng đường luôn dương và cộng dồn. 4 cm chỉ là đoạn tới O; 0 là chỉ nhìn vật đã dừng. Xem đoạn kế: cột quãng đường cộng dồn."
+  },
+  "cau_chot": {
+    "giay": 42.9,
+    "cau_hoi": "Cùng lò xo đó (T = 2 s), kéo lệch 6 cm rồi thả, bỏ qua ma sát. Quãng đường vật đi được trong 2,0 s đầu là:",
+    "chon": [
+      "A. 0 cm",
+      "B. 24 cm",
+      "C. 6 cm",
+      "D. 12 cm"
     ],
     "dung": 1,
-    "giai_thich_dung": "Bỏ qua ma sát, vật dừng và quay lại ở x = −4 cm, đối xứng với chỗ thả qua O: li độ luôn trong [−A, A].",
-    "giai_thich_sai": "Vật chỉ quay lại ở điểm đối xứng với chỗ thả qua O, tức x = −4 cm (bỏ qua ma sát). Xem đoạn kế: bốn mốc li độ."
+    "giai_thich": [
+      "0 là độ dời: sau 2,0 s = một chu kì vật về đúng chỗ thả. Nhưng quãng đường cộng dồn: 6 + 6 + 6 + 6 = 24 cm.",
+      "2,0 s đúng bằng một chu kì: vật đi biên → O → biên kia → O → về chỗ thả, mỗi đoạn 6 cm: 4 × 6 = 24 cm.",
+      "6 cm là biên độ (li độ lúc thả và lúc về), không phải quãng đường. Một chu kì vật đi 4A = 24 cm.",
+      "12 cm là quãng đường nửa chu kì (2A, tới đầu bên kia). 2,0 s là trọn một chu kì: 4A = 24 cm."
+    ]
   }
 }

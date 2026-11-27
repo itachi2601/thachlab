@@ -1,13 +1,13 @@
 {
   "id": "tn-l10-ctbdd-01",
   "ten": "Xe lăn trên máng nghiêng: đo vận tốc bằng cổng quang điện",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-ctbdd-01-20261031.mp4",
-  "tong_giay": 49.7,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-ctbdd-01-20261127.mp4",
+  "tong_giay": 49.8,
   "o": [
     {
       "khoa": "gia_thuyet",
       "giay": 0,
-      "chu": "Thả từ nghỉ, a không đổi: v tỉ lệ với t, không với quãng đường.",
+      "chu": "Thả từ nghỉ: v tại cổng 2 tùy chỗ đặt cổng.",
       "kiem": "v tại cổng 2 phụ thuộc vào đâu?"
     },
     {
@@ -17,27 +17,27 @@
     },
     {
       "khoa": "dung_cu",
-      "giay": 11.2,
-      "chu": "Đo t từ lúc thả, τ chắn sáng; v = b/τ, b = 2,00 cm."
+      "giay": 9.1,
+      "chu": "Máng, xe có tấm chắn, cổng quang điện."
     },
     {
       "khoa": "quan_sat",
-      "giay": 23.0,
-      "chu": "Cổng 2 ở 20 cm: v = 0,44 m/s; ở 40 cm: v = 0,63 m/s, chỉ khoảng 1,4 lần."
+      "giay": 20.1,
+      "chu": "20 cm: v = 0,44 m/s; 40 cm: v = 0,63 m/s, chỉ tăng khoảng 1,4 lần."
     },
     {
       "khoa": "rut_ra",
-      "giay": 31.0,
-      "chu": "t gấp đôi thì v gấp đôi; v/t ≈ 0,50 m/s² không đổi: v = a·t, đồ thị v–t thẳng qua gốc."
+      "giay": 27.6,
+      "chu": "v/t ≈ 0,50 m/s² không đổi: v = a·t, đồ thị v–t thẳng qua gốc."
     },
     {
       "khoa": "chua_noi",
-      "giay": 36.8,
+      "giay": 38.9,
       "chu": "Xa hơn 60 cm chưa đo: chưa biết a còn không đổi."
     }
   ],
   "dung_dua": {
-    "giay": 11.05,
+    "giay": 8.95,
     "cau_hoi": "Thả xe từ nghỉ, máng cố định. Dời cổng 2 từ 20 cm ra 40 cm (tính từ chỗ thả). Vận tốc v của xe tại cổng 2 thay đổi thế nào?",
     "chon": [
       "A. Gấp đôi",
@@ -48,5 +48,22 @@
     "dung": 2,
     "giai_thich_dung": "Xe nhanh dần nên đi thêm 20 cm sau mất ít thời gian hơn 20 cm đầu: t chỉ từ 0,892 s lên 1,262 s. v tỉ lệ với t nên chỉ tăng khoảng 1,4 lần: 0,44 → 0,63 m/s.",
     "giai_thich_sai": "Quãng đường gấp đôi không có nghĩa thời gian gấp đôi. Xem đồ thị v–t ở đoạn kế: v đi theo t, không đi theo quãng đường."
+  },
+  "cau_chot": {
+    "giay": 43.5,
+    "cau_hoi": "Cùng kiểu máng nhưng dốc hơn: a = 0,80 m/s², thả từ nghỉ. Lần đo đọc được t = 1,0 s; tấm chắn rộng b = 2,00 cm. Thời gian chắn sáng τ đọc được bao nhiêu?",
+    "chon": [
+      "A. 0,020 s",
+      "B. 0,025 s",
+      "C. 0,040 s",
+      "D. 0,050 s"
+    ],
+    "dung": 1,
+    "giai_thich": [
+      "0,020 s ứng với v = 1,0 m/s, tức lấy v bằng số t. Đúng là v = a·t = 0,80 × 1,0 = 0,80 m/s, nên τ = b/v = 0,02/0,80 = 0,025 s.",
+      "v = a·t = 0,80 m/s² × 1,0 s = 0,80 m/s. Từ v = b/τ: τ = 0,02 m : 0,80 m/s = 0,025 s.",
+      "0,040 s là số của máng cũ (a ≈ 0,50 m/s², v = 0,50 m/s). Máng dốc hơn: v = 0,80 m/s, τ = 0,025 s.",
+      "0,050 s ứng với v = 0,40 m/s, là lấy s/t (s = 0,40 m, vận tốc trung bình, chỉ bằng nửa) như ở Bẫy. Tại cổng v = a·t = 0,80 m/s, τ = 0,025 s."
+    ]
   }
 }

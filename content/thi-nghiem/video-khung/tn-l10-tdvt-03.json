@@ -1,43 +1,43 @@
 {
   "id": "tn-l10-tdvt-03",
   "ten": "Vẽ bút lên dải giấy đang bị kéo",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-tdvt-03-20261031.mp4",
-  "tong_giay": 49.9,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-tdvt-03-20261127.mp4",
+  "tong_giay": 49.2,
   "o": [
     {
       "khoa": "gia_thuyet",
       "giay": 0,
-      "chu": "Cùng một ngòi bút có quỹ đạo khác nhau khi xét so với bàn và so với giấy đang bị kéo.",
+      "chu": "Bút đi dọc thước cố định trong khi giấy bị kéo bên dưới.",
       "kiem": "Ngòi bút đi ra sao so với bàn, với giấy?"
     },
     {
       "khoa": "du_doan",
-      "giay": 3.8,
+      "giay": 3.5,
       "chu": "Vệt mực để lại trên giấy có dạng thế nào khi bút và giấy chạy đều?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 9.2,
+      "giay": 9.5,
       "chu": "Dải giấy kéo trên bàn; bút dạ đi dọc thước cố định, 4 cm/s."
     },
     {
       "khoa": "quan_sat",
-      "giay": 15.2,
-      "chu": "So với bàn, bút đi thẳng dọc thước. Vệt trên giấy xiên, ngược chiều kéo."
+      "giay": 18.6,
+      "chu": "Bút đi dọc thước; vệt trên giấy xiên, ngược chiều kéo."
     },
     {
       "khoa": "rut_ra",
-      "giay": 22.3,
+      "giay": 23.0,
       "chu": "Cùng ngòi bút: so với bàn và so với giấy, quỹ đạo khác, vận tốc khác."
     },
     {
       "khoa": "chua_noi",
-      "giay": 30.0,
+      "giay": 31.2,
       "chu": "Kéo giấy không đều thì vệt còn thẳng không?\nSố liệu tính từ mô hình, chưa đo."
     }
   ],
   "dung_dua": {
-    "giay": 9.0,
+    "giay": 8.95,
     "cau_hoi": "Vệt mực để lại trên giấy có dạng thế nào khi bút và giấy chạy đều?",
     "chon": [
       "A. Thẳng, dọc theo thước",
@@ -48,5 +48,22 @@
     "dung": 1,
     "giai_thich_dung": "Giấy trôi sang phải mang theo điểm mực đầu tiên, còn ngòi bút vẫn ở cạnh thước. Vệt nối hai điểm đó là đoạn thẳng xiên, đầu trên lệch ngược chiều kéo giấy.",
     "giai_thich_sai": "Xem lần 2 và lần 3 ở đoạn kế: so vệt xanh dương với nét đứt xanh lá."
+  },
+  "cau_chot": {
+    "giay": 44.6,
+    "cau_hoi": "Bút vẫn đi đều 4 cm/s dọc thước, giấy được kéo đều 4 cm/s theo phương vuông góc với thước. Vệt mực trên giấy lệch khỏi phương của thước khoảng bao nhiêu độ?",
+    "chon": [
+      "A. Khoảng 30°",
+      "B. Khoảng 45°",
+      "C. Khoảng 60°",
+      "D. Khoảng 90°"
+    ],
+    "dung": 1,
+    "giai_thich": [
+      "30° ứng với giấy chậm hơn bút (tan 30° ≈ 0,58, giấy khoảng 2,3 cm/s).",
+      "Theo mô hình, tan(góc) = tốc độ giấy : tốc độ bút = 4 : 4 = 1 nên góc 45°; bảng cũng cho thấy giấy 3 cm/s lệch 36,9°, giấy 6 cm/s lệch 56,3°, 45° nằm giữa.",
+      "60° ứng với giấy nhanh hơn bút (khoảng 6,9 cm/s).",
+      "90° chỉ xảy ra khi bút đứng yên so với bàn; bút vẫn đi 4 cm/s dọc thước nên vệt còn thành phần dọc thước."
+    ]
   }
 }

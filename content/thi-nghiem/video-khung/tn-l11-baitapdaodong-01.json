@@ -1,52 +1,69 @@
 {
   "id": "tn-l11-baitapdaodong-01",
   "ten": "Đo chu kì chùm chìa khoá treo dây bằng đồng hồ điện thoại",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-baitapdaodong-01-20261031-2.mp4",
-  "tong_giay": 48.1,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-baitapdaodong-01-20261127.mp4",
+  "tong_giay": 49.2,
   "o": [
     {
       "khoa": "gia_thuyet",
       "giay": 0,
-      "chu": "Bấm giờ 10 dao động, lặp 5 lần, rồi tính ω và v_max.",
-      "kiem": "Năm lần bấm giờ: các t10 ra sao?"
+      "chu": "Một dao động là một lần quay về đúng chỗ thả; lúc vừa thả chưa có dao động nào. Cùng con lắc thì T không đổi, các lần bấm chỉ lệch do tay.",
+      "kiem": "Đếm thế nào cho đúng 10 dao động?"
     },
     {
       "khoa": "du_doan",
-      "giay": 4.2,
-      "chu": "Chùm chìa khoá treo dây 36 cm, kéo lệch 5 cm. Bấm giờ 10 dao động, làm 5 lần. Năm kết quả thế nào?"
+      "giay": 3.8,
+      "chu": "Lúc thả em đếm “một”, mỗi lần chùm khoá quay về chỗ thả đếm tiếp, tới “mười” thì bấm dừng. Đồng hồ đo được mấy dao động?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 10.2,
-      "chu": "Chìa khoá, dây 36 cm, đồng hồ điện thoại."
+      "giay": 9.5,
+      "chu": "Dây 36 cm, chìa khoá, điện thoại bấm giờ."
     },
     {
       "khoa": "quan_sat",
-      "giay": 20.4,
-      "chu": "t10 từ 11,89 đến 12,18 s: chênh phần mười giây."
+      "giay": 19.3,
+      "chu": "Đếm “một” lúc thả thì tới “mười” mới được 9 dao động; lúc thả phải đếm 0. Năm lần t10: 11,89 đến 12,18 s."
     },
     {
       "khoa": "rut_ra",
-      "giay": 23.9,
-      "chu": "Sai số cũng chia 10. ω ≈ 5,22 rad/s, v_max ≈ 26 cm/s."
+      "giay": 29.0,
+      "chu": "T = 12,03 : 10 ≈ 1,20 s. ω = 2π/T ≈ 5,22 rad/s; v_max = A·ω ≈ 26 cm/s."
     },
     {
       "khoa": "chua_noi",
-      "giay": 28.1,
-      "chu": "Góc lớn chưa thử; dây khác chưa đo."
+      "giay": 35.6,
+      "chu": "Góc lệch lớn chưa thử.\nDây khác chưa đo."
     }
   ],
   "dung_dua": {
-    "giay": 10.1,
-    "cau_hoi": "Bấm giờ 10 dao động của cùng một con lắc, làm 5 lần. Năm kết quả…",
+    "giay": 9.3,
+    "cau_hoi": "Lúc vừa thả, em đếm “một”. Mỗi lần chùm khoá quay về chỗ thả, em đếm tiếp; đếm tới “mười” thì bấm dừng. Đồng hồ đo được thời gian của mấy dao động?",
     "chon": [
-      "A. Giống hệt nhau",
-      "B. Chênh nhau cỡ phần mười giây",
-      "C. Chênh nhau vài giây",
-      "D. Tăng dần theo lần đo"
+      "A. 10 dao động",
+      "B. 9 dao động",
+      "C. 11 dao động",
+      "D. 5 dao động"
     ],
     "dung": 1,
-    "giai_thich_dung": "Dây và biên độ không đổi nên chỉ còn tay bấm: mỗi lần lệch 0,1–0,2 s một cách ngẫu nhiên, nên t10 khác nhau cỡ phần mười giây.",
-    "giai_thich_sai": "Cùng một con lắc thì t10 gần như nhau nhưng không giống hệt: tay bấm lệch ngẫu nhiên cỡ phần mười giây, không lệch vài giây và không tăng dần. Xem đoạn kế: năm lần bấm."
+    "giai_thich_dung": "Lúc vừa thả chưa có dao động nào. Đếm “một” ngay lúc thả thì tới “mười” mới có 9 lần quay về chỗ thả, tức 9 dao động.",
+    "giai_thich_sai": "Mỗi dao động là một lần quay về đúng chỗ thả. Lúc vừa thả chưa có dao động nào, nên đếm “một” ngay lúc thả thì tới “mười” chỉ được 9 dao động. Xem đoạn kế: hai cách đếm đặt cạnh nhau."
+  },
+  "cau_chot": {
+    "giay": 44.6,
+    "cau_hoi": "Vẫn chùm chìa khoá, dây 36 cm, nhưng kéo lệch 8 cm rồi thả (góc vẫn nhỏ). Tốc độ cực đại của chùm khoá khoảng:",
+    "chon": [
+      "A. 26 cm/s",
+      "B. 42 cm/s",
+      "C. 67 cm/s",
+      "D. 6,7 cm/s"
+    ],
+    "dung": 1,
+    "giai_thich": [
+      "26 cm/s là coi tốc độ cực đại giữ nguyên, hoặc coi kéo xa thì T dài ra. Góc nhỏ thì T không phụ thuộc độ lệch, vẫn 1,20 s, ω ≈ 5,22 rad/s nên v_max = 8 × 5,22 ≈ 42 cm/s.",
+      "Góc nhỏ thì T chỉ phụ thuộc chiều dài dây, vẫn 1,20 s, nên ω ≈ 5,22 rad/s. v_max = A·ω = 8 × 5,22 ≈ 42 cm/s.",
+      "67 cm/s là coi ω cũng tăng theo độ lệch (26 × 8/5 × 8/5). ω giữ 5,22 rad/s vì T không đổi, chỉ A tăng: v_max = 8 × 5,22 ≈ 42 cm/s.",
+      "6,7 cm/s là lấy A/T = 8/1,2, nhầm tốc độ cực đại với độ lệch chia chu kì. v_max = A·ω = 8 × 5,22 ≈ 42 cm/s."
+    ]
   }
 }

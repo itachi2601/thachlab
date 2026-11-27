@@ -164,7 +164,7 @@ def tv_arrows(d, te, dd, alpha=1.0):
     L = math.hypot(x - cx, y - cy); ut = ((cx - x) / L, (cy - y) / L)
     sp = math.hypot(x2 - x, y2 - y); vmax = math.sqrt(2 * G * H0) * LPX * 0.004
     arrow(d, (x, y), (x + 150 * ut[0], y + 150 * ut[1]), A(PURPLE, alpha), w=8, head=24)
-    if sp < 0.25 * vmax:
+    if sp < 0.4 * vmax:
         text(d, (x + 90 * ut[0] + 60, y + 90 * ut[1]), "T", 60, PURPLE, alpha=alpha); return
     uv = ((x2 - x) / sp, (y2 - y) / sp); ln = 60 + 120 * min(1, sp / vmax)
     text(d, (x + 100 * ut[0] - 50 * uv[0], y + 100 * ut[1] - 50 * uv[1]), "T", 60, PURPLE, alpha=alpha)
@@ -181,6 +181,9 @@ def s_rut(img, d, t, sc):
     draw_pend(d, pos, side, dd)
     tv_arrows(d, t * 0.75, dd)
     k1 = appear(t, 0.3, 0.4)
+    card(d, (50, 270, 400, 440), fill=A(WHITE, k1), outline=A(LIGHT, k1), w=3)
+    arrow(d, (75, 315), (140, 315), A(PURPLE, k1), w=8, head=20); text(d, (160, 315), "T lực căng", 56, PURPLE, anchor="lm", alpha=k1)
+    arrow(d, (75, 395), (140, 395), A(BLUE, k1), w=8, head=20); text(d, (160, 395), "v vận tốc", 56, BLUE, anchor="lm", alpha=k1)
     card(d, (60, 1010, 1020, 1130), fill=A((243, 238, 255), k1), outline=A(PURPLE, k1), r=28, w=4)
     text(d, (W / 2, 1070), "T vuông góc v: không sinh công", 60, PURPLE, alpha=k1)
     k2 = appear(t, M[1] - 0.1, 0.4)
@@ -190,12 +193,12 @@ def s_rut(img, d, t, sc):
     k3 = appear(t, M[1] + 2.5, 0.4)
     if k3 > 0:
         card(d, (60, 1330, 1020, 1450), fill=A((236, 253, 243), k3), outline=A(GREEN, k3), r=28, w=5)
-        text(d, (W / 2, 1390), "Công P xuống = công P lên", 60, GREEN, alpha=k3)
+        text(d, (W / 2, 1390), "Công trọng lực: xuống = lên", 60, GREEN, alpha=k3)
 
 # ---------------- canh 4: bay + gioi han ----------------
 def s_bay(img, d, t, sc):
     M = sc["M"]; mk = M[1]; dd = 0.5
-    marks(d); stand(d); nail(d, dd, lab=False)
+    marks(d); stand(d); nail(d, dd)
     ks = clamp((t - mk) / 0.4)
     gx, gy = bob_right(phimax(dd), dd)                             # dinh that: dung vach
     rise = clamp((t - 0.5) / 1.5)                                  # bong "nghi" bay len tu vach toi cao hon

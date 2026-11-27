@@ -1,8 +1,8 @@
 {
   "id": "tn-l10-trong-luc-luc-cang-01",
   "ten": "Tấm bìa ba lỗ treo bằng dây dọi",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-trong-luc-luc-cang-01-20261118.mp4",
-  "tong_giay": 44.2,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-trong-luc-luc-cang-01-20261127.mp4",
+  "tong_giay": 48.8,
   "o": [
     {
       "khoa": "gia_thuyet",
@@ -17,35 +17,53 @@
     },
     {
       "khoa": "dung_cu",
-      "giay": 10.0,
-      "chu": "Bìa ba lỗ, dây dọi, bút chì kẻ đường."
+      "giay": 9.7,
+      "chu": "Bìa ba lỗ, dây dọi, bút chì."
     },
     {
       "khoa": "quan_sat",
-      "giay": 18.2,
+      "giay": 18.3,
       "chu": "Treo ở A, B, C rồi kẻ: ba đường cắt nhau tại một điểm."
     },
     {
       "khoa": "rut_ra",
-      "giay": 22.4,
-      "chu": "Điểm đó là G: đặt lên bút chì, bìa thăng bằng."
+      "giay": 22.1,
+      "chu": "Điểm đó là G: đặt lên bút chì, bìa thăng bằng.\nTreo đứng yên thì G ngay dưới điểm treo."
     },
     {
       "khoa": "chua_noi",
-      "giay": 32.2,
-      "chu": "Vòng đệm treo ở mép: G ở tâm lỗ, không có vật chất.\nĐã coi bìa phẳng, đồng chất; vật dày, ghép nhiều chất: chưa thử."
+      "giay": 37.5,
+      "chu": "Vòng đệm treo ở mép: G ở tâm lỗ, chỗ không có vật chất.\nĐã coi bìa phẳng, đồng chất; vật dày, ghép hai chất: chưa thử."
     }
   ],
   "dung_dua": {
-    "giay": 9.8,
+    "giay": 9.55,
     "cau_hoi": "Bìa treo ở A đã đứng yên, đã kẻ theo dây dọi. Trọng tâm G nằm ở đâu?",
     "chon": [
       "A. Ngay tại điểm treo A",
       "B. Ở đâu đó trên đường vừa kẻ",
-      "C. Lệch về phía có nhiều bìa hơn, ngoài đường kẻ"
+      "C. Ở mép dưới cùng của bìa",
+      "D. Lệch khỏi đường kẻ, về phía bìa rộng hơn"
     ],
     "dung": 1,
-    "giai_thich_dung": "Bìa đứng yên thì G nằm trên đường thẳng đứng qua điểm treo, tức là trên đường dây dọi vừa kẻ.",
-    "giai_thich_sai": "Xem hai lần treo sau ở đoạn kế rồi so lại."
+    "giai_thich_dung": "Bìa đứng yên thì G nằm trên đường thẳng đứng qua điểm treo, tức là trên đường dây dọi vừa kẻ. Một đường chưa đủ biết G ở chỗ nào trên đường: phải treo thêm ở lỗ khác.",
+    "giai_thich_sai": "Điểm treo là chỗ đặt lực căng, không phải trọng lực. Xem hai lần treo ở B và C rồi so lại: các đường kẻ gặp nhau ở đâu?"
+  },
+  "cau_chot": {
+    "giay": 44.0,
+    "cau_hoi": "Tấm bìa chữ nhật đồng chất 8 cm × 6 cm treo ở một góc, đứng yên. Trọng tâm G cách điểm treo bao xa?",
+    "chon": [
+      "A. 3 cm",
+      "B. 4 cm",
+      "C. 5 cm",
+      "D. 10 cm"
+    ],
+    "dung": 2,
+    "giai_thich": [
+      "3 cm là nửa cạnh 6 cm, như thể G nằm trên cạnh bìa. Bìa đồng chất nên G ở tâm, giao hai đường chéo; dây dọi từ góc đi qua G nên trùng đường chéo dài √(8² + 6²) = 10 cm. G cách góc nửa đường chéo: 5 cm.",
+      "4 cm là nửa cạnh 8 cm, như thể G nằm trên cạnh bìa. G ở tâm bìa, trên đường chéo dài √(8² + 6²) = 10 cm, nên cách góc treo 5 cm.",
+      "Bìa đồng chất nên G ở tâm, giao hai đường chéo. Treo ở góc, dây dọi đi qua G nên trùng đường chéo dài √(8² + 6²) = 10 cm; G cách điểm treo nửa đường chéo: 5 cm.",
+      "10 cm là cả đường chéo, tức góc đối diện. G ở tâm bìa, giữa đường chéo, nên chỉ cách điểm treo 5 cm."
+    ]
   }
 }

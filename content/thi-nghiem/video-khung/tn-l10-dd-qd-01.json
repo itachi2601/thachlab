@@ -1,43 +1,43 @@
 {
   "id": "tn-l10-dd-qd-01",
   "ten": "Xe đồ chơi trên ray uốn: đo s bằng sợi chỉ, đo d bằng thước",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-dd-qd-01-20261031.mp4",
-  "tong_giay": 49.1,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-dd-qd-01-20261127.mp4",
+  "tong_giay": 49.9,
   "o": [
     {
       "khoa": "gia_thuyet",
       "giay": 0,
-      "chu": "d nối thẳng đầu – cuối nên có thể nhỏ hơn s.",
+      "chu": "Xe đi ray cong: so độ dịch chuyển d với quãng đường s.",
       "kiem": "Độ dịch chuyển khác quãng đường ở đâu?"
     },
     {
       "khoa": "du_doan",
-      "giay": 3.0,
+      "giay": 3.1,
       "chu": "Xe chạy hết ray nửa vòng tròn r = 10 cm. Độ lớn d khoảng bao nhiêu?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 10.4,
+      "giay": 9.3,
       "chu": "Ray nhựa uốn 4 hình, xe đồ chơi; sợi chỉ đặt dọc ray đo s, thước nối điểm đầu với điểm cuối đo d."
     },
     {
       "khoa": "quan_sat",
-      "giay": 19.8,
-      "chu": "Nửa vòng: d đo 20,1 cm, s đo 31,9 cm. Trọn vòng: d = 0."
+      "giay": 21.8,
+      "chu": "Nửa vòng: d 20,1 cm, s 31,9 cm. Trọn vòng: d = 0."
     },
     {
       "khoa": "rut_ra",
-      "giay": 24.3,
+      "giay": 25.6,
       "chu": "Độ lớn d không vượt quá s; d = s khi đi thẳng, không quay đầu."
     },
     {
       "khoa": "chua_noi",
-      "giay": 31.1,
+      "giay": 32.4,
       "chu": "Thước chỉ cho độ lớn d, chưa cho hướng; hướng của d đọc trên hình."
     }
   ],
   "dung_dua": {
-    "giay": 10.2,
+    "giay": 8.75,
     "cau_hoi": "Xe chạy hết ray nửa vòng tròn bán kính 10 cm. Độ lớn độ dịch chuyển d của xe khoảng bao nhiêu?",
     "chon": [
       "A. Khoảng 10 cm",
@@ -47,6 +47,23 @@
     ],
     "dung": 1,
     "giai_thich_dung": "d nối thẳng điểm đầu với điểm cuối, chính là đường kính 2r = 20 cm; thước đo được 20,1 cm.",
-    "giai_thich_sai": "Khoảng 31 cm là nửa chu vi, tức quãng đường s. Xem cột d đo của hàng nửa vòng ở đoạn kế."
+    "giai_thich_sai": "Khoảng 31 cm là nửa chu vi, tức quãng đường s. Xem cột d của hàng nửa vòng ở đoạn kế."
+  },
+  "cau_chot": {
+    "giay": 45.9,
+    "cau_hoi": "Xe chạy 3/4 vòng trên ray tròn bán kính 10 cm. Độ lớn độ dịch chuyển d của xe khoảng bao nhiêu?",
+    "chon": [
+      "A. Khoảng 7 cm",
+      "B. Khoảng 14 cm",
+      "C. Khoảng 20 cm",
+      "D. Khoảng 47 cm"
+    ],
+    "dung": 1,
+    "giai_thich": [
+      "7 cm nhỏ hơn cả bán kính; điểm đầu và điểm cuối cách tâm đều 10 cm và lệch nhau một góc vuông nên phải xa hơn thế.",
+      "Theo mô hình, điểm đầu và điểm cuối cách tâm 10 cm, lệch nhau một góc vuông: d = √(10² + 10²) = 10√2 ≈ 14 cm.",
+      "20 cm là đường kính, ứng với nửa vòng; 3/4 vòng thì điểm cuối gần điểm đầu hơn.",
+      "47 cm là quãng đường s = 3/4 · 2π · 10 ≈ 47 cm, không phải độ dịch chuyển."
+    ]
   }
 }

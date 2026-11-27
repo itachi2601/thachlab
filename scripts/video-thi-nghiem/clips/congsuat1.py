@@ -138,7 +138,7 @@ def s_do(img, d, t, sc):
     card(d, (70, 300, 450, 470), fill=NAVY, r=22)
     text(d, (260, 340), "đồng hồ (s)", 56, WHITE)
     text(d, (260, 420), f1(clk), 60, YELLOW)
-    text(d, (W / 2, 975), "tua nhanh ×5", 56, NOTE)
+    text(d, (W / 2, 975), "tua nhanh ×5 · đồng hồ: giờ thật", 56, NOTE)
     table(d, 1030, done)
 
 # ---------------- canh 3: Ket qua ----------------
@@ -153,9 +153,9 @@ def s_kq(img, d, t, sc):
     ka = appear(t, M[1] - 0.1, 0.45)
     if ka > 0:
         card(d, (40, 860, 1040, 1200), fill=A(WHITE, ka), outline=A(NAVY, ka), w=5)
-        text(d, (W / 2, 940), "A = m·g·h", 62, INK, alpha=ka)
+        text(d, (W / 2, 940), "A = m·g·h: công nâng người", 60, INK, alpha=ka)
         text(d, (W / 2, 1035), "= 50·10·3,0 = 1500 J", 62, DGREEN, alpha=ka)
-        text(d, (W / 2, 1130), "như nhau cả bốn lần", 56, NOTE, alpha=ka)
+        text(d, (W / 2, 1130), "m = 50 kg · g = 10 m/s² · h = 3,0 m", 56, NOTE, alpha=ka)
     kb = appear(t, M[2] - 0.1, 0.45)
     if kb > 0:
         card(d, (40, 1240, 1040, 1480), fill=A((236, 253, 243), kb), outline=A(GREEN, kb), w=5)
@@ -163,12 +163,13 @@ def s_kq(img, d, t, sc):
         text(d, (W / 2, 1420), "t ngắn hơn, P lớn hơn", 56, INK, alpha=kb)
 
 # ---------------- canh 4: Bay + chua noi duoc ----------------
-def mini(d, cx, yb, lab, tt, alpha=1.0):
+def mini(d, cx, yb, lab, tt, alpha=1.0, pw=None):
     x0, w, h = cx - 150, 270, 230
     stairs(d, x0, yb, w, h, alpha=alpha, label=False)
     person_on(d, x0, yb, w, h, 1.0, s=0.7, alpha=alpha)
     text(d, (cx, yb - h - 120), f"{lab} {tt}", 56, INK, alpha=alpha)
     text(d, (cx, yb + 60), "A = 1500 J", 56, DGREEN, alpha=alpha)
+    if pw: text(d, (cx, yb + 130), f"P = {pw} W", 56, ORANGE, alpha=alpha)
 
 def s_bay(img, d, t, sc):
     M = sc["M"]
@@ -182,7 +183,7 @@ def s_bay(img, d, t, sc):
     kk = appear(t, M[1] + 0.1, 0.45)
     if kk > 0:
         card(d, (40, 640, 1040, 1230), fill=A(WHITE, kk), outline=A(NAVY, kk), w=5)
-        mini(d, 290, 1060, "Lần 1:", "12,0 s", kk); mini(d, 790, 1060, "Lần 4:", "4,0 s", kk)
+        mini(d, 290, 1040, "Lần 1:", "12,0 s", kk, 125); mini(d, 790, 1040, "Lần 4:", "4,0 s", kk, 375)
         d.line([(540, 680), (540, 1120)], fill=A(LIGHT, kk), width=3)
     k5 = appear(t, M[2] + 0.1, 0.45)
     if k5 > 0:
@@ -227,12 +228,12 @@ CLIP = dict(id="tn-l10-cong-suat-01", header="VẬT LÍ 10 · THÍ NGHIỆM", fo
  dict(key="kq", title="Kết quả", draw=s_kq, tail=0.3, caps=[
    ("Đáp án: gấp 3 lần.", 3.4),
    ("Công nâng người không đổi.", 3.4),
-   ("Chỉ t đổi.", 3.0)]),
+   ("Chỉ thời gian t đổi.", 3.0)]),
  dict(key="bay", title="Bẫy hay gặp", draw=s_bay, tail=0.3, caps=[
    ("Đúng không?", 3.0),
    ("Sai: công như nhau, chỉ P khác.", 4.0),
    ("Thí nghiệm này còn thiếu gì?", 3.2)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.5, caps=[
-   ("Lần leo mới.", 2.8),
-   ("Dừng lại, tự tính.", 6.6)]),
+   ("Lần leo mới.", 4.6),
+   ("Dừng lại, tự tính.", 4.8)]),
 ])

@@ -104,8 +104,8 @@ def rig(d, row, u, k=1.0, x1_hook=None, yc=880):
     """Hinh trong the y 265-yc. u = None + x1_hook: xe 1 o vi tri x1_hook (canh Du doan)."""
     m2, v1, v = row
     card(d, (40, 265, 1040, yc), fill=WHITE, outline=LIGHT, w=3)
-    text(d, (70, 320), f"xe 1: {vn(M1)} kg", 56, C1D, anchor="lm", alpha=k)
-    text(d, (1010, 320), f"xe 2: {vn(m2)} kg", 56, C2D, anchor="rm", alpha=k)
+    text(d, (70, 320), f"m₁ = {vn(M1)} kg", 56, C1D, anchor="lm", alpha=k)
+    text(d, (1010, 320), f"m₂ = {vn(m2)} kg", 56, C2D, anchor="rm", alpha=k)
     if x1_hook is not None: x1, x2, d1, d2 = x1_hook, X2S, x1_hook >= G1 + 0.01, False
     else: x1, x2, d1, d2 = kin(row, u)
     lcd(d, sx(G1) - 20, 495, "cổng 1", f"{vn(v1)} m/s" if d1 else "– – –", C1D)
@@ -162,7 +162,7 @@ def table(d, cells, hl=None, y=920):
         if cm: text(d, (XS[1], yy), vn(m2), 60, C2D)
         if c1: text(d, (XS[2], yy), vn(v1), 60, C1D)
         if c2: text(d, (XS[3], yy), vn(v), 60, PURPLE)
-    text(d, (W / 2, y + 590), "v: hai xe đã dính nhau", 56, PURPLE)
+    text(d, (W / 2, y + 590), "v₁: xe 1 trước · v: hai xe dính, sau", 56, PURPLE)
 
 def cells_at(t):
     i, u, k = do_state(t); out = []
@@ -200,7 +200,9 @@ MX, VY, BY = 700, 640, 860             # px / kg ; px / (m/s) ; day hai hinh
 def s_kq(img, d, t, sc):
     M = sc["M"]; m2, v1, v = ROWS[3]
     card(d, (40, 265, 1040, 960), fill=WHITE, outline=LIGHT, w=3)
-    text(d, (80, 330), "Lần 4", 56, INK, anchor="lm")
+    text(d, (1000, 330), "Lần 4", 56, INK, anchor="rm")
+    text(d, (150 + M1 * MX / 2, 318), f"{vn(M1)} kg", 56, C1D)
+    text(d, (380 + (M1 + m2) * MX / 2, 500), f"{vn(M1 + m2)} kg", 56, PURPLE)
     x0 = 150; w1 = M1 * MX; k1 = ease((t - 0.3) / 0.6); h1 = v1 * VY * k1
     if h1 > 2: d.rectangle([x0, BY - h1, x0 + w1, BY], fill=(254, 215, 170), outline=C1, width=5)
     if k1 > 0.95: text(d, (x0 + w1 / 2, BY - h1 - 40), vn(v1) + " m/s", 56, C1D)
@@ -248,7 +250,7 @@ def s_bay(img, d, t, sc):
             text(d, (x, by + 55), lab, 56, colD, alpha=kk)
         d.line([(180, by), (900, by)], fill=INK, width=4)
         k3 = appear(t, M[1] + 1.4, 0.4)
-        text(d, (710 + 120, by - H0 * 0.46 - 10), "≈ ½", 64, PURPLE, anchor="lm", alpha=k3)
+        text(d, (710, by - H0 * 0.46 - 50), "≈ ½ trước", 60, PURPLE, alpha=k3)
     k5 = appear(t, M[2] + 0.1, 0.45)
     if k5 > 0:
         y0 = 1270 + (1 - k5) * 30
@@ -280,7 +282,7 @@ def s_end(img, d, t, sc):
     if kh > 0:
         card(d, (90, 1300, 990, 1520), fill=A((255, 247, 237), kh), r=24)
         text(d, (W / 2, 1360), "Gợi ý", 56, INK, alpha=kh)
-        text(d, (W / 2, 1450), "sau va chạm, gì đang chạy?", 58, (176, 64, 8), alpha=kh)
+        text(d, (W / 2, 1450), "so động lượng trước và sau", 58, (176, 64, 8), alpha=kh)
 
 def _cues(clip):
     sc = {s["key"]: s for s in clip["scenes"]}

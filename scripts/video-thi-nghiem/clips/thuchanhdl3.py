@@ -117,6 +117,9 @@ def s_hook(img, d, t, sc):
     M = sc["M"]
     s = lerp(0.12, 0.52, ease((t - 0.5) / 1.8))
     rig(d, 6, s, "0,505" if s >= G1 else "– – –", "?")
+    text(d, (160, 530), "đầu cao", 56, ORANGE)
+    arrow(d, (800, 715), (990, 735), INK, w=6, head=18)
+    text(d, (1000, 790), "xuống dốc", 56, INK, anchor="rm")
     a = appear(t, M[1] - 0.2, 0.5)
     if a <= 0: return
     y0 = 1035 + (1 - a) * 30
@@ -182,7 +185,7 @@ def s_kq(img, d, t, sc):
     ka = appear(t, M[1] - 0.1, 0.45)
     if ka > 0:
         card(d, (40, 660, 1040, 1300), fill=A(WHITE, ka), outline=A(LIGHT, ka), w=3)
-        text(d, (W / 2, 725), "độ lệch", 56, INK, alpha=ka)
+        text(d, (W / 2, 725), "cổng 2 lệch so với cổng 1", 56, INK, alpha=ka)
         by0, by1 = 840, 1160
         def yv(v): return by1 - v / 6 * (by1 - by0)
         d.line([(120, by1), (960, by1)], fill=A(INK, ka), width=4)
@@ -218,6 +221,7 @@ def s_bay(img, d, t, sc):
             x = sx(s) - 50; y = ty(yb, h, s) - 120
             arrow(d, (x, y), (x + 100, y), DGREEN, w=7, head=20)
             text(d, (x + 120, y), "trôi", 56, DGREEN, anchor="lm")
+        text(d, (1000, 1170), "tua ×16", 56, NOTE, anchor="rm", alpha=kk)
     k5 = appear(t, M[2] + 0.1, 0.45)
     if k5 > 0:
         y0 = 1270 + (1 - k5) * 30
@@ -228,7 +232,7 @@ def s_bay(img, d, t, sc):
 # ---------------- canh 5: THU NGHI (cau chot o khung web: lech ~ 7,4 %) ----------------
 def s_end(img, d, t, sc):
     M = sc["M"]; h, x = CHOT
-    rig(d, h, 0.30, "– – –", "?", g2=G1 + x, xlab="x = 0,60 m", xe2=False)
+    rig(d, h, 0.30, "0,505", "?", g2=G1 + x, xlab="x = 0,60 m", xe2=False)
     y0 = 1035
     card(d, (40, y0, 1040, 1670), fill=WHITE, outline=ORANGE, w=6)
     pill(d, W / 2, y0 + 70, "THỬ NGHĨ", ORANGE)
@@ -266,11 +270,11 @@ CLIP = dict(id="tn-l10-thuchanhdl-03", header="VẬT LÍ 10 · THỰC HÀNH", fo
    ("Vì sao cổng 2 nhanh hơn?", 3.4)]),
  dict(key="bay", title="Bẫy hay gặp", draw=s_bay, tail=0.3, caps=[
    ("Đúng không?", 3.0),
-   ("Sai: cỡ sai số đo.", 4.0),
+   ("Sai: 2 mm đã lệch 1,9 %.", 4.0),
    ("Thí nghiệm này còn thiếu gì?", 3.2)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.5, caps=[
-   ("Dời cổng 2 ra xa.", 2.8),
-   ("Dừng lại, tự tính.", 6.6)]),
+   ("Dời cổng 2 ra xa.", 4.6),
+   ("Dừng lại, tự tính.", 4.8)]),
 ])
 
 if __name__ == "__main__" and "--kiem" in __import__("sys").argv:
