@@ -2,7 +2,7 @@
   "id": "tn-l10-dong-nang-the-nang-01",
   "ten": "Khúc gỗ trượt qua cổng quang: đo v và quãng trượt s",
   "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-dong-nang-the-nang-01-20261127.mp4",
-  "tong_giay": 48.8,
+  "tong_giay": 49.8,
   "o": [
     {
       "khoa": "gia_thuyet",
@@ -17,27 +17,27 @@
     },
     {
       "khoa": "dung_cu",
-      "giay": 9.9,
+      "giay": 9.7,
       "chu": "Khúc gỗ, cổng quang, đồng hồ số, thước."
     },
     {
       "khoa": "quan_sat",
-      "giay": 17.4,
-      "chu": "v = 1,00; 1,50; 2,00; 2,50 m/s ứng với s = 0,21; 0,44; 0,82; 1,22 m. Lần 4 so lần 1: 1,22 : 0,21 ≈ 5,8."
+      "giay": 18.7,
+      "chu": "v = 1,00; 1,50; 2,00; 2,50 m/s ứng với s = 0,21; 0,44; 0,82; 1,22 m. Lần 4 trượt gần gấp 6 lần lần 1."
     },
     {
       "khoa": "rut_ra",
-      "giay": 26.0,
+      "giay": 29.5,
       "chu": "Ma sát lấy dần động năng: μmg·s = ½mv², nên s tỉ lệ với v². v gấp 2,5 thì s gấp 2,5² ≈ 6."
     },
     {
       "khoa": "chua_noi",
-      "giay": 37.7,
+      "giay": 39.0,
       "chu": "Mới thử một mặt bàn, một hệ số ma sát."
     }
   ],
   "dung_dua": {
-    "giay": 9.75,
+    "giay": 9.5,
     "cau_hoi": "Lần 1, khúc gỗ qua cổng với tốc độ 1,00 m/s. Nếu qua cổng với 2,50 m/s thì quãng trượt tới khi dừng dài gấp mấy lần?",
     "chon": [
       "A. Khoảng 2,5 lần",
@@ -50,20 +50,20 @@
     "giai_thich_sai": "Xem bảng ở đoạn kế: so quãng trượt lần 1 (1,00 m/s) với lần 4 (2,50 m/s)."
   },
   "cau_chot": {
-    "giay": 43.0,
-    "cau_hoi": "Cùng khúc gỗ, cùng mặt bàn. Lần 4 qua cổng 2,50 m/s thì trượt 1,22 m. Nếu qua cổng 1,25 m/s (bằng nửa) thì khúc gỗ trượt khoảng bao xa?",
+    "giay": 44.0,
+    "cau_hoi": "Cùng khúc gỗ, cùng mặt bàn như bảng đo (1,00 m/s → 0,21 m; 2,50 m/s → 1,22 m). Muốn khúc gỗ trượt 0,50 m sau cổng rồi dừng, phải cho nó qua cổng với tốc độ khoảng bao nhiêu?",
     "chon": [
-      "A. 0,61 m",
-      "B. 0,41 m",
-      "C. 0,31 m",
-      "D. 0,15 m"
+      "A. 1,12 m/s",
+      "B. 1,58 m/s",
+      "C. 2,24 m/s",
+      "D. 2,38 m/s"
     ],
-    "dung": 2,
+    "dung": 1,
     "giai_thich": [
-      "0,61 m là chia đôi quãng trượt như thể s tỉ lệ với v. Thật ra s tỉ lệ với v²: v giảm một nửa thì s còn 1/4, tức 1,22 : 4 ≈ 0,31 m.",
-      "0,41 m là chia 3, không theo quy luật nào. s tỉ lệ với v² nên v còn một nửa thì s còn 1/4: 1,22 : 4 ≈ 0,31 m.",
-      "s tỉ lệ với v²: v còn một nửa thì s còn (1/2)² = 1/4, tức 1,22 : 4 ≈ 0,31 m (mô hình s = v²/5 cho 0,31 m).",
-      "0,15 m là chia 8 (lấy 1/2 lũy thừa 3). Quãng trượt tỉ lệ v², chỉ chia (1/2)² = 1/4: 1,22 : 4 ≈ 0,31 m."
+      "1,12 m/s là quên hệ số ½ (lấy μg·s = v²). Từ bảng, s/v² ≈ 0,20 s²/m, nên v² ≈ 0,50 : 0,20 = 2,5 và v ≈ 1,58 m/s.",
+      "s tỉ lệ với v², bảng cho s/v² ≈ 0,20 s²/m (0,21/1,00²; 1,22/2,50²). Vậy v² ≈ 0,50 : 0,20 = 2,5, v ≈ 1,58 m/s.",
+      "2,24 m/s là lấy v² = g·s, bỏ mất hệ số ma sát. Dùng bảng: s/v² ≈ 0,20 s²/m nên v² ≈ 2,5, v ≈ 1,58 m/s.",
+      "2,38 m/s là coi s tỉ lệ với v (0,50 : 0,21 ≈ 2,38 lần). Thật ra s tỉ lệ với v²: v² ≈ 0,50 : 0,20 = 2,5, v ≈ 1,58 m/s."
     ]
   }
 }

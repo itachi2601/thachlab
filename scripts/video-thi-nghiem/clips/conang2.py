@@ -4,7 +4,8 @@
 #   so_lieu_mau: h_n 1,00 / 0,80 / 0,64 / 0,512 m (bai ghi 0,51) ; W_n = 27,0 / 21,6 / 17,28 / 13,824 mJ (man: 17,3 / 13,8).
 # Du doan (K10): tha 1,00 m, dinh 1 = 0,80 m; dinh lan nay thu 3 cao khoang bao nhieu? Dap an ~0,51 m.
 # Bay: hien_tuong_hay_sai[0] "co nang bao toan -> nay lai 1,00 m": hai bong canh nhau (nghi 1,00 m / that 0,80 m).
-# Cau chot (ghi_chu kho): tha tu 1,50 m, toi dinh 2 co nang giam 40,5 - 25,92 = 14,58 ~ 14,6 mJ (KHONG hien tren man).
+# Cau chot (tu suy, doi so khoi ghi_chu kho): tha tu 1,25 m (W = 33,75 mJ); sau 2 lan cham con 0,64 -> mat 12,15 ~ 12,2 mJ
+#   (KHONG hien tren man).
 import copy
 from engine import *
 
@@ -64,11 +65,21 @@ def peak_times():
     for h in HM[1:]:
         out.append((t + _tu(h)) * SL); t += 2 * _tu(h)
     return out
-PT = peak_times()
+PTB = peak_times()
+HOLDP = 0.8                                                    # dung hinh o moi dinh de doc thuoc (>= 2 s moi so)
+PT = [p + k * HOLDP for k, p in enumerate(PTB)]
 
 def traj(tau):
+    for k, p in enumerate(PT):                                 # bo thoi gian dung hinh
+        if tau < p: break
+        if tau < p + HOLDP: return HM[k + 1]
+        tau -= HOLDP if k < len(PT) - 1 else 0
+    else: k = len(PT)
+    return _traj(tau)
+
+def _traj(tau):
     if tau <= 0: return HM[0]
-    tau = min(tau, PT[2]); t = tau / SL; tf = _tu(HM[0])
+    tau = min(tau, PTB[2]); t = tau / SL; tf = _tu(HM[0])
     if t < tf: return HM[0] - 0.5 * G * t * t
     t -= tf
     for h in HM[1:]:
@@ -134,29 +145,29 @@ def s_rut(img, d, t, sc):
     M = sc["M"]
     k0 = appear(t, 0.3, 0.4)
     card(d, (40, 230, 1040, 440), fill=A(WHITE, k0), outline=A(BLUE, k0), w=4)
-    text(d, (W / 2, 290), "Ở đỉnh v = 0: W = mgh", 60, INK, alpha=k0)
+    text(d, (W / 2, 290), "Cơ năng ở đỉnh: W = mgh", 60, INK, alpha=k0)
     text(d, (W / 2, 380), "m = 2,7 g; g = 10 m/s²", 58, BLUE, alpha=k0)
-    kb = appear(t, 2.6, 0.4)
+    kb = appear(t, 2.4, 0.4)
     if kb > 0:
         card(d, (40, 470, 1040, 1180), fill=A(WHITE, kb), outline=A(LIGHT, kb), w=3)
         text(d, (W / 2, 530), "W ở đỉnh (mJ)", 58, INK, alpha=kb)
         base, hmax, wmax = 1050, 300, WM[0]
         xs = [190, 410, 630, 850]
         for j in range(4):
-            g = ease((t - 2.8 - j * 0.35) / 0.4)
+            g = ease((t - 2.6) / 0.6)
             text(d, (xs[j], base + 62), "thả" if j == 0 else f"đỉnh {j}", 56, INK, alpha=kb)
             d.rectangle([xs[j] - 40, base - hmax, xs[j] + 40, base], outline=A(LIGHT, kb), width=3)
             if g > 0:
                 hh = hmax * WM[j] / wmax * g
                 if hh > 2: d.rectangle([xs[j] - 40, base - hh, xs[j] + 40, base], fill=BLUE)
                 text(d, (xs[j], base - hmax * WM[j] / wmax - 40), fm(WM[j]), 56, BLUE, alpha=clamp(g * 2 - 1))
-        kc = appear(t, M[1], 0.4)
+        kc = appear(t, M[1] + 0.4, 0.4)
         if kc > 0:
             for j in range(3):
                 xm = (xs[j] + xs[j + 1]) / 2; yb = 625
                 card(d, (xm - 78, yb - 34, xm + 78, yb + 34), fill=A((254, 242, 242), kc), r=14)
                 text(d, (xm, yb), "−20%", 56, RED, alpha=kc)
-    kd = appear(t, M[1] + 2.5, 0.4)
+    kd = appear(t, M[1] + 2.7, 0.4)
     if kd > 0:
         card(d, (40, 1220, 1040, 1370), fill=A((254, 242, 242), kd), outline=A(RED, kd), r=28, w=4)
         text(d, (W / 2, 1295), "Phần mất: thành nhiệt, âm", 60, RED, alpha=kd)
@@ -199,7 +210,7 @@ def s_bay(img, d, t, sc):
         pill(d, W / 2, y + 70, "CHƯA NÓI ĐƯỢC", NAVY, k3)
         text(d, (W / 2, y + 210), "Mới thử một mặt bàn", 62, INK, alpha=k3)
 
-# ---------------- canh 5: thu nghi (cau chot o khung: 14,6 mJ) ----------------
+# ---------------- canh 5: thu nghi (cau chot o khung: 12,2 mJ) ----------------
 def s_end(img, d, t, sc):
     k = appear(t, 0.15, 0.4)
     card(d, (40, 230, 1040, 1620), fill=A(WHITE, k), outline=A(ORANGE, k), w=6)
@@ -208,10 +219,10 @@ def s_end(img, d, t, sc):
     ph = (t % 1.6) / 1.6; yb = 820 - 380 * (1 - (2 * ph - 1) ** 2)
     d.rectangle([380, 850, 700, 890], fill=A(STONE, k))
     d.ellipse([540 - 30, yb - 30, 540 + 30, yb + 30], fill=A(BALL, k), outline=A(BALL_D, k), width=4)
-    text(d, (W / 2, 980), "Cùng bóng, thả từ 1,50 m.", 62, INK, alpha=k)
+    text(d, (W / 2, 980), "Cùng bóng, thả từ 1,25 m.", 62, INK, alpha=k)
     text(d, (W / 2, 1070), "m = 2,7 g; g = 10 m/s²", 58, INK, alpha=k)
-    text(d, (W / 2, 1190), "Tới đỉnh 2, cơ năng", 64, DORANGE, alpha=k)
-    text(d, (W / 2, 1280), "giảm bao nhiêu mJ?", 64, DORANGE, alpha=k)
+    text(d, (W / 2, 1190), "Sau hai lần chạm bàn,", 64, DORANGE, alpha=k)
+    text(d, (W / 2, 1280), "cơ năng mất bao nhiêu mJ?", 64, DORANGE, alpha=k)
     seg_bar(d, 1420, t, 1.0, sc["T"] - 0.2, ORANGE, k)
 
 def _cues(clip):
@@ -225,19 +236,19 @@ CLIP = dict(id="tn-l10-co-nang-bao-toan-02", header="VẬT LÍ 10 · THÍ NGHI�
     footer="Cơ năng và bảo toàn cơ năng · thachlab.id.vn", scenes=[
  dict(key="hook", title="Bóng bàn nảy trên bàn đá", draw=s_hook, tail=0.3, caps=[
    ("Thả bóng bàn, đọc đỉnh lần 1.", 3.4),
-   ("Dừng lại, tự đoán.", 5.8)]),
+   ("Dừng lại, tự đoán.", 5.6)]),
  dict(key="do", title="Quay chậm, đọc từng đỉnh", draw=s_do, tail=0.5, caps=[
-   ("Thả nhẹ, không ném.", 5.4),
+   ("Thả nhẹ, không ném.", 6.8),
    ("Mỗi đỉnh còn khoảng 80 % đỉnh trước.", 4.6)]),
- dict(key="rut", title="Cơ năng ở mỗi đỉnh", draw=s_rut, tail=0.6, caps=[
+ dict(key="rut", title="Cơ năng ở mỗi đỉnh", draw=s_rut, tail=0.4, caps=[
    ("Mốc thế năng: mặt bàn.", 4.2),
    ("Mỗi lần chạm bàn mất 20 %.", 4.6)]),
- dict(key="bay", title="Bẫy và giới hạn", draw=s_bay, tail=0.6, caps=[
-   ("Đúng không?", 2.8),
+ dict(key="bay", title="Bẫy và giới hạn", draw=s_bay, tail=0.5, caps=[
+   ("Đúng không?", 3.2),
    ("Sai: đỉnh sau thấp hơn.", 3.4),
    ("Giới hạn của lần đo.", 3.0)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.6, caps=[
-   ("Dừng lại, tự tính.", 6.8)]),
+   ("Dừng lại, tự tính.", 6.4)]),
 ])
 
 def _kiem_dong_bo():

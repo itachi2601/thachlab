@@ -5,17 +5,17 @@
 #   qua cong 2,50 m/s thi quang truot gap may lan? Dap an: khoang 6 lan (1,22 : 0,21 = 5,8; 2,5^2 = 6,25).
 # Bay: hien_tuong_hay_sai[0] "v gap doi thi s gap doi": do thi s-v, duong thang qua goc (net dut do) lech 4 diem do,
 #   diem do nam tren duong cong. Chua noi duoc: mot mat ban.
-# Cau chot (ca khong co trong bai/kho): qua cong 1,25 m/s (bang nua 2,50) -> s = 1,22/4 ~ 0,31 m (mo hinh v2/5 = 0,3125).
-#   Khong ve go truot toi cho dung o canh chot (tranh lo so tren thuoc).
+# Cau chot (tu suy, nguoc chieu Cau 2 cua bai): muon go truot 0,50 m sau cong -> v = can(5 . 0,50) = can 2,5 ~ 1,58 m/s
+#   (s/v2 ~ 0,20 tu bang). Khong ve go truot toi cho dung o canh chot.
 from engine import *
 
 WOOD = (176, 124, 74); WOOD_D = (128, 86, 46); STEEL = (90, 98, 120); DRED = (185, 28, 28)
 EMPTY = (148, 140, 128); DORANGE = (176, 64, 8)
 ROWS = [(1.00, 0.21), (1.50, 0.44), (2.00, 0.82), (2.50, 1.22)]   # so_lieu_mau
-SLOW = 1.5
+SLOW = 1.2
 XG, Y0, PXM = 200, 600, 560
 APPROACH_PX = 110
-HOLD = 0.40
+HOLD = 1.60                     # giu go dung + so s >= 2,5 s moi hang
 _TI = {}
 def TI(size):
     size = int(size)
@@ -44,17 +44,25 @@ def seg_bar(d, y, t, t0, t1, col, a=1.0, n=5):
         else: card(d, (x, y, x + w - 20, y + 70), fill=A(WHITE, a), outline=A(EMPTY, a), r=18, w=4)
 
 def runs():
-    out = []; t = 0.0
+    out = []; t = 0.0                               # Tien hanh: lan 1 da chieu o canh 1, chi chay lan 2-4
     for i, (v, s) in enumerate(ROWS):
         ta = APPROACH_PX / (v * PXM) * SLOW; ts = 2 * s / v * SLOW
         out.append(dict(i=i, v=v, s=s, a0=t, g=t + ta, e=t + ta + ts, h=t + ta + ts + HOLD)); t += ta + ts + HOLD
     return out
-RUNS = runs(); RUN_END = RUNS[-1]["h"]
+RUNS = runs()
+def _shift():
+    """Lan 2-4 bat dau tu 0 (lan 1 da o bang tu dau canh)."""
+    o = RUNS[1]["a0"]
+    for r in RUNS[1:]:
+        for k in ("a0", "g", "e", "h"): r[k] -= o
+_RUN1 = dict(RUNS[0]); _shift(); RUNS[0] = _RUN1
 
 def state(tr, only=None):
-    rs = RUNS if only is None else [dict(RUNS[only], a0=0.0, g=RUNS[only]["g"] - RUNS[only]["a0"],
+    rs = RUNS[1:] if only is None else [dict(RUNS[only], a0=0.0, g=RUNS[only]["g"] - RUNS[only]["a0"],
                                           e=RUNS[only]["e"] - RUNS[only]["a0"], h=RUNS[only]["h"] - RUNS[only]["a0"])]
-    if tr < 0: return rs[0]["i"], -APPROACH_PX / PXM, False, False
+    if tr < 0:
+        if only is None: return 0, ROWS[0][1], True, True          # truoc lan 2: go lan 1 con nam o cho dung
+        return rs[0]["i"], -APPROACH_PX / PXM, False, False
     for r in rs:
         if tr < r["h"] or r is rs[-1]:
             if tr < r["g"]:
@@ -128,14 +136,12 @@ def s_do(img, d, t, sc):
     M = sc["M"]
     i, xm, passed, stopped = state(t - RUN0)
     rig(d, xm, vtxt=f"v = {vn(ROWS[i][0])} m/s" if passed else None, done_s=ROWS[i][1] if stopped else None)
-    ka = appear(t, M[2] + 0.1, 0.4); kb = appear(t, M[2] + 2.6, 0.4)
+    ka = appear(t, M[2] + 0.1, 0.4)
     table(d, i + (1 if stopped else 0), hi=i if stopped else -1, hl=ka)
     if ka > 0:
         y = 935
         card(d, (60, y - 20, 1020, y + 130), fill=A((220, 252, 231), ka), outline=A(GREEN, ka), r=28, w=5)
-        if kb <= 0: text(d, (W / 2, y + 55), "Đáp án: khoảng 6 lần", 62, GREEN, alpha=ka)
-        else:
-            text(d, (W / 2, y + 55), "1,22 : 0,21 ≈ 5,8", 62, GREEN, alpha=kb)
+        text(d, (W / 2, y + 55), "Đáp án: khoảng 6 lần", 62, GREEN, alpha=ka)
 
 # ---------------- canh 3: vi sao ----------------
 def s_rut(img, d, t, sc):
@@ -158,16 +164,17 @@ def s_rut(img, d, t, sc):
     text(d, (850, 300), "động năng", 56, ORANGE, anchor="rm")
     k1 = appear(t, 2.0, 0.45)
     if k1 > 0:
-        card(d, (60, 860, 1020, 990), fill=A(WHITE, k1), outline=A(NAVY, k1), r=26, w=4)
-        eq(d, W / 2, 925, "μmg·s = ½mv²", 64, INK, alpha=k1)
+        card(d, (60, 850, 1020, 1060), fill=A(WHITE, k1), outline=A(NAVY, k1), r=26, w=4)
+        text(d, (W / 2, 905), "Công ma sát = động năng", 58, NAVY, alpha=k1)
+        eq(d, W / 2, 995, "μmg·s = ½mv²", 64, INK, alpha=k1)
     k2 = appear(t, M[1] + 0.6, 0.45)
     if k2 > 0:
-        card(d, (60, 1030, 1020, 1160), fill=A((236, 253, 243), k2), outline=A(GREEN, k2), r=26, w=5)
-        text(d, (W / 2, 1095), "s tỉ lệ với v²", 64, GREEN, alpha=k2)
+        card(d, (60, 1100, 1020, 1230), fill=A((236, 253, 243), k2), outline=A(GREEN, k2), r=26, w=5)
+        text(d, (W / 2, 1165), "s tỉ lệ với v²", 64, GREEN, alpha=k2)
     k3 = appear(t, M[1] + 3.1, 0.45)
     if k3 > 0:
-        card(d, (60, 1200, 1020, 1330), fill=A((255, 247, 237), k3), outline=A(ORANGE, k3), r=26, w=4)
-        text(d, (W / 2, 1265), "2,5² = 6,25 ≈ 6", 64, DORANGE, alpha=k3)
+        card(d, (60, 1270, 1020, 1400), fill=A((255, 247, 237), k3), outline=A(ORANGE, k3), r=26, w=4)
+        text(d, (W / 2, 1335), "2,5² = 6,25 ≈ 6", 64, DORANGE, alpha=k3)
 
 # ---------------- canh 4: Bay + chua noi duoc ----------------
 GX0, GY0, GX1, GY1 = 230, 1120, 960, 580          # do thi s theo v: v 0..2,5 ; s 0..1,4
@@ -207,7 +214,7 @@ def s_bay(img, d, t, sc):
         pill(d, W / 2, y + 70, "CHƯA NÓI ĐƯỢC", NAVY, k3)
         text(d, (W / 2, y + 210), "Mới thử một mặt bàn", 62, INK, alpha=k3)
 
-# ---------------- canh 5: Thu nghi (cau chot o khung: ~0,31 m) ----------------
+# ---------------- canh 5: Thu nghi (cau chot o khung: ~1,58 m/s) ----------------
 def s_end(img, d, t, sc):
     k = appear(t, 0.15, 0.4)
     card(d, (40, 230, 1040, 1620), fill=A(WHITE, k), outline=A(ORANGE, k), w=6)
@@ -219,16 +226,16 @@ def s_end(img, d, t, sc):
     d.rectangle([xb - 48, y0 - 70, xb + 48, y0], fill=A(WOOD, k), outline=A(WOOD_D, k), width=4)
     d.rectangle([gxx - 46, y0 - 190, gxx - 32, y0], fill=A(RED, k)); d.rectangle([gxx + 32, y0 - 190, gxx + 46, y0], fill=A(RED, k))
     d.rectangle([gxx - 46, y0 - 206, gxx + 46, y0 - 190], fill=A(RED, k))
-    text(d, (W / 2, 900), "Qua cổng 1,25 m/s", 64, INK, alpha=k)
-    text(d, (W / 2, 990), "(bằng nửa 2,50 m/s).", 62, INK, alpha=k)
-    text(d, (W / 2, 1140), "Gỗ trượt khoảng bao xa?", 64, DORANGE, alpha=k)
+    text(d, (W / 2, 900), "Cùng gỗ, cùng mặt bàn.", 62, INK, alpha=k)
+    text(d, (W / 2, 1040), "Muốn trượt 0,50 m sau cổng,", 64, DORANGE, alpha=k)
+    text(d, (W / 2, 1130), "qua cổng với tốc độ nào?", 64, DORANGE, alpha=k)
     seg_bar(d, 1330, t, 1.0, sc["T"] - 0.2, ORANGE, k)
 
 def _cues(clip):
     sc = {s["key"]: s for s in clip["scenes"]}
     h, do, r, b, e = (sc[k] for k in ("hook", "do", "rut", "bay", "end"))
     out = [(h["t0"] + RUN_H + RUNS[0]["g"], "tap"), (h["t0"] + h["M"][1] - 0.2, "open"), (h["t0"] + h["T"] - 0.05, "ding")]
-    out += [(do["t0"] + RUN0 + R["g"], "tap") for R in RUNS]
+    out += [(do["t0"] + RUN0 + R["g"], "tap") for R in RUNS[1:]]
     out += [(do["t0"] + do["M"][2] + 0.1, "ding"), (b["t0"] + b["M"][1], "buzz"), (b["t0"] + b["M"][2] - 0.1, "tap"),
             (e["t0"] + 0.15, "open")]
     return out
@@ -237,18 +244,18 @@ CLIP = dict(id="tn-l10-dong-nang-the-nang-01", header="VẬT LÍ 10 · THÍ NGHI
             footer="Động năng, thế năng · thachlab.id.vn", cues=_cues, scenes=[
  dict(key="hook", title="Khúc gỗ qua cổng quang", draw=s_hook, tail=0.3, caps=[
    ("Lần 1: qua cổng 1,00 m/s.", 3.4),
-   ("Dừng lại, tự đoán.", 5.8)]),
+   ("Dừng lại, tự đoán.", 5.6)]),
  dict(key="do", title="Bốn tốc độ", draw=s_do, tail=0.4, caps=[
    ("Đẩy gỗ, buông trước cổng.", 3.0),
-   ("Đo s từ cổng tới chỗ dừng.", 4.0),
-   ("So lần 1 với lần 4.", 3.6)]),
- dict(key="rut", title="Vì sao như vậy?", draw=s_rut, tail=0.6, caps=[
+   ("Đo s từ cổng tới chỗ dừng.", 5.5),
+   ("So lần 1 với lần 4.", 3.0)]),
+ dict(key="rut", title="Vì sao như vậy?", draw=s_rut, tail=0.4, caps=[
    ("Ma sát lấy dần động năng.", 3.6),
    ("Hết động năng thì gỗ dừng.", 4.8)]),
- dict(key="bay", title="Bẫy và giới hạn", draw=s_bay, tail=0.5, caps=[
-   ("Đúng không?", 2.8),
+ dict(key="bay", title="Bẫy và giới hạn", draw=s_bay, tail=0.4, caps=[
+   ("Đúng không?", 3.2),
    ("Sai: điểm đo nằm trên đường cong.", 3.8),
    ("Giới hạn của lần đo.", 3.0)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.6, caps=[
-   ("Dừng lại, tự tính.", 6.6)]),
+   ("Dừng lại, tự tính.", 6.4)]),
 ])

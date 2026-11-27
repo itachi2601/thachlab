@@ -5,7 +5,7 @@
 # Du doan (K10): chua dinh len lai vach 0,20 m; dinh o 0,7 m duoi diem treo -> ben kia qua nang len toi dau? Dap an: dung vach 0,20 m.
 # Bay: hien_tuong_hay_sai[0] "vuong dinh thi len cao hon": con lac vuong dinh lac that lien tuc, hai dinh cung cham vach;
 #   bong "nghi" cao hon bi gach. Chua noi duoc: dinh qua thap (L - d < h0, day chung) chua xet.
-# Cau chot (ghi_chu kho): dinh 0,5 m, tha tu 0,20 m, ben kia o do cao 0,15 m -> v = can(2.10.0,05) = 1,0 m/s (KHONG hien).
+# Cau chot (tu suy): dinh 0,5 m duoi diem treo -> cao 0,50 m so day; dinh ben kia o 0,20 m -> thap hon dinh 0,30 m (KHONG hien).
 import copy
 from engine import *
 
@@ -157,16 +157,19 @@ def s_do(img, d, t, sc):
         text(d, (xs[1], yy), "0,20 m", 58, ORANGE, alpha=a); text(d, (xs[2], yy), ANG[i], 58, BLUE, alpha=a)
 
 # ---------------- canh 3: vi sao ----------------
-def tv_arrows(d, pos, side, dd, sg, alpha=1.0):
-    x, y = pos
+def tv_arrows(d, te, dd, alpha=1.0):
+    """T huong ve tam quay hien tai; v lay theo chieu chuyen dong that (sai phan), dai ti le toc do, an o dinh."""
+    (x, y), side, _ = swing_pos(te, dd); (x2, y2), _, _ = swing_pos(te + 0.004, dd)
     cx, cy = (PX, ypos(dd)) if side == "R" else (PX, PY)
-    L = math.hypot(x - cx, y - cy); ut = ((cx - x) / L, (cy - y) / L)       # T huong ve tam quay
-    uv = (-ut[1] * sg, ut[0] * sg)                                           # v tiep tuyen theo chieu chuyen dong
-    if side == "L": uv = (-uv[0], -uv[1])
+    L = math.hypot(x - cx, y - cy); ut = ((cx - x) / L, (cy - y) / L)
+    sp = math.hypot(x2 - x, y2 - y); vmax = math.sqrt(2 * G * H0) * LPX * 0.004
     arrow(d, (x, y), (x + 150 * ut[0], y + 150 * ut[1]), A(PURPLE, alpha), w=8, head=24)
+    if sp < 0.25 * vmax:
+        text(d, (x + 90 * ut[0] + 60, y + 90 * ut[1]), "T", 60, PURPLE, alpha=alpha); return
+    uv = ((x2 - x) / sp, (y2 - y) / sp); ln = 60 + 120 * min(1, sp / vmax)
     text(d, (x + 100 * ut[0] - 50 * uv[0], y + 100 * ut[1] - 50 * uv[1]), "T", 60, PURPLE, alpha=alpha)
-    arrow(d, (x, y), (x + 170 * uv[0], y + 170 * uv[1]), A(BLUE, alpha), w=8, head=24)
-    text(d, (x + 205 * uv[0], y + 205 * uv[1] + 10), "v", 60, BLUE, alpha=alpha)
+    arrow(d, (x, y), (x + ln * uv[0], y + ln * uv[1]), A(BLUE, alpha), w=8, head=24)
+    text(d, (x + (ln + 35) * uv[0], y + (ln + 35) * uv[1] + 10), "v", 60, BLUE, alpha=alpha)
     s = 30
     p1 = (x + s * ut[0], y + s * ut[1]); p3 = (x + s * uv[0], y + s * uv[1]); p2 = (p1[0] + s * uv[0], p1[1] + s * uv[1])
     d.line([p1, p2, p3], fill=A(INK, alpha), width=5)
@@ -176,7 +179,7 @@ def s_rut(img, d, t, sc):
     marks(d); stand(d); nail(d, dd, lab=False)
     pos, side, sg = swing_pos(t * 0.75, dd)
     draw_pend(d, pos, side, dd)
-    tv_arrows(d, pos, side, dd, sg)
+    tv_arrows(d, t * 0.75, dd)
     k1 = appear(t, 0.3, 0.4)
     card(d, (60, 1010, 1020, 1130), fill=A((243, 238, 255), k1), outline=A(PURPLE, k1), r=28, w=4)
     text(d, (W / 2, 1070), "T vuông góc v: không sinh công", 60, PURPLE, alpha=k1)
@@ -194,11 +197,14 @@ def s_bay(img, d, t, sc):
     M = sc["M"]; mk = M[1]; dd = 0.5
     marks(d); stand(d); nail(d, dd, lab=False)
     ks = clamp((t - mk) / 0.4)
-    wx, wy = bob_right(math.radians(85), dd)                     # "nghi": len cao hon vach
+    gx, gy = bob_right(phimax(dd), dd)                             # dinh that: dung vach
+    rise = clamp((t - 0.5) / 1.5)                                  # bong "nghi" bay len tu vach toi cao hon
+    wx, wy = bob_right(phimax(dd) + rise * (math.radians(85) - phimax(dd)), dd)
     ghost(d, (wx, wy), RED, 1 - 0.5 * ks)
     text(d, (wx + 45, wy - 10), "nghĩ", 56, RED, anchor="lm", alpha=1 - 0.5 * ks)
     if ks > 0:
         for s in (1, -1): d.line([(wx - 40, wy - 40 * s), (wx - 40 + 80 * ks, wy - 40 * s + 80 * s * ks)], fill=RED, width=7)
+        ghost(d, (gx, gy), GREEN, ks); text(d, (gx + 45, gy + 45), "thật", 56, GREEN, anchor="lm", alpha=ks)
     pos, side, sg = swing_pos(t * 0.75, dd)
     draw_pend(d, pos, side, dd)
     k0 = appear(t, 0.2, 0.4); k3 = appear(t, M[2] - 0.1, 0.45); a1 = k0 * (1 - k3); y = 1015
@@ -213,9 +219,12 @@ def s_bay(img, d, t, sc):
     if k3 > 0:
         card(d, (40, y, 1040, y + 330), fill=A(WHITE, k3), outline=A(NAVY, k3), w=6)
         pill(d, W / 2, y + 70, "CHƯA NÓI ĐƯỢC", NAVY, k3)
-        text(d, (W / 2, y + 210), "Đinh quá thấp: chưa xét", 62, INK, alpha=k3)
+        text(d, (W / 2, y + 210), "Đinh dưới vạch 0,20 m: chưa thử", 60, INK, alpha=k3)
+        yn = ypos(0.9); xn = PX + 150                              # dinh "thu" thap hon vach, chua lam
+        d.ellipse([xn - 14, yn - 14, xn + 14, yn + 14], outline=A(NAVY, k3), width=4)
+        text(d, (xn + 30, yn), "?", 60, NAVY, anchor="lm", alpha=k3)
 
-# ---------------- canh 5: thu nghi (cau chot o khung: 1,0 m/s) ----------------
+# ---------------- canh 5: thu nghi (cau chot o khung: 0,30 m) ----------------
 def s_end(img, d, t, sc):
     k = appear(t, 0.15, 0.4)
     card(d, (40, 230, 1040, 1620), fill=A(WHITE, k), outline=A(ORANGE, k), w=6)
@@ -243,10 +252,10 @@ def s_end(img, d, t, sc):
     else: d.line([(px, py), (x, y)], fill=A(NAVY, k), width=4)
     d.ellipse([px - 11, yn - 11, px + 11, yn + 11], fill=A(NAIL, k))
     d.ellipse([x - 24, y - 24, x + 24, y + 24], fill=A(BOB, k), outline=A(BOB_D, k), width=3)
-    text(d, (W / 2, 950), "Đinh 0,5 m, thả từ 0,20 m.", 62, INK, alpha=k)
-    text(d, (W / 2, 1040), "g = 10 m/s²", 58, INK, alpha=k)
-    text(d, (W / 2, 1160), "Bên kia, ở độ cao 0,15 m,", 64, DORANGE, alpha=k)
-    text(d, (W / 2, 1250), "tốc độ bao nhiêu?", 64, DORANGE, alpha=k)
+    text(d, (W / 2, 950), "Dây 1,0 m, đinh 0,5 m dưới", 62, INK, alpha=k)
+    text(d, (W / 2, 1040), "điểm treo, thả từ 0,20 m.", 62, INK, alpha=k)
+    text(d, (W / 2, 1160), "Lên cao nhất bên kia,", 64, DORANGE, alpha=k)
+    text(d, (W / 2, 1250), "thấp hơn đinh bao nhiêu?", 64, DORANGE, alpha=k)
     seg_bar(d, 1400, t, 1.0, sc["T"] - 0.2, ORANGE, k)
 
 def _cues(clip):
@@ -268,11 +277,11 @@ CLIP = dict(id="tn-l10-dong-nang-the-nang-02", header="VẬT LÍ 10 · THÍ NGHI
    ("Nhìn góc giữa T và v.", 3.6),
    ("Từ đỉnh này sang đỉnh kia.", 4.8)]),
  dict(key="bay", title="Bẫy và giới hạn", draw=s_bay, tail=0.5, caps=[
-   ("Đúng không?", 2.8),
+   ("Đúng không?", 3.2),
    ("Sai: hai bên cùng một vạch.", 3.4),
    ("Giới hạn của lần đo.", 3.0)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.6, caps=[
-   ("Dừng lại, tự tính.", 6.6)]),
+   ("Dừng lại, tự tính.", 7.3)]),
 ])
 
 def _kiem_dong_bo():

@@ -2,7 +2,7 @@
   "id": "tn-l10-co-nang-bao-toan-02",
   "ten": "Đỉnh nảy của bóng bàn thả từ 1,00 m",
   "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-co-nang-bao-toan-02-20261127.mp4",
-  "tong_giay": 49.0,
+  "tong_giay": 49.9,
   "o": [
     {
       "khoa": "gia_thuyet",
@@ -17,27 +17,27 @@
     },
     {
       "khoa": "dung_cu",
-      "giay": 10.3,
+      "giay": 10.5,
       "chu": "Bóng bàn, bàn đá, thước dọc."
     },
     {
       "khoa": "quan_sat",
-      "giay": 16.1,
+      "giay": 17.3,
       "chu": "Đỉnh các lần: 1,00; 0,80; 0,64; 0,51 m, mỗi lần còn khoảng 0,8 lần đỉnh trước."
     },
     {
       "khoa": "rut_ra",
-      "giay": 28.3,
+      "giay": 29.7,
       "chu": "Ở đỉnh v = 0 nên W = mgh: 27,0 → 21,6 → 17,3 → 13,8 mJ. Mỗi lần chạm bàn mất 20 phần trăm cơ năng, thành nhiệt và âm."
     },
     {
       "khoa": "chua_noi",
-      "giay": 37.6,
+      "giay": 39.0,
       "chu": "Mới thử một mặt bàn: mặt nảy khác chưa biết."
     }
   ],
   "dung_dua": {
-    "giay": 10.1,
+    "giay": 10.0,
     "cau_hoi": "Thả bóng bàn từ 1,00 m, đỉnh lần 1 cao 0,80 m. Đỉnh lần nảy thứ 3 cao khoảng bao nhiêu?",
     "chon": [
       "A. Khoảng 0,40 m",
@@ -50,20 +50,20 @@
     "giai_thich_sai": "Xem số đo ở đoạn kế: so đỉnh lần 1, lần 2 và lần 3 với nhau."
   },
   "cau_chot": {
-    "giay": 43.0,
-    "cau_hoi": "Cùng quả bóng bàn (m = 2,7 g) và mặt bàn đá, thả từ độ cao 1,50 m, lấy g = 10 m/s², mốc thế năng ở mặt bàn. Từ lúc thả tới đỉnh lần nảy thứ 2, cơ năng của bóng giảm bao nhiêu?",
+    "giay": 43.5,
+    "cau_hoi": "Cùng quả bóng bàn 2,7 g, cùng mặt bàn (mỗi lần chạm bàn còn 80 % cơ năng). Thả nhẹ từ 1,25 m, mốc thế năng ở mặt bàn, g = 10 m/s². Sau hai lần chạm bàn, cơ năng của bóng đã mất bao nhiêu?",
     "chon": [
-      "A. 8,1 mJ",
-      "B. 9,7 mJ",
-      "C. 14,6 mJ",
-      "D. 25,9 mJ"
+      "A. 6,8 mJ",
+      "B. 12,2 mJ",
+      "C. 13,5 mJ",
+      "D. 21,6 mJ"
     ],
-    "dung": 2,
+    "dung": 1,
     "giai_thich": [
-      "8,1 mJ là phần mất ở lần nảy đầu (đỉnh 1 = 1,20 m). Tới đỉnh 2 phải tính hai lần nảy: đỉnh 2 = 1,50 · 0,8 · 0,8 = 0,96 m, giảm 40,5 − 25,9 ≈ 14,6 mJ.",
-      "9,7 mJ là phần giảm khi thả từ 1,00 m như trong clip. Thả từ 1,50 m thì cơ năng đầu lớn hơn: 40,5 mJ, đỉnh 2 = 0,96 m còn 25,9 mJ, giảm ≈ 14,6 mJ.",
-      "W đầu = mgh = 0,0027 · 10 · 1,50 = 40,5 mJ. Đỉnh 2 = 1,50 · 0,8 · 0,8 = 0,96 m nên W = 25,9 mJ. Cơ năng giảm 40,5 − 25,9 ≈ 14,6 mJ.",
-      "25,9 mJ là cơ năng CÒN LẠI ở đỉnh 2, không phải phần giảm. Phần giảm = 40,5 − 25,9 ≈ 14,6 mJ."
+      "6,8 mJ là chỉ mất sau một lần chạm. Lúc thả W = 2,7·10⁻³·10·1,25 = 33,75 mJ; sau hai lần còn 33,75·0,8·0,8 = 21,6 mJ, mất 12,15 ≈ 12,2 mJ.",
+      "W lúc thả = 33,75 mJ. Mỗi lần chạm nhân 0,8: sau hai lần còn 33,75·0,64 = 21,6 mJ. Đã mất 33,75 − 21,6 ≈ 12,2 mJ.",
+      "13,5 mJ là trừ đều hai lần 20 % của cơ năng lúc thả. Lần hai chỉ mất 20 % của phần còn lại: 33,75 − 33,75·0,64 ≈ 12,2 mJ.",
+      "21,6 mJ là cơ năng còn lại, không phải phần mất. Phần mất: 33,75 − 21,6 ≈ 12,2 mJ."
     ]
   }
 }

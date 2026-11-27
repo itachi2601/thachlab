@@ -4,8 +4,8 @@
 #   tham_so: h 0,02-0,30 m; g = 10; k = 0,965 (mo hinh v ~ can h); day ~1 m -> chu ki ~2 s.
 # Du doan (K10: chi cau hoi + hinh): tha 5 cm -> 0,98 m/s; tha 20 cm (cao gap 4) -> toc do gap may lan? Dap an: ~2 lan.
 # Bay: hien_tuong_hay_sai[1] "luc cang day lam mat co nang" -> hinh: T luon vuong goc v khi con lac lac.
-# Cau chot (ca moi, khong trung Cau 2 bai 0,45 m): tha 10 cm duoc 1,39 m/s; muon v gap 1,5 lan -> h = 1,5^2 x 10
-#   = 22,5 cm (theo mo hinh v ~ can h, trong dai tham_so; KHONG hien so 22,5 tren man).
+# Cau chot (tu suy, khac dang quiz bai): tha tu 18 cm, bo qua can; luc con cao 10 cm -> ha 8 cm,
+#   v = can(2.10.0,08) = 1,26 m/s (trong dai tham_so 2-30 cm; KHONG hien tren man).
 from engine import *
 
 ROWS = [(5, "0,98"), (10, "1,39"), (15, "1,70"), (20, "1,97")]     # so_lieu_mau: h (cm), v do (m/s)
@@ -94,7 +94,7 @@ def s_hook(img, d, t, sc):
     seg_bar(d, y0 + 350, t, M[1] + 0.4, sc["T"] - 0.3, PURPLE, k)
 
 # ---------------- canh 2: tien hanh + dap an ----------------
-STEP, PULL, HOLD = 1.9, 0.45, 0.45
+STEP, PULL, HOLD = 2.0, 0.45, 0.45
 def trial_t0(i): return 0.3 + i * STEP
 def state(t):
     i = max([j for j in range(4) if t >= trial_t0(j)], default=-1)
@@ -136,7 +136,8 @@ def s_do(img, d, t, sc):
     if i >= 0: bracket(d, ROWS[i][0], INK)
     pend(d, theta)
     ka = appear(t, M[2] + 0.2, 0.4)
-    if ka <= 0: timer(d, ROWS[i][1] if (i >= 0 and ok) else "—")
+    last = i if ok else i - 1                                      # dong ho giu so doc cu toi lan qua cong ke tiep
+    if ka <= 0: timer(d, ROWS[last][1] if last >= 0 else "—")
     else:
         card(d, (60, 1000, 1020, 1150), fill=A((220, 252, 231), ka), outline=A(GREEN, ka), r=28, w=5)
         text(d, (W / 2, 1075), "Đáp án: gấp khoảng 2 lần", 62, GREEN, alpha=ka)
@@ -157,7 +158,7 @@ def s_rut(img, d, t, sc):
         d.rectangle([cx - 60, base - hmax, cx + 60, base], outline=LIGHT, width=3)
         d.rectangle([cx - 60, base - hmax * f, cx + 60, base], fill=col)
         text(d, (cx, base + 62), lab, 56, col)
-    ka = appear(t, 1.9, 0.45)
+    ka = appear(t, 1.6, 0.45)
     if ka > 0:
         card(d, (480, 290, 1020, 370), fill=A((239, 246, 255), ka), r=20)
         text(d, (750, 330), "mgh ≈ ½mv²", 60, INK, alpha=ka)
@@ -167,7 +168,7 @@ def s_rut(img, d, t, sc):
         text(d, (W / 2, 860), "½mv² : mgh", 60, INK, alpha=kb)
         x0, x1 = 230, 860
         for j, ((h, _), p) in enumerate(zip(ROWS, PCT)):
-            y = 950 + j * 85; g = ease((t - M[1] - j * 0.25) / 0.5)
+            y = 950 + j * 85; g = ease((t - M[1]) / 0.6)
             text(d, (205, y), f"{h} cm", 56, INK, anchor="rm", alpha=kb)
             d.rectangle([x0, y - 32, x1, y + 32], fill=A((240, 236, 228), kb))
             if g > 0:
@@ -206,7 +207,7 @@ def s_bay(img, d, t, sc):
     if a1 > 0:
         card(d, (40, y, 1040, y + 420), fill=A(WHITE, a1), outline=A(RED, a1), w=6)
         pill(d, W / 2, y + 70, "BẪY", RED, a1)
-        q = "“Dây làm mất cơ năng”"
+        q = "“Lực căng làm mất cơ năng”"
         ks = clamp((t - mk) / 0.4); lw = tw(d, q, F(62)); yy = y + 190
         text(d, (W / 2, yy), q, 62, mix(INK, GRAY, ks), alpha=a1)
         if ks > 0: d.line([(W / 2 - lw / 2 - 6, yy + 2), (W / 2 - lw / 2 - 6 + (lw + 12) * ks, yy + 2)], fill=A(RED, 0.85 * a1), width=6)
@@ -217,20 +218,20 @@ def s_bay(img, d, t, sc):
         pill(d, W / 2, y + 70, "CHƯA NÓI ĐƯỢC", NAVY, k3)
         text(d, (W / 2, y + 210), "Mới thử một quả nặng", 62, INK, alpha=k3)
 
-# ---------------- canh 5: thu nghi (cau chot o khung: 22,5 cm) ----------------
+# ---------------- canh 5: thu nghi (cau chot o khung: 1,26 m/s) ----------------
 def s_end(img, d, t, sc):
     k = appear(t, 0.15, 0.4)
     card(d, (40, 230, 1040, 1620), fill=A(WHITE, k), outline=A(ORANGE, k), w=6)
     pill(d, W / 2, 310, "THỬ NGHĨ", ORANGE, k)
-    px, py, L = 540, 420, 400; th0 = th(10)
+    px, py, L = 540, 420, 400; th0 = th(18)
     theta = th0 * math.cos(2 * math.pi * max(0.0, t - 0.6) / TP)
     bx, by = bob_xy(theta, px, py, L)
     d.rounded_rectangle([px - 130, py - 18, px + 130, py], radius=6, fill=(150, 155, 172))
     d.line([(px, py), (bx, by)], fill=NAVY, width=4); dot(d, bx, by, 28, BOB, BOB_D)
-    text(d, (W / 2, 980), "Cùng con lắc, thả từ 10 cm:", 62, INK, alpha=k)
-    text(d, (W / 2, 1070), "v = 1,39 m/s.", 62, INK, alpha=k)
-    text(d, (W / 2, 1190), "Muốn v gấp 1,5 lần,", 64, DORANGE, alpha=k)
-    text(d, (W / 2, 1280), "thả từ độ cao nào?", 64, DORANGE, alpha=k)
+    text(d, (W / 2, 980), "Thả từ 18 cm, bỏ qua cản,", 62, INK, alpha=k)
+    text(d, (W / 2, 1070), "g = 10 m/s².", 62, INK, alpha=k)
+    text(d, (W / 2, 1190), "Lúc cao 10 cm so cổng,", 64, DORANGE, alpha=k)
+    text(d, (W / 2, 1280), "tốc độ bao nhiêu?", 64, DORANGE, alpha=k)
     seg_bar(d, 1420, t, 1.0, sc["T"] - 0.2, ORANGE, k)
 
 def _cues(clip):
@@ -244,7 +245,7 @@ CLIP = dict(id="tn-l10-co-nang-bao-toan-01", header="VẬT LÍ 10 · THÍ NGHI�
     footer="Cơ năng và bảo toàn cơ năng · thachlab.id.vn", scenes=[
  dict(key="hook", title="Con lắc qua cổng quang", draw=s_hook, tail=0.3, caps=[
    ("Thả từ 5 cm, đọc tốc độ.", 3.4),
-   ("Dừng lại, tự đoán.", 5.8)]),
+   ("Dừng lại, tự đoán.", 5.6)]),
  dict(key="do", title="Thả từ bốn độ cao", draw=s_do, tail=0.4, caps=[
    ("Kéo lên, thả nhẹ, không đẩy.", 3.6),
    ("Mỗi lần ghi một hàng.", 3.8),
@@ -253,9 +254,9 @@ CLIP = dict(id="tn-l10-co-nang-bao-toan-01", header="VẬT LÍ 10 · THÍ NGHI�
    ("Càng xuống thấp, càng nhanh.", 4.0),
    ("Cả bốn lần đều dưới 100 %.", 4.6)]),
  dict(key="bay", title="Bẫy và giới hạn", draw=s_bay, tail=0.6, caps=[
-   ("Đúng không?", 2.8),
-   ("Sai: T luôn vuông góc v.", 3.4),
+   ("Đúng không?", 3.2),
+   ("Sai: lực căng T vuông góc v.", 3.4),
    ("Giới hạn của lần đo.", 3.0)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.6, caps=[
-   ("Dừng lại, tự tính.", 6.8)]),
+   ("Dừng lại, tự tính.", 6.4)]),
 ])

@@ -1,8 +1,8 @@
 {
   "id": "tn-l10-hieu-suat-01",
   "ten": "Sờ vỏ quạt bàn sau khi chạy",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-hieu-suat-01-20261031.mp4",
-  "tong_giay": 49.47,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-hieu-suat-01-20261127.mp4",
+  "tong_giay": 49.6,
   "o": [
     {
       "khoa": "gia_thuyet",
@@ -12,33 +12,33 @@
     },
     {
       "khoa": "du_doan",
-      "giay": 3.4,
+      "giay": 3.6,
       "chu": "Tắt quạt, sờ hai chỗ. Vỏ động cơ so với chân đế thế nào?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 9.4,
-      "chu": "Quạt bàn chạy 10 phút, sờ bằng mu bàn tay sau khi tắt."
+      "giay": 9.7,
+      "chu": "Quạt bàn chạy 10 phút, sờ bằng mu bàn tay."
     },
     {
       "khoa": "quan_sat",
-      "giay": 20.1,
-      "chu": "Vỏ động cơ ấm hơn chân đế."
+      "giay": 17.7,
+      "chu": "Vỏ động cơ ấm hơn rõ, chân đế nhựa vẫn mát."
     },
     {
       "khoa": "rut_ra",
-      "giay": 23.7,
-      "chu": "Phần điện năng không thành gió không biến mất: thành nhiệt và âm (hao phí). Điện năng 45 W = có ích + hao phí."
+      "giay": 23.4,
+      "chu": "Phần điện năng không thành gió không biến mất: thành nhiệt và âm (hao phí). Điện năng 45 W = có ích + hao phí; H lớn hơn thì hao phí nhỏ hơn."
     },
     {
       "khoa": "chua_noi",
-      "giay": 37.7,
-      "chu": "Tay chỉ so sánh, chưa đo nhiệt độ.\n45 W và H trong hình là số minh hoạ."
+      "giay": 38.6,
+      "chu": "Mới so bằng tay, chưa đo nhiệt độ.\n45 W và H trong hình là số minh hoạ."
     }
   ],
   "dung_dua": {
-    "giay": 9.2,
-    "cau_hoi": "Tắt quạt, sờ hai chỗ. Vỏ động cơ so với chân đế thế nào?",
+    "giay": 9.5,
+    "cau_hoi": "Quạt bàn chạy 10 phút rồi tắt. Sờ vỏ động cơ và chân đế nhựa. Vỏ động cơ so với chân đế thế nào?",
     "chon": [
       "A. Vỏ động cơ ấm hơn chân đế",
       "B. Hai chỗ ấm như nhau",
@@ -47,6 +47,23 @@
     ],
     "dung": 0,
     "giai_thich_dung": "Phần điện năng không thành gió toả ra thành nhiệt ở vỏ động cơ, còn vỏ nhựa chân đế không phát nhiệt.",
-    "giai_thich_sai": "Xem phần kế: điện năng không thành gió thì đi đâu, rồi so hai chỗ vừa sờ."
+    "giai_thich_sai": "Xem đoạn kế: sờ vỏ động cơ rồi chân đế, chỗ nào ấm hơn?"
+  },
+  "cau_chot": {
+    "giay": 43.8,
+    "cau_hoi": "Quạt bàn nhận điện năng với công suất 45 W, hiệu suất 80 %, chạy liên tục 10 phút. Trong thời gian đó, năng lượng toả ra thành nhiệt và âm là bao nhiêu?",
+    "chon": [
+      "A. 0,54 kJ",
+      "B. 5,4 kJ",
+      "C. 21,6 kJ",
+      "D. 27 kJ"
+    ],
+    "dung": 1,
+    "giai_thich": [
+      "0,54 kJ là coi 10 phút = 60 s. Hao phí 45 − 0,80·45 = 9 W, tức 9 J mỗi giây; 10 phút = 600 s nên 9·600 = 5 400 J = 5,4 kJ.",
+      "Công suất hao phí 45 − 0,80·45 = 9 W, tức 9 J mỗi giây. 10 phút = 600 s nên nhiệt và âm toả ra 9·600 = 5 400 J = 5,4 kJ.",
+      "21,6 kJ là phần có ích (36 W · 600 s), không phải phần hao phí. Hao phí chỉ 9 W: 9·600 = 5 400 J = 5,4 kJ.",
+      "27 kJ là toàn bộ điện năng (45 W · 600 s). Phần thành nhiệt và âm chỉ là hao phí 9 W: 9·600 = 5 400 J = 5,4 kJ."
+    ]
   }
 }
