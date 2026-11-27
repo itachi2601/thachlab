@@ -542,7 +542,7 @@ Agent Opus theo nhóm (A điện 9, B điện từ–năng lượng 9, C cơ–�
 ## Cổng mới — L10b (bài 63–79, 38 clip; phiên `clip-cong-moi-l10b`, 27/11/2026) — **đang dựng, chờ thầy duyệt từng nhóm**
 Brief: thư mục ghi chú phiên `l10b-brief-dung.md`/`l10b-brief-kiem.md`. 1 agent Opus dựng + 1 kiem-code song song; tối đa 2 vòng kiem-code/clip, sau v2 sửa lượt cuối tự crop. Script: `tai-cong-moi-l10b.sh` (Storage), `dang-cong-moi-l10b.sh` (DB, `--chi-video`; dry-run 17/17 sạch 27/11). Kho `<tn>.json` + bài giữ bản cũ tới khi duyệt.
 
-**Nhóm A (8 clip) — qua cổng A + B (kiem-code 2 vòng), đã tải `-20261127.{mp4,webp}` HEAD 200**
+**Nhóm A (8 clip) — qua cổng A + B (kiem-code 2 vòng), đã tải `-20261127.{mp4,webp}` HEAD 200 — ✅ THẦY DUYỆT 27/11, ĐÃ GHI DB 27/11 18:03–18:05 (bài 68–75, kèm sửa hộp)**
 | Clip | tn | Từ/phút | LỖI | Giây | KB | mp4 | Điểm cần quyết |
 |---|---|---|---|---|---|---|---|
 | baotoandl1 | tn-l10-baotoandl-01 | 199 → 142 | 15 → 0 | 49,9 → 49,9 | 1437 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-baotoandl-01-20261127.mp4) | thanh p ghi 0,20/0,80 kg; gợi ý "so động lượng trước và sau" |
@@ -554,7 +554,9 @@ Brief: thư mục ghi chú phiên `l10b-brief-dung.md`/`l10b-brief-kiem.md`. 1 a
 | dongluong2 | tn-l10-dongluong-02 | 193 → 163 | 18 → 0 | 49,7 | 1291 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-dongluong-02-20261127.mp4) | kết luận dựa giả thiết gỗ nặng hơn bi nhiều (chưa nêu); không vẽ vết gỗ dừng ở Kết quả |
 | congsuat1 | tn-l10-cong-suat-01 | 163 → 133 | 14 → 0 | 49,7 | 1316 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-cong-suat-01-20261127.mp4) | chốt 12,5 s; "gấp 3" gần ý quiz mở bài |
 
-**Nhóm C L10b (8 clip) — qua cổng A + B (kiem-code 2 vòng; conang/dongnang lượt sửa cuối tự crop), đã tải `-20261127.{mp4,webp}` HEAD 200**
+Duyệt A+C ("Duyệt, sửa cả hộp"): 16 clip đổi URL kho/bài sang `-20261127`, gắn khung 8 bài 68–75; sửa hộp 2 đợt (`sua-hop-l10b.py`, đợt 2 theo kiem-code `hop-kiem-v1`: 17 câu Quan sát/Rút ra/Nhìn vào không nói sẵn đáp án Dự đoán/chốt; dongluong thêm "gỗ nặng hơn bi nhiều"); 11 `ghi_chu` kho khớp câu chốt mới (baotoandl-02 ngược chiều; giữ m₁ 0,305 kg). Ghi DB: `dang-cong-moi-l10b.sh --chi 68,…,75 --khac 68,…,75 --yes` → 8/8 ✓, log `ra/l10b-ghi1.log`.
+
+**Nhóm C L10b (8 clip) — qua cổng A + B (kiem-code 2 vòng; conang/dongnang lượt sửa cuối tự crop), đã tải `-20261127.{mp4,webp}` HEAD 200 — ✅ THẦY DUYỆT 27/11, ĐÃ GHI DB cùng nhóm A**
 | Clip | tn | Từ/phút | LỖI | Giây | KB | mp4 | Điểm cần quyết |
 |---|---|---|---|---|---|---|---|
 | conang1 | tn-l10-co-nang-bao-toan-01 | 192 → 153 | 15 → 0 | 49,7 | 2063 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-co-nang-bao-toan-01-20261127.mp4) | chốt 1,26 m/s tự suy |
@@ -586,7 +588,19 @@ Nhánh `claude/clip-cong-moi-l10a-d353cc`. 3 agent Opus dựng (sau 11h: 1 dựn
 
 **Đã đăng mẻ 1 (27/11/2026 17:53):** sửa 4 hộp exp lộ Dự đoán (tdvt-01, tdvt-03 Quan sát + Rút ra, do-toc-do-01, gia-toc-01 Quan sát + Rút ra; `sua-hop-l10a.json`, `sua-hop-l10a-2.json`, kiem-code soát); kho ghi ca câu chốt vào `so_lieu_mau.ghi_chu`; `doi-cong-moi-l10a.py --apply` (kho + 8 bài + gắn khung); `dang-cong-moi-l10a.sh --yes`: 8/8 bài (46–53) ghi mục ly_thuyet, 0 LOI, ngoài khối video chỉ khác đúng các câu hộp đã sửa (log `ra/l10a-dang-1.log`, sao lưu `scripts/logs/ly-thuyet-bai4{6..9}/5{0..3}-backup-*.json`).
 
-## Cổng mới — L11a: 21 clip L11 tự dựng làm lại theo cổng mới (27/11/2026) — **CHỜ THẦY DUYỆT, chưa ghi DB**
+### Mẻ 2 (7 clip: nhóm B + dotocdo2, qua cổng A+B, đã tải -20261127 HEAD 200, CHỜ THẦY DUYỆT, chưa đổi kho/bài/DB) — bài 54 ctbdd, 55 rơi tự do, 56 đo g
+
+| Clip | tn | Từ/phút | LỖI | Giây | KB | mp4 | Điểm cần quyết |
+|---|---|---|---|---|---|---|---|
+| ctbdd1 | tn-l10-ctbdd-01 | 199 → 134 | 15 → 0 | 49,8 | 1321 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-ctbdd-01-20261127.mp4) | **bài**: ô Rút ra hộp exp đã nêu v = a·t trước clip — sửa hộp hay để? |
+| dog1 | tn-l10-do-g-01 | 185 → 131 | 16 → 0 | 49,9 | 1286 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-do-g-01-20261127.mp4) | chốt s = 0,700 m → ḡ ≈ 9,75 m/s² 'theo mô hình' (C) |
+| dog2 | tn-l10-do-g-02 | 186 → 130 | 14 → 0 | 50,0 | 1367 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-do-g-02-20261127.mp4) | **bài**: hộp exp nói '(t², s) gần như thẳng hàng' → gợi ý Dự đoán; chốt s = 0,250 m → t ≈ 0,23 s 'theo mô hình' (D) |
+| dog3 | tn-l10-do-g-03 | 200 → 150 | 17 → 0 | 50,0 | 1346 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-do-g-03-20261127.mp4) | **kho** hàng 60 khung/s ghi n = 19, mô hình cho 20 — sửa kho?; **bài** `theory.src.html:211` ô Rút ra nói trước 1/240 ≈ 0,0042 s > 0,001 s; n = 82 (5 khung thừa) tự đặt |
+| roitudo2 | tn-l10-roi-tu-do-02 | 196 → 155 | 16 → 0 | 49,5 | 1240 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-roi-tu-do-02-20261127.mp4) | số 1,225/3,675/6,125 cm, 2,45 cm, T = 0,15 s suy từ mô hình kho; bi đường kính 2 cm tự đặt |
+| roitudo3 | tn-l10-roi-tu-do-03 | 179 → 132 | 13 → 0 | 49,5 | 1207 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-roi-tu-do-03-20261127.mp4) | chốt cổng ở 1,20 m → t ≈ 0,49 s 'theo mô hình' (C; đồng hồ thật ≈ 0,498 s) |
+| dotocdo2 | tn-l10-do-toc-do-02 | 198 → 135 | 15 → 0 | 48,4 | 1476 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-do-toc-do-02-20261127.mp4) | chốt bi d = 8 mm → 12 mm 'theo mô hình'; clip nói trước đáp án Câu 4 của bài ('d : t lớn hơn thật 25 %') — đúng ý Nhìn vào, bài lặp lại ở Bẫy 2 + bảng lệch tâm (`theory.src.html:334`) |
+
+## Cổng mới — L11a: 21 clip L11 tự dựng làm lại theo cổng mới (27/11/2026) — thầy duyệt 27/11 ("Duyệt, sửa cả hộp"), **ĐÃ GHI DB 27/11 17:54** (12/12 bài, log `ra/l11a-dang.log`)
 Nhánh `claude/clip-cong-moi-l11a-6090b6`. 1 agent dựng + 1 kiem-code (hạn mức API); cổng A `--do-chu` 0 LỖI cả 21 (117–168 từ/phút); cổng B kiem-code 283 px 1–2 vòng. `xuat-khung.py --kiem` OK cả 21, khung có `cau_chot` A–D, trỏ `-20261127`. Đã tải `lesson-clips/clip/<tn>-20261127.{mp4,webp}` (HEAD 200 cả 21, `tai-cong-moi-l11a.sh`, log `ra/l11a-tai-{1..4}.log`). Kho + 12 bài đã đổi sang bản mới và gắn lại khung (`doi-ban-cong-moi-l11a.py --apply`, commit f105446525). Ghi DB: `bash scripts/video-thi-nghiem/dang-cong-moi-l11a.sh --yes` (12 bài, `--chi-video`).
 
 | Clip | tn | Từ/phút | LỖI | Giây | KB | mp4 | Điểm cần quyết |
@@ -612,3 +626,5 @@ Nhánh `claude/clip-cong-moi-l11a-6090b6`. 1 agent dựng + 1 kiem-code (hạn m
 | tatdan3 | tn-l11-tatdan-03 | 199 → 163 | 17 → 0 | 49,8 | 1528 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-tatdan-03-20261127.mp4) | chốt mới (thả 30 cm, chu kì 1 giảm 4,4 cm → B. 25,6 cm) chưa có trong kho ghi_chu |
 | vantocdddh1 | tn-l11-vantocdddh-01 | 194 → 143 | 14 → 0 | 49,9 | 1627 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-vantocdddh-01-20261127.mp4) | không có gì đặc biệt |
 | vantocdddh2 | tn-l11-vantocdddh-02 | 134 → 117 | 12 → 0 | 49,2 | 1447 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-vantocdddh-02-20261127.mp4) | không có gì đặc biệt |
+
+Sau duyệt: 5 hộp exp đứng trước video (tatdan1, tatdan2, btnangluong1, conangdddh2, vantocdddh1) đã giấu số đọc/kết luận vào `<details>` "(xem sau video)" (`sua-hop-l11a.py`, kiem-code soát); kho ghi_chu khớp câu chốt/Bẫy mới ở 7 tn, gỡ 3 chỗ tự mâu thuẫn của ddh1. Ghi DB `--chi-video`, riêng bài 22, 24, 25, 26 thêm `--cho-phep-khac` (diff ngoài khối video đúng là các câu hộp đã sửa). Sao lưu DB: `scripts/logs/ly-thuyet-bai<id>-backup-*.json` (worktree clip-cong-moi-l11a). Còn để thầy biết: tatdan1 dòng Làm vẫn ghi f₀ = 2,0 Hz (điều kiện đề); ddh1 độ dãn lò xo vẽ không theo tỉ lệ.

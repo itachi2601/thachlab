@@ -9,7 +9,8 @@
 # Bay = hien_tuong_hay_sai[0] (lay F chia chieu dai l -> 4,1 ; 7,1 ; 9,2 N/m tang dan, tuong k tang): ngoac l do
 #   va ngoac dl xanh tren cung lo xo 100 g.
 # Chot (ca tu suy, ghi_chu kho): treo vat 120 g (trong khoang 50-250 g da do) -> F = 1,176 N, dl = 4,7 cm, l = 14,7 cm.
-#   So 120 g va 14,7 chua hien ; can >= 2 buoc (ti le tu bang hoac k, roi cong l0).
+#   v2 (doi so tranh gan quiz bai): vat 80 g -> F = 0,784 N, dl = 3,1 cm, l = 13,1 cm (noi suy bang 11,9..13,9 cung ra 13,1).
+#   So 80 g va 13,1 chua hien ; can >= 2 buoc (ti le tu bang hoac k, roi cong l0).
 from engine import *
 
 G, L0 = 9.8, 10.0
@@ -117,7 +118,7 @@ def s_hook(img, d, t, sc):
     seg_bar(d, y0 + 400, t, M[1] + 0.4, sc["T"] - 0.3, PURPLE, a)
 
 # ---------------- canh 2: tien hanh ----------------
-ST0, PER, SLIDE, SETTLE = 0.5, 2.0, 0.6, 1.2
+ST0, PER, SLIDE, SETTLE = 0.5, 1.8, 0.6, 1.2
 def osc(tt): return 1 - math.exp(-3.4 * tt) * math.cos(2 * math.pi * 1.4 * tt)
 def masses_bottom(n, l): return yl(l) + 10 + n * (MH + 10)
 def do_state(t):
@@ -196,8 +197,9 @@ def s_rut(img, d, t, sc):
         arrow(d, (cx, bot + 4), (cx, bot + 104 * ka + 4), A(RED, ka), w=9, head=28)
         text(d, (cx + 70, top - 80), "F", 64, GREEN, anchor="lm", alpha=ka)
         text(d, (cx + 70, bot + 60), "P", 64, RED, anchor="lm", alpha=ka)
-        text(d, (680, 520), "Đứng yên:", 60, INK, alpha=ka)
-        text(d, (680, 610), "F = P = m·g", 64, INK, alpha=ka)
+        text(d, (680, 450), "F: lực lò xo", 58, GREEN, alpha=ka)
+        text(d, (680, 530), "P: trọng lực", 58, RED, alpha=ka)
+        text(d, (680, 630), "F = P = m·g", 64, INK, alpha=ka)
     kg = appear(t, M[1] - 0.1, 0.4)
     if kg > 0:
         d.line([(GX0, GY0), (GX1 + 20, GY0)], fill=A(INK, kg), width=5)
@@ -217,6 +219,8 @@ def s_rut(img, d, t, sc):
         if kl > 0:                                # chi noi cac diem da do (khong ngoai suy qua 9,8 cm)
             xe = lerp(gx(0), gx(9.8), kl); ye = lerp(gy(0), gy(0.25 * 9.8), kl)
             d.line([(gx(0), gy(0)), (xe, ye)], fill=A(ORANGE, 0.9), width=6)
+        kt = appear(t, M[1] + 3.0, 0.4)
+        if kt > 0: text(d, (gx(7.0), gy(0.33)), "đường thẳng qua gốc", 55, DORANGE, alpha=kt)
 
 # ---------------- canh 4: bay + chua noi duoc ----------------
 BPX = 40                                         # thang ve o canh bay (px moi cm)
@@ -237,17 +241,18 @@ def s_bay(img, d, t, sc):
         yb = top + ROWS[1][2] * BPX; y0 = top + L0 * BPX
         spring(d, yb, a1, x=x, top=top, n=12, amp=22); masses(d, 2, yb, a1, x=x)
         for xx in range(x - 70, x + 140, 22): d.line([(xx, y0), (xx + 11, y0)], fill=A(GRAY, a1), width=4)
+        text(d, (x + 160, y0 - 6), "chưa treo", 55, NOTE, anchor="lm", alpha=a1)
         bx = x - 130
         d.line([(bx, top), (bx, yb)], fill=A(RED, a1), width=5)
         for y in (top, yb): d.line([(bx - 12, y), (bx + 12, y)], fill=A(RED, a1), width=5)
         lab_l(d, bx - 20, (top + yb) / 2, "", " = 13,9 cm", 56, RED, a1, anchor="r")
-        ok = appear(t, M[1] + 0.2, 0.4) * a1
+        ok = appear(t, M[1], 0.4) * a1
         if ok > 0:
             bx2 = x + 130
             d.line([(bx2, y0), (bx2, yb)], fill=A(GREEN, ok), width=6)
             for y in (y0, yb): d.line([(bx2 - 12, y), (bx2 + 12, y)], fill=A(GREEN, ok), width=6)
             lab_l(d, bx2 + 20, (y0 + yb) / 2, "Δ", " = 3,9 cm", 56, GREEN, ok, anchor="l")
-        k2 = appear(t, M[1] + 2.4, 0.45) * a1
+        k2 = appear(t, M[1] + 3.0, 0.45) * a1
         if k2 > 0:
             card(d, (40, 1340, 1040, 1470), fill=A((220, 252, 231), k2), outline=A(GREEN, k2), w=5)
             seq(d, W / 2, 1405, [("F đi với Δ", 60, GREEN, False), ("l", 62, GREEN, True), (", không với ", 60, GREEN, False), ("l", 62, GREEN, True)], k2)
@@ -276,10 +281,10 @@ def s_end(img, d, t, sc):
     spring(d, top + 230, k, x=x, top=top, n=10, amp=22)
     d.rounded_rectangle([x - 70, top + 260, x + 70, top + 340], radius=10, fill=A(BRASS, k), outline=A(BRASS_D, k), width=3)
     d.line([(x, top + 240), (x, top + 260)], fill=A(NAVY, k), width=4)
-    text(d, (x, top + 300), "120 g", 56, WHITE, alpha=k)
+    text(d, (x, top + 300), "80 g", 56, WHITE, alpha=k)
     text(d, (690, 520), "Lò xo này,", 60, INK, alpha=k)
     text(d, (690, 600), "chưa treo 10,0 cm", 58, NOTE, alpha=k)
-    text(d, (W / 2, 900), "Treo vật 120 g, đứng yên.", 64, INK, alpha=k)
+    text(d, (W / 2, 900), "Treo vật 80 g, đứng yên.", 64, INK, alpha=k)
     text(d, (W / 2, 1020), "Lò xo dài bao nhiêu cm?", 64, DORANGE, alpha=k)
     seg_bar(d, 1200, t, 1.0, sc["T"] - 0.2, ORANGE, k)
 
@@ -296,17 +301,17 @@ CLIP = dict(id="tn-l10-biendang-02", header="VẬT LÍ 10 · THÍ NGHIỆM", cue
  dict(key="hook", title="Lò xo cạnh thước mm", draw=s_hook, tail=0.3, caps=[
    ("Treo vào móc lò xo.", 3.4),
    ("Dừng lại, tự đoán.", 5.6)]),
- dict(key="do", title="Thêm từng quả nặng", draw=s_do, tail=1.9, caps=[
+ dict(key="do", title="Thêm từng quả nặng", draw=s_do, tail=1.1, caps=[
    ("Mỗi quả nặng 50 g.", 3.6),
    ("Đợi đứng yên mới đọc.", 3.6),
    ("So cột độ dãn.", 3.3)]),
- dict(key="rut", title="Lực và độ dãn", draw=s_rut, tail=0.6, caps=[
-   ("Hai lực lên chùm quả cân bằng.", 3.8),
-   ("Chấm năm hàng lên đồ thị.", 3.6)]),
+ dict(key="rut", title="Lực và độ dãn", draw=s_rut, tail=0.2, caps=[
+   ("Đứng yên: hai lực cân bằng.", 3.8),
+   ("Chấm năm hàng lên đồ thị.", 3.4)]),
  dict(key="bay", title="Bẫy hay gặp", draw=s_bay, tail=0.4, caps=[
-   ("Đúng không?", 2.6),
-   ("Đo từ vạch 10,0 cm.", 4.6),
-   ("Chưa nói được.", 3.4)]),
+   ("Đúng không?", 3.0),
+   ("Đo từ vạch 10,0 cm.", 6.1),
+   ("Chưa nói được.", 3.0)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.5, caps=[
    ("Dừng lại, tự tính.", 6.6)]),
 ])
