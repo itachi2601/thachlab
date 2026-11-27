@@ -579,7 +579,7 @@ Duyệt A+C ("Duyệt, sửa cả hộp"): 16 clip đổi URL kho/bài sang `-20
 | luccan2 | tn-l10-luc-can-luc-nang-02 | 147 | 0 | 49,1 | 1278 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-luc-can-luc-nang-02-20261127.mp4) | — |
 | lucnang3 | tn-l10-luc-can-luc-nang-03 | 164 | 0 | 49,9 | 1394 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-luc-can-luc-nang-03-20261127.mp4) | Bẫy trùng ý Câu 6 bài (số khác) — giữ? |
 
-**Nhóm D L10b (6/7 clip) — qua cổng A + B (kiem-code 2 vòng, ĐƯỢC MERGE), đã tải `-20261127.{mp4,webp}` HEAD 200 — chờ thầy duyệt; thuchanhthl1 còn sửa Dự đoán**
+**Nhóm D L10b (7/7 clip; thuchanhthl1 thêm sau, sửa Dự đoán lượt 3) — qua cổng A + B (kiem-code 2 vòng, ĐƯỢC MERGE), đã tải `-20261127.{mp4,webp}` HEAD 200 — chờ thầy duyệt**
 | Clip | tn | Từ/phút | LỖI | Giây | KB | mp4 | Điểm cần quyết |
 |---|---|---|---|---|---|---|---|
 | masat1 | tn-l10-luc-ma-sat-01 | 168 | 0 | 49,4 | 1349 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-luc-ma-sat-01-20261127.mp4) | chốt 1,00 kg → 3,5 N; không có điểm cần quyết |
@@ -588,6 +588,7 @@ Duyệt A+C ("Duyệt, sửa cả hộp"): 16 clip đổi URL kho/bài sang `-20
 | moment1 | tn-l10-moment-luc-01 | 151 | 0 | 50,0 | 1244 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-moment-luc-01-20261127.mp4) | Rút ra "Cửa quay khi lực × cánh tay đòn ≥ 2 N·m" — giữ? |
 | moment2 | tn-l10-moment-luc-02 | 157 | 0 | 49,8 | 1541 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-moment-luc-02-20261127.mp4) | ca Dự đoán móc 5 cm suy theo mô hình (ngoài bảng kho) — chấp nhận? |
 | moment3 | tn-l10-moment-luc-03 | 124 | 0 | 47,9 | 1834 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-moment-luc-03-20261127.mp4) | chốt mới 2,0 N ở vạch 5 và 25 → 0,40 N·m |
+| thuchanhthl1 | tn-l10-thuchanhthl-01 | 159 | 0 | 49,1 | 1720 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-thuchanhthl-01-20261127.mp4) | Dự đoán F1 = F2 = 2,0 N, α = 120° → lực kế 3 chỉ 2,0 N (suy từ mô hình, ngoài bảng kho) — chấp nhận? |
 
 ## Cổng mới — L10a (bài 46–62, 27/11/2026) — mẻ 1: 13/29 clip — THẦY DUYỆT 27/11 ("Duyệt, sửa cả hộp"; giữ chốt 9 V antoan1), ĐÃ GHI DB 27/11 17:53
 Nhánh `claude/clip-cong-moi-l10a-d353cc`. 3 agent Opus dựng (sau 11h: 1 dựng + 1 kiem-code song song); cổng A `--do-chu` 0 LỖI; cổng B kiem-code 283 px 1–2 vòng. `xuat-khung.py --kiem` OK, khung có `cau_chot`, trỏ `-20261127`. Tải `tai-cong-moi-l10a.sh` (HEAD 200, log `ra/l10a-tai-1.log`), kho `<tn>.json` trả bản cũ. Bỏ `tn-l10-do-toc-do-03` (không có `data-exp` trong bài nào). Còn 16 clip (dotocdo2, ctbdd1, dog1–3, roitudo2–3, nemngang2, tonghopluc2, dl1newton1, dl2newton1–2, dl3newton1, trongluc1–3) đang dựng/soát.
