@@ -3,7 +3,7 @@
 #   so_lieu_mau (t phut, nen chay g, nuoc °C): 0 0,00 28,0 ; 2 0,24 30,6 ; 4 0,48 33,0 ; 6 0,72 35,4 ; 8 0,96 37,6
 #   tham_so: m_nuoc = 200 g, q = 42 000 J/g (xap xi); mo_hinh: c = 4,18 J/(g.K), T = 28 + 50(1 - e^(-K t/50)), K = 1,33.
 #   Tinh lai (assert trong _kiem_so): Q nen = 0,96 . 42 000 = 40 320 J ~ 40 kJ ; Q nuoc = 200 . 4,18 . 9,6 = 8 026 J ~ 8 kJ
-#   -> ~ 20 % (khoang 1/5). Cau chot 27/11: cung nen, 400 g nuoc, 8 phut -> tang ~ 9,6/2 = 4,8 °C (KHONG hien dap so).
+#   -> ~ 20 % (khoang 1/5). Cau chot 27/11: cung nen, 400 g nuoc, 8 phut -> mo hinh kho (K = 0,663) tang 5,03 ~ 5 °C (KHONG hien dap so).
 #   quan_sat: coc kho mo hoi nuoc, nuoc voi trong van duc. hien_tuong_hay_sai[0] = cau Du doan, [1] = bay.
 #   an_toan: buoc toc, nen tren khay kim loai, xa giay; lon nong.
 # Cau 3 cua bai (che gio, giu lon cach lua co dinh, lam lap 3 lan) -> clip KHONG noi gio, khoang cach, do lap, sai so.
@@ -113,8 +113,6 @@ def table(d, n, y=1065, hl=None, alpha=1.0):
             text(d, (XS[0], yy), str(tm), 56, NAVY, alpha=alpha)
             text(d, (XS[1], yy), vn(m, 2), 56, NAVY, alpha=alpha)
             text(d, (XS[2], yy), vn(T), 56, (153, 27, 27), alpha=alpha)
-        else:
-            for x in XS: text(d, (x, yy), "·", 56, GRAY, alpha=alpha)
 
 def s_do(img, d, t, sc):
     k, n = do_state(t)
@@ -130,19 +128,21 @@ def s_dapan(img, d, t, sc):
     ka = appear(t, 0.15, 0.4)
     pill(d, "ĐÁP ÁN: khoảng 1/5", 320, ka)
     x0, x1 = 80, 1000
-    card(d, (40, 390, 1040, 960), fill=A(WHITE, ka), outline=A(LIGHT, ka), w=3)
-    text(d, (x0, 460), "nến toả", 56, ORANGE, anchor="lm", alpha=ka)
+    card(d, (40, 380, 1040, 1010), fill=A(WHITE, ka), outline=A(LIGHT, ka), w=3)
+    text(d, (x0, 440), "nến toả", 56, ORANGE, anchor="lm", alpha=ka)
     g1 = clamp((t - 0.3) / 1.2)
-    if g1 > 0: d.rounded_rectangle([x0, 510, x0 + (x1 - x0) * g1, 620], radius=14, fill=A(ORANGE, ka))
-    text(d, (W / 2, 565), f"≈ {round(Q_NEN / 1000)} kJ", 58, WHITE, alpha=ka)
-    text(d, (x0, 720), "nước nhận", 56, BLUE, anchor="lm", alpha=ka)
+    if g1 > 0: d.rounded_rectangle([x0, 480, x0 + (x1 - x0) * g1, 580], radius=14, fill=A(ORANGE, ka))
+    text(d, (W / 2, 530), f"≈ {round(Q_NEN / 1000)} kJ", 58, WHITE, alpha=ka)
+    text(d, (W / 2, 630), f"{vn(DM, 2)} g × 42 kJ/g", 56, MUTED, alpha=ka)          # phep tinh (kiem-v1 muc 2)
+    text(d, (x0, 730), "nước nhận", 56, BLUE, anchor="lm", alpha=ka)
     g2 = clamp((t - 0.6) / 1.2)
     xs = x0 + (x1 - x0) * TI_LE
-    if g2 > 0: d.rounded_rectangle([x0, 770, x0 + (xs - x0) * g2, 880], radius=14, fill=A(BLUE, ka))
-    text(d, (xs + 30, 825), f"≈ {round(Q_NUOC / 1000)} kJ", 58, BLUE, anchor="lm", alpha=ka)
+    if g2 > 0: d.rounded_rectangle([x0, 770, x0 + (xs - x0) * g2, 870], radius=14, fill=A(BLUE, ka))
+    text(d, (xs + 30, 820), f"≈ {round(Q_NUOC / 1000)} kJ", 58, BLUE, anchor="lm", alpha=ka)
+    text(d, (W / 2, 935), f"{M_NUOC} g × 4,18 × {vn(DT)} °C", 56, MUTED, alpha=ka)
     kb = appear(t, M[1] + 0.3, 0.5)          # thanh chia: phan vao nuoc / phan ra ngoai (soc chay = thoat ra)
     if kb > 0:
-        y0, y1 = 1020, 1220
+        y0, y1 = 1080, 1260
         card(d, (40, y0 - 30, 1040, y1 + 30), fill=A(WHITE, kb), outline=A(NAVY, kb), w=4)
         d.rectangle([x0, y0, xs, y1], fill=A(BLUE, kb))
         d.rectangle([xs, y0, x1, y1], fill=A((203, 213, 225), kb))
@@ -194,7 +194,7 @@ def cup_lime(d, cx, base, cloudy, t, alpha=1.0):
             x = cx - 85 + (i * 41) % 170; y = base - 130 + (i * 29) % 110
             dot(d, x, y, 5, A((203, 213, 225), alpha * cloudy))
 
-BAY_ST = 3.0
+BAY_ST = 3.4
 def s_bay(img, d, t, sc):
     M = sc["M"]
     k2 = appear(t, M[1] + 0.3, 0.45)
@@ -204,7 +204,8 @@ def s_bay(img, d, t, sc):
     kv = appear(t, BAY_ST, 0.4)
     if kv > 0:
         text(d, (290, 400), "→ hơi nước", 58, BLUE, alpha=kv)
-        text(d, (790, 830), "→ CO2", 58, NAVY, alpha=kv)
+        text(d, (790, 400), "→ CO2", 58, NAVY, alpha=kv)
+        text(d, (790, 835), "nước vôi đục", 56, NAVY, alpha=kv)            # bang chung (kiem-v1 muc 4)
     y0 = 960
     a1 = appear(t, 0.1, 0.4) * (1 - k2)
     if a1 > 0:
@@ -234,7 +235,7 @@ END_Q, END_C = 0.2, 3.0
 def s_end(img, d, t, sc):
     k0 = appear(t, END_C, 0.5)
     card(d, (50, 265, 1030, 425), fill=A((236, 253, 243), k0), outline=A(GREEN, k0), w=6)
-    text(d, (W / 2, 345), "Đốt nến: nhiệt kèm CO2", 58, DGREEN, alpha=k0)
+    text(d, (W / 2, 345), "Nhiệt nến như cũ, nước gấp đôi", 58, DGREEN, alpha=k0)
     k1 = appear(t, END_Q, 0.5)
     card(d, (40, 455, 1040, 1580), fill=A(WHITE, k1), outline=A(ORANGE, k1), w=6)
     pill(d, "THỬ NGHĨ", 518, k1, ORANGE)
@@ -247,6 +248,7 @@ def s_end(img, d, t, sc):
     d.ellipse([cx - gp, 1300 - gp, cx + gp, 1300 + gp], fill=A((254, 215, 170), 0.9 * k1))
     d.rounded_rectangle([cx - 260, top, cx + 260, bot], radius=18, fill=A(CAN, k1), outline=A(CAN_D, k1), width=5)
     d.rectangle([cx - 250, top + 90, cx + 250, bot - 10], fill=A((147, 197, 253), k1))
+    text(d, (cx, (top + bot) / 2 + 45), "400 g nước", 58, NAVY, alpha=k1)
     d.rectangle([cx - 26, 1300, cx + 26, 1480], fill=A(WAX, k1), outline=A(NAVY, k1), width=3)
     flame(d, cx, 1290, t, k1)
     tx = 880
@@ -269,16 +271,16 @@ CLIP = dict(id="tn-l9-hoathach-02", header="KHTN 9 · VẬT LÍ · THÍ NGHIỆM
    ("Nến đun 200 g nước 8 phút.", 3.4),
    ("Dừng lại, tự đoán.", 5.2)]),
  dict(key="do", title="Tiến hành", draw=s_do, tail=0.6, caps=[
-   ("Cứ 2 phút: đọc nhiệt độ, cân nến.", 7.2)]),
+   ("Cứ 2 phút: đọc nhiệt độ, cân nến.", 6.6)]),
  dict(key="dapan", title="Kết quả", draw=s_dapan, tail=0.6, caps=[
    ("So nhiệt nến và nước.", 3.6),
    ("Phần lớn nhiệt thoát ra.", 3.8)]),
  dict(key="rutra", title="Rút ra", draw=s_rutra, tail=0.5, caps=[
-   ("Năng lượng đổi dạng.", 3.4),
-   ("Một phần vào nước.", 3.6)]),
+   ("Năng lượng đổi dạng.", 3.0),
+   ("Một phần vào nước.", 3.2)]),
  dict(key="bay", title="Bẫy và giới hạn", draw=s_bay, tail=0.5, caps=[
-   ("Úp cốc, lắc nước vôi.", 4.2),
-   ("Còn bỏ ngỏ.", 3.2)]),
+   ("Úp cốc, lắc nước vôi.", 5.2),
+   ("Còn bỏ ngỏ.", 3.6)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.3, caps=[
    ("Dừng lại, tự nghĩ.", 7.0)]),
 ])
@@ -298,7 +300,8 @@ def _kiem_so():
     if any(abs(round(T(tm), 1) - Tv) > 1e-9 for tm, _, Tv in ROWS): bad.append("bang lech mo hinh")
     if any(abs(ts["v_chay"]["gia_tri"] * tm - m) > 1e-9 for tm, m, _ in ROWS): bad.append("nen chay lech v_chay")
     inc = [round(ROWS[i + 1][2] - ROWS[i][2], 1) for i in range(4)]
-    if abs(DT / 2 - 4.8) > 1e-9: bad.append(("cau chot 400 g", DT / 2))   # cung nhiet vao nuoc, gap doi khoi luong -> tang 1/2
+    K4 = ts["eta0"]["gia_tri"] * Q_PARAFIN * ts["v_chay"]["gia_tri"] / (2 * M_NUOC * C_NUOC)     # cau chot: 400 g, 8 phut (mo hinh kho)
+    if round(50 * (1 - math.exp(-K4 * 8 / 50))) != 5: bad.append(("cau chot 400 g", 50 * (1 - math.exp(-K4 * 8 / 50))))
     return bad
 
 if __name__ == "__main__":

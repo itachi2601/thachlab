@@ -18,27 +18,27 @@
     },
     {
       "khoa": "dung_cu",
-      "giay": 9.3,
+      "giay": 8.3,
       "chu": "Nam châm quay, cuộn dây, hai LED ngược chiều."
     },
     {
       "khoa": "quan_sat",
-      "giay": 19.5,
+      "giay": 16.8,
       "chu": "Quay nhanh: đỏ, xanh chớp lần lượt. Chậm dần: chớp thưa, mờ. Rất chậm: tắt."
     },
     {
       "khoa": "rut_ra",
-      "giay": 26.8,
+      "giay": 24.2,
       "chu": "Dòng điện luân phiên đổi chiều: đó là dòng điện xoay chiều."
     },
     {
       "khoa": "chua_noi",
-      "giay": 36.8,
+      "giay": 38.0,
       "chu": "Dòng lớn bao nhiêu: chưa đo. Mới thử nam châm quay."
     }
   ],
   "dung_dua": {
-    "giay": 9.0,
+    "giay": 8.0,
     "cau_hoi": "Quay nam châm nhanh, rồi chậm dần. Hai LED sẽ thế nào?",
     "chon": [
       "A. Cả hai sáng đều như lúc đầu",
@@ -51,20 +51,20 @@
     "giai_thich_sai": "Nam châm quay chậm thì dòng cảm ứng nhỏ, LED không giữ nguyên độ sáng, không sáng nhanh hơn và hai LED không sáng cùng lúc; kết quả là mờ dần rồi tắt."
   },
   "cau_chot": {
-    "giay": 41.8,
-    "cau_hoi": "Nam châm quay đều 5 vòng mỗi giây. Trong 4 giây, LED đỏ chớp mấy lần?",
+    "giay": 43.2,
+    "cau_hoi": "Gỡ LED xanh ra, chỉ còn LED đỏ. Quay nam châm nhanh như lúc đầu: LED đỏ thế nào?",
     "chon": [
-      "A. 5 lần",
-      "B. 10 lần",
-      "C. 20 lần",
-      "D. 40 lần"
+      "A. Tắt hẳn, vì mạch bị hở",
+      "B. Vẫn chớp, mỗi vòng 1 lần như cũ",
+      "C. Sáng liên tục, không tắt",
+      "D. Chớp gấp đôi, mỗi vòng 2 lần"
     ],
-    "dung": 2,
+    "dung": 1,
     "giai_thich": [
-      "5 là số vòng trong 1 giây. Mỗi vòng LED đỏ chớp 1 lần, 4 giây quay 5 × 4 = 20 vòng nên chớp 20 lần (theo mô hình).",
-      "10 lần ứng với 2 giây. Trong 4 giây nam châm quay 5 × 4 = 20 vòng, mỗi vòng LED đỏ chớp 1 lần: 20 lần (theo mô hình).",
-      "4 giây quay 5 × 4 = 20 vòng; mỗi vòng dòng đổi chiều 2 lần nhưng LED đỏ chỉ sáng ở một chiều, tức 1 lần mỗi vòng: 20 lần (theo mô hình).",
-      "40 là số lần dòng đổi chiều (2 lần mỗi vòng). LED đỏ chỉ sáng khi dòng đi một chiều, 1 lần mỗi vòng: 20 lần (theo mô hình)."
+      "Mạch chỉ hở trong nửa vòng dòng có chiều ngược LED đỏ. Nửa vòng còn lại dòng qua LED đỏ, nên nó vẫn chớp 1 lần mỗi vòng; cả mạch chỉ còn nửa số lần chớp (theo mô hình).",
+      "Mỗi LED chỉ cho dòng đi một chiều. Gỡ LED xanh thì nửa vòng có chiều kia không có dòng, không đèn nào sáng; LED đỏ vẫn chớp 1 lần mỗi vòng, cả mạch còn nửa số lần chớp (theo mô hình).",
+      "Dòng cảm ứng vẫn đổi chiều 2 lần mỗi vòng. Nửa vòng có chiều ngược LED đỏ thì LED đỏ không cho dòng qua và tắt: nó chớp 1 lần mỗi vòng, không sáng liên tục (theo mô hình).",
+      "LED đỏ chỉ sáng khi dòng đi đúng chiều của nó, 1 lần mỗi vòng; gỡ LED xanh không làm LED đỏ chớp nhiều hơn. Cả mạch chỉ còn nửa số lần chớp (theo mô hình)."
     ]
   }
 }
