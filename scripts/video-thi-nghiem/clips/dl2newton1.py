@@ -198,11 +198,13 @@ def s_dapan(img, d, t, sc):
 # ---------------- canh 4: Bay - hai thanh thoi gian cung thang ----------------
 TPX = 340                                     # px/s
 BX0 = 110
-def tbar(d, y, f, tk, col, k, lab_col=INK):
+def tbar(d, y, f, tk, col, k, lab_col=INK, out=False):
     text(d, (BX0, y - 62), "F = " + vn(f) + " N", 60, lab_col, anchor="lm", alpha=k)
     x1 = BX0 + TPX * tk * ease(k)
     d.rounded_rectangle([BX0, y, max(BX0 + 4, x1), y + 70], radius=14, fill=A(col, k))
-    if k >= 1: text(d, (x1 - 16, y + 35), vn(tk) + " s", 58, WHITE, anchor="rm")
+    if k >= 1:
+        if out: text(d, (x1 + 18, y + 35), vn(tk) + " s", 58, DORANGE, anchor="lm")   # ngoai thanh: vach "mot nua" khong cat chu
+        else: text(d, (x1 - 16, y + 35), vn(tk) + " s", 58, WHITE, anchor="rm")
 
 def s_bay(img, d, t, sc):
     M = sc["M"]
@@ -212,8 +214,8 @@ def s_bay(img, d, t, sc):
     text(d, (W / 2, 375), "thì t còn một nửa", 62, DRED, alpha=ka)
     card(d, (40, 480, 1040, 1150), fill=WHITE, outline=LIGHT, w=3)
     kb = clamp((t - M[1]) / 0.8)
-    tbar(d, 620, ROWS[0][0], ROWS[0][1], BLUE, clamp((t - M[1] + 0.2) / 0.8) if t >= M[1] - 0.2 else 0)
-    tbar(d, 880, ROWS[1][0], ROWS[1][1], ORANGE, clamp((t - M[1] - 0.6) / 0.8) if t >= M[1] + 0.6 else 0)
+    tbar(d, 620, ROWS[0][0], ROWS[0][1], BLUE, clamp((t - M[0] - 0.6) / 0.8) if t >= M[0] + 0.6 else 0)   # nhip 1 co hinh
+    tbar(d, 880, ROWS[1][0], ROWS[1][1], ORANGE, clamp((t - M[1] - 0.1) / 0.8) if t >= M[1] - 0.1 else 0, out=True)
     kh = appear(t, M[2] - 0.1, 0.45)                                       # vach "mot nua" cua 2,29 s
     if kh > 0:
         xh = BX0 + TPX * ROWS[0][1] / 2; y = 560
@@ -277,7 +279,7 @@ CLIP = dict(id="tn-l10-dl2-newton-01", header="VẬT LÍ 10 · THÍ NGHIỆM", f
  dict(key="bay", title="Bẫy: thời gian", draw=s_bay, tail=0.5, caps=[
    ("Lực gấp đôi thì sao?", 3.0),
    ("So hai thanh thời gian.", 3.0),
-   ("Thời gian chỉ giảm √2 lần.", 3.4)]),
+   ("Giảm chưa tới 2 lần.", 3.4)]),
  dict(key="gioihan", title="Giới hạn", draw=s_gioihan, tail=0.4, caps=[
    ("Ở đây m giữ nguyên.", 3.8)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.3, caps=[
