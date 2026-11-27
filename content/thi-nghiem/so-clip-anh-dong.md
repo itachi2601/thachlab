@@ -588,7 +588,7 @@ Nhánh `claude/clip-cong-moi-l10a-d353cc`. 3 agent Opus dựng (sau 11h: 1 dựn
 
 **Đã đăng mẻ 1 (27/11/2026 17:53):** sửa 4 hộp exp lộ Dự đoán (tdvt-01, tdvt-03 Quan sát + Rút ra, do-toc-do-01, gia-toc-01 Quan sát + Rút ra; `sua-hop-l10a.json`, `sua-hop-l10a-2.json`, kiem-code soát); kho ghi ca câu chốt vào `so_lieu_mau.ghi_chu`; `doi-cong-moi-l10a.py --apply` (kho + 8 bài + gắn khung); `dang-cong-moi-l10a.sh --yes`: 8/8 bài (46–53) ghi mục ly_thuyet, 0 LOI, ngoài khối video chỉ khác đúng các câu hộp đã sửa (log `ra/l10a-dang-1.log`, sao lưu `scripts/logs/ly-thuyet-bai4{6..9}/5{0..3}-backup-*.json`).
 
-### Mẻ 2 (7 clip: nhóm B + dotocdo2, qua cổng A+B, đã tải -20261127 HEAD 200, CHỜ THẦY DUYỆT, chưa đổi kho/bài/DB) — bài 54 ctbdd, 55 rơi tự do, 56 đo g
+### Mẻ 2 (7 clip: nhóm B + dotocdo2, qua cổng A+B, đã tải -20261127 HEAD 200) — THẦY DUYỆT 27/11 ("Duyệt, sửa hết"), **ĐÃ GHI DB 27/11 22:44** (bài 54, 55, 56, 51; `ME=2 dang-cong-moi-l10a.sh --yes`, log `ra/l10a-dang-2.log`, 4/4 ✓; ngoài khối video chỉ khác 4 câu hộp exp đã sửa ở 54, 56 — đối chiếu sao lưu đã áp sửa: khớp; kho do-g-03 hàng 60 khung/s GIỮ n = 19 vì đúng mô hình làm tròn(0,3214·60) = 19,3) — bài 54 ctbdd, 55 rơi tự do, 56 đo g
 
 | Clip | tn | Từ/phút | LỖI | Giây | KB | mp4 | Điểm cần quyết |
 |---|---|---|---|---|---|---|---|

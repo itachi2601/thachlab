@@ -39,11 +39,10 @@ def pill(d, cx, cy, s, fill, alpha=1.0, size=58):
     text(d, (cx, cy), s, size, WHITE, alpha=alpha)
 
 def seg_bar(d, y, t, t0, t1, col, a=1.0):
-    p = clamp((t - t0) / (t1 - t0)); on = 5 - int(p * 5 + 1e-9)
-    for i in range(5):
-        x = 175 + i * 150
-        if i < on: card(d, (x, y, x + 130, y + 70), fill=A(col, a), r=18)
-        else: card(d, (x, y, x + 130, y + 70), fill=A(WHITE, a), outline=A(EMPTY, a), r=18, w=4)
+    """Thanh dem LIEN (tut tung nac 10 %), cao 70 px: khong chia o de khoi goi y so (brief 27/11)."""
+    p = clamp((t - t0) / (t1 - t0)); q = 1 - math.floor(p * 10 + 1e-9) / 10
+    card(d, (175, y, 905, y + 70), fill=A(LIGHT, a), r=35)
+    if q > 0: card(d, (175, y, 175 + max(70, 730 * q), y + 70), fill=A(col, a), r=35)
 
 def tag(d, y, s, col, fill, a):
     card(d, (40, y, 1040, y + 110), fill=A(fill, a), outline=A(col, a), r=24, w=6)
@@ -155,31 +154,25 @@ def s_dapan(img, d, t, sc):
         text(d, (W / 2, y0 + 265), "bằng nhau, cùng lúc", 62, DGREEN, alpha=k1)
 
 # ---------------- canh 4: moi luc ke chiu luc nao (tach rieng hai luc ke) ----------------
-SB = 250
-XH1, XH2 = 400, 680          # moc luc ke 1, luc ke 2 (tach ra cho thay hai vat)
-LA = 140                     # px cho 2,0 N (hai mui ten dai bang nhau)
+SB = 400
+XH1, XH2 = 560, 520          # moc luc ke 1 (hang tren), luc ke 2 (hang duoi): hai vat tach hai hang
+LA = 200                     # px cho 2,0 N (hai mui ten dai bang nhau)
 def s_luc(img, d, t, sc):
+    """kiem-v1: tach hai hang (moi luc ke mot hang), luc ke dai SB = 400, mui ten LA = 200, nhan mot dong sat mui ten."""
     M = sc["M"]
     card(d, (40, 250, 1040, 1100), fill=WHITE, outline=LIGHT, w=3)
-    y = 720
-    for xh, side, tint in ((XH1, -1, T1), (XH2, 1, T2)):
+    rows = ((-1, XH1, 480, T1, C1, "lực kế 1", M[0] + 1.8, "Lực kế 2 kéo lực kế 1: 2,0 N"),
+            (1, XH2, 860, T2, C2, "lực kế 2", M[1] + 0.1, "Lực kế 1 kéo lực kế 2: 2,0 N"))
+    for side, xh, y, tint, col, name, tk, lab in rows:
         x_end = xh + side * (20 + SB + 30)
         d.rounded_rectangle([min(xh, x_end) - 8, y - 70, max(xh, x_end) + 8, y + 70], radius=26, fill=tint)
-    one_meter(d, -1, 2.0, XH1, y, body=SB, hand=False)
-    one_meter(d, 1, 2.0, XH2, y, body=SB, hand=False)
-    text(d, (XH1 - 160, y + 120), "lực kế 1", 58, C1); text(d, (XH2 + 160, y + 120), "lực kế 2", 58, C2)
-    k1 = appear(t, M[0] + 1.8, 0.4)
-    if k1 > 0:      # luc do luc ke 2 keo, dat len luc ke 1 (tai moc 1), huong sang phai
-        arrow(d, (XH1, y), (XH1 + LA * ease(k1), y), A(C1, k1), w=9, head=26)
-        dot(d, XH1, y, 10, C1)
-        text(d, (90, 360), "Lực kế 2 kéo lực kế 1", 58, C1, anchor="lm", alpha=k1)
-        text(d, (90, 440), "→ 2,0 N", 58, C1, anchor="lm", alpha=k1)
-    k2 = appear(t, M[1] + 0.1, 0.4)
-    if k2 > 0:      # luc do luc ke 1 keo, dat len luc ke 2 (tai moc 2), huong sang trai
-        arrow(d, (XH2, y), (XH2 - LA * ease(k2), y), A(C2, k2), w=9, head=26)
-        dot(d, XH2, y, 10, C2)
-        text(d, (990, 920), "Lực kế 1 kéo lực kế 2", 58, C2, anchor="rm", alpha=k2)
-        text(d, (990, 1000), "2,0 N ←", 58, C2, anchor="rm", alpha=k2)
+        one_meter(d, side, 2.0, xh, y, body=SB, hand=False)
+        text(d, ((xh + x_end) / 2, y + 112), name, 58, col)
+        k = appear(t, tk, 0.4)
+        if k > 0:          # luc dat len moc cua chinh luc ke nay, huong ve phia luc ke kia
+            arrow(d, (xh, y), (xh - side * LA * ease(k), y), A(col, k), w=10, head=30)
+            dot(d, xh, y, 11, col)
+            text(d, (W / 2, y - 170), lab, 58, col, alpha=k)
 
 # ---------------- canh 5: Bay (keo giat) ----------------
 def jerk(t, t0):
@@ -255,7 +248,7 @@ CLIP = dict(id="tn-l10-newton3-01", header="VẬT LÍ 10 · THÍ NGHIỆM", foot
  dict(key="gioihan", title="Giới hạn", draw=s_gioihan, tail=0.4, caps=[
    ("Coi lực kế rất nhẹ.", 3.8)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.3, caps=[
-   ("Lực, phản lực bằng nhau.", 4.9)]),
+   ("Thử tính, rồi chọn đáp án.", 4.9)]),
 ])
 
 _b = _kiem_dong_bo(); assert not _b, _b

@@ -43,7 +43,7 @@ S0, BW, BH = 170, 130, 100
 ROPE, BODY = 70, 380
 HOOK_H = BH / 2
 FMAX = 5.0
-LF = 190                          # px cho 2,0 N (vecto dung ti le)
+LF = 270                          # px cho 2,0 N (vecto dung ti le, canh vecto bo luc ke cho rong)
 WOOD = (176, 124, 74); WOOD_D = (140, 96, 54); SKIN = (240, 196, 160)
 DRED = (185, 28, 28); DGREEN = (10, 110, 50); DTEAL = (15, 118, 110); DPURPLE = (91, 33, 182)
 
@@ -60,13 +60,13 @@ def dashed(d, p, q, color, w=4, seg=14, gap=10):
         d.line([(lerp(p[0], q[0], a), lerp(p[1], q[1], a)), (lerp(p[0], q[0], b), lerp(p[1], q[1], b))], fill=color, width=w)
         k += 1
 
-def board(d, a, label=True, rough=False):
+def board(d, a, label=True, rough=False, leg=0.86, lab_txt=None):
     u, n, Q = frame_of(a)
     d.line([(40, HY), (1040, HY)], fill=INK, width=5)
     for x in range(60, 1040, 40): d.line([(x, HY + 4), (x - 18, HY + 24)], fill=GRAY, width=3)
     th = 18
     top0, top1 = Q(0), Q(LB); bot1, bot0 = Q(LB, -th), Q(0, -th)
-    px = Q(LB * 0.86, -th)
+    px = Q(LB * leg, -th)
     d.rectangle([px[0] - 9, px[1], px[0] + 9, HY], fill=WOOD_D)
     d.polygon([top0, top1, bot1, bot0], fill=WOOD)
     d.line([top0, top1], fill=WOOD_D, width=5)
@@ -78,8 +78,10 @@ def board(d, a, label=True, rough=False):
         r = 170
         d.arc([HX - r, HY - r, HX + r, HY + r], -a, 0, fill=ORANGE, width=6)
         if label:
-            m = math.radians(a / 2); rr = 260
-            text(d, (HX + rr * math.cos(m) + 40, HY - rr * math.sin(m) + (26 if a < 20 else 0)), f"{a:.0f}°", 58, ORANGE)
+            if lab_txt: mtext(d, (HX + 300, HY + 62), lab_txt, 60, ORANGE)        # duoi mat dat, khong vecto nao di qua
+            else:
+                m = math.radians(a / 2); rr = 260
+                text(d, (HX + rr * math.cos(m) + 40, HY + 64 if a < 20 else HY - rr * math.sin(m)), f"{a:.0f}°", 58, ORANGE)   # 15 do: duoi duong dat (kiem-v2)
 
 def block(d, a):
     u, n, Q = frame_of(a)
@@ -100,6 +102,12 @@ def meter(d, a, f_read):
 
 def rig(d, a, f_read, label=True, rough=False):
     board(d, a, label, rough); block(d, a); meter(d, a, f_read)
+
+def rig_vec(d, a=30):
+    """Canh vecto: chi van + vat + doan day (bo luc ke de vecto to, khong lan chu N don vi voi luc phap tuyen)."""
+    board(d, a, True, leg=0.98, lab_txt="α = 30°"); block(d, a)
+    u, n, Q = frame_of(a); h = HOOK_H
+    d.line([Q(S0 + BW, h), Q(S0 + BW + 150, h)], fill=NAVY, width=5)     # doan day toi luc ke (luc ke o canh Tien hanh)
 
 def bar(d, y, t, t0, t1, col, a=1.0):
     p = clamp((t - t0) / (t1 - t0)); q = 1 - math.floor(p * 10 + 1e-9) / 10
@@ -154,7 +162,7 @@ def s_do(img, d, t, sc):
     table(d, n, hl=n - 1)
 
 # ---------------- canh 3: Dap an + phan tich P (vecto dung ti le) ----------------
-S0_VEC = 260
+S0_VEC = 400
 def harrow(d, p1, p2, color, alpha, w=9):
     arrow(d, p1, p2, A(WHITE, alpha), w=w + 7, head=28); arrow(d, p1, p2, A(color, alpha), w=w, head=26)
 
@@ -162,7 +170,7 @@ def sublab(d, x, y, main, sub, color, alpha=1.0):
     fm, fs = F(62), F(56); w = tw(d, main, fm) + tw(d, sub, fs); x0 = x - w / 2
     dtext(d, (x0, y), main, fm, color, alpha, "lm"); dtext(d, (x0 + tw(d, main, fm), y + 18), sub, fs, color, alpha, "lm")
 
-def vecs(img, d, alpha, comp_alpha, a=30, px_col=None, grow=1.0):
+def vecs(img, d, alpha, comp_alpha, a=30, px_col=None, grow=1.0, show=("P", "Q", "F", "Px", "Py"), py_col=None):
     """P (2,0 N = LF px), Px = P sin a xuong doc, Py = P cos a vao van, N = Py ra khoi van, F luc ke = Px len doc.
        Phan nam duoi mat van mo con 55%."""
     u, n, Q = frame_of(a); r = math.radians(a)
@@ -175,61 +183,68 @@ def vecs(img, d, alpha, comp_alpha, a=30, px_col=None, grow=1.0):
     f0 = Q(S0 + BW, BH - 2); f1 = (f0[0] + u[0] * LF * math.sin(r), f0[1] + u[1] * LF * math.sin(r))
     L = Image.new("RGBA", img.size, (0, 0, 0, 0)); dl = ImageDraw.Draw(L)
     if comp_alpha > 0:
-        if grow > 0.98: dashed(dl, ex, pe, A(MUTED, comp_alpha), w=4); dashed(dl, ey, pe, A(MUTED, comp_alpha), w=4)
-        harrow(dl, c, ex, px_col or PURPLE, comp_alpha, w=8)
-        harrow(dl, c, ey, TEAL, comp_alpha, w=8)
+        if grow > 0.98 and "Px" in show and "Py" in show:
+            dashed(dl, ex, pe, A(MUTED, comp_alpha), w=4); dashed(dl, ey, pe, A(MUTED, comp_alpha), w=4)
+        if "Px" in show: harrow(dl, c, ex, px_col or PURPLE, comp_alpha, w=9)
+        if "Py" in show: harrow(dl, c, ey, py_col or TEAL, comp_alpha, w=9)
     if alpha > 0:
-        harrow(dl, c, pe, BLUE, alpha); harrow(dl, c, en, GREEN, alpha, w=8); harrow(dl, f0, f1, RED, alpha, w=8)
+        harrow(dl, c, pe, BLUE, alpha)
+        if "Q" in show: harrow(dl, c, en, GREEN, alpha, w=9)
+        if "F" in show: harrow(dl, f0, f1, RED, alpha, w=9)
     arr = np.array(L); ys, xs = np.mgrid[0:arr.shape[0], 0:arr.shape[1]]
     below = ys > HY - (xs - HX) * math.tan(r) + 2
     arr[..., 3] = np.where(below, (arr[..., 3] * 0.55).astype(np.uint8), arr[..., 3])
     L = Image.fromarray(arr, "RGBA"); img.paste(L, (0, 0), L)
     dot(d, c[0], c[1], 10, NAVY, outline=WHITE)
     if comp_alpha > 0.6 and grow > 0.98:
-        sublab(d, ex[0] - 80, ex[1] - 50, "P", "x", px_col or PURPLE, comp_alpha)
-        sublab(d, ey[0] + 80, ey[1] + 10, "P", "y", DTEAL, comp_alpha)
+        if "Px" in show: sublab(d, ex[0] - 68, ex[1] - 68, "P", "x", px_col or PURPLE, comp_alpha)
+        if "Py" in show: sublab(d, ey[0] + 75, ey[1] + 5, "P", "y", py_col or DTEAL, comp_alpha)
     if alpha > 0.6:
-        text(d, (pe[0] - 48, pe[1] - 18), "P", 62, BLUE)
-        text(d, (en[0] - 40, en[1] - 36), "N", 62, GREEN)
-        text(d, (f0[0] + n[0] * 52, f0[1] + n[1] * 52), "F", 62, RED)
+        text(d, (pe[0] - 50, pe[1] - 22), "P", 62, BLUE)
+        if "Q" in show: text(d, (en[0] - 46, en[1] - 30), "Q", 62, DGREEN)
+        if "F" in show: text(d, (f1[0] + 10, f1[1] - 52), "F", 62, RED)
     return c
 
 def s_dapan(img, d, t, sc):
     global S0; S0 = S0_VEC
     M = sc["M"]
-    rig(d, 30, 1.0, label=True)
+    rig_vec(d)
     ka = appear(t, 0.0, 0.3)
-    card(d, (40, 990, 1040, 1180), fill=A((236, 253, 243), ka), outline=A(GREEN, ka), w=5)
-    text(d, (W / 2, 1085), "0,5 → 1,0 → 1,4 N  <  P = 2,0 N", 60, DGREEN, alpha=ka)
-    vecs(img, d, appear(t, 1.0, 0.5), appear(t, M[1] - 0.1, 0.5), grow=ease((t - M[1] + 0.1) / 1.0))
+    card(d, (40, 1010, 1040, 1190), fill=A((236, 253, 243), ka), outline=A(GREEN, ka), w=5)
+    text(d, (W / 2, 1100), "0,5 → 1,0 → 1,4 N  <  P = 2,0 N", 60, DGREEN, alpha=ka)
+    vecs(img, d, appear(t, 1.0, 0.5), appear(t, M[1] - 0.1, 0.5), show=("P", "F", "Px", "Py"), grow=ease((t - M[1] + 0.1) / 1.0))
     k2 = appear(t, M[1] + 1.0, 0.5)
     if k2 > 0:
-        card(d, (40, 1230, 1040, 1420), fill=A(WHITE, k2), outline=A(RED, k2), w=5)
-        mtext(d, (W / 2, 1325), "lực kế F = P·sin α", 62, RED, alpha=k2)
+        card(d, (40, 1240, 1040, 1420), fill=A(WHITE, k2), outline=A(RED, k2), w=5)
+        mtext(d, (W / 2, 1330), "lực kế F = P·sin α", 62, RED, alpha=k2)
     S0 = 170
 
 # ---------------- canh 4: Bay (P cos alpha) ----------------
 def s_bay(img, d, t, sc):
     global S0; S0 = S0_VEC
     M = sc["M"]
-    rig(d, 30, 1.0, label=False)
+    rig_vec(d)
     k2 = appear(t, M[1] - 0.1, 0.45)
-    c = vecs(img, d, 1.0, 1.0, px_col=DRED if k2 < 0.5 else None)
+    if k2 < 0.5: c = vecs(img, d, 1.0, 1.0, show=("P", "Py"), py_col=DRED)             # nhip 1: P.cos 30 la Py
+    else: c = vecs(img, d, 1.0, 1.0, show=("P", "Px", "Py"))                             # nhip 2: Px doi dien goc alpha
     if k2 > 0:                                                    # goc alpha giua P (thang xuong) va Py (vao van)
-        rr = 92
-        d.arc([c[0] - rr, c[1] - rr, c[0] + rr, c[1] + rr], 60, 90, fill=A(ORANGE, k2), width=7)
-        m = math.radians(75)
-        dtext(d, (c[0] + 135 * math.cos(m) + 8, c[1] + 135 * math.sin(m)), "α", FG(66), ORANGE, k2)
-    y0 = 990
+        rr = 130
+        d.arc([c[0] - rr, c[1] - rr, c[0] + rr, c[1] + rr], 60, 90, fill=A(ORANGE, k2), width=8)
+        m = math.radians(76)
+        dtext(d, (c[0] + 190 * math.cos(m), c[1] + 190 * math.sin(m)), "α", FG(74), ORANGE, k2)
+    y0 = 1010
     k1 = 1 - k2
     if k1 > 0:
-        card(d, (40, y0, 1040, y0 + 420), fill=A((254, 242, 242), k1), outline=A(DRED, k1), w=6)
-        mtext(d, (W / 2, y0 + 140), "✗ P·cos 30° ≈ 1,7 N", 64, DRED, alpha=k1)
-        text(d, (W / 2, y0 + 280), "lực kế đo: 1,0 N", 64, INK, alpha=k1)
+        card(d, (40, y0, 1040, y0 + 400), fill=A((254, 242, 242), k1), outline=A(DRED, k1), w=6)
+        mtext(d, (W / 2, y0 + 85), "✗ lực kế = P·cos 30°", 62, DRED, alpha=k1)
+        w1 = tw(d, "= P", F(62)) + tw(d, "y", F(56)); w2 = tw(d, " ≈ 1,7 N", F(62)); x0 = W / 2 - (w1 + w2) / 2
+        sublab(d, x0 + w1 / 2, y0 + 190, "= P", "y", DRED, k1)
+        text(d, (x0 + w1, y0 + 190), " ≈ 1,7 N", 62, DRED, anchor="lm", alpha=k1)
+        text(d, (W / 2, y0 + 305), "lực kế đo: 1,0 N", 64, INK, alpha=k1)
     if k2 > 0:
-        card(d, (40, y0, 1040, y0 + 420), fill=A((236, 253, 243), k2), outline=A(GREEN, k2), w=6)
-        mtext(d, (W / 2, y0 + 140), "✓ dọc ván: cạnh đối góc α", 62, DGREEN, alpha=k2)
-        mtext(d, (W / 2, y0 + 280), "→ dùng sin", 64, DGREEN, alpha=k2)
+        card(d, (40, y0, 1040, y0 + 400), fill=A((236, 253, 243), k2), outline=A(GREEN, k2), w=6)
+        mtext(d, (W / 2, y0 + 130), "✓ dọc ván: cạnh đối góc α", 62, DGREEN, alpha=k2)
+        mtext(d, (W / 2, y0 + 270), "→ dùng sin", 64, DGREEN, alpha=k2)
     S0 = 170
 
 # ---------------- canh 5: Chua noi duoc ----------------
@@ -250,17 +265,18 @@ def s_end(img, d, t, sc):
     pw = tw(d, "THỬ NGHĨ", F(56)) + 60
     card(d, (W / 2 - pw / 2, 238, W / 2 + pw / 2, 314), fill=A(ORANGE, k1), r=36)
     text(d, (W / 2, 276), "THỬ NGHĨ", 56, WHITE, alpha=k1)
-    a = 15; board(d, a); block(d, a)
+    a = 15; board(d, a, label=False, leg=0.98); block(d, a)
+    mtext(d, (HX + 300, HY + 62), "nghiêng 15°", 60, ORANGE, alpha=k1)
     u, n, Q = frame_of(a); c = Q(S0 + BW / 2, BH / 2)
-    harrow(d, c, (c[0], c[1] + 150), BLUE, k1)
-    text(d, (c[0] - 48, c[1] + 132), "P", 62, BLUE, alpha=k1)
-    q = (c[0] - n[0] * 150, c[1] - n[1] * 150)                    # luc ep: vuong goc vao van, do dai khong ti le (an dap so)
-    sp = Q(S0 + BW / 2, 0)
-    harrow(d, sp, (sp[0] - n[0] * 120, sp[1] - n[1] * 120), DTEAL, k1, w=8)
-    text(d, (sp[0] - n[0] * 120 + 70, sp[1] - n[1] * 120 + 10), "?", 72, DTEAL, alpha=k1)
-    text(d, (760, 420), "P = 2,0 N", 62, BLUE, alpha=k1)
-    text(d, (W / 2, 1110), "Vật ép lên ván", 64, DTEAL, alpha=k1)
-    text(d, (W / 2, 1200), "một lực bao nhiêu?", 64, DTEAL, alpha=k1)
+    c = Q(S0 + BW * 0.25, BH / 2)                                 # P o nua trai, luc ep o mep phai: hai mui ten khong chong
+    harrow(d, c, (c[0], c[1] + 170), BLUE, k1)
+    text(d, (c[0] - 48, c[1] + 140), "P", 62, BLUE, alpha=k1)
+    sp = Q(S0 + BW * 0.95, 0)                                     # luc ep: tai mat tiep xuc, vuong goc vao van (do dai an dap so)
+    ep = (sp[0] - n[0] * 130, sp[1] - n[1] * 130)
+    harrow(d, sp, ep, DTEAL, k1, w=8)
+    text(d, (ep[0] + 60, ep[1] - 70), "?", 72, DTEAL, alpha=k1)
+    text(d, (W / 2, 420), "P = 2,0 N", 62, BLUE, alpha=k1)
+    text(d, (W / 2, 1150), "Lực ép lên ván bao nhiêu?", 64, DTEAL, alpha=appear(t, 2.3, 0.45))
     bar(d, 1330, t, 0.8, sc["T"] - 0.2, ORANGE, k1)
     S0 = 170
 
