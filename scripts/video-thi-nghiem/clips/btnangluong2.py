@@ -123,9 +123,9 @@ def s_dapan(img, d, t, sc):
     for j, r in enumerate((0, 2)):
         _, al, h, w, v = ROWS[r]
         y = 370 + j * 120
-        text(d, (120, y), al, 60, INK, anchor="lm")
-        eq(d, 330, y, "h = " + h + " m", 58, INK, anchor="l")
-        text(d, (1010, y), "v = " + v, 60, DBLUE, anchor="rm")
+        text(d, (80, y), al, 58, INK, anchor="lm")
+        eq(d, 240, y, "h = " + h + " m", 58, INK, anchor="l")
+        text(d, (1020, y), "v = " + v + " m/s", 58, DBLUE, anchor="rm")
     k2 = appear(t, 2.3, 0.4)
     if k2 > 0:
         text(d, (W / 2, 700), "h gấp khoảng 9", 62, INK, alpha=k2)
@@ -171,7 +171,7 @@ def s_end(img, d, t, sc):
     text(d, (W / 2, 440), "Dây 2,0 m, 30°: qua đáy 2,29 m/s", 56, DBLUE, alpha=k1)
     kq = appear(t, 2.2, 0.45)
     if kq > 0:
-        text(d, (W / 2, 700), "Dây dài 3,0 m, vẫn 30°.", 62, INK, alpha=kq)
+        text(d, (W / 2, 700), "Dây 3,0 m, vẫn 30°, bỏ ma sát.", 62, INK, alpha=kq)
         text(d, (W / 2, 810), "Qua đáy, tốc độ bao nhiêu?", 62, DORANGE, alpha=kq)
         seg_bar(d, 960, t, 2.8, sc["T"] - 0.2, ORANGE, kq)
 

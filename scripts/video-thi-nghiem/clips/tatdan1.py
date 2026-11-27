@@ -6,7 +6,8 @@
 #   mo_hinh A(f) = Ar.b / sqrt((f - f0)^2 + b^2): net dut CHI ve 1,0-3,0 Hz (khong lo cau chot).
 # Du doan (giu, = dong "Nhin vao" cua hop thi nghiem): quet f 1,0 -> 3,0 Hz, A on dinh doi the nao? -> tang roi giam.
 # Bay = hien_tuong_hay_sai[0] "luc manh la cong huong": cung mo-to, chi doi f 1,0 -> 2,0 Hz: 2,7 -> 6,0 cm.
-# Thu nghi (= cau_chot khung web): f = 3,5 Hz (max tham_so, chua hien) -> A ~ 1,9 cm (xa f0 hon 3,0 Hz nen < 2,7).
+# Thu nghi (= cau_chot khung web): f = 3,5 Hz (max tham_so, chua hien) -> A ~ 1,9 cm (xa f0 hon 3,0 Hz nen < 2,7;
+#   nhieu 1,2 cm = ngoai suy thang 4,2 -> 2,7 -> 1,2, nhung duong cong thoai dan xa f0).
 #   Dap so KHONG hien tren man.
 from engine import *
 
@@ -111,7 +112,7 @@ def s_hook(img, d, t, sc):
     y0 = 960 + (1 - a) * 30
     card(d, (50, y0, 1030, y0 + 600), fill=A(WHITE, a), outline=A(PURPLE, a), w=6)
     pill(d, y0 + 70, "DỰ ĐOÁN", PURPLE, a)
-    text(d, (W / 2, y0 + 180), "Tăng tần số lực từ 1,0 lên 3,0 Hz.", 56, INK, alpha=a)
+    text(d, (W / 2, y0 + 180), "Giữ lực, tăng f từ 1,0 lên 3,0 Hz.", 56, INK, alpha=a)
     text(d, (W / 2, y0 + 280), "Biên độ ổn định", 62, PURPLE, alpha=a)
     text(d, (W / 2, y0 + 360), "thay đổi thế nào?", 62, PURPLE, alpha=a)
     seg_bar(d, y0 + 470, t, M[1] + 0.4, sc["T"] - 0.3, PURPLE, a)
@@ -148,6 +149,8 @@ def s_bay(img, d, t, sc):
     f, a_ = (2.0, 6.0) if kc > 0.5 else (1.0, 2.7)
     u = t - (3.4 if kc > 0.5 else 0.0)
     rig(d, osc(u, f, a_), 2 * math.pi * f * u / 2, f=f)
+    card(d, (640, 450, 1040, 530), fill=WHITE, outline=NAVY, r=20, w=3)
+    text(d, (840, 490), "lực không đổi", 56, NAVY)
     y0 = 980
     card(d, (40, y0, 1040, y0 + 560), fill=WHITE, outline=DRED, w=6)
     pill(d, y0 + 70, "BẪY", DRED)
@@ -156,7 +159,7 @@ def s_bay(img, d, t, sc):
     text(d, (W / 2, y0 + 200), s1, 60, DRED)
     if kc > 0:
         d.line([(W / 2 - lw / 2, y0 + 202), (W / 2 - lw / 2 + lw * kc, y0 + 202)], fill=(140, 15, 15), width=7)
-        text(d, (W / 2, y0 + 320), "✓ Giữ lực, chỉ đổi f:", 60, DGREEN, alpha=kc)
+        text(d, (W / 2, y0 + 320), "✓ Chỉ đổi f:", 60, DGREEN, alpha=kc)
         text(d, (W / 2, y0 + 430), "A: 2,7 cm → 6,0 cm", 60, DGREEN, alpha=kc)
 
 # ---------------- canh 5: Chua noi duoc ----------------
@@ -166,7 +169,8 @@ def s_gioihan(img, d, t, sc):
     text(d, (W / 2, 490), "Cản lớn thì đỉnh ra sao?", 60, INK)
     axes(d)
     model(d)
-    fm = 2.0 - 0.9 * math.cos(2 * math.pi * t / 3.0)
+    fm = 1.0 + 2.0 * clamp(t / 4.4)
+    text(d, (GX1, GY0 + 40), "f tăng →", 56, DORANGE, anchor="rm")
     d.rectangle([gx(fm) - 22, gy(amp(fm)), gx(fm) + 22, GY1], fill=A(ORANGE, 0.55))
     dot(d, gx(fm), gy(amp(fm)), 18, DORANGE)
 
@@ -201,11 +205,11 @@ CLIP = dict(id="tn-l11-tatdan-01", header="VẬT LÍ 11 · THÍ NGHIỆM", foote
    ("Nối năm điểm đo.", 4.0),
    ("Đường đứt là mô hình.", 3.0)]),
  dict(key="bay", title="Bẫy hay gặp", draw=s_bay, tail=0.3, caps=[
-   ("Lực mạnh có làm cộng hưởng?", 3.4),
+   ("Lực mạnh là cộng hưởng?", 3.4),
    ("Chỉ đổi tần số.", 3.8)]),
  dict(key="gioihan", title="Giới hạn", draw=s_gioihan, tail=0.3, caps=[
    ("Mới thử một mức cản.", 4.0)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.2, caps=[
    ("Đổi tần số lực.", 3.0),
-   ("Dừng lại, tự tính.", 4.8)]),
+   ("Dừng lại, tự đoán.", 4.8)]),
 ])

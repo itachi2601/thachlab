@@ -51,19 +51,19 @@
   },
   "cau_chot": {
     "giay": 42.1,
-    "cau_hoi": "Cùng lò xo k = 49 N/m, kéo tới A = 2,5 cm rồi thả. Theo mô hình ½kA², cơ năng bằng bao nhiêu mJ?",
+    "cau_hoi": "Cùng con lắc lò xo, bỏ lực cản. Đo được: A = 2,0 cm thì cơ năng W = 9,5 mJ. Kéo tới A = 2,5 cm rồi thả, cơ năng khoảng bao nhiêu?",
     "chon": [
-      "A. 12,3 mJ",
-      "B. 15,3 mJ",
-      "C. 6,1 mJ",
-      "D. 153 mJ"
+      "A. 12 mJ",
+      "B. 15 mJ",
+      "C. 19 mJ",
+      "D. 24 mJ"
     ],
     "dung": 1,
     "giai_thich": [
-      "Lấy 9,8 mJ (A = 2 cm) nhân 2,5/2 là coi W tỉ lệ A, quên bình phương.",
-      "W = ½·49·0,025² = 0,0153 J = 15,3 mJ.",
-      "6,1 mJ là ½·49·0,025·10³: quên bình phương A.",
-      "153 mJ lệch 10 lần: đổi cm ra m hoặc J ra mJ sai một bậc."
+      "12 mJ là nhân 9,5 với 1,25, coi W tỉ lệ A; nhưng W = ½kA² tỉ lệ A².",
+      "W tỉ lệ A²: A gấp 2,5 : 2,0 = 1,25 lần nên W gấp 1,25² ≈ 1,56 lần: 9,5 · 1,56 ≈ 15 mJ.",
+      "19 mJ là nhân đôi 9,5; A chỉ tăng 1,25 lần, W tăng 1,25² ≈ 1,56 lần chứ không gấp 2.",
+      "24 mJ là nhân 9,5 với 2,5 (lấy số đo A thay cho tỉ số 1,25); W gấp 1,25² ≈ 1,56 lần."
     ]
   }
 }

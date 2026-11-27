@@ -4,9 +4,10 @@
 #   tham_so: m = 0,200 kg ; g = 9,8 ; A = 0,080 m (min 0,02, max 0,12). cac_buoc.lam: delta_l = 0,049 m -> k = 40 N/m.
 #   so_lieu_mau (x m, Et, Ed): 0 / 0 / 0,128 ; 0,04 / 0,032 / 0,096 ; 0,08 / 0,128 / 0 (clip chi dung 3 hang nay).
 #   hien_tuong_hay_sai: moc the nang o cho lo xo chua dan -> tai VTCB 0,04802 J -> canh bay.
-# Du doan (DOI 27/11: ca cu "x = A/2: Ed so voi Et" trung Bai toan mau + bang thi nghiem cua bai):
-#   tha tu bien 8 cm; doan 8 -> 4 cm hay 4 -> 0 cm dong nang tang them nhieu hon? -> doan 8 -> 4 (+0,096 J > +0,032 J).
-#   Phan xa sai: "gan O vat nhanh nen doan sau tang nhieu hon" / "hai doan dai bang nhau nen bang nhau".
+# Du doan (DOI lan 2 27/11 theo cong B: ca "Ed tang them 0,096/0,032" trung Bai toan mau; A/2, A/sqrt2, A.sqrt3/2 deu da co trong bai):
+#   tha tu bien 8 cm; hai doan 8 -> 4 cm va 4 -> 0 cm dai bang nhau, doan nao vat di LAU hon?
+#   -> doan 8 -> 4: T/6 = 0,074 s, gap doi 4 -> 0: T/12 = 0,037 s (mo hinh omega = sqrt(k/m) = 14,14 rad/s; bai khong co T/6, T/12).
+#   Phan xa sai: "dai bang nhau nen lau bang nhau". Noi voi nang luong: gan bien Ed nho -> vat cham.
 # Thu nghi (= cau_chot khung web): giu lo xo, keo toi A = 10 cm (trong dai tham_so); qua x = 4,0 cm thi Ed = ?
 #   -> W = 0,200 J; Ed = 0,200 - 0,032 = 0,168 J. Can 2 buoc (W moi, tru Et). Dap so KHONG hien tren man.
 from engine import *
@@ -28,6 +29,8 @@ def _kiem_so():
     assert tp["A"]["min"] <= 0.10 <= tp["A"]["max"]
     assert abs(0.5 * K_ * 0.1 ** 2 - et_of(4.0) - 0.168) < 1e-9                  # cau chot (theo mo hinh)
     assert abs(0.5 * K_ * (DL / 100) ** 2 - 0.04802) < 1e-9                       # bay
+    T = 2 * math.pi / math.sqrt(K_ / 0.2)
+    assert f"{T / 6:.3f}" == "0.074" and f"{T / 12:.3f}" == "0.037" and f"{T / 4:.3f}" == "0.111"   # du doan
 _kiem_so()
 
 DBLUE = (29, 78, 216); DRED = (185, 28, 28); DGREEN = (21, 110, 55); DORANGE = (176, 64, 8)
@@ -109,7 +112,7 @@ def s_hook(img, d, t, sc):
     M = sc["M"]
     rail(d, 8.0)
     X = lambda v: XO + v * 80
-    for (a_, b_), col, lab in (((8, 4), CET, "đoạn 1"), ((4, 0), CED, "đoạn 2")):
+    for (a_, b_), col, lab in (((8, 4), DBLUE, "8 → 4 cm"), ((4, 0), DBLUE, "4 → 0 cm")):
         y = 680
         d.line([(X(a_) - 6, y), (X(b_) + 6, y)], fill=col, width=7)
         for xx in (X(a_), X(b_)): d.line([(xx, y - 18), (xx, y + 18)], fill=col, width=7)
@@ -119,9 +122,9 @@ def s_hook(img, d, t, sc):
     y0 = 860 + (1 - a) * 30
     card(d, (50, y0, 1030, y0 + 600), fill=A(WHITE, a), outline=A(PURPLE, a), w=6)
     pill(d, y0 + 70, "DỰ ĐOÁN", PURPLE, a)
-    text(d, (W / 2, y0 + 200), "Động năng tăng thêm", 62, INK, alpha=a)
-    text(d, (W / 2, y0 + 290), "ở đoạn nào nhiều hơn?", 62, PURPLE, alpha=a)
-    seg_bar(d, y0 + 440, t, M[1] + 0.4, sc["T"] - 0.3, PURPLE, a)
+    text(d, (W / 2, y0 + 190), "Thả từ biên 8,0 cm, bỏ ma sát.", 58, INK, alpha=a)
+    text(d, (W / 2, y0 + 320), "Đoạn nào vật đi lâu hơn?", 62, PURPLE, alpha=a)
+    seg_bar(d, y0 + 470, t, M[1] + 0.4, sc["T"] - 0.3, PURPLE, a)
 
 # ---------------- canh 2: do k (treo dung) ----------------
 SX, TOP, BASE, HX = 170, 300, 1180, 430
@@ -167,7 +170,7 @@ def s_dok(img, d, t, sc):
         eq(d, W / 2, 1460, "k = mg / Δℓ = 40 N/m", 62, DBLUE, alpha=kk)
 
 # ---------------- canh 3: cot nang luong + bang ----------------
-REL, FZ = 0.8, 1.2
+REL, FZ = 1.6, 1.6
 MB, MC = TV / 6, TV / 4                          # thoi gian chay toi 4,0 / 0 cm
 TB = REL + MB; TC = TB + FZ + (MC - MB)
 ROW_T = [0.0, TB + 0.1, TC + 0.1]
@@ -194,6 +197,9 @@ def s_vach(img, d, t, sc):
     rail(d, x, vfrac=vf if t >= REL else 0.0)
     pw = tw(d, "quay chậm ×22", F(56)) + 56
     card(d, (1040 - pw, 230, 1040, 310), fill=ORANGE, r=40); text(d, (1040 - pw / 2, 270), "quay chậm ×22", 56, WHITE)
+    tl = "t = 0" if t < ROW_T[1] else ("t = 0,074 s" if t < ROW_T[2] else "t = 0,111 s")
+    if t < REL or frozen:
+        card(d, (60, 230, 440, 310), fill=WHITE, outline=NAVY, r=20, w=3); text(d, (250, 270), tl, 56, NAVY)
     et = et_of(x); ed = W_J - et
     column(d, et, ed, 90, 230, 1150, 720)
     eq(d, 70, 1210, "E_{t}", 58, CET, anchor="l"); eq(d, 190, 1210, "E_{d}", 58, CED, anchor="l")
@@ -214,19 +220,18 @@ def s_vach(img, d, t, sc):
 # ---------------- canh 4: Dap an ----------------
 def s_dapan(img, d, t, sc):
     M = sc["M"]
-    for j, (lab, val, e, col, at) in enumerate((("8 → 4 cm", "+0,096 J", 0.096, CET, 0.3),
-                                                  ("4 → 0 cm", "+0,032 J", 0.032, CED, 2.3))):
+    for j, (lab, val, e, at) in enumerate((("8 → 4 cm", "0,074 s", 0.074, 0.3), ("4 → 0 cm", "0,037 s", 0.037, 2.3))):
         k = appear(t, at, 0.4)
         if k <= 0: continue
         y = 420 + j * 300
         text(d, (90, y), lab, 60, INK, anchor="lm", alpha=k)
-        L = 820 * e / 0.096 * ease(clamp((t - at) / 0.8))
-        d.rounded_rectangle([110, y + 70, 110 + max(L, 8), y + 160], radius=14, fill=A(CED, k))
-        text(d, (1000, y), val, 62, DBLUE, anchor="rm", alpha=k)
+        L = 820 * e / 0.074 * ease(clamp((t - at) / 0.8))
+        d.rounded_rectangle([110, y + 70, 110 + max(L, 8), y + 160], radius=14, fill=A(ORANGE, k))
+        text(d, (1000, y), val, 62, DORANGE, anchor="rm", alpha=k)
     kp = appear(t, M[1] - 0.1, 0.4)
     if kp > 0:
         pill(d, 1080, "ĐÁP ÁN · đoạn 8 → 4 cm", NAVY, kp, size=58)
-        eq(d, W / 2, 1250, "E_{t}: 0,128 → 0,032 → 0 J", 56, DORANGE, alpha=kp)
+        eq(d, W / 2, 1250, "Gần biên E_{d} nhỏ, vật đi chậm", 56, DBLUE, alpha=kp)
 
 # ---------------- canh 5: Bay (treo dung, moc the nang) ----------------
 BT, BPX = 300, 45
@@ -261,8 +266,9 @@ def s_end(img, d, t, sc):
     k1 = appear(t, 0.15, 0.4)
     card(d, (40, 215, 1040, 1560), fill=A(WHITE, k1), outline=A(ORANGE, k1), w=6)
     pill(d, 290, "THỬ NGHĨ", ORANGE, k1)
-    card(d, (80, 380, 1000, 500), fill=A((239, 246, 255), k1), r=20)
-    eq(d, W / 2, 440, "A = 8,0 cm: x = 4,0 cm có E_{t} = 0,032 J", 56, DBLUE, alpha=k1)
+    card(d, (80, 370, 1000, 580), fill=A((239, 246, 255), k1), r=20)
+    text(d, (W / 2, 425), "A = 8,0 cm, tại x = 4,0 cm:", 56, DBLUE, alpha=k1)
+    eq(d, W / 2, 515, "E_{t} = 0,032 J", 56, DBLUE, alpha=k1)
     kq = appear(t, 2.2, 0.45)
     if kq > 0:
         rail(d, 4.0, ry=700, px=60, labs=(0, 4, 10), alpha=kq)
@@ -286,16 +292,16 @@ CLIP = dict(id="tn-l11-conangdddh-01", header="VẬT LÍ 11 · THÍ NGHIỆM", f
    ("Đo độ dãn khi treo.", 3.0),
    ("Tính ra độ cứng k.", 2.6)]),
  dict(key="vach", title="Năng lượng ở từng vạch", draw=s_vach, tail=0.2, caps=[
-   ("Thả từ biên, dừng hình ở từng vạch.", 3.8),
+   ("Dừng hình ở từng vạch, ghi thời gian.", 3.8),
    ("Thế năng giảm, động năng tăng.", 3.4)]),
  dict(key="dapan", title="Kết quả", draw=s_dapan, tail=0.2, caps=[
-   ("So phần động năng tăng thêm.", 4.0),
-   ("Đoạn đầu nhận nhiều hơn.", 3.0)]),
+   ("So thời gian hai đoạn.", 4.0),
+   ("Gần biên, vật đi chậm.", 3.0)]),
  dict(key="bay", title="Bẫy: mốc thế năng", draw=s_bay, tail=0.3, caps=[
    ("Treo đứng: dễ đặt sai mốc.", 3.4),
    ("Mốc thế năng đặt ở VTCB.", 3.0)]),
  dict(key="gioihan", title="Giới hạn", draw=s_gioihan, tail=0.3, caps=[
-   ("Bỏ qua ma sát.", 3.5)]),
+   ("Ma sát chưa xét.", 3.5)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.2, caps=[
    ("Đổi biên độ.", 2.5),
    ("Dừng lại, tự tính.", 4.2)]),

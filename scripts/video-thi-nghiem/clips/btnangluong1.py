@@ -6,7 +6,8 @@
 # Du doan (giu, = dong "Nhin vao" cua hop thi nghiem): A tang 1 -> 4 cm, W gap may lan? -> khoang 16 (37,8 / 2,3).
 # Bay = hien_tuong_hay_sai[1]: the A bang cm vao 1/2 k A^2 roi ghi J (1/2*49*2^2 = 98 "J" thay vi 9,8 mJ).
 # Thu nghi (= cau_chot khung web; DOI 27/11: ca cu "W gap doi -> A gap can 2" gan dap an D cua quiz mo bai):
-#   A = 2,5 cm (trong dai tham_so) -> W = 1/2*49*0,025^2 = 15,3 mJ (mo hinh). Can buoc binh phuong; dap so KHONG hien.
+#   DOI LAN 2 (cong B): khong ghi san W = 1/2 kA^2, khong lap canh Bay. The du kien "Do: A = 2,0 cm thi W = 9,5 mJ"; keo A = 2,5 cm
+#   -> W ti le A^2: 9,5 . 1,25^2 = 14,8 ~ 15 mJ (mo hinh 15,3). Dap so KHONG hien tren man.
 from engine import *
 
 M_KG, K_, DL = 0.25, 49.0, 5.0
@@ -22,6 +23,7 @@ def _kiem_so():
         assert h[a][1] == float(v.replace(",", ".")) and h[a][2] == float(w.replace(",", ".")), a
     assert h[2][3] == 9.8 and tp["A"]["min"] <= 2.5 <= tp["A"]["max"]
     assert abs(0.5 * K_ * 0.025 ** 2 * 1000 - 15.3) < 0.02                       # cau chot (mo hinh)
+    assert round(h[2][2] * (2.5 / 2) ** 2) == 15                                  # cau chot (tu so do 9,5 mJ)
     assert abs(0.5 * K_ * 2 ** 2 - 98) < 1e-9                                    # bay
 _kiem_so()
 
@@ -164,6 +166,7 @@ def s_bay(img, d, t, sc):
         d.line([(W / 2 - lw / 2, y0 + 202), (W / 2 - lw / 2 + lw * kc, y0 + 202)], fill=(140, 15, 15), width=7)
         text(d, (W / 2, y0 + 320), "✓ A = 0,02 m", 60, DGREEN, alpha=kc)
         text(d, (W / 2, y0 + 420), "W = 0,0098 J = 9,8 mJ", 60, DGREEN, alpha=kc)
+        text(d, (W / 2, y0 + 500), "(mô hình)", 56, MUTED, alpha=kc)
 
 # ---------------- canh 5: Chua noi duoc ----------------
 def s_gioihan(img, d, t, sc):
@@ -178,11 +181,11 @@ def s_end(img, d, t, sc):
     card(d, (40, 215, 1040, 1560), fill=A(WHITE, k1), outline=A(ORANGE, k1), w=6)
     pill(d, 290, "THỬ NGHĨ", ORANGE, k1)
     card(d, (80, 380, 1000, 500), fill=A((239, 246, 255), k1), r=20)
-    eq(d, W / 2, 440, "k = 49 N/m       W = ½kA²", 56, DBLUE, alpha=k1)
+    text(d, (W / 2, 440), "Đo: A = 2,0 cm thì W = 9,5 mJ", 56, DBLUE, alpha=k1)
     kq = appear(t, 2.2, 0.45)
     if kq > 0:
         text(d, (W / 2, 700), "Kéo tới A = 2,5 cm rồi thả.", 62, INK, alpha=kq)
-        text(d, (W / 2, 810), "Cơ năng bằng bao nhiêu mJ?", 62, DORANGE, alpha=kq)
+        text(d, (W / 2, 810), "Cơ năng khoảng bao nhiêu mJ?", 62, DORANGE, alpha=kq)
         seg_bar(d, 960, t, 2.8, sc["T"] - 0.2, ORANGE, kq)
 
 def _cues(clip):

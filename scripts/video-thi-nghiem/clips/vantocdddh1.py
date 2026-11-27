@@ -276,7 +276,7 @@ CLIP = dict(id="tn-l11-vantocdddh-01", header="VẬT LÍ 11 · THÍ NGHIỆM", f
    ("Vật lệch sang phải O.", 3.4),
    ("Lò xo kéo vật về O.", 3.4)]),
  dict(key="gioihan", title="Giới hạn", draw=s_gioihan, tail=0.4, caps=[
-   ("Bỏ qua ma sát.", 3.6)]),
+   ("Ma sát chưa xét.", 3.6)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.3, caps=[
    ("Sai số chủ yếu do thước.", 3.4),
    ("Dừng lại, tự tính.", 4.4)]),

@@ -8,12 +8,12 @@
       "khoa": "gia_thuyet",
       "giay": 0,
       "chu": "Đo k, tính Et, Ed tại các vạch li độ khi vật đi từ biên về O.",
-      "kiem": "Hai đoạn bằng nhau, tăng như nhau?"
+      "kiem": "Dài bằng nhau, lâu như nhau?"
     },
     {
       "khoa": "du_doan",
       "giay": 3.4,
-      "chu": "Lò xo nằm ngang, bỏ qua ma sát, thả từ biên 8,0 cm. Đoạn 8 → 4 cm hay đoạn 4 → 0 cm, động năng tăng thêm nhiều hơn?"
+      "chu": "Lò xo nằm ngang, bỏ qua ma sát, thả từ biên 8,0 cm. Hai đoạn 8 → 4 cm và 4 → 0 cm dài bằng nhau: đoạn nào vật đi lâu hơn?"
     },
     {
       "khoa": "dung_cu",
@@ -23,12 +23,12 @@
     {
       "khoa": "quan_sat",
       "giay": 16.0,
-      "chu": "k = 40 N/m. Tại 8,0; 4,0; 0 cm: Et giảm, Ed tăng, tổng luôn 0,128 J."
+      "chu": "k = 40 N/m. Dừng ở 8,0; 4,0; 0 cm: t = 0; 0,074; 0,111 s. Et giảm, Ed tăng, tổng luôn 0,128 J."
     },
     {
       "khoa": "rut_ra",
-      "giay": 23.8,
-      "chu": "Đoạn 8 → 4 cm: Ed tăng 0,096 J; đoạn 4 → 0 cm chỉ 0,032 J, vì Et tỉ lệ x²."
+      "giay": 23.4,
+      "chu": "Đoạn 8 → 4 cm mất 0,074 s, gấp đôi đoạn 4 → 0 cm (0,037 s): gần biên Ed nhỏ nên vật chậm."
     },
     {
       "khoa": "chua_noi",
@@ -37,17 +37,17 @@
     }
   ],
   "dung_dua": {
-    "giay": 9.2,
-    "cau_hoi": "Thả vật từ biên 8,0 cm. Động năng tăng thêm ở đoạn nào nhiều hơn?",
+    "giay": 8.8,
+    "cau_hoi": "Thả vật từ biên 8,0 cm, bỏ ma sát. Hai đoạn 8 → 4 cm và 4 → 0 cm dài bằng nhau. Đoạn nào vật đi lâu hơn?",
     "chon": [
       "A. Đoạn 8 → 4 cm",
       "B. Đoạn 4 → 0 cm",
-      "C. Hai đoạn như nhau",
+      "C. Như nhau, vì dài bằng nhau",
       "D. Tuỳ khối lượng vật"
     ],
     "dung": 0,
-    "giai_thich_dung": "Et = ½kx² tỉ lệ x²: từ 8 về 4 cm, Et giảm từ 0,128 xuống 0,032 J (mất 0,096 J); từ 4 về 0 chỉ mất 0,032 J. Phần Et mất chuyển hết thành Ed.",
-    "giai_thich_sai": "Gần O vật nhanh nhất, nhưng phần động năng tăng thêm lại nhỏ: thế năng tỉ lệ x² nên phần lớn đã chuyển đổi ở nửa đường đầu. Xem đoạn kế: bảng các vạch."
+    "giai_thich_dung": "Gần biên động năng nhỏ nên vật đi chậm: đoạn 8 → 4 cm mất 0,074 s, gấp đôi đoạn 4 → 0 cm (0,037 s).",
+    "giai_thich_sai": "Dài bằng nhau chưa chắc lâu bằng nhau: gần biên Ed nhỏ, vật chậm; gần O vật nhanh. Khối lượng đổi thì cả hai đoạn đổi cùng tỉ lệ. Xem đoạn kế: dừng hình ở từng vạch, đọc thời gian."
   },
   "cau_chot": {
     "giay": 45.0,

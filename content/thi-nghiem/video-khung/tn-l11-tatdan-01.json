@@ -56,14 +56,14 @@
       "A. 6,0 cm",
       "B. 2,7 cm",
       "C. 1,9 cm",
-      "D. 4,2 cm"
+      "D. 1,2 cm"
     ],
     "dung": 2,
     "giai_thich": [
       "6,0 cm là biên độ khi f trùng f₀ = 2,0 Hz; 3,5 Hz lệch xa f₀ nên không thể lớn nhất.",
       "2,7 cm là số đọc ở 3,0 Hz; 3,5 Hz còn xa f₀ hơn nên biên độ phải nhỏ hơn 2,7 cm.",
-      "3,5 Hz lệch f₀ 1,5 Hz, xa hơn 3,0 Hz, nên A nhỏ hơn 2,7 cm: theo mô hình A = 6,0·0,5/√(1,5² + 0,5²) ≈ 1,9 cm.",
-      "4,2 cm là số đọc ở 2,5 Hz, gần f₀ hơn; ở 3,5 Hz biên độ phải nhỏ hơn cả 2,7 cm."
+      "Xa f₀ hơn 3,0 Hz nên A < 2,7 cm, nhưng đường cong thoải dần nên giảm ít hơn 1,5 cm: theo mô hình A = 6,0·0,5/√(1,5² + 0,5²) ≈ 1,9 cm.",
+      "1,2 cm là kéo thẳng 4,2 → 2,7 → 1,2 (mỗi 0,5 Hz giảm 1,5 cm); xa f₀ đường cong thoải dần nên A giảm chậm lại, còn khoảng 1,9 cm."
     ]
   }
 }

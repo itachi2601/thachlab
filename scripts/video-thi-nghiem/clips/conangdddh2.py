@@ -156,12 +156,13 @@ def s_hook(img, d, t, sc):
     a = appear(t, M[1] - 0.2, 0.5)
     if a <= 0: return
     y0 = 980 + (1 - a) * 30
-    card(d, (50, y0, 1030, y0 + 580), fill=A(WHITE, a), outline=A(PURPLE, a), w=6)
+    card(d, (50, y0, 1030, y0 + 640), fill=A(WHITE, a), outline=A(PURPLE, a), w=6)
     pill(d, y0 + 70, "DỰ ĐOÁN", PURPLE, a)
-    text(d, (W / 2, y0 + 180), "Bỏ ma sát. Ghế xuống tới 0,25 m.", 56, INK, alpha=a)
-    text(d, (W / 2, y0 + 270), "Động năng bằng mấy phần", 60, PURPLE, alpha=a)
-    text(d, (W / 2, y0 + 350), "thế năng lúc trên cao?", 60, PURPLE, alpha=a)
-    seg_bar(d, y0 + 460, t, M[1] + 0.4, sc["T"] - 0.3, PURPLE, a)
+    text(d, (W / 2, y0 + 170), "Thả từ 0,50 m, bỏ ma sát.", 56, INK, alpha=a)
+    text(d, (W / 2, y0 + 250), "Ghế xuống tới 0,25 m.", 56, INK, alpha=a)
+    text(d, (W / 2, y0 + 340), "Động năng bằng mấy phần", 60, PURPLE, alpha=a)
+    text(d, (W / 2, y0 + 420), "thế năng lúc trên cao?", 60, PURPLE, alpha=a)
+    seg_bar(d, y0 + 520, t, M[1] + 0.4, sc["T"] - 0.3, PURPLE, a)
 
 # ---------------- canh 2: tha, dung hinh hai moc (quay cham x3) ----------------
 REL, FZ, SL = 1.0, 2.0, 3.0
@@ -201,13 +202,14 @@ def s_bay(img, d, t, sc):
     frame_sw(d); swing(d, A0); ruler(d, hl=0.5)
     vbadge(d, "v = 0")
     y0 = 980
-    card(d, (40, y0, 1040, y0 + 560), fill=WHITE, outline=DRED, w=6)
+    card(d, (40, y0, 1040, y0 + 600), fill=WHITE, outline=DRED, w=6)
     pill(d, y0 + 70, "BẪY", DRED)
-    text(d, (W / 2, y0 + 200), "✗ Dừng là hết năng lượng", 60, DRED)
+    text(d, (W / 2, y0 + 175), "✗ Dừng là hết năng lượng", 60, DRED)
     if kc > 0:
         lw = tw(d, "✗ Dừng là hết năng lượng", F(60))
-        d.line([(W / 2 - lw / 2, y0 + 202), (W / 2 - lw / 2 + lw * kc, y0 + 202)], fill=(140, 15, 15), width=7)
-        eq(d, W / 2, y0 + 330, "✓ v = 0 nhưng E_{t} = 196 J", 60, DGREEN, alpha=kc)
+        d.line([(W / 2 - lw / 2, y0 + 177), (W / 2 - lw / 2 + lw * kc, y0 + 177)], fill=(140, 15, 15), width=7)
+        eq(d, W / 2, y0 + 280, "✓ v = 0 nhưng E_{t} = 196 J", 60, DGREEN, alpha=kc)
+        hbars(d, 196.0, nums=True, alpha=kc, y=y0 + 400)
 
 
 # ---------------- canh 5: Chua noi duoc ----------------
@@ -241,7 +243,7 @@ def _cues(clip):
 CLIP = dict(id="tn-l11-conangdddh-02", header="VẬT LÍ 11 · VÍ DỤ", footer="Cơ năng dao động · thachlab.id.vn",
             cues=_cues, scenes=[
  dict(key="hook", title="Xích đu trên cao", draw=s_hook, tail=0.3, caps=[
-   ("Ghế dừng trên cao, cách đáy 0,50 m.", 3.6),
+   ("Ghế dừng ở độ cao 0,50 m.", 3.6),
    ("Dừng lại, tự đoán.", 5.6)]),
  dict(key="do", title="Thả ghế xuống", draw=s_do, tail=0.2, caps=[
    ("Thả ghế, dừng hình ở hai mốc.", 3.6),
