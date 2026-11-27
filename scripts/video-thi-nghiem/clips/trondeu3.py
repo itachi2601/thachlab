@@ -206,16 +206,13 @@ def s_rutra(img, d, t, sc):
     M = sc["M"]
     Rr = max(0.0, t - 0.5)                           # quay that x1 (T0 = 10,0 s)
     disc(d, theta(Rr), sector=(theta(max(0.0, Rr - 1.0)), theta(Rr)))   # quat = goc quet trong 1 s vua qua
-    k0 = appear(t, 0.4, 0.4)
-    text(d, (850, 600), "trong 1 s", 55, DORANGE, alpha=k0)
     k1 = appear(t, 0.4, 0.4)
     card(d, (40, 1030, 1040, 1590), fill=A(WHITE, k1), outline=A(GREEN, k1), w=6)
     pill(d, W / 2, 1100, "RÚT RA", GREEN, k1)
-    text(d, (W / 2, 1215), f"Δt trung bình ≈ {TB} s", 58, BLUE, alpha=k1)
-    text(d, (W / 2, 1305), f"T = Δt : 3 ≈ {TT} s", 58, INK, alpha=k1)
+    text(d, (W / 2, 1230), f"chu kì T = Δt : 3 ≈ {TT} s", 58, INK, alpha=k1)
     k2 = appear(t, M[1], 0.4)
-    text(d, (W / 2, 1410), f"f = 1/T ≈ {FF_} Hz", 58, TEAL, alpha=k2)
-    eq(d, W / 2, 1505, f"ω = 2π/T ≈ {WW} rad/s", 58, PURPLE, alpha=k2)
+    text(d, (W / 2, 1345), f"tần số f = 1/T ≈ {FF_} Hz", 58, TEAL, alpha=k2)
+    eq(d, W / 2, 1460, f"tốc độ góc ω = 2π/T ≈ {WW} rad/s", 55, PURPLE, alpha=k2)
 
 # ---------------- canh 5: Bay + chua noi duoc ----------------
 def s_bay(img, d, t, sc):
@@ -288,7 +285,7 @@ CLIP = dict(id="tn-l10-trondeu-03", header="VẬT LÍ 10 · THÍ NGHIỆM", foot
    ("Đáp án: đối diện mốc.", 3.2)]),
  dict(key="rutra", title="Rút ra", draw=s_rutra, tail=0.3, caps=[
    ("Trung bình, rồi chia 3.", 3.0),
-   ("Mỗi giây quay 0,63 rad.", 3.4)]),
+   ("Mỗi giây quay 0,63 rad.", 3.8)]),
  dict(key="bay", title="Bẫy hay gặp", draw=s_bay, tail=0.3, caps=[
    ("0,100 là ω?", 3.0),
    ("Không, đó là f.", 3.0),
