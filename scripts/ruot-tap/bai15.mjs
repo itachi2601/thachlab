@@ -69,7 +69,7 @@ const p3 = `<section class="page">
 ${head('BẪY · TRẢ BÀI · KẾT QUẢ TỰ KIỂM TRA')}
 ${h3(1, 'II.6 · Hoá học và hạt nhân', '3·1')}
 <div class="card" style="padding:1.2mm 3mm">Đốt một phân tử: cỡ ${nw(`${f(8)}&nbsp;eV`)}; tạo một hạt nhân He-4: ${nw(`${f(8)}&nbsp;MeV`)} → hơn nhau cỡ ${nw(`10${exp}&nbsp;lần`)}.</div>
-${h3(2, 'III · Ba cái bẫy hay sập', '3·2')}
+${h3(2, 'III · Ba cái bẫy hay sập (tích khi em đã biết bẫy)', '3·2')}
 <div class="card" style="padding:1mm 3mm">
 <div class="trap">${ck}<span><b>“Khối lượng đã mất đi.”</b> Không mất: chuyển thành năng lượng ${m('E=\\Delta m\\,c^2')}.</span></div>
 <div class="trap">${ck}<span><b>“${m('E_{lk}')} lớn là bền.”</b> Phải chia cho ${m('A')}, so bằng ${m('E_{lkr}')}.</span></div>
