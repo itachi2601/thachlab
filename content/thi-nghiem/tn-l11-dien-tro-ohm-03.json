@@ -115,7 +115,7 @@
     3.0
    ]
   ],
-  "ghi_chu": "Tính từ R = R0·exp[B(1/T − 1/T0)] với R0 = 10 kΩ, B = 3950 K, làm tròn tới 0,1 kΩ (giá trị chính xác: 10.00, 6.51, 4.35, 2.98 kΩ). Không phải số đo thật."
+  "ghi_chu": "Tính từ R = R0·exp[B(1/T − 1/T0)] với R0 = 10 kΩ, B = 3950 K, làm tròn tới 0,1 kΩ (giá trị chính xác: 10.00, 6.51, 4.35, 2.98 kΩ). Không phải số đo thật. Câu chốt clip: NTC chỉ 5,0 kΩ → 1/T = 1/298,15 + ln(0,5)/3950 → T ≈ 314,6 K, nước khoảng 41 °C (tự suy từ mô hình)."
  },
  "ket_qua_ky_vong": "R giảm theo hàm mũ khi t tăng: 10,0 kΩ (25 °C) → 3,0 kΩ (55 °C).",
  "hien_tuong_hay_sai": [

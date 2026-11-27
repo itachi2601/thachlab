@@ -74,7 +74,7 @@ ${h3(4, 'II.1 · Đọc nhãn trên thiết bị', '1·4')}
 <div><b>Input</b> là đầu ${f(25)} (điện đi vào thiết bị); <b>Output</b> là đầu ${f(25)} (thiết bị cấp điện cho mạch).</div>
 <div><b>Định mức</b> là số ${f(25)} ghi trên nhãn dụng cụ: mức dụng cụ được thiết kế để hoạt động bình thường.</div></div>
 ${H.nhanNguon()}</div>
-<div class="card soft" style="padding:1.2mm 3mm"><b>Đo thử:</b> núm ở vạch 3; 6; 9; ${nw('12 V')}, vôn kế chỉ 3,1; 6,2; 9,3; ${nw('12,4 V')}. Bóng ghi ${nw('6 V')} mà núm ở vạch ${nw('12 V')} thì nhận ${f(12)} V, gấp ${f(12)} lần định mức. Vạch chỉ là giá trị gần ${f(25)}.</div>
+<div class="card soft" style="padding:1.2mm 3mm"><b>Đo thử:</b> núm ở vạch 3; 6; 9; ${nw('12 V')}, vôn kế chỉ ${f(16)} V. Bóng ghi ${nw('6 V')} mà núm ở vạch ${nw('12 V')} thì nhận ${f(12)} V, gấp ${f(12)} lần định mức. Vạch chỉ là giá trị gần ${f(25)}.</div>
 ${foot(1)}</section>`;
 
 const p2 = `<section class="page">
@@ -82,9 +82,9 @@ ${head('KÍ HIỆU · MƯỜI QUY TẮC')}
 ${h3(1, 'II.2 · Kí hiệu: nhìn hình dạng và màu trước, hình bên trong sau', '2·1')}
 <div class="fig-side" style="${fs(48)}"><div>
 <table><tr><th style="width:36mm">Hình dạng, màu</th><th style="width:25mm">Nhóm</th><th>Ý nghĩa</th></tr>
-<tr><td>(1) Tam giác, viền vàng</td><td></td><td>cẩn thận, có nguy hiểm</td></tr>
-<tr><td>(2) Tròn, đỏ, gạch chéo</td><td></td><td>không được làm</td></tr>
-<tr><td>(3) Tròn, xanh</td><td></td><td>phải làm</td></tr>
+<tr><td>(1) Tam giác, viền vàng</td><td></td><td></td></tr>
+<tr><td>(2) Tròn, đỏ, gạch chéo</td><td></td><td></td></tr>
+<tr><td>(3) Tròn, xanh</td><td></td><td></td></tr>
 <tr><td>(4), (5) Không có khung</td><td></td><td>nhận ra qua hình bên trong</td></tr></table>
 <div style="margin-top:1mm">Hình trong tam giác hay gặp: nhiệt độ cao · ${f(25)} · ${f(25)} · ${f(25)}</div>
 <div>Hình trong vòng cấm (2): ${f(25)} · trong vòng xanh (3): đeo ${f(25)}</div></div>
@@ -106,7 +106,7 @@ ${h3(1, 'Thí nghiệm: càng xa ngọn lửa, càng bớt nóng', '3·1')}
 <div class="fig-side" style="${fs(48)}"><div>
 <div>Nhiệt độ phòng ${nw('25 °C')}, sai số mỗi số đọc ${nw('±1 °C')}; phần nóng hơn phòng ${dTdinh}.</div>
 <table class="tbl-ct"><tr><th style="width:30mm">Cách đèn (cm)</th><th style="width:13.5mm">2</th><th style="width:13.5mm">5</th><th style="width:13.5mm">10</th><th style="width:13.5mm">20</th></tr>
-<tr><td>Nhiệt kế chỉ (°C)</td><td>125</td><td>41</td><td>29</td><td>26</td></tr>
+<tr><td>Nhiệt kế chỉ (°C)</td><td></td><td></td><td></td><td></td></tr>
 <tr><td>${dT} (°C)</td><td></td><td></td><td></td><td></td></tr></table></div>
 ${H.khoangCach()}</div>
 <div class="card" style="margin-top:.6mm;padding:1mm 3mm">

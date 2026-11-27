@@ -1,52 +1,69 @@
 {
   "id": "tn-l11-tudien-02",
   "ten": "Nạp tụ ở nhiều mức U, đo điện tích Q",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-tudien-02-20261030-2.mp4",
-  "tong_giay": 49.67,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-tudien-02-20261127.mp4",
+  "tong_giay": 49.6,
   "o": [
     {
       "khoa": "gia_thuyet",
       "giay": 0,
       "chu": "Q tỉ lệ thuận với U: tỉ số Q/U của một tụ không đổi, đó là điện dung C.",
-      "kiem": "Đổi U nạp thì tỉ số Q/U của tụ ra sao?"
+      "kiem": "Đổi U nạp thì Q của tụ thay đổi ra sao?"
     },
     {
       "khoa": "du_doan",
-      "giay": 3.6,
-      "chu": "Nạp tụ ở U càng lớn thì tỉ số Q/U tính ra thay đổi thế nào?"
+      "giay": 3.4,
+      "chu": "Vẽ Q theo U, năm điểm đo nằm trên đường nào?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 10.8,
-      "chu": "Tụ 470 μF – 16 V. Gạt K về 1 nạp tụ (vôn kế đo U), gạt về 2 cho tụ phóng qua bộ đo điện lượng để đọc Q."
+      "giay": 9.9,
+      "chu": "Tụ 470 μF – 16 V, nguồn, bộ đo Q."
     },
     {
       "khoa": "quan_sat",
-      "giay": 21.0,
+      "giay": 20.4,
       "chu": "U = 2; 4; 6; 8; 10 V cho Q = 980; 1900; 2890; 3820; 4800 μC."
     },
     {
       "khoa": "rut_ra",
-      "giay": 26.8,
-      "chu": "Q tỉ lệ thuận với U; Q/U quanh 481 μF, đó là điện dung C.\nLần đo ở 2 V lệch nhiều nhất."
+      "giay": 26.0,
+      "chu": "Q tỉ lệ thuận với U: đồ thị Q theo U là đường thẳng đi qua gốc toạ độ."
     },
     {
       "khoa": "chua_noi",
-      "giay": 36.5,
-      "chu": "Mới đo một tụ: C phụ thuộc gì ở cấu tạo tụ? Tụ trữ bao nhiêu năng lượng?"
+      "giay": 37.2,
+      "chu": "Mới đo một tụ: C phụ thuộc gì ở cấu tạo tụ?"
     }
   ],
   "dung_dua": {
-    "giay": 10.7,
-    "cau_hoi": "Nạp tụ ở U càng lớn thì tỉ số Q/U tính ra thay đổi thế nào?",
+    "giay": 9.4,
+    "cau_hoi": "Nạp tụ ở 5 mức U rồi đo điện tích Q. Vẽ các điểm Q theo U, chúng nằm trên đường nào?",
     "chon": [
-      "A. Tăng dần theo U",
-      "B. Giảm dần khi U tăng",
-      "C. Gần như không đổi",
-      "D. Luôn bằng đúng 470 μF ghi trên vỏ"
+      "A. Đường thẳng đi qua gốc toạ độ",
+      "B. Đường cong, càng lúc càng dốc",
+      "C. Đường cong, thoải dần rồi nằm ngang",
+      "D. Đường thẳng không qua gốc toạ độ"
+    ],
+    "dung": 0,
+    "giai_thich_dung": "U gấp đôi thì Q gần gấp đôi (4 V: 1900 μC; 8 V: 3820 μC), U = 0 thì Q = 0: các điểm thẳng hàng với gốc, Q tỉ lệ thuận với U.",
+    "giai_thich_sai": "Xem bảng ở cảnh Tiến hành: so Q ở 4 V và 8 V, rồi nghĩ U = 0 thì tụ có điện tích không."
+  },
+  "cau_chot": {
+    "giay": 41.9,
+    "cau_hoi": "Vẫn tụ đó (ghi 470 μF – 16 V), nạp ở U = 12 V rồi phóng qua bộ đo. Điện tích Q đo được khoảng bao nhiêu?",
+    "chon": [
+      "A. Khoảng 40 μC",
+      "B. Khoảng 4800 μC",
+      "C. Khoảng 5760 μC",
+      "D. Khoảng 6900 μC"
     ],
     "dung": 2,
-    "giai_thich_dung": "Q/U ở năm lần đo là 490; 475; 481,7; 477,5; 480 μF, quanh 481 μF: U tăng bao nhiêu lần thì Q tăng bấy nhiêu lần, tỉ số đó là điện dung C của tụ.",
-    "giai_thich_sai": "Xem bảng ở đoạn kế: chia Q cho U ở từng hàng rồi so các tỉ số với nhau, và so với 470 μF ghi trên vỏ."
+    "giai_thich": [
+      "40 là lấy một số chia cho 12: nhầm Q = C/U. Q tỉ lệ thuận với U, nạp 12 V thì Q phải lớn hơn lúc 10 V (4800 μC).",
+      "4800 μC là Q ở 10 V. Tụ chưa \"đầy\": 12 V vẫn dưới 16 V ghi trên vỏ, U tăng thì Q còn tăng theo.",
+      "Đồ thị là đường thẳng qua gốc: Q tỉ lệ thuận với U. U tăng từ 10 V lên 12 V (gấp 1,2 lần) thì Q cũng gấp 1,2 lần: 4800 · 12/10 = 5760 μC.",
+      "6900 μC là coi Q tăng theo U² (4800 · 1,2²). Đồ thị là đường thẳng qua gốc, Q chỉ tăng 1,2 lần: 5760 μC."
+    ]
   }
 }

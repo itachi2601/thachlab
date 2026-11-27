@@ -1,8 +1,8 @@
 {
   "id": "tn-l11-dien-truong-deu-02",
   "ten": "Dò điện thế giữa hai thanh đồng song song",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-dien-truong-deu-02-20261030-2.mp4",
-  "tong_giay": 48.8,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-dien-truong-deu-02-20261127.mp4",
+  "tong_giay": 49.2,
   "o": [
     {
       "khoa": "gia_thuyet",
@@ -12,32 +12,32 @@
     },
     {
       "khoa": "du_doan",
-      "giay": 4.6,
+      "giay": 4.4,
       "chu": "Mỗi lần que dò dịch thêm 1 cm, số chỉ vôn kế thay đổi thế nào?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 11.2,
-      "chu": "Hai thanh đồng cách 6,0 cm trên giấy dẫn điện, nguồn 9,0 V. Que âm chạm thanh âm; que dương dò x = 1 đến 5 cm."
+      "giay": 10.7,
+      "chu": "Hai thanh đồng cách 6,0 cm, nguồn 9,0 V, vôn kế."
     },
     {
       "khoa": "quan_sat",
-      "giay": 21.6,
+      "giay": 18.7,
       "chu": "V tăng đều theo x, mỗi cm thêm 1,5 V."
     },
     {
       "khoa": "rut_ra",
-      "giay": 25.8,
-      "chu": "V/x = 150 V/m ở mọi hàng.\nHàng x = 1 cm kém tin cậy nhất: ±0,1 V chia 0,010 m thành ±10 V/m."
+      "giay": 25.0,
+      "chu": "V/x = 150 V/m ở mọi hàng: điện trường giữa hai thanh đều."
     },
     {
       "khoa": "chua_noi",
-      "giay": 34.6,
+      "giay": 36.3,
       "chu": "Mới đo ở giữa tờ giấy: sát mép thanh, E còn đều không thì chưa biết."
     }
   ],
   "dung_dua": {
-    "giay": 11.0,
+    "giay": 10.5,
     "cau_hoi": "Mỗi lần que dò dịch thêm 1 cm, số chỉ vôn kế…",
     "chon": [
       "A. tăng nhanh dần khi que lại gần thanh dương",
@@ -48,5 +48,22 @@
     "dung": 1,
     "giai_thich_dung": "Giấy đồng chất nên mỗi cm giữa hai thanh nhận một phần như nhau của 9,0 V: V thêm đều 1,5 V mỗi cm, điện trường giữa hai thanh là đều.",
     "giai_thich_sai": "Xem bảng ở đoạn kế: so mức tăng của V từ x = 1 lên 2 cm với từ 4 lên 5 cm."
+  },
+  "cau_chot": {
+    "giay": 41.4,
+    "cau_hoi": "Dán lại hai thanh cách 4,0 cm, vẫn nguồn 9,0 V. Que dương cách thanh âm 2 cm thì vôn kế chỉ khoảng…",
+    "chon": [
+      "A. 3,0 V",
+      "B. 4,5 V",
+      "C. 6,0 V",
+      "D. 9,0 V"
+    ],
+    "dung": 1,
+    "giai_thich": [
+      "3,0 V là số đo ở 2 cm khi hai thanh cách 6,0 cm. Hai thanh gần lại thì E đổi, số chỉ đổi theo.",
+      "E = 9,0 : 0,040 = 225 V/m; ở x = 0,020 m số chỉ V = 225 · 0,020 = 4,5 V (que ở giữa hai thanh: nửa U).",
+      "6,0 V là số đo ở x = 4 cm trong bảng cũ, không phải ca này.",
+      "9,0 V là số chỉ khi que chạm thanh dương; ở 2 cm que mới đi nửa đường."
+    ]
   }
 }

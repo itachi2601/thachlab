@@ -149,28 +149,28 @@ def s_bay(img, d, t, sc):
         kv = appear(t, M[1] + 3.0, 0.45) * a1
         if kv > 0:
             card(d, (40, 500, 1040, 640), fill=A((220, 252, 231), kv), outline=A(GREEN, kv), w=5)
-            text(d, (W / 2, 570), "Nước ép cả ngang, như nhau", 58, DGREEN, alpha=kv)
+            text(d, (W / 2, 570), "Nước ép ngang, như nhau", 58, DGREEN, alpha=kv)
     if k3 > 0:
         card(d, (40, 250, 1040, 640), fill=A(WHITE, k3), outline=A(NAVY, k3), w=6)
         pill(d, W / 2, 320, "CHƯA NÓI ĐƯỢC", NAVY, k3)
         text(d, (W / 2, 445), "Mới thử với nước.", 60, INK, alpha=k3)
-        text(d, (W / 2, 545), "Mực nước tụt dần.", 60, INK, alpha=k3)
+        text(d, (W / 2, 545), "Mực nước tụt dần: tia yếu đi?", 60, INK, alpha=k3)
 
 # ---------------- canh 5: thu nghi ----------------
 def s_end(img, d, t, sc):
-    k = appear(t, 0.15, 0.4)
+    k = 1.0
     ws2 = WS - 5 * PXC
-    bottle(d, ws=ws2)
+    bottle(d, ws=ws2); depth_marks(d, mat=False)
     d.line([(CX0 + 6, WS), (CX1 - 6, WS)], fill=NOTE, width=3)                       # muc cu (net mong)
-    bx = CX0 - 40                                                                     # ngoac 5 cm
+    bx = CX1 + 30                                                                     # ngoac 5 cm (ben phai chai)
     d.line([(bx, ws2), (bx, WS)], fill=ORANGE, width=6)
     for y in (ws2, WS): d.line([(bx - 12, y), (bx + 12, y)], fill=ORANGE, width=6)
-    card(d, (40, 1160, 1040, 1630), fill=A(WHITE, k), outline=A(ORANGE, k), w=6)
+    text(d, (bx + 24, (ws2 + WS) / 2), "mặt nước +5 cm", 58, DORANGE, anchor="lm")
+    card(d, (40, 1160, 1040, 1580), fill=A(WHITE, k), outline=A(ORANGE, k), w=6)
     pill(d, W / 2, 1222, "THỬ NGHĨ", ORANGE, k)
-    text(d, (W / 2, 1312), "Mặt nước cao thêm 5 cm.", 62, INK, alpha=k)
-    text(d, (W / 2, 1388), "Lỗ trên cùng giờ mạnh", 62, INK, alpha=k)
-    text(d, (W / 2, 1460), "như lỗ nào lúc trước?", 64, DORANGE, alpha=k)
-    seg_bar(d, 1522, t, 1.0, sc["T"] - 0.2, ORANGE, k)
+    text(d, (W / 2, 1320), "Tại miệng lỗ, lỗ trên cùng", 62, INK, alpha=k)
+    text(d, (W / 2, 1400), "giờ mạnh như lỗ nào trước?", 64, DORANGE, alpha=k)
+    seg_bar(d, 1470, t, 1.0, sc["T"] - 0.2, ORANGE, k)
 
 def _kiem():
     """Tia: lo sau hon xa hon (khong gay nham) ; v kho = sqrt(2gh) ; p kho = rho.g.h."""
@@ -201,10 +201,10 @@ CLIP = dict(id="tn-l10-klr-apsuat-03", header="VẬT LÍ 10 · THÍ NGHIỆM", c
    ("Càng sâu, áp suất nước càng lớn.", 4.0)]),
  dict(key="bay", title="Bẫy hay gặp", draw=s_bay, tail=0.4, caps=[
    ("Đúng không?", 3.0),
-   ("Bốn lỗ quanh thân, cùng độ sâu.", 6.1),
+   ("Bốn lỗ cùng độ sâu.", 6.1),
    ("Chưa nói được.", 3.2)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.4, caps=[
-   ("Dừng lại, tự trả lời.", 7.4)]),
+   ("Dừng lại, tự nghĩ.", 7.4)]),
 ])
 
 if __name__ == "__main__" and "--kiem" in __import__("sys").argv:

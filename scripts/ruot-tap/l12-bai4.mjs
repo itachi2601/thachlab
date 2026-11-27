@@ -4,7 +4,9 @@
 // Nội dung theo bài web (book/cache/5.json, tải 12/11/2026). Đáp số mọi bài (BTM, tương tự) tính bằng Python 12/11/2026.
 // Chạy: node scripts/ruot-tap/l12-bai4.mjs [file.pdf]   → scripts/ruot-tap/out/ruot-tap-vl12-bai4.pdf
 //       node scripts/ruot-tap/l12-bai4.mjs --hinh       → chụp từng hình ở cỡ in vào out/hinh-l12-bai4/
-import { khoiTao, m, lines, wl, fill as f, nw, ck, box, opt, chon, rkHai } from './khung.mjs';
+import { khoiTao, m, lines, wl, fill as f, nw, ck, box, opt, chon, rkHai, MOC } from './khung.mjs';
+// Kiểu mộc (RUOT_TAP_KIEU=moc): bỏ ô tick tự đánh giá (ô tick là lựa chọn trả lời thì giữ), nhãn viết như lời nói thường
+const ckM = MOC ? '' : ck;
 import { hinhL12b4 as H } from './hinh-l12-bai4.mjs';
 
 if (process.argv[2] === '--hinh') {
@@ -38,7 +40,7 @@ const K = khoiTao({ bai: 4, lid: 5, lop: 12, baiDau: 1, ten: 'THỰC HÀNH: ĐO 
 const { head, h3, foot } = K;
 const fs = (w, extra = '') => `grid-template-columns:1fr ${w}mm;${extra}`;
 const cau = (s, k) => `<div style="padding-top:1mm;line-height:1.35">${s}</div>${lines(k)}`;
-const dong = (s) => `<div style="margin:.3mm 0">${s}</div>`;
+const dong = (s) => `<div style="margin:.3mm 0">${MOC ? '– ' : ''}${s}</div>`;
 const Pm = m('P'), tau = m('\\tau'), Q = m('Q'), c = m('c'), lam = m('\\lambda'), L = m('L'), dt = m('\\Delta t'), k = m('k');
 const dv = nw(`${Pm}: W · ${tau}: s · m: kg · ${dt}: K`);
 const frac = (w = 26) => `<span class="fill" style="min-width:${w}mm;height:10mm"></span>`;
@@ -48,11 +50,11 @@ const ttCss = '<style>.yo{display:flex;justify-content:space-between;align-items
 
 const p1 = `${ttCss}<section class="page">
 ${head(`BÀI 4 · THỰC HÀNH: ĐO ${c}, ${lam}, ${L}`, K.sub)}
-${h3(1, 'Mục tiêu', '1·1')}
+${h3(1, MOC ? 'Học xong bài này, em làm được' : 'Mục tiêu', '1·1')}
 <div class="card soft">
-${dong(`${ck}Nêu đại lượng cần đo, dụng cụ của từng phép đo ${c}, ${lam}, ${L}`)}
-${dong(`${ck}Đọc đồ thị ${m('t')} theo ${tau}, chỉ ra mỗi đoạn ứng với quá trình nào`)}
-${dong(`${ck}Tính ${c}, ${lam}, ${L} từ số đo; ghi kết quả kèm nguồn sai số`)}
+${dong(`${ckM}Nêu đại lượng cần đo, dụng cụ của từng phép đo ${c}, ${lam}, ${L}`)}
+${dong(`${ckM}Đọc đồ thị ${m('t')} theo ${tau}, chỉ ra mỗi đoạn ứng với quá trình nào`)}
+${dong(`${ckM}Tính ${c}, ${lam}, ${L} từ số đo; ghi kết quả kèm nguồn sai số`)}
 </div>
 ${h3(2, 'Dự đoán trước khi học', '1·2')}
 <div class="card">
@@ -66,7 +68,7 @@ ${opt('D', 'Tăng nhanh lúc đầu rồi chậm dần')}
 ${H.cocDa()}</div>
 </div>
 ${h3(3, 'Học xong, em sửa lại', '1·3')}
-<div class="card soft"><div>Đáp án đúng là: ${f()} &nbsp; Em đoán ${ck}đúng &nbsp;${ck}sai &nbsp;· <span class="hint">Điều em hiểu sai hoặc mới biết:</span></div>${lines(1)}</div>
+<div class="card soft"><div>Đáp án đúng là: ${f()}${MOC ? '. ' : ` &nbsp; Em đoán ${ck}đúng &nbsp;${ck}sai &nbsp;· `}<span class="hint">Điều em hiểu sai hoặc mới biết:</span></div>${lines(1)}</div>
 ${h3(4, 'II.1 · Nhắc lại: không dụng cụ nào đọc thẳng nhiệt lượng', '1·4')}
 ${hangSo}
 <div class="card" style="padding:1.2mm 3mm">

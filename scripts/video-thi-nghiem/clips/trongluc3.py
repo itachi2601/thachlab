@@ -8,8 +8,9 @@
 # Tien hanh: xoay huong keo 0 -> 45 -> 90 trong MOT canh, bang so lieu 3 hang.
 # Bay = hien_tuong_hay_sai[0]: keo chech tuong luc ke chi "phan thang dung" -> net dut do (x) roi hai mui ten T bang nhau.
 # Chua noi duoc = so_lieu_mau.ghi_chu + sai_so_thuong_gap: ma sat truc, so chi lech ~0,05 N.
-# Chot (khung web A-D): hai qua 1,0 N treo hai dau day vat qua rong roc, luc ke mac giua doan day ben phai, he dung yen
-#   -> luc ke chi 1,0 N (theo mo hinh: moi doan day T = P). Ca nay chua chieu; bay 2,0 N / 0 N.
+# Chot (khung web A-D, kiem-v1 27/11): luc ke treo TRUC rong roc nhe, day vat qua, hai dau treo hai qua 1,0 N dung yen
+#   -> moi doan day T = P = 1,0 N (mo_hinh), rong roc can bang: luc ke chi 2T = 2,0 N (ngoai moc 1,0 N da chieu).
+#   Bay: 1,0 N (chi lay T), 0 N (tuong hai ben triet tieu), 1,4 N (cong vecto vuong goc).
 from engine import *
 
 # ---------------- bo cuc (khung nguon 1080x1920, vung ve y 285..1600) ----------------
@@ -74,6 +75,7 @@ def scale(d, beta, f_read, hand=True, alpha=1.0, an=False):
     (tx, ty), (ux, uy) = tangent(beta); nx, ny = -uy, ux
     Q = lambda s, n=0.0: (tx + ux * s + nx * n, ty + uy * s + ny * n)
     d.arc([CX - R, CY - R, CX + R, CY + R], 180, 360 - beta, fill=A(NAVY, alpha), width=5)
+    d.line([(WX, CY), (WX, WY0 - 16)], fill=A(NAVY, alpha), width=5)                 # doan day ben qua nang
     d.line([Q(0), Q(ROPE - 13)], fill=A(NAVY, alpha), width=5)
     se = luc_ke(d, Q, ROPE, ROPE + 20, ROPE + 20 + BODY, FMAX, None if an else f_read, nho=SAI, so=(0, 1, 2), ben=-1,
                 alpha=alpha, co=56, an=an)
@@ -185,10 +187,11 @@ def forces(d, beta, alpha, L=130):
     harrow(d, (WX, WY1), (WX, WY1 + L), BLUE, alpha)
     text(d, (WX + 34, WY1 + L - 30), "P", 60, BLUE, anchor="lm", alpha=alpha)
     (tx, ty), (ux, uy) = tangent(beta); nx, ny = -uy, ux
-    o = 40
+    o = -36                                                    # phia tren-phai day: khong chong rong roc
     sx, sy = tx + ux * ROPE + nx * o, ty + uy * ROPE + ny * o
-    harrow(d, (sx, sy), (sx - ux * L, sy - uy * L), RED, alpha)
-    text(d, (sx - ux * L / 2 + nx * (o + 40), sy - uy * L / 2 + ny * (o + 40)), "T", 60, RED, alpha=alpha)
+    L3 = 80                                                    # kiem-v1: ngan lai, khong de len rong roc ; co nhan T
+    harrow(d, (sx, sy), (sx - ux * L3, sy - uy * L3), RED, alpha)
+    text(d, (sx - ux * L3 / 2 - nx * 46, sy - uy * L3 / 2 - ny * 46), "T", 60, RED, alpha=alpha)
 
 def s_dapan(img, d, t, sc):
     M = sc["M"]
@@ -207,12 +210,12 @@ def s_bay(img, d, t, sc):
     (tx, ty), (ux, uy) = tangent(45)
     hx, hy = tx + ux * ROPE, ty + uy * ROPE
     k2 = appear(t, M[1] - 0.1, 0.45)
-    a1 = appear(t, 0.3, 0.45) * (1 - k2)
+    a1 = appear(t, 1.8, 0.45) * (1 - k2)
     if a1 > 0:                                                    # quan niem sai: net dut do, co dau x
         dashed(d, (hx - 30, hy), (hx - 30, hy + 170), A(DRED, a1), w=6)
         arrow(d, (hx - 30, hy + 150), (hx - 30, hy + 190), A(DRED, a1), w=6, head=20)
         text(d, (hx - 70, hy + 150), "?", 72, DRED, anchor="rm", alpha=a1)
-    k1 = appear(t, 0.3, 0.45)
+    k1 = appear(t, 1.8, 0.45)
     card(d, (60, 1060, 1020, 1170), fill=A((254, 242, 242), k1), outline=A(DRED, k1), r=24, w=6)
     text(d, (W / 2, 1115), "✗ Dễ tưởng: kéo chếch chỉ ít hơn", 56, DRED, alpha=k1)
     if k2 > 0:
@@ -222,50 +225,42 @@ def s_bay(img, d, t, sc):
 
 # ---------------- canh 5: Chua noi duoc - ma sat truc (hien lan luot, kim rung quanh 1,0 N) ----------------
 def s_gioihan(img, d, t, sc):
-    k0 = appear(t, 0.3, 0.45)
-    card(d, (40, 260, 1040, 470), fill=A(WHITE, k0), outline=A(NAVY, k0), w=6)
-    text(d, (W / 2, 320), "Chưa nói được", 60, NAVY, alpha=k0)
-    text(d, (W / 2, 410), "Trục có ma sát", 60, INK, alpha=k0)
-    k1 = appear(t, 1.2, 0.5)
-    if k1 <= 0: return
-    yh = 520 + BODY + 36 + 14
-    d.rectangle([430, 494, 650, 520], fill=A((176, 124, 74), k1))
-    d.line([(540, 520), (540, 536)], fill=A(NAVY, k1), width=5)
-    tau = t - 1.2
-    f = P + SAI * math.sin(2 * math.pi * 0.8 * tau) * math.exp(-0.5 * tau)
-    Q = lambda s, h=0.0: (540 + h, yh - s)
-    luc_ke(d, Q, 0, 20, 20 + BODY, FMAX, f, nho=SAI, so=(0, 1, 2), ben=-1, co=56, alpha=k1)
-    weight(d, 540, yh + 30, a=k1)
-    k2 = appear(t, 2.6, 0.45)
+    """kiem-v1: ve rong roc + day + luc ke keo thang xuong; kim rung quanh 1,0 N; truc khoanh do; chu 'ma sat truc'."""
+    f = P + SAI * math.sin(2 * math.pi * 0.8 * t)
+    support(d); weight(d); scale(d, 0, f); pulley(d)
+    k2 = appear(t, 0.8, 0.45)
     if k2 > 0:
-        b0, b1 = 20, 20 + BODY; z0, zf = b1 - 58, b0 + 40
-        yk = lambda v: yh - (z0 - (z0 - zf) * v / FMAX)
-        xb = 540 + 70
-        d.line([(xb, yk(P - SAI)), (xb, yk(P + SAI))], fill=A(DRED, k2), width=6)
-        for v in (P - SAI, P + SAI): d.line([(xb - 12, yk(v)), (xb + 12, yk(v))], fill=A(DRED, k2), width=6)
-        text(d, (xb + 26, yk(P)), "± 0,05 N", 60, DRED, anchor="lm", alpha=k2)
+        rr = 40 + 16 * math.sin(2 * math.pi * 0.9 * t)          # vong do nhip nhe quanh truc
+        d.ellipse([CX - rr, CY - rr, CX + rr, CY + rr], outline=A(DRED, k2), width=6)
+    k0 = appear(t, 0.3, 0.45)
+    card(d, (40, 1180, 1040, 1400), fill=A(WHITE, k0), outline=A(NAVY, k0), w=6)
+    text(d, (W / 2, 1240), "Chưa nói được", 60, NAVY, alpha=k0)
+    text(d, (W / 2, 1335), "ma sát trục: lệch cỡ 0,05 N", 60, INK, alpha=k0)
 
 # ---------------- canh 6: Chot (phu de) + THU NGHI: hai qua 1,0 N, luc ke giua doan day ben phai ----------------
-EX, EY = 540, 470
+EX = 540
 def s_end(img, d, t, sc):
+    """THU NGHI: luc ke treo truc rong roc nhe; day vat qua, hai qua 1,0 N dung yen -> luc ke chi ? (2,0 N)."""
     k1 = appear(t, 0.15, 0.4)
     card(d, (40, 230, 1040, 1590), fill=A(WHITE, k1), outline=A(ORANGE, k1), w=6)
     pill(d, "THỬ NGHĨ", 300, k1, ORANGE)
-    d.rectangle([EX - 110, 380, EX + 110, 404], fill=A((176, 124, 74), k1))
-    d.line([(EX, 404), (EX, EY)], fill=A((120, 125, 140), k1), width=12)
+    top = 380
+    d.rectangle([EX - 110, top, EX + 110, top + 24], fill=A((176, 124, 74), k1))
+    d.line([(EX, top + 24), (EX, top + 40)], fill=A(NAVY, k1), width=5)
+    yh = top + 24 + BODY + 36 + 14
+    Q = lambda s, h=0.0: (EX + h, yh - s)
+    luc_ke(d, Q, 0, 20, 20 + BODY, FMAX, None, nho=SAI, so=(0, 1, 2), ben=-1, co=56, alpha=k1, an=True)
+    ey = yh + 30 + R
+    d.line([(EX, yh), (EX, ey)], fill=A((120, 125, 140), k1), width=12)          # quai giu truc
     lx, rx = EX - R, EX + R
-    d.arc([EX - R, EY - R, EX + R, EY + R], 180, 360, fill=A(NAVY, k1), width=5)
-    d.line([(lx, EY), (lx, 780)], fill=A(NAVY, k1), width=5)
-    weight(d, lx, 780, a=k1, lab=P_TXT, side=-1)
-    yh = EY + 60 + BODY + 36 + 14 - 40
-    d.line([(rx, EY), (rx, yh - BODY - 50)], fill=A(NAVY, k1), width=5)
-    Q = lambda s, h=0.0: (rx + h, yh - s)
-    luc_ke(d, Q, 0, 20, 20 + BODY, FMAX, None, nho=SAI, so=(0, 1, 2), ben=1, co=56, alpha=k1, an=True)
-    weight(d, rx, yh + 30, a=k1, lab=P_TXT, side=1)
-    pulley(d, EX, EY, k1)
-    text(d, (W / 2, 1180), "Hai quả đứng yên.", 60, INK, alpha=k1)
-    text(d, (W / 2, 1280), "Lực kế chỉ bao nhiêu?", 64, DORANGE, alpha=k1)
-    think_bar(d, t, 1.0, sc["T"] - 0.2, 1400, k1, col=DORANGE)
+    d.arc([EX - R, ey - R, EX + R, ey + R], 180, 360, fill=A(NAVY, k1), width=5)
+    for x, side in ((lx, -1), (rx, 1)):
+        d.line([(x, ey), (x, 1060)], fill=A(NAVY, k1), width=5)
+        weight(d, x, 1060, a=k1, lab=P_TXT, side=side)
+    pulley(d, EX, ey, k1)
+    text(d, (W / 2, 1270), "Ròng rọc nhẹ, hệ đứng yên.", 58, INK, alpha=k1)
+    text(d, (W / 2, 1370), "Lực kế chỉ bao nhiêu?", 64, DORANGE, alpha=k1)
+    think_bar(d, t, 1.0, sc["T"] - 0.2, 1450, k1, col=DORANGE)
 
 def _cues(clip):
     sc = {s["key"]: s for s in clip["scenes"]}
@@ -288,12 +283,12 @@ CLIP = dict(id="tn-l10-trong-luc-luc-cang-03", header="VẬT LÍ 10 · THÍ NGHI
    ("Ba hướng kéo, cùng một số chỉ.", 3.6),
    ("Lực căng hai bên dây bằng nhau.", 3.8)]),
  dict(key="bay", title="Bẫy: kéo chếch", draw=s_bay, tail=0.4, caps=[
-   ("Đây là bẫy hay gặp.", 3.8),
+   ("Kéo chếch thì sao?", 3.8),
    ("Lực kế đo lực dọc dây.", 3.8)]),
  dict(key="gioihan", title="Giới hạn", draw=s_gioihan, tail=0.6, caps=[
    ("Đo thật, số chỉ lệch chút.", 4.2)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.3, caps=[
-   ("Ròng rọc cố định chỉ đổi hướng dây.", 5.8)]),
+   ("Thử tính, rồi chọn đáp án.", 5.8)]),
 ])
 
 _b = _kiem_dong_bo(); assert not _b, _b

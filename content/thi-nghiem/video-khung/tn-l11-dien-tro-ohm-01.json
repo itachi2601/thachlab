@@ -1,43 +1,43 @@
 {
   "id": "tn-l11-dien-tro-ohm-01",
-  "ten": "Đo U và I của một điện trở 10 Ω",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-dien-tro-ohm-01-20261116.mp4",
-  "tong_giay": 43.9,
+  "ten": "Đo U và I của điện trở 10 Ω",
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-dien-tro-ohm-01-20261127.mp4",
+  "tong_giay": 48.0,
   "o": [
     {
       "khoa": "gia_thuyet",
       "giay": 0,
       "chu": "Với một điện trở, U/I không đổi và đồ thị I theo U là đường thẳng qua gốc.",
-      "kiem": "Tăng U thì U/I ra sao?"
+      "kiem": "Tăng U thì tỉ số U/I đổi ra sao?"
     },
     {
       "khoa": "du_doan",
-      "giay": 4.2,
+      "giay": 3.8,
       "chu": "Ở 1,0 V: U/I = 10 Ω. Tăng dần U lên 5,0 V. Tỉ số U/I sẽ thế nào?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 10.5,
-      "chu": "Ampe kế nối tiếp, vôn kế song song; tăng U từng 1,0 V."
+      "giay": 10.7,
+      "chu": "Nguồn chỉnh được, điện trở 10 Ω, ampe kế, vôn kế."
     },
     {
       "khoa": "quan_sat",
-      "giay": 14.5,
-      "chu": "U gấp đôi thì I gấp đôi. Bảng: U/I = 10 Ω ở cả 5 hàng, năm điểm thẳng hàng qua gốc."
+      "giay": 19.8,
+      "chu": "U/I = 10 Ω ở cả 5 hàng; năm điểm thẳng hàng."
     },
     {
       "khoa": "rut_ra",
-      "giay": 22.2,
-      "chu": "I tỉ lệ thuận với U; đồ thị I–U là đường thẳng qua gốc."
+      "giay": 24.1,
+      "chu": "I tỉ lệ thuận với U (khi R không đổi); đồ thị I–U là đường thẳng qua gốc."
     },
     {
       "khoa": "chua_noi",
-      "giay": 26.6,
-      "chu": "Đổi linh kiện khác, còn thẳng? Quá 5,0 V thì sao?"
+      "giay": 35.7,
+      "chu": "Thay bằng bóng đèn, đường I–U còn thẳng không?"
     }
   ],
   "dung_dua": {
-    "giay": 10.3,
+    "giay": 9.9,
     "cau_hoi": "Ở 1,0 V: U/I = 10 Ω. Tăng dần U lên 5,0 V. Tỉ số U/I sẽ thế nào?",
     "chon": [
       "A. Tăng dần theo U",
@@ -48,5 +48,22 @@
     "dung": 2,
     "giai_thich_dung": "U/I ở cả 5 hàng đều là 10 Ω: U gấp mấy lần thì I gấp bấy nhiêu lần.",
     "giai_thich_sai": "Xem bảng kết quả: chia U cho I ở từng hàng rồi so các hàng với nhau."
+  },
+  "cau_chot": {
+    "giay": 40.3,
+    "cau_hoi": "Thay bằng một điện trở 40 Ω và chỉnh nguồn để vôn kế chỉ 6,0 V. Ampe kế chỉ bao nhiêu?",
+    "chon": [
+      "A. 0,60 A",
+      "B. 0,15 A",
+      "C. 6,7 A",
+      "D. 0,125 A"
+    ],
+    "dung": 1,
+    "giai_thich": [
+      "0,60 A là 6,0 V chia cho 10 Ω của điện trở cũ. Điện trở đã đổi thành 40 Ω, cản dòng mạnh hơn nên I nhỏ hơn.",
+      "R không đổi thì I = U/R: I = 6,0/40 = 0,15 A. So với 10 Ω ở cùng 6,0 V, R gấp 4 thì I còn một phần tư.",
+      "6,7 là 40/6,0, chia ngược R cho U. Đúng ra I = U/R, U (V) chia R (Ω).",
+      "0,125 A là 5,0/40, dùng 5,0 V của lần đo cuối trong clip thay vì 6,0 V đề cho."
+    ]
   }
 }

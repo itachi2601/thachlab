@@ -1,8 +1,8 @@
 {
   "id": "tn-l11-nguon-dien-01",
   "ten": "Tụ điện nạp sẵn và pin cùng nuôi điện trở",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-nguon-dien-01-20261031-2.mp4",
-  "tong_giay": 49.3,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-nguon-dien-01-20261127.mp4",
+  "tong_giay": 49.2,
   "o": [
     {
       "khoa": "gia_thuyet",
@@ -12,41 +12,58 @@
     },
     {
       "khoa": "du_doan",
-      "giay": 2.9,
-      "chu": "Mỗi nguồn nuôi một điện trở 100 Ω. Trong 100 s, hai vôn kế thay đổi thế nào?"
+      "giay": 3.8,
+      "chu": "Đọc vôn kế của tụ mỗi 20 s. Đồ thị U theo t có dạng nào?"
     },
     {
       "khoa": "dung_cu",
       "giay": 9.7,
-      "chu": "Tụ 1,0 F nạp 2,7 V và 2 pin AA, mỗi nguồn nuôi điện trở 100 Ω; vôn kế song song."
+      "chu": "Tụ 1,0 F nạp 2,7 V, hai pin AA, R 100 Ω, vôn kế."
     },
     {
       "khoa": "quan_sat",
-      "giay": 18.5,
-      "chu": "Tụ: 2,70 → 0,99 V sau 100 s. Pin: đứng ở 2,98 V."
+      "giay": 14.5,
+      "chu": "Tụ: 2,70 → 0,99 V sau 100 s, tụt nhanh trước, chậm sau. Pin: đứng ở 2,98 V."
     },
     {
       "khoa": "rut_ra",
-      "giay": 26.9,
-      "chu": "Tụ chứa sẵn điện tích, xả là hết. Pin có lực lạ bù: đó là nguồn điện."
+      "giay": 23.3,
+      "chu": "Tụ chỉ chứa sẵn điện tích, xả là hết (0,13 V sau 5 phút). Pin giữ được U suốt: đó là nguồn điện."
     },
     {
       "khoa": "chua_noi",
-      "giay": 33.5,
-      "chu": "Vì sao pin chỉ 2,98 V, không đủ 3,0 V?"
+      "giay": 36.2,
+      "chu": "Vì sao pin chỉ 2,98 V, chưa đủ 3,0 V?"
     }
   ],
   "dung_dua": {
-    "giay": 9.6,
-    "cau_hoi": "Mỗi nguồn nuôi một điện trở 100 Ω. Trong 100 s, hai vôn kế thay đổi thế nào?",
+    "giay": 9.55,
+    "cau_hoi": "Tụ 1,0 F nạp 2,7 V xả qua điện trở 100 Ω. Đọc vôn kế của tụ mỗi 20 s trong 100 s. Đồ thị U theo t có dạng nào?",
     "chon": [
-      "A. Cả hai gần như không đổi",
-      "B. Cả hai cùng tụt dần",
-      "C. Vôn kế của tụ tụt dần, của pin gần như không đổi",
-      "D. Vôn kế của pin tụt dần, của tụ gần như không đổi"
+      "A. Đường thẳng dốc xuống đều",
+      "B. Cong, dốc lúc đầu rồi thoải dần",
+      "C. Cong, thoải lúc đầu rồi dốc dần",
+      "D. Đường nằm ngang, U không đổi"
+    ],
+    "dung": 1,
+    "giai_thich_dung": "20 s đầu tụt 0,49 V (2,70 → 2,21 V), 20 s cuối chỉ tụt 0,22 V (1,21 → 0,99 V): U còn nhiều thì dòng xả lớn, tụt nhanh; U ít thì tụt chậm.",
+    "giai_thich_sai": "Mỗi 20 s vôn kế tụt một lượng khác nhau: 0,49 V lúc đầu, 0,22 V lúc cuối. Dòng xả tỉ lệ với U, nên U càng nhỏ thì tụt càng chậm: đường cong thoải dần."
+  },
+  "cau_chot": {
+    "giay": 43.3,
+    "cau_hoi": "Nạp lại tụ tới 2,7 V, cho xả qua điện trở 200 Ω thay vì 100 Ω. Sau 100 s, vôn kế của tụ chỉ khoảng:",
+    "chon": [
+      "A. 0,5 V",
+      "B. 1,0 V",
+      "C. 1,6 V",
+      "D. 2,7 V"
     ],
     "dung": 2,
-    "giai_thich_dung": "Vôn kế của tụ tụt từ 2,70 V xuống 0,99 V sau 100 s, còn vôn kế của pin đứng ở 2,98 V: tụ chỉ chứa sẵn điện tích, pin có lực lạ bù lại.",
-    "giai_thich_sai": "Hai nguồn cùng nuôi điện trở 100 Ω nhưng không giữ hiệu điện thế như nhau. Xem đồ thị ở đoạn kế: đường của tụ cong xuống, đường của pin nằm ngang."
+    "giai_thich": [
+      "0,5 V là nghĩ R lớn thì U tụt nhiều hơn. Thật ra R lớn làm dòng xả I = U/R nhỏ, tụ mất điện tích chậm hơn: sau 100 s phải cao hơn hẳn 0,99 V (kết quả 100 Ω).",
+      "1,0 V gần như bằng kết quả 100 Ω (0,99 V). Với 200 Ω dòng xả nhỏ hơn ở cùng U, tụ xả chậm hơn nên sau 100 s phải cao hơn hẳn mốc đó (mô hình: khoảng 1,6 V).",
+      "R lớn hơn thì dòng xả nhỏ hơn, tụ xả chậm hơn: sau 100 s phải cao hơn hẳn 0,99 V (kết quả 100 Ω), loại cả 0,5 V và 1,0 V; nhưng vẫn có dòng nên phải dưới 2,7 V. Chỉ 1,6 V thoả cả hai.",
+      "Vẫn có dòng chạy qua 200 Ω nên tụ vẫn mất điện tích, vôn kế phải tụt dưới 2,7 V; chỉ tụt chậm hơn lần 100 Ω, còn khoảng 1,6 V."
+    ]
   }
 }
