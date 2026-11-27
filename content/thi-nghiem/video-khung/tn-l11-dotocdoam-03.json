@@ -1,43 +1,43 @@
 {
   "id": "tn-l11-dotocdoam-03",
   "ten": "Độ trễ giữa hai micro khi dời micro 2",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-dotocdoam-03-20261118.mp4",
-  "tong_giay": 49.0,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-dotocdoam-03-20261127.mp4",
+  "tong_giay": 49.1,
   "o": [
     {
       "khoa": "gia_thuyet",
       "giay": 0,
-      "chu": "Âm đi với tốc độ không đổi nên độ trễ Δt tỉ lệ với khoảng cách d; v = d/Δt.",
-      "kiem": "Δt phụ thuộc khoảng cách thế nào?"
+      "chu": "Tiếng vỗ tay tới micro xa muộn hơn micro gần một chút.",
+      "kiem": "Độ trễ phụ thuộc khoảng cách thế nào?"
     },
     {
       "khoa": "du_doan",
-      "giay": 3.3,
-      "chu": "Dời micro 2 từ 2 m ra 4 m. Tiếng vỗ tay tới micro 2 trễ so với micro 1 thế nào?"
+      "giay": 3.2,
+      "chu": "Dời micro 2 từ 2 m ra 4 m. Tiếng vỗ tay tới micro 2 trễ so với micro 1 đổi ra sao?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 9.5,
-      "chu": "Hai micro nối chung một máy ghi, đo d bằng thước dây."
+      "giay": 9.3,
+      "chu": "Hai micro thẳng hàng nối chung một máy ghi; vỗ tay sát micro 1; đo d bằng thước dây."
     },
     {
       "khoa": "quan_sat",
-      "giay": 18.3,
+      "giay": 18.2,
       "chu": "Δt = 5,8; 11,7; 17,5 ms ở d = 2; 4; 6 m."
     },
     {
       "khoa": "rut_ra",
-      "giay": 25.8,
-      "chu": "v = d/Δt với Δt tính bằng giây: cả ba lần ≈ 343 m/s."
+      "giay": 22.4,
+      "chu": "v = d : Δt với Δt tính bằng giây: cả ba lần v ≈ 343 m/s."
     },
     {
       "khoa": "chua_noi",
-      "giay": 32.9,
+      "giay": 36.9,
       "chu": "Âm cao, âm trầm có cùng tốc độ không?"
     }
   ],
   "dung_dua": {
-    "giay": 9.4,
+    "giay": 9.15,
     "cau_hoi": "Dời micro 2 từ 2 m ra 4 m. Tiếng vỗ tay tới micro 2 trễ so với micro 1 thế nào?",
     "chon": [
       "A. Không đổi, vì âm truyền rất nhanh",
@@ -48,5 +48,22 @@
     "dung": 1,
     "giai_thich_dung": "Δt từ 5,8 ms lên 11,7 ms khi d gấp đôi: âm đi với tốc độ không đổi nên Δt tỉ lệ với d.",
     "giai_thich_sai": "So hai hàng d = 2,0 m và 4,0 m trong bảng: Δt đổi bao nhiêu lần?"
+  },
+  "cau_chot": {
+    "giay": 44.2,
+    "cau_hoi": "Vẫn hai micro cách nhau 6,0 m, nhưng vỗ tay ở chính giữa hai micro. Trên máy ghi, gai của micro 2 trễ so với gai micro 1 bao nhiêu?",
+    "chon": [
+      "A. Khoảng 17,5 ms, như khi vỗ sát micro 1",
+      "B. Khoảng 8,8 ms, nửa độ trễ cũ",
+      "C. Gần 0 ms, hai gai hiện cùng lúc",
+      "D. Khoảng 35 ms, gấp đôi độ trễ cũ"
+    ],
+    "dung": 2,
+    "giai_thich": [
+      "17,5 ms là khi âm phải đi thêm cả 6,0 m tới micro 2. Vỗ ở giữa thì âm đi 3,0 m tới mỗi micro, quãng thêm bằng 0, nên hai gai hiện cùng lúc.",
+      "8,8 ms ứng với quãng thêm 3,0 m. Nhưng vỗ ở giữa thì cả hai micro đều cách 3,0 m, không micro nào phải chờ thêm: độ trễ gần 0.",
+      "Độ trễ đo phần quãng đường micro 2 phải đi THÊM so với micro 1. Ở chính giữa hai quãng bằng nhau (3,0 m), nên hai gai hiện cùng lúc, Δt ≈ 0.",
+      "35 ms ứng với quãng thêm 12 m. Vỗ ở giữa thì hai quãng đều 3,0 m, không có quãng thêm, nên hai gai hiện cùng lúc."
+    ]
   }
 }

@@ -39,9 +39,11 @@ def pill(d, cx, cy, s, fill, alpha=1.0, size=FS, fg=WHITE):
     text(d, (cx, cy), s, size, fg, alpha=alpha)
 
 def seg_bar(d, y, t, t0, t1, col, a=1.0):
-    p = clamp((t - t0) / (t1 - t0)); q = 1 - math.floor(p * 10 + 1e-9) / 10
-    card(d, (190, y, 890, y + 70), fill=A(LIGHT, a), r=35)
-    if q > 0: card(d, (190, y, 190 + max(70, 700 * q), y + 70), fill=A(col, a), r=35)
+    p = clamp((t - t0) / (t1 - t0)); on = 5 - int(p * 5 + 1e-9)
+    for i in range(5):
+        x = 175 + i * 150
+        if i < on: card(d, (x, y, x + 130, y + 70), fill=A(col, a), r=18)
+        else: card(d, (x, y, x + 130, y + 70), fill=A(WHITE, a), outline=A(LIGHT, a), r=18, w=4)
 
 # ---------------- mach (khung nguon 1080x1920; ra mp4 x = 65 + 0,88x) ----------------
 XL, XR, YT, YB = 130, 930, 380, 830
@@ -113,7 +115,7 @@ def s_hook(img, d, t, sc):
     text(d, (W / 2, y0 + 190), "Đặt R = 1,0 Ω, bằng r.", 62, INK, alpha=k)
     text(d, (W / 2, y0 + 280), "Hiệu suất H của pin", 62, PURPLE, alpha=k)
     text(d, (W / 2, y0 + 360), "khoảng bao nhiêu %?", 62, PURPLE, alpha=k)
-    seg_bar(d, y0 + 425, t, M[1] + 0.3, sc["T"] - 0.3, PURPLE, k)
+    seg_bar(d, y0 + 425, t, M[1], sc["T"] - 0.2, PURPLE, k)
 
 # ---------------- canh 2: do o R = 1,0 Ohm ----------------
 CL = 0.9
@@ -205,10 +207,16 @@ def s_bay(img, d, t, sc):
     ka = appear(t, 0.2, 0.4); kb = appear(t, 1.2, 0.8)
     bars(d, 40, "I (A)", (1.50, 0.30), 2.7, (147, 180, 240), "giảm", DRED, ka, kb)
     bars(d, 560, "U (V)", (1.50, 2.70), 2.7, GREEN, "tăng", DGREEN, ka, kb)
-    k2 = appear(t, M[1], 0.45)
-    if k2 > 0:
-        card(d, (80, 1260, 1000, 1440), fill=A((236, 253, 243), k2), outline=A(GREEN, k2), w=5)
-        text(d, (W / 2, 1350), "H = U/E: theo U, tăng", 62, DGREEN, alpha=k2)
+    k2 = appear(t, M[1], 0.45); k3 = appear(t, M[2] - 0.7, 0.45)
+    if k2 * (1 - k3) > 0:
+        a2 = k2 * (1 - k3)
+        card(d, (80, 1260, 1000, 1440), fill=A((236, 253, 243), a2), outline=A(GREEN, a2), w=5)
+        text(d, (W / 2, 1350), "H = U/E: theo U, tăng", 62, DGREEN, alpha=a2)
+    if k3 > 0:
+        card(d, (40, 1220, 1040, 1600), fill=A(WHITE, k3), outline=A(NAVY, k3), w=6)
+        pill(d, W / 2, 1290, "CHƯA NÓI ĐƯỢC", NAVY, k3)
+        text(d, (W / 2, 1420), "E và r của pin", 62, INK, alpha=k3)
+        text(d, (W / 2, 1515), "đo bằng cách nào?", 62, INK, alpha=k3)
 
 # ---------------- canh 6: chot + THU NGHI ----------------
 def s_end(img, d, t, sc):
@@ -239,21 +247,22 @@ def _cues(clip):
 
 CLIP = dict(id="tn-l11-nang-luong-dien-03", header="VẬT LÍ 11 · THÍ NGHIỆM", footer="Năng lượng điện · thachlab.id.vn",
             cues=_cues, scenes=[
- dict(key="hook", title="Hai pin AA và hộp điện trở", draw=s_hook, tail=0.3, caps=[
+ dict(key="hook", title="Hai pin AA và hộp điện trở", draw=s_hook, tail=0.1, caps=[
    ("Vôn kế đo U ở hai cực.", 3.4),
    ("Dừng lại, tự đoán.", 5.4)]),
  dict(key="do", title="Đo ở R = 1,0 Ω", draw=s_do, tail=0.4, caps=[
-   ("Đóng K, đọc nhanh hai đồng hồ.", 3.8),
-   ("Đáp án: chỉ 50 %.", 3.6)]),
- dict(key="tang", title="Tăng dần R", draw=s_tang, tail=0.4, caps=[
+   ("Đóng K, đọc nhanh hai đồng hồ.", 3.6),
+   ("Đáp án: chỉ 50 %.", 3.0)]),
+ dict(key="tang", title="Tăng dần R", draw=s_tang, tail=0.1, caps=[
    ("Mỗi lần đóng K ngắn rồi mở.", 3.6),
    ("U tăng dần về phía 3,0 V.", 3.8)]),
  dict(key="ket", title="Năng lượng đi đâu?", draw=s_ket, tail=0.4, caps=[
    ("Phần xanh: H của mỗi lần đo.", 3.8),
-   ("Một phần luôn mất trong pin.", 4.2)]),
+   ("Một phần luôn mất trong pin.", 4.0)]),
  dict(key="bay", title="Bẫy: I giảm thì H giảm?", draw=s_bay, tail=0.4, caps=[
    ("R tăng: I giảm, U tăng.", 3.6),
-   ("H đi theo U, không theo I.", 3.8)]),
+   ("H đi theo U, không theo I.", 3.6),
+   ("Chưa đo E, r của pin.", 3.4)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.3, caps=[
-   ("R càng lớn so với r, H càng cao.", 6.0)]),
+   ("Dừng lại, tự trả lời.", 4.5)]),
 ])

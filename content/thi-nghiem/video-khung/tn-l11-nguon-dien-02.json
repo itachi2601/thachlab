@@ -2,7 +2,7 @@
   "id": "tn-l11-nguon-dien-02",
   "ten": "Vôn kế ở hai cực pin khi đổi điện trở mạch ngoài",
   "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-nguon-dien-02-20261127.mp4",
-  "tong_giay": 44.5,
+  "tong_giay": 48.2,
   "o": [
     {
       "khoa": "gia_thuyet",
@@ -22,8 +22,8 @@
     },
     {
       "khoa": "quan_sat",
-      "giay": 13.9,
-      "chu": "R giảm 14 → 1,5 Ω: I tăng 0,10 → 0,60 A, U tụt 1,40 → 0,90 V; các điểm (I, U) thẳng hàng."
+      "giay": 16.5,
+      "chu": "R giảm 14 → 1,5 Ω: I tăng 0,10 → 0,60 A, U tụt 1,40 → 0,90 V."
     },
     {
       "khoa": "rut_ra",
@@ -32,8 +32,8 @@
     },
     {
       "khoa": "chua_noi",
-      "giay": 32.3,
-      "chu": "Chưa biết điện trở trong r của pin bằng bao nhiêu, và nối tắt thật thì dòng lớn cỡ nào."
+      "giay": 35.2,
+      "chu": "Nối tắt hẳn (R = 0) thì dòng lớn cỡ nào? Pin có điện trở trong r bao nhiêu?"
     }
   ],
   "dung_dua": {
@@ -50,20 +50,20 @@
     "giai_thich_sai": "Có dòng thì U hai cực nhỏ hơn 1,50 V và càng nhỏ khi dòng càng lớn. Kéo dài đường thẳng qua các điểm đo: R về 0 thì U về 0, không dừng ở giá trị nào khác."
   },
   "cau_chot": {
-    "giay": 38.1,
-    "cau_hoi": "Cùng pin đó, nối với một điện trở khác thì ampe kế chỉ 0,25 A. Vôn kế ở hai cực pin chỉ khoảng:",
+    "giay": 42.1,
+    "cau_hoi": "Cùng pin đó, nối một điện trở R khác thì ampe kế chỉ 0,25 A. Biết 0,15 A ứng với 1,35 V và 0,30 A ứng với 1,20 V. Vôn kế chỉ khoảng:",
     "chon": [
-      "A. 1,50 V",
-      "B. 1,35 V",
+      "A. 1,35 V",
+      "B. 1,28 V",
       "C. 1,25 V",
-      "D. 0,25 V"
+      "D. 1,20 V"
     ],
     "dung": 2,
     "giai_thich": [
-      "1,50 V chỉ đúng khi hở mạch (I = 0). Có dòng 0,25 A thì U tụt xuống dưới 1,50 V.",
-      "1,35 V là số đo khi I = 0,15 A. Dòng 0,25 A lớn hơn nên U phải tụt nhiều hơn.",
-      "Các điểm (I, U) nằm trên một đường thẳng. I = 0,25 A nằm giữa 0,15 A (1,35 V) và 0,30 A (1,20 V), gần 0,30 A hơn: đọc trên đường thẳng được U ≈ 1,25 V.",
-      "0,25 là số chỉ ampe kế (A), không phải vôn kế. Đọc trên đường thẳng U theo I ở I = 0,25 A được U ≈ 1,25 V."
+      "1,35 V là số chỉ khi I = 0,15 A. Dòng 0,25 A lớn hơn nên U phải thấp hơn: đọc trên đường thẳng, I tăng 0,10 A thì U giảm 0,10 V, còn 1,25 V.",
+      "1,28 V là trung bình của 1,35 V và 1,20 V, ứng với I = 0,225 A ở giữa hai hàng. 0,25 A gần 0,30 A hơn nên U ≈ 1,25 V.",
+      "Các điểm (I, U) thẳng hàng: từ 0,15 A lên 0,30 A, U giảm 0,15 V, tức mỗi 0,10 A giảm 0,10 V. Từ 0,15 A lên 0,25 A thì U = 1,35 − 0,10 = 1,25 V.",
+      "1,20 V là số chỉ khi I = 0,30 A. Dòng 0,25 A nhỏ hơn 0,30 A nên U phải cao hơn 1,20 V: đọc trên đường thẳng được 1,25 V."
     ]
   }
 }

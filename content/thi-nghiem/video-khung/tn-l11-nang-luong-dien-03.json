@@ -2,7 +2,7 @@
   "id": "tn-l11-nang-luong-dien-03",
   "ten": "Hai pin AA và hộp điện trở: đo hiệu suất nguồn",
   "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-nang-luong-dien-03-20261127.mp4",
-  "tong_giay": 49.6,
+  "tong_giay": 49.8,
   "o": [
     {
       "khoa": "gia_thuyet",
@@ -17,27 +17,27 @@
     },
     {
       "khoa": "dung_cu",
-      "giay": 9.5,
+      "giay": 9.3,
       "chu": "Hai pin AA (E = 3,0 V, r = 1,0 Ω), hộp điện trở R, ampe kế nối tiếp, vôn kế song song với R, khoá K."
     },
     {
       "khoa": "quan_sat",
-      "giay": 21.7,
+      "giay": 22.8,
       "chu": "R = 1,0 → 9,0 Ω: I giảm 1,50 → 0,30 A, U tăng 1,50 → 2,70 V, H = U/E tăng 0,50 → 0,90."
     },
     {
       "khoa": "rut_ra",
-      "giay": 30.1,
+      "giay": 28.8,
       "chu": "Một phần E luôn mất trên r (toả nhiệt trong pin), nên H = R/(R + r) luôn dưới 1; R lớn thì H gần 1."
     },
     {
       "khoa": "chua_noi",
-      "giay": 38.7,
-      "chu": "Chưa đo được r của pin; pin dùng lâu thì E và r đổi thế nào."
+      "giay": 40.1,
+      "chu": "Chưa đo được E và r của pin: đo bằng cách nào?"
     }
   ],
   "dung_dua": {
-    "giay": 9.35,
+    "giay": 9.15,
     "cau_hoi": "Hai pin AA (E = 3,0 V, r = 1,0 Ω) nối với hộp điện trở. Đặt R = 1,0 Ω, bằng r. Hiệu suất H của pin khoảng bao nhiêu?",
     "chon": [
       "A. Khoảng 100 %",
@@ -50,7 +50,7 @@
     "giai_thich_sai": "Vôn kế chỉ U = 1,50 V, E = 3,0 V, nên H = U/E = 50 %. R bằng r thì năng lượng chia đôi: nửa ra mạch ngoài, nửa toả nhiệt trong pin."
   },
   "cau_chot": {
-    "giay": 44.7,
+    "giay": 46.4,
     "cau_hoi": "Thay bằng hai pin rất cũ có r = 3,0 Ω (E vẫn 3,0 V), vẫn đặt R = 9,0 Ω. Hiệu suất H của pin khoảng:",
     "chon": [
       "A. 90 %",

@@ -38,9 +38,11 @@ def pill(d, cx, cy, s, fill, alpha=1.0, size=FS, fg=WHITE):
     text(d, (cx, cy), s, size, fg, alpha=alpha)
 
 def seg_bar(d, y, t, t0, t1, col, a=1.0):
-    p = clamp((t - t0) / (t1 - t0)); q = 1 - math.floor(p * 10 + 1e-9) / 10
-    card(d, (190, y, 890, y + 70), fill=A(LIGHT, a), r=35)
-    if q > 0: card(d, (190, y, 190 + max(70, 700 * q), y + 70), fill=A(col, a), r=35)
+    p = clamp((t - t0) / (t1 - t0)); on = 5 - int(p * 5 + 1e-9)
+    for i in range(5):
+        x = 175 + i * 150
+        if i < on: card(d, (x, y, x + 130, y + 70), fill=A(col, a), r=18)
+        else: card(d, (x, y, x + 130, y + 70), fill=A(WHITE, a), outline=A(LIGHT, a), r=18, w=4)
 
 # ---------------- mach: pin - K - ampe ke - R ; von ke o hai cuc pin ----------------
 XL, XR, YT, YB = 150, 930, 380, 820
@@ -190,6 +192,9 @@ def mini(d, x0, closed, reading, lab1, lab2, col, ka):
         d.line([(b, 560), (b + 40, 630)], fill=A(WIRE, ka), width=8)
     else:
         card(d, (b - 30, 530, b + 30, 670), fill=A(WHITE, ka), outline=A(NAVY, ka), r=8, w=5)
+    d.line([(x0 + 245, yb), (x0 + 245, 870)], fill=A(WIRE, ka), width=6)          # von ke noi hai cuc pin
+    d.line([(a, yt), (x0 + 45, yt), (x0 + 45, 920), (x0 + 125, 920)], fill=A(WIRE, ka), width=6, joint="curve")
+    for p_ in ((x0 + 245, yb), (a, yt)): dot(d, p_[0], p_[1], 11, A(WIRE, ka))
     card(d, (x0 + 125, 870, x0 + 365, 970), fill=A(BODY, ka), r=14)
     card(d, (x0 + 137, 882, x0 + 353, 958), fill=A(SCR, ka), r=8)
     text(d, (x0 + 245, 920), reading, 56, (20, 60, 30), alpha=ka)
@@ -209,10 +214,16 @@ def s_bay(img, d, t, sc):
                 L = math.dist(p, q)
                 if rem <= L: dot(d, p[0] + (q[0] - p[0]) * rem / L, p[1] + (q[1] - p[1]) * rem / L, 12, ORANGE); break
                 rem -= L
-    k2 = appear(t, M[1], 0.45)
-    if k2 > 0:
-        card(d, (80, 1260, 1000, 1430), fill=A((254, 242, 242), k2), outline=A(DRED, k2), w=5)
-        text(d, (W / 2, 1345), "Phần hụt mất bên trong pin", 60, DRED, alpha=k2)
+    k2 = appear(t, M[1], 0.45); k3 = appear(t, M[2] - 0.7, 0.45)
+    if k2 * (1 - k3) > 0:
+        a2 = k2 * (1 - k3)
+        card(d, (80, 1260, 1000, 1430), fill=A((254, 242, 242), a2), outline=A(DRED, a2), w=5)
+        text(d, (W / 2, 1345), "Pin cũng cản dòng", 60, DRED, alpha=a2)
+    if k3 > 0:
+        card(d, (40, 1220, 1040, 1600), fill=A(WHITE, k3), outline=A(NAVY, k3), w=6)
+        pill(d, W / 2, 1290, "CHƯA NÓI ĐƯỢC", NAVY, k3)
+        text(d, (W / 2, 1420), "Nối tắt hẳn (R = 0),", 62, INK, alpha=k3)
+        text(d, (W / 2, 1515), "dòng lớn cỡ nào?", 62, INK, alpha=k3)
 
 # ---------------- canh 5: chot + THU NGHI ----------------
 def s_end(img, d, t, sc):
@@ -224,10 +235,14 @@ def s_end(img, d, t, sc):
         card(d, (cx - 140, 460, cx + 140, 580), fill=A(BODY, k1), r=16)
         card(d, (cx - 126, 474, cx + 126, 566), fill=A(SCR, k1), r=10)
         text(d, (cx, 520), rd, 60, (20, 60, 30), alpha=k1)
-    text(d, (W / 2, 820), "Cùng pin, nối R khác:", 64, INK, alpha=k1)
-    text(d, (W / 2, 910), "ampe kế chỉ 0,25 A.", 64, INK, alpha=k1)
-    text(d, (W / 2, 1040), "Vôn kế chỉ bao nhiêu?", 66, DORANGE, alpha=k1)
-    seg_bar(d, 1220, t, 1.0, sc["T"] - 0.2, ORANGE, k1)
+    for j, (i_, u_) in enumerate((("0,15 A", "1,35 V"), ("0,30 A", "1,20 V"))):
+        yy = 680 + 80 * j
+        text(d, (330, yy), i_, 58, INK, alpha=k1); text(d, (540, yy), "→", 58, MUTED, alpha=k1)
+        text(d, (750, yy), u_, 58, INK, alpha=k1)
+    text(d, (W / 2, 920), "Cùng pin, nối R khác:", 64, INK, alpha=k1)
+    text(d, (W / 2, 1010), "ampe kế chỉ 0,25 A.", 64, INK, alpha=k1)
+    text(d, (W / 2, 1130), "Vôn kế chỉ bao nhiêu?", 66, DORANGE, alpha=k1)
+    seg_bar(d, 1290, t, 1.0, sc["T"] - 0.2, ORANGE, k1)
 
 def _cues(clip):
     sc = {s["key"]: s for s in clip["scenes"]}
@@ -250,7 +265,8 @@ CLIP = dict(id="tn-l11-nguon-dien-02", header="VẬT LÍ 11 · THÍ NGHIỆM", f
    ("Đáp án: kéo dài tới U = 0.", 4.2)]),
  dict(key="bay", title="Bẫy: vôn kế luôn 1,5 V?", draw=s_bay, tail=0.4, caps=[
    ("1,5 V trên vỏ: chỉ khi hở mạch.", 4.4),
-   ("Có dòng thì U nhỏ hơn.", 3.6)]),
+   ("Có dòng thì U nhỏ hơn.", 3.6),
+   ("Còn một chỗ chưa đo.", 4.2)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.3, caps=[
-   ("Dòng càng lớn, U hai cực càng tụt.", 7.5)]),
+   ("Dừng lại, tự trả lời.", 7.0)]),
 ])

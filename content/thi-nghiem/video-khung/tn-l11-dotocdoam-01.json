@@ -1,44 +1,43 @@
 {
   "id": "tn-l11-dotocdoam-01",
   "ten": "Ống cộng hưởng 500 Hz: tìm lần âm to thứ hai",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-dotocdoam-01-20261119.mp4",
-  "poster": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-dotocdoam-01-20261119.webp",
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-dotocdoam-01-20261127.mp4",
   "tong_giay": 49.9,
   "o": [
     {
       "khoa": "gia_thuyet",
       "giay": 0,
-      "chu": "Cột khí một đầu kín nghe to nhất khi dài cỡ λ/4, 3λ/4, …; hai lần to liên tiếp cách nhau λ/2.",
+      "chu": "Cột khí một đầu kín nghe to nhất ở một số chiều dài nhất định.",
       "kiem": "Lần âm to thứ hai nằm ở đâu?"
     },
     {
       "khoa": "du_doan",
-      "giay": 4.2,
+      "giay": 4.0,
       "chu": "Lần to thứ nhất: cột khí 16,8 cm. Hạ nước tiếp, lần to thứ hai ở đâu?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 10.5,
-      "chu": "Loa 500 Hz, ống 67 cm, bình nước."
+      "giay": 9.9,
+      "chu": "Loa 500 Hz trên miệng ống 67 cm, bình nước nâng hạ mực nước, thước tính từ miệng ống."
     },
     {
       "khoa": "quan_sat",
-      "giay": 14.5,
-      "chu": "To lần 1 ở 16,8 cm, to lần 2 ở 50,8 cm. Hạ tiếp tới gần đáy không to thêm lần nào."
+      "giay": 18.3,
+      "chu": "To lần 1 ở 16,8 cm, lần 2 ở 50,8 cm; hạ tiếp không to thêm. Năm lần lệch vài mm."
     },
     {
       "khoa": "rut_ra",
-      "giay": 26.7,
+      "giay": 26.2,
       "chu": "Mặt nước là nút. Hiệu hai lần to 34,0 cm = λ/2, nên λ = 68,0 cm và v = λf = 340 m/s."
     },
     {
       "khoa": "chua_noi",
-      "giay": 37.4,
+      "giay": 37.7,
       "chu": "Năm lần đo lệch nhau vài m/s: kết quả v đúng tới đâu?"
     }
   ],
   "dung_dua": {
-    "giay": 9.9,
+    "giay": 9.75,
     "cau_hoi": "Lần âm to thứ nhất: cột khí dài 16,8 cm. Hạ nước tiếp, lần to thứ hai ở đâu?",
     "chon": [
       "A. Cột khí dài khoảng gấp đôi lần 1",
@@ -49,5 +48,22 @@
     "dung": 1,
     "giai_thich_dung": "Mặt nước là nút, miệng ống gần bụng: lần 1 cột khí cỡ λ/4, lần 2 cỡ 3λ/4, nên dài khoảng gấp ba (16,8 cm thành 50,8 cm).",
     "giai_thich_sai": "Cột khí chỉ to khi dài cỡ số lẻ lần λ/4 (λ/4, 3λ/4, …), nên không có lần to ở gấp đôi hay gấp bốn. Ống 67 cm vẫn đủ chỗ cho lần to thứ hai ở cỡ 51 cm."
+  },
+  "cau_chot": {
+    "giay": 44.5,
+    "cau_hoi": "Ống 67 cm chỉ có hai lần to: 16,8 cm và 50,8 cm. Nếu ống đủ dài, lần to thứ ba ở cột khí khoảng bao nhiêu?",
+    "chon": [
+      "A. Khoảng 67,2 cm",
+      "B. Khoảng 84,8 cm",
+      "C. Khoảng 101,6 cm",
+      "D. Khoảng 118,8 cm"
+    ],
+    "dung": 1,
+    "giai_thich": [
+      "67,2 cm là 4 × 16,8: nghĩ lần to theo bội chẵn. Thật ra hai lần to liên tiếp luôn cách nhau λ/2 = 34,0 cm, nên lần ba ở 50,8 + 34,0 = 84,8 cm.",
+      "Hai lần to liên tiếp cách nhau λ/2 = 50,8 − 16,8 = 34,0 cm. Lần ba ở 50,8 + 34,0 = 84,8 cm, dài hơn ống 67 cm nên ống này không nghe được.",
+      "101,6 cm là 2 × 50,8: gấp đôi lần 2. Các lần to không nhân lên mà cách đều nhau λ/2 = 34,0 cm: lần ba ở 84,8 cm.",
+      "118,8 cm là 50,8 + 68,0: lấy khoảng cách hai lần to là cả λ. Hai lần to liên tiếp chỉ cách λ/2 = 34,0 cm, nên lần ba ở 84,8 cm."
+    ]
   }
 }
