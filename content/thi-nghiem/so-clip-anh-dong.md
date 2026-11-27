@@ -564,6 +564,17 @@ Nhánh `claude/clip-cong-moi-l10a-d353cc`. 3 agent Opus dựng (sau 11h: 1 dựn
 
 **Đã đăng mẻ 1 (27/11/2026 17:53):** sửa 4 hộp exp lộ Dự đoán (tdvt-01, tdvt-03 Quan sát + Rút ra, do-toc-do-01, gia-toc-01 Quan sát + Rút ra; `sua-hop-l10a.json`, `sua-hop-l10a-2.json`, kiem-code soát); kho ghi ca câu chốt vào `so_lieu_mau.ghi_chu`; `doi-cong-moi-l10a.py --apply` (kho + 8 bài + gắn khung); `dang-cong-moi-l10a.sh --yes`: 8/8 bài (46–53) ghi mục ly_thuyet, 0 LOI, ngoài khối video chỉ khác đúng các câu hộp đã sửa (log `ra/l10a-dang-1.log`, sao lưu `scripts/logs/ly-thuyet-bai4{6..9}/5{0..3}-backup-*.json`).
 
+### Mẻ 2 (6 clip nhóm B, qua cổng A+B, đã tải -20261127 HEAD 200, CHỜ THẦY DUYỆT, chưa đổi kho/bài/DB) — bài 54 ctbdd, 55 rơi tự do, 56 đo g
+
+| Clip | tn | Từ/phút | LỖI | Giây | KB | mp4 | Điểm cần quyết |
+|---|---|---|---|---|---|---|---|
+| ctbdd1 | tn-l10-ctbdd-01 | 199 → 134 | 15 → 0 | 49,8 | 1321 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-ctbdd-01-20261127.mp4) | **bài**: ô Rút ra hộp exp đã nêu v = a·t trước clip — sửa hộp hay để? |
+| dog1 | tn-l10-do-g-01 | 185 → 131 | 16 → 0 | 49,9 | 1286 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-do-g-01-20261127.mp4) | chốt s = 0,700 m → ḡ ≈ 9,75 m/s² 'theo mô hình' (C) |
+| dog2 | tn-l10-do-g-02 | 186 → 130 | 14 → 0 | 50,0 | 1367 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-do-g-02-20261127.mp4) | **bài**: hộp exp nói '(t², s) gần như thẳng hàng' → gợi ý Dự đoán; chốt s = 0,250 m → t ≈ 0,23 s 'theo mô hình' (D) |
+| dog3 | tn-l10-do-g-03 | 200 → 150 | 17 → 0 | 50,0 | 1346 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-do-g-03-20261127.mp4) | **kho** hàng 60 khung/s ghi n = 19, mô hình cho 20 — sửa kho?; **bài** `theory.src.html:211` ô Rút ra nói trước 1/240 ≈ 0,0042 s > 0,001 s; n = 82 (5 khung thừa) tự đặt |
+| roitudo2 | tn-l10-roi-tu-do-02 | 196 → 155 | 16 → 0 | 49,5 | 1240 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-roi-tu-do-02-20261127.mp4) | số 1,225/3,675/6,125 cm, 2,45 cm, T = 0,15 s suy từ mô hình kho; bi đường kính 2 cm tự đặt |
+| roitudo3 | tn-l10-roi-tu-do-03 | 179 → 132 | 13 → 0 | 49,5 | 1207 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-roi-tu-do-03-20261127.mp4) | chốt cổng ở 1,20 m → t ≈ 0,49 s 'theo mô hình' (C; đồng hồ thật ≈ 0,498 s) |
+
 ## Cổng mới — L11a: 21 clip L11 tự dựng làm lại theo cổng mới (27/11/2026) — **CHỜ THẦY DUYỆT, chưa ghi DB**
 Nhánh `claude/clip-cong-moi-l11a-6090b6`. 1 agent dựng + 1 kiem-code (hạn mức API); cổng A `--do-chu` 0 LỖI cả 21 (117–168 từ/phút); cổng B kiem-code 283 px 1–2 vòng. `xuat-khung.py --kiem` OK cả 21, khung có `cau_chot` A–D, trỏ `-20261127`. Đã tải `lesson-clips/clip/<tn>-20261127.{mp4,webp}` (HEAD 200 cả 21, `tai-cong-moi-l11a.sh`, log `ra/l11a-tai-{1..4}.log`). Kho + 12 bài đã đổi sang bản mới và gắn lại khung (`doi-ban-cong-moi-l11a.py --apply`, commit f105446525). Ghi DB: `bash scripts/video-thi-nghiem/dang-cong-moi-l11a.sh --yes` (12 bài, `--chi-video`).
 
