@@ -1,52 +1,70 @@
 {
   "id": "tn-l9-langkinh-03",
   "ten": "Ba tia laser đỏ, lục, tím qua một lăng kính",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-langkinh-03-20261118.mp4",
-  "tong_giay": 49.9,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-langkinh-03-20261127.mp4",
+  "poster": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-langkinh-03-20261127.webp",
+  "tong_giay": 49.7,
   "o": [
     {
       "khoa": "gia_thuyet",
       "giay": 0,
-      "chu": "Chiết suất thuỷ tinh tăng dần từ đỏ đến tím nên góc lệch cũng tăng dần.",
+      "chu": "Chiết suất thuỷ tinh khác nhau với mỗi màu nên góc lệch cũng khác nhau.",
       "kiem": "Góc lệch có tuỳ theo màu không?"
     },
     {
       "khoa": "du_doan",
-      "giay": 4.2,
-      "chu": "Chiếu laser đỏ, lục, tím vào cùng điểm, cùng góc tới. Tia ló nào lệch nhiều nhất?"
+      "giay": 4.0,
+      "chu": "Cùng góc tới 50°: ba góc lệch D của đỏ, lục, tím chênh nhau cỡ nào?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 10.8,
-      "chu": "Lăng kính A = 60°, ba bút laser, thước đo góc."
+      "giay": 9.9,
+      "chu": "Lăng kính A = 60°, ba bút laser đỏ, lục, tím, thước đo góc. Mỗi màu đo D ba lần."
     },
     {
       "khoa": "quan_sat",
-      "giay": 20.0,
-      "chu": "D trung bình: đỏ 47,7°; lục 49,3°; tím 52,3°."
+      "giay": 20.9,
+      "chu": "D trung bình: đỏ 47,7°; lục 49,3°; tím 52,3°. Chỉ chênh vài độ."
     },
     {
       "khoa": "rut_ra",
-      "giay": 26.0,
-      "chu": "Cùng lăng kính, cùng góc tới: đỏ lệch ít nhất, tím lệch nhiều nhất, vì mỗi màu một chiết suất."
+      "giay": 25.7,
+      "chu": "Chiết suất càng lớn, tia lệch càng nhiều: đỏ lệch ít nhất, tím lệch nhiều nhất."
     },
     {
       "khoa": "chua_noi",
-      "giay": 36.6,
+      "giay": 36.9,
       "chu": "Số liệu minh hoạ; chiết suất n chỉ là giả định của mô hình."
     }
   ],
   "dung_dua": {
-    "giay": 10.7,
-    "cau_hoi": "Chiếu laser đỏ, lục, tím vào cùng điểm, cùng góc tới. Tia ló nào lệch nhiều nhất?",
+    "giay": 9.75,
+    "cau_hoi": "Cùng góc tới 50°: ba góc lệch D của đỏ, lục, tím chênh nhau cỡ nào?",
     "chon": [
-      "A. Tia đỏ",
-      "B. Tia lục",
-      "C. Tia tím",
-      "D. Ba tia lệch như nhau"
+      "A. Gần như trùng nhau",
+      "B. Chênh nhau vài độ",
+      "C. Chênh nhau vài chục độ",
+      "D. Tia tím không ló ra"
     ],
-    "dung": 2,
-    "giai_thich_dung": "Cùng góc tới 50°, tia tím lệch D ≈ 52,3°, lớn hơn lục 49,3° và đỏ 47,7°: thuỷ tinh có chiết suất lớn nhất với ánh sáng tím.",
-    "giai_thich_sai": "So cột Trung bình của ba màu trong bảng góc lệch D."
+    "dung": 1,
+    "giai_thich_dung": "D trung bình 47,7°; 49,3°; 52,3°: ba tia chỉ tách nhau vài độ vì chiết suất ba màu chênh nhau rất ít.",
+    "giai_thich_sai": "So cột D trung bình của ba màu trong bảng."
+  },
+  "cau_chot": {
+    "giay": 41.6,
+    "cau_hoi": "Laser màu cam, vẫn góc tới 50° vào cùng lăng kính. Góc lệch D vào khoảng nào?",
+    "chon": [
+      "A. Nhỏ hơn 47,7°",
+      "B. Từ 47,7° đến 49,3°",
+      "C. Từ 49,3° đến 52,3°",
+      "D. Lớn hơn 52,3°"
+    ],
+    "dung": 1,
+    "giai_thich": [
+      "Đỏ đã lệch ít nhất; cam có chiết suất lớn hơn đỏ nên lệch nhiều hơn đỏ.",
+      "Cam nằm giữa đỏ và lục (đỏ, cam, vàng, lục…) nên chiết suất và góc lệch cũng nằm giữa: 47,7° < D < 49,3° (theo mô hình).",
+      "Khoảng này ứng với các màu giữa lục và tím (lam, chàm); cam đứng trước lục.",
+      "Lệch hơn tím cần chiết suất lớn hơn tím; cam đứng gần đỏ."
+    ]
   }
 }

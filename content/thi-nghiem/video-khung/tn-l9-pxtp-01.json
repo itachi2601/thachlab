@@ -1,9 +1,9 @@
 {
   "id": "tn-l9-pxtp-01",
   "ten": "Khối bán trụ thuỷ tinh: tăng dần góc tới",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-pxtp-01-20261119.mp4",
-  "poster": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-pxtp-01-20261119.webp",
-  "tong_giay": 49.6,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-pxtp-01-20261127.mp4",
+  "poster": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-pxtp-01-20261127.webp",
+  "tong_giay": 49.3,
   "o": [
     {
       "khoa": "gia_thuyet",
@@ -13,23 +13,23 @@
     },
     {
       "khoa": "du_doan",
-      "giay": 4.2,
-      "chu": "Tăng dần góc tới i. Khoảng bao nhiêu độ thì tia ló ra không khí biến mất?"
+      "giay": 4.0,
+      "chu": "Tăng dần góc tới i. Khoảng bao nhiêu độ thì tia ló ra không khí mất?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 10.5,
+      "giay": 9.9,
       "chu": "Khối bán trụ thuỷ tinh, vòng chia độ, laser."
     },
     {
       "khoa": "quan_sat",
-      "giay": 21.5,
-      "chu": "Tia ló mờ dần; ở 42° chỉ còn tia phản xạ."
+      "giay": 18.9,
+      "chu": "r tăng nhanh hơn i; ở 42° không còn tia ló, chỉ còn tia phản xạ."
     },
     {
       "khoa": "rut_ra",
-      "giay": 26.1,
-      "chu": "Vượt góc tới hạn, ánh sáng bật lại hết vào thuỷ tinh: phản xạ toàn phần."
+      "giay": 25.5,
+      "chu": "Vượt góc tới hạn (khoảng 42°), ánh sáng bật lại hết vào thuỷ tinh: phản xạ toàn phần."
     },
     {
       "khoa": "chua_noi",
@@ -38,7 +38,7 @@
     }
   ],
   "dung_dua": {
-    "giay": 10.3,
+    "giay": 9.75,
     "cau_hoi": "Khối bán trụ thuỷ tinh, tia laser đi trong thuỷ tinh ra không khí. Tăng dần góc tới i: khoảng bao nhiêu độ thì tia ló ra không khí biến mất?",
     "chon": [
       "A. Khoảng 30°",
@@ -49,5 +49,22 @@
     "dung": 1,
     "giai_thich_dung": "Ra không khí, r lớn hơn i và tăng rất nhanh; tới 42° tia ló không còn, chỉ còn tia phản xạ.",
     "giai_thich_sai": "Ở 20° đã có r = 31°, và r tăng nhanh hơn i nhiều: 35° cho 60°, 41° cho 80°. Góc khúc xạ chạm 90° khi i mới khoảng 42°; vượt đó tia ló biến mất."
+  },
+  "cau_chot": {
+    "giay": 41.2,
+    "cau_hoi": "Cùng khối bán trụ, chiếu tia tới tâm I với góc tới i = 38°. Góc khúc xạ r vào khoảng nào?",
+    "chon": [
+      "A. Nhỏ hơn 38°",
+      "B. Từ 49° đến 60°",
+      "C. Từ 60° đến 74°",
+      "D. Từ 74° đến 90°"
+    ],
+    "dung": 2,
+    "giai_thich": [
+      "Ra không khí tia lệch xa pháp tuyến nên r luôn lớn hơn i; r không thể nhỏ hơn 38°.",
+      "49° đến 60° ứng với i từ 30° đến 35°; 38° lớn hơn 35° nên r lớn hơn 60°.",
+      "38° nằm giữa 35° (r = 60°) và 40° (r = 74°) nên r cũng nằm giữa: khoảng 67° theo mô hình.",
+      "Từ 74° trở lên ứng với i từ 40° tới góc tới hạn; 38° nhỏ hơn 40° nên r chưa tới 74°."
+    ]
   }
 }

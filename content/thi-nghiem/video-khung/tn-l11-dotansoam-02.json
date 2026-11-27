@@ -1,52 +1,69 @@
 {
   "id": "tn-l11-dotansoam-02",
   "ten": "Đo tần số âm thoa bằng điện thoại ghi âm",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-dotansoam-02-20261118.mp4",
-  "tong_giay": 48.6,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-dotansoam-02-20261127.mp4",
+  "tong_giay": 49.1,
   "o": [
     {
       "khoa": "gia_thuyet",
       "giay": 0,
-      "chu": "Một chu kì dài T = 1/f; đếm N chu kì trong thời gian t thì f = N/t.",
+      "chu": "Dạng sóng ghi âm lặp lại đều; độ dài của một số chu kì có thể cho biết tần số.",
       "kiem": "Đoạn 10 chu kì dài bao lâu?"
     },
     {
       "khoa": "du_doan",
-      "giay": 3.3,
-      "chu": "Âm thoa 440 Hz. Đoạn gồm 10 chu kì trên dạng sóng dài cỡ bao lâu?"
+      "giay": 3.4,
+      "chu": "Âm thoa 440 Hz. Đoạn 10 chu kì trên dạng sóng dài bao lâu?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 9.5,
-      "chu": "Ghi âm, phóng to dạng sóng, chọn đúng 10 chu kì."
+      "giay": 9.7,
+      "chu": "Điện thoại ghi âm, phóng to dạng sóng."
     },
     {
       "khoa": "quan_sat",
-      "giay": 16.0,
-      "chu": "Mỗi đoạn 10 chu kì dài cỡ 22,6–22,8 ms."
+      "giay": 17.3,
+      "chu": "Ba đoạn 10 chu kì dài 22,6; 22,8; 22,7 ms."
     },
     {
       "khoa": "rut_ra",
-      "giay": 25.4,
-      "chu": "f = N/t với t tính bằng giây; ba lần cho trung bình ≈ 440,5 Hz."
+      "giay": 25.3,
+      "chu": "f = N/t với t đổi ra giây; ba lần cho trung bình ≈ 440,5 Hz."
     },
     {
       "khoa": "chua_noi",
-      "giay": 32.5,
-      "chu": "Giọng nói, sóng không đều thì đếm chu kì thế nào?"
+      "giay": 38.3,
+      "chu": "Giọng nói, sóng không đều thì khó đếm chu kì."
     }
   ],
   "dung_dua": {
-    "giay": 9.4,
+    "giay": 9.6,
     "cau_hoi": "Âm thoa 440 Hz. Đoạn gồm 10 chu kì trên dạng sóng dài cỡ bao lâu?",
     "chon": [
-      "A. Khoảng 2,3 ms",
-      "B. Khoảng 23 ms",
-      "C. Khoảng 0,23 s",
-      "D. Khoảng 4,4 s"
+      "A. 2,3 ms",
+      "B. 23 ms",
+      "C. 0,23 s",
+      "D. 4,4 s"
     ],
     "dung": 1,
     "giai_thich_dung": "Một chu kì dài 1/440 s ≈ 2,27 ms, nên 10 chu kì ≈ 22,7 ms, khớp số đo trên bản ghi.",
     "giai_thich_sai": "Một chu kì kéo dài 1/f giây. Nhân lên 10 lần rồi so với cột t trong bảng."
+  },
+  "cau_chot": {
+    "giay": 42.8,
+    "cau_hoi": "Âm thoa 440 Hz. Chỉ đếm 2 chu kì, đọc thời gian t sai ±0,1 ms. Tần số tính ra chắc chắn nằm trong khoảng nào?",
+    "chon": [
+      "A. 438–442 Hz",
+      "B. 430–450 Hz",
+      "C. 439,9–440,1 Hz",
+      "D. 410–425 Hz"
+    ],
+    "dung": 1,
+    "giai_thich": [
+      "438–442 Hz là độ lệch khi đếm 10 chu kì, như bảng trong clip. Hai chu kì chỉ dài cỡ 4,5 ms, nên 0,1 ms đã là khoảng 2 % của đoạn đo; f lệch cùng tỉ lệ, cỡ ±10 Hz: 430–450 Hz.",
+      "Hai chu kì dài 2/440 s ≈ 4,55 ms. Đọc 4,45 ms thì f = 2/0,00445 ≈ 450 Hz; đọc 4,65 ms thì f ≈ 430 Hz. Đoạn ngắn nên cùng 0,1 ms lệch làm f lệch nhiều: muốn sai số nhỏ thì đếm nhiều chu kì.",
+      "Lấy 0,1 làm độ lệch của f là lẫn đại lượng: 0,1 ms là lệch thời gian, không phải lệch tần số. Tính lại f = 2/t với t = 4,45 ms và 4,65 ms: 430–450 Hz.",
+      "410–425 Hz nằm hẳn dưới 440 Hz, như thể t luôn bị đọc dài ra và lệch tới 4–7 %. Sai ±0,1 ms trên đoạn 4,55 ms chỉ cỡ ±2 %, nên f nằm quanh 440 Hz, trong khoảng 430–450 Hz."
+    ]
   }
 }

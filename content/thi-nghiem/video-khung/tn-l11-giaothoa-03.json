@@ -1,39 +1,38 @@
 {
   "id": "tn-l11-giaothoa-03",
   "ten": "Khe Young với laser: dời màn ra xa thì vân ra sao?",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-giaothoa-03-20261119.mp4",
-  "poster": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-giaothoa-03-20261119.webp",
-  "tong_giay": 48.3,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-giaothoa-03-20261127.mp4",
+  "tong_giay": 49.0,
   "o": [
     {
       "khoa": "gia_thuyet",
       "giay": 0,
-      "chu": "Khoảng vân i = λD/a: màn càng xa thì các vân sáng tối càng thưa.",
+      "chu": "Hai chùm sáng từ hai khe gặp nhau trên màn; khoảng cách khe – màn D có thể ảnh hưởng tới khoảng vân i.",
       "kiem": "Dời màn xa hơn, vân đổi thế nào?"
     },
     {
       "khoa": "du_doan",
-      "giay": 4.6,
+      "giay": 4.4,
       "chu": "Dời màn từ 2 m ra 3 m. Khoảng vân i sẽ ra sao?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 10.9,
+      "giay": 10.5,
       "chu": "Laser đỏ, hai khe a = 0,2 mm, màn, thước."
     },
     {
       "khoa": "quan_sat",
-      "giay": 18.0,
+      "giay": 17.0,
       "chu": "D = 2 m: i = 6,5 mm. D = 3 m: i = 9,75 mm."
     },
     {
       "khoa": "rut_ra",
-      "giay": 24.8,
+      "giay": 23.5,
       "chu": "D gấp 1,5 thì i gấp 1,5. Giao thoa được nên ánh sáng có tính chất sóng."
     },
     {
       "khoa": "chua_noi",
-      "giay": 35.0,
+      "giay": 38.0,
       "chu": "Mới đổi D. Đổi màu laser thì sao?"
     }
   ],
@@ -49,5 +48,22 @@
     "dung": 2,
     "giai_thich_dung": "Màn xa hơn thì hai chùm từ hai khe toả rộng hơn trước khi gặp màn: i từ 6,5 mm lên 9,75 mm.",
     "giai_thich_sai": "Vân vẫn còn và không hẹp lại: đặt màn ở 3 m, i đo được 9,75 mm, lớn hơn 6,5 mm ở 2 m."
+  },
+  "cau_chot": {
+    "giay": 42.5,
+    "cau_hoi": "Màn vẫn cách hai khe 2 m, vẫn laser đỏ cũ. Muốn khoảng vân i = 13 mm thì hai khe phải cách nhau bao nhiêu?",
+    "chon": [
+      "A. 0,4 mm",
+      "B. 0,1 mm",
+      "C. 0,05 mm",
+      "D. 0,2 mm"
+    ],
+    "dung": 1,
+    "giai_thich": [
+      "0,4 mm là coi i tăng theo a. Thực ra i = λD/a tỉ lệ nghịch với a: muốn i gấp đôi (6,5 mm lên 13 mm) thì a phải giảm một nửa, còn 0,1 mm.",
+      "Cùng D và λ, i = λD/a tỉ lệ nghịch với a. Ở a = 0,2 mm có i = 6,5 mm; muốn i = 13 mm (gấp đôi) thì a = 0,2 : 2 = 0,1 mm.",
+      "0,05 mm là chia a cho 4, nhưng i chỉ cần gấp đôi (6,5 mm lên 13 mm). Vì i tỉ lệ nghịch với a nên a chỉ cần giảm một nửa: 0,1 mm.",
+      "0,2 mm là giữ nguyên hai khe; khi đó ở D = 2 m khoảng vân vẫn là 6,5 mm. Muốn i gấp đôi thì a phải giảm một nửa: 0,1 mm."
+    ]
   }
 }

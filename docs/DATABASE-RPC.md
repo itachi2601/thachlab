@@ -1,9 +1,15 @@
-# Hàm SQL / RPC (schema public) — 451 hàm, sinh tự động 2026-11-27
+# Hàm SQL / RPC (schema public) — 458 hàm, sinh tự động 2026-11-27
 
 Sinh bằng `node scripts/gen-database-doc.mjs`. Gọi từ client bằng `supabase.rpc("ten_ham", {...})`.
 Định nghĩa đầy đủ: grep tên hàm trong `supabase/migrations/` (hàm cũ hơn 9/2026 không có trong
 repo — xem trên Supabase Dashboard).
 
+- `abet_nop_diem(p_token text, p_diem_toi_da numeric, p_rows jsonb, p_nhan_xet text)` → integer
+- `abet_nop_khong_thu(p_token text, p_ly_do text)` → void
+- `abet_nop_tep(p_token text, p_loai text, p_path text, p_ten text, p_mime text, p_size bigint)` → bigint
+- `abet_nop_xem(p_token text)` → jsonb
+- `abet_nop_xoa_tep(p_token text, p_file_id bigint)` → void
+- `abet_token_mo(p_token text)` → boolean
 - `add_machine_status_log(p_machine_code text, p_status text, p_note text)` → bigint
 - `admin_search_accounts(p_query text, p_role text)` → TABLE(id uuid, full_name text, class_name text, student_code text, role text, admin_area text, track text, email text, ta_tier text, ta_active boolean)
 - `admin_set_account_role(p_user_id uuid, p_role text, p_tier text)` → text
@@ -255,12 +261,12 @@ repo — xem trên Supabase Dashboard).
 - `refresh_class_tutoring_needs(p_class bigint)` → integer
 - `refresh_public_stats()` → void
 - `refresh_tutoring_needs(p_student uuid)` → void
-- `report_equipment_breakdown(p_course_id bigint, p_session_id bigint, p_machine_code text, p_description text, p_storage_path text, p_broken_at timestamp with time zone)` → bigint
 - `report_equipment_breakdown(p_course_id bigint, p_session_id bigint, p_machine_code text, p_description text, p_storage_path text, p_broken_at timestamp with time zone, p_reported_by uuid)` → bigint
+- `report_equipment_breakdown(p_course_id bigint, p_session_id bigint, p_machine_code text, p_description text, p_storage_path text, p_broken_at timestamp with time zone)` → bigint
 - `request_course_enrollment(p_join_code text)` → jsonb
 - `request_parent_link_review(p_name text, p_birth date, p_phone text, p_note text)` → bigint
-- `resolve_equipment_breakdown(p_id bigint, p_note text, p_resolved_photo_path text, p_resolved_by uuid)` → void
 - `resolve_equipment_breakdown(p_id bigint, p_note text, p_resolved_photo_path text)` → void
+- `resolve_equipment_breakdown(p_id bigint, p_note text, p_resolved_photo_path text, p_resolved_by uuid)` → void
 - `resolve_login_email(p_login text)` → text
 - `review_board(p_session bigint)` → jsonb
 - `review_board_stage(p_session bigint, p_stage integer)` → jsonb
@@ -319,6 +325,7 @@ repo — xem trên Supabase Dashboard).
 - `submit_trial_request(p jsonb)` → jsonb
 - `sweep_engagement_alerts(p_class bigint, p_days integer, p_absent_min integer)` → jsonb
 - `sweep_missed_assessments(p_class bigint, p_days integer)` → integer
+- `sync_class_to_course_enrollment()` → trigger
 - `sync_exam_to_bank(p_exam_id bigint)` → integer
 - `ta_accrued_hours(p_assistant_id uuid)` → numeric
 - `ta_converted_hours(p_session_type text, p_hours numeric, p_student_count integer)` → numeric

@@ -61,13 +61,13 @@ ${h3(2, 'Dự đoán trước khi học', '1·2')}
 <div class="fig-side" style="${fs(44)}"><div>
 ${opt('A', 'Nút đề cắt bớt điện của đèn, dồn cho mô tơ')}
 ${opt('B', 'Ắc quy hết điện trong tích tắc rồi tự nạp lại')}
-${opt('C', 'Dòng đề rất lớn bị chính ắc quy cản bên trong, làm hai cực ắc quy tụt áp')}
+${opt('C', 'Dòng đề rất lớn làm hiệu điện thế giữa hai cực ắc quy giảm xuống')}
 ${opt('D', 'Dây dẫn nóng lên lúc đề, điện trở dây tăng nên đèn nhận ít dòng')}
 <div style="margin-top:1mm">${chon(10)}</div>${wl('<span class="hint" style="font-weight:400">Vì sao?</span>', 2)}</div>
 ${H.denPha()}</div>
 </div>
 ${h3(3, 'Học xong, em sửa lại', '1·3')}
-<div class="card soft"><div>Đáp án đúng là: ${f()} &nbsp; Em đoán ${ck}đúng &nbsp;${ck}sai &nbsp;· <span class="hint">Điều em hiểu sai hoặc mới biết:</span></div>${lines(2)}</div>
+<div class="card soft"><div>Ắc quy ${m('\\mathcal E=12{,}6\\ \\mathrm V')}, ${m('r=0{,}05\\ \\Omega')}, đề lấy 60 A: ${m('U=')} ${f(8)} V. &nbsp; Đáp án đúng là: ${f()} &nbsp; Em đoán ${ck}đúng &nbsp;${ck}sai &nbsp;· <span class="hint">Điều em hiểu sai hoặc mới biết:</span></div>${lines(2)}</div>
 ${h3(4, 'II.1 · Nguồn điện duy trì hiệu điện thế', '1·4')}
 <div class="card fig-side" style="${fs(42)};padding:1.2mm 3mm"><div>
 <div>A tích điện ${m('+q')}, B tích điện ${m('-q')}: ${nw(`${m('V_A')} ${f(8)} ${m('V_B')}`)}.</div>
@@ -84,8 +84,8 @@ ${h3(1, 'Thí nghiệm: tụ điện “giả làm” nguồn', '2·1')}
 <div class="card fig-side" style="${fs(46)};padding:1.2mm 3mm"><div>
 <div><b>Làm:</b> nạp siêu tụ ${nw(m('1{,}0\\ \\mathrm F'))} tới ${V('2{,}7')} rồi cho xả qua điện trở ${Om('100')}; bên cạnh, hai pin tiểu nối tiếp (${V('3{,}0')}) nuôi điện trở ${Om('100')} giống hệt. Vôn kế đo hai đầu mỗi điện trở.</div>
 <table class="tbl-ct" style="margin:.6mm 0"><tr><th>${m('t')} (s)</th><th>0</th><th>20</th><th>40</th><th>60</th><th>300</th></tr>
-<tr><td>Vôn kế, mạch tụ (V)</td><td>2,7</td><td>2,2</td><td>1,8</td><td>1,5</td><td>0,1</td></tr>
-<tr><td>Vôn kế, mạch pin (V)</td><td>2,98</td><td>2,98</td><td>2,98</td><td>2,98</td><td>2,98</td></tr></table>
+<tr><td>Vôn kế, mạch tụ (V)</td><td>2,7</td><td>2,2</td><td>1,8</td><td></td><td></td></tr>
+<tr><td>Vôn kế, mạch pin (V)</td><td>2,98</td><td>2,98</td><td>2,98</td><td></td><td></td></tr></table>
 <div><b>Rút ra:</b> tụ chỉ chứa sẵn ${f(20)}, xả dần là ${f(12)}; pin ${f(22)} được hiệu điện thế, nên ${f(10)} mới là nguồn điện.</div></div>
 ${H.tuPin()}</div>
 ${h3(2, 'II.2 · Lực lạ và suất điện động', '2·2')}
@@ -112,7 +112,7 @@ ${h3(1, 'II.3 · Điện trở trong và hiệu điện thế hai cực', '3·1'
 <div>Điện tích đi trong nguồn bị ${f(16)} (va chạm với vật chất của nguồn): nguồn có <b>điện trở trong</b> ${r}.</div>
 <div>Hở mạch (${nw(m('I=0'))}): ${nw(`${U} ${f(8)} ${E}`)} &nbsp;· mạch kín: ${nw(`${U} ${f(8)} ${E}`)}</div></div>
 <div class="fig-side" style="${fs(46)}"><div>
-<div style="line-height:1.35"><b>Thí nghiệm đo.</b> Pin tiểu đã dùng; hở mạch vôn kế ở hai cực chỉ ${V('1{,}50')}. Mắc hộp điện trở ${R}, ampe kế nối tiếp; đổi ${R}, đọc ${I}, ${U}.</div>
+<div style="line-height:1.35"><b>Thí nghiệm đo.</b> Pin tiểu đã dùng; hở mạch vôn kế ở hai cực chỉ ${f(8)} V. Mắc hộp điện trở ${R}, ampe kế nối tiếp; đổi ${R}, đọc ${I}, ${U}.</div>
 <table class="tbl-ct" style="margin-top:.6mm"><tr><th>${R} (Ω)</th><th>${I} (A)</th><th>${U} (V)</th><th>${m('\\mathcal E-U')} (V)</th><th>${m('\\dfrac{\\mathcal E-U}{I}')} (Ω)</th></tr>
 <tr><td>14</td><td>0,10</td><td>1,40</td><td></td><td></td></tr>
 <tr><td>9</td><td>0,15</td><td>1,35</td><td></td><td></td></tr>
@@ -130,7 +130,7 @@ ${h3(2, 'II.4 · Định luật Ohm cho toàn mạch · đoản mạch', '3·2')
 <div style="margin:1mm 0;display:flex;align-items:flex-end;gap:3mm">⇒ ${m('I=')} ${oF(24, 11)} <span>Đoản mạch (${nw(m('R\\to0'))}): ${m('I_{\\text{đm}}=')}</span> ${oF(18, 11)}</div>
 <div>Pin tiểu mới ${nw(`(${V('1{,}5')}, ${Om('0{,}3')})`)}: ${nw(`${m('I_{\\text{đm}}=')} ${f(10)} A`)}</div>
 <div>Ắc quy xe máy ${nw(`(${V('12{,}6')}, ${Om('0{,}02')})`)}: ${nw(`${m('I_{\\text{đm}}=')} ${f(12)} A`)}</div>
-<div><b>Thí nghiệm nối tắt pin tiểu mới</b> (dây đồng mảnh + ampe kế thang 10 A, đúng 3 giây, đeo kính; cấm làm với ắc quy, pin lithium): dây ${f(14)}; ampe kế chỉ cỡ ${f(10)} A.</div>
+<div><b>Thí nghiệm nối tắt pin tiểu mới</b> (dây đồng mảnh + ampe kế thang 10 A, đúng 3 giây, đeo kính; cấm làm với ắc quy, pin lithium): dây ${f(14)}; ampe kế chỉ cỡ ${f(10)} A. Pin đã dùng: cỡ ${f(8)} A, ${r} ≈ ${f(8)} Ω.</div>
 <div>${r} càng ${f(10)} thì đoản mạch càng nguy hiểm; cầu chì chặn dòng đoản mạch.</div></div>
 ${h3(3, 'Làm nhanh', '3·3')}
 ${box(cau(`Nguồn ${nw(m('\\mathcal E=6{,}0\\ \\mathrm V'))}, ${nw(m('r=0{,}50\\ \\Omega'))} nối ${nw(`${m('R=2{,}5\\ \\Omega')}.`)} Tính ${I} và ${U} hai cực nguồn (kiểm bằng hai cách).`, 2))}
@@ -151,7 +151,7 @@ ${h3(2, 'III · Ba cái bẫy hay sập', '4·2')}
 <div class="card" style="padding:1mm 3mm">
 <div class="trap">${ck}<span><b>“Suất điện động là hiệu điện thế hai cực.”</b> Có dòng thì ${nw(m('U<\\mathcal E'))}; ${E} không đổi.</span></div>
 <div class="trap">${ck}<span><b>“Trong nguồn dòng cũng chạy từ (+) sang (−).”</b> Lực lạ đẩy dòng từ (−) lên (+), như bơm nước.</span></div>
-<div class="trap">${ck}<span><b>“Vôn kế chỉ 1,5 V thì pin còn tốt.”</b> Hở mạch pin nào cũng ${V('1{,}5')}. Nối ${Om('3')}: pin mới ${nw(`(${Om('0{,}3')})`)} ${nw(`${m('U\\approx1{,}36\\ \\mathrm V')};`)} pin cũ ${nw(`(${Om('3')})`)} ${nw(`${m('U=')} ${f(10)} V`)}</span></div></div>
+<div class="trap">${ck}<span><b>“Vôn kế chỉ 1,5 V thì pin còn tốt.”</b> Hở mạch pin nào cũng ${V('1{,}5')}. Nối ${Om('3')}: pin mới ${nw(`(${Om('0{,}3')})`)} ${nw(`${m('U\\approx1{,}36\\ \\mathrm V')};`)} pin đã dùng ${nw(`(${Om('1{,}0')})`)} ${nw(`${m('U=')} ${f(10)} V`)}</span></div></div>
 ${h3(3, 'IV · Trả bài 6 câu', '4·3')}
 ${box(`${tb('1. Nguồn điện là gì? Vì sao hai quả cầu A, B không phải nguồn?')}${lines(1)}
 ${tb('2. Lực lạ là gì, làm việc ở đâu, theo chiều nào?')}${lines(1)}
@@ -183,7 +183,7 @@ ${K.btvn().replace('<i>1</i>', '<i>3</i>')}
 ${h3(4, 'Thử thách phân tầng', '5·4')}
 ${box(cau(`${m('\\bigstar')} Pin ${V('1{,}5')}, ${Om('r=0{,}5')} nối ${nw(`${m('R=2{,}5\\ \\Omega')}.`)} Tính ${I} và ${U}.`, 1)
  + cau(`${m('\\bigstar\\bigstar')} Nối ${Om('R_1=4')} thì ${A('I_1=1{,}0')}; nối ${Om('R_2=9')} thì ${nw(`${m('I_2=0{,}5\\ \\mathrm A')}.`)} Tìm ${E}, ${r}.`, 1)
- + cau(`${m('\\bigstar\\bigstar\\bigstar')} Ắc quy ${V('12{,}6')}, đề lấy ${A('60')}; đèn sáng rõ khi ${nw(`${m('U\\ge9{,}0\\ \\mathrm V')}.`)} Tìm ${r} tối đa.`, 1))}
+ + cau(`${m('\\bigstar\\bigstar\\bigstar')} Ắc quy ${V('12{,}6')}, đề lấy ${A('60')}; đèn sáng rõ khi ${nw(`${m('U\\ge10{,}5\\ \\mathrm V')}.`)} Tìm ${r} tối đa.`, 1))}
 ${foot(5)}</section>`;
 
 const dang = [

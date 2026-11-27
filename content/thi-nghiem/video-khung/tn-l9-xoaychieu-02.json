@@ -1,9 +1,9 @@
 {
   "id": "tn-l9-xoaychieu-02",
   "ten": "Đèn 6 V – 3 W với hai loại nguồn",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-xoaychieu-02-20261118.mp4",
-  "poster": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-xoaychieu-02-20261118.webp",
-  "tong_giay": 49.6,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-xoaychieu-02-20261127.mp4",
+  "poster": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-xoaychieu-02-20261127.webp",
+  "tong_giay": 45.5,
   "o": [
     {
       "khoa": "gia_thuyet",
@@ -13,40 +13,58 @@
     },
     {
       "khoa": "du_doan",
-      "giay": 3.8,
-      "chu": "Nguồn xoay chiều 6 V. Vôn kế xoay chiều chỉ nhỏ hơn 6 V, đúng 6 V hay lớn hơn?"
+      "giay": 3.6,
+      "chu": "Nguồn xoay chiều 6 V. Vôn kế chỉ bao nhiêu?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 9.5,
+      "giay": 9.6,
       "chu": "Đèn 6 V – 3 W, ampe kế, vôn kế, nguồn một chiều và xoay chiều."
     },
     {
       "khoa": "quan_sat",
-      "giay": 17.9,
-      "chu": "Một chiều: ampe kế 0,49 đến 0,50 A, vôn kế 6,0 V. Xoay chiều: ampe kế 0,49 đến 0,50 A, vôn kế 6,0 V."
+      "giay": 18.0,
+      "chu": "Cả hai nguồn: ampe kế 0,49–0,50 A, vôn kế 6,0 V."
     },
     {
       "khoa": "rut_ra",
-      "giay": 37.8,
-      "chu": "Xoay chiều cũng nóng, sáng; số chỉ là giá trị hiệu dụng."
+      "giay": 23.2,
+      "chu": "Xoay chiều 6 V cũng làm đèn nóng, sáng như một chiều 6 V."
     },
     {
       "khoa": "chua_noi",
-      "giay": 42.5,
-      "chu": "Số liệu minh hoạ. Bỏ qua điện trở ampe kế."
+      "giay": 34.1,
+      "chu": "Chưa nói giá trị lớn nhất của u. Số liệu minh hoạ."
     }
   ],
   "dung_dua": {
     "giay": 9.3,
-    "cau_hoi": "Nguồn xoay chiều 6 V. Vôn kế xoay chiều chỉ nhỏ hơn 6 V, đúng 6 V hay lớn hơn?",
+    "cau_hoi": "Nguồn xoay chiều 6 V. Vôn kế xoay chiều mắc hai đầu đèn chỉ bao nhiêu?",
     "chon": [
       "A. Nhỏ hơn 6 V",
       "B. Đúng 6 V",
-      "C. Lớn hơn 6 V"
+      "C. Lớn hơn 6 V",
+      "D. 0 V"
     ],
     "dung": 1,
     "giai_thich_dung": "Số chỉ của vôn kế xoay chiều là giá trị hiệu dụng, bằng đúng 6 V của nguồn dù hiệu điện thế luôn đổi chiều.",
     "giai_thich_sai": "Vôn kế xoay chiều chỉ giá trị hiệu dụng của nguồn, tức đúng 6 V; số chỉ không nhỏ hơn hay lớn hơn 6 V."
+  },
+  "cau_chot": {
+    "giay": 38.6,
+    "cau_hoi": "Thay bằng nguồn 9 V xoay chiều. Đèn 6 V – 3 W sẽ thế nào?",
+    "chon": [
+      "A. Sáng như định mức",
+      "B. Sáng hơn, dễ hỏng",
+      "C. Tối hơn định mức",
+      "D. Không sáng được"
+    ],
+    "dung": 1,
+    "giai_thich": [
+      "9 V xoay chiều là giá trị hiệu dụng, làm nóng như 9 V một chiều, lớn hơn 6 V ghi trên đèn nên đèn không sáng đúng định mức.",
+      "9 V xoay chiều có tác dụng nhiệt như 9 V một chiều, lớn hơn 6 V định mức: đèn sáng hơn bình thường và dễ hỏng.",
+      "Số 9 V là giá trị hiệu dụng, lớn hơn 6 V định mức chứ không nhỏ hơn; đèn sáng hơn, không tối hơn.",
+      "Dòng xoay chiều vẫn làm đèn nóng và sáng (như thí nghiệm); với 9 V hiệu dụng đèn còn sáng hơn định mức."
+    ]
   }
 }

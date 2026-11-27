@@ -12,7 +12,7 @@ import {
 } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { ArrowLeft, ArrowRight, Check, ChevronDown, Eye, Maximize2, Menu, MonitorPlay, NotebookPen, Tv, Search, X } from "lucide-react";
+import { ArrowLeft, ArrowRight, Check, ChevronDown, Eye, Maximize2, Menu, MonitorPlay, NotebookPen, Search, X } from "lucide-react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import ContentHtml from "@/components/exams/ContentHtml";
@@ -163,11 +163,20 @@ function LessonLoader() {
   // trong effect chứ không phải giá trị khởi tạo của useState: trang này được prerender lúc
   // build (lúc đó chưa có hash), khởi tạo bằng hash sẽ lệch cây DOM khi hydrate. Đẩy sang
   // setTimeout 0 để không setState ngay trong thân effect (gây render chồng).
+  const daMoChieuTuHash = useRef(false);
   useEffect(() => {
+    // Chờ hồ sơ: lúc loading isTeacherView còn false → sẽ mở nhầm lớp phủ cũ.
+    if (daMoChieuTuHash.current || loading) return;
     if (currentHash().replace(/^#/, "").toLowerCase() !== "chieu") return;
-    const timer = window.setTimeout(() => setPresenting(true), 0);
+    const timer = window.setTimeout(() => {
+      daMoChieuTuHash.current = true;
+      // Bài đã có bản chiếu mới → chuyển sang đó (chỉ giáo viên); chưa có → lớp phủ chiếu cũ.
+      const moi = canPresent ? banChieuCuaBai(id) : undefined;
+      if (moi) window.location.replace(linkBanChieu(moi.slug));
+      else setPresenting(true);
+    }, 0);
     return () => window.clearTimeout(timer);
-  }, []);
+  }, [canPresent, id, loading]);
   // "#chieu-btm-3" → mở thẳng trình chiếu dạng 3 của mục Bài tập mẫu đầu tiên (thầy lưu link cho tiết chữa bài).
   // Chờ items tải xong và đã xác định quyền giáo viên; chỉ mở một lần mỗi lần vào trang.
   const daMoBtmRef = useRef(false);
@@ -1273,33 +1282,35 @@ function LessonLoader() {
   );
 
   // Trình chiếu (chỉ giáo viên) tách khỏi bảng Aa: còn đúng 2 nút ở đầu trang (N2, 26/10/2026).
-  const presentButton = canPresent && theoryItems.length > 0 && (
-    <button
-      type="button"
-      className="lesson-present-btn"
-      onClick={() => setPresenting(true)}
-      title="Chiếu lên tivi / máy chiếu: lật từng mục, bút khoanh ý chính, phóng to chữ"
-      aria-label="Trình chiếu"
-    >
-      <MonitorPlay size={16} aria-hidden />
-      <span className="lesson-tool-text">Trình chiếu</span>
-    </button>
-  );
-
-  // Bản chiếu "trên lớp" dựng riêng cho tivi (features/lessons/tren-lop.ts) — chỉ giáo viên, chỉ bài đã có bản chiếu.
+  // Bài đã có bản chiếu "trên lớp" dựng riêng cho tivi (features/lessons/tren-lop.ts) → nút "Trình chiếu"
+  // mở bản mới đó (23/11/2026); bài chưa có thì giữ lớp phủ chiếu cũ.
   const banChieu = canPresent ? banChieuCuaBai(id) : undefined;
-  const banChieuButton = banChieu && (
+  const presentButton = banChieu ? (
     <a
       className="lesson-present-btn"
       href={linkBanChieu(banChieu.slug)}
       target="_blank"
       rel="noopener"
-      title="Bản chiếu trên lớp cho tivi: mỗi màn một ý, clip tự dừng, cuối tiết mã QR đề kiểm tra (mở tab mới, F11)"
-      aria-label="Bản chiếu lớp"
+      title="Chiếu lên tivi: mỗi màn một ý, clip tự dừng, cuối tiết mã QR đề kiểm tra (mở tab mới, F11)"
+      aria-label="Trình chiếu"
     >
-      <Tv size={16} aria-hidden />
-      <span className="lesson-tool-text">Bản chiếu lớp</span>
+      <MonitorPlay size={16} aria-hidden />
+      <span className="lesson-tool-text">Trình chiếu</span>
     </a>
+  ) : (
+    canPresent &&
+    theoryItems.length > 0 && (
+      <button
+        type="button"
+        className="lesson-present-btn"
+        onClick={() => setPresenting(true)}
+        title="Chiếu lên tivi / máy chiếu: lật từng mục, bút khoanh ý chính, phóng to chữ"
+        aria-label="Trình chiếu"
+      >
+        <MonitorPlay size={16} aria-hidden />
+        <span className="lesson-tool-text">Trình chiếu</span>
+      </button>
+    )
   );
 
   const readTools = (
@@ -1663,14 +1674,7 @@ function LessonLoader() {
               <h1>{title}</h1>
               {hasLessonMeta && renderMeta("lesson-meta")}
             </div>
-            {banChieuButton ? (
-              <div className="lesson-present-group">
-                {presentButton}
-                {banChieuButton}
-              </div>
-            ) : (
-              presentButton
-            )}
+            {presentButton}
             {readToolButton}
             <button
               type="button"

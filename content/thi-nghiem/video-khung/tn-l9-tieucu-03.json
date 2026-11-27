@@ -1,8 +1,8 @@
 {
   "id": "tn-l9-tieucu-03",
   "ten": "Ảnh cao bằng vật: màn cách vật bao xa?",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-tieucu-03-20261105.mp4",
-  "tong_giay": 49.4,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-tieucu-03-20261127.mp4",
+  "tong_giay": 49.6,
   "o": [
     {
       "khoa": "gia_thuyet",
@@ -12,22 +12,22 @@
     },
     {
       "khoa": "du_doan",
-      "giay": 4.6,
+      "giay": 4.0,
       "chu": "L (vật – màn) bằng mấy lần f?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 11.2,
+      "giay": 9.9,
       "chu": "Vật sáng cao 3,0 cm, thấu kính hội tụ, màn."
     },
     {
       "khoa": "quan_sat",
-      "giay": 19.6,
+      "giay": 17.5,
       "chu": "Ảnh thật, ngược chiều, cao bằng vật; L = 40,4 cm."
     },
     {
       "khoa": "rut_ra",
-      "giay": 25.8,
+      "giay": 25.0,
       "chu": "Ảnh bằng vật: d = d' = 2f, nên L = 4f.\nf = 40,4/4 = 10,1 cm, khớp cách 1 và cách 2."
     },
     {
@@ -37,7 +37,7 @@
     }
   ],
   "dung_dua": {
-    "giay": 11.0,
+    "giay": 9.75,
     "cau_hoi": "Màn hứng được ảnh nét, cao đúng bằng vật. Khoảng cách L từ vật tới màn bằng mấy lần tiêu cự f?",
     "chon": [
       "A. L = f",
@@ -48,5 +48,22 @@
     "dung": 2,
     "giai_thich_dung": "Ảnh bằng vật khi thấu kính ở chính giữa: d = d' = 2f, nên L = 2f + 2f = 4f. Clip đo L = 40,4 cm, tính ra f = 10,1 cm.",
     "giai_thich_sai": "L gồm hai đoạn: vật – thấu kính (d = 2f) và thấu kính – màn (d' = 2f). Cộng lại L = 4f; 2f mới chỉ là một đoạn."
+  },
+  "cau_chot": {
+    "giay": 41.6,
+    "cau_hoi": "Thấu kính hội tụ f thật 10 cm. Một bạn dừng khi ảnh trên màn đã nét nhưng cao gấp đôi vật, rồi vẫn tính f = L : 4 (L là khoảng vật – màn). Kết quả so với f thật thế nào?",
+    "chon": [
+      "A. Lớn hơn f thật",
+      "B. Bằng đúng f thật",
+      "C. Nhỏ hơn f thật",
+      "D. Bằng nửa f thật"
+    ],
+    "dung": 0,
+    "giai_thich": [
+      "L = d + d' nhỏ nhất bằng 4f khi ảnh cao bằng vật (d = 2f); ảnh khác cỡ thì L > 4f nên L : 4 lớn hơn f (theo mô hình: d = 15, d' = 30 → L = 45 cm, L : 4 ≈ 11,3 cm).",
+      "Chỉ khi ảnh cao bằng vật (d = d') thì L : 4 mới bằng f; ở đây ảnh gấp đôi nên không bằng.",
+      "Khi ảnh khác cỡ vật, L luôn lớn hơn 4f, nên L : 4 không thể nhỏ hơn f.",
+      "L : 4 không nhỏ hơn f được, vì L luôn từ 4f trở lên; nên không thể bằng nửa f."
+    ]
   }
 }

@@ -1,52 +1,69 @@
 {
   "id": "tn-l9-kinhlup-01",
   "ten": "Hứng ảnh bóng đèn ở xa qua kính lúp 5x",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-kinhlup-01-20261118.mp4",
-  "tong_giay": 49.7,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-kinhlup-01-20261127.mp4",
+  "tong_giay": 49.6,
   "o": [
     {
       "khoa": "gia_thuyet",
       "giay": 0,
-      "chu": "Vật ở rất xa cho ảnh thật, ngược chiều, nhỏ, gần tiêu điểm; khoảng kính → giấy ≈ f.",
-      "kiem": "Ảnh bóng đèn trên giấy ra sao?"
+      "chu": "Chùm sáng từ vật ở rất xa qua kính lúp hội tụ gần tiêu điểm: ở đó ảnh nhỏ, rõ nét; khoảng kính → giấy ≈ f.",
+      "kiem": "Dịch giấy sau kính lúp, vệt sáng đổi ra sao?"
     },
     {
       "khoa": "du_doan",
       "giay": 3.8,
-      "chu": "Hứng ảnh bóng đèn cách 3 m lên tờ giấy sau kính. Ảnh trên giấy thế nào?"
+      "chu": "Dịch tờ giấy từ sát kính ra xa dần. Vệt sáng của bóng đèn trên giấy thay đổi thế nào?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 10.6,
-      "chu": "Kính lúp 5x, đèn cách 3 m, giấy trắng, thước mm."
+      "giay": 9.5,
+      "chu": "Kính lúp 5x, đèn cách 3 m, giấy trắng, thước."
     },
     {
       "khoa": "quan_sat",
-      "giay": 16.0,
-      "chu": "Ảnh rõ nhất khi giấy cách kính cỡ 5 cm."
+      "giay": 20.2,
+      "chu": "Vệt nhỏ dần, rõ nét, rồi to ra; rõ nhất ở gần 5 cm."
     },
     {
       "khoa": "rut_ra",
-      "giay": 26.8,
-      "chu": "Ảnh thật, ngược chiều, nhỏ, hiện gần F': khoảng kính → giấy ≈ f ≈ 5 cm."
+      "giay": 25.4,
+      "chu": "Ảnh thật, ngược chiều, nhỏ hơn đèn. Đèn ở xa thì ảnh rõ ở gần F': khoảng kính → giấy ≈ f."
     },
     {
       "khoa": "chua_noi",
-      "giay": 36.2,
-      "chu": "Số liệu minh hoạ. Vật gần kính hơn f thì ảnh thế nào?"
+      "giay": 36.0,
+      "chu": "Số liệu minh hoạ, chưa đo thật. Vật gần kính hơn f thì ảnh ra sao: chưa xét ở đây."
     }
   ],
   "dung_dua": {
-    "giay": 10.4,
-    "cau_hoi": "Hứng ảnh bóng đèn cách 3 m lên tờ giấy sau kính. Ảnh trên giấy thế nào?",
+    "giay": 9.3,
+    "cau_hoi": "Dịch tờ giấy từ sát kính lúp ra xa dần. Vệt sáng của bóng đèn trên giấy thay đổi thế nào?",
     "chon": [
-      "A. Cùng chiều, to hơn đèn",
-      "B. Ngược chiều, nhỏ hơn đèn",
-      "C. Cùng chiều, nhỏ hơn đèn",
-      "D. Không hứng được ảnh nào"
+      "A. To dần ra suốt quãng dịch",
+      "B. Nhỏ dần lại suốt quãng dịch",
+      "C. Nhỏ dần, rõ nét, rồi to ra",
+      "D. Giữ nguyên cỡ, chỉ mờ dần"
     ],
-    "dung": 1,
-    "giai_thich_dung": "Đèn ở rất xa so với f nên kính cho ảnh thật, ngược chiều, nhỏ, nằm gần tiêu điểm F'.",
-    "giai_thich_sai": "Nhìn ô \"trên giấy\" ở cảnh Kết quả: so chiều và cỡ của ảnh với bóng đèn."
+    "dung": 2,
+    "giai_thich_dung": "Chùm sáng qua kính hội tụ về một chỗ rồi toả ra: giấy ở đúng chỗ đó thì ảnh đèn nhỏ, rõ nét; trước và sau chỗ đó là vệt to, nhoè.",
+    "giai_thich_sai": "Xem cảnh Tiến hành: các tia sau kính gặp nhau ở một chỗ rồi toả ra, nên vệt sáng không to dần hay nhỏ dần mãi."
+  },
+  "cau_chot": {
+    "giay": 42.5,
+    "cau_hoi": "Thay bằng kính lúp ghi 2x, bóng đèn vẫn cách kính 3 m. Giấy cách kính khoảng bao nhiêu thì ảnh rõ nhất?",
+    "chon": [
+      "A. Khoảng 2 cm",
+      "B. Khoảng 5 cm",
+      "C. Khoảng 12,5 cm",
+      "D. Khoảng 50 cm"
+    ],
+    "dung": 2,
+    "giai_thich": [
+      "2x là số bội giác, không phải tiêu cự. f = 25 : 2 = 12,5 cm; đèn ở xa nên ảnh rõ ở gần F', giấy cách kính khoảng 12,5 cm.",
+      "5 cm là tiêu cự của kính 5x. Kính 2x có f = 25 : 2 = 12,5 cm, nên giấy phải đặt xa hơn, khoảng 12,5 cm.",
+      "f = 25 : 2 = 12,5 cm. Đèn cách 3 m là rất xa so với f, nên ảnh rõ ở gần F': giấy cách kính khoảng 12,5 cm (theo mô hình d' ≈ 13,0 cm).",
+      "50 cm là nhân 25 × 2. Từ G = 25/f có f = 25 : G = 12,5 cm; giấy cách kính khoảng 12,5 cm."
+    ]
   }
 }

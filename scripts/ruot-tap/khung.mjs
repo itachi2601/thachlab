@@ -53,6 +53,30 @@ export const chon = (n = 10) => `Em chọn: ${fill(n)} <span class="ck"></span>c
 // Đánh số trang liền mạch cả quyển (một quyển = một chương, năm bài × 12 trang): bài 14 = tr.1–12, bài 15 = tr.13–24 … bài 18 = tr.49–60.
 // BOOK_PAGE_START (mặc định 1) = số trang của trang đầu bài 14, để quyển nối tiếp chương liền kề (vd 61 nếu chương trước dài 60 trang);
 // số bắt đầu chẵn thì lề gáy đổi bên (class .flip). Nhãn "Tập t·ô" trên giấy dùng số trang tuyệt đối này.
+// RUOT_TAP_KIEU=moc: "kiểu mộc" (27/11/2026, HS phản hồi tập "trông AI quá") — gỡ dấu vết hệ thống: mã ô thành chữ xám nhỏ, bỏ ô số đầu mục,
+// bỏ phần lớn ô tick (chỉ giữ ở Dự đoán), nhãn viết như câu nói thường, hộp bỏ viền kín. Không đặt biến → bản cũ y nguyên.
+export const MOC = process.env.RUOT_TAP_KIEU === 'moc';
+// Đổi chữ IN HOA thành chữ thường cho tiêu đề: bỏ qua thẻ HTML và mọi thứ trong KaTeX (kí hiệu L, U, °C phải giữ), chỉ đổi từ ≥ 2 chữ viết hoa hết,
+// giữ từ viết tắt (GIU) và viết hoa lại tên riêng (TEN). Thiếu tên nào thì thêm vào TEN.
+const GIU = new Set(['BTVN', 'QR', 'SI', 'THPT', 'LED', 'AC', 'DC', 'GPS', 'MRI', 'PET', 'CT', 'UV', 'II', 'III', 'IV', 'VI', 'VII', 'VIII', 'IX']);
+const TEN = ['Celsius', 'Kelvin', 'Fahrenheit', 'Joule', 'Coulomb', 'Newton', 'Ampère', 'Ampe', 'Ohm', 'Faraday', 'Lenz', 'Lorentz', 'Boyle', 'Charles', 'Gay-Lussac', 'Avogadro', 'Boltzmann', 'Brown', 'Clapeyron', 'Rutherford', 'Bohr', 'Einstein', 'Planck', 'Becquerel', 'Curie', 'Geiger', 'Galilei', 'Archimedes', 'Pascal', 'Hooke', 'Kepler', 'Doppler', 'Young', 'Huygens', 'Maxwell', 'Hertz', 'Volta', 'Watt', 'Oersted', 'Tesla', 'Weber', 'Henry', 'Mariotte', 'Việt Nam', 'Trái Đất', 'Mặt Trời', 'Mặt Trăng', 'PhET'];
+const hoaDau = (x, hoa = true) => {
+  let sau = 0, dau = hoa;   // sau > 0: đang ở trong khối KaTeX (đếm span lồng nhau)
+  return x.split(/(<[^>]+>)/).map((seg) => {
+    if (seg.startsWith('<')) {
+      if (sau) { if (/^<span\b/.test(seg)) sau++; else if (seg === '</span>') sau--; } else if (/^<span class="katex/.test(seg)) sau = 1;
+      return seg;
+    }
+    if (sau || !seg) return seg;
+    let t = seg.replace(/\p{Lu}[\p{Lu}\p{M}]+/gu, (w) => (GIU.has(w) ? w : w.toLowerCase()));
+    for (const ten of TEN) t = t.replace(new RegExp(`(?<![\\p{L}])${ten}(?![\\p{L}])`, 'giu'), ten);
+    if (dau && /\p{L}/u.test(t)) { t = t.replace(/\p{L}/u, (c) => c.toUpperCase()); dau = false; }
+    return t;
+  }).join('');
+};
+// 'BÀI 1 · SỰ CHUYỂN THỂ' → 'Bài 1. Sự chuyển thể'; 'BA CÁI BẪY · TRẢ BÀI' → 'Ba cái bẫy, trả bài'
+const tieuDeThuong = (t) => { const [a, ...r] = t.split(' · '); if (!r.length) return hoaDau(a); return /^BÀI \d+$/i.test(a) ? `${hoaDau(a)}. ${hoaDau(r.join(', '))}` : `${hoaDau(a)}, ${hoaDau(r.join(', '), false)}`; };
+const SAO = { 'Dễ': '★', 'Trung bình': '★★', 'Khó': '★★★', 'Nâng cao': '★★★' };
 export const BAI_DAU = 14, TRANG_MOI_BAI = 12;
 export const TRANG_DAU = Number(process.env.BOOK_PAGE_START ?? 1);
 // lop/baiDau cho chương khác (vd L10 Ch.4: lop 10, baiDau 23 → bài 23 = tr.1–12). fig trong btm.dang: khoá của `hinh` hoặc chuỗi SVG/HTML sẵn.
@@ -63,20 +87,21 @@ export function khoiTao({ bai, lid, ten, sub = 'Vật lí 12 · Chương 4: Vậ
   const absAll = (s) => s.replace(/(\d+)(·\d+)/g, (_, a, k) => Number(a) + off + k);
   const LINK = `https://thachlab.id.vn/lop-hoc/bai/?id=${lid}#muc=kiem-tra`;
   const qrSvg = qrSvgOf(LINK);
-  const tag = (t) => `<span class="tag">Tập ${abs(t)}</span>`;
+  const tag = (t) => `<span class="tag">${MOC ? '' : 'Tập '}${abs(t)}</span>`;
   const foot = (n) => `<div class="foot"><span></span><span>Bài ${bai} · tr. ${n + off}</span></div>`;
-  const head = (t, s = '') => `<div class="top"><div><b>${t}</b>${s ? `<small>${s}</small>` : ''}</div></div>`;
-  const h3 = (i, t, tg = '') => `<h3><i>${i}</i>${t}</h3>${tg ? tag(tg) : ''}`;
+  const head = (t, s = '') => `<div class="top"><div><b>${MOC ? tieuDeThuong(t) : t}</b>${s ? `<small>${s}</small>` : ''}</div></div>`;
+  const h3 = (i, t, tg = '') => MOC ? `<h3>${t.replace(/^[IVX]+(\.\d+)? · /, '')}</h3>${tg ? tag(tg) : ''}` : `<h3><i>${i}</i>${t}</h3>${tg ? tag(tg) : ''}`;
   const card = (inner, extra = '', cls = '') => `<div class="card ${cls}" style="${extra}">${inner}</div>`;
   const gioiThieu = `<div class="gt"><div class="gtq"><div class="qr">${qrSvg}</div></div><div>
 <b>Xem lại bài ${bai} trên thachlab.id.vn:</b> quét mã bên để mở đúng bài này (lý thuyết, thí nghiệm, tự kiểm tra, bài tập mẫu).</div></div>`;
 
-  const chua = (k) => `<div class="chb"><div class="chh"><b>Câu ……</b> <span>sai vì: <span class="ck"></span>đọc đề <span class="ck"></span>công thức <span class="ck"></span>tính <span class="ck"></span>đơn vị</span><span><span class="ck"></span>làm lại (tr.${(TT ? 12 : 10) + off})</span></div>${lines(k)}</div>`;
+  const chua = (k) => MOC ? `<div class="chb"><div class="chh"><b>Câu ……</b> <span>sai vì (khoanh): đọc đề &nbsp;/&nbsp; công thức &nbsp;/&nbsp; tính &nbsp;/&nbsp; đơn vị</span><span>làm lại ở tr.${(TT ? 12 : 10) + off}</span></div>${lines(k)}</div>`
+    : `<div class="chb"><div class="chh"><b>Câu ……</b> <span>sai vì: <span class="ck"></span>đọc đề <span class="ck"></span>công thức <span class="ck"></span>tính <span class="ck"></span>đơn vị</span><span><span class="ck"></span>làm lại (tr.${(TT ? 12 : 10) + off})</span></div>${lines(k)}</div>`;
   const fixPage = (n, tra, { title, lap = false, ks = [5, 5, 5, 4, 4] }) => `<section class="page">
 ${head(title)}
-<div class="card soft" style="padding:1mm 3mm"><div style="display:flex;gap:4mm;flex-wrap:wrap"><span>Đề: ……………………………</span><span>Điểm: ……/……</span>${lap ? '<span>Lần trước: ……/……</span>' : '<span>Làm trên: <span class="ck"></span>thachlab <span class="ck"></span>Azota</span>'}</div>
+<div class="card soft" style="padding:1mm 3mm"><div style="display:flex;gap:4mm;flex-wrap:wrap"><span>Đề: ……………………………</span><span>Điểm: ……/……</span>${lap ? '<span>Lần trước: ……/……</span>' : MOC ? '' : '<span>Làm trên: <span class="ck"></span>thachlab <span class="ck"></span>Azota</span>'}</div>
 <div style="margin-top:.6mm"><b>Câu sai:</b> P.I <span class="fill" style="min-width:24mm"></span> · P.II <span class="fill" style="min-width:20mm"></span> · P.III <span class="fill" style="min-width:12mm"></span></div></div>
-<h3><i>1</i>Thầy chữa</h3>
+<h3><i>1</i>${MOC ? 'Ghi lại lúc thầy chữa' : 'Thầy chữa'}</h3>
 ${ks.map(chua).join('')}
 <h3><i>2</i>Ghi nhớ sau buổi sửa</h3>
 ${box(lines(2))}
@@ -87,9 +112,9 @@ ${foot(n)}</section>`;
 <div class="card" style="padding:1.2mm 3mm">
 <div>
 <div><b>Đề:</b> <span class="fill" style="min-width:52mm"></span> &nbsp;<b>Số câu:</b> <span class="fill" style="min-width:10mm"></span></div>
-<div style="margin-top:.8mm"><b>Làm ở:</b> <span class="ck"></span>thachlab &nbsp;<span class="ck"></span>Azota &nbsp;<span class="ck"></span>giấy &nbsp;· <b>Hạn:</b> ……/……</div>
-${wl('Ghi chú của thầy về đề:', 2)}
-<div style="margin-top:.8mm"><span class="ck"></span><b>Đã nộp</b> &nbsp;· <b>Điểm:</b> ……/…… &nbsp;· <b>Câu sai:</b> <span class="fill" style="min-width:34mm"></span></div>
+<div style="margin-top:.8mm">${MOC ? '<b>Làm ở:</b> <span class="fill" style="min-width:30mm"></span>' : '<b>Làm ở:</b> <span class="ck"></span>thachlab &nbsp;<span class="ck"></span>Azota &nbsp;<span class="ck"></span>giấy'} &nbsp;· <b>Hạn:</b> ……/……</div>
+${wl('Ghi chú của thầy về đề:', MOC ? 1 : 2)}
+<div style="margin-top:.8mm">${MOC ? '' : '<span class="ck"></span><b>Đã nộp</b> &nbsp;· '}<b>Điểm:</b> ……/…… &nbsp;· <b>Câu sai:</b> <span class="fill" style="min-width:34mm"></span></div>
 </div>
 </div>`;
 
@@ -100,20 +125,22 @@ ${wl('Ghi chú của thầy về đề:', 2)}
   const tu = '<span><span class="ck"></span>tự làm &nbsp;<span class="ck"></span>cần gợi ý</span>';
   const figOf = (fig) => typeof fig === 'function' ? fig() : hinh[fig] ? hinh[fig]() : fig;
   const gi = (k, fig) => !k ? '' : fig ? `<div class="fig-side" style="grid-template-columns:1fr 46mm;margin-bottom:.8mm"><div class="gi" style="margin:0">${wl('Phân tích và giải:', k)}</div>${figOf(fig)}</div>` : `<div class="gi">${wl('Phân tích và giải:', k)}</div>`;
-  const block = (d) => `<div class="bt"><div class="hd"><span>${d.t}</span>${tu}</div><div class="de">${d.de}</div>${d.bang ?? ''}<div class="nd"><b>Mấu chốt:</b> ${d.nd}</div>${gi(d.gi, d.fig)}${ansRow(d.a, d.cot)}</div>`;
-  const kq = (ds) => TT ? `<div class="card soft" style="padding:1.2mm 3mm"><b>Bài tương tự (tr. ${8 + off}–${9 + off}):</b> đúng ${ds.map((i) => `D${i} ……/2`).join(' · ')}</div>`
+  const tenDang = (t) => { const x = t.match(/^(Dạng \d+) · (Dễ|Trung bình|Khó|Nâng cao) · (.*)$/); return x ? [`${x[1]}. ${x[3]}`, `<span class="sao">${SAO[x[2]]}</span>`] : [t, '<span></span>']; };
+  const block = (d) => `<div class="bt"><div class="hd">${MOC ? `<span>${tenDang(d.t)[0]}</span>${tenDang(d.t)[1]}` : `<span>${d.t}</span>${tu}`}</div><div class="de">${d.de}</div>${d.bang ?? ''}<div class="nd"><b>Mấu chốt:</b> ${d.nd}</div>${gi(d.gi, d.fig)}${ansRow(d.a, d.cot)}</div>`;
+  const kq = (ds) => MOC && TT ? `<div class="card soft" style="padding:1.2mm 3mm">Làm xong bài tương tự (tr. ${8 + off}–${9 + off}), ghi số bài em làm đúng: ${ds.map((i) => `dạng ${i}: ……/2`).join(', ')}</div>`
+    : TT ? `<div class="card soft" style="padding:1.2mm 3mm"><b>Bài tương tự (tr. ${8 + off}–${9 + off}):</b> đúng ${ds.map((i) => `D${i} ……/2`).join(' · ')}</div>`
     : `<div class="card soft" style="padding:1.2mm 3mm"><b>Ba bài tương tự:</b> đúng ${ds.map((i) => `D${i} ……/3`).join(' · ')}</div>`;
   const btmTrang = (n, btm) => {
     const [a, b] = btm.tach, cuoi = btm.dang.length;
     return `<section class="page">
 ${head(`BÀI TẬP MẪU · DẠNG 1–${a}`)}
-${h3(1, 'Nhận dạng và đáp số', `${n}·1`)}
+${MOC ? tag(`${n}·1`) + '<div style="height:1mm"></div>' : h3(1, 'Nhận dạng và đáp số', `${n}·1`)}
 ${btm.dang.slice(0, a).map(block).join('\n')}
 ${kq(btm.kq[0])}
 ${foot(n)}</section>
 <section class="page">
 ${head(`BÀI TẬP MẪU · DẠNG ${a + 1 === cuoi ? cuoi : `${a + 1}–${cuoi}`}`)}
-${h3(1, 'Giải', `${n + 1}·1`)}
+${MOC ? tag(`${n + 1}·1`) + '<div style="height:1mm"></div>' : h3(1, 'Giải', `${n + 1}·1`)}
 ${btm.dang.slice(a).map(block).join('\n')}
 ${kq(btm.kq[1])}
 ${btm.khoNhat === false ? '' : `<div class="card soft" style="padding:1.2mm 3mm">Dạng em thấy khó nhất: D……, vì:${lines(1)}</div>`}
@@ -167,7 +194,16 @@ th{background:var(--soft);font-weight:700;text-align:left}
 .tbl-ct td{height:6.5mm}
 ${btmCss}
 ${ttCss}
-.dso{display:flex;flex-wrap:wrap;align-items:flex-end;gap:1mm 3.5mm;font-size:var(--fs-sm);line-height:6mm;margin:.4mm 0 1mm}.dso .fill{height:5.5mm}`;
+.dso{display:flex;flex-wrap:wrap;align-items:flex-end;gap:1mm 3.5mm;font-size:var(--fs-sm);line-height:6mm;margin:.4mm 0 1mm}.dso .fill{height:5.5mm}${MOC ? `
+h3 i{display:none}h3{font-size:3.9mm;margin:1.5mm 0 1mm}
+.tag{background:none;color:#9aa3ba;font-weight:400;padding:0;font-size:2.5mm}
+.card,.chb,.bt,.tt{border:0;border-left:.7mm solid var(--navy);border-radius:0}
+.card.soft{border-left-color:var(--grid)}
+.bt,.tt{border-left-color:var(--grid);margin-bottom:2.2mm}
+.bt .hd,.tt .hd{font-size:3.5mm}.sao{color:var(--navy);letter-spacing:.3mm;font-weight:400}
+.bt .gi{border:0;padding:0}
+.rk .ck{display:none}
+.tudo{background:#fff;border:.3mm dashed var(--hint);border-radius:1.5mm;padding:1mm 3mm}` : ''}`;
 
   // tuongTu (bố cục bài 14, thầy chốt 10/11): { trang: [[bài…], [bài…]], dap: ['đáp số tr.8', 'đáp số tr.9'], tieuDe: ['DẠNG 1–3', 'DẠNG 4–5'] },
   // mỗi bài { t: 'Dạng 1 · Bài 1', de: 'đề (đủ hằng số)', k: số dòng kẻ ≈ số ý }
@@ -175,14 +211,14 @@ ${ttCss}
   const ok = '<span><span class="ck"></span>đúng &nbsp;<span class="ck"></span>sai, đã sửa</span>';
   const ttTrang = (n, tt) => tt.trang.map((ds, i) => `<section class="page">
 ${head(`BÀI TƯƠNG TỰ · ${tt.tieuDe[i]}`, tt.vo ? (i === 0 ? 'Bài về nhà: giải vào vở, ghi đáp số vào ô rồi lật trang dò đáp số' : 'Giải vào vở; chỗ trống còn lại dùng làm nháp') : (i === 0 ? 'Làm tại chỗ, không nhìn trang Bài tập mẫu; xong mới tick và đối chiếu đáp số' : 'Chỗ trống còn lại dùng làm nháp'))}
-${ds.map((b) => `<div class="tt"><div class="hd"><span>${b.t}</span>${ok}</div><div class="de">${b.de}</div>${b.o ? dapSo(b.o) : lines(b.k)}</div>`).join('\n')}
-<div class="dap"><b>Đáp số (lật ngược trang để đọc, làm xong mới xem):</b> ${tt.dap[i]}</div>
+${ds.map((b) => `<div class="tt"><div class="hd"><span>${MOC ? b.t.replace(/^(Dạng \d+) · Bài (\d+)$/, '$1, bài $2') : b.t}</span>${MOC ? '<span></span>' : ok}</div><div class="de">${b.de}</div>${b.o ? dapSo(b.o) : lines(b.k)}</div>`).join('\n')}
+<div class="dap"><b>${MOC ? 'Đáp số, làm xong mới xem:' : 'Đáp số (lật ngược trang để đọc, làm xong mới xem):'}</b> ${tt.dap[i]}</div>
 ${foot(n + i)}</section>`).join('\n');
   const lamLai = (n, k) => `<section class="page">
 ${head('LÀM LẠI CÂU SAI · SAU 1 TUẦN')}
 <div class="card soft" style="padding:1mm 3mm"><b>Câu lấy từ:</b> trang ${n - 2 + off} (câu ……………) · trang ${n - 1 + off} (câu ……………)</div>
-${Array.from({ length: k[0] }, (_, i) => `<h3><i>${i + 1}</i>Câu …… <span class="hint">(từ trang ……)</span> &nbsp;<span class="ck"></span>lần này đúng</h3>${box(lines(k[1]))}`).join('')}
-<div class="card soft" style="margin-top:1.5mm;padding:1mm 3mm"><b>Kết quả:</b> đúng ……/…… &nbsp;<span class="ck"></span>đã hỏi thầy câu còn sai</div>
+${Array.from({ length: k[0] }, (_, i) => `<h3><i>${i + 1}</i>Câu …… <span class="hint">(từ trang ……)</span>${MOC ? '' : ' &nbsp;<span class="ck"></span>lần này đúng'}</h3>${box(lines(k[1]))}`).join('')}
+<div class="card soft" style="margin-top:1.5mm;padding:1mm 3mm"><b>Kết quả:</b> đúng ……/……${MOC ? ' · câu còn sai, mang hỏi thầy: ……………' : ' &nbsp;<span class="ck"></span>đã hỏi thầy câu còn sai'}</div>
 ${TT ? gioiThieu : ''}
 ${foot(n)}</section>`;
 
@@ -211,7 +247,8 @@ ${n === 12 ? gioiThieu : ''}
 ${foot(n)}</section>`).join('')}`}
 </body></html>`;
     mkdirSync(dirname(out), { recursive: true });
-    writeFileSync(out + '.html', html);
+    // kiểu mộc: hộp viền kín viết inline trong file bài → vạch trái, cho đồng bộ với .card
+    writeFileSync(out + '.html', MOC ? html.replaceAll('border:.3mm solid var(--navy);border-radius:1.5mm', 'border:0;border-left:.7mm solid var(--navy)') : html);
     const b = await puppeteer.launch({ executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome', headless: true, args: ['--no-sandbox', '--allow-file-access-from-files'] });
     const p = await b.newPage();
     await p.goto(pathToFileURL(out + '.html').href, { waitUntil: 'networkidle0' });

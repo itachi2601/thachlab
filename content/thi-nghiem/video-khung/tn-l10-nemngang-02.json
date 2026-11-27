@@ -1,13 +1,14 @@
 {
   "id": "tn-l10-nemngang-02",
   "ten": "Bắn bi ngang ở ba độ cao: vận tốc ném đo được có đổi không?",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-nemngang-02-20261031.mp4",
-  "tong_giay": 49.4,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-nemngang-02-20261127.mp4",
+  "poster": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-nemngang-02-20261127.webp",
+  "tong_giay": 49.9,
   "o": [
     {
       "khoa": "gia_thuyet",
       "giay": 0,
-      "chu": "Cùng súng thì vận tốc ném không đổi; độ cao chỉ đổi t và L.",
+      "chu": "Cùng súng thì vận tốc ném không đổi; độ cao chỉ đổi thời gian rơi t và tầm xa L.",
       "kiem": "Đổi độ cao súng thì cái gì thay đổi?"
     },
     {
@@ -17,27 +18,27 @@
     },
     {
       "khoa": "dung_cu",
-      "giay": 11.2,
-      "chu": "Súng bắn bi, giá đổi độ cao, giấy than, thước cuộn."
+      "giay": 9.7,
+      "chu": "Súng bắn bi, giá nâng, giấy than, thước."
     },
     {
       "khoa": "quan_sat",
-      "giay": 20.6,
-      "chu": "Đặt súng càng cao, vết bi càng xa: L = 0,451; 0,611; 0,606; 0,757 m."
+      "giay": 20.8,
+      "chu": "Súng càng cao, vết bi càng xa: L = 0,451; 0,611; 0,606; 0,757 m."
     },
     {
       "khoa": "rut_ra",
-      "giay": 27.0,
-      "chu": "Cả bốn lần v₀ = L/t chỉ từ 1,49 đến 1,51 m/s: h đổi, L đổi, v₀ gần như không đổi."
+      "giay": 25.2,
+      "chu": "Bốn lần v₀ = L/t chỉ từ 1,49 đến 1,51 m/s: cùng súng nên v₀ gần như không đổi."
     },
     {
       "khoa": "chua_noi",
-      "giay": 33.3,
+      "giay": 32.9,
       "chu": "Nòng chếch lên thì sao? Mới thử nòng nằm ngang."
     }
   ],
   "dung_dua": {
-    "giay": 11.0,
+    "giay": 9.55,
     "cau_hoi": "Nòng nằm ngang, đặt ở ba độ cao. Vận tốc ném v₀ = L/t đo được sẽ thế nào? (L: tầm xa, t: thời gian rơi)",
     "chon": [
       "A. Lớn hơn khi đặt súng cao hơn",
@@ -48,5 +49,22 @@
     "dung": 2,
     "giai_thich_dung": "Bốn lần đo cho v₀ = 1,49; 1,51; 1,50; 1,50 m/s, chỉ lệch tới 0,02 m/s. Cùng súng nên vận tốc ném không đổi; độ cao chỉ đổi thời gian rơi và tầm xa.",
     "giai_thich_sai": "Đặt cao hơn thì tầm xa L tăng, nhưng thời gian rơi t cũng tăng. Xem cột v₀ = L/t ở đoạn Kết quả."
+  },
+  "cau_chot": {
+    "giay": 46.3,
+    "cau_hoi": "Cùng súng bắn ngang v₀ = 1,50 m/s, đặt ở độ cao h = 0,60 m (g = 9,8 m/s²). Tầm xa L bằng bao nhiêu?",
+    "chon": [
+      "A. Khoảng 0,18 m",
+      "B. Khoảng 0,37 m",
+      "C. Khoảng 0,52 m",
+      "D. Khoảng 0,60 m"
+    ],
+    "dung": 2,
+    "giai_thich": [
+      "Số này ra khi quên dấu căn: t = 2h/g ≈ 0,122 s. Thời gian rơi là t = √(2h/g) = √(2·0,60/9,8) ≈ 0,350 s, nên L = v₀·t = 1,50 × 0,350 ≈ 0,52 m.",
+      "Số này ra khi quên hệ số 2: t = √(h/g) ≈ 0,247 s. Từ h = ½gt² suy ra t = √(2h/g) ≈ 0,350 s, nên L ≈ 0,52 m.",
+      "Theo mô hình: t = √(2h/g) = √(2·0,60/9,8) ≈ 0,350 s, rồi L = v₀·t = 1,50 × 0,350 ≈ 0,52 m.",
+      "Số này coi L tỉ lệ với h (0,451 m × 0,60/0,45). Bẫy trong clip đã cho thấy L tăng chậm hơn h: t = √(2h/g) ≈ 0,350 s nên L = 1,50 × 0,350 ≈ 0,52 m."
+    ]
   }
 }

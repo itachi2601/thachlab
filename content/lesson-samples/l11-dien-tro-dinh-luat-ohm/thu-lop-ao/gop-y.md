@@ -20,3 +20,10 @@
 | 14 | lớp ảo | Ô [97]–[99] (đề 1218) không đo được vì lớp ảo không có đề. | thấp | hs-6 |
 
 Tổng: cao 3, vừa 6, thấp 5.
+
+## Đã xử lý (27/11/2026)
+
+- Làm: mục 1 (đáp án màn Quay lại bỏ "mười mấy lần", thêm dòng dây tóc 220 V 4,0 → 48 Ω), 2 + 4 (màn 3d: sai số ΔU/U+ΔI/I, "độ dốc dùng cả 5 điểm"; rút gọn để không tràn), 3 (màn 4b dừng ②: 6,0 V 0,50 A ≈ 2,9 lần), 5 (ρ điện trở suất, màn 4d), 6 (ion rung quanh nút mạng, màn 4a), 7 (màn 5d "liền đỏ (1), đứt xanh (2)"), 9 (màn mở chép đúng ba mục tiêu Tập 13·1), 10 (chú thích hình mạch đo trong `hinh-l11-bai23.mjs`), 11, 12.
+- Bỏ/để: mục 8 (giữ bảng in sẵn; nhãn màn đã là "Nhìn vào…", không còn chữ "dự đoán" ở màn clip) · 13 (chữ trống [89] nằm ở Tập, để) · 14 (lớp ảo không có đề 1218, đo khi HS thật làm).
+- Giảm 25 → 24 màn: bỏ màn riêng PhET (3f, vốn "mặc định bỏ"); link + câu đoán chuyển sang ghi chú dạy.
+- Kiểm máy ĐẠT (24 màn, 0 tràn, katex-error 0, chữ hình nhỏ nhất 0,75 ở m5d, 375px không cuộn ngang). PDF Tập bài 23 vẫn 12 trang.

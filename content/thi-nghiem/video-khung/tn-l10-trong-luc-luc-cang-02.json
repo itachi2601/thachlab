@@ -1,52 +1,69 @@
 {
   "id": "tn-l10-trong-luc-luc-cang-02",
   "ten": "Treo thêm quả nặng vào lực kế: số chỉ đổi thế nào?",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-trong-luc-luc-cang-02-20261030.mp4",
-  "tong_giay": 48.5,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-trong-luc-luc-cang-02-20261127.mp4",
+  "tong_giay": 49.7,
   "o": [
     {
       "khoa": "gia_thuyet",
       "giay": 0,
-      "chu": "Trọng lượng P tỉ lệ thuận với khối lượng m.",
+      "chu": "Trọng lượng P tỉ lệ thuận với khối lượng m: đồ thị P theo m là đường thẳng qua gốc tọa độ.",
       "kiem": "Treo thêm quả nặng, số chỉ đổi thế nào?"
     },
     {
       "khoa": "du_doan",
-      "giay": 3.4,
-      "chu": "Treo 4 quả 50 g như thế. Lực kế chỉ bao nhiêu?"
+      "giay": 3.8,
+      "chu": "Treo lần lượt 1, 2, 3, 4 quả 50 g, ghi số chỉ lực kế. Đồ thị P theo m có dạng gì?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 9.2,
-      "chu": "Lực kế 0–2,5 N, quả nặng 50 g có móc.\nKim ở vạch 0 rồi mới treo."
+      "giay": 9.5,
+      "chu": "Lực kế 0–2,5 N, quả nặng 50 g."
     },
     {
       "khoa": "quan_sat",
-      "giay": 16.5,
-      "chu": "Số chỉ 0,50; 0,95; 1,45; 1,95 N."
+      "giay": 17.4,
+      "chu": "Số chỉ lần lượt 0,50; 0,95; 1,45; 1,95 N."
     },
     {
       "khoa": "rut_ra",
-      "giay": 31.0,
-      "chu": "P tỉ lệ với m: P/m gần như không đổi, xấp xỉ g = 9,8.\nVật nặng hơn cho P/m tin cậy hơn."
+      "giay": 23.2,
+      "chu": "Bốn điểm gần một đường thẳng qua gốc: khối lượng gấp đôi, P gấp đôi.\nP tỉ lệ với m; P/m ≈ 9,8 N/kg ≈ g."
     },
     {
       "khoa": "chua_noi",
-      "giay": 38.1,
-      "chu": "Chỉ đo ở một nơi: chưa thấy P đổi khi g đổi."
+      "giay": 39.0,
+      "chu": "Cùng sai một vạch, vật nặng hơn cho P/m tin cậy hơn.\nChỉ đo ở một nơi: chưa thấy P đổi khi g đổi."
     }
   ],
   "dung_dua": {
-    "giay": 9.05,
-    "cau_hoi": "Một quả 50 g làm lực kế chỉ 0,50 N. Treo 4 quả như thế thì lực kế chỉ:",
+    "giay": 9.35,
+    "cau_hoi": "Treo lần lượt 1, 2, 3, 4 quả 50 g, ghi số chỉ lực kế. Đồ thị P theo m có dạng gì?",
     "chon": [
-      "A. khoảng 0,5 N",
-      "B. khoảng 1 N",
-      "C. khoảng 2 N",
-      "D. khoảng 3 N"
+      "A. Đường thẳng đi qua gốc tọa độ",
+      "B. Đường thẳng không đi qua gốc tọa độ",
+      "C. Đường cong, càng lên càng dốc",
+      "D. Đường nằm ngang"
     ],
-    "dung": 2,
-    "giai_thich_dung": "Khối lượng gấp 4 thì trọng lượng gần gấp 4. Xem số đo thật ở đoạn kế.",
-    "giai_thich_sai": "Xem số đo thật ở đoạn kế rồi so với dự đoán của em."
+    "dung": 0,
+    "giai_thich_dung": "Một quả chỉ 0,50 N; khối lượng gấp đôi thì trọng lượng gấp đôi, không treo gì thì P = 0. Các điểm nằm gần đường thẳng qua gốc: P = m·g.",
+    "giai_thich_sai": "Không treo gì thì lực kế chỉ 0, nên đồ thị phải qua gốc. Mỗi quả 50 g thêm vào làm số chỉ tăng gần như bằng nhau (khoảng 0,5 N), nên các điểm thẳng hàng."
+  },
+  "cau_chot": {
+    "giay": 45.0,
+    "cau_hoi": "Lực kế chỉ đo được tới 2,5 N. Treo tối đa mấy quả nặng 120 g thì kim chưa vượt thang (g = 9,8 m/s²)?",
+    "chon": [
+      "A. 2 quả",
+      "B. 3 quả",
+      "C. 5 quả",
+      "D. 20 quả"
+    ],
+    "dung": 0,
+    "giai_thich": [
+      "Mỗi quả 0,12 kg nặng P = 0,12 × 9,8 ≈ 1,18 N. 2 quả ≈ 2,35 N, chưa vượt 2,5 N; 3 quả ≈ 3,53 N đã vượt. Tối đa 2 quả.",
+      "3 quả là 0,36 kg, P = 0,36 × 9,8 ≈ 3,53 N, vượt thang 2,5 N. 2,5 : 1,18 ≈ 2,1 chỉ được lấy phần nguyên: tối đa 2 quả.",
+      "5 quả đúng cho quả 50 g. Quả 120 g nặng hơn: mỗi quả ≈ 1,18 N, 5 quả ≈ 5,9 N, vượt xa 2,5 N. Tối đa 2 quả.",
+      "20 quả là lấy 2,5 chia 0,12, coi 2,5 N như 2,5 kg. Phải đổi ra trọng lượng: mỗi quả ≈ 1,18 N, nên chỉ treo được 2 quả (≈ 2,35 N)."
+    ]
   }
 }

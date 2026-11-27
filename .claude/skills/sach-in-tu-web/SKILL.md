@@ -209,6 +209,7 @@ Thầy nói "làm ruột sách chương X lớp Y" → phiên chính KHÔNG so�
   `origin/deploy`, chép đúng `public/sach-data/{dap-an-<id>*.json,trang-<mã>.json,trang-bai.json}` vào `sach-data/`,
   commit, `git push origin HEAD:deploy` (fast-forward), hosting kéo trong ≤10 phút → bước 8. Cần thầy cho phép mỗi lần.
 - Rút kinh nghiệm vào mục dưới.
+- 2026-11-27 · HS cầm tập in phản hồi "trông AI quá": nội dung ổn, cái lộ là khuôn (nhãn "Tập x·y" nền đậm + ô số ở mọi khối, 6–7 ô tick mỗi trang, nhãn kiểu dữ liệu "Dạng 3 · Trung bình · …", hộp bo góc y hệt nhau, không dòng nào nghe ra giọng thầy). HS ảo các lượt trước chỉ hỏi "điền được không" nên không bắt → bước HS ảo thêm câu "trang này trông giống vở thầy soạn hay biểu mẫu máy sinh, vì sao"; bản thử `RUOT_TAP_KIEU=moc node scripts/ruot-tap/l12-bai1.mjs` (khung.mjs: cờ `MOC`, mặc định bản cũ y nguyên).
 
 ## Nhật ký rút kinh nghiệm
 - 2026-10-07 · Đổi `①`, `✓`, `<`, chỉ số dưới unicode bằng regex trên cả chuỗi làm vỡ KaTeX và SVG → tách token (svg / `$…$` / văn bản) rồi xử lý riêng (`bw.to_print`); trong math dùng `\boxed`, `\checkmark`, `\lt`/`\gt`.

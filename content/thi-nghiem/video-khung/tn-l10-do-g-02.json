@@ -1,52 +1,69 @@
 {
   "id": "tn-l10-do-g-02",
   "ten": "Đo g từ năm độ cao: đồ thị s theo t²",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-do-g-02-20261031.mp4",
-  "tong_giay": 49.3,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-do-g-02-20261127.mp4",
+  "tong_giay": 50.0,
   "o": [
     {
       "khoa": "gia_thuyet",
       "giay": 0,
-      "chu": "Vật rơi có s = (g/2)·t², nên s tỉ lệ thuận với t²: điểm (t², s) nằm trên đường thẳng qua gốc.",
-      "kiem": "Năm điểm (t², s) sẽ xếp thành hình gì?"
+      "chu": "s tỉ lệ với t²: t tăng chậm hơn s; đồ thị s theo t² thẳng qua gốc, độ dốc = g/2.",
+      "kiem": "Độ cao gấp 3: thời gian rơi gấp mấy?"
     },
     {
       "khoa": "du_doan",
-      "giay": 3.4,
-      "chu": "Chấm 5 điểm (t², s) lên đồ thị s theo t². Năm điểm nằm thế nào?"
+      "giay": 3.2,
+      "chu": "s gấp 3: từ 0,200 m lên 0,600 m. Thời gian rơi t gấp mấy lần?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 11.2,
-      "chu": "Nam châm điện, bi, cổng quang, đồng hồ, thước. Năm độ cao 0,2–0,6 m, mỗi độ cao thả 5 lần."
+      "giay": 9.5,
+      "chu": "Nam châm điện, bi thép, cổng quang, đồng hồ."
     },
     {
       "khoa": "quan_sat",
-      "giay": 23.2,
-      "chu": "Năm điểm gần như thẳng hàng, đường thẳng đi qua gốc O: s tỉ lệ thuận với t²."
+      "giay": 16.8,
+      "chu": "t̄ = 0,204; 0,249; 0,288; 0,321; 0,352 s; s gấp 3, t chỉ gấp ≈ 1,7 lần."
     },
     {
       "khoa": "rut_ra",
-      "giay": 32.6,
-      "chu": "Độ dốc k ≈ 4,86 m/s². Vì k = g/2 nên g = 2k ≈ 9,72 m/s²."
+      "giay": 27.7,
+      "chu": "Đồ thị s theo t̄² thẳng qua gốc, độ dốc ≈ 4,86 m/s², g = 2 · độ dốc ≈ 9,72 m/s²."
     },
     {
       "khoa": "chua_noi",
-      "giay": 37.8,
-      "chu": "Mới thử một viên bi: chưa biết bi khác có cho cùng g không."
+      "giay": 39.5,
+      "chu": "Mới đo tới 0,600 m: cao hơn, đồ thị còn thẳng?"
     }
   ],
   "dung_dua": {
-    "giay": 10.65,
-    "cau_hoi": "Chấm 5 điểm (t², s) lên đồ thị s theo t² (s: quãng rơi, t: thời gian rơi). Năm điểm nằm thế nào?",
+    "giay": 8.95,
+    "cau_hoi": "Thả bi từ s = 0,200 m rồi từ s = 0,600 m (gấp 3). Thời gian rơi t gấp mấy lần?",
     "chon": [
-      "A. Trên một đường thẳng đi qua gốc toạ độ",
-      "B. Trên một đường cong, càng về sau càng dốc",
-      "C. Trên một đường cong, càng về sau càng thoải",
-      "D. Trên một đường thẳng nằm ngang"
+      "A. 1,7 lần",
+      "B. 2 lần",
+      "C. 3 lần",
+      "D. 9 lần"
     ],
     "dung": 0,
-    "giai_thich_dung": "Vật rơi có s = (g/2)·t², nên s tỉ lệ thuận với t²; điểm (t², s) nằm trên đường thẳng qua gốc.",
-    "giai_thich_sai": "Đường cong dốc dần là đồ thị s theo t. Ở đây trục ngang là t², xem năm điểm ở đoạn kế."
+    "giai_thich_dung": "t từ 0,204 s lên 0,352 s, chỉ gấp ≈ 1,7 lần (≈ √3) vì s tỉ lệ với t², không tỉ lệ với t.",
+    "giai_thich_sai": "Bảng đo: 0,352 s : 0,204 s ≈ 1,7. s gấp 3 thì t² gấp 3, nên t chỉ gấp ≈ 1,7 lần, không gấp 3 hay 9."
+  },
+  "cau_chot": {
+    "giay": 43.8,
+    "cau_hoi": "Cùng bộ dụng cụ (đồ thị s theo t̄² dốc 4,86 m/s²), thả bi từ s = 0,250 m. Thời gian rơi t̄ đọc được bao nhiêu?",
+    "chon": [
+      "A. 0,05 s",
+      "B. 0,15 s",
+      "C. 0,21 s",
+      "D. 0,23 s"
+    ],
+    "dung": 3,
+    "giai_thich": [
+      "0,05 s là t̄² = 0,250 : 4,86 ≈ 0,0514 s², chưa lấy căn. t̄ = √0,0514 ≈ 0,23 s.",
+      "0,15 s là coi t tỉ lệ với s (0,352 s × 0,250 : 0,600). Thực ra t² tỉ lệ với s: t̄ = √(0,250 : 4,86) ≈ 0,23 s.",
+      "0,21 s là coi t tỉ lệ với s (0,249 s × 0,250 : 0,300). t̄² = 0,250 : 4,86 ≈ 0,0514 s², t̄ ≈ 0,23 s.",
+      "t̄² = s : độ dốc = 0,250 : 4,86 ≈ 0,0514 s², nên t̄ = √0,0514 ≈ 0,23 s."
+    ]
   }
 }

@@ -1,8 +1,8 @@
 {
   "id": "tn-l9-langkinh-01",
   "ten": "Tia laser đỏ qua lăng kính: đổi góc tới",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-langkinh-01-20261119.mp4",
-  "poster": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-langkinh-01-20261119.webp",
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-langkinh-01-20261127.mp4",
+  "poster": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-langkinh-01-20261127.webp",
   "tong_giay": 49.6,
   "o": [
     {
@@ -13,32 +13,32 @@
     },
     {
       "khoa": "du_doan",
-      "giay": 4.2,
+      "giay": 3.8,
       "chu": "Tăng dần góc tới i từ 30° tới 70°. Tia ló lệch về phía nào so với hướng tia tới?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 10.5,
+      "giay": 9.7,
       "chu": "Lăng kính, bút laser đỏ, thước đo góc."
     },
     {
       "khoa": "quan_sat",
-      "giay": 21.5,
+      "giay": 20.5,
       "chu": "Cả 6 lần, tia ló đều ngả về phía đáy."
     },
     {
       "khoa": "rut_ra",
-      "giay": 25.7,
+      "giay": 24.4,
       "chu": "Tia khúc xạ ở cả hai mặt bên; lần nào tia ló cũng ngả về phía đáy."
     },
     {
       "khoa": "chua_noi",
-      "giay": 36.5,
+      "giay": 36.8,
       "chu": "Số liệu minh hoạ, n = 1,5 chỉ là giả định, chưa phải số đo thật."
     }
   ],
   "dung_dua": {
-    "giay": 10.3,
+    "giay": 9.45,
     "cau_hoi": "Lăng kính A = 60°, giữ nguyên điểm tới. Tăng dần góc tới i từ 30° tới 70°. Tia ló lệch về phía nào so với hướng tia tới?",
     "chon": [
       "A. Về phía đáy",
@@ -49,5 +49,22 @@
     "dung": 0,
     "giai_thich_dung": "Cả 6 lần đo, tia ló đều ngả về phía đáy lăng kính.",
     "giai_thich_sai": "Xem lại 6 tia ló: góc tới thay đổi nhưng lần nào tia cũng ngả về phía đáy, không lần nào đi thẳng hay ngả về đỉnh."
+  },
+  "cau_chot": {
+    "giay": 42.4,
+    "cau_hoi": "Cùng lăng kính đó (thuỷ tinh), chiếu laser đỏ với góc tới i = 45° ở mặt bên thứ nhất. Góc khúc xạ r trong lăng kính khoảng bao nhiêu?",
+    "chon": [
+      "A. Khoảng 0°",
+      "B. Khoảng 28°",
+      "C. Đúng 45°",
+      "D. Khoảng 62°"
+    ],
+    "dung": 1,
+    "giai_thich": [
+      "r = 0° chỉ khi tia tới vuông góc mặt bên (i = 0°); ở đây i = 45° nên tia vẫn gãy.",
+      "Từ không khí vào thuỷ tinh, tia gãy lại gần pháp tuyến nên r nhỏ hơn i: khoảng 28°.",
+      "r = i nghĩa là tia không gãy; ánh sáng đi xiên từ không khí vào thuỷ tinh luôn bị khúc xạ.",
+      "r lớn hơn i là gãy ra xa pháp tuyến: đó là lúc tia từ thuỷ tinh ra không khí (mặt thứ hai), không phải lúc đi vào."
+    ]
   }
 }

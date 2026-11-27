@@ -1,52 +1,70 @@
 {
   "id": "tn-l9-camung-02",
   "ten": "Hai cuộn dây: đóng, giữ và ngắt công tắc",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-camung-02-20261118.mp4",
-  "poster": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-camung-02-20261118.webp",
-  "tong_giay": 47.0,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-camung-02-20261127.mp4",
+  "poster": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-camung-02-20261127.webp",
+  "tong_giay": 49.8,
   "o": [
     {
       "khoa": "gia_thuyet",
       "giay": 0,
-      "chu": "Kim điện kế chỉ lệch khi dòng ở cuộn A đang thay đổi: đóng lệch một phía, ngắt lệch phía ngược lại.",
+      "chu": "Kim điện kế ở cuộn B chỉ lệch khi dòng ở cuộn A đang thay đổi; chiều lệch tuỳ dòng A tăng hay giảm.",
       "kiem": "Lúc ngắt K, kim B ra sao?"
     },
     {
       "khoa": "du_doan",
-      "giay": 4.2,
-      "chu": "Lúc đóng K: kim lệch phải. Giữ một lúc, rồi ngắt K. Lúc ngắt, kim của B thế nào?"
+      "giay": 3.2,
+      "chu": "Đóng K: kim lệch phải. Lúc ngắt K: kim B thế nào?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 10.4,
+      "giay": 8.3,
       "chu": "Pin 6 V, khoá K, cuộn A, cuộn B, điện kế."
     },
     {
       "khoa": "quan_sat",
-      "giay": 17.9,
-      "chu": "Đóng K: kim lệch phải rồi về 0. Giữ đóng: kim đứng ở 0. Ngắt K: kim lệch trái."
+      "giay": 13.8,
+      "chu": "Đóng K: lệch phải rồi về 0. Giữ đóng: kim ở 0. Ngắt K: lệch trái rồi về 0."
     },
     {
       "khoa": "rut_ra",
-      "giay": 25.0,
+      "giay": 22.8,
       "chu": "Dòng ở A đang đổi thì cuộn B có dòng: tăng lệch phải, giảm lệch trái."
     },
     {
       "khoa": "chua_noi",
-      "giay": 35.5,
+      "giay": 36.5,
       "chu": "Dòng ở B lớn bao nhiêu? Phía lệch tuỳ cách nối."
     }
   ],
   "dung_dua": {
-    "giay": 10.2,
-    "cau_hoi": "Lúc đóng K: kim lệch phải. Giữ một lúc, rồi ngắt K. Lúc ngắt, kim của B thế nào?",
+    "giay": 8.0,
+    "cau_hoi": "Đóng K: kim lệch phải. Giữ một lúc rồi ngắt K. Lúc ngắt, kim của B thế nào?",
     "chon": [
       "A. Đứng yên ở số 0",
       "B. Lệch phải như lúc đóng",
-      "C. Lệch trái rồi về 0"
+      "C. Lệch trái rồi về 0",
+      "D. Lệch phải rồi đứng yên"
     ],
     "dung": 2,
     "giai_thich_dung": "Lúc ngắt, dòng ở A giảm về 0 nên kim B lệch phía ngược với lúc đóng, rồi về 0 khi dòng ở A hết thay đổi.",
     "giai_thich_sai": "Lúc ngắt dòng ở A đang giảm, ngược với lúc đóng (đang tăng), nên kim lệch trái rồi về 0; không đứng yên và không lệch phải như cũ."
+  },
+  "cau_chot": {
+    "giay": 41.7,
+    "cau_hoi": "K vẫn đóng. Vặn biến trở cho dòng ở cuộn A giảm một chút rồi DỪNG tay, giữ nguyên. Lúc đã dừng, kim điện kế của B thế nào?",
+    "chon": [
+      "A. Vẫn lệch sang trái",
+      "B. Đứng ở số 0",
+      "C. Lệch sang phải",
+      "D. Lắc qua lại"
+    ],
+    "dung": 1,
+    "giai_thich": [
+      "Kim chỉ lệch trái trong lúc dòng A đang giảm. Đã dừng tay thì dòng A không đổi nữa, B hết dòng cảm ứng, kim về 0 (theo mô hình).",
+      "Dừng vặn thì dòng ở A giữ nguyên, giống lúc giữ K đóng: dòng A không đổi nên B không có dòng cảm ứng, kim đứng ở 0 (theo mô hình).",
+      "Lệch phải ứng với lúc dòng A đang tăng. Ở đây dòng A giảm rồi đứng yên, nên khi đã dừng kim không lệch mà ở 0 (theo mô hình).",
+      "Dòng A chỉ giảm một lần rồi giữ nguyên, không lúc tăng lúc giảm; khi đã dừng, dòng A không đổi nên kim ở 0 (theo mô hình)."
+    ]
   }
 }

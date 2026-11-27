@@ -10,11 +10,20 @@ h = (HERE / "tren-lop.src.html").read_text(encoding="utf8")
 # cắt lề trắng (đo getBBox khi đã phóng chữ) để hình to ra trong cột 34–44% màn
 CAT = {1: ('viewBox="0 0 440 222"', 'viewBox="4 24 432 196"'), 2: ('viewBox="0 0 440 270"', 'viewBox="10 0 422 270"'),
        3: ('viewBox="0 0 440 290"', 'viewBox="80 -6 280 280"'), 4: ('viewBox="0 0 440 270"', 'viewBox="22 6 396 262"')}
-for n in (1, 2, 3, 4):
+# Hình 4 (thanh + túi gạo) đã vẽ lại inline trong src (m5b: thứ tự A–O–G–B, OA, OG) nên không còn <!--FIG4-->
+# Hình 2: thay nhãn "quay ngược/thuận kim" bằng mũi tên cong ↺ ↻ (góp ý lớp ảo lượt 2, mục 11)
+ARROW = 'font-family="Segoe UI Symbol,Apple Symbols,sans-serif"'
+LAB2 = (('>quay ngược kim<', f'><tspan style="font-size:40px" {ARROW}>↺</tspan> ngược kim<'), ('>quay thuận kim<', f'>thuận kim <tspan style="font-size:40px" {ARROW}>↻</tspan><'))
+for n in (1, 2, 3):
     assert h.count(f"<!--FIG{n}-->") == 1, n
     cu, moi = CAT[n]
     assert svgs[n - 1].count(cu) == 1, n
-    h = h.replace(f"<!--FIG{n}-->", svgs[n - 1].replace(cu, moi))
+    sv = svgs[n - 1].replace(cu, moi)
+    if n == 2:
+        for x, y in LAB2:
+            assert sv.count(x) == 1, x
+            sv = sv.replace(x, y)
+    h = h.replace(f"<!--FIG{n}-->", sv)
 assert "<!--FIG" not in h
 qr = (HERE / "tren-lop-qr.svg").read_text(encoding="utf8")   # sinh bằng build_qr.mts (đề 1242, mục 129)
 assert h.count("<!--QR-->") == 1

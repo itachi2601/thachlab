@@ -1,8 +1,9 @@
 {
   "id": "tn-l10-dl1-newton-01",
   "ten": "Hòn bi trên hai máng nghiêng",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-dl1-newton-01-20261118.mp4",
-  "tong_giay": 49.5,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-dl1-newton-01-20261127.mp4",
+  "poster": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-dl1-newton-01-20261127.webp",
+  "tong_giay": 49.9,
   "o": [
     {
       "khoa": "gia_thuyet",
@@ -17,35 +18,53 @@
     },
     {
       "khoa": "dung_cu",
-      "giay": 10.5,
-      "chu": "Thả bi ở cao 20 cm, đo d và h."
+      "giay": 10.9,
+      "chu": "Thả bi ở độ cao 20 cm; mỗi góc máng (2) đo d và h."
     },
     {
       "khoa": "quan_sat",
-      "giay": 22.8,
-      "chu": "Đọc d ở ba lần thả: máng càng thoải, d càng lớn."
+      "giay": 23.2,
+      "chu": "d tăng từ 37,3 cm (30°) lên 69,4 cm (15°) rồi 180,3 cm (5°)."
     },
     {
       "khoa": "rut_ra",
-      "giay": 26.6,
-      "chu": "Máng (2) càng thoải, bi càng lăn xa; thử nghĩ máng nằm ngang."
+      "giay": 28.7,
+      "chu": "Máng (2) càng thoải, bi càng lăn xa. Không ma sát, máng nằm ngang: bi lăn mãi, vận tốc không đổi (suy luận)."
     },
     {
       "khoa": "chua_noi",
-      "giay": 37.2,
+      "giay": 38.8,
       "chu": "Có lực tác dụng thì vận tốc đổi ra sao? Chưa nói được."
     }
   ],
   "dung_dua": {
-    "giay": 10.4,
+    "giay": 10.3,
     "cau_hoi": "Hạ máng (2): 30° → 15° → 5°. Quãng bi lăn trên máng (2) sẽ thế nào?",
     "chon": [
       "A. Ngắn đi",
       "B. Gần như không đổi",
-      "C. Dài ra rõ rệt"
+      "C. Dài ra rõ rệt",
+      "D. Ngắn đi rồi dài ra"
     ],
     "dung": 2,
     "giai_thich_dung": "Máng càng thoải thì bi phải lăn xa hơn mới lên được gần tới độ cao ban đầu.",
     "giai_thich_sai": "Xem ba lần thả ở đoạn kế: so quãng d giữa các lần."
+  },
+  "cau_chot": {
+    "giay": 43.6,
+    "cau_hoi": "Hai máng không ma sát. Thả bi ở độ cao 30 cm, máng (2) nghiêng 30°. Bi lăn trên máng (2) quãng d bao nhiêu?",
+    "chon": [
+      "A. 30 cm",
+      "B. 37,3 cm",
+      "C. 56 cm",
+      "D. 60 cm"
+    ],
+    "dung": 3,
+    "giai_thich": [
+      "30 cm là độ cao bi lên được, không phải quãng dọc máng. Không ma sát bi lên đúng 30 cm, nên d = 30 : sin 30° = 60 cm.",
+      "37,3 cm là số đo trong clip: thả ở 20 cm và có ma sát. Ở đây thả cao hơn, không ma sát: bi lên đúng 30 cm, d = 30 : sin 30° = 60 cm.",
+      "56 cm là nhân 37,3 cm theo tỉ lệ 30/20, vẫn còn ma sát. Không ma sát thì bi lên đúng 30 cm: d = 30 : sin 30° = 60 cm.",
+      "Không ma sát, bi lên đúng độ cao thả 30 cm. Quãng dọc máng nghiêng 30°: d = h : sin 30° = 30 : 0,5 = 60 cm."
+    ]
   }
 }

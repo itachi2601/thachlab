@@ -1,52 +1,69 @@
 {
   "id": "tn-l10-luc-ma-sat-01",
   "ten": "Kéo hộp gỗ bằng lực kế",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-luc-ma-sat-01-20261118.mp4",
-  "tong_giay": 49.9,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-luc-ma-sat-01-20261127.mp4",
+  "tong_giay": 49.4,
   "o": [
     {
       "khoa": "gia_thuyet",
       "giay": 0,
-      "chu": "Hộp yên thì ma sát nghỉ cân bằng với lực kéo.",
-      "kiem": "Hộp chưa nhúc nhích: ma sát bao nhiêu?"
+      "chu": "Hộp còn yên thì ma sát nghỉ bằng lực kéo, tăng tới một mức cực đại; khi hộp trượt, ma sát trượt nhỏ hơn mức đó.",
+      "kiem": "Lúc hộp bật đi, số chỉ lực kế ra sao?"
     },
     {
       "khoa": "du_doan",
-      "giay": 3.4,
-      "chu": "Kéo 0,3 N, hộp vẫn yên. Ma sát của bàn lên hộp bằng bao nhiêu?"
+      "giay": 3.8,
+      "chu": "Kéo tăng dần. Lúc hộp vừa bật đi, số chỉ lực kế ra sao?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 9.8,
-      "chu": "Hộp gỗ, lực kế, kéo ngang."
+      "giay": 9.6,
+      "chu": "Hộp gỗ, gia trọng, lực kế 5 N."
     },
     {
       "khoa": "quan_sat",
-      "giay": 13.6,
-      "chu": "Số chỉ tăng dần, hộp vẫn yên; hộp bật đi thì số chỉ tụt."
+      "giay": 16.4,
+      "chu": "Hộp 0,20 kg: số chỉ tăng tới 0,7 N thì hộp bật đi, rồi tụt xuống 0,6 N khi trượt đều."
     },
     {
       "khoa": "rut_ra",
-      "giay": 25.5,
-      "chu": "Ma sát nghỉ cực đại lớn hơn ma sát trượt: 0,7 N so với 0,6 N."
+      "giay": 28.5,
+      "chu": "Ma sát trượt tỉ lệ với áp lực; ma sát nghỉ cực đại lớn hơn ma sát trượt."
     },
     {
       "khoa": "chua_noi",
-      "giay": 37.3,
-      "chu": "Ma sát nghỉ của hộp này đổi từ 0 tới 0,7 N, không luôn bằng một giá trị.\nDiện tích, tốc độ kéo: chưa thử."
+      "giay": 39.0,
+      "chu": "Đổi diện tích tiếp xúc hay tốc độ kéo thì sao: chưa thử."
     }
   ],
   "dung_dua": {
-    "giay": 9.7,
-    "cau_hoi": "Kéo 0,3 N, hộp vẫn yên. Ma sát của bàn lên hộp bằng bao nhiêu?",
+    "giay": 9.4,
+    "cau_hoi": "Kéo hộp gỗ tăng dần. Ngay lúc hộp vừa bật đi, số chỉ lực kế thay đổi thế nào?",
     "chon": [
-      "A. 0 N, vì hộp chưa chuyển động",
-      "B. 0,3 N",
-      "C. 0,6 N (bằng ma sát lúc trượt)",
-      "D. 0,7 N"
+      "A. Tăng vọt lên",
+      "B. Giữ nguyên",
+      "C. Tụt xuống một chút",
+      "D. Tụt về 0"
     ],
-    "dung": 1,
-    "giai_thich_dung": "Hộp đứng yên nên ma sát nghỉ cân bằng với lực kéo 0,3 N.",
-    "giai_thich_sai": "Hộp chưa chuyển động không có nghĩa là không có ma sát. Xem đoạn kế."
+    "dung": 2,
+    "giai_thich_dung": "Hộp 0,20 kg bật đi ở 0,7 N rồi chỉ cần 0,6 N để trượt đều: ma sát trượt nhỏ hơn ma sát nghỉ cực đại.",
+    "giai_thich_sai": "Xem đồ thị số chỉ lực kế ở đoạn kế: đỉnh 0,7 N lúc hộp bật đi, rồi số chỉ đổi thế nào."
+  },
+  "cau_chot": {
+    "giay": 43.7,
+    "cau_hoi": "Cùng mặt bàn, chất gia trọng cho tổng khối lượng hộp 1,00 kg. Kéo khoảng bao nhiêu thì hộp vừa bật đi?",
+    "chon": [
+      "A. 0,7 N",
+      "B. 2,9 N",
+      "C. 3,5 N",
+      "D. 5,0 N"
+    ],
+    "dung": 2,
+    "giai_thich": [
+      "0,7 N là của hộp 0,20 kg. Tổng 1,00 kg thì áp lực gấp 5, ma sát nghỉ cực đại cũng gấp 5: khoảng 3,5 N.",
+      "2,9 N là lần đo 0,80 kg. Thêm khối lượng thì áp lực tăng, lực để hộp bật đi tăng tiếp: khoảng 5 × 0,7 = 3,5 N.",
+      "Áp lực gấp 5 lần hộp 0,20 kg, nên lực để hộp bật đi cũng gấp 5: 5 × 0,7 ≈ 3,5 N.",
+      "5,0 N là cả thang lực kế. Lực để hộp bật đi tỉ lệ với áp lực: 1,00 kg gấp 5 lần 0,20 kg, nên khoảng 3,5 N."
+    ]
   }
 }
