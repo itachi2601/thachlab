@@ -1,0 +1,524 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lực tương tác giữa hai điện tích · trên lớp</title>
+<link rel="stylesheet" href="/fonts/be-vietnam-pro/be-vietnam-pro.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<style>
+/* Bản chiếu cho TIVI 50 inch: một cột, mỗi màn một ý, cỡ chữ tính theo chiều cao màn (vh)
+   nên lên 1080p hay 4K chữ vẫn chiếm cùng tỉ lệ. Chữ thường = 5,2% chiều cao màn (~3,2 cm trên tivi 50"). */
+/* Màu = token nền sáng của web (app/globals.css, docs/MAU-NEN-SANG.md): ink/muted/primary/ok/warn/danger.
+   Lệch có chủ ý: nền trắng (web #f5f7fa) và đường kẻ đậm hơn (web rgba .10) để rõ trên tivi xa 6–8 m. */
+:root{
+  --bg:#ffffff; --ink:#0f172a; --muted:#475569; --line:rgba(15,23,42,.2);
+  --accent:#1d4ed8; --ok:#047857; --ok-bg:#ecfdf5; --no:#b91c1c; --warn-bg:#fffbeb; --warn:#b45309;
+}
+*{box-sizing:border-box}
+html{scroll-snap-type:y mandatory;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Be Vietnam Pro","Segoe UI",system-ui,-apple-system,sans-serif;
+  font-size:min(5.2vh,2.95vw);line-height:1.32}
+.man{height:100vh;scroll-snap-align:start;padding:2.5vh 4vw 2vh;display:flex;flex-direction:column;gap:1.6vh;border-bottom:4px solid var(--line);overflow:hidden}
+.top{display:flex;align-items:center;gap:.8em;font-size:.62em;color:var(--muted);font-weight:700}
+.top .so{color:var(--accent);text-transform:uppercase;letter-spacing:.03em}
+.top .tap{margin-left:auto}
+.tap{display:inline-block;font-weight:800;color:var(--warn);background:var(--warn-bg);border:3px solid #e8b04a;border-radius:999px;padding:.05em .7em;white-space:nowrap;font-size:1.15em}
+h1,h2{margin:0;line-height:1.15}
+h1{font-size:2.4em} h2{font-size:1.3em}
+p{margin:0}
+ul{margin:0;padding-left:1.1em} li{margin:.12em 0}
+.giua{flex:1;display:flex;flex-direction:column;justify-content:center;gap:1.6vh}
+.hoi{font-weight:800}
+ol.opt{list-style:none;margin:0;padding:0;display:grid;gap:.7vh}
+ol.opt li{border:4px solid var(--line);border-radius:14px;padding:.12em .55em}
+ol.opt li b{display:inline-block;min-width:1.5em}
+ol.opt.hang{grid-template-columns:repeat(4,1fr);text-align:center}
+ol.opt.hang li b{min-width:0;margin-right:.3em}
+.lo .dung{border-color:var(--ok);background:var(--ok-bg)}
+button.mo,a.mo,button.vn{align-self:flex-start;display:inline-block;text-decoration:none;font:inherit;font-size:.68em;font-weight:800;color:#fff;background:var(--accent);
+  border:0;border-radius:999px;padding:.35em 1.1em;cursor:pointer;min-height:44px}
+button.mo[aria-expanded="true"]{background:#94a3b8}
+button.vn.phu{background:#64748b}
+.nut{display:flex;gap:.6em;flex-wrap:wrap}
+.an[hidden]{display:none}
+.an{border-left:10px solid var(--ok);background:var(--ok-bg);border-radius:0 14px 14px 0;padding:.25em .7em}
+.an.nhap{border-color:var(--warn);background:var(--warn-bg)}
+.nho{font-size:.7em;color:var(--muted)}
+.fig{display:flex;justify-content:center;min-height:0}
+.fig svg{height:100%;width:auto;max-width:100%;color:var(--ink)}
+.f1{height:58vh} .f2{height:50vh} .f3{height:54vh} .f4{height:54vh} .f5{height:54vh} .f6{height:54vh}
+/* hình của Tập (nét #1c2540, đỏ #b3261e, xanh #1f5fa8: đã đủ đậm trên nền trắng). Phóng nhãn để chữ trong hình >= 0,7 chữ thường */
+.fig svg text{font-size:16px} .f6 svg text{font-size:18px} .f1 svg text{font-size:16px}
+/* chữ gạch chân xanh = đúng chữ của ô trống trong Tập (mục 19 góp ý) */
+.o{color:var(--accent);text-decoration:underline;text-decoration-thickness:.1em;text-underline-offset:.14em}
+.hai{flex:1;min-height:0;display:flex;gap:3vw;align-items:center}
+.hai>.fig{flex:none;width:44%;height:100%;align-items:center}
+.hai>.ben{gap:1.6vh}
+ol.opt.hai-cot{grid-template-columns:1fr 1fr}
+.gian{flex:1;min-height:0} .gian svg{height:100%}
+.f4 svg{height:100%}
+.fx{font-size:1.45em;text-align:center;border:4px solid var(--accent);border-radius:16px;padding:.15em .4em}
+table{border-collapse:collapse;width:100%}
+th,td{border:3px solid var(--line);padding:.12em .4em;text-align:left;vertical-align:middle}
+th{background:#eef2f7;font-size:.8em}
+td.trong{min-width:4.5em;font-weight:800;color:var(--accent);text-align:center;outline:none}
+td.trong:focus{background:#eef4ff}
+td.ns{color:var(--ok);font-weight:800;text-align:center}
+/* màn clip: video dọc 9:16 bên trái cao hết màn, cột phải chữ to (câu hỏi ở điểm dừng) — N8, V2, V12 */
+.vg{flex:1;min-height:0;display:flex;gap:3vw}
+.vg video{height:100%;aspect-ratio:9/16;flex:none;background:#000;border-radius:12px;cursor:pointer}
+.ben{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center}
+.buoc{display:none;flex-direction:column;gap:2vh} .buoc.hien{display:flex}
+.nhin{font-weight:800;border-left:10px solid var(--accent);padding-left:.5em}
+.so-lon{font-size:1.45em;font-weight:800;color:var(--accent)}
+.bang td,.bang th{text-align:center}
+.vnut{display:flex;align-items:center;gap:.6em}
+.moc{display:flex;gap:.35em;margin-left:.4em} .moc i{width:.5em;height:.5em;border-radius:50%;border:3px solid var(--accent)} .moc i.qua{background:var(--accent)}
+.qr svg{display:block;height:62vh;width:auto;margin:0 auto}
+.made{font-size:1.5em;text-align:center}
+.made b{color:var(--accent)}
+.dk{position:fixed;right:12px;bottom:10px;font-size:14px;color:var(--muted);background:rgba(255,255,255,.9);border:1px solid var(--line);border-radius:8px;padding:4px 8px}
+@media (max-width:760px){
+  html{scroll-snap-type:none}
+  body{font-size:18px}
+  .man{height:auto;min-height:0;padding:18px 16px 22px;overflow:visible}
+  .f1,.f2,.f3,.f4,.f5,.f6,.gian{height:auto;flex:none} .hai{flex-direction:column} .hai>.fig{width:100%;height:auto} .fig svg{width:100%;height:auto}
+  .vg{flex-direction:column} .vg video{height:70vh;align-self:center}
+  ol.opt.hang{grid-template-columns:1fr 1fr}
+  .qr svg{height:auto;width:100%;max-width:320px}
+  .top{flex-wrap:wrap}
+  .dk{display:none}
+}
+@media print{html{scroll-snap-type:none}.man{height:auto;page-break-after:always}button.mo,a.mo,.dk,video,.vnut{display:none}.buoc{display:flex}.an[hidden]{display:block}}
+</style>
+
+
+<!-- Nguồn: theory.html bài 35 (Lực tương tác giữa hai điện tích) + ruột tập scripts/ruot-tap/l11-bai16.mjs (tr.1–5, mã ô t·k);
+     dấu TAP:ten = hình hinh-l11-bai16.mjs của Tập (build_tren_lop.py).
+     Clip tn-l11-coulomb-01 (engine clips/coulomb1.py): "Tiến hành" 10,1–20,9 s; clip tn-l11-coulomb-02 (clips/coulomb2.py): "Tiến hành" 10,4–21,0 s, "Kết quả" 21,0–30,1 s. -->
+
+<section class="man" id="m0">
+  <div class="top"><span class="so">Vật lí 11 · Bài 16</span><span>6 điểm dừng · 15 phút cuối làm đề</span><span class="tap">Tập bài 16 · tr.1</span></div>
+  <div class="giua">
+    <h1>Lực tương tác giữa hai điện tích</h1>
+    <p class="hoi">Hôm nay trả lời được:</p>
+    <ul>
+      <li>Điện từ đâu ra khi tay chạm kệ sắt?</li>
+      <li>Lực giữa hai điện tích: $F=k\dfrac{|q_1q_2|}{\varepsilon r^2}$</li>
+      <li>Tổng hợp lực điện; điện tích đứng yên ở đâu?</li>
+    </ul>
+    <p class="nho">Đoán trước, giơ tay, rồi mới mở đáp án.</p>
+  </div>
+  <p class="nho">Mô phỏng: PhET Interactive Simulations, ĐH Colorado Boulder (CC BY 4.0) · Phím → ← sang màn · Enter mở ô kế tiếp</p>
+</section>
+
+<!-- ================= 1. Dự đoán ================= -->
+<section class="man" id="m1">
+  <div class="top"><span class="so">1/6 · Dự đoán</span><span>phút 0–3</span><span class="tap">tr.1 · ô 1·2</span></div>
+  <p class="hoi">Đẩy xe qua sàn nhựa ở siêu thị, chạm tay vào kệ sắt: tách! Điện làm em bị giật đến từ đâu?</p>
+  <div class="hai">
+    <div class="fig f1"><!--TAP:sieuThi--></div>
+    <div class="ben">
+      <ol class="opt">
+        <li><b>A.</b> Có sẵn trong sàn nhà, truyền qua đế giày vào người</li>
+        <li><b>B.</b> Đế giày, quần áo cọ xát làm electron dời từ vật này sang vật kia</li>
+        <li><b>C.</b> Cơ thể tự sinh ra điện tích mới mỗi khi bước đi</li>
+      </ol>
+      <p class="nho">Khoanh vào Tập, viết "Vì sao?". Đáp án: cuối tiết.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 2. Nhiễm điện, bảo toàn ================= -->
+<section class="man" id="m2a">
+  <div class="top"><span class="so">2/6 · Nhiễm điện</span><span>phút 3–9</span><span class="tap">tr.1 · ô 1·4 · dòng 1–3</span></div>
+  <div class="giua">
+    <p>Vật nhiễm điện: <b class="o">hút</b> vật nhẹ, hoặc đẩy vật khác, hoặc phóng <b class="o">tia lửa</b>.</p>
+    <p>Nguyên tử bình thường trung hoà: tổng điện tích <b class="o">bằng 0</b>. Electron nhẹ, linh động, dễ <b class="o">dời chỗ</b>.</p>
+    <p>Thừa electron: vật nhiễm điện <b class="o">âm</b> · thiếu electron: vật nhiễm điện <b class="o">dương</b></p>
+    <div class="fx">$|q|=N\,|e|$, $|e|=1{,}6\cdot10^{-19}$ C</div>
+    <p class="nho">Điện tích luôn là bội của điện tích nguyên tố $|e|$ (cho sẵn).</p>
+  </div>
+</section>
+
+<section class="man" id="m2b">
+  <div class="top"><span class="so">2/6 · Ví dụ</span><span>phút 3–9</span><span class="tap">tr.1 · ô 1·4 · Ví dụ</span></div>
+  <div class="giua">
+    <p class="hoi">Thanh thuỷ tinh cọ lụa tích điện $+13$ nC. Bao nhiêu electron đã rời thanh? Lụa nhiễm điện gì?</p>
+    <button class="mo" data-mo="v2">Mở: lời giải</button>
+    <div class="an" id="v2" hidden>
+      <p>$N=\dfrac{13\cdot10^{-9}}{1{,}6\cdot10^{-19}}\approx8{,}1\cdot10^{10}$ electron</p>
+      <p>Electron rời thanh, sang lụa: lụa nhiễm điện <b>âm</b>, cũng $13$ nC.</p>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m2c">
+  <div class="top"><span class="so">2/6 · Ba cách nhiễm điện</span><span>phút 3–9</span><span class="tap">tr.1 · ô 1·4 · bảng</span></div>
+  <div class="giua">
+    <p class="hoi">Điền bảng: mỗi cách cho kết quả gì, electron đi đâu?</p>
+    <button class="mo" data-mo="k2">Mở: bảng</button>
+    <div class="an" id="k2" hidden>
+      <table>
+        <tr><th>Cách</th><th>Kết quả</th><th>Electron đi đâu</th></tr>
+        <tr><td>Cọ xát</td><td>hai vật nhiễm điện trái dấu</td><td>từ vật này sang vật kia</td></tr>
+        <tr><td>Tiếp xúc</td><td>hai vật nhiễm điện cùng dấu</td><td>truyền từ vật này sang vật kia</td></tr>
+        <tr><td>Hưởng ứng</td><td>đầu gần trái dấu, đầu xa cùng dấu</td><td>dồn về một phía, không chạm</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m2d">
+  <div class="top"><span class="so">2/6 · Bảo toàn điện tích</span><span>phút 3–9</span><span class="tap">tr.2 · ô 2·1</span></div>
+  <div class="giua">
+    <p>Hệ cô lập: không <b class="o">trao đổi điện tích</b> với bên ngoài. Tổng <b class="o">đại số</b> điện tích <b class="o">không đổi</b> (cộng giữ dấu + và −).</p>
+    <p class="hoi">Quả cầu kim loại giống hệt: $-5$ nC chạm $+1$ nC rồi tách ra. Mỗi quả mang điện tích bao nhiêu?</p>
+    <ol class="opt lo hang">
+      <li data-dung><b>A.</b>$-2$ nC</li>
+      <li><b>B.</b>$-3$ nC</li>
+      <li><b>C.</b>$-4$ nC</li>
+      <li><b>D.</b>$-6$ nC</li>
+    </ol>
+    <button class="mo" data-mo="a2d">Mở đáp án</button>
+    <div class="an" id="a2d" hidden>
+      <p><b>A.</b> Cộng có dấu: $-5+1=-4$ nC, chia đều cho hai quả: $-2$ nC mỗi quả.</p>
+      <p class="nho">B: cộng độ lớn rồi chia đôi · C: lấy tổng, quên chia đôi · D: cộng độ lớn.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 3. Thước nhựa, lon nhôm ================= -->
+<section class="man" id="m3a">
+  <div class="top"><span class="so">3/6 · Thí nghiệm</span><span>phút 9–14</span><span class="tap">tr.2 · ô 2·2 · Làm</span></div>
+  <div class="hai">
+    <div class="fig f2 rong"><!--TAP:lonNhom--></div>
+    <div class="ben">
+      <p class="hoi">Thước nhựa đã cọ tóc hút giấy vụn. Đưa thước lại gần lon nhôm rỗng, <b>không chạm</b>. Lon sẽ thế nào?</p>
+      <ol class="opt">
+        <li><b>A.</b> Đứng yên tại chỗ</li>
+        <li><b>B.</b> Lăn về phía thước</li>
+        <li><b>C.</b> Lăn ra xa thước</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m3b">
+  <div class="top"><span class="so">3/6 · Clip thước nhựa</span><span>2 điểm dừng · khoảng 2 phút</span><span class="tap">tr.2 · ô 2·2 · Quan sát</span></div>
+  <div class="vg" data-bat="10.9" data-het="19.2">
+    <video src="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-coulomb-01-20261118.mp4" poster="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-coulomb-01-20261118.webp" preload="metadata" playsinline title="Thước nhựa đã cọ tóc, giấy vụn và lon nhôm"></video>
+    <div class="ben">
+      <div class="buoc" data-t="-1"><p class="nhin">Nhìn vào: giấy vụn và lon nhôm khi thước đã cọ lại gần.</p><p class="nho">Điền dòng "Quan sát" ô 2·2.</p></div>
+      <div class="buoc" data-t="10.9"><p class="hoi">Đưa thước lại gần giấy vụn.</p></div>
+      <div class="buoc" data-t="14.4" data-dung><p class="so-lon">Giấy vụn bay lên bám thước</p><p class="hoi">Giấy trung hoà mà vẫn bị hút. Ghi vào ô "giấy vụn ___".</p></div>
+      <div class="buoc" data-t="14.5"><p class="hoi">Rồi lại gần lon, không chạm.</p></div>
+      <div class="buoc" data-t="19.2"><p class="so-lon">Lon lăn về phía thước</p><p class="hoi">Đối chiếu với câu giơ tay lúc nãy: đáp án <b>B</b>. Lon không chạm thước.</p></div>
+    </div>
+  </div>
+  <div class="vnut"><button class="vn" data-v="tiep">▶ Phát</button><button class="vn phu" data-v="lai">↺ Xem lại đoạn</button><span class="moc"></span></div>
+</section>
+
+<section class="man" id="m3c">
+  <div class="top"><span class="so">3/6 · Rút ra</span><span>phút 9–14</span><span class="tap">tr.2 · ô 2·2 · Rút ra</span></div>
+  <div class="hai">
+    <div class="fig f2 rong" data-chep="m3a"></div>
+    <div class="ben">
+      <p>Thước nhiễm điện do <b class="o">cọ xát</b>. Lon nhiễm điện do <b class="o">hưởng ứng</b>.</p>
+      <p>Đầu gần thước nhiễm điện <b class="o">trái</b> dấu thước, đầu xa nhiễm điện <b class="o">cùng</b> dấu.</p>
+      <button class="mo" data-mo="r3">Mở: vì sao lon lăn về phía thước</button>
+      <div class="an" id="r3" hidden><p>Lực lên đầu gần (hút) <b>mạnh hơn</b> lực lên đầu xa (đẩy) vì gần hơn: lon lăn về phía thước dù không chạm.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 4. Định luật Coulomb ================= -->
+<section class="man" id="m4a">
+  <div class="top"><span class="so">4/6 · Định luật Coulomb</span><span>phút 14–20</span><span class="tap">tr.2 · ô 2·3 · dòng 1–3</span></div>
+  <div class="hai">
+    <div class="fig f3 rong"><!--TAP:haiDienTich--></div>
+    <div class="ben">
+      <p>Điện tích điểm: vật tích điện rất <b class="o">nhỏ</b> so với khoảng cách đang xét.</p>
+      <p>Lực có phương <b class="o">đường nối hai điện tích</b>; tỉ lệ thuận với <b class="o">$|q_1q_2|$</b>, tỉ lệ nghịch với <b class="o">$r^2$</b>.</p>
+      <div class="fx">$F=k\dfrac{|q_1q_2|}{\varepsilon r^2}$</div>
+      <p class="nho">$k=9\cdot10^9$ N·m²/C²</p>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m4b">
+  <div class="top"><span class="so">4/6 · Điện môi</span><span>phút 14–20</span><span class="tap">tr.2 · ô 2·3 · dòng 4–6</span></div>
+  <div class="giua">
+    <p>$\varepsilon$: hằng số <b class="o">điện môi</b>, $\varepsilon\ge$ <b class="o">1</b>; chân không $\varepsilon=1$, không khí $\varepsilon\approx1$.</p>
+    <p>Trong điện môi (dầu, thuỷ tinh, nước nguyên chất) lực <b class="o">giảm</b> $\varepsilon$ lần.</p>
+    <p class="hoi">Hai điện tích trong không khí hút nhau $8$ N. Đặt vào dầu $\varepsilon=2$ và giảm khoảng cách còn một nửa: lực bằng bao nhiêu?</p>
+    <button class="mo" data-mo="v4">Mở: lời giải</button>
+    <div class="an" id="v4" hidden><p>Dầu: chia $2$; khoảng cách nửa: nhân $2^2=4$. $F=8\cdot\dfrac{4}{2}=16$ N</p></div>
+  </div>
+</section>
+
+<section class="man" id="m4c">
+  <div class="top"><span class="so">4/6 · Làm nhanh</span><span>phút 14–20</span><span class="tap">tr.2 · ô 2·4 · Câu 1</span></div>
+  <div class="giua">
+    <p class="hoi">$r$ tăng $2$ lần, $|q_1|$ giảm $2$ lần thì $F$ tăng hay giảm bao nhiêu lần?</p>
+    <ol class="opt lo hang">
+      <li><b>A.</b>giảm 2</li>
+      <li><b>B.</b>giảm 4</li>
+      <li data-dung><b>C.</b>giảm 8</li>
+      <li><b>D.</b>tăng 2</li>
+    </ol>
+    <button class="mo" data-mo="a4c">Mở đáp án</button>
+    <div class="an" id="a4c" hidden>
+      <p><b>C.</b> $F\sim\dfrac{|q_1|}{r^2}$: $|q_1|$ giảm 2 thì $F$ giảm 2; $r$ tăng 2 thì $F$ giảm 4. Cả hai: giảm $2\cdot4=8$ lần.</p>
+      <p class="nho">A: chỉ tính $q_1$ · B: chỉ tính $r^2$ · D: lẫn chiều.</p>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m4d">
+  <div class="top"><span class="so">4/6 · Thí nghiệm ảo PhET</span><span>dư giờ mới dùng</span><span class="tap">tr.2 · ô 2·3</span></div>
+  <div class="giua">
+    <p class="hoi">Kéo một điện tích ra xa gấp đôi. Lực thay đổi thế nào? Đổi dấu một điện tích thì sao?</p>
+    <div class="nut">
+      <a class="mo" href="https://phet.colorado.edu/sims/html/coulombs-law/latest/coulombs-law_all.html?locale=vi" target="_blank" rel="noopener">Mở PhET</a>
+      <button class="mo" data-mo="p4">Mở: kết quả</button>
+    </div>
+    <div class="an" id="p4" hidden><p>Khoảng cách gấp đôi: lực còn $\dfrac14$. Đổi dấu: lực đổi từ đẩy sang hút (hoặc ngược lại), độ lớn không đổi.</p></div>
+  </div>
+</section>
+
+<!-- ================= 5. Đo lực, tổng hợp lực ================= -->
+<section class="man" id="m5a">
+  <div class="top"><span class="so">5/6 · Cân điện tử</span><span>3 điểm dừng · khoảng 3 phút</span><span class="tap">tr.3 · ô 3·1</span></div>
+  <div class="vg" data-bat="11.0" data-het="25.2">
+    <video src="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-coulomb-02-20261030-2.mp4" preload="metadata" playsinline title="Cân điện tử đo lực đẩy giữa hai quả cầu"></video>
+    <div class="ben">
+      <div class="buoc" data-t="-1"><p class="nhin">Nhìn vào: số cân (g) khi hạ quả cầu B xuống gần A.</p><p class="nho">Số liệu mô phỏng. $F=$ số cân (kg) $\cdot g$, $g=9{,}8$ m/s².</p></div>
+      <div class="buoc" data-t="11.0"><p class="hoi">Trừ bì, hạ B tới $r=2$ cm.</p></div>
+      <div class="buoc" data-t="14.6" data-dung><p class="so-lon">$r=2$ cm: $0{,}92$ g</p><p class="hoi">Hàng đầu Tập đã tính: $F\approx9{,}0\cdot10^{-3}$ N, $Fr^2\approx3{,}61\cdot10^{-6}$.</p></div>
+      <div class="buoc" data-t="14.7"><p class="hoi">Nâng B dần lên, ghi số cân ở $r=3$ đến $6$ cm.</p></div>
+      <div class="buoc" data-t="20.4" data-dung><p class="so-lon">$0{,}41;\ 0{,}23;\ 0{,}15;\ 0{,}10$ g</p><p class="hoi">Tính $Fr^2$ cho 4 cột còn lại (dùng máy tính).</p></div>
+      <div class="buoc" data-t="20.5"><p class="hoi">Đối chiếu bảng.</p></div>
+      <div class="buoc" data-t="25.2"><p class="so-lon">$3{,}62;\ 3{,}61;\ 3{,}68;\ 3{,}53$</p><p class="hoi">Gần như không đổi: $r$ gấp đôi, lực còn một phần tư.</p></div>
+    </div>
+  </div>
+  <div class="vnut"><button class="vn" data-v="tiep">▶ Phát</button><button class="vn phu" data-v="lai">↺ Xem lại đoạn</button><span class="moc"></span></div>
+</section>
+
+<section class="man" id="m5b">
+  <div class="top"><span class="so">5/6 · Rút ra</span><span>phút 20–26</span><span class="tap">tr.3 · ô 3·1 · Rút ra</span></div>
+  <div class="hai">
+    <div class="fig f4"><!--TAP:canDien--></div>
+    <div class="ben">
+      <p>Tích $Fr^2$ <b class="o">không đổi</b> nên $F$ tỉ lệ nghịch với <b class="o">$r^2$</b>.</p>
+      <p class="nho">Hai hàng cuối lệch nhất do số cân làm tròn $0{,}01$ g.</p>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m5c">
+  <div class="top"><span class="so">5/6 · Tổng hợp lực</span><span>phút 20–26</span><span class="tap">tr.3 · ô 3·2</span></div>
+  <div class="hai">
+    <div class="fig f5"><!--TAP:tongHop--></div>
+    <div class="ben">
+      <p class="nho">$q_0$ chịu nhiều lực: $\vec F=$ <b class="o">$\vec F_1+\vec F_2+\dots$</b></p>
+      <button class="mo" data-mo="k5">Mở: bảng hợp lực</button>
+      <div class="an" id="k5" hidden>
+        <table style="font-size:.62em">
+          <tr><th>Hai lực</th><th>Hợp lực</th></tr>
+          <tr><td>Cùng chiều</td><td>$F_1+F_2$</td></tr>
+          <tr><td>Ngược chiều</td><td>$|F_1-F_2|$</td></tr>
+          <tr><td>Vuông góc</td><td>$\sqrt{F_1^2+F_2^2}$</td></tr>
+          <tr><td>Góc $\alpha$ bất kì</td><td>$\sqrt{F_1^2+F_2^2+2F_1F_2\cos\alpha}$</td></tr>
+          <tr><td>$F_1=F_2$</td><td>$2F_1\cos\dfrac{\alpha}{2}$</td></tr>
+        </table>
+        <p class="nho" style="font-size:.55em">Cùng hút/cùng đẩy: $\alpha=\widehat{ACB}$ · một hút, một đẩy: $\alpha=180^\circ-\widehat{ACB}$</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m5d">
+  <div class="top"><span class="so">5/6 · Giơ tay</span><span>phút 20–26</span><span class="tap">tr.3 · ô 3·2 · hàng "Vuông góc"</span></div>
+  <div class="giua">
+    <p class="hoi">Hai lực vuông góc, mỗi lực $3$ N. Hợp lực bao nhiêu?</p>
+    <ol class="opt lo hang">
+      <li><b>A.</b>$6$ N</li>
+      <li data-dung><b>B.</b>$4{,}2$ N</li>
+      <li><b>C.</b>$0$ N</li>
+      <li><b>D.</b>$3$ N</li>
+    </ol>
+    <button class="mo" data-mo="a5d">Mở đáp án</button>
+    <div class="an" id="a5d" hidden>
+      <p><b>B.</b> $\sqrt{3^2+3^2}=3\sqrt2\approx4{,}2$ N</p>
+      <p class="nho">A: cộng thẳng (cùng chiều) · C: trừ (ngược chiều) · D: lấy một lực.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 6. Cân bằng, bẫy, trả bài, đề 1211 ================= -->
+<section class="man" id="m6a">
+  <div class="top"><span class="so">6/6 · Cân bằng</span><span>phút 26–30</span><span class="tap">tr.3 · ô 3·3</span></div>
+  <div class="hai">
+    <div class="fig f6"><!--TAP:canBang--></div>
+    <div class="ben">
+      <p>$q_0$ đứng yên khi $\vec F_{10}+\vec F_{20}=$ <b class="o">$\vec 0$</b>: hai lực cùng <b class="o">phương</b>, ngược <b class="o">chiều</b>, bằng <b class="o">độ lớn</b>.</p>
+      <p>Cùng dấu: C ở <b class="o">trong</b> đoạn AB, $r_1+r_2=$ <b class="o">AB</b> · trái dấu: C ở <b class="o">ngoài</b>, $|r_1-r_2|=$ <b class="o">AB</b></p>
+      <p>$\dfrac{r_1}{r_2}=\sqrt{\dfrac{|q_1|}{|q_2|}}$, gần điện tích có độ lớn <b class="o">nhỏ hơn</b>.</p>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m6b">
+  <div class="top"><span class="so">6/6 · Làm nhanh</span><span>phút 26–30</span><span class="tap">tr.3 · ô 3·4</span></div>
+  <div class="giua">
+    <p class="hoi">$AB=8$ cm, $q_1=+9\ \mu$C tại A, $q_2=+1\ \mu$C tại B. Tìm $CA$, $CB$ để $q_0$ cân bằng.</p>
+    <button class="mo" data-mo="v6">Mở: lời giải</button>
+    <div class="an" id="v6" hidden><p>Cùng dấu: C trong AB, $\dfrac{CA}{CB}=\sqrt{\dfrac91}=3$, $CA+CB=8$ cm</p><p>$CA=6$ cm, $CB=2$ cm</p></div>
+  </div>
+</section>
+
+<section class="man" id="m6c">
+  <div class="top"><span class="so">6/6 · Bẫy 3</span><span>phút 26–30</span><span class="tap">tr.4 · ô 4·1</span></div>
+  <div class="hai">
+    <div class="fig f4"><!--TAP:capLuc--></div>
+    <div class="ben">
+      <p class="hoi">Quả cầu $5$ nC đẩy quả cầu $1$ nC một lực $0{,}2$ N. Quả $1$ nC đẩy quả $5$ nC một lực bao nhiêu?</p>
+      <button class="mo" data-mo="b6">Mở đáp án</button>
+      <div class="an" id="b6" hidden><p>Cũng $0{,}2$ N: hai lực bằng độ lớn, ngược chiều, đặt lên <b>hai vật khác nhau</b>.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m6d">
+  <div class="top"><span class="so">6/6 · Trả bài</span><span>phút 29–30 · viết 1,5 phút rồi mới mở</span><span class="tap">tr.4 · ô 4·2</span></div>
+  <div class="giua">
+        <p class="hoi">4. Định luật Coulomb: phát biểu, công thức, đơn vị.</p>
+    <button class="mo" data-mo="t4">Mở câu 4</button>
+    <div class="an" id="t4" hidden><p>$F=k\dfrac{|q_1q_2|}{\varepsilon r^2}$, phương đường nối · $F$ (N), $q$ (C), $r$ (m).</p></div>
+    <p class="hoi">6. Đặt $q_0$ ở đâu để cân bằng giữa $q_1$, $q_2$?</p>
+    <button class="mo" data-mo="t6">Mở câu 6</button>
+    <div class="an" id="t6" hidden><p>Cùng dấu: ở giữa · trái dấu: ở ngoài · gần điện tích nhỏ hơn.</p></div>
+  </div>
+</section>
+
+<section class="man" id="m6ct">
+  <div class="top"><span class="so">6/6 · Quay lại siêu thị</span><span>phút 30</span><span class="tap">tr.1 · ô 1·3</span></div>
+  <div class="hai">
+    <div class="fig f1" data-chep="m1"></div>
+    <div class="ben">
+      <p class="nhin">Thanh thuỷ tinh cọ lụa: electron sang lụa, hai vật nhiễm điện trái dấu.</p>
+      <button class="mo" data-mo="a6">Mở: đáp án</button>
+      <div class="an" id="a6" hidden><p><b>B.</b> Đế giày, quần áo cọ xát làm electron dời từ vật này sang vật kia: ta nhiễm điện, chạm kệ sắt thì electron phóng qua.</p>
+        <p class="nho">A: sàn không chứa điện sẵn · C: điện tích không tự sinh ra, chỉ dời chỗ (bảo toàn).</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m6e">
+  <div class="top"><span class="so">6/6 · Kiểm tra lý thuyết</span><span>phút 30–45</span><span class="tap">nộp xong: tr.4 ô 4·3 ghi điểm</span></div>
+  <div class="qr"><!--QR--></div>
+  <p class="made">Mã đề <b>1211</b> · 20 câu · 15 phút</p>
+  <p class="nho" style="text-align:center">thachlab → Quét mã, hoặc gõ số đề 1211 · làm một mình, nộp xong mới cất máy</p>
+</section>
+
+<section class="man" id="m6f">
+  <div class="top"><span class="so">Về nhà theo Tập bài 16</span><span class="tap">chụp lại màn này</span></div>
+  <ul>
+    <li><b>tr.1</b> ô 1·3 dòng "điều em hiểu sai" (nếu chưa viết xong)</li>
+    <li><b>tr.2</b> ô 2·4 câu 2 (nếu chưa xong)</li>
+    <li><b>tr.4</b> ô 4·1 đọc Bẫy 1, Bẫy 2 · ô 4·2 câu 1, 2, 3, 5 (bạn cùng bàn kiểm)</li>
+    <li><b>tr.5</b> ô 5·1 bài toán mẫu hai quả cầu treo · ô 5·2 · ô 5·3 ghi đề BTVN thầy giao trên web · ô 5·4 thử thách</li>
+  </ul>
+</section>
+
+<div class="dk" aria-hidden="true">← → sang màn · Enter mở ô</div>
+
+<script>
+(function(){
+  function toggle(btn){
+    var id=btn.getAttribute('data-mo'), box=document.getElementById(id), open=btn.getAttribute('aria-expanded')==='true';
+    if(box){ box.hidden=open; }
+    document.querySelectorAll('.an-o[data-o="'+id+'"]').forEach(function(s){ s.style.visibility=open?'hidden':'visible'; });
+    btn.setAttribute('aria-expanded', open?'false':'true');
+    btn.textContent = open ? btn.dataset.label : btn.dataset.label.replace(/^Mở:?\s*/, 'Ẩn ');
+    // mở đáp án của câu biểu quyết thì tô phương án đúng trong cùng màn
+    var sec=btn.closest('.man');
+    if(sec && /^(a|r|m5c)/.test(id)){ sec.querySelectorAll('ol.opt li[data-dung]').forEach(function(li){ li.classList.toggle('dung', !open); }); }
+  }
+  document.querySelectorAll('[data-chep]').forEach(function(d){ var s=document.querySelector('#'+d.dataset.chep+' .fig svg'); if(s) d.appendChild(s.cloneNode(true)); });
+  document.querySelectorAll('button.mo').forEach(function(b){
+    b.dataset.label=b.textContent; b.setAttribute('aria-expanded','false');
+    var id=b.getAttribute('data-mo'); if(document.getElementById(id)) b.setAttribute('aria-controls',id);
+    b.addEventListener('click',function(){toggle(b)});
+  });
+  document.querySelectorAll('.an-o').forEach(function(s){ s.style.visibility='hidden'; });
+  var mans=[].slice.call(document.querySelectorAll('.man'));
+  function cur(){ var y=window.scrollY+window.innerHeight*0.35, k=0; mans.forEach(function(s,i){ if(s.offsetTop<=y) k=i; }); return k; }
+  function go(d){ var k=Math.max(0,Math.min(mans.length-1,cur()+d)); mans[k].scrollIntoView({behavior:'smooth'}); }
+  // clip có điểm dừng: bắt đầu từ data-bat, tự dừng ở mỗi .buoc[data-dung] và ở data-het; Enter/Space/bấm video = phát tiếp
+  var vgs=[].slice.call(document.querySelectorAll('.vg')).map(function(g){
+    var v=g.querySelector('video'), sec=g.closest('.man'), bs=[].slice.call(g.querySelectorAll('.buoc'));
+    var bat=+g.dataset.bat, het=+g.dataset.het, raf=0, chay=false, o=-1;
+    var dung=bs.filter(function(b){return b.hasAttribute('data-dung')}).map(function(b){return +b.dataset.t}).concat([het]);
+    var qua=dung.map(function(){return false});
+    var moc=sec.querySelector('.moc'), nutTiep=sec.querySelector('[data-v="tiep"]');
+    dung.forEach(function(){ moc.appendChild(document.createElement('i')); });
+    function ve(){
+      var t=chay?v.currentTime:-1, hien=bs[0];
+      if(o>=0) t=dung[o];   // đang đứng ở điểm dừng: hiện đúng ô của điểm đó
+      bs.forEach(function(b){ if(+b.dataset.t<=t+0.001) hien=b; });
+      bs.forEach(function(b){ b.classList.toggle('hien', b===hien); });
+      [].forEach.call(moc.children,function(c,i){ c.classList.toggle('qua', qua[i]); });
+      nutTiep.textContent = qua[qua.length-1] ? '→ Sang màn sau' : (!chay ? '▶ Phát' : (v.paused ? '▶ Phát tiếp' : '❚❚ Tạm dừng'));
+    }
+    function lap(){
+      var t=v.currentTime;
+      for(var i=0;i<dung.length;i++){ if(!qua[i] && t>=dung[i]-0.02){ qua[i]=true; o=i; v.pause(); break; } }
+      ve(); if(!v.paused) raf=requestAnimationFrame(lap);
+    }
+    v.addEventListener('play',function(){ o=-1; cancelAnimationFrame(raf); raf=requestAnimationFrame(lap); ve(); });
+    v.addEventListener('pause',ve);
+    function tiep(){
+      if(qua[qua.length-1]){ go(1); return; }
+      if(!chay){ chay=true; v.currentTime=bat; }
+      if(v.paused) v.play(); else v.pause();
+    }
+    function lai(){
+      if(!chay) return;
+      var t=v.currentTime, tu=bat;
+      dung.forEach(function(d,i){ if(qua[i] && d<t-0.3) tu=d; });
+      dung.forEach(function(d,i){ if(d>tu+0.001) qua[i]=false; });
+      o=-1; v.currentTime=tu; v.play();
+    }
+    v.addEventListener('click',tiep);
+    nutTiep.addEventListener('click',tiep);
+    sec.querySelector('[data-v="lai"]').addEventListener('click',lai);
+    ve();
+    return {sec:sec, tiep:tiep};
+  });
+  document.addEventListener('keydown',function(e){
+    var t=e.target;
+    if(t.isContentEditable){ if(e.key==='Enter'||e.key==='Escape'){ e.preventDefault(); t.blur(); } return; }
+    if(t.closest && (t.closest('button')||t.closest('video')) && (e.key==='Enter'||e.key===' ')) return;
+    var vg=vgs.filter(function(x){return x.sec===mans[cur()]})[0];
+    if(vg && (e.key==='Enter'||e.key===' ')){ e.preventDefault(); vg.tiep(); return; }
+    if(e.key==='ArrowRight'||e.key==='PageDown'){ e.preventDefault(); go(1); }
+    else if(e.key==='ArrowLeft'||e.key==='PageUp'){ e.preventDefault(); go(-1); }
+    else if(e.key==='Enter'){ var b=mans[cur()].querySelector('button.mo[aria-expanded="false"]'); if(b){ e.preventDefault(); toggle(b); } }
+  });
+  // rời màn thì dừng clip đang chạy
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){ es.forEach(function(en){ if(!en.isIntersecting) en.target.pause(); }); },{threshold:.2});
+    document.querySelectorAll('video').forEach(function(v){ io.observe(v); });
+  }
+  document.addEventListener('DOMContentLoaded',function(){
+    if(window.renderMathInElement) renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});
+  });
+})();
+</script>
+</body>
+</html>
