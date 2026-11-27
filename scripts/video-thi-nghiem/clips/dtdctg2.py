@@ -3,7 +3,7 @@
 # So lieu lay nguyen tu content/thi-nghiem/tn-l10-dt-dctg-02.json (_kiem_so() doi chieu):
 #   so_lieu_mau: (t s, d m) = (0;0) (1;1) (2;2) (3;3) (4;4) (5;5) (6;5) (7;5) (8;5) (9;3) (10;1) (10,5;0).
 #   mo_hinh: 0-5 s d = 1.t ; 5-8 s d = 5 ; 8-10,5 s d = 5 - 2(t - 8). Do doc 1 m/s, 0, -2 m/s.
-# Du doan (K10: khong nut A-D): doan 1-2 cho san, doan 3 (buoc nhanh ve vach 0) ve ra duong nao? -> xien xuong, doc hon doan 1.
+# Du doan (K10: khong nut A-D): doan 1-2 cho san, doan 3 (ve vach 0 trong 2,5 s, khong noi "nhanh") ve ra duong nao? -> xien xuong, doc hon doan 1.
 # Bay = hien_tuong_hay_sai "doc doan di xuong la di xuong doc": hai khung tren/duoi (doc nui / hanh lang phang, ve vach 0).
 #   KHONG chieu s = 10 m, d = 0 (de danh cho Cau 6 cua bai).
 # Thu nghi (= cau_chot khung web): luot khac ra vach 4 m roi ve vach 2 m -> s = 4 + 2 = 6 m (truc d, thuoc khong hien 6 lam dap so).
@@ -85,7 +85,7 @@ def axes(d, y0=625, y1=1180):
         d.line([(GX0 - 12, Y(dm)), (GX0, Y(dm))], fill=NAVY, width=4)
         d.line([(GX0, Y(dm)), (GX1, Y(dm))], fill=(238, 233, 224), width=2)
         text(d, (GX0 - 22, Y(dm)), str(dm), 56, INK, anchor="rm")
-    text(d, (1030, GYB - 48), "t (s)", 58, INK, anchor="rm")
+    text(d, (1035, GYB + 48), "t (s)", 58, INK, anchor="rm")
     text(d, (GX0 + 25, GYT - 18), "d (m)", 58, DBLUE, anchor="lm")
 
 def trail(d, t_upto, colored=True, width=9):
@@ -135,7 +135,7 @@ def s_hook(img, d, t, sc):
     y0 = 1195 + (1 - a) * 30
     card(d, (40, y0, 1040, y0 + 395), fill=A(WHITE, a), outline=A(PURPLE, a), w=6)
     badge(d, y0 + 22, "DỰ ĐOÁN", PURPLE, a)
-    text(d, (W / 2, y0 + 160), "Đoạn 3: bước nhanh về vạch 0.", 60, INK, alpha=a)
+    text(d, (W / 2, y0 + 160), "Đoạn 3: về vạch 0 trong 2,5 s.", 60, INK, alpha=a)
     text(d, (W / 2, y0 + 240), "Đường đoạn 3 thế nào?", 62, PURPLE, alpha=a)
     seg_bar(d, y0 + 300, t, M[1] + 0.4, sc["T"] - 0.3, PURPLE, a)
 
