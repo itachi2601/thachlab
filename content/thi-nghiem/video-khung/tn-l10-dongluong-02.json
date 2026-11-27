@@ -1,7 +1,7 @@
 {
   "id": "tn-l10-dongluong-02",
   "ten": "Bi lăn từ máng nghiêng va vào khúc gỗ",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-dongluong-02-20261031.mp4",
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-dongluong-02-20261127.mp4",
   "tong_giay": 49.7,
   "o": [
     {
@@ -13,40 +13,57 @@
     {
       "khoa": "du_doan",
       "giay": 3.8,
-      "chu": "Lần thả nào đẩy khúc gỗ đi xa hơn?"
+      "chu": "Bi 50 g thả từ 20 cm hay bi 100 g thả từ 10 cm đẩy khúc gỗ đi xa hơn?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 9.5,
+      "giay": 9.7,
       "chu": "Máng nghiêng, bi thép 50 g và 100 g, khúc gỗ ở chân máng, thước."
     },
     {
       "khoa": "quan_sat",
-      "giay": 16.3,
-      "chu": "Lần 3 (100 g, 10 cm) đẩy gỗ xa hơn lần 2."
+      "giay": 18.6,
+      "chu": "Lần 3 (100 g, 10 cm) đẩy gỗ xa hơn lần 2 (50 g, 20 cm)."
     },
     {
       "khoa": "rut_ra",
-      "giay": 21.0,
-      "chu": "Khúc gỗ đi xa hơn khi m hoặc v tăng: gộp thành p = mv. Nặng gấp đôi thì p gấp đôi."
+      "giay": 25.0,
+      "chu": "Cùng độ cao, bi nặng gấp đôi thì p gấp đôi. Gỗ đi xa hơn khi m hoặc v tăng: gộp thành p = mv."
     },
     {
       "khoa": "chua_noi",
-      "giay": 28.7,
-      "chu": "Chưa biết quãng gỗ đi tỉ lệ thế nào với p.\nCoi gỗ nặng hơn bi nhiều."
+      "giay": 35.8,
+      "chu": "Cùng độ cao thì cùng v, dù bi nặng hay nhẹ. Chưa biết quãng gỗ đi tỉ lệ thế nào với p."
     }
   ],
   "dung_dua": {
-    "giay": 9.3,
-    "cau_hoi": "Lần thả nào đẩy khúc gỗ đi xa hơn?",
+    "giay": 9.5,
+    "cau_hoi": "Cùng máng, cùng khúc gỗ. Bi 50 g thả từ 20 cm hay bi 100 g thả từ 10 cm đẩy khúc gỗ đi xa hơn?",
     "chon": [
       "A. Bi 50 g thả từ 20 cm",
       "B. Bi 100 g thả từ 10 cm",
       "C. Xa như nhau",
-      "D. Không so sánh được khi chưa đo tốc độ"
+      "D. Không so được khi chưa đo tốc độ"
     ],
     "dung": 1,
     "giai_thich_dung": "Bi 100 g thả 10 cm có p ≈ 0,118 kg·m/s, lớn hơn bi 50 g thả 20 cm có p ≈ 0,084 kg·m/s, nên đẩy gỗ xa hơn.",
-    "giai_thich_sai": "Xem bảng ở đoạn kế: so p của lần 2 với lần 3."
+    "giai_thich_sai": "Thả cao gấp đôi thì bi tới nhanh hơn, nhưng có nhanh gấp đôi không? So m·v của hai lần."
+  },
+  "cau_chot": {
+    "giay": 44.8,
+    "cau_hoi": "Cùng máng, cùng khúc gỗ: bi 200 g thả từ 5 cm và bi 50 g thả từ 20 cm. Bi nào đẩy khúc gỗ đi xa hơn?",
+    "chon": [
+      "A. Bi 50 g, vì thả cao gấp bốn",
+      "B. Bi 200 g, vì p lớn gấp đôi",
+      "C. Như nhau, vì m·h bằng nhau",
+      "D. Bi 200 g, vì p lớn gấp bốn"
+    ],
+    "dung": 1,
+    "giai_thich": [
+      "Cao gấp bốn thì v chỉ gấp đôi (v tỉ lệ căn bậc hai của h), còn bi kia nặng gấp bốn: p của bi 200 g lớn gấp 4/2 = 2 lần.",
+      "v ≈ 0,84 m/s và 1,67 m/s; p ≈ 0,200·0,84 ≈ 0,167 và 0,050·1,67 ≈ 0,084 kg·m/s: bi 200 g có p gấp đôi, đẩy gỗ xa hơn.",
+      "m·h bằng nhau nghĩa là thế năng bằng nhau, nhưng p = m·v khác nhau: bi 200 g có v bằng nửa, khối lượng gấp bốn, nên p gấp đôi.",
+      "Khối lượng gấp bốn nhưng v chỉ bằng nửa (h bằng 1/4 thì v bằng 1/2), nên p chỉ gấp đôi, không gấp bốn."
+    ]
   }
 }

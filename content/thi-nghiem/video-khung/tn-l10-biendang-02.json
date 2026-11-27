@@ -1,7 +1,7 @@
 {
   "id": "tn-l10-biendang-02",
   "ten": "Lò xo treo cạnh thước, thêm quả nặng",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-biendang-02-20261118.mp4",
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-biendang-02-20261127.mp4",
   "tong_giay": 49.8,
   "o": [
     {
@@ -12,40 +12,57 @@
     },
     {
       "khoa": "du_doan",
-      "giay": 2.9,
-      "chu": "Thêm từng quả 50 g. Mỗi lần, lò xo dài thêm thế nào?"
+      "giay": 3.8,
+      "chu": "Thêm từng quả 50 g. Mỗi lần, lò xo dài thêm ra sao?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 8.8,
-      "chu": "Lò xo, thước mm, quả nặng 50 g treo từng quả."
+      "giay": 9.7,
+      "chu": "Lò xo, thước mm, quả nặng 50 g."
     },
     {
       "khoa": "quan_sat",
-      "giay": 17.2,
-      "chu": "Chưa treo 10,0 cm; 1 quả 11,9 cm; 2 quả 13,9 cm; 3 quả 15,9 cm."
+      "giay": 18.2,
+      "chu": "Chưa treo 10,0 cm; 1 quả 11,9 cm; 2 quả 13,9 cm; 3 quả 15,9 cm; 4 quả 17,9 cm."
     },
     {
       "khoa": "rut_ra",
-      "giay": 23.3,
-      "chu": "Mỗi quả thêm, lò xo dài thêm đều khoảng 2 cm. Đứng yên: F = m·g."
+      "giay": 26.7,
+      "chu": "Mỗi quả dài thêm đều, khoảng 2 cm. Đứng yên: F = P = m·g. Đồ thị F theo Δl là đường thẳng qua gốc."
     },
     {
       "khoa": "chua_noi",
-      "giay": 28.8,
-      "chu": "Nặng hơn 250 g thì lò xo còn thẳng không, chưa nói."
+      "giay": 38.5,
+      "chu": "Treo nặng hơn 250 g, lò xo còn dài thêm đều không thì chưa biết."
     }
   ],
   "dung_dua": {
-    "giay": 8.7,
-    "cau_hoi": "Thêm từng quả 50 g. Mỗi lần, lò xo dài thêm thế nào?",
+    "giay": 9.55,
+    "cau_hoi": "Lò xo chưa treo dài 10,0 cm, treo 1 quả 50 g dài 11,9 cm. Thêm từng quả 50 g. Mỗi lần, lò xo dài thêm ra sao?",
     "chon": [
       "A. Thêm đều nhau mỗi lần",
       "B. Thêm ít dần, lò xo cứng dần",
       "C. Thêm nhiều dần, lò xo mềm dần"
     ],
     "dung": 0,
-    "giai_thich_dung": "Mỗi quả thêm cùng một trọng lượng và lò xo dài thêm gần như đều nhau, khoảng 2 cm.",
+    "giai_thich_dung": "Mỗi quả thêm cùng một trọng lượng và lò xo dài thêm gần như đều nhau, khoảng 2 cm: độ cứng không đổi.",
     "giai_thich_sai": "Xem cột Δl khi thêm từng quả ở đoạn kế."
+  },
+  "cau_chot": {
+    "giay": 42.9,
+    "cau_hoi": "Lò xo trong clip (chưa treo dài 10,0 cm). Treo vật 120 g, chờ đứng yên. Lò xo dài bao nhiêu? (g = 9,8 m/s²)",
+    "chon": [
+      "A. 4,7 cm",
+      "B. 14,7 cm",
+      "C. 16,7 cm",
+      "D. 28,6 cm"
+    ],
+    "dung": 1,
+    "giai_thich": [
+      "4,7 cm mới là phần dài thêm Δl. Chiều dài lò xo phải cộng chiều dài lúc chưa treo: 10,0 + 4,7 = 14,7 cm.",
+      "Theo bảng, 100 g làm dài thêm 3,9 cm (k ≈ 25 N/m). 120 g: F = 0,12 · 9,8 ≈ 1,18 N, Δl = 1,18 / 25 ≈ 0,047 m = 4,7 cm; l = 10,0 + 4,7 = 14,7 cm.",
+      "16,7 cm là lấy cả chiều dài 13,9 cm nhân 1,2 (Bẫy: lực tỉ lệ với chiều dài l). Lực chỉ tỉ lệ với phần dài thêm: Δl = 4,7 cm, l = 14,7 cm.",
+      "28,6 cm là lấy chiều dài 11,9 cm của 1 quả nhân 2,4. Chỉ phần dài thêm (khoảng 2 cm mỗi 50 g, 3,9 cm mỗi 100 g) mới tăng theo khối lượng: Δl ≈ 4,7 cm, l = 14,7 cm."
+    ]
   }
 }
