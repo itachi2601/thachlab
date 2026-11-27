@@ -1,6 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
+import type { ComponentType } from "react";
 import { LazyErrorBoundary } from "@/components/ui/LazyErrorBoundary";
 
 /**
@@ -134,3 +135,28 @@ export function ThucHanhTongHopLucLazy() {
     </LazyErrorBoundary>
   );
 }
+
+/* ---- Môn Gia công phi truyền thống (lớp CTTC `gcpt`, docs/MON-GCPT-QUY-CACH.md) ---- */
+const GcptEdm = dynamic(() => import("@/components/physics/gcpt/EdmXung"), { ssr: false, loading });
+const GcptWedm = dynamic(() => import("@/components/physics/gcpt/WedmBuDay"), { ssr: false, loading });
+const GcptEcm = dynamic(() => import("@/components/physics/gcpt/EcmKheHo"), { ssr: false, loading });
+const GcptLaser = dynamic(() => import("@/components/physics/gcpt/LaserCuongDo"), { ssr: false, loading });
+const GcptTiaNuoc = dynamic(() => import("@/components/physics/gcpt/TiaNuoc"), { ssr: false, loading });
+const GcptSieuAm = dynamic(() => import("@/components/physics/gcpt/SieuAmCanKhuechDai"), { ssr: false, loading });
+const GcptAnMon = dynamic(() => import("@/components/physics/gcpt/AnMonAnLem"), { ssr: false, loading });
+
+const boc = (C: ComponentType) =>
+  function GcptLazy() {
+    return (
+      <LazyErrorBoundary fallback={failed}>
+        <C />
+      </LazyErrorBoundary>
+    );
+  };
+export const GcptEdmLazy = boc(GcptEdm);
+export const GcptWedmLazy = boc(GcptWedm);
+export const GcptEcmLazy = boc(GcptEcm);
+export const GcptLaserLazy = boc(GcptLaser);
+export const GcptTiaNuocLazy = boc(GcptTiaNuoc);
+export const GcptSieuAmLazy = boc(GcptSieuAm);
+export const GcptAnMonLazy = boc(GcptAnMon);
