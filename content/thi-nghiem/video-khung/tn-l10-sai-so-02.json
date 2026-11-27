@@ -1,8 +1,8 @@
 {
   "id": "tn-l10-sai-so-02",
   "ten": "Một thước kẻ, hai vật đo: sai số so nhau thế nào?",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-sai-so-02-20261122.mp4",
-  "tong_giay": 49.5,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-sai-so-02-20261127.mp4",
+  "tong_giay": 49.8,
   "o": [
     {
       "khoa": "gia_thuyet",
@@ -12,32 +12,32 @@
     },
     {
       "khoa": "du_doan",
-      "giay": 3.3,
+      "giay": 4.2,
       "chu": "Sai số dụng cụ ΔA của hai phép đo so nhau thế nào?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 9.4,
-      "chu": "Thước kẻ vạch 1 mm, tấm bìa, cục tẩy; phóng to chỗ đọc."
+      "giay": 10.3,
+      "chu": "Thước vạch 1 mm, tấm bìa, cục tẩy."
     },
     {
       "khoa": "quan_sat",
-      "giay": 19.4,
-      "chu": "Tấm bìa: (250 ± 1) mm.\nCục tẩy: (12 ± 1) mm.\nCùng ΔA = 1 mm."
+      "giay": 18.6,
+      "chu": "Bìa (250 ± 1) mm, tẩy (12 ± 1) mm: cùng ΔA."
     },
     {
       "khoa": "rut_ra",
-      "giay": 25.9,
+      "giay": 22.6,
       "chu": "Sai số tỉ đối δA = ΔA/A: em tự tính cho hai vật."
     },
     {
       "khoa": "chua_noi",
-      "giay": 30.6,
-      "chu": "Mới tính sai số dụng cụ, đo 1 lần; thước lệch, nhìn xiên chưa tính."
+      "giay": 30.3,
+      "chu": "Mới tính sai số dụng cụ; thước đặt lệch, mắt nhìn xiên chưa tính."
     }
   ],
   "dung_dua": {
-    "giay": 9.25,
+    "giay": 10.15,
     "cau_hoi": "Thước kẻ vạch 1 mm, đo tấm bìa và cục tẩy mỗi vật 1 lần. Sai số dụng cụ ΔA của hai phép đo so nhau thế nào?",
     "chon": [
       "A. Tấm bìa lớn hơn cục tẩy",
@@ -48,5 +48,22 @@
     "dung": 3,
     "giai_thich_dung": "Thước kẻ phải đọc cả đầu 0 lẫn đầu cuối, mỗi đầu sai tối đa nửa vạch: 0,5 + 0,5 = 1 mm, như nhau cho mọi vật đo bằng thước đó.",
     "giai_thich_sai": "ΔA do thước quyết định, không do vật dài hay ngắn. Đọc hai đầu, mỗi đầu nửa vạch, nên ΔA bằng cả một vạch. Xem các dải cam ở đoạn kế."
+  },
+  "cau_chot": {
+    "giay": 45.6,
+    "cau_hoi": "Dùng đúng thước kẻ vạch 1 mm (ΔA = 1 mm), đo một lần. Vật phải dài khoảng bao nhiêu thì sai số tỉ đối δA đúng bằng 0,5 %?",
+    "chon": [
+      "A. 20 mm",
+      "B. 50 mm",
+      "C. 200 mm",
+      "D. 500 mm"
+    ],
+    "dung": 2,
+    "giai_thich": [
+      "Vật 20 mm cho δA = 1 : 20 = 5 %, gấp 10 lần 0,5 %.",
+      "Vật 50 mm cho δA = 1 : 50 = 2 %, vẫn lớn hơn 0,5 %.",
+      "δA = ΔA : A nên A = ΔA : δA = 1 mm : 0,005 = 200 mm. Vật càng dài thì cùng 1 mm sai số càng nhỏ so với cả vật.",
+      "Vật 500 mm cho δA = 1 : 500 = 0,2 %, nhỏ hơn mức hỏi; vật dài 200 mm đã đủ 0,5 %."
+    ]
   }
 }
