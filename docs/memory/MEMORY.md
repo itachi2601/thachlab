@@ -5,6 +5,7 @@
 - [Chuyển đổi tự tuyển sinh](user_thach_chuyen_doi_tu_tuyen_sinh.md)
 - [Kế hoạch tự tuyển sinh + phòng thuê](user_thach_ke_hoach_tu_tuyen_sinh.md)
 - [Chiến lược chuyển đổi tuyển sinh](user_thach_chien_luoc_chuyen_doi_tuyen_sinh.md)
+- [Thương hiệu cá nhân trong + ngoài trường](user_thach_thuong_hieu_ca_nhan.md) — đã vào lịch tuần; chờ 6 câu hỏi
 ## Cách làm việc (feedback)
 - [Token discipline](feedback_token_discipline.md) — ảnh vào subagent
 - [Giảm token](project_thachlab_token_hygiene.md) — 87k/request cố định
@@ -114,3 +115,4 @@
 - [CNC lớp CĐT 24A + mở lớp](project_thachlab_cnc_mo_lop_cdt24a.md) — treo Hộp thư lọc tin
 - [Rà soát website 18/11](project_thachlab_ra_soat_website_2026_11_18.md) — đợt 2, 3 chờ chọn
 - [Rà quiz + độ dài theo chương](project_thachlab_ra_soat_quiz_do_dai.md) — L12 Ch.3 xong; 8 câu mới chờ duyệt
+- [CNC thi tiện + bảng điểm SV](project_thachlab_cnc_thi_tien_diem.md) — đã deploy 14/11; chờ điểm Phay

@@ -56,9 +56,26 @@ export const chon = (n = 10) => `Em chọn: ${fill(n)} <span class="ck"></span>c
 // RUOT_TAP_KIEU=moc: "kiểu mộc" (27/11/2026, HS phản hồi tập "trông AI quá") — gỡ dấu vết hệ thống: mã ô thành chữ xám nhỏ, bỏ ô số đầu mục,
 // bỏ phần lớn ô tick (chỉ giữ ở Dự đoán), nhãn viết như câu nói thường, hộp bỏ viền kín. Không đặt biến → bản cũ y nguyên.
 export const MOC = process.env.RUOT_TAP_KIEU === 'moc';
-const hoaDau = (x) => x.charAt(0) + x.slice(1).toLowerCase();
+// Đổi chữ IN HOA thành chữ thường cho tiêu đề: bỏ qua thẻ HTML và mọi thứ trong KaTeX (kí hiệu L, U, °C phải giữ), chỉ đổi từ ≥ 2 chữ viết hoa hết,
+// giữ từ viết tắt (GIU) và viết hoa lại tên riêng (TEN). Thiếu tên nào thì thêm vào TEN.
+const GIU = new Set(['BTVN', 'QR', 'SI', 'THPT', 'LED', 'AC', 'DC', 'GPS', 'MRI', 'PET', 'CT', 'UV', 'II', 'III', 'IV', 'VI', 'VII', 'VIII', 'IX']);
+const TEN = ['Celsius', 'Kelvin', 'Fahrenheit', 'Joule', 'Coulomb', 'Newton', 'Ampère', 'Ampe', 'Ohm', 'Faraday', 'Lenz', 'Lorentz', 'Boyle', 'Charles', 'Gay-Lussac', 'Avogadro', 'Boltzmann', 'Brown', 'Clapeyron', 'Rutherford', 'Bohr', 'Einstein', 'Planck', 'Becquerel', 'Curie', 'Geiger', 'Galilei', 'Archimedes', 'Pascal', 'Hooke', 'Kepler', 'Doppler', 'Young', 'Huygens', 'Maxwell', 'Hertz', 'Volta', 'Watt', 'Oersted', 'Tesla', 'Weber', 'Henry', 'Mariotte', 'Việt Nam', 'Trái Đất', 'Mặt Trời', 'Mặt Trăng', 'PhET'];
+const hoaDau = (x, hoa = true) => {
+  let sau = 0, dau = hoa;   // sau > 0: đang ở trong khối KaTeX (đếm span lồng nhau)
+  return x.split(/(<[^>]+>)/).map((seg) => {
+    if (seg.startsWith('<')) {
+      if (sau) { if (/^<span\b/.test(seg)) sau++; else if (seg === '</span>') sau--; } else if (/^<span class="katex/.test(seg)) sau = 1;
+      return seg;
+    }
+    if (sau || !seg) return seg;
+    let t = seg.replace(/\p{Lu}[\p{Lu}\p{M}]+/gu, (w) => (GIU.has(w) ? w : w.toLowerCase()));
+    for (const ten of TEN) t = t.replace(new RegExp(`(?<![\\p{L}])${ten}(?![\\p{L}])`, 'giu'), ten);
+    if (dau && /\p{L}/u.test(t)) { t = t.replace(/\p{L}/u, (c) => c.toUpperCase()); dau = false; }
+    return t;
+  }).join('');
+};
 // 'BÀI 1 · SỰ CHUYỂN THỂ' → 'Bài 1. Sự chuyển thể'; 'BA CÁI BẪY · TRẢ BÀI' → 'Ba cái bẫy, trả bài'
-const tieuDeThuong = (t) => { const [a, ...r] = t.split(' · '); if (!r.length) return hoaDau(a); return /^BÀI \d+$/i.test(a) ? `${hoaDau(a)}. ${hoaDau(r.join(', '))}` : `${hoaDau(a)}, ${r.join(', ').toLowerCase()}`; };
+const tieuDeThuong = (t) => { const [a, ...r] = t.split(' · '); if (!r.length) return hoaDau(a); return /^BÀI \d+$/i.test(a) ? `${hoaDau(a)}. ${hoaDau(r.join(', '))}` : `${hoaDau(a)}, ${hoaDau(r.join(', '), false)}`; };
 const SAO = { 'Dễ': '★', 'Trung bình': '★★', 'Khó': '★★★', 'Nâng cao': '★★★' };
 export const BAI_DAU = 14, TRANG_MOI_BAI = 12;
 export const TRANG_DAU = Number(process.env.BOOK_PAGE_START ?? 1);
@@ -178,7 +195,7 @@ th{background:var(--soft);font-weight:700;text-align:left}
 ${btmCss}
 ${ttCss}
 .dso{display:flex;flex-wrap:wrap;align-items:flex-end;gap:1mm 3.5mm;font-size:var(--fs-sm);line-height:6mm;margin:.4mm 0 1mm}.dso .fill{height:5.5mm}${MOC ? `
-h3 i{display:none}h3{font-size:3.9mm;margin:2.4mm 0 1mm}
+h3 i{display:none}h3{font-size:3.9mm;margin:1.5mm 0 1mm}
 .tag{background:none;color:#9aa3ba;font-weight:400;padding:0;font-size:2.5mm}
 .card,.chb,.bt,.tt{border:0;border-left:.7mm solid var(--navy);border-radius:0}
 .card.soft{border-left-color:var(--grid)}

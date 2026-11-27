@@ -20,7 +20,7 @@ import fitz, json, re, sys
 d = fitz.open(sys.argv[1]); r = []
 for i, pg in enumerate(d):
     L = [s.strip() for s in pg.get_text().split('\\n') if s.strip()]
-    if len(L) > 1 and re.match(r'BÀI \\d+ · ', L[0]) and L[1].startswith('Vật lí'):
+    if len(L) > 1 and re.match(r'(BÀI|Bài) \\d+( · |\\. )', L[0]) and L[1].startswith('Vật lí'):
         r.append({'p': i + 1, 'bai': L[0], 'ch': L[1]})
 print(json.dumps({'n': len(d), 'r': r}, ensure_ascii=False))`;
 const { n, r } = JSON.parse(execFileSync('/usr/bin/python3', ['-c', py, src], { encoding: 'utf8' }));
@@ -33,7 +33,8 @@ for (const [i, e] of r.entries()) {
   const het = (r[i + 1]?.p ?? n + 1) - 1;
   const ch = e.ch.replace(/^Vật lí \d+ · /, '');
   if (nhom.at(-1)?.ch !== ch) nhom.push({ ch, p: e.p, bai: [] });
-  const [so, ...ten] = e.bai.split(' · ');
+  // kiểu mộc (RUOT_TAP_KIEU=moc) in 'Bài 1. Sự chuyển thể' thay 'BÀI 1 · SỰ CHUYỂN THỂ'
+  const [so, ...ten] = /^Bài \d+\. /.test(e.bai) ? [e.bai.match(/^Bài \d+/)[0], e.bai.replace(/^Bài \d+\. /, '')] : e.bai.split(' · ');
   nhom.at(-1).bai.push({ so: so.replace('BÀI', 'Bài'), ten: ten.join(' · '), p: e.p, het });
   nhom.at(-1).het = het;
 }
