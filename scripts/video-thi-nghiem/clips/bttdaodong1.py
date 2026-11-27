@@ -140,15 +140,16 @@ def s_hook(img, d, t, sc):
     phone(d, (620, 300, 980, 840), "0,00", None)
     a = appear(t, M[1] - 0.2, 0.5)
     if a <= 0: return
-    y0 = 1075 + (1 - a) * 40
-    card(d, (50, y0, 1030, y0 + 525), fill=A(WHITE, a), outline=A(PURPLE, a), w=6)
+    y0 = 1010 + (1 - a) * 40
+    card(d, (50, y0, 1030, y0 + 590), fill=A(WHITE, a), outline=A(PURPLE, a), w=6)
     pw = tw(d, "DỰ ĐOÁN", F(56)) + 60
     card(d, (W / 2 - pw / 2, y0 + 24, W / 2 + pw / 2, y0 + 100), fill=A(PURPLE, a), r=36)
     text(d, (W / 2, y0 + 62), "DỰ ĐOÁN", 56, WHITE, alpha=a)
-    text(d, (W / 2, y0 + 180), "Lúc thả đếm “một”,", 60, INK, alpha=a)
-    text(d, (W / 2, y0 + 260), "tới “mười” thì bấm dừng.", 60, INK, alpha=a)
-    text(d, (W / 2, y0 + 345), "Đo được mấy dao động?", 62, PURPLE, alpha=a)
-    seg_bar(d, y0 + 415, t, M[1] + 0.4, sc["T"] - 0.2, PURPLE, a)
+    text(d, (W / 2, y0 + 170), "Lúc thả đếm “một”,", 60, INK, alpha=a)
+    text(d, (W / 2, y0 + 248), "về chỗ thả: đếm tiếp,", 60, INK, alpha=a)
+    text(d, (W / 2, y0 + 326), "tới “mười” thì dừng.", 60, INK, alpha=a)
+    text(d, (W / 2, y0 + 410), "Mấy dao động?", 62, PURPLE, alpha=a)
+    seg_bar(d, y0 + 480, t, M[1] + 0.4, sc["T"] - 0.2, PURPLE, a)
 
 # ---------------- canh 2: Tien hanh ----------------
 REL = 0.0            # tha chum khoa ngay dau canh (noi tiep canh Du doan dang giu o 5 cm)
@@ -243,14 +244,14 @@ def s_rutra(img, d, t, sc):
         text(d, (100, 980), "• Góc lệch lớn: chưa thử", 58, INK, anchor="lm", alpha=k3)
         text(d, (100, 1070), "• Dây khác: chưa đo", 58, INK, anchor="lm", alpha=appear(t, M[1] + 2.5, 0.4))
     tau = t                                           # con lac nho van dao dong (hinh khong dung yen)
-    pendulum(d, xpx(tau) * 0.9, piv=(540, 1190), L=300, scale=0.8)
+    pendulum(d, xpx(tau) * 0.9, piv=(540, 1215), L=300, scale=0.8)
 
 # ---------------- canh 5: Bay - bien nay sang bien kia ----------------
 BP = (540, 330); BA = 190                         # bien do ve phong to (so do, khong theo ti le) cho de thay
-SLOW = 3.0                                        # quay cham x3
-B1 = 0.8
+SLOW = 2.0                                        # quay cham x2
+B1 = 0.85
 def bay_tau(t, sc):
-    M = sc["M"]; h = T_MO / 2; b2 = M[1] + 0.2
+    M = sc["M"]; h = T_MO / 2; b2 = M[1] + 0.05         # 2 nhip cach 3,0 s, nhip 2 hien >= 3,2 s
     if t < B1: return 0.0
     if t < B1 + h * SLOW: return (t - B1) / SLOW
     if t < b2: return h
@@ -258,7 +259,7 @@ def bay_tau(t, sc):
     return T_MO
 
 def s_bay(img, d, t, sc):
-    M = sc["M"]; h = T_MO / 2; b2 = M[1] + 0.2
+    M = sc["M"]; h = T_MO / 2; b2 = M[1] + 0.05
     tau = bay_tau(t, sc)
     ybob = BP[1] + math.sqrt(L_PX ** 2 - BA ** 2)
     for s in (-1, 1):                              # vach bien trai/phai (net dut)
@@ -270,7 +271,7 @@ def s_bay(img, d, t, sc):
     d.polygon([(xr, ybob - 150), (xr - 18, ybob - 186), (xr + 18, ybob - 186)], fill=TEAL)
     text(d, (xr + 30, ybob - 180), "thả", 58, TEAL, anchor="lm")
     pendulum(d, BA * math.cos(2 * math.pi * tau / T_MO), piv=BP)
-    card(d, (40, 380, 400, 466), fill=TEAL, r=40); text(d, (220, 423), "chậm ×3", 56, WHITE)
+    card(d, (40, 380, 400, 466), fill=TEAL, r=40); text(d, (220, 423), "chậm ×2", 56, WHITE)
     y1, y2 = 1110, 1330
     if t >= B1 + h * SLOW:                         # nua chu ki dau xong
         card(d, (60, y1 - 70, 1020, y1 + 130), fill=(255, 247, 237), outline=ORANGE, r=24, w=5)
@@ -309,20 +310,20 @@ def _cues(clip):
 CLIP = dict(id="tn-l11-baitapdaodong-01", header="VẬT LÍ 11 · THÍ NGHIỆM", footer="Dao động điều hoà · thachlab.id.vn",
             cues=_cues, scenes=[
  dict(key="hook", title="Chùm chìa khoá treo dây", draw=s_hook, tail=0.3, caps=[
-   ("Dây 36 cm, kéo lệch 5 cm.", 3.4),
+   ("Dây 36 cm, lệch 5 cm.", 3.4),
    ("Dừng lại, tự đoán.", 5.4)]),
- dict(key="do", title="Tiến hành", draw=s_do, tail=0.4, caps=[
+ dict(key="do", title="Tiến hành", draw=s_do, tail=0.2, caps=[
    ("Thả là 0, đếm tới 10.", 3.8),
    ("Lặp thêm 4 lần, ghi lại.", 3.4)]),
  dict(key="dapan", title="Kết quả", draw=s_dapan, tail=0.3, caps=[
    ("Vạch đầu là lúc thả.", 4.0),
    ("Lúc thả chưa có dao động nào.", 4.0)]),
- dict(key="rutra", title="Rút ra", draw=s_rutra, tail=0.4, caps=[
+ dict(key="rutra", title="Rút ra", draw=s_rutra, tail=0.2, caps=[
    ("Lấy trung bình rồi chia 10.", 4.6),
    ("Mới thử một dây, góc nhỏ.", 4.4)]),
- dict(key="bay", title="Bẫy hay gặp", draw=s_bay, tail=0.3, caps=[
+ dict(key="bay", title="Bẫy hay gặp", draw=s_bay, tail=0.2, caps=[
    ("Bẫy: biên này sang biên kia.", 3.4),
-   ("Phải quay về đúng chỗ thả.", 3.4)]),
+   ("Phải quay về đúng chỗ thả.", 4.3)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.3, caps=[
-   ("Đếm nhiều dao động rồi chia.", 4.6)]),
+   ("Dừng lại, tự tính.", 4.6)]),
 ])

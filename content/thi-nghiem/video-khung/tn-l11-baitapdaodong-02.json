@@ -1,52 +1,69 @@
 {
   "id": "tn-l11-baitapdaodong-02",
   "ten": "Quả nặng gắn bút tự vẽ lên băng giấy chạy đều",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-baitapdaodong-02-20261110-2.mp4",
-  "tong_giay": 49.1,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-baitapdaodong-02-20261127.mp4",
+  "tong_giay": 49.6,
   "o": [
     {
       "khoa": "gia_thuyet",
       "giay": 0,
-      "chu": "Đỉnh cao nhất tới đáy thấp nhất là 2A; hai đỉnh liền kề cách nhau đúng quãng giấy chạy trong một chu kì.",
-      "kiem": "Đọc biên độ và chu kì trên nét bút thế nào?"
+      "chu": "Hai đỉnh liền kề cách nhau đúng quãng giấy chạy trong một chu kì; đỉnh tới đáy là 2A.",
+      "kiem": "Đổi tốc độ kéo giấy thì nét bút đổi thế nào?"
     },
     {
       "khoa": "du_doan",
-      "giay": 4.0,
-      "chu": "Đỉnh cao nhất cách đáy thấp nhất 6,0 cm. Biên độ dao động bằng bao nhiêu?"
+      "giay": 4.8,
+      "chu": "Cùng quả nặng, kéo giấy nhanh gấp đôi (40 cm/s). Hai đỉnh liền kề cách bao xa?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 10.5,
-      "chu": "Lò xo, quả nặng gắn bút, băng giấy kéo đều 20 cm/s, thước."
+      "giay": 10.7,
+      "chu": "Lò xo, quả nặng gắn bút, giấy, thước."
     },
     {
       "khoa": "quan_sat",
-      "giay": 16.8,
-      "chu": "Nét bút hình sin. Đỉnh cao nhất cách đáy thấp nhất 6,0 cm; hai đỉnh liền kề cách nhau 16,0 cm (số minh hoạ)."
+      "giay": 17.0,
+      "chu": "Giấy 40 cm/s: hai đỉnh liền kề cách 32 cm, gấp đôi 16 cm lúc 20 cm/s (số minh hoạ)."
     },
     {
       "khoa": "rut_ra",
-      "giay": 26.8,
-      "chu": "A = 6,0 : 2 = 3,0 cm. Giấy chạy 16 cm trong một chu kì: T = 16 : 20 = 0,80 s."
+      "giay": 25.2,
+      "chu": "T = 32 : 40 = 0,80 s, không đổi. A = 6,0 : 2 = 3,0 cm."
     },
     {
       "khoa": "chua_noi",
-      "giay": 35.4,
+      "giay": 31.4,
       "chu": "Giấy kéo tay chưa chắc chạy đều; đã bỏ qua ma sát đầu bút."
     }
   ],
   "dung_dua": {
-    "giay": 10.3,
-    "cau_hoi": "Đỉnh cao nhất cách đáy thấp nhất 6,0 cm. Biên độ dao động bằng bao nhiêu?",
+    "giay": 10.5,
+    "cau_hoi": "Cùng quả nặng, giấy kéo 20 cm/s thì hai đỉnh liền kề cách 16 cm. Kéo giấy nhanh gấp đôi (40 cm/s), hai đỉnh liền kề cách bao xa?",
     "chon": [
-      "A. 1,5 cm",
-      "B. 3,0 cm",
-      "C. 6,0 cm",
-      "D. 12 cm"
+      "A. 32 cm",
+      "B. 8 cm",
+      "C. 16 cm",
+      "D. 64 cm"
+    ],
+    "dung": 0,
+    "giai_thich_dung": "Chu kì do lò xo và quả nặng quyết định, không đổi (0,80 s). Trong một chu kì giấy chạy 40 × 0,80 = 32 cm, nên hai đỉnh cách 32 cm.",
+    "giai_thich_sai": "Giấy nhanh hơn thì nét bị kéo giãn ra, không co lại: 8 cm là chia đôi nhầm chiều; 16 cm là coi giấy không ảnh hưởng; 64 cm là nhân 4. Xem đoạn kế: đo bằng thước."
+  },
+  "cau_chot": {
+    "giay": 42.6,
+    "cau_hoi": "Vẫn nét bút đó: biên độ 3,0 cm, chu kì 0,80 s. Tốc độ cực đại của quả nặng khoảng:",
+    "chon": [
+      "A. 20 cm/s",
+      "B. 24 cm/s",
+      "C. 7,5 cm/s",
+      "D. 3,8 cm/s"
     ],
     "dung": 1,
-    "giai_thich_dung": "Biên độ đo từ vị trí cân bằng (đường giữa) tới đỉnh. Đỉnh tới đáy gồm hai lần biên độ: A = 6,0 : 2 = 3,0 cm.",
-    "giai_thich_sai": "Đỉnh tới đáy là đi từ biên trên xuống biên dưới, tức 2A, nên A = 3,0 cm. 6,0 cm là lấy luôn đỉnh–đáy làm A; 1,5 cm là chia 4; 12 cm là nhân đôi. Xem đoạn kế: đo nét bút bằng thước."
+    "giai_thich": [
+      "20 cm/s là tốc độ kéo giấy, không phải tốc độ của quả nặng. Quả nặng: ω = 2π/0,80 ≈ 7,85 rad/s, v_max = A·ω = 3,0 × 7,85 ≈ 24 cm/s.",
+      "ω = 2π/T = 2π/0,80 ≈ 7,85 rad/s; v_max = A·ω = 3,0 × 7,85 ≈ 24 cm/s.",
+      "7,5 cm/s là lấy khoảng đỉnh–đáy chia chu kì (6,0/0,80), không phải tốc độ cực đại. v_max = A·ω = 3,0 × 2π/0,80 ≈ 24 cm/s.",
+      "3,8 cm/s là lấy A/T, quên hệ số 2π. v_max = A·ω = 3,0 × 2π/0,80 ≈ 24 cm/s."
+    ]
   }
 }

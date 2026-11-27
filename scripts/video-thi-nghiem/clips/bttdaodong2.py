@@ -58,6 +58,11 @@ def seg_bar(d, y, t, t0, t1, col, a=1.0, n=6):
 
 def xcm(s): return A_CM * math.cos(2 * math.pi * s / T_S)          # li do (cm), chieu duong huong len
 
+def pill(d, cx, cy, s, size, col, alpha=1.0):
+    w = tw(d, s, F(size)) + 36
+    card(d, (cx - w / 2, cy - size * 0.75, cx + w / 2, cy + size * 0.75), fill=A(WHITE, alpha), outline=A(col, alpha), r=20, w=4)
+    text(d, (cx, cy), s, size, col, alpha=alpha)
+
 def bracket_h(d, x0, x1, y, col, alpha=1.0, w=6, k=1.0):
     x1 = x0 + (x1 - x0) * k
     d.line([(x0, y), (x1, y)], fill=A(col, alpha), width=w)
@@ -143,7 +148,7 @@ def s_do(img, d, t, sc):
     card(d, (60, 880, 330, 966), fill=TEAL, r=40); text(d, (195, 923), "chậm ×2", 56, WHITE)
     kr = appear(t, M[1] + 0.2, 0.4)
     if kr > 0:                                              # thuoc + ngoac 32 cm (dinh o x = 260 va 900)
-        xa, xb = SD.xs(0.0, RUN_D[2]), SD.xs(1.6, RUN_D[2]); yr = 1010
+        xa, xb = SD.xs(0.8, RUN_D[2]), SD.xs(1.6, RUN_D[2]); yr = 1010
         d.rectangle([xa - 24, yr, xb + 24, yr + 44], fill=A((250, 240, 200), kr), outline=A(NAVY, kr), width=2)
         for c in range(0, 33):
             xx = xa + c * PX; L = 30 if c % 8 == 0 else 14
@@ -185,7 +190,7 @@ def s_dapan(img, d, t, sc):
     if k2 > 0:                                              # bien do doc tren bang 2: dinh x = 980, day x = 660
         xv = 660; bracket_v(d, xv, S2.y(A_CM), S2.y(-A_CM), ORANGE, k2)
         dashed(d, (xv, S2.y(A_CM)), (980, S2.y(A_CM)), A(ORANGE, k2), w=3)
-        text(d, (xv - 24, S2.yc), "6,0 cm", 58, DORANGE, anchor="rm", alpha=k2)
+        pill(d, 500, S2.yc, "6,0 cm", 56, DORANGE, k2)
         card(d, (60, 1070, 1020, 1190), fill=A((255, 247, 237), k2), outline=A(ORANGE, k2), r=24, w=5)
         text(d, (W / 2, 1130), "A = 6,0 : 2 = 3,0 cm", 60, DORANGE, alpha=k2)
     k3 = appear(t, M[2] - 0.05, 0.4)
@@ -235,11 +240,11 @@ def s_end(img, d, t, sc):
     yp, yt = SE.y(A_CM), SE.y(-A_CM)
     bracket_v(d, 420, SE.yc, yp, ORANGE)                    # A: tu duong giua toi dinh (x = 420 nam giua dinh 260 va day 420)
     dashed(d, (260, yp), (420, yp), ORANGE, w=3)
-    text(d, (440, SE.yc - 40), "A = 3,0 cm", 58, DORANGE, anchor="lm")
+    pill(d, 290, 830, "A = 3,0 cm", 58, DORANGE)
     yb = yt + 50
     for xx in (580, 900): dashed(d, (xx, yp + 8), (xx, yb), DGREEN, w=4)
     bracket_h(d, 580, 900, yb, DGREEN)
-    text(d, (740, yb + 56), "T = 0,80 s", 58, DGREEN)
+    pill(d, 760, 830, "T = 0,80 s", 58, DGREEN)
     text(d, (W / 2, 1060), "Tốc độ cực đại", 64, DORANGE)
     text(d, (W / 2, 1150), "của quả nặng?", 64, DORANGE)
     seg_bar(d, 1300, t, 0.8, sc["T"] - 0.2, ORANGE)
@@ -267,5 +272,5 @@ CLIP = dict(id="tn-l11-baitapdaodong-02", header="VẬT LÍ 11 · VÍ DỤ", foo
    ("Bẫy: lấy đỉnh tới đáy kề nhau.", 3.6),
    ("Phải từ đỉnh tới đỉnh kế tiếp.", 3.6)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.3, caps=[
-   ("Đỉnh tới đỉnh là một chu kì.", 7.0)]),
+   ("Dừng lại, tự tính.", 7.0)]),
 ])

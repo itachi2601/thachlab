@@ -1,51 +1,69 @@
 {
   "id": "tn-l11-daodongdieuhoa-01",
   "ten": "Con lắc lò xo treo: kéo xuống rồi thả",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-daodongdieuhoa-01-20261109-2.mp4",
-  "tong_giay": 48.4,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-daodongdieuhoa-01-20261127.mp4",
+  "tong_giay": 49.3,
   "o": [
     {
       "khoa": "gia_thuyet",
       "giay": 0,
       "chu": "Vật dao động quanh chỗ nó treo đứng yên (vị trí cân bằng), không phải quanh chỗ lò xo chưa giãn.",
-      "kiem": "Thả tay, vật đi qua lại quanh mốc nào?"
+      "kiem": "Thả tay, vật lên cao nhất tới đâu?"
     },
     {
       "khoa": "du_doan",
-      "giay": 4.0,
-      "chu": "Mốc 1: đầu lò xo chưa treo vật. Mốc 2: vật treo đứng yên. Kéo xuống 5 cm rồi thả, bỏ qua ma sát. Vật đi qua lại quanh mốc nào?"
+      "giay": 4.6,
+      "chu": "Treo vật, chờ đứng yên, kéo xuống 5 cm rồi thả, bỏ qua ma sát. Vật lên cao nhất tới đâu?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 10.2,
+      "giay": 10.5,
       "chu": "Lò xo treo, quả nặng, thước dọc, đồng hồ."
     },
     {
       "khoa": "quan_sat",
-      "giay": 14.8,
-      "chu": "Bảng: x = +5; 0; −5 cm lúc t = 0; 0,25; 0,5 s."
+      "giay": 15.3,
+      "chu": "Bảng: x = +5; 0; −5; 0 cm lúc t = 0; 0,25; 0,5; 0,75 s."
     },
     {
       "khoa": "rut_ra",
-      "giay": 24.2,
-      "chu": "x từ +5 cm tới −5 cm, cách đều chỗ vật đứng yên: đó là vị trí cân bằng O."
+      "giay": 21.8,
+      "chu": "Cao nhất x = −5 cm: cách chỗ đứng yên đúng 5 cm. Chỗ đứng yên là VTCB O."
     },
     {
       "khoa": "chua_noi",
-      "giay": 33.9,
-      "chu": "Đã bỏ qua ma sát. Mới thử A = 5 cm, T = 1 s."
+      "giay": 28.6,
+      "chu": "Đã bỏ qua ma sát. Mới thử A = 5 cm."
     }
   ],
   "dung_dua": {
-    "giay": 10.0,
-    "cau_hoi": "Mốc 1: lò xo chưa treo vật. Mốc 2: vật treo đứng yên. Kéo xuống 5 cm rồi thả, bỏ qua ma sát. Vật đi qua lại quanh mốc nào?",
+    "giay": 10.3,
+    "cau_hoi": "Treo vật vào lò xo, chờ đứng yên, kéo xuống 5 cm rồi thả, bỏ qua ma sát. Vật lên cao nhất tới đâu?",
     "chon": [
-      "A. Quanh mốc 1 (lò xo chưa giãn)",
-      "B. Quanh mốc 2 (vật treo đứng yên)",
-      "C. Quanh chỗ thả tay, dưới cùng"
+      "A. 5 cm trên chỗ đứng yên",
+      "B. Tới mốc lò xo chưa giãn",
+      "C. Về chỗ đứng yên rồi dừng",
+      "D. 10 cm trên chỗ đứng yên"
+    ],
+    "dung": 0,
+    "giai_thich_dung": "Bảng li độ: +5 cm lúc thả, −5 cm ở điểm cao nhất. Hai đầu cách đều chỗ vật treo đứng yên, nên vật lên tới 5 cm trên chỗ đó.",
+    "giai_thich_sai": "Mốc lò xo chưa giãn nằm cao hơn vị trí cân bằng vì trọng lực đã kéo giãn lò xo; vật không nhất thiết chạm tới. Bỏ qua ma sát thì vật không dừng ở chỗ đứng yên mà vượt qua. 10 cm là cả đoạn đi từ dưới lên, không phải khoảng cách tới chỗ đứng yên. Xem tiếp: cột x trong bảng."
+  },
+  "cau_chot": {
+    "giay": 42.9,
+    "cau_hoi": "Cùng lò xo đó (T = 1 s). Kéo vật xuống 3 cm dưới chỗ đứng yên rồi thả, bỏ qua ma sát. Lúc t = 1,5 s vật ở đâu?",
+    "chon": [
+      "A. 3 cm dưới chỗ đứng yên",
+      "B. 3 cm trên chỗ đứng yên",
+      "C. Đúng tại chỗ đứng yên",
+      "D. 6 cm trên chỗ đứng yên"
     ],
     "dung": 1,
-    "giai_thich_dung": "Vật đi từ +5 cm lên −5 cm rồi về: hai đầu cách đều chỗ vật treo đứng yên. Chỗ đó là vị trí cân bằng.",
-    "giai_thich_sai": "Khi treo, trọng lực đã kéo lò xo giãn ra, nên chỗ vật đứng yên thấp hơn mốc lò xo chưa giãn. Chỗ thả tay là một đầu (biên), không phải tâm. Xem tiếp: bảng li độ đối xứng qua chỗ đứng yên."
+    "giai_thich": [
+      "3 cm dưới là chỗ thả, vật về đó sau trọn chu kì (t = 1 s, 2 s). 1,5 s = 1,5T: thêm nửa chu kì nữa, vật ở biên kia, 3 cm trên chỗ đứng yên.",
+      "1,5 s = T + T/2. Sau T vật về chỗ thả (3 cm dưới); thêm T/2 vật sang biên kia: 3 cm trên chỗ đứng yên.",
+      "Vật qua chỗ đứng yên lúc t = T/4, 3T/4, 5T/4… (0,25; 0,75; 1,25 s). Lúc 1,5 s = 1,5T vật đang ở biên, không ở VTCB.",
+      "6 cm là cả đoạn từ biên dưới lên biên trên; li độ lớn nhất chỉ bằng biên độ 3 cm. Lúc 1,5 s vật ở 3 cm trên chỗ đứng yên."
+    ]
   }
 }
