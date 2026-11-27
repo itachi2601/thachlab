@@ -89,7 +89,7 @@ def circuit(d, k_on=0.0, pin=1.0, flip=0.0, q=0.0, b=0.0, mode=None, ia=0.0):
 
 # ---------------- do thi i(t) ----------------
 PW = 480
-def panel(d, x0, y0, kind, tp, a=1.0):
+def panel(d, x0, y0, kind, tp, a=1.0, rev=0.0):
     """kind 'nap' (i > 0) / 'phong' (i < 0, truc t o tren). tp = thoi gian da ve (s, 0..4)."""
     card(d, (x0, y0, x0 + PW, y0 + 520), fill=A(WHITE, a), outline=A(LIGHT, a), r=24, w=3)
     ox = x0 + 80; xs = lambda t: ox + t / 4 * (PW - 140); hi = 250
@@ -100,6 +100,7 @@ def panel(d, x0, y0, kind, tp, a=1.0):
     arrow(d, (ox + PW - 120, ax), (ox + PW - 100, ax), A(NAVY, a), w=4, head=16)
     text(d, (ox - 40, y0 + (120 if kind == "nap" else 400)), "i", 60, INK, alpha=a)
     text(d, (x0 + PW / 2 + 20, y0 + (55 if kind == "nap" else 470)), "nạp" if kind == "nap" else "phóng", 58, ARR if kind == "nap" else BLUE, alpha=a)
+    if kind == "phong" and rev > 0: text(d, (x0 + PW / 2, y0 + 565), "i < 0: dòng ngược", 56, BLUE, alpha=a * rev)
     for t in (1, 2, 3, 4):
         d.line([(xs(t), ax - 9), (xs(t), ax + 9)], fill=A(NAVY, a), width=4)
         if t % 2 == 0: text(d, (xs(t), ax + (48 if kind == "nap" else -45)), str(t), 56, INK, alpha=a)
@@ -149,7 +150,7 @@ def s_do(img, d, t, sc):
 # ---------------- canh 3: Ket qua ----------------
 def s_dapan(img, d, t, sc):
     M = sc["M"]
-    panel(d, 50, 290, "nap", T_RUN); panel(d, 550, 290, "phong", T_RUN)
+    panel(d, 50, 290, "nap", T_RUN); panel(d, 550, 290, "phong", T_RUN, rev=appear(t, sc["M"][1] + 0.3, 0.4))
     ka = appear(t, 0.4, 0.4)
     card(d, (40, 900, 1040, 1080), fill=A(WHITE, ka), outline=A(NAVY, ka), w=6)
     text(d, (W / 2, 990), "Loé rồi tắt hẳn", 66, NAVY, alpha=ka)

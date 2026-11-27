@@ -158,14 +158,14 @@ def s_dapan(img, d, t, sc):
         text(d, (W / 2, 1300), "U gấp đôi, Q gần gấp đôi", 62, DGREEN, alpha=k2)
 
 # ---------------- canh 4: Bay + chua noi duoc ----------------
+SIGN_X = [-45, 45, -88, 88, -130, 130]   # thu tu hien dau; tranh truc day dan o giua (khong cat hang dau)
 def capq(d, cx, n, a=1.0):
-    """Tu nho, n dau + / - con lai tren hai ban."""
+    """Tu nho, n dau + / - con lai tren hai ban. Hai day dan: tren cham ban tren, duoi cham ban duoi (khong qua khe)."""
     c = A(WIRE, a)
-    d.rectangle([cx - 110, 560, cx + 110, 572], fill=c); d.rectangle([cx - 110, 618, cx + 110, 630], fill=c)
+    d.rectangle([cx - 155, 560, cx + 155, 572], fill=c); d.rectangle([cx - 155, 618, cx + 155, 630], fill=c)
     d.line([(cx, 470), (cx, 560)], fill=c, width=6); d.line([(cx, 630), (cx, 720)], fill=c, width=6)
-    xs = [cx - 80 + 40 * i for i in range(5)]
-    for x in xs[:n]:
-        text(d, (x, 522), "+", 58, RED, alpha=a); text(d, (x, 672), "−", 58, BLUE, alpha=a)
+    for dx in SIGN_X[:n]:
+        text(d, (cx + dx, 522), "+", 58, RED, alpha=a); text(d, (cx + dx, 672), "−", 58, BLUE, alpha=a)
 
 def s_bay(img, d, t, sc):
     M = sc["M"]
@@ -174,11 +174,12 @@ def s_bay(img, d, t, sc):
     text(d, (280, 400), "gạt K ngay", 58, DGREEN, alpha=k0)
     text(d, (800, 400), "chờ lâu mới gạt", 58, DRED, alpha=k0)
     lk = appear(t, M[1] - 0.2, 1.4)
-    capq(d, 280, 5, k0); capq(d, 800, 5 - int(round(3 * lk)), k0)
+    capq(d, 280, 6, k0); capq(d, 800, 6 - int(round(4 * lk)), k0)
     if lk > 0:
-        for j in range(3):
-            kk = appear(t, M[1] - 0.2 + 0.4 * j, 0.6)
-            if 0 < kk < 1: text(d, (800 + 40 * (1 - j) + 60 * kk, 522 - 90 * kk), "+", 58, RED, alpha=k0 * (1 - kk))
+        for j in range(4):
+            kk = appear(t, M[1] - 0.2 + 0.3 * j, 0.6)
+            dx = SIGN_X[5 - j]
+            if 0 < kk < 1: text(d, (800 + dx + (40 if dx > 0 else -40) * kk, 522 - 90 * kk), "+", 58, RED, alpha=k0 * (1 - kk))
     kd = appear(t, M[1], 0.4)
     card(d, (120, 780, 440, 880), fill=A(SCR, k0), r=12); text(d, (280, 830), "4800 μC", 58, (20, 60, 30), alpha=k0)
     if kd > 0:

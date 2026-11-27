@@ -117,11 +117,12 @@ def s_do(img, d, t, sc):
 def s_dapan(img, d, t, sc):
     M = sc["M"]
     rig(d, 1, 1, 0, labels=False, meter=False)
-    table(d, 4, y=860, ratio=sum(t >= 0.5 + 0.3 * i for i in range(4)), hl=2 if t >= 2.2 else None, ka=appear(t, 2.2, 0.3), hdr=True)
+    pill(d, W / 2, 420, "ĐÁP ÁN · một nửa", NAVY)
+    table(d, 4, y=860, ratio=sum(t >= 0.5 + 0.3 * i for i in range(4)), hl=2, ka=1.0, hdr=True)
     k1 = appear(t, M[1] + 0.3, 0.4)
     if k1 > 0:
         card(d, (40, 1360, 1040, 1520), fill=A((236, 253, 243), k1), outline=A(GREEN, k1), w=5)
-        text(d, (W / 2, 1440), "Chỉ phần đối diện mới tính", 62, DGREEN, alpha=k1)
+        text(d, (W / 2, 1440), "Chỉ phần đối diện tính", 62, DGREEN, alpha=k1)
 
 # ---------------- canh 4: Bay + chua noi duoc ----------------
 def mini(d, cx, charged, a):
@@ -156,7 +157,7 @@ def s_end(img, d, t, sc):
     card(d, (40, 230, 1040, 1560), fill=A(WHITE, k), outline=A(ORANGE, k), w=6)
     pill(d, W / 2, 305, "THỬ NGHĨ", ORANGE, k)
     rig(d, 1, 1, 1, labels=False, meter=False, a=k, pl_ovl=True)
-    text(d, (420, 660), "nhựa ε = 3", 58, (150, 100, 10), alpha=k)
+    text(d, (420, 660), "nhựa ε = 3", 58, (110, 65, 0), alpha=k)
     text(d, (W / 2, 960), "Vừa lệch nửa tấm, vừa chèn nhựa.", 60, INK, alpha=k)
     text(d, (W / 2, 1060), "Gốc 354 pF.", 60, INK, alpha=k)
     text(d, (W / 2, 1160), "C bây giờ bao nhiêu?", 64, DRED, alpha=k)
@@ -180,9 +181,9 @@ CLIP = dict(id="tn-l11-tudien-03", header="VẬT LÍ 11 · THÍ NGHIỆM", foote
    ("Tăng khe lên 2 mm.", 3.0),
    ("Trượt lệch nửa tấm.", 2.8),
    ("Chèn tấm nhựa kín khe.", 2.9)]),
- dict(key="dapan", title="Kết quả", draw=s_dapan, tail=0.5, caps=[
-   ("354 pF còn 177 pF.", 3.4),
-   ("S, ε tăng thì C tăng; d tăng thì C giảm.", 4.0)]),
+ dict(key="dapan", title="Kết quả", draw=s_dapan, tail=0.4, caps=[
+   ("Lệch nửa: 177 pF.", 3.4),
+   ("Khe hẹp, có nhựa: C lớn.", 4.2)]),
  dict(key="bay", title="Bẫy và giới hạn", draw=s_bay, tail=0.4, caps=[
    ("Bẫy: phải nối nguồn mới có C?", 3.4),
    ("Chưa tích điện, vẫn 354 pF.", 3.6),

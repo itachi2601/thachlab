@@ -1,8 +1,8 @@
 {
   "id": "tn-l11-dien-tro-ohm-03",
   "ten": "NTC trong cốc nước ấm: đo điện trở ở 4 nhiệt độ",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-dien-tro-ohm-03-20261031-2.mp4",
-  "tong_giay": 49.7,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-dien-tro-ohm-03-20261127.mp4",
+  "tong_giay": 49.8,
   "o": [
     {
       "khoa": "gia_thuyet",
@@ -12,33 +12,33 @@
     },
     {
       "khoa": "du_doan",
-      "giay": 3.6,
-      "chu": "Pha nước nóng dần lên 35, 45 rồi 55 °C. Số chỉ kΩ thay đổi thế nào?"
+      "giay": 3.8,
+      "chu": "Pha nước nóng lên 35, 45 rồi 55 °C. Số chỉ kΩ đổi thế nào?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 10.4,
-      "chu": "Đồng hồ vạn năng thang Ω kẹp hai chân NTC; NTC và nhiệt kế cùng nhúng trong nước."
+      "giay": 10.7,
+      "chu": "NTC 10 kΩ, đồng hồ thang Ω, nhiệt kế, cốc nước."
     },
     {
       "khoa": "quan_sat",
-      "giay": 18.8,
-      "chu": "Nước 25 → 35 → 45 → 55 °C: R = 10,0 → 6,5 → 4,3 → 3,0 kΩ."
+      "giay": 20.6,
+      "chu": "R giảm: 10,0 → 6,5 → 4,3 → 3,0 kΩ; mỗi 10 °C giảm ít dần."
     },
     {
       "khoa": "rut_ra",
-      "giay": 28.0,
-      "chu": "Mỗi 10 °C, R giảm ít dần: 3,5; 2,2; 1,3 kΩ. Hệ số nhiệt điện trở âm: đo R suy ra nhiệt độ."
+      "giay": 27.0,
+      "chu": "NTC có hệ số nhiệt điện trở âm: nóng lên thì R giảm, mạnh hơn hẳn kim loại."
     },
     {
       "khoa": "chua_noi",
-      "giay": 37.2,
+      "giay": 36.8,
       "chu": "Vì sao NTC nóng lại dẫn tốt hơn? Ngoài 25–55 °C có còn vậy?"
     }
   ],
   "dung_dua": {
-    "giay": 10.0,
-    "cau_hoi": "Pha nước nóng dần lên 35, 45 rồi 55 °C. Số chỉ kΩ thay đổi thế nào?",
+    "giay": 9.9,
+    "cau_hoi": "Pha nước nóng dần lên 35, 45 rồi 55 °C. Số chỉ kΩ của NTC thay đổi thế nào?",
     "chon": [
       "A. Tăng dần, mỗi 10 °C tăng đều nhau",
       "B. Gần như không đổi trong cả 4 lần đo",
@@ -48,5 +48,22 @@
     "dung": 3,
     "giai_thich_dung": "Đồng hồ chỉ 10,0; 6,5; 4,3; 3,0 kΩ: mỗi 10 °C, R giảm 3,5 rồi 2,2 rồi 1,3 kΩ, nên đồ thị R theo t là đường cong thoải dần.",
     "giai_thich_sai": "NTC không như dây kim loại: nóng lên thì R giảm, và lượng giảm mỗi 10 °C không đều. Xem bảng ở đoạn kế và trừ hai hàng liền nhau."
+  },
+  "cau_chot": {
+    "giay": 42.1,
+    "cau_hoi": "Nhúng chính NTC này vào một cốc nước khác, đồng hồ chỉ 5,0 kΩ. Nước khoảng bao nhiêu °C?",
+    "chon": [
+      "A. Khoảng 15 °C",
+      "B. Khoảng 41 °C",
+      "C. Khoảng 50 °C",
+      "D. Khoảng 60 °C"
+    ],
+    "dung": 1,
+    "giai_thich": [
+      "15 °C là nghĩ R nhỏ thì nước nguội, như dây kim loại. Với NTC thì ngược lại: R nhỏ hơn 10 kΩ nghĩa là nước nóng hơn 25 °C.",
+      "Đọc ngược bảng: 5,0 kΩ nằm giữa 6,5 kΩ (35 °C) và 4,3 kΩ (45 °C), gần 4,3 hơn một chút, nên nước khoảng 41 °C (mô hình của NTC này cho 5,0 kΩ ở khoảng 41 °C).",
+      "50 °C là nghĩ R còn một nửa (10 → 5 kΩ) thì nhiệt độ gấp đôi (25 → 50 °C). R không tỉ lệ nghịch với nhiệt độ; bảng cho 4,3 kΩ ở 45 °C, 50 °C phải nhỏ hơn 4,3 kΩ.",
+      "60 °C là coi R giảm đều 1,3 kΩ mỗi 10 °C như đoạn cuối. Đoạn đầu giảm nhanh hơn nhiều (3,5 kΩ), nên 5,0 kΩ đến sớm hơn, ở khoảng 41 °C."
+    ]
   }
 }

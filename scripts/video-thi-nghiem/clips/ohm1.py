@@ -8,8 +8,10 @@
 #   q2 (doi kOhm/mA -> khong dung bay don vi), q4 (vi sao R den tang -> khong noi nhiet do/nguyen nhan),
 #   q7 (doc hon thi R nho hon -> cau chot KHONG hoi doc/thoai). q5 (muc III) trung so lieu kho, khong tranh duoc.
 # Bay = hien_tuong_hay_sai[0] "U tang thi R tang vi R = U/I" -> bang do van 10 Ohm.
-# Cau chot (ca tu suy, ghi trong ghi_chu kho): thay dien tro 20 Ohm (tham_so R 5-50), van 5,0 V -> I = 0,25 A,
-#   bang mot nua 0,50 A cua lan 10 Ohm. So 20 Ohm / 0,25 A chua tung hien tren man.
+# Cau chot (tu suy trong dai tham_so R 5-50 Ohm, U 0-6 V): dien tro 40 Ohm, dat 6,0 V -> I = 0,15 A.
+#   (Khong dung ca 20 Ohm/5,0 V trong ghi_chu kho: hop exp in san "duong 10 Ohm doc gap doi duong 20 Ohm".)
+#   0,15 A khong hien tren man. Nhieu: 0,60 (giu R 10), 0,125 (dung 5,0 V cu), 6,7 (chia nguoc R/U).
+# Ban 2 cong moi 27/11/2026: chu >= 56 px, bo nut/chu "Chon dap an", bo the Goi y, nhip Bay >= 3 s.
 # Mach: nguon vach dai (+) o TREN -> dong di len day trai, sang phai day tren (K, ampe ke, R), xuong day phai,
 #   sang TRAI o day duoi ve (-). Von ke song song hai dau R. Assert chieu: _kiem_chieu().
 # Bo cuc (khac ohm3 = dung cu + bang doc): so do mach + 3 o so (von ke, ampe ke, U/I) o tren, DO THI I-U o duoi,
@@ -41,43 +43,50 @@ def _kiem_chieu():
     return top_dir, bottom_dir
 _kiem_chieu()
 
+DGREEN = (21, 110, 55); EMPTY = (148, 140, 128)
+
+def pill(d, cx, cy, s, fill, alpha=1.0, size=58):
+    pw = tw(d, s, F(size)) + 60
+    card(d, (cx - pw / 2, cy - 40, cx + pw / 2, cy + 40), fill=A(fill, alpha), r=38)
+    text(d, (cx, cy), s, size, WHITE, alpha=alpha)
+
+def seg_bar(d, y, t, t0, t1, col, a=1.0):
+    p = clamp((t - t0) / (t1 - t0)); on = 5 - int(p * 5 + 1e-9)
+    for i in range(5):
+        x = 175 + i * 150
+        if i < on: card(d, (x, y, x + 130, y + 70), fill=A(col, a), r=18)
+        else: card(d, (x, y, x + 130, y + 70), fill=A(WHITE, a), outline=A(EMPTY, a), r=18, w=4)
+
 def circuit(d, pulse=0.0):
     d.line([(XL, YP), (XL, YT), (AX - 44, YT)], fill=WIRE, width=6, joint="curve")
     d.line([(AX + 44, YT), (RX0, YT)], fill=WIRE, width=6)
     d.line([(RX1, YT), (XR, YT), (XR, YB), (XL, YB), (XL, YN)], fill=WIRE, width=6, joint="curve")
-    # nguon dieu chinh: vach dai (+) tren, vach ngan day (-) duoi, mui ten cheo = dieu chinh duoc
     d.line([(XL - 56, YP), (XL + 56, YP)], fill=ORANGE, width=7)
     d.line([(XL - 28, YN), (XL + 28, YN)], fill=ORANGE, width=16)
     arrow(d, (XL - 60, YN + 40), (XL + 60, YP - 40), A(NAVY, 0.9), w=4, head=16)
-    text(d, (XL - 84, YP - 26), "+", 44, ORANGE)
-    text(d, (XL - 84, YN + 26), "−", 44, ORANGE)
-    text(d, (XL + 76, (YP + YN) / 2), "nguồn", 40, NOTE, anchor="lm")
+    text(d, (XL - 90, YP - 30), "+", 60, ORANGE)
+    text(d, (XL - 90, YN + 30), "−", 60, ORANGE)
+    text(d, (XL + 76, (YP + YN) / 2), "nguồn", 56, NOTE, anchor="lm")
     if pulse > 0:
         k = clamp(pulse / 0.15) * clamp((1 - pulse) / 0.4)
-        card(d, (170, 330, 340, 392), fill=A(ORANGE, k), r=24)
-        text(d, (255, 361), "tăng U", 38, WHITE, alpha=k)
-    # khoa K (dong)
+        pill(d, 330, 300, "tăng U", ORANGE, k, size=56)
     dot(d, 245, YT, 9, WIRE); dot(d, 325, YT, 9, WIRE); d.line([(245, YT), (325, YT)], fill=NAVY, width=7)
-    text(d, (285, YT + 44), "K", 40, NAVY)
-    # ampe ke noi tiep
-    d.ellipse([AX - 44, YT - 44, AX + 44, YT + 44], fill=WHITE, outline=BLUE, width=6); text(d, (AX, YT + 2), "A", 42, BLUE)
-    # dien tro
+    text(d, (285, YT - 50), "K", 56, NAVY)
+    d.ellipse([AX - 44, YT - 44, AX + 44, YT + 44], fill=WHITE, outline=BLUE, width=6); text(d, (AX, YT + 2), "A", 56, BLUE)
     d.rectangle([RX0, YT - 24, RX1, YT + 24], fill=WHITE, outline=NAVY, width=5)
-    text(d, ((RX0 + RX1) / 2, YT + 66), "điện trở", 40, NAVY)
-    # von ke song song
+    text(d, ((RX0 + RX1) / 2, YT + 70), "R = 10 Ω", 56, NAVY)
     d.line([(NV0, YT), (NV0, VY), (VX - 44, VY)], fill=WIRE, width=5, joint="curve")
     d.line([(NV1, YT), (NV1, VY), (VX + 44, VY)], fill=WIRE, width=5, joint="curve")
     dot(d, NV0, YT, 8, WIRE); dot(d, NV1, YT, 8, WIRE)
-    d.ellipse([VX - 44, VY - 44, VX + 44, VY + 44], fill=WHITE, outline=PURPLE, width=6); text(d, (VX, VY + 2), "V", 42, PURPLE)
-    # chieu dong quy uoc tren day duoi: sang trai (_kiem_chieu)
+    d.ellipse([VX - 44, VY - 44, VX + 44, VY + 44], fill=WHITE, outline=PURPLE, width=6); text(d, (VX, VY + 2), "V", 56, PURPLE)
     arrow(d, (640, YB - 34), (520, YB - 34), RED, w=7, head=20)
-    text(d, (662, YB - 34), "I", 50, RED, anchor="lm")
+    text(d, (662, YB - 34), "I", 58, RED, anchor="lm")
 
 def readout(d, x0, x1, label, reading, flash=0.0):
-    card(d, (x0, 690, x1, 820), fill=BODY, r=20)
-    card(d, (x0 + 16, 704, x1 - 16, 768), fill=mix(SCREEN, (255, 237, 160), flash), r=10)
-    text(d, ((x0 + x1) / 2, 736), reading, 46, SCR_INK)
-    text(d, ((x0 + x1) / 2, 794), label, 38, WHITE)
+    card(d, (x0, 690, x1, 850), fill=BODY, r=20)
+    card(d, (x0 + 16, 704, x1 - 16, 784), fill=mix(SCREEN, (255, 237, 160), flash), r=10)
+    text(d, ((x0 + x1) / 2, 744), reading, 58, SCR_INK)
+    text(d, ((x0 + x1) / 2, 818), label, 56, WHITE)
 
 def readouts(d, j, flash=0.0):
     u, i, r = ROWS[j]
@@ -86,24 +95,23 @@ def readouts(d, j, flash=0.0):
     readout(d, 720, 1030, "U/I", f"{r} Ω", flash)
 
 # ---------------- do thi I theo U (truc co dinh) ----------------
-GX0, GX1, GY0, GY1 = 200, 950, 1470, 960        # U 0-6 V ; I 0-0,6 A
+GX0, GX1, GY0, GY1 = 220, 930, 1470, 1010        # U 0-6 V ; I 0-0,6 A
 def gx(u): return GX0 + u / 6 * (GX1 - GX0)
 def gy(i): return GY0 - i / 0.6 * (GY0 - GY1)
 
-def axes(d, y_top=860, note=True):
+def axes(d, y_top=880, note=True):
     card(d, (40, y_top, 1040, 1580), fill=WHITE, outline=LIGHT, w=3)
-    if note: text(d, (1010, y_top + 40), "số liệu mô phỏng", 38, NOTE, anchor="rm")
+    if note: text(d, (1010, y_top + 45), "số liệu mô phỏng", 56, NOTE, bold=False, anchor="rm")
     for i in (0.2, 0.4, 0.6):
         d.line([(GX0, gy(i)), (GX1, gy(i))], fill=LIGHT, width=3)
-        text(d, (GX0 - 18, gy(i)), vn(i), 40, NOTE, anchor="rm")
+        text(d, (GX0 - 18, gy(i)), vn(i), 56, NOTE, anchor="rm")
     d.line([(GX0, GY1 - 30), (GX0, GY0)], fill=NAVY, width=4); d.line([(GX0, GY0), (GX1 + 30, GY0)], fill=NAVY, width=4)
     arrow(d, (GX0, GY1 - 10), (GX0, GY1 - 36), NAVY, w=4, head=16); arrow(d, (GX1 + 10, GY0), (GX1 + 36, GY0), NAVY, w=4, head=16)
-    text(d, (GX0 + 22, GY1 - 40), "I (A)", 40, INK, anchor="lm")
-    text(d, (1020, GY0 - 44), "U (V)", 40, INK, anchor="rm")
-    text(d, (GX0 - 18, GY0 + 6), "0", 40, NOTE, anchor="rm")
+    text(d, (GX0 + 22, GY1 - 40), "I (A)", 56, INK, anchor="lm")
+    text(d, (1020, GY0 - 50), "U (V)", 56, INK, anchor="rm")
     for u in range(1, 7):
         d.line([(gx(u), GY0), (gx(u), GY0 + 12)], fill=NAVY, width=3)
-        text(d, (gx(u), GY0 + 44), str(u), 40, NOTE)
+        text(d, (gx(u), GY0 + 50), str(u), 56, NOTE)
 
 def pts(d, n, pop=None, col=BLUE):
     for j in range(n):
@@ -119,25 +127,18 @@ def line_origin(d, k, col=BLUE, w=6):
 def s_hook(img, d, t, sc):
     M = sc["M"]
     circuit(d); readouts(d, 0)
-    a = appear(t, M[1] - 0.3, 0.5)
+    a = appear(t, M[1] - 0.2, 0.4)
     if a <= 0: return
-    y0 = 880 + (1 - a) * 40
-    card(d, (50, y0, 1030, y0 + 600), fill=A(WHITE, a), outline=A(PURPLE, a), w=6)
-    pw = tw(d, "DỰ ĐOÁN", F(40)) + 52
-    card(d, (W / 2 - pw / 2, y0 + 26, W / 2 + pw / 2, y0 + 90), fill=A(PURPLE, a), r=32)
-    text(d, (W / 2, y0 + 58), "DỰ ĐOÁN", 40, WHITE, alpha=a)
-    text(d, (W / 2, y0 + 170), "Ở 1,0 V: U/I = 10 Ω.", 46, INK, alpha=a)
-    text(d, (W / 2, y0 + 250), "Tăng dần U lên 5,0 V.", 46, INK, alpha=a)
-    text(d, (W / 2, y0 + 350), "Tỉ số U/I sẽ thế nào?", 52, INK, alpha=a)
-    text(d, (W / 2, y0 + 450), "Chọn đáp án ở khung câu hỏi", 40, NOTE, alpha=a)
-    tc, tend = M[1] + 0.3, sc["T"] - 0.2
-    if t > tc:
-        p = clamp((t - tc) / (tend - tc))
-        d.rounded_rectangle([140, y0 + 530, 940, y0 + 544], radius=7, fill=A(LIGHT, a))
-        d.rounded_rectangle([140, y0 + 530, 140 + 800 * (1 - p), y0 + 544], radius=7, fill=A(PURPLE, a))
+    y0 = 900 + (1 - a) * 30
+    card(d, (50, y0, 1030, y0 + 660), fill=A(WHITE, a), outline=A(PURPLE, a), w=6)
+    pill(d, W / 2, y0 + 70, "DỰ ĐOÁN", PURPLE, a)
+    text(d, (W / 2, y0 + 190), "Ở 1,0 V: U/I = 10 Ω.", 60, INK, alpha=a)
+    text(d, (W / 2, y0 + 290), "Tăng dần U lên 5,0 V.", 60, INK, alpha=a)
+    text(d, (W / 2, y0 + 400), "Tỉ số U/I sẽ thế nào?", 62, PURPLE, alpha=a)
+    seg_bar(d, y0 + 540, t, M[1] + 0.4, sc["T"] - 0.3, PURPLE, a)
 
 # ---------------- canh 2: Tien hanh ----------------
-TS = [0.6 + 1.3 * k for k in range(5)]        # lan do k: chinh U = ROWS[k][0], so chi + diem moi hien CUNG luc
+TS = [0.6 + 1.6 * k for k in range(5)]        # lan do k: chinh U = ROWS[k][0], so chi + diem moi hien CUNG luc
 
 def do_state(t):
     """-> (n diem da cham, hang dang chi tren dong ho, pop 0..1 cua diem moi, pulse 'tang U')."""
@@ -165,106 +166,97 @@ def _kiem_dong_bo():
     return bad
 
 # ---------------- canh 3: Dap an + Rut ra ----------------
-def htable(d, y0, a=1.0):
-    """Bang ngang: hang U, I, U/I ; 5 cot."""
-    card(d, (40, y0, 1040, y0 + 300), fill=A(WHITE, a), outline=A(NAVY, a), w=4)
-    labs = ("U (V)", "I (A)", "U/I (Ω)"); xs = [330 + 160 * k for k in range(5)]
+def htable(d, y0, a=1.0, hl=0.0):
+    """Bang ngang: hang U, I, U/I ; 5 cot. hl: to sang hang U/I."""
+    card(d, (40, y0, 1040, y0 + 330), fill=A(WHITE, a), outline=A(NAVY, a), w=4)
+    if hl > 0: d.rounded_rectangle([55, y0 + 225, 1025, y0 + 315], radius=18, fill=A((220, 252, 231), a * hl))
+    labs = ("U (V)", "I (A)", "U/I (Ω)"); xs = [360 + 150 * k for k in range(5)]
     for r, lab in enumerate(labs):
-        yy = y0 + 60 + 90 * r
-        text(d, (80, yy), lab, 40, INK, anchor="lm", alpha=a)
+        yy = y0 + 65 + 100 * r
+        text(d, (70, yy), lab, 56, INK, anchor="lm", alpha=a)
         for k, row in enumerate(ROWS):
             s = vn(row[0]) if r == 0 else (vn(row[1], 2) if r == 1 else str(row[2]))
-            text(d, (xs[k], yy), s, 42, GREEN if r == 2 else (BLUE if r == 1 else INK), alpha=a)
-    d.line([(60, y0 + 195), (1020, y0 + 195)], fill=A(LIGHT, a), width=3)
+            text(d, (xs[k], yy), s, 56, GREEN if r == 2 else (BLUE if r == 1 else INK), alpha=a)
+    d.line([(60, y0 + 215), (1020, y0 + 215)], fill=A(LIGHT, a), width=3)
 
 def s_dapan(img, d, t, sc):
     M = sc["M"]
-    ka = appear(t, 0.1, 0.4)
-    lab = "ĐÁP ÁN · Không đổi, vẫn 10 Ω"
-    pw = tw(d, lab, F(42)) + 56
-    card(d, (W / 2 - pw / 2, 300, W / 2 + pw / 2, 368), fill=A(NAVY, ka), r=34)
-    text(d, (W / 2, 334), lab, 42, WHITE, alpha=ka)
+    ka = 1.0
+    pill(d, W / 2, 300, "ĐÁP ÁN · vẫn 10 Ω", NAVY, ka)
     kr = appear(t, M[1] + 0.1, 0.45)
-    if kr < 1: htable(d, 420, appear(t, 0.3, 0.4) * (1 - kr))
-    axes(d); line_origin(d, appear(t, M[0] + 0.2, 1.0)); pts(d, 5)
+    if kr < 1: htable(d, 400, ka * (1 - kr), appear(t, 2.0, 0.4))
+    axes(d); line_origin(d, appear(t, M[0] + 1.2, 1.0)); pts(d, 5)
     if kr > 0:
-        y0 = 400 + (1 - kr) * 30
+        y0 = 380 + (1 - kr) * 30
         card(d, (40, y0, 1040, y0 + 380), fill=A(WHITE, kr), outline=A(GREEN, kr), w=6)
-        pw = tw(d, "RÚT RA", F(40)) + 52
-        card(d, (W / 2 - pw / 2, y0 + 28, W / 2 + pw / 2, y0 + 92), fill=A(GREEN, kr), r=32)
-        text(d, (W / 2, y0 + 60), "RÚT RA", 40, WHITE, alpha=kr)
-        text(d, (W / 2, y0 + 190), "I tỉ lệ thuận với U", 50, INK, alpha=kr)
-        text(d, (W / 2, y0 + 290), "(khi R không đổi)", 44, (21, 110, 55), alpha=kr)
+        pill(d, W / 2, y0 + 70, "RÚT RA", GREEN, kr)
+        text(d, (W / 2, y0 + 190), "I tỉ lệ thuận với U", 62, INK, alpha=kr)
+        text(d, (W / 2, y0 + 290), "(khi R không đổi)", 58, DGREEN, alpha=kr)
 
 # ---------------- canh 4: Bay + chua noi duoc ----------------
 def s_bay(img, d, t, sc):
     M = sc["M"]
     axes(d); line_origin(d, 1.0); pts(d, 5)
-    for j, (u, i, r) in enumerate(ROWS):           # nhan U/I tung diem (bang chung bac bay)
-        kk = appear(t, 0.4 + 0.12 * j, 0.2) * (1 - appear(t, M[1] - 0.1, 0.3))
-        if kk > 0: text(d, (gx(u) - 30, gy(i) - 60), "10", 42, GREEN, alpha=kk)
-    k3 = appear(t, M[1] - 0.1, 0.45); a1 = appear(t, 0.2, 0.4) * (1 - k3); y = 330
+    k2 = appear(t, M[1] - 0.1, 0.4); k3 = appear(t, M[2] - 0.1, 0.45)
+    if k2 > 0:
+        for j, (u, i, r) in enumerate(ROWS):
+            text(d, (gx(u) - 62, gy(i) - 50), "10 Ω", 56, GREEN, alpha=k2 * (1 - k3))
+    a1 = 1.0 - k3; y = 300
     if a1 > 0:
-        card(d, (40, y, 1040, y + 470), fill=A(WHITE, a1), outline=A(DRED, a1), w=6)
-        pw = tw(d, "BẪY", F(40)) + 52
-        card(d, (W / 2 - pw / 2, y + 28, W / 2 + pw / 2, y + 92), fill=A(DRED, a1), r=32)
-        text(d, (W / 2, y + 60), "BẪY", 40, WHITE, alpha=a1)
-        q = "“Điện trở này: U tăng thì R tăng”"
-        ks = clamp((t - 2.6) / 0.4); f = F(48); lw = tw(d, q, f); yy = y + 190
-        text(d, (W / 2, yy), q, 48, mix(INK, GRAY, ks), alpha=a1)
-        if ks > 0:
-            d.line([(W / 2 - lw / 2 - 6, yy + 2), (W / 2 - lw / 2 - 6 + (lw + 12) * ks, yy + 2)], fill=A(DRED, 0.85 * a1), width=6)
-        text(d, (W / 2, y + 330), "U/I vẫn 10 Ω ở cả 5 hàng", 46, GREEN, alpha=a1 * appear(t, 3.0, 0.4))
+        card(d, (40, y, 1040, y + 520), fill=A(WHITE, a1), outline=A(DRED, a1), w=6)
+        pill(d, W / 2, y + 70, "BẪY", DRED, a1)
+        q = "“U tăng thì R tăng”"
+        f = F(64); lw = tw(d, q, f); yy = y + 220
+        text(d, (W / 2, yy), q, 64, mix(INK, GRAY, k2), alpha=a1)
+        if k2 > 0:
+            d.line([(W / 2 - lw / 2 - 6, yy + 2), (W / 2 - lw / 2 - 6 + (lw + 12) * k2, yy + 2)], fill=A(DRED, 0.85 * a1), width=7)
+            text(d, (W / 2, y + 380), "U/I vẫn 10 Ω ở cả 5 hàng", 60, DGREEN, alpha=a1 * k2)
     if k3 > 0:
-        card(d, (40, y, 1040, y + 470), fill=A(WHITE, k3), outline=A(NAVY, k3), w=6)
-        text(d, (W / 2, y + 80), "Chưa nói được", 48, NAVY, alpha=k3)
-        for j, s in enumerate(("• Đổi linh kiện khác, còn thẳng?", "• Quá 5,0 V thì sao?")):
-            kk = k3 * appear(t, M[1] + 0.3 + 0.5 * j, 0.4)
-            text(d, (100, y + 220 + 120 * j), s, 46, INK, anchor="lm", alpha=kk)
+        card(d, (40, y, 1040, y + 520), fill=A(WHITE, k3), outline=A(NAVY, k3), w=6)
+        pill(d, W / 2, y + 70, "CHƯA NÓI ĐƯỢC", NAVY, k3)
+        text(d, (W / 2, y + 240), "Thay bằng bóng đèn,", 62, INK, alpha=k3)
+        text(d, (W / 2, y + 340), "đường còn thẳng?", 62, INK, alpha=k3)
 
-# ---------------- canh 5: Chot + cau hoi tu nho lai ----------------
+# ---------------- canh 5: THU NGHI ----------------
 def s_end(img, d, t, sc):
-    """Chot (khong tra loi cau hoi) -> THU NGHI: doi R thanh 20 Ohm, van 5,0 V (so voi lan 10 Ohm); goi y tre 2,6 s."""
-    M = sc["M"]; k0 = appear(t, 0.2, 0.5)
-    card(d, (60, 280, 1020, 560), fill=A((236, 253, 243), k0), outline=A(GREEN, k0), w=6)
-    ctext(d, 420, "Điện trở: đường I–U thẳng, qua gốc", 50, GREEN, maxw=860, alpha=k0)
-    k1 = appear(t, M[0] + 0.1, 0.5)
-    if k1 <= 0: return
-    card(d, (40, 620, 1040, 1420), fill=A(WHITE, k1), outline=A(ORANGE, k1), w=6)
-    pw = tw(d, "THỬ NGHĨ", F(40)) + 52
-    card(d, (W / 2 - pw / 2, 650, W / 2 + pw / 2, 714), fill=A(ORANGE, k1), r=32)
-    text(d, (W / 2, 682), "THỬ NGHĨ", 40, WHITE, alpha=k1)
-    ctext(d, 870, "Thay điện trở 20 Ω, vẫn đặt 5,0 V.\nAmpe kế chỉ bao nhiêu?\nSo với lần dùng 10 Ω?", 48, INK,
-          maxw=900, alpha=appear(t, M[0] + 0.4, 0.5))
-    kh = appear(t, M[0] + 3.0, 0.5)
-    if kh > 0:
-        card(d, (110, 1100, 970, 1360), fill=A((255, 247, 237), kh), outline=A(ORANGE, kh), r=24, w=4)
-        ctext(d, 1160, "Gợi ý", 44, INK, alpha=kh)
-        ctext(d, 1270, "R gấp đôi, U giữ 5,0 V", 48, (176, 64, 8), maxw=820, alpha=kh)
+    """THU NGHI: dien tro 40 Ohm, dat 6,0 V -> ampe ke? (0,15 A, khong hien)."""
+    k = appear(t, 0.15, 0.4)
+    card(d, (40, 230, 1040, 1560), fill=A(WHITE, k), outline=A(ORANGE, k), w=6)
+    pill(d, W / 2, 305, "THỬ NGHĨ", ORANGE, k)
+    d.line([(150, 560), (900, 560)], fill=A(WIRE, k), width=6)
+    d.rectangle([450, 530, 630, 590], fill=A(WHITE, k), outline=A(NAVY, k), width=5)
+    text(d, (540, 650), "R = 40 Ω", 60, NAVY, alpha=k)
+    d.ellipse([250 - 50, 560 - 50, 250 + 50, 560 + 50], fill=A(WHITE, k), outline=A(BLUE, k), width=6)
+    text(d, (250, 562), "A", 58, BLUE, alpha=k); text(d, (250, 460), "? A", 60, DRED, alpha=k)
+    card(d, (700, 420, 960, 500), fill=A(SCREEN, k), r=10); text(d, (830, 460), "U = 6,0 V", 56, SCR_INK, alpha=k)
+    text(d, (W / 2, 900), "Điện trở 40 Ω, đặt 6,0 V.", 64, INK, alpha=k)
+    text(d, (W / 2, 1010), "Ampe kế chỉ bao nhiêu?", 64, DRED, alpha=k)
+    seg_bar(d, 1330, t, 1.0, sc["T"] - 0.2, ORANGE, k)
 
 def _cues(clip):
     sc = {s["key"]: s for s in clip["scenes"]}
     h, do, da, b, e = sc["hook"], sc["do"], sc["dapan"], sc["bay"], sc["end"]
     return ([(h["t0"] + h["M"][1] - 0.3, "open"), (h["t0"] + h["T"] - 0.1, "ding")]
             + [(do["t0"] + ts, "tap") for ts in TS]
-            + [(da["t0"] + 0.1, "ding"), (b["t0"] + 2.6, "buzz"), (e["t0"] + e["M"][0] + 0.1, "open")])
+            + [(da["t0"] + 0.1, "ding"), (b["t0"] + 0.4, "buzz"), (e["t0"] + 0.15, "open")])
 
 CLIP = dict(id="tn-l11-dien-tro-ohm-01", header="VẬT LÍ 11 · THÍ NGHIỆM", footer="Điện trở · thachlab.id.vn",
             cues=_cues, scenes=[
  dict(key="hook", title="Đo U và I của điện trở", draw=s_hook, tail=0.3, caps=[
-   ("Ampe kế đo dòng I, vôn kế đo U.", 3.6),
-   ("Nghĩ trước khi xem tiếp.", 6.0)]),
+   ("Ampe kế đo I, vôn kế đo U.", 3.6),
+   ("Dừng lại, tự đoán.", 6.0)]),
  dict(key="do", title="Tiến hành", draw=s_do, tail=0.5, caps=[
-   ("Tăng U từng 1,0 V, ghi dòng I.", 3.6),
-   ("Mỗi lần đo, chấm một điểm.", 3.4)]),
- dict(key="dapan", title="Kết quả", draw=s_dapan, tail=0.6, caps=[
-   ("Năm điểm thẳng hàng, qua gốc.", 3.4),
-   ("U gấp mấy, I gấp bấy nhiêu.", 3.8)]),
- dict(key="bay", title="Bẫy và giới hạn", draw=s_bay, tail=0.6, caps=[
-   ("Đúng hay sai?", 3.6),
-   ("Hai câu còn bỏ ngỏ.", 4.2)]),
+   ("Tăng U từng 1,0 V, ghi I.", 4.0),
+   ("Mỗi lần đo, chấm một điểm.", 4.2)]),
+ dict(key="dapan", title="Kết quả", draw=s_dapan, tail=0.5, caps=[
+   ("Năm điểm thẳng hàng, qua gốc.", 4.2),
+   ("U gấp mấy, I gấp bấy nhiêu.", 4.2)]),
+ dict(key="bay", title="Bẫy và giới hạn", draw=s_bay, tail=0.4, caps=[
+   ("Bẫy: nhìn R = U/I.", 3.6),
+   ("Chia lại U cho I từng điểm.", 3.6),
+   ("Mới đo một điện trở.", 3.0)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.7, caps=[
-   ("Dừng video, tự trả lời.", 7.4)]),
+   ("Dừng lại, tự trả lời.", 7.2)]),
 ])
 
 if __name__ == "__main__" and "--kiem-dong-bo" in __import__("sys").argv:

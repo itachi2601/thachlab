@@ -8,7 +8,7 @@
       "khoa": "gia_thuyet",
       "giay": 0,
       "chu": "Tụ nạp điện tích rồi giữ lại, và phóng ra được.",
-      "kiem": "LED sáng và tắt khi nào?"
+      "kiem": "Khi nào đèn LED sáng?"
     },
     {
       "khoa": "du_doan",
@@ -33,7 +33,7 @@
     {
       "khoa": "chua_noi",
       "giay": 38.0,
-      "chu": "Vì sao dòng về 0 dù pin còn nối? Tụ giữ được bao nhiêu điện tích?"
+      "chu": "Vì sao dòng về 0 dù pin còn nối?"
     }
   ],
   "dung_dua": {
@@ -56,14 +56,14 @@
       "A. Bằng như cũ, vì vẫn pin 9 V",
       "B. Lâu hơn khoảng 2,2 lần",
       "C. Lâu hơn khoảng 4,8 lần",
-      "D. Ngắn hơn, chỉ còn khoảng 0,45 lần"
+      "D. Lâu hơn, chưa tới 2 lần"
     ],
     "dung": 1,
     "giai_thich": [
       "Pin quyết định dòng lúc đầu (U/R như cũ), không quyết định thời gian loé. Tụ 2200 μF chứa được nhiều điện tích hơn ở cùng 9 V, nên phải nạp lâu hơn.",
       "Cùng 9 V, tụ 2200 μF chứa gấp 2,2 lần điện tích (Q = CU). Dòng lúc đầu vẫn bằng U/R như cũ, nên dòng cần lâu hơn khoảng 2,2 lần mới giảm tới mức LED tắt (theo mô hình, thời gian nạp tỉ lệ R·C).",
       "4,8 lần là bình phương 2,2 (nhầm với năng lượng ½CU²). Điện tích cần nạp chỉ tăng theo C, tức 2,2 lần.",
-      "Tụ lớn hơn không nạp nhanh hơn: cùng hiệu điện thế, nó chứa nhiều điện tích hơn nên LED loé lâu hơn, không ngắn hơn."
+      "Dòng lúc đầu do pin và điện trở 1 kΩ quyết định (U/R), không đổi khi thay tụ. Tụ 2200 μF phải nhận gấp 2,2 lần điện tích với dòng lúc đầu như cũ, nên LED loé lâu hơn khoảng 2,2 lần, không phải dưới 2 lần."
     ]
   }
 }

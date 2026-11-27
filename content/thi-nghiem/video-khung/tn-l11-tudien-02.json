@@ -33,7 +33,7 @@
     {
       "khoa": "chua_noi",
       "giay": 37.8,
-      "chu": "Mới đo một tụ: C phụ thuộc gì ở cấu tạo tụ? Tụ trữ bao nhiêu năng lượng?"
+      "chu": "Mới đo một tụ: C phụ thuộc gì ở cấu tạo tụ?"
     }
   ],
   "dung_dua": {
@@ -60,9 +60,9 @@
     ],
     "dung": 2,
     "giai_thich": [
-      "40 là 480 chia 12: nhầm Q = C/U. Q tỉ lệ thuận với U, nạp 12 V thì Q phải lớn hơn lúc 10 V (4800 μC).",
+      "40 là lấy một số chia cho 12: nhầm Q = C/U. Q tỉ lệ thuận với U, nạp 12 V thì Q phải lớn hơn lúc 10 V (4800 μC).",
       "4800 μC là Q ở 10 V. Tụ chưa \"đầy\": 12 V vẫn dưới 16 V ghi trên vỏ, U tăng thì Q còn tăng theo.",
-      "Từ bảng, Q/U ≈ 480 μF ở mọi lần đo (4800 : 10). Q tỉ lệ thuận với U nên ở 12 V: Q ≈ 480 · 12 = 5760 μC.",
+      "Đồ thị là đường thẳng qua gốc: Q tỉ lệ thuận với U. U tăng từ 10 V lên 12 V (gấp 1,2 lần) thì Q cũng gấp 1,2 lần: 4800 · 12/10 = 5760 μC.",
       "6900 μC là coi Q tăng theo U² (4800 · 1,2²). Đồ thị là đường thẳng qua gốc, Q chỉ tăng 1,2 lần: 5760 μC."
     ]
   }
