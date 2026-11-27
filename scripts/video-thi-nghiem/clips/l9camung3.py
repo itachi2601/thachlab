@@ -101,7 +101,7 @@ def apparatus(d, th, n, nlab=None, spin=True):
 DT = 1 / 240
 def knots(sc):
     M, T = sc["M"], sc["T"]
-    return [(0, 0), (0.4, 0), (1.0, 2.0), (M[1] + 0.2, 2.0), (M[1] + 0.7, 1.0), (M[1] + 2.0, 1.0), (M[1] + 2.5, 0.5),
+    return [(0, 0), (0.4, 0), (1.0, 2.0), (M[1] + 0.2, 2.0), (M[1] + 0.7, 1.0), (M[1] + 1.9, 1.0), (M[1] + 2.3, 0.5),
             (M[2] + 0.1, 0.5), (M[2] + 0.6, N_CHAM), (T + 1, N_CHAM)]
 
 _SIM = {}
@@ -285,12 +285,12 @@ END_Q, END_C = 0.2, 3.0
 def s_end(img, d, t, sc):
     k0 = appear(t, END_C, 0.5)
     card(d, (50, 265, 1030, 425), fill=A((236, 253, 243), k0), outline=A(GREEN, k0), w=6)
-    text(d, (W / 2, 345), "Đổi chiều luân phiên: xoay chiều", 56, DGREEN, alpha=k0)
+    text(d, (W / 2, 345), "Dòng luân phiên đổi chiều", 58, DGREEN, alpha=k0)
     k1 = appear(t, END_Q, 0.5)
     card(d, (40, 455, 1040, 1580), fill=A(WHITE, k1), outline=A(ORANGE, k1), w=6)
     pill(d, "THỬ NGHĨ", 518, k1, ORANGE)
-    text(d, (W / 2, 625), "Gỡ LED xanh ra.", 60, INK, alpha=k1)
-    text(d, (W / 2, 705), "Quay nhanh như lúc đầu:", 60, INK, alpha=k1)
+    text(d, (W / 2, 625), "Gỡ LED xanh.", 60, INK, alpha=k1)
+    text(d, (W / 2, 705), "Quay nhanh như cũ:", 60, INK, alpha=k1)
     text(d, (W / 2, 785), "LED đỏ thế nào?", 60, INK, alpha=k1)
     if k1 > 0:   # nam cham dung yen (nhan "quay như cũ") + LED do CHUA sang + o LED xanh bo trong (net dut); dia dap nhip
         cx, cy, r = 300, 1080, 130; th = math.radians(100)
@@ -298,7 +298,6 @@ def s_end(img, d, t, sc):
         for sg, col in ((-1, BLUE), (1, RED)):
             d.polygon([(cx + ux * a + px * b, cy + uy * a + py * b) for a, b in ((0, -30), (sg * r, -30), (sg * r, 30), (0, 30))], fill=A(col, k1))
         dot(d, cx, cy, 9, A(NAVY, k1))
-        text(d, (cx, 1280), "quay như cũ", 58, PURPLE, alpha=k1)
         yr, yg = 960, 1180
         d.polygon([(722, yr - 30), (722, yr + 30), (776, yr)], fill=A(mix(RED, WHITE, 0.7), k1), outline=A(NAVY, k1))
         d.line([(778, yr - 30), (778, yr + 30)], fill=A(NAVY, k1), width=6)
@@ -323,20 +322,20 @@ CLIP = dict(id="tn-l9-camung-03", header="KHTN 9 · THÍ NGHIỆM", footer="Dòn
             cues=_cues, scenes=[
  dict(key="hook", title="Nam châm quay, hai LED", draw=s_hook, tail=THINK_END, caps=[
    ("Nhìn từ trên xuống.", 3.0),
-   ("Dừng lại, tự đoán.", 5.6)]),
+   ("Dừng lại, tự đoán.", 4.6)]),
  dict(key="do", title="Tiến hành", draw=s_do, tail=0.6, caps=[
-   ("Quay nhanh.", 3.0),
-   ("Quay chậm dần.", 5.0),
-   ("Chậm hơn nữa.", 3.0)]),
+   ("Quay nhanh.", 2.0),
+   ("Quay chậm dần.", 4.4),
+   ("Chậm hơn nữa.", 2.1)]),
  dict(key="dapan", title="Kết quả", draw=s_dapan, tail=0.6, caps=[
    ("Hai đèn không cùng sáng.", 4.6),
    ("Dòng xoay chiều.", 4.2)]),
  dict(key="bay", title="Bẫy và giới hạn", draw=s_bay, tail=0.6, caps=[
    ("Đúng không?", 4.8),
    ("Sai: dòng nhỏ, LED không đủ sáng.", 4.0),
-   ("Còn bỏ ngỏ.", 4.2)]),
+   ("Còn bỏ ngỏ.", 3.8)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.3, caps=[
-   ("Dừng lại, tự nghĩ.", 9.6)]),
+   ("Tự nghĩ.", 7.0)]),
 ])
 
 if __name__ == "__main__":
