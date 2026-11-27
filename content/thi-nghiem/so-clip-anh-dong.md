@@ -520,6 +520,25 @@ Agent Opus theo nhóm (A điện 9, B điện từ–năng lượng 9, C cơ–�
 
 **Đợt 1 — sửa hộp exp kèm (thầy duyệt 27/11):** `sua-hop-exp.py` 2 vòng (vòng 2 theo kiem-code): ohm-01 số đọc dây B + kết luận gập; congsuat-01 Quan sát/Rút ra thành câu hỏi + gập bảng U·I dưới video; congsuat-03, dongthe-01 kết quả + kết luận gập; dongthe-02 Rút ra thành câu hỏi, gập bảng Wđ, bỏ công thức ghi sẵn ở Làm; doanmach-01 bỏ "U₂ gấp đôi U₁", gập bảng U₁/U₂/U_AB + kết luận; doanmach-03 thêm kết quả tháo bóng (gập), Rút ra thành câu hỏi. Kho ghi_chu thêm ca câu chốt mới (ohm-01, congsuat-01/03, dongthe-01/02/03, camung-01). Còn ghi nhận (chưa sửa): bảng so sánh ngay trên hộp congsuat-03 nói trước "đèn nhiều oát sáng hơn" (kiến thức bài).
 
+**Đợt 2 — 14 clip qua cổng A + B, ĐÃ TẢI Storage `-20261127` (HEAD 200), CHỜ THẦY DUYỆT** (27/11 ~18h30). Hộp exp bài còn lộ Dự đoán (ghi nhận, sửa khi duyệt như đợt 1): xoay-chieu :140-141 ("đảo cực nguồn" không có trong clip), :158; lang-kinh :67; thau-kinh :145-146; thuc-hanh-tieu-cu :150, :192, :197; phan-xa-toan-phan :48; kinh-lup :78.
+
+| Clip | tn | Từ/phút | LỖI | Giây | KB | mp4 | Điểm cần quyết |
+|---|---|---|---|---|---|---|---|
+| hoathach-01 | tn-l9-hoathach-01 | 158 | 0 | 49,9 | 1539 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-hoathach-01-20261127.mp4) | — |
+| hoathach-02 | tn-l9-hoathach-02 | 157 | 0 | 49,8 | 1443 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-hoathach-02-20261127.mp4) | chốt ≈ 5 °C khớp kho |
+| xoaychieu-01 | tn-l9-xoaychieu-01 | 156 | 0 | 50,0 | 1423 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-xoaychieu-01-20261127.mp4) | chốt theo mô hình nguồn đổi chiều chậm mỗi 2 s: giây 5 kim lệch phía nào |
+| xoaychieu-02 | tn-l9-xoaychieu-02 | 141 | 0 | 45,5 | 1696 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-xoaychieu-02-20261127.mp4) | — |
+| camung-02 | tn-l9-camung-02 | 144 | 0 | 49,8 | 1576 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-camung-02-20261127.mp4) | chốt biến trở theo mô hình (kho không có biến trở) |
+| camung-03 | tn-l9-camung-03 | 146 | 0 | 49,8 | 1873 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-camung-03-20261127.mp4) | — |
+| kinhlup-01 | tn-l9-kinhlup-01 | 156 | 0 | 49,6 | 1473 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-kinhlup-01-20261127.mp4) | — |
+| langkinh-01 | tn-l9-langkinh-01 | 140 | 0 | 49,6 | 1352 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-langkinh-01-20261127.mp4) | chốt đổi (bỏ tấm kính song song ngoài bài) → i = 45°, r ≈ 28°; kho ghi_chu cần cập nhật |
+| langkinh-03 | tn-l9-langkinh-03 | 135 | 0 | 49,7 | 1297 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-langkinh-03-20261127.mp4) | kho ghi_chu còn gợi ý cũ |
+| pxtp-01 | tn-l9-pxtp-01 | 144 | 0 | 49,3 | 1443 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-pxtp-01-20261127.mp4) | — |
+| thaukinh-02 | tn-l9-thaukinh-02 | 161 | 0 | 49,3 | 1275 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-thaukinh-02-20261127.mp4) | — |
+| thaukinh-03 | tn-l9-thaukinh-03 | 121 | 0 | 49,7 | 1340 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-thaukinh-03-20261127.mp4) | — |
+| tieucu-02 | tn-l9-tieucu-02 | 133 | 0 | 49,7 | 1336 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-tieucu-02-20261127.mp4) | — |
+| tieucu-03 | tn-l9-tieucu-03 | 142 | 0 | 49,6 | 1357 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-tieucu-03-20261127.mp4) | chốt tự suy theo mô hình: ảnh nét cao gấp đôi vật, vẫn tính f = L : 4 → lớn hơn f thật |
+
 ## Cổng mới — L10b (bài 63–79, 38 clip; phiên `clip-cong-moi-l10b`, 27/11/2026) — **đang dựng, chờ thầy duyệt từng nhóm**
 Brief: thư mục ghi chú phiên `l10b-brief-dung.md`/`l10b-brief-kiem.md`. 1 agent Opus dựng + 1 kiem-code song song; tối đa 2 vòng kiem-code/clip, sau v2 sửa lượt cuối tự crop. Script: `tai-cong-moi-l10b.sh` (Storage), `dang-cong-moi-l10b.sh` (DB, `--chi-video`; dry-run 17/17 sạch 27/11). Kho `<tn>.json` + bài giữ bản cũ tới khi duyệt.
 
