@@ -153,6 +153,7 @@ FILES=(
   "supabase/migrations/20261127180000_cnctm1_lop_hoc_phan_cdck_25c.sql|CNCTM 1 CĐ CK 25C: trigger đồng bộ user_classes (active) → course_enrollments khi môn chỉ có 1 lớp học phần + backfill SV lớp 'cnctm'/'gcpt' vào lớp học phần; idempotent, rollback cuối file|lúc nào cũng được (thêm 1 trigger + ghi danh vài dòng)"
   "supabase/migrations/20261127200000_abet_thu_du_lieu_pi.sql|ABET MET: 4 bảng abet_* (RLS admin) + RPC abet_nop_* theo token cho giáo viên nộp điểm câu PI + bucket riêng tư abet-minh-chung + seed 23 dòng kế hoạch PI và % đạt các năm trước; chỉ tạo mới, rollback cuối file|lúc nào cũng được (chỉ tạo bảng mới + chèn ~50 dòng)"
 )
+# ĐÃ CHẠY 27/11/2026: 20261127200000_abet_thu_du_lieu_pi
 # ĐÃ ÁP 19/11/2026 (memory AVCN: lesson 202 chương 12, đề 1387–1396 đã có trên DB; file idempotent): 20261119150000_avcn_bai_12_de_thi_thu
 # ĐÃ CHẠY 19/11/2026 08:05: 20261119090000_dinh_duong
 # ĐÃ CHẠY 12/11/2026 08:52: 20261112100000_cnc_quiz_cham_server_buoc_2

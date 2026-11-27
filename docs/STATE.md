@@ -9,7 +9,6 @@ Nạp mỗi phiên, giữ dưới 15 KB: hiện trạng + ĐANG CHỜ (1–2 dò
 - Nền SÁNG mặc định (11/10): token `app/globals.css`, `docs/MAU-NEN-SANG.md`.
 
 ## Migration — ĐANG CHỜ (nguồn đúng: `bash scripts/run-migrations.sh --list` + `scripts/logs/`; sau migration chạy `node scripts/gen-database-doc.mjs`)
-- **ABET thu dữ liệu PI (27/11)**: `20261127200000_abet_thu_du_lieu_pi` — 4 bảng `abet_*` (admin), RPC `abet_nop_*` cho link nộp không cần tài khoản, bucket riêng tư `abet-minh-chung`, seed 23 dòng kế hoạch PI 2025–2027; trang `/abet/nop/?ma=…` + `/quan-tri/abet`. CHƯA CHẠY.
 - **GCPT bài thuyết trình (27/11)**: migration `20261127150000` ĐÃ CHẠY 27/11 (qua `supabase db query -f`, checkout chính bẩn nên không qua run-migrations.sh → không có log); bài id 228 + đề 1423 đã đăng và BẬT HIỆN 27/11.
 - **GCPT (26/11)**: lớp `gcpt` id 24, 12 bài id 216–227 đã đăng và BẬT HIỆN (26/11); còn: thầy đối chiếu số liệu "tham khảo".
 - **GCPT lớp học phần CĐ CK 25B (27/11)**: lớp "Các PPGCPTT" id 13, mã LOP-77B98E — đã chuyển từ môn `khac` sang môn `gcpt` + ghi danh 10 SV đang học lớp `gcpt` (migration `20261127170000` ĐÃ CHẠY 27/11 08:37, có log); thêm môn `gcpt` vào `services/subjects.ts` (chọn/tạo lớp trong dashboard GV, nút "Vào bài học" → `/lop-hoc/gcpt`); đã deploy 27/11 08:45. Chờ thầy mở tab lớp môn GCPT kiểm bảng điểm 10 SV.
