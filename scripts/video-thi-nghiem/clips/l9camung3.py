@@ -6,7 +6,7 @@
 #   KHONG danh dau +/- tren khung quay). Bay = hien_tuong_hay_sai[2] (LED tat -> ket luan khong co dong).
 #   Cong B 18/11: n = 2/1/0,5 vong/s quay tay ma LED 1,8 V sang la phi thuc te -> KHONG hien vong/s tren man, chi
 #   "nhanh / cham dan / rat cham" (toc do ben trong giu ti le so_lieu_mau; kho da them ghi_chu "minh hoa ti le").
-#   Cau chot: quay deu, dem 10 lan LED do chop -> nam cham quay may vong? -> 10 (moi LED chop 1 lan / vong, _kiem_vat_li).
+#   Cau chot (27/11): quay deu 5 vong/s, trong 4 s LED do chop may lan? -> 20 (moi vong 1 lan; so 20 KHONG hien).
 #   So 10 la so dem dat ra cho cau hoi (khong phai so do), dap an suy tu mo hinh.
 #   "Cham hon nua" (n = 0,2 vong/s) CHI de ve, KHONG hien so: kho khong co nguong n de LED tat (theo mo hinh).
 #   Chua noi duoc: kho KHONG co khong_chung_minh cho TN nay -> tu viet: do lon dong chua do ; moi thu nam cham quay.
@@ -25,7 +25,6 @@ from engine import *
 
 N_BANG = (2.0, 1.0, 0.5)                    # so_lieu_mau n (vong/s)
 N_CHAM = 0.2                                # "rat cham": chi de ve (khong hien so)
-CHOT_DEM = 10                               # cau chot: dem 10 lan LED do chop
 E_TH = 0.3                                  # nguong sang cua LED (don vi n.sin, theo mo hinh)
 def vn(x): return (f"{x:g}").replace(".", ",")
 
@@ -34,6 +33,7 @@ MX, MY, MR, MT = 330, 560, 150, 36          # tam quay, nua chieu dai, nua be da
 CL, CRR, CY, CR, NT = 610, 890, 560, 110, 9 # cuon day (nhin tu tren)
 LX0, LX1, YR, YG, LXC = 520, 980, 990, 1170, 750   # khoi hai LED: nut trai/phai, nhanh do/xanh, tam diot
 
+LAB = [True]                                # ve nhan chu bo dung cu (canh Bay tat)
 def turns(): return [CL + j * (CRR - CL) / (NT - 1) for j in range(NT)]
 
 def chevron(d, x, y, ang, color, s=18, w=5):
@@ -44,7 +44,7 @@ def chevron(d, x, y, ang, color, s=18, w=5):
 def coil(d):
     for x in turns(): d.arc([x - 17, CY - CR, x + 17, CY + CR], 90, 270, fill=mix(ORANGE, BG, 0.45), width=7)
     for x in turns(): d.arc([x - 17, CY - CR, x + 17, CY + CR], 270, 90, fill=A(ORANGE, 0.95), width=9)
-    text(d, ((CL + CRR) / 2, CY - CR - 40), "cuộn dây", 40, mix(ORANGE, INK, 0.3))
+    if LAB[0]: text(d, ((CL + CRR) / 2, CY - CR - 50), "cuộn dây", 58, mix(ORANGE, INK, 0.3))
 
 def magnet(d, th):
     ux, uy = math.cos(th), -math.sin(th); px, py = math.sin(th), math.cos(th)
@@ -52,8 +52,8 @@ def magnet(d, th):
         a0, a1 = 0, s * MR
         return [(MX + ux * a + px * b, MY + uy * a + py * b) for a, b in ((a0, -MT), (a1, -MT), (a1, MT), (a0, MT))]
     d.polygon(half(-1), fill=BLUE); d.polygon(half(1), fill=RED)
-    text(d, (MX + ux * MR * 0.55, MY + uy * MR * 0.55), "N", 44, WHITE)
-    text(d, (MX - ux * MR * 0.55, MY - uy * MR * 0.55), "S", 44, WHITE)
+    text(d, (MX + ux * MR * 0.55, MY + uy * MR * 0.55), "N", 54, WHITE)
+    text(d, (MX - ux * MR * 0.55, MY - uy * MR * 0.55), "S", 54, WHITE)
     dot(d, MX, MY, 10, NAVY, outline=WHITE)
 
 def spin_arrow(d, a=1.0):
@@ -82,7 +82,8 @@ def circuit(d, e):
         dot(d, LX0, y, 9, NAVY); dot(d, LX1, y, 9, NAVY)
     br, bg = led(e)
     diode(d, YR, True, RED, br); diode(d, YG, False, GREEN, bg)
-    text(d, (LX0 - 24, YR), "đỏ", 40, RED, anchor="rm"); text(d, (LX0 - 24, YG), "xanh", 40, GREEN, anchor="rm")
+    if LAB[0]:
+        text(d, (LX0 - 24, YR), "đỏ", 58, RED, anchor="rm"); text(d, (LX0 - 24, YG), "xanh", 58, DGREEN, anchor="rm")
 
 def led(e):
     """-> (do sang LED do, do sang LED xanh); 0 = tat. e = n.sin(theta)."""
@@ -94,13 +95,13 @@ def apparatus(d, th, n, nlab=None, spin=True):
     coil(d); magnet(d, th)
     if spin and n > 0: spin_arrow(d)
     circuit(d, n * math.sin(th))
-    if nlab: text(d, (MX, 820), nlab, 46, PURPLE)
+    if nlab: text(d, (MX, 830), nlab, 58, PURPLE)
 
 # ---------------- mo phong canh Tien hanh: n(t) -> theta(t) ----------------
 DT = 1 / 240
 def knots(sc):
     M, T = sc["M"], sc["T"]
-    return [(0, 0), (0.4, 0), (1.0, 2.0), (M[1] + 0.2, 2.0), (M[1] + 0.7, 1.0), (M[1] + 2.9, 1.0), (M[1] + 3.4, 0.5),
+    return [(0, 0), (0.4, 0), (1.0, 2.0), (M[1] + 0.2, 2.0), (M[1] + 0.7, 1.0), (M[1] + 2.0, 1.0), (M[1] + 2.5, 0.5),
             (M[2] + 0.1, 0.5), (M[2] + 0.6, N_CHAM), (T + 1, N_CHAM)]
 
 _SIM = {}
@@ -125,12 +126,11 @@ def nlabel(t, sc):
     return "rất chậm"
 
 # dai "den sang theo thoi gian": hai hang (do, xanh), cua so 5 s gan nhat (canh Tien hanh) hoac ca canh (Dap an)
-def strip(d, sc, t0, t1, y=1270, head=True, upto=None):
+def strip(d, sc, t0, t1, y=1270, head=True, upto=None, labels=True):
     card(d, (40, y, 1040, y + 340), fill=WHITE, outline=LIGHT, w=3)
-    if head: text(d, (W / 2, y + 40), "đèn sáng theo thời gian", 38, MUTED, bold=False)
     ts, ns, th, es = sim(sc); x0, x1 = 200, 1000
     for row, (yy, col, lab) in enumerate(((y + 140, RED, "đỏ"), (y + 260, GREEN, "xanh"))):
-        text(d, (x0 - 30, yy), lab, 40, col, anchor="rm")
+        if labels: text(d, (x0 - 30, yy), lab, 56, col if col != GREEN else DGREEN, anchor="rm")
         d.line([(x0, yy), (x1, yy)], fill=LIGHT, width=4)
         for k in range(max(0, int(t0 / DT)), min(len(ts), int((t1 if upto is None else upto) / DT))):
             b = led(es[k])[row]
@@ -139,25 +139,33 @@ def strip(d, sc, t0, t1, y=1270, head=True, upto=None):
                 d.line([(x, yy - hh), (x, yy + hh)], fill=A(col, 0.5 + 0.5 * b), width=3)
 
 # ---------------- canh 1: Du doan ----------------
-THINK_END = 0.6
+THINK_END = 0.3
 TH_HOOK = math.radians(100)
+DGREEN, DRED = (10, 110, 50), (185, 28, 28)
+
+
+def pill(d, s, y, a, color=NAVY, size=56):
+    pw = tw(d, s, F(size)) + 60
+    card(d, (W / 2 - pw / 2, y - 40, W / 2 + pw / 2, y + 40), fill=A(color, a), r=38)
+    text(d, (W / 2, y), s, size, WHITE, alpha=a)
+
+
 def s_hook(img, d, t, sc):
     M = sc["M"]
     apparatus(d, TH_HOOK, 0.0)
     a = appear(t, M[1] - 0.2, 0.5)
     if a <= 0: return
-    y0 = 1270 + (1 - a) * 40
-    card(d, (40, y0, 1040, y0 + 340), fill=A(WHITE, a), outline=A(PURPLE, a), w=6)
-    pw = tw(d, "DỰ ĐOÁN", F(40)) + 52
-    card(d, (W / 2 - pw / 2, y0 + 24, W / 2 + pw / 2, y0 + 86), fill=A(PURPLE, a), r=31)
-    text(d, (W / 2, y0 + 55), "DỰ ĐOÁN", 40, WHITE, alpha=a)
-    text(d, (W / 2, y0 + 150), "Quay nam châm nhanh, rồi chậm dần.", 42, INK, alpha=a)
-    text(d, (W / 2, y0 + 228), "Hai LED sẽ thế nào?", 50, PURPLE, alpha=a)
-    tc, tend = M[1] + 0.6, sc["T"] - THINK_END
+    y0 = 880 + (1 - a) * 40
+    card(d, (40, y0, 1040, y0 + 540), fill=A(WHITE, a), outline=A(PURPLE, a), w=6)
+    pill(d, "DỰ ĐOÁN", y0 + 62, a, PURPLE)
+    text(d, (W / 2, y0 + 170), "Quay nhanh, rồi chậm dần.", 60, INK, alpha=a)
+    text(d, (W / 2, y0 + 260), "Hai LED sẽ thế nào?", 60, INK, alpha=a)
+    tc, tend = M[1] + 0.3, sc["T"] - 0.1
     if t > tc:
         p = clamp((t - tc) / (tend - tc))
-        d.rounded_rectangle([140, y0 + 300, 940, y0 + 312], radius=6, fill=A(LIGHT, a))
-        d.rounded_rectangle([140, y0 + 300, 140 + 800 * (1 - p), y0 + 312], radius=6, fill=A(PURPLE, a))
+        d.rounded_rectangle([110, y0 + 350, 970, y0 + 450], radius=45, fill=A((237, 233, 254), a))
+        if p < 1: d.rounded_rectangle([110, y0 + 350, 110 + max(90, 860 * (1 - p)), y0 + 450], radius=45, fill=A((76, 29, 149), a))
+
 
 # ---------------- canh 2: Tien hanh ----------------
 def s_do(img, d, t, sc):
@@ -206,30 +214,31 @@ def _kiem_so():
     bang = {0.5: (1, 0.5), 1: (2, 1), 2: (4, 2)}    # so_lieu_mau: n -> (doi chieu/s, moi LED chop/s)
     for n in N_BANG:
         if bang[n] != (2 * n, n): bad.append(n)
-    if CHOT_DEM * 1 != 10: bad.append("cau chot: moi LED chop 1 lan / vong -> 10 vong")
+    if not (0.5 <= CHOT_N <= 5) or CHOT_N * CHOT_T != 20: bad.append("cau chot: 5 vong/s x 4 s, moi vong LED do chop 1 lan -> 20 lan")
     return bad
 
 # ---------------- canh 3: Dap an + Rut ra ----------------
+DA_K = 2.8
 def s_dapan(img, d, t, sc):
     M = sc["M"]
     ka = appear(t, 0.15, 0.4)
-    lab = "ĐÁP ÁN · mờ dần rồi tắt"
-    pw = tw(d, lab, F(42)) + 56
-    card(d, (W / 2 - pw / 2, 262, W / 2 + pw / 2, 336), fill=A(NAVY, ka), r=36)
-    text(d, (W / 2, 299), lab, 42, WHITE, alpha=ka)
+    pill(d, "ĐÁP ÁN: mờ dần rồi tắt", 320, ka)
     dsc = do_scene()
     g = clamp((t - 0.4) / 1.4)
-    strip(d, dsc, 0.0, dsc["T"], y=420, head=False, upto=dsc["T"] * g)
-    for x, s, tm in ((330, "nhanh", 0.2), (620, "chậm dần", 0.55), (900, "rất chậm", 0.9)):
-        if g >= tm: text(d, (x, 480), s, 40, MUTED, bold=False)
-    k3 = appear(t, 2.0, 0.45)
+    strip(d, dsc, 0.0, dsc["T"], y=380, head=False, upto=dsc["T"] * g, labels=False)
+    for x, s in ((320, "nhanh"), (610, "chậm dần"), (890, "rất chậm")):
+        text(d, (x, 440), s, 56, NAVY, alpha=ka)
+    if t > 2.0:                                   # vet sang quet lai doc dai (lap 2,5 s) cho hinh khong dung
+        x = 200 + 800 * (((t - 2.0) % 2.5) / 2.5)
+        d.rectangle([x - 30, 480, x + 30, 700], fill=A(PURPLE, 0.18))
+    k3 = appear(t, DA_K, 0.45)
     if k3 > 0:
-        card(d, (40, 830, 1040, 1050), fill=A(WHITE, k3), outline=A(ORANGE, k3), w=5)
-        text(d, (W / 2, 940), "Quay nhanh: sáng hơn", 48, ORANGE, alpha=k3)
-    k1 = appear(t, M[1] - 0.1, 0.45)
+        card(d, (40, 800, 1040, 960), fill=A(WHITE, k3), outline=A(ORANGE, k3), w=5)
+        text(d, (W / 2, 880), "Quay nhanh: sáng hơn", 58, ORANGE, alpha=k3)
+    k1 = appear(t, M[1] + 0.3, 0.45)
     if k1 > 0:
-        card(d, (40, 1110, 1040, 1380), fill=A((236, 253, 243), k1), outline=A(GREEN, k1), w=5)
-        text(d, (W / 2, 1245), "Dòng luân phiên đổi chiều", 52, GREEN, alpha=k1)
+        card(d, (40, 1000, 1040, 1160), fill=A((236, 253, 243), k1), outline=A(GREEN, k1), w=5)
+        text(d, (W / 2, 1080), "Dòng luân phiên đổi chiều", 58, DGREEN, alpha=k1)
 
 _DO = []
 def do_scene():
@@ -240,83 +249,84 @@ def do_scene():
     return _DO[0]
 
 # ---------------- canh 4: Bay + Chua noi duoc ----------------
+BAY_ST, BAY_OK = 2.2, 2.7
 def s_bay(img, d, t, sc):
     M = sc["M"]
     th = TH_HOOK + 2 * math.pi * N_CHAM * t
-    apparatus(d, th, N_CHAM)
-    k2 = appear(t, M[1] - 0.1, 0.45); a1 = appear(t, 0.2, 0.45) * (1 - k2)
+    LAB[0] = False
+    try: apparatus(d, th, N_CHAM)
+    finally: LAB[0] = True
+    k2 = appear(t, M[1] + 0.3, 0.45); a1 = appear(t, 0.2, 0.45) * (1 - k2)
+    y0 = 1230
     if a1 > 0:
-        y0 = 1270
-        card(d, (40, y0, 1040, y0 + 340), fill=A(WHITE, a1), outline=A(RED, a1), w=6)
-        pw = tw(d, "BẪY", F(40)) + 52
-        card(d, (W / 2 - pw / 2, y0 + 24, W / 2 + pw / 2, y0 + 86), fill=A(RED, a1), r=31)
-        text(d, (W / 2, y0 + 55), "BẪY", 40, WHITE, alpha=a1)
-        ks = clamp((t - M[0] - 1.6) / 0.4)
+        card(d, (40, y0, 1040, y0 + 360), fill=A(WHITE, a1), outline=A(RED, a1), w=6)
+        pill(d, "BẪY", y0 + 60, a1, DRED)
+        ks = clamp((t - BAY_ST) / 0.4)
         q = "“LED tắt là không có dòng”"
-        lw = tw(d, q, F(46)); yy = y0 + 160
-        text(d, (W / 2, yy), q, 46, mix(INK, MUTED, ks), alpha=a1)
+        lw = tw(d, q, F(58)); yy = y0 + 165
+        text(d, (W / 2, yy), q, 58, INK, alpha=a1)
         if ks > 0:
-            d.line([(W / 2 - lw / 2 - 6, yy + 2), (W / 2 - lw / 2 - 6 + (lw + 12) * ks, yy + 2)], fill=A(RED, 0.85 * a1), width=6)
-        text(d, (W / 2, y0 + 262), "✓ LED cần dòng đủ lớn mới sáng", 44, GREEN, alpha=a1 * appear(t, M[0] + 2.2, 0.4))
+            d.line([(W / 2 - lw / 2 - 6, yy + 2), (W / 2 - lw / 2 - 6 + (lw + 12) * ks, yy + 2)], fill=A(DRED, a1), width=7)
+        text(d, (W / 2, y0 + 275), "✓ Dòng nhỏ: LED không sáng", 58, DGREEN, alpha=a1 * appear(t, BAY_OK, 0.4))
     if k2 > 0:
-        y0 = 1270
-        card(d, (40, y0, 1040, y0 + 340), fill=A(WHITE, k2), outline=A(NAVY, k2), w=6)
-        text(d, (W / 2, y0 + 62), "Chưa nói được", 46, NAVY, alpha=k2)
-        for j, s in enumerate(("• Dòng lớn bao nhiêu: chưa đo", "• Mới thử nam châm quay")):
-            text(d, (90, y0 + 160 + j * 100), s, 44, INK, bold=False, anchor="lm", alpha=k2 * appear(t, M[1] + 0.3 + 0.6 * j, 0.4))
+        card(d, (40, y0, 1040, y0 + 360), fill=A(WHITE, k2), outline=A(NAVY, k2), w=6)
+        text(d, (W / 2, y0 + 65), "Chưa nói được:", 60, NAVY, alpha=k2)
+        text(d, (90, y0 + 170), "• Dòng lớn cỡ nào", 58, INK, anchor="lm", alpha=k2)
+        text(d, (90, y0 + 275), "• Mới thử nam châm quay", 58, INK, anchor="lm", alpha=k2)
 
-# ---------------- canh 5: Chot + cau hoi tu nho lai ----------------
-T_CHOT = 4.0
+# ---------------- canh 5: Chot + THU NGHI ----------------
+END_Q, END_C = 0.2, 3.0
+CHOT_N, CHOT_T = 5, 4                       # cau chot: quay deu 5 vong/s (tham_so max), trong 4 s -> LED do chop 20 lan
 def s_end(img, d, t, sc):
-    M = sc["M"]
-    k1 = appear(t, M[0] + 0.1, 0.5)
-    if k1 > 0:
-        card(d, (40, 620, 1040, 1600), fill=A(WHITE, k1), outline=A(ORANGE, k1), w=6)
-        pw = tw(d, "THỬ NGHĨ", F(38)) + 52
-        card(d, (W / 2 - pw / 2, 650, W / 2 + pw / 2, 714), fill=A(ORANGE, k1), r=32)
-        text(d, (W / 2, 682), "THỬ NGHĨ", 38, WHITE, alpha=k1)
-        ctext(d, 830, "Quay đều, đếm " + str(CHOT_DEM) + " lần LED đỏ chớp.\nNam châm quay mấy vòng?", 46, INK,
-              maxw=940, alpha=appear(t, M[0] + 0.4, 0.5))
-        ka = appear(t, M[0] + 0.6, 0.5) * k1
-        y = 1080
-        d.line([(300, y), (500, y)], fill=A(NAVY, ka), width=5); d.line([(580, y), (780, y)], fill=A(NAVY, ka), width=5)
-        tri = [(512, y - 30), (512, y + 30), (566, y)]
-        d.polygon(tri, fill=A(mix(RED, WHITE, 0.2), ka), outline=A(NAVY, ka)); d.line([(568, y - 30), (568, y + 30)], fill=A(NAVY, ka), width=6)
-        text(d, (860, y), "?", 72, PURPLE, alpha=ka)
-        kh = appear(t, M[0] + 2.9, 0.5)
-        card(d, (110, 1260, 970, 1500), fill=A((255, 247, 237), kh), r=24)
-        ctext(d, 1380, "Mỗi vòng, LED đỏ chớp mấy lần?", 44, ORANGE, maxw=820, alpha=kh)
-    k0 = appear(t, M[0] + T_CHOT, 0.5)
-    if k0 > 0:
-        card(d, (60, 260, 1020, 560), fill=A((236, 253, 243), k0), outline=A(GREEN, k0), w=6)
-        ctext(d, 410, "Đổi chiều luân phiên: dòng xoay chiều", 50, GREEN, maxw=880, alpha=k0)
+    k0 = appear(t, END_C, 0.5)
+    card(d, (50, 265, 1030, 425), fill=A((236, 253, 243), k0), outline=A(GREEN, k0), w=6)
+    text(d, (W / 2, 345), "Đổi chiều luân phiên: xoay chiều", 56, DGREEN, alpha=k0)
+    k1 = appear(t, END_Q, 0.5)
+    card(d, (40, 455, 1040, 1580), fill=A(WHITE, k1), outline=A(ORANGE, k1), w=6)
+    pill(d, "THỬ NGHĨ", 518, k1, ORANGE)
+    text(d, (W / 2, 625), f"Quay đều {CHOT_N} vòng/giây.", 60, INK, alpha=k1)
+    text(d, (W / 2, 705), f"Trong {CHOT_T} giây, LED đỏ", 60, INK, alpha=k1)
+    text(d, (W / 2, 785), "chớp mấy lần?", 60, INK, alpha=k1)
+    if k1 > 0:   # nam cham nho quay (cham, chi de minh hoa) + LED do chop theo; KHONG dem so
+        cx, cy, r = 330, 1100, 130; th = 2 * math.pi * 0.5 * t
+        ux, uy = math.cos(th), -math.sin(th); px, py = math.sin(th), math.cos(th)
+        for sg, col in ((-1, BLUE), (1, RED)):
+            d.polygon([(cx + ux * a + px * b, cy + uy * a + py * b) for a, b in ((0, -30), (sg * r, -30), (sg * r, 30), (0, 30))], fill=A(col, k1))
+        dot(d, cx, cy, 9, A(NAVY, k1))
+        on = math.sin(th) > 0.3
+        if on:
+            for rr, al in ((80, 0.18), (58, 0.3), (42, 0.45)): d.ellipse([750 - rr, cy - rr, 750 + rr, cy + rr], fill=A(RED, al * k1))
+        d.polygon([(722, cy - 30), (722, cy + 30), (776, cy)], fill=A(mix(RED, WHITE, 0.2 if on else 0.7), k1), outline=A(NAVY, k1))
+        d.line([(778, cy - 30), (778, cy + 30)], fill=A(NAVY, k1), width=6)
+        text(d, (W / 2, 1400), "số lần = ?", 62, ORANGE, alpha=k1)
+
 
 def _cues(clip):
     sc = {s["key"]: s for s in clip["scenes"]}
     h, do, da, b, e = sc["hook"], sc["do"], sc["dapan"], sc["bay"], sc["end"]
     M = do["M"]
-    return [(h["t0"] + h["M"][1] - 0.2, "open"), (h["t0"] + h["T"] - THINK_END, "ding"),
+    return [(h["t0"] + h["M"][1] - 0.2, "open"), (h["t0"] + h["T"] - 0.1, "ding"),
             (do["t0"] + 0.4, "tap"), (do["t0"] + M[1] + 0.2, "tap"), (do["t0"] + M[2] + 0.1, "tap"),
-            (da["t0"] + 0.15, "ding"), (b["t0"] + 0.2, "buzz"), (e["t0"] + e["M"][0] + 0.1, "open")]
+            (da["t0"] + 0.15, "ding"), (b["t0"] + BAY_ST, "buzz"), (e["t0"] + END_Q + 0.1, "open")]
 
 
-CLIP = dict(id="tn-l9-camung-03", header="KHTN 9 · VẬT LÍ · THÍ NGHIỆM", footer="Dòng điện xoay chiều · thachlab.id.vn",
+CLIP = dict(id="tn-l9-camung-03", header="KHTN 9 · THÍ NGHIỆM", footer="Dòng điện xoay chiều · thachlab.id.vn",
             cues=_cues, scenes=[
  dict(key="hook", title="Nam châm quay, hai LED", draw=s_hook, tail=THINK_END, caps=[
    ("Nhìn từ trên xuống.", 3.0),
-   ("Tự trả lời trước khi xem.", 5.6)]),
+   ("Dừng lại, tự đoán.", 5.6)]),
  dict(key="do", title="Tiến hành", draw=s_do, tail=0.6, caps=[
-   ("Quay nhanh.", 3.6),
-   ("Quay chậm dần.", 6.0),
-   ("Chậm hơn nữa.", 3.4)]),
+   ("Quay nhanh.", 3.0),
+   ("Quay chậm dần.", 5.0),
+   ("Chậm hơn nữa.", 3.0)]),
  dict(key="dapan", title="Kết quả", draw=s_dapan, tail=0.6, caps=[
-   ("Hai đèn không cùng sáng.", 3.6),
-   ("Đó là dòng điện xoay chiều.", 4.2)]),
+   ("Hai đèn không cùng sáng.", 4.6),
+   ("Dòng xoay chiều.", 4.2)]),
  dict(key="bay", title="Bẫy và giới hạn", draw=s_bay, tail=0.6, caps=[
-   ("Có đúng không?", 4.4),
-   ("Chưa nói được.", 3.8)]),
- dict(key="end", title="Chốt lại", draw=s_end, tail=1.2, caps=[
-   ("Tự trả lời trước khi xem.", 6.4)]),
+   ("Đúng không?", 4.8),
+   ("Còn bỏ ngỏ.", 4.2)]),
+ dict(key="end", title="Chốt lại", draw=s_end, tail=0.3, caps=[
+   ("Dừng lại, tự nghĩ.", 8.0)]),
 ])
 
 if __name__ == "__main__":

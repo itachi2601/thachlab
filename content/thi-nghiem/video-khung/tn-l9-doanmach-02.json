@@ -1,9 +1,9 @@
 {
   "id": "tn-l9-doanmach-02",
   "ten": "Đoạn mạch hai nhánh: đo dòng điện ở từng nhánh và mạch chính",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-doanmach-02-20261118.mp4",
-  "poster": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-doanmach-02-20261118.webp",
-  "tong_giay": 47.7,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-doanmach-02-20261127.mp4",
+  "poster": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-doanmach-02-20261127.webp",
+  "tong_giay": 49.3,
   "o": [
     {
       "khoa": "gia_thuyet",
@@ -13,32 +13,32 @@
     },
     {
       "khoa": "du_doan",
-      "giay": 3.3,
+      "giay": 3.1,
       "chu": "Đóng K: A1 chỉ 0,60 A, A2 chỉ 0,40 A. Ampe kế mạch chính chỉ bao nhiêu?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 9.7,
-      "chu": "Nguồn, khoá K, R1, R2, ba ampe kế, một vôn kế."
+      "giay": 8.6,
+      "chu": "Nguồn 6 V, khoá K, R1 = 10 Ω, R2 = 15 Ω, ba ampe kế, một vôn kế."
     },
     {
       "khoa": "quan_sat",
-      "giay": 13.7,
+      "giay": 18.2,
       "chu": "Vôn kế chỉ 6,0 V. A1 chỉ 0,60 A, A2 chỉ 0,40 A, ampe kế mạch chính chỉ 1,00 A."
     },
     {
       "khoa": "rut_ra",
-      "giay": 23.9,
-      "chu": "Song song: dòng mạch chính chia cho hai nhánh, I = I1 + I2."
+      "giay": 29.0,
+      "chu": "Song song: dòng mạch chính rẽ ra hai nhánh rồi nhập lại, I = I1 + I2. Hai nhánh chung hai đầu A, B: U = U1 = U2."
     },
     {
       "khoa": "chua_noi",
-      "giay": 36.8,
+      "giay": 38.9,
       "chu": "Số liệu minh hoạ, chưa đo thật.\nĐã bỏ qua điện trở nguồn, ampe kế."
     }
   ],
   "dung_dua": {
-    "giay": 9.6,
+    "giay": 8.45,
     "cau_hoi": "Đóng K: A1 chỉ 0,60 A, A2 chỉ 0,40 A. Ampe kế mạch chính chỉ bao nhiêu?",
     "chon": [
       "A. 0,20 A",
@@ -49,5 +49,22 @@
     "dung": 3,
     "giai_thich_dung": "Ampe kế mạch chính chỉ 1,00 A = 0,60 A + 0,40 A: dòng mạch chính rẽ vào hai nhánh rồi nhập lại.",
     "giai_thich_sai": "Dòng mạch chính chia ra hai nhánh nên bằng tổng hai dòng nhánh: 0,60 + 0,40 = 1,00 A. Không phải hiệu hai dòng, không phải trung bình, cũng không bằng riêng một nhánh."
+  },
+  "cau_chot": {
+    "giay": 45.2,
+    "cau_hoi": "Vẫn nguồn 6 V, R1 = 10 Ω. Thay R2 bằng điện trở 30 Ω. Ampe kế mạch chính chỉ bao nhiêu?",
+    "chon": [
+      "A. 0,15 A",
+      "B. 0,20 A",
+      "C. 0,60 A",
+      "D. 0,80 A"
+    ],
+    "dung": 3,
+    "giai_thich": [
+      "0,15 A là cộng R1 + R2 = 40 Ω như nối tiếp. Song song thì mỗi nhánh nhận đủ 6 V: I1 = 0,60 A, I2 = 6 : 30 = 0,20 A, I = 0,80 A.",
+      "0,20 A mới là dòng nhánh R2 = 30 Ω. Ampe kế mạch chính đo tổng hai nhánh: 0,60 + 0,20 = 0,80 A.",
+      "0,60 A là dòng nhánh R1, không đổi khi thay R2. Còn phải cộng nhánh R2: 6 : 30 = 0,20 A, nên I = 0,80 A.",
+      "Mỗi nhánh nhận đủ 6 V: I1 = 6 : 10 = 0,60 A, I2 = 6 : 30 = 0,20 A. I = I1 + I2 = 0,80 A, nhỏ hơn 1,00 A lúc R2 = 15 Ω."
+    ]
   }
 }

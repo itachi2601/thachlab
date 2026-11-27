@@ -1,9 +1,9 @@
 {
   "id": "tn-l9-camung-03",
   "ten": "Nam châm quay trước cuộn dây nối hai đèn LED",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-camung-03-20261118.mp4",
-  "poster": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-camung-03-20261118.webp",
-  "tong_giay": 49.6,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-camung-03-20261127.mp4",
+  "poster": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-camung-03-20261127.webp",
+  "tong_giay": 49.8,
   "o": [
     {
       "khoa": "gia_thuyet",
@@ -13,40 +13,58 @@
     },
     {
       "khoa": "du_doan",
-      "giay": 3.4,
-      "chu": "Quay nam châm nhanh, rồi chậm dần. Hai LED sẽ thế nào?"
+      "giay": 3.2,
+      "chu": "Quay nhanh, rồi chậm dần. Hai LED sẽ thế nào?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 9.6,
+      "giay": 9.3,
       "chu": "Nam châm quay, cuộn dây, hai LED ngược chiều."
     },
     {
       "khoa": "quan_sat",
-      "giay": 21.5,
+      "giay": 19.5,
       "chu": "Quay nhanh: đỏ, xanh chớp lần lượt. Chậm dần: chớp thưa, mờ. Rất chậm: tắt."
     },
     {
       "khoa": "rut_ra",
-      "giay": 27.5,
+      "giay": 26.8,
       "chu": "Dòng điện luân phiên đổi chiều: đó là dòng điện xoay chiều."
     },
     {
       "khoa": "chua_noi",
-      "giay": 38.1,
+      "giay": 36.8,
       "chu": "Dòng lớn bao nhiêu: chưa đo. Mới thử nam châm quay."
     }
   ],
   "dung_dua": {
-    "giay": 9.4,
+    "giay": 9.0,
     "cau_hoi": "Quay nam châm nhanh, rồi chậm dần. Hai LED sẽ thế nào?",
     "chon": [
       "A. Cả hai sáng đều như lúc đầu",
       "B. Chớp thưa, mờ dần rồi tắt",
-      "C. Sáng cùng lúc và nhanh hơn"
+      "C. Sáng cùng lúc và nhanh hơn",
+      "D. Sáng mạnh dần lên"
     ],
     "dung": 1,
     "giai_thich_dung": "Quay chậm dần thì dòng cảm ứng yếu dần và đổi chiều thưa hơn, nên LED chớp thưa, mờ rồi tắt khi quá chậm.",
     "giai_thich_sai": "Nam châm quay chậm thì dòng cảm ứng nhỏ, LED không giữ nguyên độ sáng, không sáng nhanh hơn và hai LED không sáng cùng lúc; kết quả là mờ dần rồi tắt."
+  },
+  "cau_chot": {
+    "giay": 41.8,
+    "cau_hoi": "Nam châm quay đều 5 vòng mỗi giây. Trong 4 giây, LED đỏ chớp mấy lần?",
+    "chon": [
+      "A. 5 lần",
+      "B. 10 lần",
+      "C. 20 lần",
+      "D. 40 lần"
+    ],
+    "dung": 2,
+    "giai_thich": [
+      "5 là số vòng trong 1 giây. Mỗi vòng LED đỏ chớp 1 lần, 4 giây quay 5 × 4 = 20 vòng nên chớp 20 lần (theo mô hình).",
+      "10 lần ứng với 2 giây. Trong 4 giây nam châm quay 5 × 4 = 20 vòng, mỗi vòng LED đỏ chớp 1 lần: 20 lần (theo mô hình).",
+      "4 giây quay 5 × 4 = 20 vòng; mỗi vòng dòng đổi chiều 2 lần nhưng LED đỏ chỉ sáng ở một chiều, tức 1 lần mỗi vòng: 20 lần (theo mô hình).",
+      "40 là số lần dòng đổi chiều (2 lần mỗi vòng). LED đỏ chỉ sáng khi dòng đi một chiều, 1 lần mỗi vòng: 20 lần (theo mô hình)."
+    ]
   }
 }
