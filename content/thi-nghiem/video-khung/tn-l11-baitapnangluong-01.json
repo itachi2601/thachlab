@@ -51,19 +51,19 @@
   },
   "cau_chot": {
     "giay": 42.1,
-    "cau_hoi": "Cùng con lắc lò xo, bỏ lực cản. Đo được: A = 2,0 cm thì cơ năng W = 9,5 mJ. Kéo tới A = 2,5 cm rồi thả, cơ năng khoảng bao nhiêu?",
+    "cau_hoi": "Cùng con lắc lò xo, bỏ lực cản. Đo được: A = 2,0 cm thì cơ năng W = 9,5 mJ. Kéo tới A = 5,0 cm rồi thả, cơ năng khoảng bao nhiêu?",
     "chon": [
-      "A. 12 mJ",
-      "B. 15 mJ",
-      "C. 19 mJ",
-      "D. 24 mJ"
+      "A. 24 mJ",
+      "B. 48 mJ",
+      "C. 60 mJ",
+      "D. 54 mJ"
     ],
-    "dung": 1,
+    "dung": 2,
     "giai_thich": [
-      "12 mJ là nhân 9,5 với 1,25, coi W tỉ lệ A; nhưng W = ½kA² tỉ lệ A².",
-      "W tỉ lệ A²: A gấp 2,5 : 2,0 = 1,25 lần nên W gấp 1,25² ≈ 1,56 lần: 9,5 · 1,56 ≈ 15 mJ.",
-      "19 mJ là nhân đôi 9,5; A chỉ tăng 1,25 lần, W tăng 1,25² ≈ 1,56 lần chứ không gấp 2.",
-      "24 mJ là nhân 9,5 với 2,5 (lấy số đo A thay cho tỉ số 1,25); W gấp 1,25² ≈ 1,56 lần."
+      "24 mJ là nhân 9,5 với 2,5, coi W tỉ lệ A; nhưng W = ½kA² tỉ lệ A².",
+      "48 mJ là nhân 9,5 với 5 (lấy số đo A thay cho tỉ số 5,0 : 2,0 = 2,5); W gấp 2,5² ≈ 6,3 lần.",
+      "W tỉ lệ A²: A gấp 5,0 : 2,0 = 2,5 lần nên W gấp 2,5² = 6,25 lần: 9,5 · 6,25 ≈ 59 mJ (mô hình ½ · 49 · 0,05² ≈ 61 mJ), khoảng 60 mJ.",
+      "54 mJ là kéo thẳng theo bảng (đoạn 3 → 4 cm thêm 16,3 mJ, cộng thêm một lần); W tỉ lệ A² nên mỗi cm sau thêm nhiều hơn, ra khoảng 60 mJ."
     ]
   }
 }
