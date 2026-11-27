@@ -154,8 +154,9 @@ def s_do(img, d, t, sc):
 
 # ---------------- canh 3: Dap an + rut ra ----------------
 DA_F, DA_R = 1.0, 5.4
+DA_P = 3.2
 def s_dapan(img, d, t, sc):
-    pill(d, "ĐÁP ÁN: gần như bằng nhau", 260, appear(t, 0.15, 0.4))
+    pill(d, "ĐÁP ÁN: gần như bằng nhau", 260, appear(t, DA_P, 0.4))   # kiem-v1 muc 2: sau o f thu 4 (so lieu truoc ket luan)
     bench(d, 50, OX + (50 + 12.6) * S, True, rays=0.5, labels=False)
     def under(d):                                              # o f to nen xanh nhat khi tinh xong tung lan
         for i in range(5):
@@ -204,9 +205,7 @@ def s_bay(img, d, t, sc):
 END_Q, END_C = 0.2, 4.3
 EY, EO, EL, EM, ES = 1250, 110, 0, 0, 9     # truc, vat x, ti le 9 px/cm
 def s_end(img, d, t, sc):
-    k0 = appear(t, END_C, 0.5)
-    card(d, (50, 265, 1030, 425), fill=A((236, 253, 243), k0), outline=A(GREEN, k0), w=6)
-    text(d, (W / 2, 345), "Dịch vật: f tính ra không đổi", FM, DGREEN, alpha=k0)
+    # GD2 kiem-v1 muc 3: bo the xanh khong lien quan ca chot
     k1 = appear(t, END_Q, 0.5)
     card(d, (40, 455, 1040, 1560), fill=A(WHITE, k1), outline=A(ORANGE, k1), w=6)
     pw = tw(d, "THỬ NGHĨ", F(FM)) + 56
@@ -226,6 +225,7 @@ def s_end(img, d, t, sc):
             for x in (x0, x1): d.line([(x, y - 14), (x, y + 14)], fill=A(NAVY, k1), width=4)
             text(d, ((x0 + x1) / 2, y + 50), s_, FS, NAVY, alpha=k1)
         kq = 0.55 + 0.45 * math.sin(2.4 * t) ** 2
+        d.rounded_rectangle([340, 845, 740, 955], radius=24, fill=A((253, 186, 116), k1 * (kq - 0.55) / 0.45))  # nhap nhay: hinh khong dung yen
         text(d, (W / 2, 900), "f = ?", 84, ORANGE, alpha=k1 * kq)
 
 
@@ -234,7 +234,7 @@ def _cues(clip):
     h, do, da, b, e = sc["hook"], sc["do"], sc["dapan"], sc["bay"], sc["end"]
     out = [(h["t0"] + h["M"][1] - 0.2, "open"), (h["t0"] + h["T"] - 0.1, "ding")]
     out += [(do["t0"] + T0 + i * STEP + ML + MS, "tap") for i in range(5)]
-    out += [(da["t0"] + 0.1, "ding"), (b["t0"] + 0.3, "buzz"), (e["t0"] + END_Q + 0.1, "open")]
+    out += [(da["t0"] + DA_P, "ding"), (b["t0"] + 0.3, "buzz"), (e["t0"] + END_Q + 0.1, "open")]
     return out
 
 
