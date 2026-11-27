@@ -1,319 +1,222 @@
-# Clip: tn-l10-do-g-03 - Dem khung hinh: sai so dung cu khi dung dien thoai quay cham (1/11/2026)
-# So lieu lay nguyen tu content/thi-nghiem/tn-l10-do-g-03.json:
-#   cac_buoc: s = 0,500 m ; 240 khung/s -> n = 77 khung ; t = 77/240 ~ 0,321 s ; 1 khung = 1/240 ~ 0,0042 s > 0,001 s.
-#   so_lieu_mau (s = 0,500 m): 30 khung/s -> n = 10, +-1 khung 0,0333 s ; 240 -> 77, 0,0042 ; 480 -> 154, 0,0021 ;
-#                              120 -> 39, 0,0083 (chi dung lam CAU CHOT: 0,0083 va 120 chua tung hien).
-#   mo_hinh: bi roi tu do, vi tri day bi o khung k (dem tu khung bi bat dau roi) s_k = g (k/fps)^2 / 2, g = 9,8.
-#            Khung dau tien bi cham/qua moc 0,500 m: 240 -> 77 (s = 0,5045 ; khung 76: 0,4913), 30 -> 10 (khung 9: 0,441 ;
-#            khung 10: 0,544), 480 -> 154 -> khop n trong bang (kiem bang ma o cuoi file khi chay truc tiep).
-# Truc chinh: DAI KHUNG HINH + bo dem khung dong pha (khac dog2: bang + do thi s - t^2).
-# Mau: s / thuoc = BLUE, so khung n = YELLOW tren nen NAVY, fps = ORANGE, t = INK, sai so dung cu = RED, dong ho = TEAL,
-#      khung du doan = PURPLE.
-# Canh: Du doan (K10: chi cau hoi + hinh) -> Tien hanh (phat tung khung, dem 0..77) -> Ket qua (DAP AN, t = n/fps,
-#       hai khung 76|77 phong to, thang sai so) -> Doi so khung/giay (30 khung/s, chua noi duoc) -> Bay (480) -> Chot.
+# Clip: tn-l10-do-g-03 - Dem khung hinh: sai so dung cu khi dung dien thoai quay cham (1/11/2026; dung lai 27/11/2026 theo
+# cong moi viec 4: --do-chu 0 LOI, chu >= 56 px khi ve, Du doan khong nut, chot A-D ra khung web).
+# So lieu lay nguyen tu content/thi-nghiem/tn-l10-do-g-03.json (_kiem_so() doi chieu), s = 0,500 m:
+#   240 khung/s -> n = 77, +-1 khung 0,0042 s ; 30 khung/s -> n = 10, +-1 khung 0,0333 s. Dong ho cong quang chia 0,001 s.
+#   Mo hinh: n = khung dau tien bi cham/qua moc = ceil(fps . sqrt(2s/g)), g = 9,8 -> 240: 77 ; 30: 10 ; 480: 154 ; 120: 39.
+#   (Hang 60 khung/s cua kho ghi 19 nhung ceil(60 . 0,3194) = 20: lech mo hinh -> clip KHONG dung 60 khung/s; da bao.)
+# Du doan (moi, vi Quan sat/Rut ra cua bai da noi n = 77 va 1/240 > 0,001 s): 240 khung/s dem 77 khung; quay 30 khung/s
+#   dem duoc bao nhieu? -> 10 (it hon 8 lan). Khung: A 10 / B 19 / C 77 / D 616 khung.
+# Bay = hien_tuong_hay_sai thu 2: dem tu khung bi con nam yen (theo mo hinh, 5 khung thua) -> n = 82 -> t ~ 0,342 s.
+#   Khong noi tu du / bi roi muon (Cau 4 cua bai).
+# Thu nghi (= cau_chot khung web, s = 0,700 m trong mien 0,2-1,0; 240 khung/s): t = sqrt(1,4/9,8) = 0,378 s -> n = 91.
+#   Hai buoc; 91 khong hien. Khong dung 0,800 m (bai co cau 0,800 m / 0,404 s).
 from engine import *
 
-G = 9.8
-S_MOC = 0.500
-N240, N30, N480 = 77, 10, 154
+G, S = 9.8, 0.500
+N240, N30, FA, FB, EXTRA = 77, 10, 240, 30, 5
+CH_S = 0.700
+
+def nf(fps, s): return math.ceil(fps * math.sqrt(2 * s / G) - 1e-9)
+
+def _kiem_so():
+    import json
+    k = json.load(open(os.path.join(HERE, "..", "..", "content", "thi-nghiem", "tn-l10-do-g-03.json")))
+    h = {r[0]: r for r in k["so_lieu_mau"]["hang"]}
+    assert h[FA][1] == N240 == nf(FA, S) and h[FB][1] == N30 == nf(FB, S) and h[480][1] == nf(480, S) and h[120][1] == nf(120, S)
+    assert f"{1 / FA:.4f}" == "0.0042" and f"{1 / FB:.3f}" == "0.033" and f"{N240 / FA:.3f}" == "0.321" and f"{N30 / FB:.3f}" == "0.333"
+    assert f"{(N240 + EXTRA) / FA:.3f}" == "0.342"
+    ts = {p["ky_hieu"]: p for p in k["tham_so"]}; assert ts["s"]["min"] <= CH_S <= ts["s"]["max"]
+    assert nf(FA, CH_S) == 91 and round(N240 * CH_S / S) == 108 and round(N240 * (CH_S / S) ** 2) == 151
+_kiem_so()
+
+def vn(x, nd): return f"{x:.{nd}f}".replace(".", ",")
 STEEL = (110, 120, 140); STEEL_L = (200, 205, 216); WOOD = (250, 236, 196); WOOD_D = (190, 160, 100)
-FILM = (38, 38, 46); RED_D = (185, 28, 28); PURPLE_BG = (245, 243, 255); GREEN_BG = (236, 253, 243)
+DRED = (185, 28, 28); DTEAL = (15, 118, 110); EMPTY = (148, 140, 128); C_S = (37, 99, 235); C_F = (194, 65, 12)
+FILM = (38, 38, 46)
 
-def vn(x, nd):
-    return f"{x:.{nd}f}".replace(".", ",")
+def seg_bar(d, y, t, t0, t1, col, a=1.0):
+    p = clamp((t - t0) / (t1 - t0)); on = 5 - int(p * 5 + 1e-9)
+    for i in range(5):
+        x = 190 + i * 145
+        if i < on: card(d, (x, y, x + 120, y + 70), fill=A(col, a), r=18)
+        else: card(d, (x, y, x + 120, y + 70), fill=A(WHITE, a), outline=A(EMPTY, a), r=18, w=4)
 
-def s_k(k, fps):
-    """Vi tri day bi (m) o khung k, khung 0 = luc bi bat dau roi."""
-    tt = k / fps
-    return 0.5 * G * tt * tt
+def badge(d, y, s, col, a=1.0):
+    pw = tw(d, s, F(58)) + 64
+    card(d, (W / 2 - pw / 2, y, W / 2 + pw / 2, y + 82), fill=A(col, a), r=40)
+    text(d, (W / 2, y + 41), s, 58, WHITE, alpha=a)
 
-def segs(d, x, y, parts, size, anchor="m", alpha=1.0, bold=True):
-    f = F(size, bold); tot = sum(tw(d, s, f) for s, _c in parts)
-    xx = x - tot / 2 if anchor == "m" else x
-    for s, c in parts:
-        dtext(d, (xx, y), s, f, c, alpha, "lm"); xx += tw(d, s, f)
-    return tot
+def ball(d, x, y, a=1.0, r=20):
+    d.ellipse([x - r, y - r, x + r, y + r], fill=A(STEEL, a), outline=A(NAVY, a), width=2)
+    d.ellipse([x - 9, y - 10, x - 2, y - 3], fill=A(STEEL_L, a))
 
-def ball(d, x, ybot, r, alpha=1.0):
-    y = ybot - r
-    d.ellipse([x - r, y - r, x + r, y + r], fill=A(STEEL, alpha), outline=A(NAVY, alpha), width=2)
-    q = max(3, r // 3)
-    d.ellipse([x - r // 2 - q // 2, y - r // 2 - q // 2, x - r // 2 + q, y - r // 2 + q], fill=A(STEEL_L, alpha))
-
-# ---------------- dung cu (thuoc + nam cham + moc) ----------------
-SY0, SPX = 345, 800.0                       # y cua s = 0 ; px / m
+# ---------------- hai lan quay: 240 khung/s (trai) va 30 khung/s (phai) ----------------
+SY0, SPX = 345, 1560.0
 def SYp(s): return SY0 + SPX * s
-BX = 215
-def rig(d, k):
-    card(d, (40, 265, 505, 830), fill=WHITE, outline=LIGHT, w=3)
-    d.rectangle([120, SY0 - 14, 150, SYp(0.55) + 10], fill=WOOD, outline=WOOD_D, width=3)
-    for i in range(6):
-        y = SYp(i / 10)
-        d.line([(120, y), (146, y)], fill=INK, width=3)
-        text(d, (112, y), "0" if i == 0 else vn(i / 10, 1), 38, INK, anchor="rm")
-    text(d, (52, 295), "s (m)", 38, BLUE, anchor="lm")
-    d.rectangle([180, 270, 250, SY0 - 30], fill=NAVY)                       # nam cham
-    ym = SYp(S_MOC)                                                         # moc 0,500 m
-    for x0 in range(150, 300, 20): d.line([(x0, ym), (x0 + 12, ym)], fill=RED, width=4)
-    text(d, (310, ym), "mốc", 40, RED, anchor="lm")
-    ball(d, BX, SYp(min(s_k(k, 240), 0.56)), 15)
-    d.line([(252, 300), (300, 330)], fill=INK, width=3)
-    text(d, (305, 340), "nam châm", 38, INK, anchor="lm")
-
-def phone(d, n, done=False, hook=False):
-    card(d, (515, 265, 1040, 830), fill=WHITE, outline=LIGHT, w=3)
-    text(d, (777, 315), "camera", 38, INK)
-    segs(d, 777, 375, [("240", ORANGE), (" khung/s", ORANGE)], 44)
-    if hook:
-        card(d, (560, 450, 995, 610), fill=NAVY, r=18)
-        text(d, (777, 495), "đồng hồ", 38, WHITE)
-        text(d, (777, 560), "0,000 s", 48, TEAL)
-        text(d, (777, 665), "độ chia 0,001 s", 40, TEAL)
-        return
-    text(d, (777, 465), "bộ đếm", 40, INK)
-    card(d, (600, 500, 955, 650), fill=NAVY, r=18)
-    segs(d, 777, 575, [("n = ", WHITE), (str(n), YELLOW)], 64)
-    if done:
-        text(d, (777, 720), "bi chạm mốc", 40, GREEN)
+def lane(d, x0, fps, tf, n_show, strobe, bottom=1290):
+    """tf: thoi gian roi that (s) da troi; n_show: so hien o bo dem (None -> '?')."""
+    card(d, (x0, 215, x0 + 490, bottom), fill=WHITE, outline=LIGHT, w=3)
+    text(d, (x0 + 245, 262), f"{fps} khung/s", 58, C_F)
+    rx = x0 + 110
+    d.rectangle([rx, SY0 - 6, rx + 28, SYp(S) + 8], fill=WOOD, outline=WOOD_D, width=3)
+    for i in range(6): d.line([(rx, SYp(i / 10)), (rx + 24, SYp(i / 10))], fill=INK, width=3)
+    text(d, (rx - 12, SY0), "0", 56, C_S, anchor="rm"); text(d, (rx - 12, SYp(S)), "0,5", 56, C_S, anchor="rm")
+    for xx in range(rx + 40, x0 + 470, 26): d.line([(xx, SYp(S)), (xx + 13, SYp(S))], fill=RED, width=4)
+    text(d, (x0 + 470, SYp(S) - 45), "s (m)", 56, C_S, anchor="rm")
+    bx = x0 + 300
+    if strobe:
+        k = 0
+        while k / fps <= tf + 1e-9:
+            s = 0.5 * G * (k / fps) ** 2
+            if SYp(s) < bottom - 150: ball(d, bx, SYp(s) - 20, 1.0 if abs(k / fps - tf) < 1 / fps else 0.45)
+            k += 1
     else:
-        text(d, (777, 720), "khung 0: bi bắt đầu rời", 40, MUTED)
+        s = min(0.5 * G * tf * tf, 0.53); ball(d, bx, SYp(s) - 20)
+    card(d, (x0 + 20, bottom - 125, x0 + 470, bottom - 20), fill=NAVY, r=24)
+    text(d, (x0 + 245, bottom - 72), "n = " + ("?" if n_show is None else str(n_show)) + " khung", 60, YELLOW)
 
-# ---------------- dai khung hinh (phim) ----------------
-TW, TGAP, TX0, TY0 = 176, 14, 70, 1000      # o khung: rong, khe, x dau, y dinh (s = 0 o TY0 + 20)
-def strip(d, k, alpha=1.0):
-    c = lambda col: A(col, alpha)
-    card(d, (40, 880, 1040, 1520), fill=c(FILM), r=20)
-    for x0 in range(60, 1030, 46):                                         # lo phim
-        d.rounded_rectangle([x0, 896, x0 + 22, 912], radius=4, fill=c(BG))
-        d.rounded_rectangle([x0, 1488, x0 + 22, 1504], radius=4, fill=c(BG))
-    first = k - 4
-    for j in range(5):
-        kk = first + j
-        x0 = TX0 + j * (TW + TGAP); x1 = x0 + TW
-        if kk < 0:
-            continue
-        cur = (j == 4)
-        d.rectangle([x0, TY0, x1, TY0 + 460], fill=c(WHITE), outline=c(YELLOW if cur else GRAY), width=5 if cur else 2)
-        text(d, ((x0 + x1) / 2, 950), f"khung {kk}", 40, YELLOW if cur else WHITE, alpha=alpha)
-        ys = lambda s: TY0 + 20 + SPX * s                                    # cung ti le 800 px/m voi thuoc lon
-        d.rectangle([x0 + 12, TY0 + 10, x0 + 30, ys(0.55)], fill=c(WOOD))
-        for i in range(6):
-            d.line([(x0 + 12, ys(i / 10)), (x0 + 30, ys(i / 10))], fill=c(INK), width=2)
-        d.line([(x0 + 34, ys(S_MOC)), (x1 - 6, ys(S_MOC))], fill=c(RED), width=3)
-        ball(d, (x0 + x1) / 2 + 10, ys(min(s_k(kk, 240), 0.56)), 14, alpha)
-
-# ---------------- hai khung lien tiep phong to (cung cua so 0,40-0,58 m) ----------------
-ZS0, ZS1 = 0.40, 0.58
-def zoom_pair(d, x0, y0, fps, k2, alpha=1.0, h=440, tw_=160, head=True):
-    """Hai o khung k2-1 | k2 (nhan o tren), cua so s = 0,40..0,58 m (cao h px); ten fps o duoi. Tra ve ham y(s)."""
-    c = lambda col: A(col, alpha)
-    ys = lambda s: y0 + 50 + h * (s - ZS0) / (ZS1 - ZS0)
-    if head:
-        segs(d, x0 + 90 + tw_, y0 + h + 95, [(str(fps), ORANGE), (" khung/s", ORANGE)], 40, alpha=alpha)
-    for i in range(4):                                                     # vach 0,40 .. 0,55
-        s = 0.40 + 0.05 * i
-        text(d, (x0 + 62, ys(s)), vn(s, 2), 36, INK, anchor="rm", alpha=alpha)
-    for j, kk in enumerate((k2 - 1, k2)):
-        bx0 = x0 + 75 + j * (tw_ + 30); bx1 = bx0 + tw_
-        d.rectangle([bx0, y0 + 50, bx1, y0 + 50 + h], fill=c(WHITE), outline=c(GRAY), width=3)
-        d.rectangle([bx0 + 6, y0 + 50, bx0 + 22, y0 + 50 + h], fill=c(WOOD))
-        for i in range(4):
-            d.line([(bx0 + 6, ys(0.40 + 0.05 * i)), (bx0 + 26, ys(0.40 + 0.05 * i))], fill=c(INK), width=2)
-        d.line([(bx0 + 26, ys(S_MOC)), (bx1, ys(S_MOC))], fill=c(RED), width=4)
-        ball(d, (bx0 + bx1) / 2 + 10, ys(s_k(kk, fps)), 14, alpha)
-        text(d, ((bx0 + bx1) / 2, y0 + 20), f"khung {kk}", 40, INK, alpha=alpha)
-    return ys
-
-# ---------------- thang sai so dung cu (truc co dinh tu canh Ket qua) ----------------
-BAR0, BSC = 390, 13000.0                     # x goc thanh ; px / s
-ROWS = [("đồng hồ", 0.001, TEAL), ("240 khung/s", 0.0042, RED), ("30 khung/s", 0.0333, RED), ("480 khung/s", 0.0021, RED)]
-def chart(d, shown, grow=None, hi=None, alpha=1.0, dim=()):
-    """shown: so hang da hien; grow: (hang, 0..1) dang moc."""
-    c = lambda col: A(col, alpha)
-    card(d, (40, 1210, 1040, 1585), fill=c(WHITE), outline=c(LIGHT), w=3)
-    text(d, (W / 2, 1255), "Sai số dụng cụ (s)", 40, INK, alpha=alpha)
-    d.line([(BAR0, 1290), (BAR0, 1570)], fill=c(INK), width=3)
-    slot = 0
-    for i, (lb, v, col) in enumerate(ROWS):
-        if i in dim: continue                                              # canh bay: chi giu dong ho + 480, xep sat nhau
-        k = 1.0 if i < shown else (grow[1] if grow and grow[0] == i else 0.0)
-        y = 1325 + slot * 70; slot += 1
-        if k <= 0: continue
-        if hi == i:
-            d.rounded_rectangle([50, y - 30, 1030, y + 30], radius=14, fill=c((254, 242, 242)))
-        text(d, (BAR0 - 18, y), lb, 38, INK, anchor="rm", alpha=alpha)
-        L = BSC * v * ease(k)
-        if L > 2:
-            d.rectangle([BAR0, y - 18, BAR0 + L, y + 18], fill=c(col))
-        if k >= 1:
-            text(d, (BAR0 + L + 16, y), vn(v, 3 if v == 0.001 else 4) + " s", 38, col, anchor="lm", alpha=alpha)
+TFALL = math.sqrt(2 * S / G)
+SLOW, RUN0 = 15.0, 0.4
+def counts(tf): return min(N240, math.floor(tf * FA)), min(N30, math.floor(tf * FB))
 
 # ---------------- canh 1: Du doan ----------------
 def s_hook(img, d, t, sc):
     M = sc["M"]
-    rig(d, 0)
-    phone(d, 0, hook=True)
+    lane(d, 40, FA, TFALL, N240, False); lane(d, 550, FB, 0.0, None, True)
     a = appear(t, M[1] - 0.2, 0.5)
     if a <= 0: return
-    y0 = 880 + (1 - a) * 40
-    card(d, (50, y0, 1030, y0 + 690), fill=A(WHITE, a), outline=A(PURPLE, a), w=6)
-    pw = tw(d, "DỰ ĐOÁN", F(36)) + 52
-    card(d, (W / 2 - pw / 2, y0 + 30, W / 2 + pw / 2, y0 + 92), fill=A(PURPLE, a), r=31)
-    text(d, (W / 2, y0 + 61), "DỰ ĐOÁN", 36, WHITE, alpha=a)
-    card(d, (110, y0 + 125, 470, y0 + 345), fill=A(FILM, a), r=14)          # hai o phim nho: "khung" la gi
-    for j, kk in enumerate((40, 41)):
-        bx0 = 135 + j * 170; bx1 = bx0 + 140
-        d.rectangle([bx0, y0 + 145, bx1, y0 + 325], fill=A(WHITE, a))
-        d.rectangle([bx0 + 8, y0 + 150, bx0 + 22, y0 + 320], fill=A(WOOD, a))
-        ball(d, (bx0 + bx1) / 2 + 8, y0 + 165 + 300 * s_k(kk, 240), 12, a)
-    text(d, (745, y0 + 200), "khung =", 44, INK, alpha=a)
-    text(d, (745, y0 + 265), "một ảnh của video", 44, INK, alpha=a)
-    segs(d, W / 2, y0 + 425, [("240 khung/s", ORANGE), (": thời gian giữa", INK)], 48, alpha=a)
-    segs(d, W / 2, y0 + 495, [("2 khung so với ", INK), ("0,001 s", TEAL), ("?", INK)], 48, alpha=a)
-    tc, tend = M[1] + 0.8, sc["T"] - 0.6
-    if t > tc:
-        p = clamp((t - tc) / (tend - tc))
-        d.rounded_rectangle([140, y0 + 590, 940, y0 + 604], radius=7, fill=A(LIGHT, a))
-        d.rounded_rectangle([140, y0 + 590, 140 + 800 * (1 - p), y0 + 604], radius=7, fill=A(PURPLE, a))
+    y0 = 620 + (1 - a) * 30
+    card(d, (40, y0, 1040, y0 + 470), fill=A(WHITE, a), outline=A(PURPLE, a), w=6)
+    badge(d, y0 + 26, "DỰ ĐOÁN", PURPLE, a)
+    text(d, (W / 2, y0 + 175), "240 khung/s: đếm được 77.", 62, INK, alpha=a)
+    text(d, (W / 2, y0 + 265), "30 khung/s: bao nhiêu khung?", 62, PURPLE, alpha=a)
+    seg_bar(d, y0 + 350, t, M[1] + 0.4, sc["T"] - 0.3, PURPLE, a)
 
-# ---------------- canh 2: Tien hanh (phat tung khung, dem 0..77) ----------------
-P0 = 0.6
-def p1(sc): return sc["M"][1] - 0.05            # khung 77 hien dung luc phu de "Khung 77" len
-def frame_k(t, sc):
-    """So khung dang chieu: 0..77, cham dan ve cuoi de dem kip. Moi thu (bi, bo dem, dai phim) doc tu day."""
-    if t < P0: return 0
-    p = clamp((t - P0) / (p1(sc) - P0))
-    if p >= 1: return N240
-    return min(N240 - 1, int(N240 * (1 - (1 - p) ** 2)))
-
+# ---------------- canh 2: Tien hanh (chieu cham x10, hai lan song song) ----------------
 def s_do(img, d, t, sc):
-    k = frame_k(t, sc)
-    rig(d, k)
-    phone(d, k, done=(k == N240))
-    strip(d, k)
+    tf = clamp((t - RUN0) / SLOW, 0, TFALL)
+    na, nb = counts(tf)
+    if tf >= TFALL - 1e-9: na, nb = N240, N30
+    lane(d, 40, FA, tf, na, False); lane(d, 550, FB, tf, nb, True)
+    card(d, (40, 1310, 1040, 1430), fill=NAVY, r=30)
+    text(d, (W / 2, 1370), "chiếu chậm ×15", 58, YELLOW)
 
-# ---------------- canh 3: Ket qua ----------------
-def s_kq(img, d, t, sc):
+# ---------------- canh 3: Dap an ----------------
+def s_dapan(img, d, t, sc):
+    M = sc["M"]; ka = 1.0
+    for x0, fps, n in ((40, FA, N240), (550, FB, N30)):
+        card(d, (x0, 600, x0 + 490, 1000), fill=NAVY, r=30)
+        text(d, (x0 + 245, 710), f"{fps} khung/s", 58, ORANGE)
+        text(d, (x0 + 245, 860), f"n = {n} khung", 64, YELLOW)
+    text(d, (540, 1140), "240 : 30 = 8  →  77 : 8 ≈ 10", 58, C_F)
+    card(d, (40, 215, 1040, 560), fill=A((236, 253, 243), ka), outline=A(GREEN, ka), w=6)
+    badge(d, 240, "ĐÁP ÁN", DTEAL, ka)
+    text(d, (W / 2, 400), "10 khung,", 64, DTEAL, alpha=ka)
+    text(d, (W / 2, 485), "ít hơn 8 lần", 64, DTEAL, alpha=ka)
+    k2 = appear(t, M[1] + 0.1, 0.45)
+    card(d, (40, 1310, 1040, 1590), fill=A(WHITE, k2), outline=A(C_F, k2), w=5)
+    text(d, (W / 2, 1390), "t = 77 : 240 ≈ 0,321 s", 60, INK, alpha=k2)
+    text(d, (W / 2, 1500), "t = 10 : 30 ≈ 0,333 s", 60, INK, alpha=k2)
+
+# ---------------- canh 4: Rut ra (lech 1 khung = 1/fps) ----------------
+BARS = [("đồng hồ", 0.001, "0,001 s", DTEAL), ("240 khung/s", 1 / FA, "0,0042 s", C_F), ("30 khung/s", 1 / FB, "0,033 s", DRED)]
+def s_rutra(img, d, t, sc):
     M = sc["M"]
-    ka = appear(t, 0.15, 0.5)
-    lb = "ĐÁP ÁN · lớn hơn 0,001 s"
-    pw = tw(d, lb, F(40)) + 56
-    card(d, (W / 2 - pw / 2, 250, W / 2 + pw / 2, 318), fill=A(NAVY, ka), r=34)
-    text(d, (W / 2, 284), lb, 40, WHITE, alpha=ka)
-    card(d, (40, 345, 1040, 610), fill=WHITE, outline=LIGHT, w=3)
-    k1 = appear(t, M[0] + 0.3, 0.5)
-    segs(d, W / 2, 405, [("t", INK), (" = ", INK), ("n", NAVY), (" / ", INK), ("fps", ORANGE)], 52, alpha=k1)
-    segs(d, W / 2, 470, [("n", NAVY), (": số khung · ", MUTED), ("fps", ORANGE), (": khung mỗi giây", MUTED)], 40, alpha=k1)
-    segs(d, W / 2, 555, [("t", INK), (" = ", INK), ("77", NAVY), (" / ", INK), ("240", ORANGE), (" ≈ 0,321 s", INK)], 52,
-         alpha=appear(t, M[0] + 1.7, 0.5))
-    kz = appear(t, M[1] - 0.1, 0.5)
-    if kz > 0:
-        card(d, (40, 635, 1040, 1185), fill=A(WHITE, kz), outline=A(LIGHT, kz), w=3)
-        zoom_pair(d, 50, 640, 240, N240, alpha=kz, head=False)
-        k2 = appear(t, M[1] + 0.9, 0.5)
-        text(d, (765, 760), "t lệch tới", 40, INK, alpha=k2)
-        segs(d, 765, 825, [("1 khung = 1/fps", RED)], 44, alpha=k2)
-        k3 = appear(t, M[1] + 2.0, 0.5)
-        d.line([(590, 880), (940, 880)], fill=A(LIGHT, k3), width=3)
-        segs(d, 765, 945, [("= 1/", RED), ("240", ORANGE), (" s", RED)], 44, alpha=k3)
-        text(d, (765, 1030), "≈ 0,0042 s", 52, RED, alpha=k3)
-    kc = appear(t, M[2] - 0.1, 0.5)
-    if kc > 0:
-        chart(d, 1, grow=(1, clamp((t - M[2] - 0.8) / 0.6)), alpha=kc)
+    card(d, (40, 215, 1040, 560), fill=WHITE, outline=LIGHT, w=3)
+    text(d, (W / 2, 330), "Lệch 1 khung", 60, INK)
+    text(d, (W / 2, 440), "= 1 : (số khung/s)", 60, INK)
+    card(d, (40, 580, 1040, 1590), fill=WHITE, outline=LIGHT, w=3)
+    for i, (lab, v, vs, col) in enumerate(BARS):
+        y = 790 + i * 260; k = ease(clamp((t - 1.4) / 0.8)) if i < 2 else ease(clamp((t - M[1] - 0.1) / 0.8))
+        text(d, (90, y), lab, 58, col, anchor="lm")
+        L = max(14, 860 * v / (1 / FB)) * k
+        if L > 0: d.rounded_rectangle([90, y + 50, 90 + L, y + 110], radius=12, fill=col)
+        text(d, (90 + max(L, 14) + 20 if L < 600 else 90 + L - 20, y + 80), vs, 58, col if L < 600 else WHITE,
+             anchor="lm" if L < 600 else "rm", alpha=1.0 if k > 0.95 else 0.0)
 
-# ---------------- canh 4: Doi so khung/giay ----------------
-def s_fps(img, d, t, sc):
-    M = sc["M"]
-    card(d, (40, 265, 1040, 1185), fill=WHITE, outline=LIGHT, w=3)
-    zoom_pair(d, 50, 300, 240, N240)
-    text(d, (290, 960), "1 khung ≈ 0,0042 s", 38, RED)
-    k2 = appear(t, 0.3, 0.5)
-    zoom_pair(d, 545, 300, 30, N30, alpha=k2)
-    d.line([(525, 300), (525, 1000)], fill=A(LIGHT, k2), width=3)
-    k3 = appear(t, M[0] + 1.4, 0.5)
-    text(d, (785, 960), "1 khung ≈ 0,0333 s", 38, RED, alpha=k3)
-    chart(d, 2, grow=(2, clamp((t - M[0] - 2.0) / 0.7)), hi=2 if t > M[0] + 2.0 else None)
-    kc = appear(t, M[1] - 0.1, 0.45)
-    if kc > 0:
-        y0 = 290 + (1 - kc) * 30
-        card(d, (28, y0 - 10, 1052, y0 + 620), fill=A(WHITE, kc), outline=A(NAVY, kc), w=6)
-        text(d, (W / 2, y0 + 90), "Chưa nói được", 46, NAVY, alpha=kc)
-        kk = kc * appear(t, M[1] + 0.3, 0.4)
-        card(d, (80, y0 + 190, 1000, y0 + 560), fill=A(WHITE, kk), outline=A(RED_D, kk), r=24, w=4)
-        text(d, (W / 2, y0 + 340), "Bi chạm mốc lúc nào", 48, RED_D, alpha=kk)
-        text(d, (W / 2, y0 + 410), "giữa khung 76 và 77?", 48, RED_D, alpha=kk)
+# ---------------- canh 5: Bay (dem tu luc bi nam yen) ----------------
+def strip(d, y, n_still, hi, col):
+    """Dai 8 khung: n_still khung dau bi nam yen, sau do roi."""
+    for i in range(8):
+        x = 70 + i * 120
+        card(d, (x, y, x + 105, y + 200), fill=FILM, r=10)
+        d.rectangle([x + 10, y + 12, x + 95, y + 188], fill=(235, 238, 244))
+        k = max(0, i - n_still + 1) if i >= n_still else 0
+        by = y + 45 + min(130, 9 * k * k)
+        ball(d, x + 52, by, r=16)
+        if i < hi: d.rounded_rectangle([x - 4, y - 4, x + 109, y + 204], radius=12, outline=col, width=6)
 
-# ---------------- canh 5: Bay ----------------
 def s_bay(img, d, t, sc):
-    a1 = appear(t, 0.2, 0.45)
-    card(d, (40, 265, 1040, 1185), fill=A(WHITE, a1), outline=A(RED, a1), w=6)
-    pw = tw(d, "BẪY", F(38)) + 52
-    card(d, (W / 2 - pw / 2, 295, W / 2 + pw / 2, 359), fill=A(RED, a1), r=32)
-    text(d, (W / 2, 327), "BẪY", 38, WHITE, alpha=a1)
-    ks = clamp((t - 1.0) / 0.4)
-    text(d, (W / 2, 500), "“480 khung/s: hết sai số”", 54, mix(INK, MUTED, ks), alpha=a1)
-    if ks > 0:
-        pw2 = tw(d, "SAI", F(40)) + 48
-        card(d, (W / 2 - pw2 / 2, 600, W / 2 + pw2 / 2, 664), fill=A(RED, ks), r=32)
-        text(d, (W / 2, 632), "SAI", 40, WHITE, alpha=ks)
-        card(d, (90, 720, 990, 1140), fill=A(GREEN_BG, ks), r=24)
-        segs(d, W / 2, 830, [("1 khung ≈ ", RED), ("0,0021 s", RED)], 52, alpha=ks)
-        segs(d, W / 2, 1000, [("vẫn lớn hơn ", INK), ("0,001 s", TEAL)], 50, alpha=ks)
-    chart(d, 3, grow=(3, ks), hi=3 if ks > 0 else None, dim=(1, 2))
+    M = sc["M"]; ok = t >= M[1] - 0.1
+    card(d, (40, 215, 1040, 560), fill=WHITE, outline=DRED, w=6)
+    text(d, (W / 2, 300), "✗ Tính cả lúc nằm yên:", 60, DRED)
+    text(d, (W / 2, 420), "n = 82 → t ≈ 0,342 s", 60, DRED)
+    card(d, (40, 580, 1040, 1290), fill=WHITE, outline=LIGHT, w=3)
+    strip(d, 760, EXTRA, 0 if ok else EXTRA, DRED)
+    if not ok: text(d, (W / 2, 1060), "5 khung thừa", 58, DRED)
+    if ok:
+        x = 70 + EXTRA * 120; wpx = 5 + int(4 * (0.5 + 0.5 * math.sin(t * 5)))
+        d.rounded_rectangle([x - 4, 756, x + 109, 964], radius=12, outline=DTEAL, width=wpx)
+        arrow(d, (x + 52, 1100), (x + 52, 990), DTEAL, w=7, head=22)
+        text(d, (x + 52, 1185), "khung bi rời", 56, DTEAL)
+        card(d, (40, 1310, 1040, 1590), fill=WHITE, outline=DTEAL, w=6)
+        text(d, (W / 2, 1395), "✓ Từ khung bi rời:", 60, DTEAL)
+        text(d, (W / 2, 1500), "n = 77 → t ≈ 0,321 s", 60, DTEAL)
 
-# ---------------- canh 6: Chot + cau hoi tu nho lai ----------------
+# ---------------- canh 6: Chua noi duoc ----------------
+def s_gioihan(img, d, t, sc):
+    lane(d, 40, FA, (t * 0.12) % TFALL, None, False)
+    card(d, (550, 215, 1040, 1290), fill=WHITE, outline=NAVY, w=6)
+    text(d, (795, 320), "Chưa nói được", 58, NAVY)
+    text(d, (795, 520), "Mới quay ở", 58, INK); text(d, (795, 610), "s = 0,500 m.", 58, C_S)
+    text(d, (795, 820), "Độ cao khác:", 58, INK); text(d, (795, 910), "cùng g?", 62, DTEAL, alpha=appear(t, 1.6, 0.4))
+
+# ---------------- canh 7: THU NGHI (= cau_chot khung web) ----------------
 def s_end(img, d, t, sc):
-    M = sc["M"]
-    def body(d, t, k):
-        ctext(d, 880, "Lệch 1 khung ≈ 0,0083 s.\nĐiện thoại quay bao nhiêu khung/s?", 46, INK,
-              maxw=900, alpha=appear(t, M[0] + 0.4, 0.5))
-        kh = appear(t, M[0] + 2.9, 0.5)
-        if kh <= 0: return
-        card(d, (110, 1100, 970, 1350), fill=A((255, 247, 237), kh), outline=A(ORANGE, kh), r=24, w=3)
-        ctext(d, 1160, "Gợi ý", 40, INK, alpha=kh)
-        ctext(d, 1265, "Nhìn lại cảnh Kết quả", 42, INK, alpha=kh)
-    chot_hoi(d, t, sc, "Đếm khung:\nt lệch tới 1 khung.", "", body=body)
+    k = appear(t, 0.15, 0.4)
+    card(d, (40, 210, 1040, 1585), fill=A(WHITE, k), outline=A(ORANGE, k), w=6)
+    badge(d, 235, "THỬ NGHĨ", ORANGE, k)
+    text(d, (W / 2, 345), "s = 0,700 m · g ≈ 9,8 m/s²", 58, INK, alpha=k)
+    text(d, (W / 2, 435), "quay 240 khung/s.", 58, C_F, alpha=k)
+    text(d, (W / 2, 535), "Khung bi rời → khung chạm mốc:", 56, INK, alpha=k)
+    text(d, (W / 2, 630), "bao nhiêu khung?", 62, ORANGE, alpha=k)
+    hi = int(t * 2.5) % 6
+    for i in range(6):
+        x = 135 + i * 140
+        card(d, (x, 760, x + 120, 990), fill=A(FILM, k), r=10)
+        d.rectangle([x + 12, 774, x + 108, 976], fill=A((235, 238, 244), k))
+        ball(d, x + 60, 800 + 150 * (i / 5) ** 2, a=k, r=16)
+        if i == hi: d.rounded_rectangle([x - 4, 756, x + 124, 994], radius=12, outline=A(ORANGE, k), width=5)
+    text(d, (W / 2, 1090), "n = ? khung", 62, NAVY, alpha=k)
+    seg_bar(d, 1290, t, 1.0, sc["T"] - 0.2, ORANGE, k)
 
 def _cues(clip):
     sc = {s["key"]: s for s in clip["scenes"]}
-    h, do, kq, b, e = sc["hook"], sc["do"], sc["kq"], sc["bay"], sc["end"]
-    return [(h["t0"] + h["M"][1] - 0.2, "open"), (do["t0"] + P0, "tap"), (do["t0"] + p1(do), "tap"),
-            (kq["t0"] + 0.15, "ding"), (b["t0"] + 1.0, "buzz"), (e["t0"] + e["M"][0] + 0.1, "open")]
+    h, do, da, b, e = (sc[k] for k in ("hook", "do", "dapan", "bay", "end"))
+    cs = [(h["t0"] + h["M"][1] - 0.2, "open"), (h["t0"] + h["T"] - 0.6, "ding")]
+    cs += [(do["t0"] + RUN0 + k / FB * SLOW, "tap") for k in range(1, N30) if k % 3 == 0]
+    cs += [(da["t0"] + 0.15, "ding"), (b["t0"] + 0.4, "buzz"), (e["t0"] + 0.15, "open")]
+    return cs
 
 CLIP = dict(id="tn-l10-do-g-03", header="VẬT LÍ 10 · THÍ NGHIỆM", footer="Thực hành đo gia tốc rơi tự do · thachlab.id.vn",
             cues=_cues, scenes=[
- dict(key="hook", title="Đếm khung hình để đo t", draw=s_hook, tail=0.6, caps=[
-   ("Quay chậm cảnh bi rơi 0,500 m.", 3.0),
-   ("Dừng video, chọn câu trả lời.", 5.8)]),
- dict(key="do", title="Tiến hành", draw=s_do, tail=0.4, caps=[
-   ("Phát từng khung, bộ đếm tăng dần.", 4.6),
-   ("Khung 77: bi chạm mốc.", 3.0)]),
- dict(key="kq", title="Kết quả", draw=s_kq, tail=0.4, caps=[
-   ("Đổi số khung ra thời gian.", 3.3),
-   ("Bi chạm mốc giữa hai khung.", 3.3),
-   ("So với độ chia của đồng hồ.", 3.3)]),
- dict(key="fps", title="Đổi số khung mỗi giây", draw=s_fps, tail=0.4, caps=[
-   ("Quay 30 khung/s thì sao?", 3.3),
-   ("Còn một điều chưa biết.", 3.7)]),
- dict(key="bay", title="Bẫy thường gặp", draw=s_bay, tail=0.4, caps=[
-   ("Quay thật chậm là hết sai số?", 4.7)]),
- dict(key="end", title="Chốt lại", draw=s_end, tail=0.9, caps=[
-   ("Dừng video, tự trả lời.", 5.4)]),
+ dict(key="hook", title="Đếm khung hình", draw=s_hook, tail=0.3, caps=[
+   ("Quay chậm, đếm khung hình.", 3.0),
+   ("Dừng lại, tự đoán.", 5.4)]),
+ dict(key="do", title="Tiến hành", draw=s_do, tail=0.3, caps=[
+   ("Cùng lần thả, hai cách quay.", 3.4),
+   ("Mỗi khung: một ảnh của bi.", 3.4)]),
+ dict(key="dapan", title="Kết quả", draw=s_dapan, tail=0.3, caps=[
+   ("Ít khung hơn tám lần.", 3.2),
+   ("t bằng số khung chia khung/s.", 3.4)]),
+ dict(key="rutra", title="Rút ra", draw=s_rutra, tail=0.3, caps=[
+   ("Lệch một khung là bao lâu?", 3.4),
+   ("Quay thưa, sai số lớn.", 3.6)]),
+ dict(key="bay", title="Bẫy: đếm từ lúc bi nằm yên", draw=s_bay, tail=0.3, caps=[
+   ("Đếm từ lúc bi nằm yên?", 3.4),
+   ("Đếm từ khung bi rời.", 3.4)]),
+ dict(key="gioihan", title="Giới hạn", draw=s_gioihan, tail=0.3, caps=[
+   ("Mới quay ở một độ cao.", 3.5)]),
+ dict(key="end", title="Chốt lại", draw=s_end, tail=0.3, caps=[
+   ("Thử tính, rồi chọn đáp án.", 6.0)]),
 ])
-
-if __name__ == "__main__":                      # tu kiem: n khop bang, bo dem dong pha voi bi/dai phim
-    import copy
-    for fps, n in ((30, N30), (240, N240), (480, N480)):
-        kk = next(k for k in range(1000) if s_k(k, fps) >= S_MOC)
-        print(fps, "khung/s: khung dau cham moc =", kk, "kho", n, "OK" if kk == n else "LECH")
-    print("240: s76 =", round(s_k(76, 240), 4), " s77 =", round(s_k(77, 240), 4), " t =", round(77 / 240, 4))
-    print("30 : s9 =", round(s_k(9, 30), 4), " s10 =", round(s_k(10, 30), 4))
-    c = copy.deepcopy(CLIP); build(c); sc = {s["key"]: s for s in c["scenes"]}["do"]
-    t = 0.0; prev = -1; bad = 0
-    while t < sc["T"]:
-        k = frame_k(t, sc)
-        if k < prev: bad += 1
-        if (k == N240) != (t >= p1(sc)): bad += 1
-        prev = k; t += 0.05
-    print("dem khung: don dieu & khung 77 dung luc phu de 2:", "OK" if bad == 0 else f"LOI {bad}",
-          " p1 =", round(p1(sc), 2), " M =", [round(m, 2) for m in sc["M"]])
