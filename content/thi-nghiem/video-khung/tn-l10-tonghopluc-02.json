@@ -1,52 +1,70 @@
 {
   "id": "tn-l10-tonghopluc-02",
-  "ten": "Quả nặng trên ván nghiêng: lực kế kéo dọc ván chỉ bao nhiêu?",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-tonghopluc-02-20261030-2.mp4",
-  "tong_giay": 48.0,
+  "ten": "Quả nặng trên ván nghiêng: nâng ván dốc hơn, lực kế đổi thế nào?",
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-tonghopluc-02-20261127.mp4",
+  "poster": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-tonghopluc-02-20261127.webp",
+  "tong_giay": 48.4,
   "o": [
     {
       "khoa": "gia_thuyet",
       "giay": 0,
-      "chu": "Lực kế dọc ván chỉ cân bằng P·sin α, nhỏ hơn P.",
+      "chu": "Lực kế dọc ván chỉ cân bằng phần dọc ván của trọng lực, P·sin α, nhỏ hơn P.",
       "kiem": "Giữ vật yên trên ván nghiêng cần lực kéo bao nhiêu?"
     },
     {
       "khoa": "du_doan",
       "giay": 4.2,
-      "chu": "Ván trơn nghiêng 30°, quả nặng 2,0 N. Lực kế kéo dọc ván chỉ bao nhiêu?"
+      "chu": "Nâng ván từ 15° lên 45°: số chỉ lực kế thế nào so với P = 2,0 N?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 11.2,
-      "chu": "Quả nặng 2,0 N trên ván trơn; lực kế kéo song song ván, đọc ở 15°, 30°, 45°."
+      "giay": 10.1,
+      "chu": "Quả nặng, ván trơn, lực kế đặt dọc ván."
     },
     {
       "khoa": "quan_sat",
-      "giay": 18.8,
+      "giay": 18.6,
       "chu": "Ở 15°, 30°, 45° lực kế chỉ 0,5; 1,0; 1,4 N, đều nhỏ hơn P = 2,0 N."
     },
     {
       "khoa": "rut_ra",
-      "giay": 25.6,
+      "giay": 26.0,
       "chu": "Lực kế cân bằng thành phần dọc ván của trọng lực: F = P·sin α. Thành phần còn lại ép vuông góc vào ván."
     },
     {
       "khoa": "chua_noi",
-      "giay": 34.7,
+      "giay": 37.7,
       "chu": "Ván nhám, có ma sát thì lực kế chỉ bao nhiêu? Thí nghiệm chưa đo; xét ở bài Ma sát."
     }
   ],
   "dung_dua": {
-    "giay": 10.85,
-    "cau_hoi": "Ván trơn nghiêng 30°, quả nặng 2,0 N. Lực kế kéo dọc ván giữ quả nặng đứng yên chỉ bao nhiêu?",
+    "giay": 9.95,
+    "cau_hoi": "Quả nặng P = 2,0 N trên ván trơn, lực kế kéo dọc ván giữ vật đứng yên. Nâng ván từ 15° lên 45°, số chỉ lực kế thế nào so với P?",
+    "chon": [
+      "A. Tăng dần, nhưng luôn nhỏ hơn P",
+      "B. Giảm dần khi ván dốc hơn",
+      "C. Không đổi, luôn bằng P",
+      "D. Tăng dần, vượt quá P ở 45°"
+    ],
+    "dung": 0,
+    "giai_thich_dung": "Lực kế chỉ 0,5; 1,0; 1,4 N ở 15°, 30°, 45°: dốc hơn thì phần kéo vật trượt xuống lớn hơn, nhưng ván vẫn đỡ phần ép vuông góc nên số chỉ luôn nhỏ hơn P = 2,0 N.",
+    "giai_thich_sai": "Lực kế không giữ cả trọng lượng: ván đỡ phần ép vuông góc. Ván càng dốc, phần dọc ván của trọng lực càng lớn. Xem bảng ở đoạn Tiến hành."
+  },
+  "cau_chot": {
+    "giay": 43.6,
+    "cau_hoi": "Ván trơn nghiêng 15°, quả nặng P = 2,0 N nằm yên. Vật ép vuông góc lên ván một lực khoảng bao nhiêu?",
     "chon": [
       "A. Khoảng 0,5 N",
-      "B. Khoảng 1,0 N",
-      "C. Khoảng 1,7 N",
+      "B. Khoảng 1,5 N",
+      "C. Khoảng 1,9 N",
       "D. Khoảng 2,0 N"
     ],
-    "dung": 1,
-    "giai_thich_dung": "Lực kế chỉ cân bằng thành phần dọc ván của trọng lực: P·sin 30° = 2,0 × 0,5 = 1,0 N.",
-    "giai_thich_sai": "Lực kế không giữ cả trọng lượng: ván đỡ phần ép vuông góc. Thành phần dọc ván là cạnh đối góc α nên dùng sin, không dùng cos."
+    "dung": 2,
+    "giai_thich": [
+      "0,5 N là phần dọc ván P·sin 15° (số lực kế chỉ). Phần ép vuông góc là P·cos 15° = 2,0 × 0,966 ≈ 1,9 N.",
+      "Số này ra khi lấy 2,0 − 0,5: hai thành phần vuông góc nhau nên không trừ số được. Py = P·cos 15° ≈ 1,9 N (hoặc √(2,0² − 0,52²) ≈ 1,9 N).",
+      "Góc giữa P và phương vuông góc với ván bằng góc nghiêng 15°, nên phần ép là cạnh kề: Py = P·cos 15° = 2,0 × 0,966 ≈ 1,9 N.",
+      "2,0 N là cả trọng lượng, chỉ đúng khi ván nằm ngang. Ván nghiêng 15° thì phần ép là P·cos 15° ≈ 1,9 N, nhỏ hơn P một chút."
+    ]
   }
 }

@@ -1,8 +1,8 @@
 {
   "id": "tn-l10-dl2-newton-02",
   "ten": "Gia tốc của xe khi chất thêm gia trọng",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-dl2-newton-02-20261118.mp4",
-  "tong_giay": 48.2,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-dl2-newton-02-20261127.mp4",
+  "tong_giay": 49.3,
   "o": [
     {
       "khoa": "gia_thuyet",
@@ -12,33 +12,33 @@
     },
     {
       "khoa": "du_doan",
-      "giay": 4.2,
-      "chu": "Giữ 0,40 N; xe nặng dần 0,50 → 1,50 kg. Vẽ a theo m, đồ thị dạng nào?"
+      "giay": 3.8,
+      "chu": "Giữ F = 0,40 N; xe nặng dần 0,50 → 1,50 kg. Đồ thị a theo m có dạng nào?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 10.5,
-      "chu": "Cảm biến giữ lực kéo 0,40 N."
+      "giay": 9.2,
+      "chu": "Máng đệm khí, cảm biến lực, gia trọng."
     },
     {
       "khoa": "quan_sat",
-      "giay": 13.5,
-      "chu": "Mỗi lần chất thêm gia trọng, đo lại a."
+      "giay": 19.9,
+      "chu": "a ≈ 0,80; 0,53; 0,40; 0,27 m/s²: xe càng nặng, a càng nhỏ."
     },
     {
       "khoa": "rut_ra",
-      "giay": 22.3,
-      "chu": "Bốn điểm nằm trên một đường cong: a giảm khi m tăng."
+      "giay": 25.9,
+      "chu": "Tích m·a gần bằng F = 0,40 N ở mọi lần đo: lực không đổi, m tăng thì a giảm theo."
     },
     {
       "khoa": "chua_noi",
-      "giay": 35.9,
-      "chu": "Máng có ma sát thì m·a còn bằng lực kéo không? Chưa thử."
+      "giay": 39.0,
+      "chu": "Ở đây bỏ qua ma sát. Máng có ma sát thì m·a còn bằng lực kéo không? Chưa thử."
     }
   ],
   "dung_dua": {
-    "giay": 10.3,
-    "cau_hoi": "Giữ 0,40 N; xe nặng dần 0,50 → 1,50 kg. Vẽ a theo m, đồ thị dạng nào?",
+    "giay": 9.05,
+    "cau_hoi": "Giữ F = 0,40 N; xe nặng dần 0,50 → 1,50 kg. Đồ thị a theo m có dạng nào?",
     "chon": [
       "A. Đường thẳng đi xuống",
       "B. Đường cong đi xuống, thoải dần",
@@ -48,5 +48,22 @@
     "dung": 1,
     "giai_thich_dung": "Lực không đổi, m tăng thì a giảm và giảm chậm dần: các điểm nằm trên một đường cong đi xuống.",
     "giai_thich_sai": "Xem bốn điểm ở đoạn kế và so với dạng em đoán."
+  },
+  "cau_chot": {
+    "giay": 45.4,
+    "cau_hoi": "Lực kéo vẫn 0,40 N, xe rỗng 0,50 kg. Muốn a = 0,32 m/s² thì phải chất thêm mấy khối gia trọng 0,25 kg?",
+    "chon": [
+      "A. 1 khối",
+      "B. 2 khối",
+      "C. 3 khối",
+      "D. 5 khối"
+    ],
+    "dung": 2,
+    "giai_thich": [
+      "1 khối cho xe 0,75 kg, a = 0,53 m/s² (bảng đo), còn lớn hơn 0,32. Theo mô hình m = F/a = 0,40/0,32 = 1,25 kg, tức thêm 0,75 kg = 3 khối.",
+      "2 khối cho xe 1,00 kg, a = 0,40 m/s² (bảng đo), vẫn lớn hơn 0,32. Cần m = F/a = 0,40/0,32 = 1,25 kg, thêm 0,75 kg = 3 khối.",
+      "Theo mô hình m = F/a = 0,40/0,32 = 1,25 kg. Xe rỗng 0,50 kg nên thêm 0,75 kg, tức 3 khối 0,25 kg.",
+      "Số này là 1,25 : 0,25, quên rằng xe rỗng đã nặng 0,50 kg. Thêm 1,25 − 0,50 = 0,75 kg, tức 3 khối."
+    ]
   }
 }
