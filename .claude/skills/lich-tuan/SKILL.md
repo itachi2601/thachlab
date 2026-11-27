@@ -57,6 +57,8 @@ cd /Users/MAC/Projects/thachlab && npx tsx .claude/skills/lich-tuan/scripts/lich
 - Giờ hợp lý cho thể thao: không xếp sát giờ ngủ; đừng gym nặng ngay trước buổi trượt băng (xếp xen kẽ).
 - **Nội dung từng buổi tập** (thầy duyệt 19/10/2026) ở `noi_dung_tap` trong `lich-co-dinh.json`; script bước 5a gán: trượt băng ≥17:00 → Ôn nhẹ, cùng ngày gym → Edge & turn, còn lại Nhảy rồi Spin; gym cùng ngày trượt băng → A Thân trên (ngực–vai), còn lại B Chân + ngực phụ rồi C Toàn thân + sức bật (chương trình lập lại 18/11/2026, bản đầy đủ `lib/tap-luyen/chuong-trinh.ts`, ghi buổi ở `/suc-khoe/tap-luyen`). `lesson` = tên buổi, `note` = chi tiết + khung giờ. Đổi bài tập thì sửa JSON, không sửa script.
 
+- **Kế hoạch thương hiệu cá nhân** (27/11/2026): `references/ke-hoach-thuong-hieu.json` giữ năm → quý → tháng → tuần. Script bước 5c lấy việc của tuần (`tuan[<thứ Hai>]`, không có thì `thang[<YYYY-MM>]`): gắn việc trong trường vào buổi cà phê bộ môn sáng T2, cắt 90′ đầu một khối "Phát triển thachlab" thành "Thương hiệu ngoài trường", thêm 20′ "Xem lại tuần" tối CN. Không thêm giờ làm mới; tuần `nghi: true` không cắt khối. Hết bảng tuần (sau 28/2/2027) thì soạn tiếp 13 tuần từ bảng tháng. Chi tiết nhạy cảm (số tín nhiệm, lớp riêng) KHÔNG ghi vào file này — chỉ ở tài liệu của thầy và memory `user_*`.
+
 ## Chưa làm / giả định
 - Địa điểm trượt băng/gym chưa có; thầy cho tên để ghi vào.
 - Giờ kết thúc mục công tác ước 90 phút khi trang chỉ ghi giờ bắt đầu.
@@ -68,3 +70,4 @@ cd /Users/MAC/Projects/thachlab && npx tsx .claude/skills/lich-tuan/scripts/lich
 - 2026-10-19 · thầy muốn nội dung tập hiện trong lịch → đặt dữ liệu ở `lich-co-dinh.json` (`noi_dung_tap`), script chỉ gán theo quy tắc; trình tự trượt băng theo đúng triết lý thầy (edge → turn → waltz jump/spin), gym chân nặng không đặt ngay trước buổi nhảy.
 - 2026-11-25 · mốc bài các lớp đứng từ giữa 10 dù trợ giảng đã ghi nội dung dạy ở phiếu buổi từ 11/11 → mỗi lần lên lịch tuần chạy `--tro-giang` trước, ghi mốc rồi mới `--ghi`; khoá không có buổi trợ giảng ghi (10L3) thì hỏi thầy.
 - 2026-11-25 · link lịch công tác tuần 14 viết "den-29112026" (thiếu "ngay") nên script báo "chưa đăng"; phần "Ghi chú:" cuối trang bị gán thành sự kiện CN → khớp `den(-ngay)?-<ddmmyyyy>`, dừng tách ở dòng "Ghi chú". Thầy báo "đã có lịch" mà script nói chưa → mở trang danh sách tìm link tuần trước khi tin script.
+- 2026-11-27 · thầy muốn kế hoạch thương hiệu vào lịch ở mức tuần/tháng/quý/năm trong khi lịch đã kín → không thêm khối giờ mới mà gắn việc vào giờ đã có (cà phê T2, khối thachlab); dữ liệu ở JSON, script chỉ đặt chỗ; nội dung riêng tư để ngoài repo.
