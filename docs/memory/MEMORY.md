@@ -116,3 +116,4 @@
 - [Rà soát website 18/11](project_thachlab_ra_soat_website_2026_11_18.md) — đợt 2, 3 chờ chọn
 - [Rà quiz + độ dài theo chương](project_thachlab_ra_soat_quiz_do_dai.md) — L12 Ch.3 xong; 8 câu mới chờ duyệt
 - [CNC thi tiện + bảng điểm SV](project_thachlab_cnc_thi_tien_diem.md) — đã deploy 14/11; chờ điểm Phay
+- [ABET thu dữ liệu PI](project_abet_thu_du_lieu_pi.md) — DB đã chạy, chưa deploy, chưa gửi link
