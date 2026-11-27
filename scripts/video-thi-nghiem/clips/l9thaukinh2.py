@@ -8,7 +8,10 @@
 #   Anh that, nguoc chieu: day cua so tren truc chinh -> day anh tren truc, dinh vom cua so -> xuong duoi truc.
 # Cau hoi ngay sau hop trong bai (Cau 3: f = 8, d = 12 -> d') va Cau 7 (h' khi d = 30): clip khong tinh d' bang
 #   cong thuc, khong noi xu huong "vat cang xa anh cang sat F'" (de clip thaukinh-03 va cau chot con viec de nghi).
-# Canh: Du doan (K10) -> Tien hanh (dich giay toi lui, khung "nhin tren to giay" nhoe/ro) -> Dap an + Rut ra
+# Dung lai 27/11/2026 theo cong moi (viec 4, L9 nhom D): chu >= 55 (ra >= 48 px). Du doan DOI: bang tinh chat anh
+#   (d > 2f: that, nguoc, nho) dung ngay truoc hop nen khong hoi tinh chat; hoi GIAY CACH KINH BAO NHIEU thi ro
+#   (dap an: gan f, khoang 10 cm; hook an diem F'). Chot = ca kho: 2 m thay 4 m -> 10,53 cm (khoang 10,5 cm).
+# Canh cu: Du doan (K10) -> Tien hanh (dich giay toi lui, khung "nhin tren to giay" nhoe/ro) -> Dap an + Rut ra
 #       -> Bay (anh la bong cua kinh) roi Chua noi duoc -> Chot + THU NGHI (2 m thay 4 m).
 from engine import *
 from PIL import ImageFilter
@@ -22,9 +25,22 @@ HI = 60                                     # chieu cao anh tren giay (px)
 SLOPE = HI / (X_IMG - LX)                   # do nghieng chum tia toi (qua O di thang toi B')
 BRK = 262                                   # cho ngat truc
 RAYS_Y = (-128, 0, 112)                     # do cao cac tia khi toi kinh
-DRED = (185, 28, 28); DGREEN = (21, 110, 55); LBLUE = (147, 197, 253); BROWN = (120, 72, 30)
+DRED = (185, 28, 28); DGREEN = (21, 110, 55); DORG = (176, 64, 8); LBLUE = (147, 197, 253); BROWN = (120, 72, 30)
 SKY = (186, 222, 250); FRAME = (60, 70, 110)
-DP_TXT = "10,3 cm"                          # 10,26 lam tron 1 chu so (buoc cuoi)
+DP_TXT = "10,3 cm"
+FS, FM = 58, 56
+DP2_CM = 10.53                              # kho: d = 200 cm
+
+
+def _kiem():
+    import json, os
+    k = json.load(open(os.path.join(HERE, "..", "..", "content", "thi-nghiem", "tn-l9-thaukinh-02.json")))
+    tp = {x["ky_hieu"]: x for x in k["tham_so"]}
+    assert tp["f"]["gia_tri"] == F_CM and tp["d"]["mac_dinh"] == D_CM
+    h = {r[0]: r[1] for r in k["so_lieu_mau"]["hang"]}
+    assert h[400] == DP_CM and h[200] == DP2_CM
+    for d_, dp in h.items(): assert abs(1 / F_CM - 1 / d_ - 1 / dp) < 1e-4
+_kiem()                          # 10,26 lam tron 1 chu so (buoc cuoi)
 
 
 def chev(d, p, q, col, s=16, w=4):
@@ -78,70 +94,77 @@ def scene(img, d, xp, rays=1.0, dim=False, hint_f=True, labels=True):
         d.line([(BRK + dx - 9, AX + 22), (BRK + dx + 9, AX - 22)], fill=NAVY, width=4)
     paste_pic(img, window_pic(170, bg=BG), 135, AX - 170 / 2 - 6)
     if labels:
-        text(d, (135, AX - 236), "cửa sổ", 40, INK)
-        text(d, (BRK, AX + 66), "cách 4 m", 40, NAVY)
+        text(d, (135, AX - 236), "cửa sổ", FM, INK)
+        text(d, (BRK - 20, AX + 70), "cách 4 m", FM, NAVY)
     lens(d)
-    if labels: text(d, (LX, AX + LH + 150), "kính lúp, f = 10 cm", 40, BLUE)
+    if labels: text(d, (LX, AX + LH + 150), "f = 10 cm", FM, BLUE)
     if hint_f:
-        dot(d, X_F, AX, 8, NAVY); text(d, (X_F - 30, AX - 36), "F'", 40, NAVY)
+        dot(d, X_F, AX, 9, NAVY); text(d, (X_F - 34, AX - 40), "F'", FM, NAVY)
     Bp = (X_IMG, AX + HI)
     if rays > 0:
         c = A(ORANGE, 0.9 * rays)
         for yi in RAYS_Y:
             y_in = AX + yi; p0 = (BRK + 24, y_in - SLOPE * (LX - BRK - 24))
-            d.line([p0, (LX, y_in)], fill=c, width=4); chev(d, p0, (LX, y_in), c)
-            k = (xp - LX) / (Bp[0] - LX)                                    # dung tia o mat giay
+            d.line([p0, (LX, y_in)], fill=c, width=5); chev(d, p0, (LX, y_in), c)
+            k = (xp - LX) / (Bp[0] - LX)
             q = (xp, y_in + (Bp[1] - y_in) * k)
-            d.line([(LX, y_in), q], fill=c, width=4)
+            d.line([(LX, y_in), q], fill=c, width=5)
     b = blur_px(xp)
-    if rays > 0:                                                           # vet sang tren giay (nhin ngang)
+    if rays > 0:
         if b < 3: d.rectangle([xp - 5, AX, xp + 5, AX + HI], fill=BLUE)
         else: d.rectangle([xp - 5, AX - b / 2, xp + 5, AX + HI + b / 2], fill=A(BLUE, max(0.25, 0.9 - b / 120)))
     d.rounded_rectangle([xp - 7, AX - 185, xp + 7, AX + 185], radius=4, fill=WHITE, outline=NAVY, width=3)
-    if rays > 0:
-        if b < 3: d.rectangle([xp - 7, AX, xp - 2, AX + HI], fill=BLUE)
-    if labels: text(d, (xp + 10, AX - 222), "tờ giấy", 40, NAVY)
-    if dim:
-        y = AX + LH + 40
-        d.line([(LX, y), (xp, y)], fill=DGREEN, width=4)
-        for x in (LX, xp): d.line([(x, y - 12), (x, y + 12)], fill=DGREEN, width=4)
-        text(d, ((LX + xp) / 2 + 30, y + 38), DP_TXT, 42, DGREEN)
+    if rays > 0 and b < 3: d.rectangle([xp - 7, AX, xp - 2, AX + HI], fill=BLUE)
+    if labels: text(d, (min(xp, 960), AX - 226), "tờ giấy", FM, NAVY)
+    if dim: dim_line(d, xp)
 
 
-def paper_view(img, d, b, y0=930, a=1.0):
+def dim_line(d, xp, k=1.0, txt=DP_TXT):
+    y = AX + LH + 40
+    d.line([(LX, y), (xp, y)], fill=A(DGREEN, k), width=5)
+    for x in (LX, xp): d.line([(x, y - 14), (x, y + 14)], fill=A(DGREEN, k), width=5)
+    text(d, ((LX + xp) / 2 + 40, y + 44), txt, FS, DGREEN, alpha=k)
+
+
+def paper_view(img, d, b, y0=960, a=1.0):
     """khung nhin thang vao to giay"""
-    card(d, (230, y0, 850, y0 + 470), fill=A(WHITE, a), outline=A(LIGHT, a), w=4)
-    text(d, (540, y0 + 46), "nhìn trên tờ giấy", 40, MUTED, bold=False, alpha=a)
-    paste_pic(img, window_pic(150, inv=True, blur=min(26, b * 0.35)), 540, y0 + 240, a)
+    card(d, (200, y0, 880, y0 + 520), fill=A(WHITE, a), outline=A(LIGHT, a), w=4)
+    text(d, (540, y0 + 52), "nhìn trên tờ giấy", FM, (80, 86, 105), alpha=a)
+    paste_pic(img, window_pic(170, inv=True, blur=min(26, b * 0.35)), 540, y0 + 265, a)
     sharp = b < 3
-    text(d, (540, y0 + 425), "rõ nét" if sharp else "nhoè", 44, DGREEN if sharp else ORANGE, alpha=a)
+    text(d, (540, y0 + 465), "rõ nét" if sharp else "nhoè", FS, DGREEN if sharp else DORG, alpha=a)
     return sharp
 
 
-# ---------------- canh 1: Du doan (K10: chi cau hoi + hinh) ----------------
+def pill(d, s, y, a, color=NAVY, size=FM):
+    pw = tw(d, s, F(size)) + 60
+    card(d, (W / 2 - pw / 2, y - 40, W / 2 + pw / 2, y + 40), fill=A(color, a), r=38)
+    text(d, (W / 2, y), s, size, WHITE, alpha=a)
+
+
+# ---------------- canh 1: Du doan (K10: chi cau hoi + hinh; an F') ----------------
 def s_hook(img, d, t, sc):
     M = sc["M"]
-    scene(img, d, 1000, rays=0)
+    scene(img, d, 1000, rays=0, hint_f=False)
     a = appear(t, M[1] - 0.2, 0.5)
     if a <= 0: return
-    y0 = 920 + (1 - a) * 40
-    card(d, (50, y0, 1030, y0 + 610), fill=A(WHITE, a), outline=A(PURPLE, a), w=6)
-    pw = tw(d, "DỰ ĐOÁN", F(40)) + 52
-    card(d, (W / 2 - pw / 2, y0 + 26, W / 2 + pw / 2, y0 + 90), fill=A(PURPLE, a), r=32)
-    text(d, (W / 2, y0 + 58), "DỰ ĐOÁN", 40, WHITE, alpha=a)
-    ctext(d, y0 + 255, "Hình cửa sổ rõ nét trên giấy\nso với cửa sổ thật thế nào?",
-          50, INK, maxw=920, alpha=a)
-    text(d, (W / 2, y0 + 470), "Chọn đáp án ở khung câu hỏi", 40, MUTED, bold=False, alpha=a)
-    tc, tend = M[1] + 0.6, sc["T"] - 0.3
+    y0 = 960 + (1 - a) * 40
+    card(d, (50, y0, 1030, y0 + 560), fill=A(WHITE, a), outline=A(NAVY, a), w=6)
+    pw = tw(d, "DỰ ĐOÁN", F(FM)) + 56
+    card(d, (W / 2 - pw / 2, y0 + 22, W / 2 + pw / 2, y0 + 96), fill=A(NAVY, a), r=36)
+    text(d, (W / 2, y0 + 59), "DỰ ĐOÁN", FM, WHITE, alpha=a)
+    for j, s in enumerate(("Giấy cách kính bao nhiêu", "thì hình cửa sổ", "rõ nét?")):
+        text(d, (W / 2, y0 + 165 + j * 80), s, 60, INK, alpha=a)
+    tc, tend = M[1] + 0.3, sc["T"] - 0.1
     if t > tc:
         p = clamp((t - tc) / (tend - tc))
-        d.rounded_rectangle([140, y0 + 548, 940, y0 + 560], radius=6, fill=A(LIGHT, a))
-        d.rounded_rectangle([140, y0 + 548, 140 + 800 * (1 - p), y0 + 560], radius=6, fill=A(PURPLE, a))
+        d.rounded_rectangle([110, y0 + 440, 970, y0 + 510], radius=35, fill=A((226, 232, 240), a))
+        if p < 1: d.rounded_rectangle([110, y0 + 440, 110 + max(70, 860 * (1 - p)), y0 + 510], radius=35, fill=A(NAVY, a))
 
 
 # ---------------- canh 2: Tien hanh ----------------
-MOVES = [(2.2, 4.4, 660.0), (5.0, 6.6, X_IMG)]     # (bat dau, ket thuc, x giay toi)
-T_DIM = 6.9                                       # hien khoang kinh - giay sau khi giay dung han
+MOVES = [(1.4, 3.4, 660.0), (4.0, 5.8, X_IMG)]     # (bat dau, ket thuc, x giay toi)
+T_DIM = 8.3                                       # khoang kinh - giay: >= 2,5 s sau chu "ro net"
 
 
 def paper_x(t):
@@ -151,123 +174,112 @@ def paper_x(t):
     return x
 
 
-def do_state(t):
-    xp = paper_x(t); b = blur_px(xp)
-    return dict(xp=xp, sharp=b < 3, dim=t >= T_DIM, stopped=t >= MOVES[-1][1])
-
-
 def s_do(img, d, t, sc):
-    st = do_state(t)
-    scene(img, d, st["xp"], rays=appear(t, 0.3, 0.6), dim=False)
-    if st["dim"]:
-        k = appear(t, T_DIM, 0.4); y = AX + LH + 40
-        d.line([(LX, y), (st["xp"], y)], fill=A(DGREEN, k), width=4)
-        for x in (LX, st["xp"]): d.line([(x, y - 12), (x, y + 12)], fill=A(DGREEN, k), width=4)
-        text(d, ((LX + st["xp"]) / 2 + 30, y + 38), DP_TXT, 42, DGREEN, alpha=k)
-    paper_view(img, d, blur_px(st["xp"]), a=appear(t, 0.5, 0.5))
+    xp = paper_x(t)
+    scene(img, d, xp, rays=appear(t, 0.3, 0.6), hint_f=False)
+    if t >= T_DIM: dim_line(d, xp, appear(t, T_DIM, 0.4))
+    paper_view(img, d, blur_px(xp))
 
 
 # ---------------- canh 3: Dap an + rut ra ----------------
+DA_C, DA_R = 2.6, 5.2
 def s_dapan(img, d, t, sc):
-    M = sc["M"]
-    ka = appear(t, 0.1, 0.5)
-    lab = "ĐÁP ÁN · nhỏ hơn, lộn ngược"
-    pw = tw(d, lab, F(42)) + 56
-    card(d, (W / 2 - pw / 2, 226, W / 2 + pw / 2, 292), fill=A(NAVY, ka), r=33)
-    text(d, (W / 2, 259), lab, 42, WHITE, alpha=ka)
-    scene(img, d, X_IMG, rays=0.5, dim=True, labels=False)
-    k1 = appear(t, M[0] + 0.3, 0.4)
+    scene(img, d, X_IMG, rays=appear(t, 0.3, 1.2), labels=False)
+    pill(d, "ĐÁP ÁN: khoảng 10 cm, gần F'", 260, appear(t, 0.15, 0.4))
+    k1 = appear(t, DA_C, 0.5)
     if k1 > 0:
-        card(d, (60, 930, 1020, 1250), fill=A(WHITE, k1), outline=A(LIGHT, k1), w=3)
-        paste_pic(img, window_pic(200), 300, 1080, k1)
-        text(d, (300, 1205), "cửa sổ", 40, INK, alpha=k1)
-        arrow(d, (480, 1080), (600, 1080), A(NAVY, k1), w=5, head=20)
-        paste_pic(img, window_pic(80, inv=True), 780, 1080, k1)
-        text(d, (780, 1205), "ảnh", 40, BLUE, alpha=k1)
-    k2 = appear(t, M[1] + 0.2, 0.4)
+        dim_line(d, X_IMG, k1)
+        card(d, (60, 900, 1020, 1210), fill=A(WHITE, k1), outline=A(LIGHT, k1), w=3)
+        paste_pic(img, window_pic(170), 290, 1030, k1)
+        text(d, (290, 1178), "cửa sổ", FM, INK, alpha=k1)
+        arrow(d, (480, 1040), (600, 1040), A(NAVY, k1), w=6, head=22)
+        paste_pic(img, window_pic(80, inv=True), 790, 1040, k1)
+        text(d, (790, 1170), "ảnh", FM, BLUE, alpha=k1)
+    k2 = appear(t, DA_R, 0.5)
     if k2 > 0:
-        card(d, (60, 1280, 1020, 1480), fill=A((236, 253, 243), k2), outline=A(GREEN, k2), r=22, w=3)
-        text(d, (W / 2, 1340), "Ảnh thật, hứng được", 44, DGREEN, alpha=k2)
-        text(d, (W / 2, 1415), "10,3 cm ≈ f", 44, INK, alpha=k2)
+        rr = 22 + 14 * math.sin(2.6 * (t - DA_R)) ** 2           # diem anh B' nhap nhay: tia gap nhau that
+        d.ellipse([X_IMG - rr, AX + HI - rr, X_IMG + rr, AX + HI + rr], fill=A(ORANGE, 0.7 * k2))
+        card(d, (60, 1250, 1020, 1480), fill=A((236, 253, 243), k2), outline=A(GREEN, k2), r=26, w=4)
+        text(d, (W / 2, 1320), "Ảnh thật: nhỏ, lộn ngược", FS, DGREEN, alpha=k2)
+        text(d, (W / 2, 1410), "nằm gần tiêu điểm F'", FS, DGREEN, alpha=k2)
 
 
-# ---------------- canh 4: Bay roi Chua noi duoc ----------------
+# ---------------- canh 4: Bay + chua noi duoc ----------------
+BAY_R, BAY_E = 3.4, 6.6
 def s_bay(img, d, t, sc):
-    M = sc["M"]
-    k2 = appear(t, M[1] - 0.1, 0.45)
-    a1 = appear(t, 0.2, 0.45) * (1 - k2)
-    scene(img, d, X_IMG, rays=0.35, dim=False, labels=False)
+    scene(img, d, X_IMG, rays=0.35, labels=False)
+    a1 = appear(t, 0.3, 0.45)
     if a1 > 0:
-        k3 = a1 * appear(t, 0.5, 0.5); k4 = a1 * appear(t, M[0] + 2.3, 0.5)    # sai: cung luc chu ; dung: tre
-        y0 = 930
-        card(d, (40, y0, 1040, lerp(y0 + 330, y0 + 560, k4 / max(a1, 1e-3))), fill=A(WHITE, a1), outline=A(DRED, a1), w=6)
-        pw = tw(d, "BẪY", F(40)) + 52
-        card(d, (W / 2 - pw / 2, y0 + 28, W / 2 + pw / 2, y0 + 92), fill=A(DRED, a1), r=32)
-        text(d, (W / 2, y0 + 60), "BẪY", 40, WHITE, alpha=a1)
-        if k3 > 0:                                                         # vet tron mo = "bong kinh"
-            d.ellipse([110, y0 + 140, 270, y0 + 300], fill=A((200, 200, 205), k3), outline=A(GRAY, k3), width=4)
-        text(d, (300, y0 + 190), "Hình là bóng", 48, DRED, anchor="lm", alpha=k3)
-        text(d, (300, y0 + 255), "của kính lúp", 48, DRED, anchor="lm", alpha=k3)
-        if k3 > 0:
-            for yy, s1 in ((y0 + 192, "Hình là bóng"), (y0 + 257, "của kính lúp")):
-                d.line([(296, yy), (304 + tw(d, s1, F(48)), yy)], fill=A(DRED, k3), width=5)
-        text(d, (900, y0 + 222), "✗", 100, DRED, alpha=k3)
-        if k4 > 0: paste_pic(img, window_pic(130, inv=True), 190, y0 + 445, k4)
-        text(d, (300, y0 + 410), "Là ảnh: có", 48, DGREEN, anchor="lm", alpha=k4)
-        text(d, (300, y0 + 475), "khung, lộn ngược", 48, DGREEN, anchor="lm", alpha=k4)
-        text(d, (900, y0 + 440), "✓", 100, DGREEN, alpha=k4)
-    if k2 > 0:
-        y0 = 1000 + (1 - k2) * 30
-        card(d, (40, y0, 1040, y0 + 320), fill=A(WHITE, k2), outline=A(NAVY, k2), w=6)
-        text(d, (W / 2, y0 + 70), "Chưa nói được", 46, NAVY, alpha=k2)
-        for j, l1 in enumerate(("• Số liệu minh hoạ", "• Mới thử cửa sổ cách 4 m")):
-            kk = k2 * appear(t, M[1] + 0.1 + 0.3 * j, 0.4)
-            text(d, (90, y0 + 165 + j * 95), l1, 44, INK, anchor="lm", alpha=kk)
+        pill(d, "BẪY", 880, a1, color=DRED)
+        card(d, (40, 935, 1040, 1140), fill=A(WHITE, a1), outline=A(DRED, a1), w=5)
+        d.ellipse([90, 960, 250, 1120], fill=A((200, 200, 205), a1), outline=A(GRAY, a1), width=4)   # vet tron mo
+        text(d, (290, 1000), "“Bóng của kính”", FS, DRED, anchor="lm", alpha=a1)
+        text(d, (290, 1080), "vệt tròn, không hình", FM, INK, anchor="lm", alpha=a1)
+        text(d, (960, 1040), "✗", 80, DRED, alpha=a1)
+    a2 = appear(t, BAY_R, 0.45)
+    if a2 > 0:
+        card(d, (40, 1160, 1040, 1350), fill=A(WHITE, a2), outline=A(DGREEN, a2), w=5)
+        paste_pic(img, window_pic(136, inv=True), 165, 1255, a2)        # kiem-v1 muc 4: hinh lon to nhat vua o (vuong 1,35h)
+        text(d, (290, 1215), "Ảnh của cửa sổ", FS, DGREEN, anchor="lm", alpha=a2)
+        text(d, (290, 1295), "có khung, lộn ngược", FM, INK, anchor="lm", alpha=a2)
+        text(d, (960, 1255), "✓", 80, DGREEN, alpha=a2)
+    k3 = appear(t, BAY_E, 0.45)
+    if k3 > 0:
+        card(d, (40, 1370, 1040, 1565), fill=A(WHITE, k3), outline=A(NAVY, k3), w=5)
+        text(d, (W / 2, 1420), "Chưa nói được:", FS, NAVY, alpha=k3)
+        text(d, (W / 2, 1505), "số liệu minh hoạ", FM, INK, alpha=k3)
 
 
-# ---------------- canh 5: Chot + THU NGHI ----------------
+# ---------------- canh 5: Chot + THU NGHI (cau chot A-D o khung web) ----------------
+END_Q, END_C = 0.2, 4.3
+EY = 1200; ELX, EPX = 560, 900
 def s_end(img, d, t, sc):
-    """Chot -> THU NGHI: cach cua so 2 m (thay 4 m), giay dich lai gan hay ra xa kinh? (ra xa, d' = 10,53 cm)."""
-    M = sc["M"]; k0 = appear(t, 0.2, 0.5)
-    card(d, (60, 490, 1020, 790), fill=A((236, 253, 243), k0), outline=A(GREEN, k0), w=6)
-    ctext(d, 640, "Vật rất xa: ảnh thật,\nnhỏ, ngược, gần F'", 52, GREEN, maxw=880, alpha=k0)
-    k1 = appear(t, M[0] + 0.6, 0.5)
-    if k1 <= 0: return
-    kh = appear(t, M[0] + 0.9 + 2.6, 0.5)
-    card(d, (40, 850, 1040, lerp(1270, 1570, kh)), fill=A(WHITE, k1), outline=A(ORANGE, k1), w=6)
-    pw = tw(d, "THỬ NGHĨ", F(40)) + 52
-    card(d, (W / 2 - pw / 2, 880, W / 2 + pw / 2, 944), fill=A(ORANGE, k1), r=32)
-    text(d, (W / 2, 912), "THỬ NGHĨ", 40, WHITE, alpha=k1)
-    ctext(d, 1110, "Cách cửa sổ 2 m (so với\nlúc 4 m): giấy dịch lại gần\nhay ra xa kính?",
-          48, INK, maxw=920, alpha=appear(t, M[0] + 0.9, 0.5))
-    if kh > 0:
-        card(d, (110, 1290, 970, 1530), fill=A((255, 247, 237), kh), r=24)
-        ctext(d, 1345, "Gợi ý", 40, INK, alpha=kh)
-        ctext(d, 1445, "Kính lúp giữ nguyên", 46, ORANGE, maxw=820, alpha=kh)
+    k0 = appear(t, END_C, 0.5)
+    card(d, (50, 265, 1030, 425), fill=A((236, 253, 243), k0), outline=A(GREEN, k0), w=6)
+    text(d, (W / 2, 345), "Ảnh thật hứng được trên giấy", FM, DGREEN, alpha=k0)
+    k1 = appear(t, END_Q, 0.5)
+    card(d, (40, 455, 1040, 1560), fill=A(WHITE, k1), outline=A(ORANGE, k1), w=6)
+    pw = tw(d, "THỬ NGHĨ", F(FM)) + 56
+    card(d, (W / 2 - pw / 2, 480, W / 2 + pw / 2, 556), fill=A(ORANGE, k1), r=38)
+    text(d, (W / 2, 518), "THỬ NGHĨ", FM, WHITE, alpha=k1)
+    text(d, (W / 2, 630), "Đứng cách cửa sổ 2 m.", FS, INK, alpha=k1)
+    text(d, (W / 2, 712), "Giấy cách kính bao nhiêu?", FS, INK, alpha=k1)
+    if k1 > 0:   # hinh: cua so - 2 m - kinh - giay "? cm"; khong ve tia
+        d.line([(90, EY), (1000, EY)], fill=A(NAVY, 0.6 * k1), width=3)
+        paste_pic(img, window_pic(150), 170, EY - 81, k1)
+        for x0, x1 in ((240, ELX - 30),):
+            d.line([(x0, EY + 70), (x1, EY + 70)], fill=A(NAVY, k1), width=4)
+            for x in (x0, x1): d.line([(x, EY + 56), (x, EY + 84)], fill=A(NAVY, k1), width=4)
+        text(d, ((240 + ELX - 30) / 2, EY + 120), "2 m", FS, NAVY, alpha=k1)
+        d.ellipse([ELX - 22, EY - 130, ELX + 22, EY + 130], fill=A(LBLUE, 0.8 * k1), outline=A(BLUE, k1), width=4)
+        text(d, (ELX, EY - 175), "f = 10 cm", FM, BLUE, alpha=k1)      # kiem-v1 muc 1: mp4 roi van biet f
+        d.rounded_rectangle([EPX - 7, EY - 150, EPX + 7, EY + 150], radius=4, fill=A(WHITE, k1), outline=A(NAVY, k1), width=3)
+        kq = 0.55 + 0.45 * math.sin(2.4 * t) ** 2
+        text(d, ((ELX + EPX) / 2, EY + 120), "? cm", FS, ORANGE, alpha=k1 * kq)
 
 
 def _cues(clip):
     sc = {s["key"]: s for s in clip["scenes"]}
     h, do, da, b, e = sc["hook"], sc["do"], sc["dapan"], sc["bay"], sc["end"]
-    return [(h["t0"] + h["M"][1] - 0.2, "open"), (h["t0"] + h["T"] - 0.6, "ding"),
-            (do["t0"] + MOVES[-1][1], "tap"), (da["t0"] + 0.1, "ding"), (b["t0"] + 0.5, "buzz"),
-            (e["t0"] + e["M"][0] + 0.6, "open")]
+    return [(h["t0"] + h["M"][1] - 0.2, "open"), (h["t0"] + h["T"] - 0.1, "ding"),
+            (do["t0"] + MOVES[-1][1], "tap"), (da["t0"] + 0.1, "ding"), (b["t0"] + 0.3, "buzz"),
+            (e["t0"] + END_Q + 0.1, "open")]
 
 
 CLIP = dict(id="tn-l9-thaukinh-02", header="KHTN 9 · THÍ NGHIỆM", footer="Thấu kính · thachlab.id.vn",
             cues=_cues, scenes=[
- dict(key="hook", title="Hứng ảnh cửa sổ", draw=s_hook, tail=0.8, caps=[
-   ("Kính lúp hướng về cửa sổ.", 3.0),
-   ("Tự đoán trước khi xem tiếp.", 6.0)]),
- dict(key="do", title="Tiến hành", draw=s_do, tail=0.6, caps=[
-   ("Dịch giấy tới lui sau kính.", 5.2),
-   ("Hình rõ thì đo kính tới giấy.", 3.6)]),
- dict(key="dapan", title="Kết quả", draw=s_dapan, tail=0.7, caps=[
-   ("Tia ló gặp nhau ngay trên giấy.", 4.2),
-   ("Giấy ở gần tiêu điểm F'.", 4.0)]),
- dict(key="bay", title="Bẫy và giới hạn", draw=s_bay, tail=0.8, caps=[
-   ("Đó chỉ là bóng của kính?", 3.8),
-   ("Chưa nói được điều gì?", 4.4)]),
- dict(key="end", title="Chốt lại", draw=s_end, tail=1.3, caps=[
-   ("Dừng video, tự trả lời.", 6.8)]),
+ dict(key="hook", title="Hứng ảnh cửa sổ", draw=s_hook, tail=0.3, caps=[
+   ("Kính lúp hướng về cửa sổ.", 3.4),
+   ("Dừng lại, tự đoán.", 5.4)]),
+ dict(key="do", title="Tiến hành", draw=s_do, tail=0.4, caps=[
+   ("Dịch giấy tới lui sau kính.", 5.0),
+   ("Hình rõ thì đo kính tới giấy.", 5.0)]),
+ dict(key="dapan", title="Kết quả", draw=s_dapan, tail=0.4, caps=[
+   ("Tia ló gặp nhau trên giấy.", 4.4),
+   ("Giấy ở gần tiêu điểm F'.", 4.4)]),
+ dict(key="bay", title="Bẫy và giới hạn", draw=s_bay, tail=0.3, caps=[
+   ("So hai cách hiểu.", BAY_E - 0.4),
+   ("Còn bỏ ngỏ.", 3.6)]),
+ dict(key="end", title="Chốt lại", draw=s_end, tail=0.3, caps=[
+   ("Dừng lại, tự trả lời.", 8.2)]),
 ])

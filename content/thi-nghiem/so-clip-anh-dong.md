@@ -498,7 +498,7 @@ Nhánh `claude/motion-graphic-deployment-8b27a0`. 4 agent Opus × 8 clip; cổng
 | antoanpx4 | tn-l12-antoanpx-04 | 199 → 132 | 17 → 0 | 49,4 → 48,6 | 1148 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-antoanpx-04-20261126-2.mp4) | bản -2 (lưới chốt 'mỗi ô = 1 tuần', vạch 20 mSv); bỏ bẫy #2 (trùng Dự đoán); chốt 0,5 mSv × 50 = 25 > 20 |
 Sau duyệt (sau 22h hoặc khi thầy bảo): kho + bài đổi sang `-20261126` + `gan-khung-video.mts`, `cap-nhat-ly-thuyet.sh --chi-video` theo mẫu `dang-lo20.sh`.
 
-## Cổng mới — L9 (27/11/2026, nhánh `claude/clip-cong-moi-l9-896df8`) — đợt 1: 12/36 clip qua cổng A + B, ĐÃ TẢI Storage, CHỜ THẦY DUYỆT
+## Cổng mới — L9 (27/11/2026, nhánh `claude/clip-cong-moi-l9-896df8`) — đợt 1: 12/36 clip qua cổng A + B, ĐÃ TẢI Storage, thầy DUYỆT 27/11 ("Duyệt, sửa cả hộp"), **ĐÃ GHI DB 27/11 17:53** (bài 89, 90, 91, 129, 92; `CHI=… KHAC_BAI=… dang-cong-moi-l9.sh --yes`, log `ra/l9-dang-ghi1.log`, kiểm lại dry-run: 5/5 KHÔNG khác, độ dài DB = repo)
 Agent Opus theo nhóm (A điện 9, B điện từ–năng lượng 9, C cơ–âm–mở đầu–tái tạo 10, D quang 8; từ 27/11 trưa tối đa 1 agent dựng + 1 kiem-code vì hạn mức). Cổng A `--do-chu` 0 LỖI; cổng B kiem-code 283 px vòng 1 (mọi clip ĐẠT/NHẸ) + một lượt sửa; `xuat-khung.py --kiem` OK, khung có `cau_chot`, trỏ `-20261127`. Tải `tai-cong-moi-l9.sh` (HEAD 200 mp4 + webp, log `ra/l9-tai-A.log`, `ra/l9-tai-B1.log`). Kho/bài/DB vẫn bản cũ. Sau duyệt: `python3 scripts/video-thi-nghiem/doi-cong-moi-l9.py --apply` rồi `bash scripts/video-thi-nghiem/dang-cong-moi-l9.sh` (dry-run) → `--yes`. Dry-run trước đổi: 16/17 bài KHÔNG khác ngoài khối video; bài 150 (HSG cd15) khác dòng P2 'Đọc ~16 phút…' → script tự `--cho-phep-khac`.
 
 | Clip | tn | Từ/phút | LỖI | Giây | KB | mp4 | Điểm cần quyết |
@@ -517,6 +517,9 @@ Agent Opus theo nhóm (A điện 9, B điện từ–năng lượng 9, C cơ–�
 | l9camung1 | tn-l9-camung-01 | 199 → 164 | 15 → 0 | 49,8 | 1480 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-camung-01-20261127.mp4) | — |
 
 Đang làm (chưa tải): B GĐ2 camung2–3, xoaychieu1 (NẶNG: đổi chốt sang đinh sắt non), xoaychieu2 (ĐẠT), hoathach1–2; D GĐ1 langkinh3…tieucu3 + GĐ2 kinhlup1, langkinh1; C chưa giao. Bài cũng lộ: lang-kinh `:67` (langkinh-01), xoay-chieu `:140-141` hộp nhắc 'đảo hai cực nguồn' mà clip không chiếu.
+
+**Đợt 1 — sửa hộp exp kèm (thầy duyệt 27/11):** `sua-hop-exp.py` 2 vòng (vòng 2 theo kiem-code): ohm-01 số đọc dây B + kết luận gập; congsuat-01 Quan sát/Rút ra thành câu hỏi + gập bảng U·I dưới video; congsuat-03, dongthe-01 kết quả + kết luận gập; dongthe-02 Rút ra thành câu hỏi, gập bảng Wđ, bỏ công thức ghi sẵn ở Làm; doanmach-01 bỏ "U₂ gấp đôi U₁", gập bảng U₁/U₂/U_AB + kết luận; doanmach-03 thêm kết quả tháo bóng (gập), Rút ra thành câu hỏi. Kho ghi_chu thêm ca câu chốt mới (ohm-01, congsuat-01/03, dongthe-01/02/03, camung-01). Còn ghi nhận (chưa sửa): bảng so sánh ngay trên hộp congsuat-03 nói trước "đèn nhiều oát sáng hơn" (kiến thức bài).
+
 ## Cổng mới — L10b (bài 63–79, 38 clip; phiên `clip-cong-moi-l10b`, 27/11/2026) — **đang dựng, chờ thầy duyệt từng nhóm**
 Brief: thư mục ghi chú phiên `l10b-brief-dung.md`/`l10b-brief-kiem.md`. 1 agent Opus dựng + 1 kiem-code song song; tối đa 2 vòng kiem-code/clip, sau v2 sửa lượt cuối tự crop. Script: `tai-cong-moi-l10b.sh` (Storage), `dang-cong-moi-l10b.sh` (DB, `--chi-video`; dry-run 17/17 sạch 27/11). Kho `<tn>.json` + bài giữ bản cũ tới khi duyệt.
 

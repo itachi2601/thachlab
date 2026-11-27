@@ -115,8 +115,8 @@ def s_hook(img, d, t, sc):
         if p < 1: d.rounded_rectangle([110, y0 + 330, 110 + max(90, 860 * (1 - p)), y0 + 430], radius=45, fill=A((76, 29, 149), a))
 
 # ---------------- canh 2: Tien hanh (tua nhanh 10 phut trong mot canh, lien mach) ----------------
-T_ON, T_RUN = 0.6, 7.8            # bat den; ket thuc tua nhanh (ung 10 phut)
-T_D1, T_D2 = 5.6, 7.0             # hai giot roi (khong gan phut nao: kho khong co t_giot)
+T_ON, T_RUN = 0.6, 7.4            # bat den; ket thuc tua nhanh (ung 10 phut)
+T_D1, T_D2 = 5.4, 6.7             # hai giot roi (khong gan phut nao: kho khong co t_giot)
 def tien_trinh(t):
     """-> (k tua 0..1, ban kinh giot dang lon, (y giot dang roi hoac None))."""
     k = clamp((t - T_ON) / (T_RUN - T_ON))
@@ -144,6 +144,19 @@ def s_do(img, d, t, sc):
         for x in range(int(110 - 200 + off), int(xe), 120):
             x0, x1 = max(x, 140), min(x + 180, xe - 30)
             if x1 > x0 + 10: d.polygon([(x0, 1305 - 20), (x0 + 50, 1305 - 20), (min(x0 + 50 + 140, xe - 30), 1145), (min(x0 + 140, xe - 30), 1145)], fill=(154, 52, 18))
+    kz = appear(t, sc["M"][1], 0.4)               # khung phong to mat duoi mang (kiem-v1 muc 3)
+    if kz > 0:
+        zx, zy, zr = 870, 420, 125
+        d.line([(CX + 25, DROP_Y + 8), (zx - zr * 0.8, zy + zr * 0.6)], fill=A(NAVY, kz), width=3)
+        d.ellipse([zx - zr, zy - zr, zx + zr, zy + zr], fill=A(WHITE, kz), outline=A(NAVY, kz), width=4)
+        d.line([(zx - zr + 10, zy - 45), (zx + zr - 10, zy - 45)], fill=A(FILM, kz), width=6)
+        d.rounded_rectangle([zx - 45, zy - 105, zx + 45, zy - 48], radius=8, fill=A(ICE, kz), outline=A(WATER_D, kz), width=3)
+        rz = max(r, 6) * 1.6
+        for dx, s_ in ((-55, 0.6), (0, 1.0), (55, 0.7)):
+            rr = rz * s_; x_ = zx + dx; y_ = zy - 42
+            d.polygon([(x_ - rr * 0.7, y_ + rr * 0.6), (x_ + rr * 0.7, y_ + rr * 0.6), (x_, y_ - rr * 0.9)], fill=A(WATER_D, kz))
+            d.ellipse([x_ - rr, y_, x_ + rr, y_ + 2 * rr], fill=A(WATER_D, kz))
+        tag(d, 1030, 592, "mặt dưới màng", NAVY, alpha=kz, anchor="r")
     card(d, (40, 1340, 1040, 1460), fill=(255, 247, 237), outline=ORANGE, w=4)   # an toan (kho: an_toan)
     text(d, (W / 2, 1400), "An toàn: không dùng nước sôi", 56, (154, 52, 18))
 
@@ -221,6 +234,8 @@ def s_bay(img, d, t, sc):
     scene_base(d); lamp(d, 1.0); bowl(d, fog=1.0, melt=melt, ice=1.0); drop(d, 20); vapour(d, t, 1.0)
     kv = appear(t, BAY_ST, 0.4)
     if kv > 0:                    # nhan bac bay giu toi het canh (cong B 18/11)
+        d.line([(760, RIM - 108), (CX + 40, RIM - 40)], fill=A(WATER_D, kv), width=4)      # duong noi nhan -> vat (muc 4)
+        d.line([(CX + 60, DROP_Y + 62), (CX + 8, DROP_Y + 30)], fill=A(BLUE, kv), width=4)
         tag(d, 1020, RIM - 150, "đá tan: trên màng", WATER_D, alpha=kv, anchor="r")
         tag(d, CX + 40, DROP_Y + 100, "giọt: từ hơi", BLUE, alpha=kv, anchor="l")
     y0 = 1070
@@ -243,7 +258,7 @@ END_Q, END_C = 0.2, 3.0
 def s_end(img, d, t, sc):
     k0 = appear(t, END_C, 0.5)
     card(d, (50, 265, 1030, 425), fill=A((236, 253, 243), k0), outline=A(GREEN, k0), w=6)
-    text(d, (W / 2, 345), "Cần nhiệt, nước mới quay vòng", 58, DGREEN, alpha=k0)
+    text(d, (W / 2, 345), "Bọc kín: hơi nước không thoát ra", 58, DGREEN, alpha=k0)
     k1 = appear(t, END_Q, 0.5)
     card(d, (40, 455, 1040, 1580), fill=A(WHITE, k1), outline=A(ORANGE, k1), w=6)
     pill(d, "THỬ NGHĨ", 518, k1, ORANGE)
@@ -260,6 +275,8 @@ def s_end(img, d, t, sc):
     if wp: d.polygon([(wp[0][0], wl)] + wp + [(wp[-1][0], wl)], fill=A(mix(WATER, (253, 186, 140), 0.35), k1))
     d.line(pts, fill=A(GLASS, k1), width=10, joint="curve")
     d.line([(cx - hw - 20, ry), (cx + hw - 110, ry + 4)], fill=A(FILM, k1), width=5)
+    arrow(d, (905, 845), (800, 915), A(DRED, k1), w=6, head=18)               # chi cho ho (kiem-v1 muc 1)
+    text(d, (945, 830), "hở", 66, DRED, alpha=k1)
     d.line([(cx + hw - 110, ry + 4), (cx + hw - 60, ry - 50)], fill=A(FILM, k1), width=5)   # goc mang lat len
     for dx in (-60, 20):
         d.rounded_rectangle([cx + dx - 28, ry - 54, cx + dx + 28, ry - 2], radius=8, fill=A(ICE, k1), outline=A(WATER_D, k1), width=3)
@@ -285,8 +302,8 @@ CLIP = dict(id="tn-l9-hoathach-01", header="KHTN 9 · THÍ NGHIỆM", footer="V�
    ("Bọc kín, đặt đá lên.", 3.0),
    ("Dừng lại, tự đoán.", 5.2)]),
  dict(key="do", title="Tiến hành", draw=s_do, tail=0.6, caps=[
-   ("Bật đèn, chờ 10 phút.", 3.6),
-   ("Nhìn kĩ mặt dưới màng.", 3.6)]),
+   ("Bật đèn, chờ 10 phút.", 3.4),
+   ("Nhìn kĩ mặt dưới màng.", 3.4)]),
  dict(key="dapan", title="Kết quả", draw=s_dapan, tail=0.6, caps=[
    ("Ba khâu thành vòng kín.", 4.0),
    ("Đá làm lạnh chỗ đó.", 3.4)]),
@@ -294,7 +311,7 @@ CLIP = dict(id="tn-l9-hoathach-01", header="KHTN 9 · THÍ NGHIỆM", footer="V�
    ("Thử với nước nguội.", 3.0),
    ("Ngoài trời cũng vậy.", 4.0)]),
  dict(key="bay", title="Bẫy và giới hạn", draw=s_bay, tail=0.5, caps=[
-   ("Đúng không?", 4.6),
+   ("Đúng không?", 5.0),
    ("Còn bỏ ngỏ.", 3.2)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.3, caps=[
    ("Dừng lại, tự nghĩ.", 7.0)]),
