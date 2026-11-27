@@ -130,10 +130,11 @@ def s_hook(img, d, t, sc):
     pw = tw(d, "DỰ ĐOÁN", F(56)) + 60
     card(d, (W / 2 - pw / 2, y0 + 24, W / 2 + pw / 2, y0 + 100), fill=A(PURPLE, a), r=36)
     text(d, (W / 2, y0 + 62), "DỰ ĐOÁN", 56, WHITE, alpha=a)
-    text(d, (W / 2, y0 + 180), "Kéo nhanh gấp đôi: 40 cm/s.", 60, INK, alpha=a)
-    text(d, (W / 2, y0 + 270), "Hai đỉnh liền kề", 62, PURPLE, alpha=a)
-    text(d, (W / 2, y0 + 350), "cách bao xa?", 62, PURPLE, alpha=a)
-    seg_bar(d, y0 + 440, t, M[1] + 0.4, sc["T"] - 0.2, PURPLE, a)
+    text(d, (W / 2, y0 + 165), "Cùng quả nặng, kéo giấy", 60, INK, alpha=a)
+    text(d, (W / 2, y0 + 240), "nhanh gấp đôi: 40 cm/s.", 60, INK, alpha=a)
+    text(d, (W / 2, y0 + 325), "Hai đỉnh liền kề", 62, PURPLE, alpha=a)
+    text(d, (W / 2, y0 + 400), "cách bao xa?", 62, PURPLE, alpha=a)
+    seg_bar(d, y0 + 460, t, M[1] + 0.4, sc["T"] - 0.2, PURPLE, a)
 
 # ---------------- canh 2: Tien hanh - keo 40 cm/s, chieu cham x2 ----------------
 SD = Strip(110, 930, 430, 790, 30, 900, U2)
@@ -178,10 +179,11 @@ def s_dapan(img, d, t, sc):
     M = sc["M"]
     for st, u, lab in ((S1, U1, "16 cm"), (S2, U2, "32 cm")):
         lam = peaks_strip(d, st, 340, 1)
-        text(d, (180, st.yc), f"{int(u)} cm/s", 58, DBLUE)
+        dy = 40 if st is S1 else 70                          # nhan cot trai: khong de len vien khung / duong cong
+        text(d, (160, st.yc - dy), f"{int(u)} cm/s", 58, DBLUE)
         yb = st.y(A_CM) - 24
         bracket_h(d, 340, 340 + lam, yb, DGREEN)
-        text(d, (340 + lam / 2, yb - 42), lab, 58, DGREEN)
+        text(d, (160, st.yc + (dy if st is S1 else 0)), "↔ " + lab, 58, DGREEN)
     k1 = appear(t, 2.6, 0.45)
     if k1 > 0:
         card(d, (60, 920, 1020, 1040), fill=A((236, 253, 243), k1), outline=A(GREEN, k1), r=24, w=5)
@@ -190,7 +192,7 @@ def s_dapan(img, d, t, sc):
     if k2 > 0:                                              # bien do doc tren bang 2: dinh x = 980, day x = 660
         xv = 660; bracket_v(d, xv, S2.y(A_CM), S2.y(-A_CM), ORANGE, k2)
         dashed(d, (xv, S2.y(A_CM)), (980, S2.y(A_CM)), A(ORANGE, k2), w=3)
-        pill(d, 500, S2.yc, "6,0 cm", 56, DORANGE, k2)
+        text(d, (160, S2.yc + 70), "6,0 cm", 58, DORANGE, alpha=k2)
         card(d, (60, 1070, 1020, 1190), fill=A((255, 247, 237), k2), outline=A(ORANGE, k2), r=24, w=5)
         text(d, (W / 2, 1130), "A = 6,0 : 2 = 3,0 cm", 60, DORANGE, alpha=k2)
     k3 = appear(t, M[2] - 0.05, 0.4)
