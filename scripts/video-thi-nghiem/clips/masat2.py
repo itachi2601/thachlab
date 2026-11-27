@@ -11,7 +11,7 @@ import math
 from engine import *
 
 M_HOP = 0.40
-CASES = [("nằm", 1.2, "flat", 22), ("đứng", 1.2, "tall", 22), ("nhanh", 1.2, "flat", 60), ("lăn", 0.08, "roll", 22)]
+CASES = [("nằm", 1.2, "flat", 22), ("đứng", 1.2, "tall", 22), ("kéo\nnhanh", 1.2, "flat", 60), ("lăn", 0.08, "roll", 22)]
 FMAX = 5.0
 def vn(x, nd=1): return f"{x:.{nd}f}".replace(".", ",")
 def rd(f): return "dưới 0,1 N" if f < 0.1 else vn(f) + " N"
@@ -91,7 +91,7 @@ def chart(d, hs, hl=(), top=840):
         if g > 0.97:
             if i == 3: text(d, (1022, BASE - h - 46), rd(f), 55, DTEAL, anchor="rm")
             else: text(d, (cx, BASE - h - 46), rd(f), 55, DORANGE)
-        text(d, (cx, BASE + 60), lab, 55, INK)
+        for j, ln in enumerate(lab.split("\n")): text(d, (cx, BASE + 60 + 58 * j), ln, 55, INK)
 
 def readout(d, s, y=780, alpha=1.0):
     card(d, (W / 2 - 200, y - 46, W / 2 + 200, y + 46), fill=A((254, 242, 242), alpha), outline=A(RED, alpha), r=24, w=4)
@@ -188,8 +188,8 @@ def s_end(img, d, t, sc):
     text(d, (320, 700), "0,50 kg", 56, INK, alpha=k)
     arrow(d, (450, 700), (620, 700), A(RED, k), w=8, head=24)
     text(d, (650, 700), "?", 72, RED, anchor="lm", alpha=k)
-    text(d, (W / 2, 890), "Thêm 0,10 kg, hộp nằm.", 60, INK, alpha=k)
-    text(d, (W / 2, 985), "Kéo trượt đều: lực kế", 60, INK, alpha=k)
+    text(d, (W / 2, 890), "Thêm 0,10 kg, cùng mặt bàn.", 60, INK, alpha=k)
+    text(d, (W / 2, 985), "Trượt đều: lực kế", 60, INK, alpha=k)
     text(d, (W / 2, 1075), "chỉ khoảng bao nhiêu?", 60, DORANGE, alpha=k)
     seg_bar(d, 1170, t, 1.0, sc["T"] - 0.2, ORANGE, k)
 
