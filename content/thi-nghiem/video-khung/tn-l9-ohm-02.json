@@ -1,9 +1,9 @@
 {
   "id": "tn-l9-ohm-02",
   "ten": "Đổi hiệu điện thế, đo dòng điện qua một dây constantan",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-ohm-02-20261118.mp4",
-  "poster": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-ohm-02-20261118.webp",
-  "tong_giay": 49.7,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-ohm-02-20261127.mp4",
+  "poster": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-ohm-02-20261127.webp",
+  "tong_giay": 49.8,
   "o": [
     {
       "khoa": "gia_thuyet",
@@ -13,32 +13,32 @@
     },
     {
       "khoa": "du_doan",
-      "giay": 2.9,
+      "giay": 3.1,
       "chu": "Chấm 4 điểm (U; I) lên đồ thị. Đường qua các điểm có dạng nào?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 9.3,
+      "giay": 8.6,
       "chu": "Nguồn chỉnh được, khoá K, dây constantan, ampe kế, vôn kế."
     },
     {
       "khoa": "quan_sat",
-      "giay": 17.9,
-      "chu": "Bốn lần đo: U = 1,5; 3,0; 4,5; 6,0 V thì I = 0,08; 0,15; 0,22; 0,30 A."
+      "giay": 17.0,
+      "chu": "Bốn lần đo: U = 1,5; 3,0; 4,5; 6,0 V thì I = 0,08; 0,15; 0,22; 0,30 A. U gấp 2, 3, 4 lần thì I cũng gần gấp chừng ấy."
     },
     {
       "khoa": "rut_ra",
-      "giay": 25.6,
-      "chu": "I tỉ lệ thuận với U; đồ thị I theo U là đường thẳng qua gốc."
+      "giay": 28.9,
+      "chu": "U/I gần như không đổi, quanh 20 Ω. I tỉ lệ thuận với U (định luật Ohm I = U/R); đồ thị I theo U là đường thẳng qua gốc."
     },
     {
       "khoa": "chua_noi",
-      "giay": 38.4,
-      "chu": "Số liệu minh hoạ, chưa đo thật.\nMới thử dây constantan."
+      "giay": 39.3,
+      "chu": "Mới thử một dây constantan (điện trở gần như không đổi khi nóng).\nSố liệu minh hoạ, chưa đo thật."
     }
   ],
   "dung_dua": {
-    "giay": 9.2,
+    "giay": 8.45,
     "cau_hoi": "Chấm 4 điểm (U; I) lên đồ thị. Đường qua các điểm có dạng nào?",
     "chon": [
       "A. Thẳng, qua gốc toạ độ",
@@ -49,5 +49,22 @@
     "dung": 0,
     "giai_thich_dung": "Bốn điểm (U; I) nằm sát một đường thẳng đi qua gốc toạ độ: I tăng tỉ lệ với U.",
     "giai_thich_sai": "Bốn điểm nằm sát một đường thẳng và đường ấy đi qua gốc toạ độ, vì U = 0 thì I = 0. Không cong, cũng không lệch khỏi gốc."
+  },
+  "cau_chot": {
+    "giay": 45.6,
+    "cau_hoi": "Một dây khác: đặt 2,0 V thì ampe kế chỉ 0,05 A. Muốn ampe kế chỉ 0,12 A, phải đặt hiệu điện thế bao nhiêu?",
+    "chon": [
+      "A. 2,4 V",
+      "B. 4,8 V",
+      "C. 0,24 V",
+      "D. 6,0 V"
+    ],
+    "dung": 1,
+    "giai_thich": [
+      "2,4 V là dùng R = 20 Ω của dây constantan. Đây là dây khác: R = 2,0 : 0,05 = 40 Ω, nên U = 0,12 × 40 = 4,8 V.",
+      "Dây khác có R = U : I = 2,0 : 0,05 = 40 Ω. Muốn I = 0,12 A thì U = I × R = 0,12 × 40 = 4,8 V. Cách khác: I gấp 2,4 lần thì U cũng gấp 2,4 lần.",
+      "0,24 V là nhân 2,0 × 0,12, không có nghĩa vật lí. Tính R = 2,0 : 0,05 = 40 Ω trước, rồi U = 0,12 × 40 = 4,8 V.",
+      "6,0 V cho dây constantan 0,30 A, không áp cho dây khác. Với dây này R = 2,0 : 0,05 = 40 Ω, nên U = 0,12 × 40 = 4,8 V."
+    ]
   }
 }

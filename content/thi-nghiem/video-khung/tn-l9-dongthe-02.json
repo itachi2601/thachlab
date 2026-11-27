@@ -1,52 +1,69 @@
 {
   "id": "tn-l9-dongthe-02",
   "ten": "Xe lăn qua cổng quang: đẩy nhẹ rồi đẩy mạnh",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-dongthe-02-20261105.mp4",
-  "tong_giay": 49.8,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-dongthe-02-20261127.mp4",
+  "tong_giay": 48.9,
   "o": [
     {
       "khoa": "gia_thuyet",
       "giay": 0,
-      "chu": "Wđ = ½·m·v²: v gấp đôi thì Wđ gấp 4.",
-      "kiem": "Xe chạy nhanh hơn, động năng đổi thế nào?"
+      "chu": "Wđ = ½·m·v²: đồ thị Wđ theo v là đường cong dốc dần lên, không phải đường thẳng.",
+      "kiem": "Vẽ Wđ theo v thì được đường gì?"
     },
     {
       "khoa": "du_doan",
-      "giay": 3.8,
-      "chu": "Cùng xe 0,20 kg, tốc độ v gấp đôi: động năng Wđ gấp mấy lần?"
+      "giay": 3.6,
+      "chu": "Xe 0,20 kg: vẽ Wđ theo v, nối gốc O với hai lần đẩy. Được đường gì?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 9.6,
-      "chu": "Xe lăn trên máng ngang, tấm chắn d = 2,0 cm; cổng quang và đồng hồ đo Δt, tính v = d : Δt."
+      "giay": 10.1,
+      "chu": "Xe lăn, máng ngang, cổng quang, đồng hồ."
     },
     {
       "khoa": "quan_sat",
-      "giay": 18.0,
+      "giay": 18.5,
       "chu": "Δt: 0,0198; 0,0101; 0,0202; 0,0099 s.\nWđ: 0,102; 0,392; 0,196; 0,816 J."
     },
     {
       "khoa": "rut_ra",
-      "giay": 22.8,
-      "chu": "Cùng xe 0,20 kg, v gần gấp đôi (1,01 → 1,98 m/s) thì Wđ gần gấp 4 (0,102 → 0,392 J)."
+      "giay": 23.5,
+      "chu": "Wđ theo v là đường cong dốc dần lên. Xe nặng gấp đôi thì đường cong dốc hơn. Trong Wđ = ½·m·v², v được bình phương."
     },
     {
       "khoa": "chua_noi",
-      "giay": 34.9,
+      "giay": 36.7,
       "chu": "Số liệu minh hoạ, chưa phải số đo thật."
     }
   ],
   "dung_dua": {
-    "giay": 9.4,
-    "cau_hoi": "Xe lăn 0,20 kg chạy qua cổng quang. Lần sau đẩy mạnh hơn, tốc độ v gấp đôi. Động năng Wđ của xe gấp mấy lần?",
+    "giay": 9.9,
+    "cau_hoi": "Xe 0,20 kg chạy qua cổng quang hai lần: đẩy nhẹ rồi đẩy mạnh. Vẽ Wđ theo v, nối gốc O với hai điểm đo. Được đường gì?",
     "chon": [
-      "A. Không đổi",
-      "B. Gần gấp 2",
-      "C. Gần gấp 4",
-      "D. Gần gấp 8"
+      "A. Đường thẳng qua gốc O",
+      "B. Đường cong, dốc dần lên",
+      "C. Đường cong, thoải dần",
+      "D. Đường nằm ngang"
+    ],
+    "dung": 1,
+    "giai_thich_dung": "Ba điểm (0; 0), (1,01; 0,102), (1,98; 0,392): v gần gấp đôi mà Wđ gần gấp 4, nên đường đi lên ngày càng dốc. Lí do: trong Wđ = ½·m·v², v được bình phương.",
+    "giai_thich_sai": "Nối ba điểm (0; 0), (1,01; 0,102), (1,98; 0,392): đoạn sau dốc hơn hẳn đoạn đầu. Đường thẳng chỉ đúng khi Wđ tỉ lệ với v; ở đây Wđ theo v², nên đường cong dốc dần lên."
+  },
+  "cau_chot": {
+    "giay": 42.5,
+    "cau_hoi": "Xe 0,60 kg gắn tấm chắn 2,0 cm, đồng hồ đo được Δt = 0,010 s. Động năng Wđ của xe khoảng bao nhiêu?",
+    "chon": [
+      "A. 0,075 J",
+      "B. 0,60 J",
+      "C. 1,2 J",
+      "D. 2,4 J"
     ],
     "dung": 2,
-    "giai_thich_dung": "Lần 1 v = 1,01 m/s, lần 2 v = 1,98 m/s (gần gấp đôi); Wđ từ 0,102 J lên 0,392 J, gần gấp 4, vì trong Wđ = ½·m·v² tốc độ v được bình phương.",
-    "giai_thich_sai": "Xem hai điểm của xe 0,20 kg trên đồ thị: Wđ từ 0,102 J lên 0,392 J, gần gấp 4. Không đổi, gấp 2 hay gấp 8 đều không khớp."
+    "giai_thich": [
+      "Đây là kết quả khi tính v = Δt : d = 0,5 m/s. Tốc độ là quãng đường chia thời gian: v = 0,020 : 0,010 = 2,0 m/s, nên Wđ = ½ · 0,60 · 2,0² = 1,2 J (theo mô hình).",
+      "Đây là kết quả khi quên bình phương v: ½ · 0,60 · 2,0 = 0,60. Đúng phải là Wđ = ½ · 0,60 · 2,0² = 1,2 J (theo mô hình).",
+      "Đổi d = 2,0 cm = 0,020 m; v = 0,020 : 0,010 = 2,0 m/s; Wđ = ½ · 0,60 · 2,0² = 1,2 J (theo mô hình).",
+      "Đây là kết quả khi quên ½: 0,60 · 2,0² = 2,4. Đúng phải là Wđ = ½ · 0,60 · 2,0² = 1,2 J (theo mô hình)."
+    ]
   }
 }
