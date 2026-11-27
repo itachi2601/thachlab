@@ -4,7 +4,7 @@
 # doi-ban-l11b.py --apply (kho + bài trỏ bản mới, khung gắn lại).
 #   bash scripts/video-thi-nghiem/dang-cong-moi-l11b.sh          # xem thử (dry-run)
 #   bash scripts/video-thi-nghiem/dang-cong-moi-l11b.sh --yes    # ghi thật ngay (chạy trong tab terminal, thầy theo dõi)
-# Chỉ đổi URL clip + data-khung trong khối video → không cần --cho-phep-khac. Không hẹn giờ trong script.
+# Đổi URL clip + data-khung + hộp exp lộ đáp án (thầy quyết sửa tối thiểu) → cần --cho-phep-khac. Không hẹn giờ trong script.
 cd "$(dirname "$0")/../.."
 YES="${1:-}"
 for p in "l11-thuc-hanh-do-toc-do-am 34" "l11-luc-coulomb 35" "l11-khai-niem-dien-truong 36" "l11-dien-truong-deu 37" \
@@ -14,9 +14,9 @@ for p in "l11-thuc-hanh-do-toc-do-am 34" "l11-luc-coulomb 35" "l11-khai-niem-die
   set -- $p
   echo "===== bai $2 ($1) $(date '+%H:%M:%S')"
   if [ "$YES" = "--yes" ]; then
-    bash scripts/cap-nhat-ly-thuyet.sh "content/lesson-samples/$1/bundle.json" "$2" --chi-video --yes || echo "LOI bai $2"
+    bash scripts/cap-nhat-ly-thuyet.sh "content/lesson-samples/$1/bundle.json" "$2" --chi-video --cho-phep-khac --yes || echo "LOI bai $2"
   else
-    echo n | bash scripts/cap-nhat-ly-thuyet.sh "content/lesson-samples/$1/bundle.json" "$2" --chi-video
+    echo n | bash scripts/cap-nhat-ly-thuyet.sh "content/lesson-samples/$1/bundle.json" "$2" --chi-video --cho-phep-khac
   fi
 done
 echo "XONG $(date '+%H:%M:%S')"
