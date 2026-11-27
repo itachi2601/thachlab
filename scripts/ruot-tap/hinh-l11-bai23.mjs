@@ -54,7 +54,7 @@ export const hinhL11b23 = {
     });
     return wrap('0 0 270 186', b, cap, 'Hai sợi dây cùng hiệu điện thế 12 V');
   },
-  machDo: (cap = 'Ampe kế nối tiếp, vôn kế song song với R.') => {
+  machDo: (cap = 'Mạch đo: ampe kế đo I, vôn kế đo U của R.') => {
     let b = ln(30, 40, 270, 40) + ln(30, 40, 30, 150) + ln(30, 150, 270, 150) + ln(270, 40, 270, 150);
     b += `<rect x="12" y="76" width="36" height="40" fill="#fff" stroke="${INK}" stroke-width="${SW}"/>` + T(30, 103, 'U', { a: 'middle', w: 700 });
     b += T(56, 102, 'nguồn', { size: 18 });
