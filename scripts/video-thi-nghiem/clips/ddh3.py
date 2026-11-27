@@ -97,6 +97,10 @@ def seg_bar(d, y, t, t0, t1, col, a=1.0, n=6):
         if i < on: card(d, (x, y, x + wseg - 14, y + 76), fill=A(col, a), r=16)
         else: card(d, (x, y, x + wseg - 14, y + 76), fill=A(WHITE, a), outline=A(EMPTY, a), r=16, w=4)
 
+def legend(d):
+    text(d, (40, 360), "M: van", 56, DORANGE, anchor="lm")
+    text(d, (40, 440), "Q: bóng", 56, NAVY, anchor="lm")
+
 def tag_minh_hoa(d, a=1.0):
     pill(d, 880, 255, "minh hoạ", 56, WHITE, NAVY, a)
 
@@ -106,6 +110,7 @@ def s_hook(img, d, t, sc):
     light(d)
     wheel(d, OMG * max(0.0, t - 0.4))                       # van quay deu that, omega = 2 rad/s
     screen(d, ruler=False)
+    text(d, (40, 360), "M: van", 56, DORANGE, anchor="lm")
     if t > 1.0: text(d, (CX, SY - 60), "?", 72, PURPLE)
     a = appear(t, M[1] - 0.2, 0.5)
     if a <= 0: return
@@ -150,7 +155,7 @@ def table(d, cols, y0=1100):
 
 def s_do(img, d, t, sc):
     tau, cols = tau_do(t)
-    light(d); screen(d); tag_minh_hoa(d)
+    light(d); screen(d); tag_minh_hoa(d); legend(d)
     trails(d, tau)
     mx, my = wheel(d, OMG * tau)
     xs = AMP * math.cos(OMG * tau)
@@ -164,7 +169,7 @@ def s_do(img, d, t, sc):
 # ---------------- canh 3: Dap an + Rut ra (banh van quay, bong van chay: khong dung hinh) ----------------
 def s_dapan(img, d, t, sc):
     M = sc["M"]
-    light(d, 0.6); screen(d, labels=False, man=False)
+    light(d, 0.6); screen(d, labels=False, man=False); legend(d)
     trails(d, TRAIL)
     th = OMG * t
     mx, my = wheel(d, th, a=0.7, lab=False)
@@ -186,15 +191,16 @@ def s_bay(img, d, t, sc):
     t2, t3 = M[1] - 0.1, M[2] - 0.1
     kc = appear(t, t2, 0.4)
     if kc > 0:                                              # phat lai 3 s quay that (lap), cung da quay + moc t = 3 s
-        u = (t - t2) % 3.6
-        th = OMG * min(u, 3.0)
+        u = min(t - t2, 3.0)                               # phat lai mot lan 0 -> 3 s, dong ho chay theo hinh
+        th = OMG * u
         rr = R + 70
         d.arc([CX - rr, CY - rr, CX + rr, CY + rr], start=-math.degrees(th), end=0, fill=A(ORANGE, kc), width=8)
         gx, gy = mpos(th3)
         d.ellipse([gx - 26, gy - 26, gx + 26, gy + 26], outline=A(DGREEN, kc), width=5)
         mx, my = wheel(d, th, lab=False)
         shadow(d, AMP * math.cos(th), mx, my)
-        text(d, (W / 2, SY + 95), "t = 3 s: chưa về chỗ cũ", 58, DGREEN, alpha=kc)
+        text(d, (250, SY + 95), f"t = {u:.1f} s".replace(".", ","), 58, NAVY, anchor="lm", alpha=kc)
+        if u >= 3.0: text(d, (560, SY + 95), "chưa về chỗ cũ", 58, DGREEN, anchor="lm")
     else:
         mx, my = wheel(d, 0.0, lab=False)
         shadow(d, AMP, mx, my)
@@ -253,8 +259,8 @@ CLIP = dict(id="tn-l11-daodongdieuhoa-03", header="VẬT LÍ 11 · VÍ DỤ", fo
    ("Bóng dao động điều hoà.", 5.4)]),
  dict(key="bay", title="Bẫy và giới hạn", draw=s_bay, tail=0.4, caps=[
    ("Bẫy hay gặp.", 3.3),
-   ("Xem van sau 3 s.", 3.3),
-   ("Còn giới hạn.", 4.8)]),
+   ("Xem van sau 3 s.", 5.9),
+   ("Còn giới hạn.", 2.5)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.3, caps=[
    ("Dừng lại, tự tính.", 7.0)]),
 ])
