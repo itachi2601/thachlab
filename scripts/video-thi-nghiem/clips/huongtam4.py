@@ -103,7 +103,8 @@ def table(d, nrow, k=1.0):
     card(d, (40, 1050, 1040, 1590), fill=WHITE, outline=LIGHT, w=3)
     text(d, (W / 2, 1115), "m = 0,02 kg", 55, INK)
     for x, h, col in ((200, "lần", INK), (520, "v (m/s)", DGREEN), (840, "N (N)", DRED)):
-        text(d, (x, 1210), h, 58, col)
+        text(d, (x, 1215), h, 58, col)
+    text(d, (840, 1162), "lực thành", 55, DRED)
     d.line([(70, 1260), (1010, 1260)], fill=LIGHT, width=3)
     for i in range(nrow):
         y = 1340 + i * 110
@@ -199,8 +200,8 @@ def s_end(img, d, t, sc):
     k = appear(t, 0.15, 0.4)
     g = 270                                                                  # cho ho bat dau o day vong
     ring(d, C, R, g, k=k)
-    u = math.radians(120 + 18 * t); p = P(C, RB, u); ball(d, p, k=k)        # bi toi gan cho ho, chua roi
-    pts = [P(C, RB - 50, u + math.radians(a)) for a in range(10, 41, 2)]
+    u = math.radians(120 + 30 * min(t, 2.0)); p = P(C, RB, u); ball(d, p, k=k)  # bi dung o canh trai (v2: khong mui ten o day vong)
+    pts = [P(C, RB - 50, math.radians(a)) for a in range(70, 111, 2)]       # mui ten cong chi chieu quay, o dinh vong
     d.line(pts, fill=A(GREEN, k), width=7, joint="curve"); arrow(d, pts[-3], pts[-1], A(GREEN, k), w=7, head=22)
     q = P(C, R, math.radians(300)); text(d, (q[0], q[1] + 10), "?", 72, PURPLE, alpha=k)
     text(d, (C[0], C[1] + 55), "tâm", 55, MUTED, alpha=k)
@@ -226,7 +227,7 @@ CLIP = dict(id="tn-l10-huongtam-04", header="VẬT LÍ 10 · THÍ NGHIỆM", foo
    ("Dừng lại, tự đoán.", 5.6)]),
  dict(key="do", title="Tiến hành", draw=s_do, tail=0.3, caps=[
    ("Lần 1: búng nhẹ.", 5.0),
-   ("Lần 2: búng mạnh gấp đôi.", 3.6)]),
+   ("Lần 2: bi nhanh gấp đôi.", 3.6)]),
  dict(key="dapan", title="Kết quả", draw=s_dapan, tail=0.3, caps=[
    ("Chồng hai vệt lên nhau.", 3.0),
    ("Đáp án: đường đi như cũ.", 3.0)]),
