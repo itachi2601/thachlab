@@ -497,3 +497,18 @@ Nhánh `claude/motion-graphic-deployment-8b27a0`. 4 agent Opus × 8 clip; cổng
 | antoanpx2 | tn-l12-antoanpx-02 | 200 → 162 | 17 → 0 | 49,2 → 48,6 | 1251 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-antoanpx-02-20261126.mp4) | bẫy mới 'thêm 5 mm chì là chặn hết' 360 → 154 → 66; chốt tấm chì hẹp → > 154 |
 | antoanpx4 | tn-l12-antoanpx-04 | 199 → 132 | 17 → 0 | 49,4 → 48,6 | 1148 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-antoanpx-04-20261126-2.mp4) | bản -2 (lưới chốt 'mỗi ô = 1 tuần', vạch 20 mSv); bỏ bẫy #2 (trùng Dự đoán); chốt 0,5 mSv × 50 = 25 > 20 |
 Sau duyệt (sau 22h hoặc khi thầy bảo): kho + bài đổi sang `-20261126` + `gan-khung-video.mts`, `cap-nhat-ly-thuyet.sh --chi-video` theo mẫu `dang-lo20.sh`.
+
+## Cổng mới — L10b (bài 63–79, 38 clip; phiên `clip-cong-moi-l10b`, 27/11/2026) — **đang dựng, chờ thầy duyệt từng nhóm**
+Brief: thư mục ghi chú phiên `l10b-brief-dung.md`/`l10b-brief-kiem.md`. 1 agent Opus dựng + 1 kiem-code song song; tối đa 2 vòng kiem-code/clip, sau v2 sửa lượt cuối tự crop. Script: `tai-cong-moi-l10b.sh` (Storage), `dang-cong-moi-l10b.sh` (DB, `--chi-video`; dry-run 17/17 sạch 27/11). Kho `<tn>.json` + bài giữ bản cũ tới khi duyệt.
+
+**Nhóm A (8 clip) — qua cổng A + B (kiem-code 2 vòng), đã tải `-20261127.{mp4,webp}` HEAD 200**
+| Clip | tn | Từ/phút | LỖI | Giây | KB | mp4 | Điểm cần quyết |
+|---|---|---|---|---|---|---|---|
+| baotoandl1 | tn-l10-baotoandl-01 | 199 → 142 | 15 → 0 | 49,9 → 49,9 | 1437 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-baotoandl-01-20261127.mp4) | thanh p ghi 0,20/0,80 kg; gợi ý "so động lượng trước và sau" |
+| baotoandl2 | tn-l10-baotoandl-02 | 198 → 155 | 15 → 0 | 48,8 → 49,8 | 1366 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-baotoandl-02-20261127.mp4) | chốt đổi: hai xe ngược chiều, mỗi xe bật lại (0,20 / 0,60 m/s) — **kho `ghi_chu` còn ca cùng chiều, sửa kho?** |
+| thuchanhdl1 | tn-l10-thuchanhdl-01 | 198 → 167 | 14 → 0 | 49,8 | 1465 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-thuchanhdl-01-20261127.mp4) | m₁ 0,305 kg trùng Bài mẫu — giữ? |
+| thuchanhdl2 | tn-l10-thuchanhdl-02 | 195 → 161 | 15 → 0 | 49,7 | 1536 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-thuchanhdl-02-20261127.mp4) | Dự đoán "tổng ≈ 0" (m₁ 0,300 kg) gần Câu 2 bài |
+| thuchanhdl3 | tn-l10-thuchanhdl-03 | 196 → 158 | 15 → 0 | 49,7 | 1403 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-thuchanhdl-03-20261127.mp4) | chốt 7,4 % tự tính (kiem-code tính lại đúng); bỏ "cỡ sai số đo" (kho không có) |
+| dongluong1 | tn-l10-dongluong-01 | 197 → 172 | 17 → 0 | 49,7 | 1461 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-dongluong-01-20261127.mp4) | Dự đoán đổi (cũ trùng Bấm xem 0,18); chốt "xe dính" 0,125 tự suy |
+| dongluong2 | tn-l10-dongluong-02 | 193 → 163 | 18 → 0 | 49,7 | 1291 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-dongluong-02-20261127.mp4) | kết luận dựa giả thiết gỗ nặng hơn bi nhiều (chưa nêu); không vẽ vết gỗ dừng ở Kết quả |
+| congsuat1 | tn-l10-cong-suat-01 | 163 → 133 | 14 → 0 | 49,7 | 1316 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-cong-suat-01-20261127.mp4) | chốt 12,5 s; "gấp 3" gần ý quiz mở bài |
