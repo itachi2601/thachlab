@@ -23,7 +23,7 @@
     {
       "khoa": "quan_sat",
       "giay": 18.3,
-      "chu": "To lần 1 ở 16,8 cm, lần 2 ở 50,8 cm; hạ tiếp không to thêm. Năm lần lệch vài mm."
+      "chu": "To lần 1 ở 16,8 cm, lần 2 ở 50,8 cm. Năm lần đo lệch nhau vài mm."
     },
     {
       "khoa": "rut_ra",
@@ -50,20 +50,20 @@
     "giai_thich_sai": "Cột khí chỉ to khi dài cỡ số lẻ lần λ/4 (λ/4, 3λ/4, …), nên không có lần to ở gấp đôi hay gấp bốn. Ống 67 cm vẫn đủ chỗ cho lần to thứ hai ở cỡ 51 cm."
   },
   "cau_chot": {
-    "giay": 44.5,
-    "cau_hoi": "Ống 67 cm chỉ có hai lần to: 16,8 cm và 50,8 cm. Nếu ống đủ dài, lần to thứ ba ở cột khí khoảng bao nhiêu?",
+    "giay": 44.1,
+    "cau_hoi": "Vẫn loa 500 Hz. Hạ nước tới đáy ống, cột khí dài 67 cm (cả ống). Âm nghe thế nào?",
     "chon": [
-      "A. Khoảng 67,2 cm",
-      "B. Khoảng 84,8 cm",
-      "C. Khoảng 101,6 cm",
-      "D. Khoảng 118,8 cm"
+      "A. To nhất, vì cột khí dài bằng cả ống",
+      "B. To như lần 2 ở 50,8 cm",
+      "C. Nhỏ, vì chưa tới lần to kế tiếp",
+      "D. Tắt hẳn, vì nước đã rút hết"
     ],
-    "dung": 1,
+    "dung": 2,
     "giai_thich": [
-      "67,2 cm là 4 × 16,8: nghĩ lần to theo bội chẵn. Thật ra hai lần to liên tiếp luôn cách nhau λ/2 = 34,0 cm, nên lần ba ở 50,8 + 34,0 = 84,8 cm.",
-      "Hai lần to liên tiếp cách nhau λ/2 = 50,8 − 16,8 = 34,0 cm. Lần ba ở 50,8 + 34,0 = 84,8 cm, dài hơn ống 67 cm nên ống này không nghe được.",
-      "101,6 cm là 2 × 50,8: gấp đôi lần 2. Các lần to không nhân lên mà cách đều nhau λ/2 = 34,0 cm: lần ba ở 84,8 cm.",
-      "118,8 cm là 50,8 + 68,0: lấy khoảng cách hai lần to là cả λ. Hai lần to liên tiếp chỉ cách λ/2 = 34,0 cm, nên lần ba ở 84,8 cm."
+      "Cột khí dài nhất không phải chỗ to nhất: chỉ to ở các chiều dài cách nhau λ/2 = 34,0 cm. Lần to thứ ba ở cỡ 50,8 + 34,0 = 84,8 cm, ngoài ống; 67 cm nằm giữa hai chỗ to nên âm nhỏ.",
+      "Lần 2 to ở 50,8 cm; qua đó âm nhỏ lại. Chỗ to kế tiếp ở 50,8 + 34,0 = 84,8 cm, còn 67 cm nằm giữa nên âm nhỏ.",
+      "Hai lần to cách nhau λ/2 = 34,0 cm, nên lần thứ ba ở cỡ 84,8 cm, dài hơn ống 67 cm. Ở 67 cm, cột khí không cộng hưởng: âm nhỏ (vẫn nghe loa, nhưng không to lên).",
+      "Loa vẫn kêu nên vẫn nghe âm, chỉ không được cột khí làm to lên: 67 cm nằm giữa lần to 2 (50,8 cm) và lần to thứ ba (≈ 84,8 cm, ngoài ống)."
     ]
   }
 }

@@ -8,9 +8,9 @@
 #   bi lo. Ca moi: dat R = 1,0 Ohm (bang r), H khoang bao nhieu? -> 50 % (hang 1 kho). Hop exp khong neu so 50 %.
 # Bay (hien_tuong_hay_sai[1]): "thay I giam nen nghi H giam" -> hai cot I va U canh nhau o R = 1,0 va 9,0 Ohm.
 #   Khong dung bay "R = r thi H lon nhat" vi trung cap so (R = 1,0 Ohm, 50 %) cua Du doan.
-# THU NGHI (= cau_chot khung, CA TU SUY trong dai tham_so r 0,2..3): pin rat cu r = 3,0 Ohm, R = 9,0 Ohm
-#   -> H = 9/12 = 75 %. Phan xa sai: 90 % (hang R = 9,0 Ohm cua bang). Khong dung r = 0,2 Ohm (83 %) vi bai mau
-#   trong bai co dap so 83,3 %.
+# THU NGHI v3 (27/11, = cau_chot khung, CA TU SUY): cung E = 3,0 V, R = 9,0 Ohm; pin moi r = 1,0 (I = 0,30 A,
+#   I^2 r = 0,09 W) va pin cu r = 3,0 Ohm (I = 0,25 A, I^2 r = 0,19 W) -> pin cu nong hon du dong nho hon.
+#   Bo ca "H cua pin r = 3,0" vi trung khuon "Thu suc: doi so" trong bai; "H = 90 % -> R = 9r" trung "Doi chieu".
 from engine import *
 
 ROWS = [(1.0, 1.50, 1.50, 50.0, 2.25), (2.0, 1.00, 2.00, 66.7, 2.00),
@@ -205,9 +205,9 @@ def bars(d, x0, title, vals, unit_max, col, lab, labcol, ka, kb):
 def s_bay(img, d, t, sc):
     IMG_REF[0] = img; M = sc["M"]
     ka = appear(t, 0.2, 0.4); kb = appear(t, 1.2, 0.8)
-    bars(d, 40, "I (A)", (1.50, 0.30), 2.7, (147, 180, 240), "giảm", DRED, ka, kb)
-    bars(d, 560, "U (V)", (1.50, 2.70), 2.7, GREEN, "tăng", DGREEN, ka, kb)
-    k2 = appear(t, M[1], 0.45); k3 = appear(t, M[2] - 0.7, 0.45)
+    bars(d, 40, "I (A)", (1.50, 0.30), 2.7, (147, 180, 240), "giảm", INK, ka, kb)
+    bars(d, 560, "U (V)", (1.50, 2.70), 2.7, GREEN, "tăng", INK, ka, kb)
+    k2 = appear(t, M[1], 0.45); k3 = appear(t, M[2] - 0.3, 0.45)
     if k2 * (1 - k3) > 0:
         a2 = k2 * (1 - k3)
         card(d, (80, 1260, 1000, 1440), fill=A((236, 253, 243), a2), outline=A(GREEN, a2), w=5)
@@ -219,21 +219,23 @@ def s_bay(img, d, t, sc):
         text(d, (W / 2, 1515), "đo bằng cách nào?", 62, INK, alpha=k3)
 
 # ---------------- canh 6: chot + THU NGHI ----------------
+def pin2(d, cx, y0, k):                                     # cung kieu pin o mach: vach dai (+), vach ngan day (-)
+    for yc in (y0, y0 + 60):
+        d.line([(cx - 50, yc - 13), (cx + 50, yc - 13)], fill=A(NAVY, k), width=7)
+        d.line([(cx - 26, yc + 13), (cx + 26, yc + 13)], fill=A(NAVY, k), width=16)
+    text(d, (cx - 85, y0 - 30), "+", 62, RED, alpha=k); text(d, (cx - 85, y0 + 100), "−", 66, INK, alpha=k)
+
 def s_end(img, d, t, sc):
     IMG_REF[0] = img
     k1 = appear(t, 0.15, 0.4)
     card(d, (40, 230, 1040, 1560), fill=A(WHITE, k1), outline=A(ORANGE, k1), w=6)
     pill(d, W / 2, 310, "THỬ NGHĨ", ORANGE, k1)
-    for yc in (500, 560):
-        d.line([(230, yc - 13), (330, yc - 13)], fill=A(NAVY, k1), width=7)
-        d.line([(254, yc + 13), (306, yc + 13)], fill=A(NAVY, k1), width=16)
-    text(d, (280, 660), "r = 3,0 Ω", 64, DRED, alpha=k1)
-    card(d, (650, 470, 870, 590), fill=A(BODY, k1), r=16)
-    text(d, (760, 530), "9,0 Ω", 60, WHITE, alpha=k1)
-    text(d, (760, 660), "R", 64, INK, alpha=k1)
-    text(d, (W / 2, 880), "Pin rất cũ, r = 3,0 Ω.", 64, INK, alpha=k1)
-    text(d, (W / 2, 975), "Vẫn đặt R = 9,0 Ω.", 64, INK, alpha=k1)
-    text(d, (W / 2, 1100), "H khoảng bao nhiêu %?", 66, DORANGE, alpha=k1)
+    text(d, (W / 2, 425), "E = 3,0 V, R = 9,0 Ω", 64, INK, alpha=k1)
+    for cx, nm, rl, col in ((290, "pin mới", "r = 1,0 Ω", INK), (790, "pin cũ", "r = 3,0 Ω", DRED)):
+        pin2(d, cx, 560, k1)
+        text(d, (cx, 740), nm, 62, INK, alpha=k1)
+        text(d, (cx, 825), rl, 64, col, alpha=k1)
+    text(d, (W / 2, 1000), "Pin nào nóng hơn bên trong?", 64, DORANGE, alpha=k1)
     seg_bar(d, 1280, t, 1.0, sc["T"] - 0.2, ORANGE, k1)
 
 def _cues(clip):
@@ -255,7 +257,7 @@ CLIP = dict(id="tn-l11-nang-luong-dien-03", header="VẬT LÍ 11 · THÍ NGHIỆ
    ("Đáp án: chỉ 50 %.", 3.0)]),
  dict(key="tang", title="Tăng dần R", draw=s_tang, tail=0.1, caps=[
    ("Mỗi lần đóng K ngắn rồi mở.", 3.6),
-   ("U tăng dần về phía 3,0 V.", 3.8)]),
+   ("U tăng dần về phía 3,0 V.", 3.3)]),
  dict(key="ket", title="Năng lượng đi đâu?", draw=s_ket, tail=0.4, caps=[
    ("Phần xanh: H của mỗi lần đo.", 3.8),
    ("Một phần luôn mất trong pin.", 4.0)]),
@@ -264,5 +266,5 @@ CLIP = dict(id="tn-l11-nang-luong-dien-03", header="VẬT LÍ 11 · THÍ NGHIỆ
    ("H đi theo U, không theo I.", 3.6),
    ("Chưa đo E, r của pin.", 3.4)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.3, caps=[
-   ("Dừng lại, tự trả lời.", 4.5)]),
+   ("Dừng lại, tự trả lời.", 5.0)]),
 ])

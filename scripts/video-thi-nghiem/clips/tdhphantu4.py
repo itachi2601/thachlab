@@ -6,12 +6,13 @@
 # Hop video trong bai (muc II.2, trong "Bam xem") ghi san "Rut ra: nong ... bong cang; lanh ... bong xep" -> KHONG hoi
 #   chieu phong/xep. Du doan: nhung moi qua 1 phut (60 °C va 5 °C, bong o 27 °C), qua nao doi co NHIEU HON?
 #   -> qua nong: +0,9 cm so voi -0,6 cm (chenh nhiet do 33 °C so voi 22 °C). Bai khong neu phep so nay.
-# Hinh: do phong/xep cua bong VE PHONG TO x3 (32,9 vs 32,0 cm chi lech 3 %), co vong net dut co ban dau de so.
+# Hinh: do phong/xep cua bong VE PHONG TO x5 cung mot he so cho ca hai qua (ghi "hinh phong to x5" tren man), vong net
+#   dut co ban dau ve de len CA HAI bong. Canh Rut ra ve hai bong cung co (chi so toc do phan tu).
 # Phan tu: cham trong bong, toc do ve ti le (nong 1,7 · phong 1,0 · lanh 0,55, chi dinh tinh); cham thanh thi loe cam.
 # Bay = hien_tuong_hay_sai[0]: nuoc nong tham vao bong. Khong dung so cua Du doan.
-# CHUA NOI DUOC: vo cao su gap nong co mem ra khong? (gia_thiet kho: bo qua doi do dan hoi cua vo).
-# THU NGHI (= cau_chot khung, ca tu suy tu quan_sat[2] cua kho): lay qua nong ra, de o phong 27 °C vai phut ->
-#   vong quanh tro ve gan 32,0 cm. Man chot khong cong thuc, khong goi y, khong hien 32,0 o man chot.
+# CHUA NOI DUOC v2: moi giay co bao nhieu cu dap len vo? (bo "vo cao su mem ra" vi lam phuong an chot thanh khong doc nhat).
+# THU NGHI v2 (27/11, = cau_chot khung, CA TU SUY): qua moi 32,0 cm nhung nuoc 40 °C 1 phut -> giua 32,0 va 32,9, khoang
+#   32,4 cm (doi theo chenh nhiet do: 0,9 · 13/33 ≈ 0,35 cm). Bo ca "de nguoi ve 27 °C" (tra loi bang le thuong).
 import random
 from engine import *
 
@@ -47,18 +48,18 @@ def seg_bar(d, y, t, t0, t1, col, a=1.0):
         else: card(d, (x, y, x + 130, y + 70), fill=A(WHITE, a), outline=A(LIGHT, a), r=18, w=4)
 
 # ---------------- bong + phan tu ----------------
-R0 = 150; KX = 3.0 * R0 / C0                      # px moi cm vong quanh, PHONG TO x3
+R0 = 150; KX = 5.0 * R0 / C0                      # px moi cm vong quanh, PHONG TO x5 (ghi tren hinh)
 def r_of(c): return R0 + (c - C0) * KX
 _rng = random.Random(4)
 MOLS = [(_rng.random() * 2, _rng.random() * 2, 0.8 + 0.6 * _rng.random(), 0.8 + 0.6 * _rng.random()) for _ in range(14)]
 def tri(x): return 2 * abs((x % 2) - 1) - 1
 
 def balloon(d, cx, cy, r, phase, a=1.0, ref=False, hits=True):
-    if ref:                                        # vong net dut: co ban dau 32,0 cm
+    d.ellipse([cx - r, cy - r, cx + r, cy + r], fill=A(BAL, a), outline=A(BAL_O, a), width=6)
+    if ref:                                        # vong net dut co ban dau 32,0 cm, ve DE LEN bong (thay ca hai qua)
         for k in range(36):
             a0 = k * 10
             d.arc([cx - R0, cy - R0, cx + R0, cy + R0], a0, a0 + 5, fill=A(INK, a), width=4)
-    d.ellipse([cx - r, cy - r, cx + r, cy + r], fill=A(BAL, a), outline=A(BAL_O, a), width=6)
     d.polygon([(cx - 16, cy + r + 18), (cx + 16, cy + r + 18), (cx, cy + r - 4)], fill=A(BAL_O, a))
     d.line([(cx, cy + r + 18), (cx + 10, cy + r + 70)], fill=A(INK, a), width=3)
     for ax, ay, fx, fy in MOLS:
@@ -133,6 +134,7 @@ def s_do(img, d, t, sc):
         d.pieslice([cx - rr + 8, cy - rr + 8, cx + rr - 8, cy + rr - 8], -90, -90 + 360 * p, fill=ORANGE)
     kr = appear(t, T_READ, 0.4)
     if kr > 0:
+        text(d, (W / 2, 1035), "hình phóng to ×5", 56, INK, alpha=kr)
         card(d, (40, 1080, 1040, 1300), fill=A(WHITE, kr), outline=A(LIGHT, kr), w=4)
         text(d, (W / 2, 1130), "vòng quanh (cm)", 56, INK, alpha=kr)
         text(d, (BX[0], 1230), "32,0 → 32,9", 60, DORANGE, alpha=kr)
@@ -143,25 +145,29 @@ def s_do(img, d, t, sc):
         card(d, (BX[1] - 170, 1340, BX[1] + 170, 1450), fill=A(COLDW, kd), r=24)
         text(d, (BX[0], 1395), "+0,9 cm", 62, DORANGE, alpha=kd)
         text(d, (BX[1], 1395), "−0,6 cm", 62, DBLUE, alpha=kd)
+        text(d, (BX[0], 1500), "lệch 33 °C", 58, DORANGE, alpha=kd)
+        text(d, (BX[1], 1500), "lệch 22 °C", 58, DBLUE, alpha=kd)
 
 # ---------------- canh 3: Rut ra ----------------
 def s_rut(img, d, t, sc):
     IMG_REF[0] = img; M = sc["M"]
     card(d, (50, 250, 1030, 400), fill=WHITE, outline=BLUE, w=6)
-    text(d, (W / 2, 325), "Phân tử đập vào vỏ bóng", 62, BLUE)
+    text(d, (W / 2, 325), "Phân tử đập vỏ bóng", 62, BLUE)
     for cx, c, sp, lab, col in ((BX[0], C_HOT, 1.7, "60 °C", DORANGE), (BX[1], C_COLD, 0.55, "5 °C", DBLUE)):
-        balloon(d, cx, 760, r_of(c) * 1.25, t * sp)
+        balloon(d, cx, 760, R0 * 1.25, t * sp)                 # hai qua ve CUNG CO: canh nay chi so phan tu
         text(d, (cx, 510), lab, 60, col)
+    d.ellipse([110, 1060, 150, 1100], outline=ORANGE, width=5)
+    text(d, (175, 1080), "cú đập", 58, INK, anchor="lm")
     k2 = appear(t, M[1] - 0.1, 0.45)
     if k2 > 0:
-        card(d, (50, 1150, 1030, 1320), fill=A(WHITE, k2), outline=A(DGREEN, k2), w=6)
-        text(d, (W / 2, 1235), "Tổng các cú đập = áp suất khí", 58, DGREEN, alpha=k2)
+        card(d, (50, 1170, 1030, 1340), fill=A(WHITE, k2), outline=A(DGREEN, k2), w=6)
+        text(d, (W / 2, 1255), "Tổng các cú đập = áp suất khí", 58, DGREEN, alpha=k2)
 
 # ---------------- canh 4: Bay - nuoc tham vao bong + CHUA NOI DUOC ----------------
 B2 = 3.4
 def s_bay(img, d, t, sc):
     IMG_REF[0] = img; M = sc["M"]
-    k3 = appear(t, M[2] - 0.7, 0.45); a1 = 1.0 - k3
+    k3 = appear(t, M[2] - 0.4, 0.45); a1 = 1.0 - k3
     if a1 > 0:
         card(d, (40, 250, 1040, 1300), fill=A(WHITE, a1), outline=A(DRED, a1), w=6)
         pill(d, W / 2, 320, "BẪY", DRED, a1)
@@ -185,11 +191,9 @@ def s_bay(img, d, t, sc):
     if k3 > 0:
         card(d, (40, 300, 1040, 840), fill=A(WHITE, k3), outline=A(NAVY, k3), w=6)
         pill(d, W / 2, 380, "CHƯA NÓI ĐƯỢC", NAVY, k3)
-        text(d, (W / 2, 540), "Vỏ cao su gặp nóng", 62, INK, alpha=k3)
-        text(d, (W / 2, 640), "có mềm ra không?", 62, INK, alpha=k3)
-        cx, cy = W / 2, 1150; rr = 150 + 14 * math.sin(2.6 * t)
-        d.ellipse([cx - rr, cy - rr, cx + rr, cy + rr], fill=A(BAL, k3), outline=A(BAL_O, k3), width=8 + int(4 * math.sin(2.6 * t)))
-        text(d, (cx, cy), "?", 100, DRED, alpha=k3)
+        text(d, (W / 2, 540), "Mỗi giây có bao nhiêu", 62, INK, alpha=k3)
+        text(d, (W / 2, 640), "cú đập lên vỏ?", 62, INK, alpha=k3)
+        balloon(d, W / 2, 1120, 170, t * 1.6, a=k3)
 
 # ---------------- canh 5: THU NGHI ----------------
 def s_end(img, d, t, sc):
@@ -197,14 +201,12 @@ def s_end(img, d, t, sc):
     k = appear(t, 0.15, 0.4)
     card(d, (40, 230, 1040, 1560), fill=A(WHITE, k), outline=A(ORANGE, k), w=6)
     pill(d, W / 2, 310, "THỬ NGHĨ", ORANGE, k)
-    balloon(d, 300, 560, r_of(C_HOT) * 0.8, t * 1.7, a=k)
-    text(d, (300, 380), "32,9 cm", 56, DORANGE, alpha=k)
-    arrow(d, (480, 560), (640, 560), A(INK, k), w=7, head=24)
-    text(d, (790, 560), "27 °C", 64, INK, alpha=k)
-    text(d, (W / 2, 850), "Lấy quả nóng ra,", 64, INK, alpha=k)
-    text(d, (W / 2, 940), "để ở phòng vài phút.", 64, INK, alpha=k)
-    text(d, (W / 2, 1070), "Vòng quanh thế nào?", 66, DORANGE, alpha=k)
-    seg_bar(d, 1260, t, 1.0, sc["T"] - 0.2, ORANGE, k)
+    balloon(d, 220, 560, 110, t * 1.3, a=k)
+    text(d, (640, 500), "27 °C: 32,0 cm", 60, INK, alpha=k)
+    text(d, (640, 600), "60 °C: 32,9 cm", 60, DORANGE, alpha=k)
+    text(d, (W / 2, 850), "Quả mới, nước 40 °C, 1 phút:", 62, INK, alpha=k)
+    text(d, (W / 2, 960), "vòng quanh khoảng bao nhiêu?", 66, DORANGE, alpha=k)
+    seg_bar(d, 1160, t, 1.0, sc["T"] - 0.2, ORANGE, k)
 
 def _cues(clip):
     sc = {s["key"]: s for s in clip["scenes"]}

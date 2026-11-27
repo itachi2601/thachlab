@@ -198,13 +198,14 @@ def s_end(img, d, t, sc):
     card(d, (40, 230, 1040, 1560), fill=A(WHITE, k1), outline=A(ORANGE, k1), w=6)
     pill(d, W / 2, 310, "THỬ NGHĨ", ORANGE, k1)
     d.line([(230, 500), (370, 500)], fill=A(NAVY, k1), width=10); d.line([(230, 560), (370, 560)], fill=A(NAVY, k1), width=10)
-    text(d, (300, 650), "tụ", 64, DBLUE, alpha=k1)
+    text(d, (300, 650), "tụ 1,0 F", 64, DBLUE, alpha=k1)
     card(d, (640, 470, 900, 590), fill=A(WHITE, k1), outline=A(NAVY, k1), r=12, w=6)
     text(d, (770, 530), "200 Ω", 64, INK, alpha=k1)
     text(d, (W / 2, 860), "Nạp lại 2,7 V, xả qua 200 Ω.", 64, INK, alpha=k1)
     text(d, (W / 2, 1040), "Sau 100 s, vôn kế tụ", 66, DORANGE, alpha=k1)
     text(d, (W / 2, 1130), "chỉ khoảng bao nhiêu?", 66, DORANGE, alpha=k1)
-    seg_bar(d, 1290, t, 1.0, sc["T"] - 0.2, ORANGE, k1)
+    text(d, (W / 2, 1250), "Với 100 Ω: 0,99 V sau 100 s", 54, INK, alpha=k1)
+    seg_bar(d, 1390, t, 1.0, sc["T"] - 0.2, ORANGE, k1)
 
 def _cues(clip):
     sc = {s["key"]: s for s in clip["scenes"]}
@@ -232,5 +233,5 @@ CLIP = dict(id="tn-l11-nguon-dien-01", header="VẬT LÍ 11 · THÍ NGHIỆM", f
    ("Nhưng không giữ được U.", 4.0),
    ("Còn một chỗ chưa rõ.", 4.2)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.3, caps=[
-   ("Dừng lại, tự trả lời.", 6.5)]),
+   ("Dừng lại, tự trả lời.", 7.0)]),
 ])

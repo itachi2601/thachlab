@@ -11,7 +11,9 @@
 # Bay (hien_tuong_hay_sai[1]): "E lon moi nguy hiem" -> pin 9 V co r vai om (CA TU SUY: E 9 V, r 2 Ohm trong
 #   tham_so -> 4,5 A) cho dong NHO hon pin AA 1,5 V r 0,3 Ohm (5,0 A). Khong dung cap so Du doan (5,0 / 1,5).
 # CHUA NOI DUOC (sai_so_thuong_gap[1]): giu lau hon 3 s, r co doi?
-# THU NGHI (= cau_chot khung, ca tu suy hang 2 kho, chua tung hien): pin moi + day 0,05 Ohm -> 1,5/0,35 = 4,3 A.
+# THU NGHI v2 (27/11, = cau_chot khung, CA TU SUY): khong noi tat, moi pin noi R = 1,0 Ohm -> pin moi 1,5/1,3 = 1,15 A,
+#   pin da dung 1,5/2,0 = 0,75 A -> gap ~1,5 lan (khong phai 3,3 lan nhu luc noi tat). Bo ca day 0,05 Ohm (trung khuon
+#   Tu kiem tra 4: the so I = E/(R + r)); bo ca hai pin noi tiep vi ghep nguon day SAU hop nay.
 from engine import *
 
 ROWS = [("pin AA mới", 1.5, 0.3, 0.0, 5.0), ("pin AA mới, dây 0,05 Ω", 1.5, 0.3, 0.05, 4.3),
@@ -104,12 +106,13 @@ def s_hook(img, d, t, sc):
     k = appear(t, M[1] - 0.2, 0.5)
     if k <= 0: return
     y0 = 1010 + (1 - k) * 30
-    card(d, (60, y0, 1020, y0 + 540), fill=A(WHITE, k), outline=A(PURPLE, k), w=6)
+    card(d, (60, y0, 1020, y0 + 560), fill=A(WHITE, k), outline=A(PURPLE, k), w=6)
     pill(d, W / 2, y0 + 70, "DỰ ĐOÁN", PURPLE, k)
-    text(d, (W / 2, y0 + 185), "Nối tắt pin mới,", 62, INK, alpha=k)
-    text(d, (W / 2, y0 + 270), "rồi pin đã dùng.", 62, INK, alpha=k)
-    text(d, (W / 2, y0 + 365), "Dòng nào lớn hơn?", 64, PURPLE, alpha=k)
-    seg_bar(d, y0 + 440, t, M[1], sc["T"] - 0.2, PURPLE, k)
+    text(d, (W / 2, y0 + 160), "Cùng 1,5 V khi hở mạch", 58, INK, alpha=k)
+    text(d, (W / 2, y0 + 245), "Nối tắt pin mới,", 62, INK, alpha=k)
+    text(d, (W / 2, y0 + 325), "rồi pin đã dùng.", 62, INK, alpha=k)
+    text(d, (W / 2, y0 + 410), "Dòng nào lớn hơn?", 64, PURPLE, alpha=k)
+    seg_bar(d, y0 + 475, t, M[1], sc["T"] - 0.2, PURPLE, k)
 
 # ---------------- canh 2: Tien hanh (hai lan noi tat 3 s) ----------------
 TA1, TA2, T_KEP, T_NGUOI = 1.0, 5.8, 0.25, 1.2    # bat dau kep ; kep vao mat 0,25 s ; giu dung 3 s ; day nguoi 1,2 s
@@ -137,7 +140,8 @@ def s_do(img, d, t, sc):
     warn(d, 255)
     lab, old, att, heat, ia, ts, n = run_state(t)
     rig(d, lab, old, att, heat)
-    readout(d, 70, 950, "ampe kế", ia); readout(d, 570, 950, "thời gian", ts)
+    thao = ia == "0,0 A" and float(ts.split()[0].replace(",", ".")) >= T_NOI - 1e-9   # het 3 s: kep da thao
+    readout(d, 70, 950, "đã tháo kẹp" if thao else "ampe kế", ia); readout(d, 570, 950, "thời gian", ts)
     card(d, (40, 1150, 1040, 1520), fill=WHITE, outline=LIGHT, w=4)
     text(d, (300, 1215), "nguồn", FS, INK); text(d, (790, 1215), "I (A)", FS, INK)
     d.line([(70, 1260), (1010, 1260)], fill=LIGHT, width=4)
@@ -200,6 +204,7 @@ def s_bay(img, d, t, sc):
         if a2 > 0:
             mini(d, 40, "Pin 9 V", "9,0 V", "2 Ω", "4,5 A", INK, a2)
             mini(d, 560, "Pin AA mới", "1,5 V", "0,3 Ω", "5,0 A", DRED, a2)
+            text(d, (W / 2, 1240), "Số trong ô: dòng nối tắt", 58, INK, alpha=a2)
     if k3 > 0:
         card(d, (40, 300, 1040, 840), fill=A(WHITE, k3), outline=A(NAVY, k3), w=6)
         pill(d, W / 2, 380, "CHƯA NÓI ĐƯỢC", NAVY, k3)
@@ -220,17 +225,12 @@ def s_end(img, d, t, sc):
     k = appear(t, 0.15, 0.4)
     card(d, (40, 230, 1040, 1560), fill=A(WHITE, k), outline=A(ORANGE, k), w=6)
     pill(d, W / 2, 310, "THỬ NGHĨ", ORANGE, k)
-    card(d, (110, 450, 450, 560), fill=A(PIN_NEW[0], k), outline=A(ORANGE, k), r=20, w=5)
-    text(d, (280, 505), "pin", 58, INK, alpha=k)
-    d.line([(450, 505), (560, 505)], fill=A(WIRE, k), width=7)
-    card(d, (560, 465, 780, 545), fill=A(WHITE, k), outline=A(NAVY, k), r=10, w=5)
-    text(d, (670, 505), "0,05 Ω", 56, NAVY, alpha=k)
-    d.line([(780, 505), (850, 505)], fill=A(WIRE, k), width=7)
-    d.ellipse([850, 455, 950, 555], fill=A(WHITE, k), outline=A(BLUE, k), width=6)
-    text(d, (900, 507), "A", 58, BLUE, alpha=k); text(d, (900, 620), "? A", 60, DORANGE, alpha=k)
-    text(d, (W / 2, 820), "Pin mới (r = 0,3 Ω),", 64, INK, alpha=k)
-    text(d, (W / 2, 910), "thay bằng dây 0,05 Ω.", 64, INK, alpha=k)
-    text(d, (W / 2, 1040), "Ampe kế chỉ bao nhiêu?", 66, DORANGE, alpha=k)
+    mt(d, (W / 2, 440), "ℰ = 1,5 V, nối R = 1,0 Ω", 62, INK, k)
+    for cx, nm, rr, pc in ((290, "mới", "r = 0,3 Ω", PIN_NEW), (790, "đã dùng", "r = 1,0 Ω", PIN_OLD)):
+        card(d, (cx - 170, 600, cx + 170, 700), fill=A(pc[0], k), outline=A(pc[1], k), r=20, w=5)
+        text(d, (cx, 650), nm, 58, INK, alpha=k)
+        text(d, (cx, 780), rr, 60, INK, alpha=k)
+    text(d, (W / 2, 960), "Dòng pin mới gấp mấy lần?", 64, DORANGE, alpha=k)
     seg_bar(d, 1250, t, 1.0, sc["T"] - 0.2, ORANGE, k)
 
 def _cues(clip):
@@ -257,7 +257,7 @@ def _kiem_dong_bo():
 CLIP = dict(id="tn-l11-nguon-dien-03", header="VẬT LÍ 11 · THÍ NGHIỆM", footer="Nguồn điện · thachlab.id.vn",
             cues=_cues, scenes=[
  dict(key="hook", title="Nối tắt pin tiểu", draw=s_hook, tail=0.3, caps=[
-   ("Cùng 1,5 V khi hở mạch.", 3.6),
+   ("Hai pin AA.", 3.6),
    ("Dừng lại, tự đoán.", 5.4)]),
  dict(key="do", title="Tiến hành", draw=s_do, tail=0.3, caps=[
    ("Chỉ nối 3 giây, kẹp cách điện.", 4.6),
@@ -267,9 +267,9 @@ CLIP = dict(id="tn-l11-nguon-dien-03", header="VẬT LÍ 11 · THÍ NGHIỆM", f
    ("Cùng 1,5 V, chỉ r khác nhau.", 3.6),
    ("r càng nhỏ, dòng càng lớn.", 3.8)]),
  dict(key="bay", title="Bẫy hay gặp", draw=s_bay, tail=0.4, caps=[
-   ("Pin 9 V so với pin AA.", 3.2),
-   ("r nhỏ mới làm dòng lớn.", 3.2),
-   ("Còn một chỗ chưa rõ.", 4.6)]),
+   ("Pin 9 V và pin AA.", 3.2),
+   ("r nhỏ, dòng mới lớn.", 3.2),
+   ("Còn chỗ chưa rõ.", 4.6)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.3, caps=[
    ("Dừng lại, tự trả lời.", 6.0)]),
 ])

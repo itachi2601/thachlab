@@ -204,8 +204,8 @@ def mini(d, x0, closed, reading, lab1, lab2, col, ka):
 def s_bay(img, d, t, sc):
     IMG_REF[0] = img; M = sc["M"]
     mini(d, 40, False, "1,50 V", "không dòng", "đúng 1,50 V", DGREEN, appear(t, 0.2, 0.4))
-    mini(d, 550, True, "1,20 V", "có dòng", "U dưới 1,50 V", DRED, appear(t, 2.4, 0.5))
-    if t > 2.4:                                                         # dong chay trong mach phai
+    mini(d, 550, True, "1,20 V", "có dòng", "U dưới 1,50 V", DRED, appear(t, M[1] - 0.2, 0.5))
+    if t > M[1] - 0.2:                                                         # dong chay trong mach phai
         for k in range(8):
             s = (k * 125 + t * 170) % 1000
             pts = [(640, 586), (640, 440), (950, 440), (950, 760), (640, 760), (640, 614)]
@@ -214,11 +214,7 @@ def s_bay(img, d, t, sc):
                 L = math.dist(p, q)
                 if rem <= L: dot(d, p[0] + (q[0] - p[0]) * rem / L, p[1] + (q[1] - p[1]) * rem / L, 12, ORANGE); break
                 rem -= L
-    k2 = appear(t, M[1], 0.45); k3 = appear(t, M[2] - 0.7, 0.45)
-    if k2 * (1 - k3) > 0:
-        a2 = k2 * (1 - k3)
-        card(d, (80, 1260, 1000, 1430), fill=A((254, 242, 242), a2), outline=A(DRED, a2), w=5)
-        text(d, (W / 2, 1345), "Pin cũng cản dòng", 60, DRED, alpha=a2)
+    k3 = appear(t, M[2] - 0.3, 0.45)                                  # bo the do rieng (trung phu de + dong duoi hinh)
     if k3 > 0:
         card(d, (40, 1220, 1040, 1600), fill=A(WHITE, k3), outline=A(NAVY, k3), w=6)
         pill(d, W / 2, 1290, "CHƯA NÓI ĐƯỢC", NAVY, k3)
@@ -231,7 +227,7 @@ def s_end(img, d, t, sc):
     k1 = appear(t, 0.15, 0.4)
     card(d, (40, 230, 1040, 1560), fill=A(WHITE, k1), outline=A(ORANGE, k1), w=6)
     pill(d, W / 2, 310, "THỬ NGHĨ", ORANGE, k1)
-    for (cx, rd) in ((330, "0,25 A"), (750, "? V")):
+    for (cx, rd) in ((330, "0,20 A"), (750, "? V")):
         card(d, (cx - 140, 460, cx + 140, 580), fill=A(BODY, k1), r=16)
         card(d, (cx - 126, 474, cx + 126, 566), fill=A(SCR, k1), r=10)
         text(d, (cx, 520), rd, 60, (20, 60, 30), alpha=k1)
@@ -240,7 +236,7 @@ def s_end(img, d, t, sc):
         text(d, (330, yy), i_, 58, INK, alpha=k1); text(d, (540, yy), "→", 58, MUTED, alpha=k1)
         text(d, (750, yy), u_, 58, INK, alpha=k1)
     text(d, (W / 2, 920), "Cùng pin, nối R khác:", 64, INK, alpha=k1)
-    text(d, (W / 2, 1010), "ampe kế chỉ 0,25 A.", 64, INK, alpha=k1)
+    text(d, (W / 2, 1010), "ampe kế chỉ 0,20 A.", 64, INK, alpha=k1)
     text(d, (W / 2, 1130), "Vôn kế chỉ bao nhiêu?", 66, DORANGE, alpha=k1)
     seg_bar(d, 1290, t, 1.0, sc["T"] - 0.2, ORANGE, k1)
 
@@ -264,9 +260,9 @@ CLIP = dict(id="tn-l11-nguon-dien-02", header="VẬT LÍ 11 · THÍ NGHIỆM", f
    ("Các điểm nằm trên một đường thẳng.", 4.2),
    ("Đáp án: kéo dài tới U = 0.", 4.2)]),
  dict(key="bay", title="Bẫy: vôn kế luôn 1,5 V?", draw=s_bay, tail=0.4, caps=[
-   ("1,5 V trên vỏ: chỉ khi hở mạch.", 4.4),
-   ("Có dòng thì U nhỏ hơn.", 3.6),
-   ("Còn một chỗ chưa đo.", 4.2)]),
+   ("1,5 V trên vỏ: chỉ khi hở mạch.", 3.0),
+   ("Có dòng thì U nhỏ hơn.", 3.4),
+   ("Còn một chỗ chưa đo.", 5.8)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.3, caps=[
    ("Dừng lại, tự trả lời.", 7.0)]),
 ])

@@ -2,7 +2,7 @@
   "id": "tn-l11-nguon-dien-02",
   "ten": "Vôn kế ở hai cực pin khi đổi điện trở mạch ngoài",
   "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-nguon-dien-02-20261127.mp4",
-  "tong_giay": 48.2,
+  "tong_giay": 49.0,
   "o": [
     {
       "khoa": "gia_thuyet",
@@ -32,7 +32,7 @@
     },
     {
       "khoa": "chua_noi",
-      "giay": 35.2,
+      "giay": 34.8,
       "chu": "Nối tắt hẳn (R = 0) thì dòng lớn cỡ nào? Pin có điện trở trong r bao nhiêu?"
     }
   ],
@@ -50,20 +50,20 @@
     "giai_thich_sai": "Có dòng thì U hai cực nhỏ hơn 1,50 V và càng nhỏ khi dòng càng lớn. Kéo dài đường thẳng qua các điểm đo: R về 0 thì U về 0, không dừng ở giá trị nào khác."
   },
   "cau_chot": {
-    "giay": 42.1,
-    "cau_hoi": "Cùng pin đó, nối một điện trở R khác thì ampe kế chỉ 0,25 A. Biết 0,15 A ứng với 1,35 V và 0,30 A ứng với 1,20 V. Vôn kế chỉ khoảng:",
+    "giay": 43.1,
+    "cau_hoi": "Cùng pin đó, nối một điện trở R khác thì ampe kế chỉ 0,20 A. Biết 0,15 A ứng với 1,35 V và 0,30 A ứng với 1,20 V. Vôn kế chỉ khoảng:",
     "chon": [
       "A. 1,35 V",
-      "B. 1,28 V",
-      "C. 1,25 V",
+      "B. 1,30 V",
+      "C. 1,28 V",
       "D. 1,20 V"
     ],
-    "dung": 2,
+    "dung": 1,
     "giai_thich": [
-      "1,35 V là số chỉ khi I = 0,15 A. Dòng 0,25 A lớn hơn nên U phải thấp hơn: đọc trên đường thẳng, I tăng 0,10 A thì U giảm 0,10 V, còn 1,25 V.",
-      "1,28 V là trung bình của 1,35 V và 1,20 V, ứng với I = 0,225 A ở giữa hai hàng. 0,25 A gần 0,30 A hơn nên U ≈ 1,25 V.",
-      "Các điểm (I, U) thẳng hàng: từ 0,15 A lên 0,30 A, U giảm 0,15 V, tức mỗi 0,10 A giảm 0,10 V. Từ 0,15 A lên 0,25 A thì U = 1,35 − 0,10 = 1,25 V.",
-      "1,20 V là số chỉ khi I = 0,30 A. Dòng 0,25 A nhỏ hơn 0,30 A nên U phải cao hơn 1,20 V: đọc trên đường thẳng được 1,25 V."
+      "1,35 V là số chỉ khi I = 0,15 A. Dòng 0,20 A lớn hơn nên U phải thấp hơn: trên đường thẳng, I tăng 0,05 A thì U giảm 0,05 V, còn 1,30 V.",
+      "Các điểm (I, U) thẳng hàng: từ 0,15 A lên 0,30 A, U giảm 0,15 V, tức mỗi 0,05 A giảm 0,05 V. Từ 0,15 A lên 0,20 A thì U = 1,35 − 0,05 = 1,30 V.",
+      "1,28 V là trung bình của 1,35 V và 1,20 V, ứng với I ≈ 0,225 A ở giữa hai hàng. 0,20 A gần 0,15 A hơn nên U ≈ 1,30 V.",
+      "1,20 V là số chỉ khi I = 0,30 A. Dòng 0,20 A nhỏ hơn 0,30 A nên U phải cao hơn: đọc trên đường thẳng được 1,30 V."
     ]
   }
 }

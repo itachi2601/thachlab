@@ -11,8 +11,9 @@
 #   KHONG hien r (0,26 / 0,82) va cac so o I = 0,5 A: hop "Dien buoc con thieu" ngay sau video hoi dung cac so do.
 # Bay = hien_tuong_hay_sai[1]: do ho mach la du biet pin con tot. Khong dung cap so cua Du doan.
 # CHUA NOI DUOC: trong pin, dieu gi lam r tang? (bai muc VI)
-# THU NGHI (= cau_chot khung, sai_so_thuong_gap kho): tinh r pin moi chi tu 2 lan do Rx = 100 va 20 Ohm co tin duoc?
-#   -> khong: U chi chenh 0,02 V, co sai so von ke +-0,01 V. Man chot khong cong thuc, khong goi y.
+# THU NGHI v2 (27/11, = cau_chot khung, CA TU SUY tu so kho): Rx = 0, pin moi (1,58 -> 1,40 V; 0,701 A) va pin cu
+#   (1,50 -> 1,06 V; 0,534 A): pin nao toa nhiet trong pin nhieu hon? -> pin cu (E - U)*I = 0,44*0,534 = 0,23 W so voi
+#   0,18*0,701 = 0,13 W. Bo ca "hai diem gan nhau, r khong tin duoc" vi trung Tu kiem tra 4 cua bai.
 from engine import *
 
 NEW = [(100, 0.015, 1.58), (20, 0.073, 1.56), (10, 0.129, 1.55), (5, 0.217, 1.53), (2, 0.372, 1.49), (0, 0.701, 1.40)]
@@ -166,7 +167,12 @@ def s_do(img, d, t, sc):
     if closed:
         _, i, u = ROWS[k]; circuit(d, t, rx, True, i, u)
     else: circuit(d, t, rx, False)
-    table(d, n, k if closed else -1, appear(t, M[2], 0.45))
+    kd = appear(t, M[2], 0.45)
+    table(d, n, k if closed else -1, kd)
+    if kd > 0:                                             # phep so dap an cung luc phu de
+        d.rounded_rectangle([475, 455, 795, 685], radius=18, fill=A(HL, kd), outline=A(ORANGE, kd), width=4)
+        text(d, (635, 525), "1,40 − 1,06", 56, INK, alpha=kd)
+        text(d, (635, 615), "= 0,34 V", 56, INK, alpha=kd)
 
 # ---------------- canh 3: Rut ra (hai duong U-I) ----------------
 GX0, GX1, GY0, GY1 = 230, 950, 1480, 880          # I 0-0,8 A ; U 1,0-1,6 V (ngat truc)
@@ -277,15 +283,15 @@ def s_end(img, d, t, sc):
     k = appear(t, 0.15, 0.4)
     card(d, (40, 230, 1040, 1560), fill=A(WHITE, k), outline=A(ORANGE, k), w=6)
     pill(d, W / 2, 310, "THỬ NGHĨ", ORANGE, k)
-    for x, s in zip(TX[:3], ("Rx (Ω)", "I (A)", "U (V)")): text(d, (x, 450), s, 56, INK, alpha=k)
-    for j in (0, 1):
-        y = 545 + 92 * j; rx, i, u = NEW[j]
-        text(d, (TX[0], y), str(rx), 56, NAVY, alpha=k); text(d, (TX[1], y), vn(i, 3), 56, INK, alpha=k)
-        text(d, (TX[2], y), vn(u), 56, BLUE, alpha=k)
-    text(d, (W / 2, 820), "Tính r pin mới chỉ từ", 64, INK, alpha=k)
-    text(d, (W / 2, 910), "hai lần đo này.", 64, INK, alpha=k)
-    text(d, (W / 2, 1040), "Có tin được không?", 66, DORANGE, alpha=k)
-    seg_bar(d, 1250, t, 1.0, sc["T"] - 0.2, ORANGE, k)
+    text(d, (W / 2, 420), "Cùng Rx = 0 Ω:", 62, INK, alpha=k)
+    for x, s_ in zip((300, 560, 820), ("ℰ (V)", "U (V)", "I (A)")): mt(d, (x, 520), s_, 56, INK, k)
+    for j, (nm, e, u, i, col) in enumerate((("mới", "1,58", "1,40", "0,701", BLUE), ("cũ", "1,50", "1,06", "0,534", DRED))):
+        y = 615 + 92 * j
+        text(d, (130, y), nm, 56, col, alpha=k)
+        for x, v in zip((300, 560, 820), (e, u, i)): text(d, (x, y), v, 56, col, alpha=k)
+    text(d, (W / 2, 900), "Pin nào nóng lên bên trong", 64, DORANGE, alpha=k)
+    text(d, (W / 2, 990), "nhiều hơn?", 64, DORANGE, alpha=k)
+    seg_bar(d, 1200, t, 1.0, sc["T"] - 0.2, ORANGE, k)
 
 def _cues(clip):
     sc = {s["key"]: s for s in clip["scenes"]}

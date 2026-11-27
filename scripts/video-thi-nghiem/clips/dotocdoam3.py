@@ -45,7 +45,10 @@ def mic(d, x, label, alpha=1.0, ghost=False):
     d.line([(x - 36, 540), (x + 36, 540)], fill=c, width=8)
     d.rounded_rectangle([x - 22, MY - 34, x + 22, MY + 30], radius=22, fill=A(WHITE, alpha) if ghost else c,
                         outline=c, width=5)
-    if label: text(d, (min(x, 915), MY - 84), label, 56, NAVY, alpha=alpha)
+    if label:                                              # nen che song di qua sau nhan
+        lx = min(x, 915); lw = tw(d, label, F(56))
+        d.rounded_rectangle([lx - lw / 2 - 10, MY - 120, lx + lw / 2 + 10, MY - 48], radius=12, fill=A(BG, alpha))
+        text(d, (lx, MY - 84), label, 56, NAVY, alpha=alpha)
 
 def hands(d, x, y, k=0.0, alpha=1.0):
     g = 34 * (1 - k)
@@ -87,7 +90,7 @@ def burst(tau, t0, amp):
 def recorder(d, tau, dt, show_dt):
     card(d, (60, RY0, 1020, RY1), fill=SCR_BG, r=30)
     text(d, (W / 2, RY0 + 46), "một máy ghi chung", 56, SCR_TXT)
-    for y, lab, col in ((TY1, "mic 1", TR1), (TY2, "mic 2", TR2)):
+    for y, lab, col in ((TY1, "micro 1", TR1), (TY2, "micro 2", TR2)):
         text(d, (90, y), lab, 56, col, anchor="lm")
         d.line([(RX0, y), (RX1, y)], fill=GRID, width=2)
     d.line([(RX0, TAX), (RX1 + 10, TAX)], fill=SCR_TXT, width=3)
@@ -158,7 +161,7 @@ def table(d, rows, ty0, kv=None, hl=-1):
     d.line([(80, ty0 + 38), (1000, ty0 + 38)], fill=LIGHT, width=3)
     for j in range(rows):
         y = ty0 + 46 + RH * j + RH / 2
-        if j == hl: d.rounded_rectangle([80, y - 38, 1000, y + 38], radius=14, fill=HL)
+        if j == hl or (isinstance(hl, tuple) and j in hl): d.rounded_rectangle([80, y - 38, 1000, y + 38], radius=14, fill=HL)
         dd, dt, v = ROWS[j]
         text(d, (TX[0], y), vn(dd), 56, NAVY); text(d, (TX[1], y), vn(dt), 56, INK)
         if kv is not None and kv[j] > 0: text(d, (TX[2], y), vn(v), 56, BLUE, alpha=kv[j])
@@ -175,7 +178,8 @@ def s_do(img, d, t, sc):
         if wr > 1040 - HX: wr = None
     scene_top(d, d2, wave_r=wr, clap_k=clap_k, flash=flash)
     recorder(d, tau, ROWS[k][1], show_dt)
-    table(d, rows, 1240, hl=rows - 1 if show_dt else -1)
+    hl = (0, 1) if t >= sc["M"][2] - 0.1 else (rows - 1 if show_dt else -1)   # dap an: to cung luc hang 2 m va 4 m
+    table(d, rows, 1240, hl=hl)
 
 # ---------------- canh 3: Rut ra ----------------
 def s_rut(img, d, t, sc):
@@ -187,8 +191,8 @@ def s_rut(img, d, t, sc):
     kv = [appear(t, M[1] - 0.2, 0.4), appear(t, M[1] - 0.2, 0.4), appear(t, 0.2, 0.4)]
     table(d, 3, 690, kv=kv, hl=2 if t < M[1] - 0.2 else -1)
     if t > M[1]:                                                    # cham nhay qua ba hang v
-        u = (t - M[1]) * 0.8 % 2.0; u = u if u < 1 else 2 - u          # khung xanh truot len xuong qua ba hang
-        yc = 690 + 46 + RH / 2 + 2 * RH * ease(u)
+        j = int((t - M[1]) / 1.2) % 3                                   # khung xanh nhay thang tung hang (khong truot)
+        yc = 690 + 46 + RH / 2 + j * RH
         d.rounded_rectangle([70, yc - 42, 1010, yc + 42], radius=16, outline=BLUE, width=6)
     km = appear(t, M[1] - 0.2, 0.45)
     if km > 0:
@@ -207,7 +211,7 @@ def phone(d, x, y, ang, alpha, lab):
 
 def s_bay(img, d, t, sc):
     IMG_REF[0] = img; M = sc["M"]
-    k3 = appear(t, M[2] - 0.7, 0.45); a1 = 1.0 - k3
+    k3 = appear(t, M[2] - 0.4, 0.45); a1 = 1.0 - k3
     if a1 > 0:
         card(d, (40, 250, 1040, 1300), fill=A(WHITE, a1), outline=A(DRED, a1), w=6)
         pill(d, W / 2, 320, "BẪY", DRED, a1)
@@ -223,6 +227,7 @@ def s_bay(img, d, t, sc):
         kk = appear(t, B2, 0.4) * a1
         if kk > 0:
             text(d, (W / 2, 820), "≠", 110, DRED, alpha=kk)
+            text(d, (W / 2, 1120), "lệch vài ms", 58, DRED, alpha=kk)
             rr = 70 + 26 * math.sin(3.2 * t)
             for x in (290, 790): d.ellipse([x - rr - 40, 820 - rr - 40, x + rr + 40, 820 + rr + 40], outline=A(DRED, kk), width=6)
     if k3 > 0:
@@ -300,14 +305,14 @@ CLIP = dict(id="tn-l11-dotocdoam-03", header="VẬT LÍ 11 · THÍ NGHIỆM", fo
  dict(key="do", title="Tiến hành", draw=s_do, tail=0.3, caps=[
    ("Máy ghi vẽ hai gai âm.", 4.4),
    ("Dời micro 2 xa dần.", 4.6),
-   ("Đáp án: trễ gấp đôi.", 2.8)]),
+   ("Đáp án: d gấp đôi, trễ gấp đôi.", 2.8)]),
  dict(key="rut", title="Rút ra", draw=s_rut, tail=0.3, caps=[
    ("Đổi Δt ra giây rồi chia.", 3.6),
    ("Ba lần, cùng một tốc độ.", 4.2)]),
  dict(key="bay", title="Bẫy hay gặp", draw=s_bay, tail=0.4, caps=[
    ("Mỗi máy một đồng hồ riêng.", 3.4),
-   ("Lệch vài ms là hỏng.", 3.4),
-   ("Còn một chỗ chưa rõ.", 4.4)]),
+   ("Kết quả sai hẳn.", 3.4),
+   ("Còn chỗ chưa rõ.", 4.4)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.3, caps=[
    ("Dừng lại, tự trả lời.", 6.0)]),
 ])

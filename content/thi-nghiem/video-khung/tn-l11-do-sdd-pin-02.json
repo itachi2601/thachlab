@@ -51,19 +51,19 @@
   },
   "cau_chot": {
     "giay": 44.3,
-    "cau_hoi": "Chỉ dùng hai lần đo Rx = 100 Ω (0,015 A; 1,58 V) và Rx = 20 Ω (0,073 A; 1,56 V) để tính r pin mới. Kết quả có tin được không?",
+    "cau_hoi": "Cùng Rx = 0 Ω. Pin mới: ℰ = 1,58 V, U = 1,40 V, I = 0,701 A. Pin cũ: ℰ = 1,50 V, U = 1,06 V, I = 0,534 A. Pin nào toả nhiệt bên trong nhiều hơn?",
     "chon": [
-      "A. Tin được, vì hai lần đo đều đọc rõ số",
-      "B. Tin được hơn, vì dòng nhỏ pin ít nóng",
-      "C. Không, vì phải lấy U chia I từng lần",
-      "D. Không, vì U chênh cỡ sai số vôn kế"
+      "A. Pin mới, vì dòng qua nó lớn hơn",
+      "B. Pin cũ, dù dòng qua nó nhỏ hơn",
+      "C. Bằng nhau, vì cùng R0 = 2,0 Ω",
+      "D. Chưa biết được, vì chưa có r"
     ],
-    "dung": 3,
+    "dung": 1,
     "giai_thich": [
-      "Đọc rõ chưa đủ: hai U chỉ chênh 0,02 V, mà vôn kế sai ±0,01 V mỗi lần. Sai số có thể bằng cả hiệu, r tính ra không tin được; cần hai điểm thật xa nhau.",
-      "Dòng nhỏ đúng là ít làm nóng pin, nhưng ở đây U chỉ chênh 0,02 V, cỡ sai số vôn kế ±0,01 V mỗi lần. Hiệu nhỏ như thế làm r sai rất nhiều.",
-      "U chia I là điện trở mạch ngoài, không phải r. Chỗ yếu thật là U chỉ chênh 0,02 V, cỡ sai số vôn kế ±0,01 V mỗi lần.",
-      "U chỉ chênh 1,58 − 1,56 = 0,02 V, mà mỗi lần đọc vôn kế sai ±0,01 V: hiệu có thể từ 0 tới 0,04 V. Cần hai điểm thật xa nhau, như Rx = 100 Ω và 0 Ω."
+      "Dòng lớn hơn chưa đủ: nhiệt trong pin là (ℰ − U)·I. Pin mới (1,58 − 1,40) · 0,701 ≈ 0,13 W; pin cũ (1,50 − 1,06) · 0,534 ≈ 0,23 W.",
+      "Phần U mất bên trong pin là ℰ − U = I·r. Nhiệt trong pin (ℰ − U)·I: pin cũ 0,44 · 0,534 ≈ 0,23 W, pin mới 0,18 · 0,701 ≈ 0,13 W. Pin cũ nóng hơn dù dòng nhỏ hơn.",
+      "R0 ở mạch ngoài, không quyết định nhiệt trong pin. Nhiệt trong pin (ℰ − U)·I: pin cũ ≈ 0,23 W, pin mới ≈ 0,13 W.",
+      "Không cần r: ℰ − U chính là I·r, nên nhiệt trong pin = (ℰ − U)·I. Pin cũ ≈ 0,23 W, pin mới ≈ 0,13 W."
     ]
   }
 }

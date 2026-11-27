@@ -12,8 +12,9 @@
 # Bay = hien_tuong_hay_sai[3] (doc vach o mep binh). Khong dung [0] 4·l1 (= cau Bay 1), [1] λ vs λ/2 (= cau Bay 2),
 #   [2] doi f (= cau Bay 3).
 # Chua noi duoc: 5 lan lech vai m/s -> v dung toi dau? (muc 5 cua bai tinh Δv; clip KHONG tinh Δv, khong noi 339,6-343,6).
-# Thu nghi: neu ong du dai, lan to thu ba o khoang bao nhieu cm? -> 50,8 + 34,0 = 84,8 cm (> 67 cm nen ong nay chi co 2
-#   lan to). So 84,8 KHONG hien tren man, ghi trong ghi_chu kho.
+# Thu nghi v2 (27/11, theo cong B): ha nuoc toi day, cot khi 67 cm (= chieu dai ong, kho) -> am nho: lan to thu ba o
+#   50,8 + 34,0 = 84,8 cm > 67 cm, 67 cm nam giua hai vi tri to. Canh Tien hanh chi ha toi 56 cm (khong chieu do to o
+#   60-67 cm). Bo ca "lan to thu ba o dau" (phep cong 50,8 + 34,0 hien nhien, trung Tu kiem tra 6).
 from engine import *
 
 F0, LONG = 500, 67
@@ -141,7 +142,7 @@ def s_hook(img, d, t, sc):
 
 # ---------------- canh 2: Tien hanh ----------------
 T_L2, T_END, T_ROWS = 4.0, 6.0, 6.4             # toi to lan 2 ; ha tiep toi day ; cac lan lap
-LOW = 64.0
+LOW = 56.0                                     # ha qua lan to 2 mot chut, KHONG chieu do to o 60-67 cm (cau chot)
 def do_state(t):
     """-> (muc nuoc cm, da thay to lan 2, so hang bang)."""
     if t < T_L2: lc = lerp(L1, L2, ease((t - 0.4) / (T_L2 - 0.4)))
@@ -168,11 +169,12 @@ def s_do(img, d, t, sc):
     lc, got2, rows = do_state(t)
     card(d, (40, 260, 1040, 1020), fill=WHITE, outline=LIGHT, w=3)
     mk = [(L1, vn(L1) + " cm")] + ([(L2, vn(L2) + " cm")] if got2 else [])
-    rig(d, lc, trace_to=lc, marks=mk, sound=1.0, t=t, pulse=L2 if got2 else None)
+    rig(d, lc, trace_to=lc, marks=mk, sound=1.0, t=t, pulse=L2 if got2 and lc < L2 + 1.0 else None)   # vong chi khi mat nuoc o 50,8
     dtable(d, 1050, rows, hl=rows - 1 if rows <= 1 else -1)
     if t > T_END:                                       # cham chay doc duong do to: hai dinh 16,8 va 50,8
         c = ((t - T_END) * 22) % LOW
-        dot(d, GX0 + (GX1 - GX0) * loud(c), yl(c), 20, CURVE, outline=WHITE)
+        d.line([(TX - TW / 2, yl(c)), (GX0 + (GX1 - GX0) * loud(c), yl(c))], fill=A(CURVE, 0.55), width=5)   # vach quet
+        dot(d, GX0 + (GX1 - GX0) * loud(c), yl(c), 22, CURVE, outline=WHITE)
 
 def _kiem_dong_bo():
     """Moi 0,05 s: nhan 50,8 cm chi hien khi muc nuoc da toi 50,8 ; hang 1 chi hien cung luc ; hang 2-5 sau khi ha xong."""
@@ -239,11 +241,11 @@ def s_bay(img, d, t, sc):
     if k3 > 0:
         card(d, (40, y, 1040, y + 480), fill=A(WHITE, k3), outline=A(NAVY, k3), w=6)
         pill(d, W / 2, y + 70, "CHƯA NÓI ĐƯỢC", NAVY, k3)
-        text(d, (W / 2, y + 200), "Năm lần lệch vài m/s:", 62, INK, alpha=k3)
-        text(d, (W / 2, y + 300), "v đúng tới đâu?", 62, INK, alpha=k3)
-        for j, v in enumerate((340, 342, 341, 342, 343)):          # 5 cham v nhay len xuong nhe
-            x = 230 + j * 155; yy = y + 400 + 34 * math.sin(3.0 * t + j)
-            dot(d, x, yy, 24, A(DGREEN, k3))
+        text(d, (W / 2, y + 190), "Năm lần đo v (m/s):", 62, INK, alpha=k3)
+        for j, v in enumerate((340, 342, 341, 342, 343)):          # 5 so v (m/s) nhay nhe
+            x = 170 + j * 185; yy = y + 290 + 14 * math.sin(3.0 * t + j)
+            text(d, (x, yy), str(v), 58, DGREEN, alpha=k3)
+        text(d, (W / 2, y + 400), "v đúng tới đâu?", 62, INK, alpha=k3)
 
 # ---------------- canh 5: THU NGHI ----------------
 def s_end(img, d, t, sc):
@@ -251,10 +253,11 @@ def s_end(img, d, t, sc):
     k = appear(t, 0.15, 0.4)
     card(d, (40, 230, 1040, 1560), fill=A(WHITE, k), outline=A(ORANGE, k), w=6)
     pill(d, W / 2, 310, "THỬ NGHĨ", ORANGE, k)
-    text(d, (W / 2, 560), "Nếu ống đủ dài,", 64, INK, alpha=k)
-    text(d, (W / 2, 650), "lần to thứ ba ở cột khí", 64, INK, alpha=k)
-    text(d, (W / 2, 790), "khoảng bao nhiêu cm?", 66, DORANGE, alpha=k)
-    seg_bar(d, 1000, t, 1.0, sc["T"] - 0.2, ORANGE, k)
+    text(d, (W / 2, 470), "To ở 16,8 và 50,8 cm", 62, BLUE, alpha=k)
+    text(d, (W / 2, 640), "Nước hạ tới đáy ống:", 64, INK, alpha=k)
+    text(d, (W / 2, 730), "cột khí 67 cm.", 64, INK, alpha=k)
+    text(d, (W / 2, 870), "Âm nghe thế nào?", 66, DORANGE, alpha=k)
+    seg_bar(d, 1050, t, 1.0, sc["T"] - 0.2, ORANGE, k)
 
 def _cues(clip):
     sc = {s["key"]: s for s in clip["scenes"]}
@@ -275,13 +278,13 @@ CLIP = dict(id="tn-l11-dotocdoam-01", header="VẬT LÍ 11 · THÍ NGHIỆM", fo
    ("Đáp án: gần gấp ba lần 1.", 3.4)]),
  dict(key="rut", title="Rút ra", draw=s_rut, tail=0.3, caps=[
    ("Mặt nước luôn là nút.", 3.4),
-   ("Lấy hiệu hai lần to.", 4.2)]),
+   ("Lấy hiệu hai lần to.", 3.8)]),
  dict(key="bay", title="Bẫy hay gặp", draw=s_bay, tail=0.4, caps=[
    ("Mép bình không phải mặt nước.", 3.4),
    ("Mắt ngang mặt nước trong ống.", 3.4),
    ("Còn một chỗ chưa rõ.", 4.4)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.3, caps=[
-   ("Dừng lại, tự trả lời.", 6.5)]),
+   ("Dừng lại, tự trả lời.", 6.9)]),
 ])
 
 _b = _kiem_dong_bo(); assert not _b, _b

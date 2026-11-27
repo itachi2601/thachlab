@@ -266,6 +266,7 @@ def s_bay(img, d, t, sc):
         # do thi mo: 6 diem + dau hoi o phia I lon (chuyen dong nhe)
         bx0, by0 = 160, 1450
         d.line([(bx0, by0), (940, by0)], fill=A(NAVY, k3), width=5); d.line([(bx0, by0), (bx0, 960)], fill=A(NAVY, k3), width=5)
+        text(d, (bx0 - 55, 975), "U", 62, NAVY, alpha=k3); text(d, (985, by0), "I", 62, NAVY, alpha=k3)
         for j, (_, i, u) in enumerate(ROWS):
             dot(d, bx0 + i * 900, by0 - (u - 0.9) * 700, 13, A(BLUE, k3))
         qx, qy = bx0 + 0.70 * 900, by0 - 0.05 * 700 - 120
