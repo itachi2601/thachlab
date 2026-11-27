@@ -132,18 +132,18 @@ def s_hook(img, d, t, sc):
     wave(d, tau, tdoc)
     a = appear(t, M[1] - 0.2, 0.5)
     if a <= 0: return
-    y0 = 1000 + (1 - a) * 40
-    card(d, (40, y0, 1040, y0 + 570), fill=A(WHITE, a), outline=A(PURPLE, a), w=6)
-    pill(d, "DỰ ĐOÁN", y0 + 62, a, PURPLE)
+    y0 = 1158 + (1 - a) * 30                        # GĐ2 v2: duoi khung song (khong che do thi)
+    card(d, (40, y0, 1040, y0 + 440), fill=A(WHITE, a), outline=A(PURPLE, a), w=6)
+    pill(d, "DỰ ĐOÁN", y0 + 52, a, PURPLE)
     for k2, (l, r) in enumerate((("cách 34 m", "t = 0,21 s"), ("cách 68 m", "t = ?"))):
-        y = y0 + 165 + k2 * 85
+        y = y0 + 135 + k2 * 72
         text(d, (330, y), l, 58, PURPLE, alpha=a); text(d, (760, y), r, 58, ORANGE if k2 == 0 else INK, alpha=a)
-    text(d, (W / 2, y0 + 345), "Khi đó t khoảng bao nhiêu?", 58, INK, alpha=a)
+    text(d, (W / 2, y0 + 285), "Khi đó t khoảng bao nhiêu?", 58, INK, alpha=a)
     tc, tend = M[1] + 0.3, sc["T"] - 0.1
     if t > tc:
         p = clamp((t - tc) / (tend - tc))
-        d.rounded_rectangle([110, y0 + 430, 970, y0 + 520], radius=45, fill=A((237, 233, 254), a))
-        if p < 1: d.rounded_rectangle([110, y0 + 430, 110 + max(90, 860 * (1 - p)), y0 + 520], radius=45, fill=A((76, 29, 149), a))
+        d.rounded_rectangle([110, y0 + 340, 970, y0 + 410], radius=35, fill=A((237, 233, 254), a))
+        if p < 1: d.rounded_rectangle([110, y0 + 340, 110 + max(70, 860 * (1 - p)), y0 + 410], radius=35, fill=A((76, 29, 149), a))
 
 def d_state(t):
     """-> (j dang do, dm, s, tau, so hang da ghi)."""

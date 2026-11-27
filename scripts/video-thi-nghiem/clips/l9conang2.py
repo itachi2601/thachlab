@@ -79,11 +79,11 @@ def board(d, nail_a=1.0, line=True, label=True, col=RED):
         dot(d, NXY[0], NXY[1], 11, A(NAVY, nail_a))
         text(d, (NXY[0] + 30, NXY[1]), "đinh", 56, NAVY, anchor="lm", alpha=nail_a)
 
-def vach_label(d, col=RED):
+def vach_label(d, col=RED, cx=380, dy=42):
     """Nhan ve SAU day/vat: nen go che day phia sau chu. (Du doan/Tien hanh: xam, chi do tu canh dap an.)"""
     w = tw(d, "vạch ngang", F(56))
-    d.rounded_rectangle([380 - w / 2 - 10, YA + 12, 380 + w / 2 + 10, YA + 74], radius=10, fill=WOOD)
-    text(d, (380, YA + 42), "vạch ngang", 56, col)
+    d.rounded_rectangle([cx - w / 2 - 10, YA + dy - 30, cx + w / 2 + 10, YA + dy + 32], radius=10, fill=WOOD)
+    text(d, (cx, YA + dy), "vạch ngang", 56, col)
 
 def pendulum(d, p, kink, alpha=1.0):
     pts = [(PX, PY)] + ([kink] if kink else []) + [p]
@@ -192,7 +192,7 @@ def s_rut(img, d, t, sc):
     IMG_REF[0] = img
     tau = rut_tau(t, sc)
     board(d)
-    vach_label(d); p, k = bob_at(True, tau); pendulum(d, p, k)      # nhan truoc, con lac sau: qua nang khong bi che
+    p, k = bob_at(True, tau); pendulum(d, p, k); vach_label(d, cx=370, dy=-45)   # GĐ2 v2: nhan tren vach, ngoai duong di qua nang (nen go che day)
     text(d, (980, 1030), "chiếu chậm", 56, NAVY, anchor="rm")
     wt = clamp(height_m(p) / HM); wd = 1 - wt
     card(d, (40, 1110, 1040, 1520), fill=WHITE, outline=LIGHT, w=4)

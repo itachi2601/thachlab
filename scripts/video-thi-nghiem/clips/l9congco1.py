@@ -151,7 +151,8 @@ def do_state(t):
 
 def s_do(img, d, t, sc):
     k, x, f, read, n = do_state(t)
-    rig(d, x, max(0.0, f)); band(d, (vn(read) + " N") if read is not None else "…", f if f > 1.2 else None)
+    rig(d, x, max(0.0, f))
+    band(d, (vn(read) + " N") if read is not None else "…", read)   # GĐ2 v2: kim o phong to dung yen dung so ghi bang, khong mat
     table(d, n, hl=((n - 1,) if n > 0 else ()), h=600)
 
 def _kiem_dong_bo():
