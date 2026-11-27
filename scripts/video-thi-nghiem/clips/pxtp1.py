@@ -227,9 +227,10 @@ def _kiem_dong_bo():
 
 
 # ---------------- canh 3: Dap an + Rut ra ----------------
-DA_V, DA_R = 2.6, 5.2
+DA_V, DA_R = 3.2, 5.4
 def s_dapan(img, d, t, sc):
-    ang = lerp(40, 42, ease(clamp((t - 0.4) / 2.0)))          # quay lai doan 40 -> 42 do: tia lo sat mat roi tat
+    ang = lerp(40, 41.7, ease(clamp((t - 0.4) / 1.4)))        # quay lai 40 -> 41,7 do, GIU tia lo sat mat ~1 s (kiem-v1 muc 4)
+    if t > 2.8: ang = lerp(41.7, 42, ease(clamp((t - 2.8) / 0.3)))   # roi moi qua 42 do: tia lo tat
     disk(d, False); pen(d, ang); rays(d, ang, arcs=False)
     pill(d, "ĐÁP ÁN: khoảng 42°", 925, appear(t, 0.15, 0.4))
     kv = appear(t, DA_V, 0.5)
@@ -251,6 +252,7 @@ BAY_R, BAY_E = 3.4, 6.6
 def s_bay(img, d, t, sc):
     disk(d, False); pen(d, 41); rays(d, 41, arcs=False)
     r41 = r_of(41)
+    d.line([C, P(u_refr(r41), RD)], fill=BEAM, width=9)               # kiem-v1 muc 3: tia lo r = 80 do dam, de thay
     a1 = appear(t, 0.3, 0.45); a2 = appear(t, BAY_R, 0.45)
     if a1 > 0:                                                        # goc voi mat phang (sai)
         d.arc([C[0] - 230, C[1] - 230, C[0] + 230, C[1] + 230], 270 + r41, 360, fill=A(DRED, a1), width=7)
@@ -278,9 +280,9 @@ def s_bay(img, d, t, sc):
 END_Q, END_C = 0.2, 4.3
 FC, FR = (540, 1250), 240
 def s_end(img, d, t, sc):
-    k0 = appear(t, END_C, 0.5)
-    card(d, (50, 265, 1030, 425), fill=A((236, 253, 243), k0), outline=A(GREEN, k0), w=6)
-    text(d, (W / 2, 345), "i vượt góc tới hạn: hết tia ló", FM, DGREEN, alpha=k0)
+    k0 = appear(t, END_C, 0.5)       # kiem-v1 muc 1-2: bo the "vuot goc toi han" (trai de, 38 < 42); nhac mo hai hang da do
+    card(d, (50, 265, 1030, 425), fill=A(WHITE, k0), outline=A(LIGHT, k0), w=4)
+    text(d, (W / 2, 345), "Đã đo: 35° → 60°,  40° → 74°", FM, (80, 86, 105), alpha=k0)
     k1 = appear(t, END_Q, 0.5)
     card(d, (40, 455, 1040, 1560), fill=A(WHITE, k1), outline=A(ORANGE, k1), w=6)
     pw = tw(d, "THỬ NGHĨ", F(FM)) + 56
