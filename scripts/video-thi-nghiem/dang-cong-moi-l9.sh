@@ -6,6 +6,8 @@
 # Chỉ đổi URL clip + data-khung trong khối video → không cần --cho-phep-khac, trừ bài 150 (xem dưới); bài nào khác dry-run báo khác ngoài khối video thì dừng, hỏi thầy).
 cd "$(dirname "$0")/../.."
 YES="${1:-}"
+# Chỉ vài bài: CHI="89 90" bash … ; bài có sửa hộp exp (khác ngoài khối video có chủ ý): KHAC_BAI="89 90" bash …
+CHI="${CHI:-}"; KHAC_BAI="${KHAC_BAI:-} 150"
 for p in "lesson-samples/l9-dien-tro-dinh-luat-ohm/bundle.json 89" "lesson-samples/l9-doan-mach-noi-tiep-song-song/bundle.json 90" \
          "lesson-samples/l9-nang-luong-dong-dien-cong-suat/bundle.json 91" "lesson-samples/l9-dong-nang-the-nang/bundle.json 129" \
          "lesson-samples/l9-cam-ung-dien-tu/bundle.json 92" "lesson-samples/l9-tac-dung-dong-dien-xoay-chieu/bundle.json 93" \
@@ -17,7 +19,8 @@ for p in "lesson-samples/l9-dien-tro-dinh-luat-ohm/bundle.json 89" "lesson-sampl
          "lesson-samples/l9-thuc-hanh-tieu-cu/bundle.json 87"; do
   set -- $p
   # Bài 150 (HSG cd15): repo đã có dòng "Đọc ~16 phút · học kỹ … ~29 phút" (P2, commit 70bd8505a 26/11) mà DB chưa có → khác ngoài khối video đúng câu đó.
-  KHAC=""; [ "$2" = "150" ] && KHAC="--cho-phep-khac"
+  [ -n "$CHI" ] && [[ " $CHI " != *" $2 "* ]] && continue
+  KHAC=""; [[ " $KHAC_BAI " == *" $2 "* ]] && KHAC="--cho-phep-khac"
   echo "===== bai $2 ($1) $(date '+%H:%M:%S')"
   if [ "$YES" = "--yes" ]; then
     bash scripts/cap-nhat-ly-thuyet.sh "content/$1" "$2" --chi-video $KHAC --yes || echo "LOI bai $2"
