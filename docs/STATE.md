@@ -74,7 +74,8 @@ Nạp mỗi phiên, giữ dưới 15 KB: hiện trạng + ĐANG CHỜ (1–2 dò
 - Cải tiến lý thuyết sau học thử vai HS (26/11, nhánh `claude/theory-improvement-review-5ca7c7`): bài 63 + 35 đã đăng lý thuyết 26/11 22h05 (sao lưu `scripts/logs/ly-thuyet-bai{63,35}-backup-*`); còn 5 quyết định P1–P5 ở `docs/DE-XUAT-CAI-TIEN-LY-THUYET-2026-11-26.md`.
 - Rà quiz + độ dài (26/11, mục 17–20): đã đăng lý thuyết 59, 79, 35, 38, 33, 13, 17, 126 + L12 Ch.3 (10, 11, 12, 125, 127). CHỜ thầy duyệt 8 câu Đ/S + trả lời ngắn mới (đề Luyện tập bài 13, 17, 126); các chương còn lại — memory `project_thachlab_ra_soat_quiz_do_dai`.
 
-- P2/P4 xong 26/11 ~23h30: 74 bài L10–12 + 17 bài KHTN 9 + 8 bài CNC (`cnc_lessons`, dựng từ bản DB chỉ thay dòng mốc để giữ neo `muc-N`) + bài 31; 51, 67 DB đã trùng file; P3 đã chạy trên site. Bài 39 (Chốt mục + data-tap + gợi ý P4) đã đăng 26/11 ~23h35 theo thầy duyệt. 38, 39 đã đổi dòng hai mốc và đăng 23h41. CÒN: file `cnc-*/theory.src.html` thiếu neo `muc-N` đang có trên DB (đăng từ file sẽ mất neo).
+
+- P2/P4 xong 26–27/11: L10–12, KHTN 9, CNC (file nguồn CNC đã khớp DB, có neo `muc-N`), bài 31, 38, 39; P3 đã lên site. Sao lưu `scripts/logs/p2p4-2026-11-26/`, `ly-thuyet-bai*-backup-17957*`.
 - Clip L12 lô 32 (Việc 4): thầy duyệt 27/11; kho + 20 bài đổi `-20261126`, khung gắn lại, dry-run 20/20 sạch; HẸN GHI DB 22:05 27/11 (`dang-lo32.sh --yes --22h05`, tab terminal). Còn treo: lỗi bài tutruong dòng 116 + điểm kho trong sổ clip mục "lô 32".
 
 ## CHƯA làm (roadmap)

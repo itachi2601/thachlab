@@ -3,7 +3,7 @@
 #   bash scripts/video-thi-nghiem/dang-lo32.sh                 # xem thử (dry-run)
 #   bash scripts/video-thi-nghiem/dang-lo32.sh --yes           # ghi thật ngay
 #   bash scripts/video-thi-nghiem/dang-lo32.sh --yes --22h05   # chờ tới 22:05 hôm nay rồi ghi thật (chạy kèm caffeinate)
-# Chỉ đổi URL clip + data-khung trong khối video → không cần --cho-phep-khac (trừ bài 10, xem dưới).
+# Chỉ đổi URL clip + data-khung trong khối video → không cần --cho-phep-khac.
 cd "$(dirname "$0")/../.."
 YES="${1:-}"
 if [ "${2:-}" = "--22h05" ]; then
