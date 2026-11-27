@@ -205,7 +205,7 @@ def s_bay(img, d, t, sc):
         card(d, (40, 1120, 1040, 1520), fill=A(WHITE, k3), outline=A(NAVY, k3), w=6)
         pill(d, W / 2, 1190, "CHƯA NÓI ĐƯỢC", NAVY, k3)
         text(d, (W / 2, 1320), "Cản tăng theo tốc độ ra sao?", 60, INK, alpha=k3)
-        text(d, (W / 2, 1420), "Phễu chao lật: chưa thấy.", 60, INK, alpha=k3)
+        text(d, (W / 2, 1420), "Phễu bị lật: chưa thử.", 60, INK, alpha=k3)
 
 # ---------------- canh 5: thu nghi ----------------
 def s_end(img, d, t, sc):
@@ -215,8 +215,9 @@ def s_end(img, d, t, sc):
     funnel(d, W / 2, 560, 4, k)
     text(d, (W / 2, 690), "4 phễu, đo 0,5 m đầu,", 62, INK, alpha=k)
     text(d, (W / 2, 780), "tính từ lúc buông.", 62, INK, alpha=k)
-    text(d, (W / 2, 880), "0,5 m : t so với 2,24 m/s?", 62, DORANGE, alpha=k)
-    seg_bar(d, 1000, t, 1.0, sc["T"] - 0.2, ORANGE, k)
+    text(d, (W / 2, 870), "0,5 m : t so với 2,24 m/s?", 62, DORANGE, alpha=k)
+    text(d, (W / 2, 960), "t: thời gian rơi 0,5 m đầu", 56, NOTE, alpha=k)
+    seg_bar(d, 1050, t, 1.0, sc["T"] - 0.2, ORANGE, k)
 
 def _cues(clip):
     sc = {s["key"]: s for s in clip["scenes"]}

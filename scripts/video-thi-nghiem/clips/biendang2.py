@@ -230,7 +230,7 @@ def s_bay(img, d, t, sc):
     if a1 > 0:
         card(d, (40, 290, 1040, 600), fill=A(WHITE, a1), outline=A(RED, a1), w=6)
         pill(d, W / 2, 355, "BẪY", RED, a1)
-        lab_l(d, W / 2, 450, "F chia ", ": 4,1 → 7,1 → 9,2", 58, INK, a1)
+        lab_l(d, W / 2, 450, "F chia ", " (N/m): 4,1 → 7,1 → 9,2", 58, INK, a1)
         q = "“k tăng dần”"
         ks = clamp((t - M[1]) / 0.4); f = F(60); lw = tw(d, q, f); yy = 540
         text(d, (W / 2, yy), q, 60, mix(RED, GRAY, ks), alpha=a1)
@@ -284,8 +284,9 @@ def s_end(img, d, t, sc):
     text(d, (x, top + 300), "80 g", 56, WHITE, alpha=k)
     text(d, (690, 520), "Lò xo này,", 60, INK, alpha=k)
     text(d, (690, 600), "chưa treo 10,0 cm", 58, NOTE, alpha=k)
-    text(d, (W / 2, 900), "Treo vật 80 g, đứng yên.", 64, INK, alpha=k)
+    text(d, (W / 2, 900), "Treo 80 g, đứng yên.", 64, INK, alpha=k)
     text(d, (W / 2, 1020), "Lò xo dài bao nhiêu cm?", 64, DORANGE, alpha=k)
+    text(d, (W / 2, 1120), "Lấy g = 9,8 m/s².", 58, NOTE, alpha=k)
     seg_bar(d, 1200, t, 1.0, sc["T"] - 0.2, ORANGE, k)
 
 def _cues(clip):

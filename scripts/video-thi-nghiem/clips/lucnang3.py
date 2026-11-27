@@ -121,7 +121,7 @@ def table(d, rows, a=1.0, y0=500):
 def s_do(img, d, t, sc):
     f, moving, rows = do_state(t)
     fr = t_model(f)
-    scene(img, d, f, fr, stream=1.0 if any(a_ <= t < b_ for a_, b_ in MOVES) else 0.0)
+    scene(img, d, f, fr, stream=1.0 if (f > 0.02 and any(a_ <= t < b_ for a_, b_ in MOVES)) else 0.0)
     readout(d, rows, moving); table(d, rows)
     if rows == 3:
         card(d, (520, 930, 1040, 1100), fill=(239, 246, 255), outline=BLUE, r=26, w=4)
@@ -208,10 +208,11 @@ def s_end(img, d, t, sc):
     k = appear(t, 0.15, 0.4)
     card(d, (40, 300, 1040, 1100), fill=A(WHITE, k), outline=A(ORANGE, k), w=6)
     pill(d, W / 2, 375, "THỬ NGHĨ", ORANGE, k)
-    text(d, (W / 2, 520), "Chìm hẳn trong nước muối,", 62, INK, alpha=k)
-    text(d, (W / 2, 610), "khối lượng riêng 1200 kg/m³.", 62, INK, alpha=k)
-    text(d, (W / 2, 730), "Lực kế chỉ bao nhiêu?", 64, DORANGE, alpha=k)
-    seg_bar(d, 880, t, 1.0, sc["T"] - 0.2, ORANGE, k)
+    text(d, (W / 2, 490), "Cùng khối nhôm ấy,", 62, INK, alpha=k)
+    text(d, (W / 2, 575), "chìm hẳn trong nước muối", 62, INK, alpha=k)
+    text(d, (W / 2, 660), "khối lượng riêng 1200 kg/m³.", 62, INK, alpha=k)
+    text(d, (W / 2, 770), "Lực kế chỉ bao nhiêu?", 64, DORANGE, alpha=k)
+    seg_bar(d, 900, t, 1.0, sc["T"] - 0.2, ORANGE, k)
 
 def _cues(clip):
     sc = {s["key"]: s for s in clip["scenes"]}
