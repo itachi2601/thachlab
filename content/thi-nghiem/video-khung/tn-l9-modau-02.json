@@ -1,45 +1,45 @@
 {
   "id": "tn-l9-modau-02",
   "ten": "Vôn kế mắc nối tiếp với bóng đèn",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-modau-02-20261118.mp4",
-  "poster": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-modau-02-20261118.webp",
-  "tong_giay": 47.8,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-modau-02-20261127.mp4",
+  "poster": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-modau-02-20261127.webp",
+  "tong_giay": 48.2,
   "o": [
     {
       "khoa": "gia_thuyet",
       "giay": 0,
-      "chu": "Vôn kế có điện trở rất lớn; mắc nối tiếp với đèn thì chỉ gần bằng hiệu điện thế nguồn và đèn không sáng.",
-      "kiem": "Vôn kế chỉ bao nhiêu V?"
+      "chu": "Vôn kế có điện trở rất lớn nên cản dòng điện rất mạnh.",
+      "kiem": "Mắc nối tiếp thì sao?"
     },
     {
       "khoa": "du_doan",
-      "giay": 3.4,
-      "chu": "Vôn kế chỉ gần 0 V, khoảng 3 V hay khoảng 6 V?"
+      "giay": 3.1,
+      "chu": "Bật nguồn 6 V, đóng khoá. Vôn kế mắc nối tiếp đèn chỉ khoảng bao nhiêu vôn?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 8.7,
+      "giay": 9.0,
       "chu": "Đồng hồ đa năng 20 V, nguồn 6 V, đèn, khoá K."
     },
     {
       "khoa": "quan_sat",
-      "giay": 13.8,
+      "giay": 16.1,
       "chu": "Đóng K: đèn không sáng, vôn kế chỉ 6,00 V."
     },
     {
       "khoa": "rut_ra",
-      "giay": 35.7,
-      "chu": "Vôn kế cản dòng rất mạnh: gần cả 6 V nằm trên nó."
+      "giay": 23.0,
+      "chu": "Vôn kế cản dòng rất mạnh: U vôn kế ≈ 6 V, U đèn ≈ 0."
     },
     {
       "khoa": "chua_noi",
-      "giay": 40.4,
-      "chu": "Số liệu theo mô hình. Bỏ qua điện trở dây, nguồn."
+      "giay": 38.1,
+      "chu": "Bỏ qua điện trở dây nối và nguồn (chưa đo). Số liệu theo mô hình."
     }
   ],
   "dung_dua": {
-    "giay": 8.5,
-    "cau_hoi": "Vôn kế chỉ gần 0 V, khoảng 3 V hay khoảng 6 V?",
+    "giay": 8.7,
+    "cau_hoi": "Vôn kế (thang 20 V) mắc nối tiếp với đèn, nguồn 6 V. Đóng khoá, vôn kế chỉ khoảng bao nhiêu?",
     "chon": [
       "A. Gần 0 V",
       "B. Khoảng 3 V",
@@ -48,5 +48,22 @@
     "dung": 2,
     "giai_thich_dung": "Vôn kế cản dòng rất mạnh nên đèn gần như không có hiệu điện thế: gần cả 6 V của nguồn nằm trên vôn kế.",
     "giai_thich_sai": "Mắc nối tiếp, vôn kế cản dòng nên đèn không sáng và vôn kế chỉ gần bằng U nguồn (khoảng 6 V), không phải gần 0 V hay 3 V."
+  },
+  "cau_chot": {
+    "giay": 42.0,
+    "cau_hoi": "Vẫn mắc vôn kế nối tiếp với đèn, nhưng nguồn 12 V và đồng hồ để thang 2 V. Đóng khoá, màn hình hiện gì?",
+    "chon": [
+      "A. Hiện 0.00",
+      "B. 1 (quá thang)",
+      "C. Hiện 6.00",
+      "D. Hiện 2.00"
+    ],
+    "dung": 1,
+    "giai_thich": [
+      "0.00 là nghĩ mạch hở thì vôn kế chỉ 0. Gần như cả hiệu điện thế nguồn nằm trên vôn kế, khoảng 12 V.",
+      "Vôn kế nối tiếp chỉ gần bằng U nguồn, khoảng 12 V. 12 V lớn hơn giới hạn 2 V nên màn hình báo quá thang: số 1 bên trái.",
+      "6.00 là nhớ số của clip. Nguồn đã đổi thành 12 V, nên vôn kế chỉ khoảng 12 V, vượt thang 2 V.",
+      "2.00 là nghĩ đồng hồ dừng ở giới hạn thang. Đồng hồ số không hiện giới hạn mà báo quá thang bằng số 1 bên trái."
+    ]
   }
 }

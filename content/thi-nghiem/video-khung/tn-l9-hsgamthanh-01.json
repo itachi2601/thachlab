@@ -1,30 +1,30 @@
 {
   "id": "tn-l9-hsgamthanh-01",
   "ten": "Thước nhựa rung trên mép bàn: thò ngắn hay dài thì âm cao?",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-hsgamthanh-01-20261119.mp4",
-  "poster": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-hsgamthanh-01-20261119.webp",
-  "tong_giay": 49.5,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-hsgamthanh-01-20261127.mp4",
+  "poster": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-hsgamthanh-01-20261127.webp",
+  "tong_giay": 44.1,
   "o": [
     {
       "khoa": "gia_thuyet",
       "giay": 0,
-      "chu": "Độ cao của âm do tần số quyết định: vật rung càng nhanh, âm càng cao. Đổi phần thước thò ra là đổi tần số rung.",
-      "kiem": "Thò ngắn hơn, âm đổi thế nào?"
+      "chu": "Đổi độ dài phần thước thò ra là đổi tần số rung của thước.",
+      "kiem": "Thò ngắn hơn thì sao?"
     },
     {
       "khoa": "du_doan",
-      "giay": 3.6,
+      "giay": 3.1,
       "chu": "Thước thò ra 15 cm rung 25 Hz. Cho thò ngắn hơn, chỉ 10 cm rồi gảy: âm cao hơn hay trầm hơn?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 10.6,
+      "giay": 9.0,
       "chu": "Thước nhựa, mép bàn, tay đè."
     },
     {
       "khoa": "quan_sat",
-      "giay": 18.9,
-      "chu": "Thò ngắn, f lớn; thò 25 cm chỉ 9 Hz."
+      "giay": 18.3,
+      "chu": "Thò càng ngắn, f càng lớn: 5 cm rung 225 Hz."
     },
     {
       "khoa": "rut_ra",
@@ -33,12 +33,12 @@
     },
     {
       "khoa": "chua_noi",
-      "giay": 36.0,
+      "giay": 34.0,
       "chu": "Số Hz ở đây là minh hoạ, tuỳ loại thước. Thước khác thì sao?"
     }
   ],
   "dung_dua": {
-    "giay": 10.5,
+    "giay": 8.7,
     "cau_hoi": "Thước nhựa thò ra 15 cm khỏi mép bàn, gảy thì rung 25 Hz. Cho thò ngắn hơn, chỉ 10 cm rồi gảy lại: âm phát ra thế nào?",
     "chon": [
       "A. Tần số lớn hơn, âm cao hơn",
@@ -49,5 +49,22 @@
     "dung": 0,
     "giai_thich_dung": "Phần thò ra ngắn hơn thì cứng hơn và nhẹ hơn, nên rung nhanh hơn: 10 cm rung 56,3 Hz, lớn hơn 25 Hz. Tần số lớn hơn thì âm cao hơn.",
     "giai_thich_sai": "Độ cao của âm do tần số quyết định, không do độ to. Phần thò ngắn rung nhanh hơn (56,3 Hz so với 25 Hz) nên âm cao hơn; thò dài mới rung chậm, âm trầm."
+  },
+  "cau_chot": {
+    "giay": 38.0,
+    "cau_hoi": "Cùng cây thước đó, cho thò ra 12 cm rồi gảy. Tần số rung nằm trong khoảng nào?",
+    "chon": [
+      "A. Dưới 9 Hz",
+      "B. Từ 9 đến 25 Hz",
+      "C. Từ 25 đến 56,3 Hz",
+      "D. Trên 225 Hz"
+    ],
+    "dung": 2,
+    "giai_thich": [
+      "Dưới 9 Hz là ứng với thò dài hơn 25 cm. Bảng cho thấy thò càng ngắn thì tần số càng lớn; 12 cm ngắn hơn 25 cm nhiều.",
+      "9 đến 25 Hz là ứng với thò từ 25 cm xuống 15 cm. 12 cm còn ngắn hơn 15 cm, nên tần số phải lớn hơn 25 Hz.",
+      "12 cm nằm giữa 15 cm (25 Hz) và 10 cm (56,3 Hz). Thò càng ngắn thì rung càng nhanh, nên tần số nằm giữa hai số đó.",
+      "Trên 225 Hz là ứng với thò ngắn hơn 5 cm. 12 cm còn dài hơn 10 cm, nên tần số chưa tới 56,3 Hz."
+    ]
   }
 }
