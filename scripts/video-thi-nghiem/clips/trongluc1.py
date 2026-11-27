@@ -64,7 +64,7 @@ def board(d, top=260, bot=1000):
         x = 70 + (i * 137) % 940; y = top + 30 + (i * 89) % (bot - top - 60)
         d.ellipse([x, y, x + 6, y + 4], fill=CORK_D)
 
-def bia(d, h_key, th, lines=(), part=None, show_g=False, P0=(PX, PY), sc=SC, labels=True, a=1.0):
+def bia(d, h_key, th, lines=(), part=None, show_g=False, P0=(PX, PY), sc=SC, labels=True, a=1.0, g_lab=1.0):
     """Ve tam bia treo o lo h_key, goc th. lines: cac duong da ke; part: (key, ti le) duong dang ke do."""
     h = HOLES[h_key]; S = lambda p: to_screen(p, h, th, P0, sc)
     poly = [S(p) for p in V]
@@ -81,7 +81,7 @@ def bia(d, h_key, th, lines=(), part=None, show_g=False, P0=(PX, PY), sc=SC, lab
             dtext(d, (x + ux / L * 56, y + uy / L * 56), k, F(58), LC[k], a)
     if show_g:
         gx, gy = S(G); dot(d, gx, gy, 12, RED, WHITE)
-        dtext(d, (gx + 56, gy - 50), "G", F(62), RED, a)
+        if g_lab > 0: dtext(d, (gx + 56, gy - 50), "G", F(62), RED, a * g_lab)   # kiem-v1: chu G chi khi da goi ten
 
 def plumb(d, P0=(PX, PY), L=600, a=1.0):
     x, y = P0
@@ -140,7 +140,7 @@ def do_state(t):
 def s_do(img, d, t, sc):
     board(d)
     hk, th, lines, part, g = do_state(max(t, T_B))
-    bia(d, hk, th, lines, part, show_g=g)
+    bia(d, hk, th, lines, part, show_g=g, g_lab=0.0)
     plumb(d)
     for j, k in enumerate(("A", "B", "C")):            # chu thich: lo da treo + ke xong
         done = k == "A" or (k == "B" and t >= T_B + SWING + 0.1 + DRAW) or (k == "C" and t >= T_C + SWING + 0.1 + DRAW)
@@ -168,9 +168,9 @@ def _kiem_dong_bo():
 # ---------------- canh 3: Dap an + rut ra (moi khoi chu cach >= 2,5 s) ----------------
 def pencil_balance(d, cx, cy, k, tilt=0.0):
     """Bia nam ngang (nhin xien, nen doc 0,33) dat tren dau but chi tai G; tilt: nghieng nhe luc moi dat (tat dan)."""
-    S = lambda p: (cx + (p[0] - G[0]) * 0.8, cy + (p[1] - G[1]) * 0.8 * 0.33 + (p[0] - G[0]) * 0.8 * tilt)
-    d.polygon([(cx - 14, cy + 6), (cx + 14, cy + 6), (cx + 14, cy + 190), (cx - 14, cy + 190)], fill=A(YELLOW, k), outline=A(INK, k))
-    d.polygon([(cx - 14, cy + 6), (cx + 14, cy + 6), (cx, cy - 4)], fill=A((60, 60, 60), k))
+    Z = 1.15; S = lambda p: (cx + (p[0] - G[0]) * Z, cy + (p[1] - G[1]) * Z * 0.42 + (p[0] - G[0]) * Z * tilt)   # kiem-v1: phong ~1,5 lan
+    d.polygon([(cx - 20, cy + 8), (cx + 20, cy + 8), (cx + 20, cy + 280), (cx - 20, cy + 280)], fill=A(YELLOW, k), outline=A(INK, k))
+    d.polygon([(cx - 20, cy + 8), (cx + 20, cy + 8), (cx, cy - 6)], fill=A((60, 60, 60), k))
     poly = [S(p) for p in V]
     for (x1, y1), (x2, y2) in zip(poly, poly[1:] + poly[:1]):
         d.polygon([(x1, y1), (x2, y2), (x2, y2 + 12), (x1, y1 + 12)], fill=A(CARD_D, k))
@@ -182,14 +182,14 @@ def pencil_balance(d, cx, cy, k, tilt=0.0):
 def s_dapan(img, d, t, sc):
     M = sc["M"]
     board(d, bot=1000)
-    bia(d, "A", 0.0, ("A", "B", "C"), show_g=True, P0=(150, 400), sc=1.0)
     k1 = appear(t, M[1] - 0.1, 0.5)
+    bia(d, "A", 0.0, ("A", "B", "C"), show_g=True, P0=(150, 400), sc=1.0, g_lab=k1)
     if k1 > 0:
-        card(d, (640, 330, 1020, 960), fill=A(WHITE, k1), r=26)
+        card(d, (530, 330, 1040, 960), fill=A(WHITE, k1), r=26)
         tau = max(0.0, t - M[1] + 0.1)
-        pencil_balance(d, 830, 680, k1, tilt=0.12 * math.exp(-1.4 * tau) * math.cos(2 * math.pi * 1.1 * tau))
+        pencil_balance(d, 785, 640, k1, tilt=0.12 * math.exp(-1.4 * tau) * math.cos(2 * math.pi * 1.1 * tau))
     pill(d, "Đáp án: trên đường kẻ", 1075, appear(t, 0.2, 0.45))
-    k2 = appear(t, M[0] + 2.6, 0.45)
+    k2 = appear(t, M[1] + 2.2, 0.45)
     if k2 > 0:
         y0 = 1160 + (1 - k2) * 20
         card(d, (40, y0, 1040, y0 + 220), fill=A((236, 253, 243), k2), outline=A(GREEN, k2), w=5)
@@ -211,7 +211,8 @@ def washer(d, phi, show_g, k=1.0):
         d.line([(px, py), (px, py + 440)], fill=INK, width=3)
         d.polygon([(px - 16, py + 440), (px + 16, py + 440), (px, py + 482)], fill=BOB, outline=INK)
         dot(d, cx, cy, 13, RED, WHITE)
-        text(d, (cx + 40, cy - 34), "G", 62, RED, anchor="lm")
+        d.line([(cx + 12, cy - 6), (cx + RO + 6, cy - 34)], fill=RED, width=4)          # kiem-v1: chu G ra ngoai vanh
+        text(d, (cx + RO + 14, cy - 40), "G", 62, RED, anchor="lm")
     dot(d, px, py, 11, PIN)
 
 def s_bay(img, d, t, sc):
@@ -226,7 +227,7 @@ def s_bay(img, d, t, sc):
         phi = 0.55 * math.exp(-1.3 * tau) * math.cos(2 * math.pi * 0.8 * tau) if tau < 2.4 else 0.0
         washer(d, phi, t >= M[2] - 0.1)
         text(d, (795, 940), "vòng đệm", 58, INK)
-    k1 = appear(t, M[0] + 0.3, 0.45)
+    k1 = appear(t, M[1] - 0.1, 0.45)
     card(d, (60, 1050, 1020, 1160), fill=A((254, 242, 242), k1), outline=A(DRED, k1), r=24, w=6)
     text(d, (W / 2, 1105), "✗ Dễ tưởng: G luôn ở trên vật", 58, DRED, alpha=k1)
     k3 = appear(t, M[2] + 0.4, 0.45)
@@ -292,13 +293,13 @@ CLIP = dict(id="tn-l10-trong-luc-luc-cang-01", header="VẬT LÍ 10 · THÍ NGHI
    ("Ba đường cắt nhau tại một điểm.", 3.8),
    ("Đặt G lên bút chì: thăng bằng.", 3.8)]),
  dict(key="bay", title="Bẫy: trọng tâm ở đâu?", draw=s_bay, tail=0.4, caps=[
-   ("Đây là bẫy hay gặp.", 3.1),
+   ("Bìa: G nằm trên vật.", 3.1),
    ("Treo vòng đệm ở mép.", 3.3),
    ("Dây dọi đi qua tâm lỗ.", 3.5)]),
  dict(key="gioihan", title="Giới hạn", draw=s_gioihan, tail=0.6, caps=[
    ("Ở đây coi bìa phẳng, đồng chất.", 3.8)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.3, caps=[
-   ("Hai dây dọi cắt nhau tại G.", 6.2)]),
+   ("Thử tính, rồi chọn đáp án.", 6.2)]),
 ])
 
 if __name__ == "__main__":
