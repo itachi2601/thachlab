@@ -261,11 +261,11 @@ def s_end(img, d, t, sc):
     text(d, (W / 2, 288), "THỬ NGHĨ", 56, WHITE, alpha=k1)
     d.ellipse([110, 470, 350, 710], fill=A((254, 249, 195), k1), outline=A(DORANGE, k1), width=6)   # dung cu dinh muc 12 V
     d.line([(180, 620), (230, 540), (280, 620)], fill=A(DORANGE, k1), width=6)
-    text(d, (230, 790), "ghi 12 V", 58, INK, alpha=k1)
+    text(d, (230, 790), "ghi 9 V", 58, INK, alpha=k1)
     cx, cy, r = 720, 700, 230
-    gauge(d, cx, cy, r, DOC[3], a=k1, nums=False)
-    text(d, (cx, cy + 110), "12,4 V", 60, DRED, alpha=k1)
-    text(d, (W / 2, 1010), "Vạch 12 V, vôn kế 12,4 V.", 58, INK, alpha=k1)
+    gauge(d, cx, cy, r, DOC[2], a=k1, nums=False)
+    text(d, (cx, cy + 110), "9,3 V", 60, DRED, alpha=k1)
+    text(d, (W / 2, 1010), "Vạch 9 V, vôn kế 9,3 V.", 58, INK, alpha=k1)
     text(d, (W / 2, 1110), "Có cần hạ vạch?", 60, ORANGE, alpha=k1)
     cbar(d, 1230, t, 1.0, sc["T"] - 0.2, DORANGE, k1)
 
@@ -295,5 +295,5 @@ CLIP = dict(id="tn-l10-an-toan-01", header="VẬT LÍ 10 · THÍ NGHIỆM", cues
    ("Cắm đảo hai dây.", 3.4),
    ("Tắt nguồn, cắm lại đúng cực.", 3.4)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.4, caps=[
-   ("So số chỉ với số ghi.", 5.6)]),
+   ("Chọn vạch theo gì?", 5.6)]),
 ])

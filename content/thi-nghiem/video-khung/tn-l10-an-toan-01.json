@@ -52,19 +52,19 @@
   },
   "cau_chot": {
     "giay": 45.2,
-    "cau_hoi": "Nguồn đang bật thì em thấy kim vôn kế lệch ngược về bên trái số 0. Việc nào làm đầu tiên?",
+    "cau_hoi": "Dụng cụ ghi 9 V, DC. Núm ở vạch 9 V, vôn kế chỉ 9,3 V. Nên làm gì?",
     "chon": [
-      "A. Rút đảo hai dây ngay",
-      "B. Tắt công tắc nguồn",
-      "C. Xoay núm về vạch 3 V",
-      "D. Đọc số, ghi thêm dấu trừ"
+      "A. Hạ núm xuống vạch 6 V",
+      "B. Giữ vạch 9 V rồi nối",
+      "C. Đổi bộ nguồn, vì nguồn hỏng",
+      "D. Sửa số ghi thành 9,3 V"
     ],
     "dung": 1,
     "giai_thich": [
-      "Kim lệch ngược nghĩa là phải đảo dây, nhưng tháo dây khi nguồn còn bật là sai quy tắc: đầu kim loại ở cực vẫn có điện. Tắt công tắc trước, rồi mới đảo hai dây cho đỏ vào +.",
-      "Tháo hay cắm dây chỉ làm khi nguồn đã tắt. Tắt công tắc xong mới đảo hai dây cho đỏ vào +, đen vào −, rồi bật lại và đọc.",
-      "Hạ vạch không sửa được chỗ cắm sai cực: kim vẫn lệch ngược. Việc đầu tiên là tắt công tắc, sau đó đảo hai dây.",
-      "Kim đập vào chốt bên trái thì không đọc được số nào, để lâu còn hỏng vôn kế. Tắt công tắc trước, rồi đảo hai dây cho đúng cực."
+      "Vạch 6 V cho khoảng 6,2 V, thiếu gần 3 V so với số ghi 9 V. Phần lệch 0,3 V chỉ là phần nhỏ của 9 V, nên giữ vạch 9 V.",
+      "Chọn vạch bằng số ghi trên dụng cụ. Lệch 0,3 V so với 9 V là rất nhỏ, là sai số bình thường của bộ nguồn; đo lại thấy gần đúng thì nối.",
+      "Mọi vạch đều cao hơn một chút và phần lệch tăng đều theo vạch: đó là sai số bình thường, không phải nguồn hỏng.",
+      "Số ghi trên dụng cụ là định mức do nhà sản xuất đặt, không sửa theo số đo. Lệch 0,3 V so với 9 V là nhỏ, giữ vạch 9 V."
     ]
   }
 }
