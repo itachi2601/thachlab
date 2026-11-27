@@ -101,16 +101,15 @@ def s_hook(img, d, t, sc):
     marks(d)
     if k > 0.1:
         arrow(d, (SX - BW / 2 - 40, OY), (SX - BW / 2 - 40, py(AMP * k) - 4), ORANGE, w=7, head=22)
-        text(d, (SX + BW / 2 + 30, py(AMP * k) + 10), "kéo 5 cm", 58, DORANGE, anchor="lm")
     a = appear(t, M[1] - 0.2, 0.5)
     if a <= 0: return
     y0 = 1100 + (1 - a) * 40
     card(d, (50, y0, 1030, y0 + 560), fill=A(WHITE, a), outline=A(PURPLE, a), w=6)
     pill(d, W / 2, y0 + 64, "DỰ ĐOÁN", 56, WHITE, PURPLE, a)
-    text(d, (W / 2, y0 + 175), "Bỏ qua ma sát.", 60, INK, alpha=a)
-    text(d, (W / 2, y0 + 275), "Vật lên cao nhất", 62, PURPLE, alpha=a)
-    text(d, (W / 2, y0 + 355), "tới đâu?", 62, PURPLE, alpha=a)
-    seg_bar(d, y0 + 450, t, M[1] + 0.4, sc["T"] - 0.2, PURPLE, a)
+    text(d, (W / 2, y0 + 160), "Kéo xuống 5 cm rồi thả,", 60, INK, alpha=a)
+    text(d, (W / 2, y0 + 235), "bỏ qua ma sát.", 60, INK, alpha=a)
+    text(d, (W / 2, y0 + 330), "Vật lên cao nhất tới đâu?", 62, PURPLE, alpha=a)
+    seg_bar(d, y0 + 440, t, M[1] + 0.4, sc["T"] - 0.2, PURPLE, a)
 
 # ---------------- canh 2: Tien hanh (quay cham x4, dung o moi moc 0,25 s) ----------------
 REL, RUN, PAUSE = 0.6, 1.0, 0.7
@@ -220,10 +219,10 @@ CLIP = dict(id="tn-l11-daodongdieuhoa-01", header="VẬT LÍ 11 · THÍ NGHIỆM
             cues=_cues, scenes=[
  dict(key="hook", title="Treo vật vào lò xo", draw=s_hook, tail=0.3, caps=[
    ("Treo vật rồi kéo xuống.", 4.4),
-   ("Dừng lại, tự đoán.", 5.4)]),
+   ("Dừng lại, tự đoán.", 6.0)]),
  dict(key="do", title="Tiến hành", draw=s_do, tail=0.3, caps=[
    ("Thả tay, ghi li độ mỗi 0,25 s.", 4.4),
-   ("Chiều dương hướng xuống.", 4.0)]),
+   ("Chiều dương hướng xuống.", 3.4)]),
  dict(key="dapan", title="Kết quả", draw=s_dapan, tail=0.3, caps=[
    ("Hai đầu cách đều chỗ đứng yên.", 4.2),
    ("Không chạm mốc chưa giãn.", 4.4),
