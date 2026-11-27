@@ -1,51 +1,68 @@
 {
   "id": "tn-l10-thuchanhthl-01",
   "ten": "Ba lực kế kéo một nút dây",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-thuchanhthl-01-20261118.mp4",
-  "tong_giay": 44.3,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-thuchanhthl-01-20261127.mp4",
+  "tong_giay": 49.7,
   "o": [
     {
       "khoa": "gia_thuyet",
       "giay": 0,
-      "chu": "Hình bình hành dựng từ F1, F2 cho lực tổng hợp khớp lực đo ở lực kế 3.",
-      "kiem": "Lực kế 3 chỉ bằng bao nhiêu?"
+      "chu": "Lực tổng hợp vẽ bằng hình bình hành khớp lực đo ở lực kế 3.",
+      "kiem": "Lực kế 3 chỉ bằng tổng hai số?"
     },
     {
       "khoa": "du_doan",
       "giay": 3.8,
-      "chu": "F1 = F2 = 2,0 N, góc 60°. Lực kế 3 chỉ khoảng bao nhiêu?"
+      "chu": "Lực kế 3 chỉ lớn hơn, bằng hay nhỏ hơn 1,6 N + 2,1 N?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 10.1,
-      "chu": "Ba lực kế kéo nút O; lực kế 3 treo vật."
+      "giay": 10.4,
+      "chu": "Ba lực kế 5 N, nút O, vật nặng."
     },
     {
       "khoa": "quan_sat",
-      "giay": 14.1,
-      "chu": "Nút O đứng yên mới đọc số. Lần 1: F1 = 1,6 N, F2 = 2,1 N, α = 80°, F3 = 2,9 N."
+      "giay": 18.4,
+      "chu": "Lần 1: F1 = 1,6 N, F2 = 2,1 N, α = 80°; lực kế 3 chỉ 2,9 N, nhỏ hơn tổng hai số."
     },
     {
       "khoa": "rut_ra",
-      "giay": 22.9,
-      "chu": "Lần 2: F vẽ = 3,45 N, lực kế 3 chỉ 3,5 N. Lệch δ = 0,05 N ≤ Δ = 0,3 N."
+      "giay": 28.2,
+      "chu": "Chéo 5,7 cm → F vẽ = 2,85 N; δ = 0,05 N ≤ Δ = 0,3 N: F vẽ khớp lực đo trong sai số."
     },
     {
       "khoa": "chua_noi",
-      "giay": 31.9,
-      "chu": "Sai số vẽ chưa tính vào Δ. Hai lực song song thì chưa nói."
+      "giay": 41.4,
+      "chu": "Sai số vẽ có đáng kể không: chưa xét."
     }
   ],
   "dung_dua": {
-    "giay": 9.9,
-    "cau_hoi": "F1 = F2 = 2,0 N, góc 60°. Lực kế 3 chỉ khoảng bao nhiêu?",
+    "giay": 9.8,
+    "cau_hoi": "Lần 1: lực kế 1 chỉ 1,6 N, lực kế 2 chỉ 2,1 N, góc giữa hai dây 80°. Lực kế 3 (treo vật) chỉ thế nào so với 1,6 N + 2,1 N?",
     "chon": [
-      "A. khoảng 4,0 N",
-      "B. khoảng 3,5 N",
-      "C. khoảng 2,0 N"
+      "A. Lớn hơn",
+      "B. Bằng",
+      "C. Nhỏ hơn"
+    ],
+    "dung": 2,
+    "giai_thich_dung": "Hai dây kéo lệch nhau 80° nên không cộng thẳng hai số chỉ: lực kế 3 chỉ 2,9 N, nhỏ hơn tổng.",
+    "giai_thich_sai": "Cộng thẳng chỉ đúng khi hai lực cùng phương, cùng chiều. Xem đoạn kế lực kế 3 chỉ bao nhiêu."
+  },
+  "cau_chot": {
+    "giay": 44.6,
+    "cau_hoi": "Lực kế 1 và lực kế 2 cùng chỉ 1,5 N, hai dây vuông góc ở nút O. Lực kế 3 chỉ khoảng bao nhiêu?",
+    "chon": [
+      "A. 3,0 N",
+      "B. 2,1 N",
+      "C. 1,5 N",
+      "D. 2,6 N"
     ],
     "dung": 1,
-    "giai_thich_dung": "Hai lực 2,0 N hợp góc 60° có tổng hợp khoảng 3,5 N (đường chéo hình thoi); nút O đứng yên nên lực kế 3 chỉ đúng độ lớn đó.",
-    "giai_thich_sai": "Vẽ hình bình hành hai lực ở đoạn kế rồi so với số chỉ lực kế 3."
+    "giai_thich": [
+      "3,0 N là cộng thẳng hai số chỉ, chỉ đúng khi hai dây cùng phương. Vuông góc: F = √(1,5² + 1,5²) ≈ 2,1 N.",
+      "Hai dây vuông góc: F = √(1,5² + 1,5²) ≈ 2,12 N; nút O đứng yên nên lực kế 3 chỉ khoảng 2,1 N.",
+      "1,5 N là lấy bằng một lực. Hai lực vuông góc tổng hợp lại: F = √(1,5² + 1,5²) ≈ 2,1 N.",
+      "2,6 N ứng với góc 60°, không phải 90°. Vuông góc: F = √(1,5² + 1,5²) ≈ 2,1 N."
+    ]
   }
 }

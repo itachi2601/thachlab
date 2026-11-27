@@ -1,51 +1,69 @@
 {
   "id": "tn-l10-moment-luc-01",
   "ten": "Đẩy cửa ở nhiều chỗ, nhiều hướng",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-moment-luc-01-20261118.mp4",
-  "tong_giay": 48.9,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-moment-luc-01-20261127.mp4",
+  "tong_giay": 49.8,
   "o": [
     {
       "khoa": "gia_thuyet",
       "giay": 0,
-      "chu": "Lực có giá đi qua trục bản lề thì không làm cửa quay.",
-      "kiem": "Đẩy đúng vào bản lề thì cửa sao?"
+      "chu": "Tác dụng làm quay của lực phụ thuộc chỗ đặt và hướng của lực, không chỉ độ lớn.",
+      "kiem": "Đẩy 60 N thẳng vào bản lề: cửa có quay?"
     },
     {
       "khoa": "du_doan",
-      "giay": 3.0,
-      "chu": "Đẩy 60 N thẳng vào bản lề. Cửa thế nào?"
+      "giay": 3.4,
+      "chu": "Đẩy 60 N thẳng vào bản lề. Cửa có quay không?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 9.1,
-      "chu": "Cánh cửa, nhìn từ trên xuống; số liệu mô phỏng."
+      "giay": 9.6,
+      "chu": "Cánh cửa có bản lề, nhìn từ trên."
     },
     {
       "khoa": "quan_sat",
-      "giay": 13.3,
-      "chu": "Đẩy vuông góc cách bản lề 0,8 m cần 2,5 N; cách 0,4 m cần 5,0 N."
+      "giay": 16.4,
+      "chu": "Đẩy vuông góc với cửa: cách bản lề 0,8 m cần 2,5 N; 0,4 m cần 5,0 N; 0,1 m cần 20 N."
     },
     {
       "khoa": "rut_ra",
-      "giay": 25.7,
-      "chu": "Cánh tay đòn d lớn thì lực cần nhỏ. Giá lực qua bản lề: d = 0 nên M = F·d = 0."
+      "giay": 29.6,
+      "chu": "Lực × cánh tay đòn như nhau (2 N·m). Giá lực qua bản lề thì cánh tay đòn bằng 0, cửa không quay."
     },
     {
       "khoa": "chua_noi",
-      "giay": 35.3,
-      "chu": "Số liệu mô phỏng, bản lề cần 2 N·m là giả định. Lực chếch lên thì chưa nói."
+      "giay": 40.4,
+      "chu": "Số liệu mô phỏng; bản lề cần 2 N·m là giả định. Cửa thật cần bao nhiêu thì chưa đo."
     }
   ],
   "dung_dua": {
-    "giay": 9.0,
-    "cau_hoi": "Đẩy 60 N thẳng vào bản lề. Cửa thế nào?",
+    "giay": 9.4,
+    "cau_hoi": "Đẩy cửa bằng lực 60 N, hướng dọc mặt cửa, thẳng vào bản lề. Cửa có quay không?",
     "chon": [
-      "A. Quay, vì 60 N lớn hơn nhiều so với 2,5 N",
-      "B. Chỉ quay khi đẩy mạnh hơn 60 N",
-      "C. Không quay, đẩy mạnh bao nhiêu cũng vậy"
+      "A. Quay, vì 60 N rất lớn",
+      "B. Quay, nhưng chậm hơn lúc đẩy vuông góc",
+      "C. Không quay",
+      "D. Chỉ quay khi đẩy mạnh hơn 60 N"
     ],
     "dung": 2,
     "giai_thich_dung": "Giá của lực đi qua trục bản lề nên cánh tay đòn bằng 0, moment bằng 0: cửa không quay dù đẩy mạnh bao nhiêu.",
-    "giai_thich_sai": "Xem cửa phản ứng thế nào khi đẩy thẳng vào bản lề ở đoạn kế."
+    "giai_thich_sai": "Xem đoạn kế: đẩy 60 N thẳng vào bản lề, cửa có nhúc nhích không? Rồi so với 2,5 N đẩy vuông góc ở mép cửa."
+  },
+  "cau_chot": {
+    "giay": 44.6,
+    "cau_hoi": "Cánh cửa trong clip cần moment 2 N·m để quay. Đẩy cách bản lề 0,5 m, lực xiên 30° với mặt cửa. Lực đẩy ít nhất bao nhiêu?",
+    "chon": [
+      "A. 4,0 N",
+      "B. 8,0 N",
+      "C. 5,0 N",
+      "D. 16 N"
+    ],
+    "dung": 1,
+    "giai_thich": [
+      "4,0 N là lấy 0,5 m làm cánh tay đòn. Lực xiên 30° thì cánh tay đòn là 0,5 · sin 30° = 0,25 m, nên F = 2 : 0,25 = 8,0 N.",
+      "Cánh tay đòn d = 0,5 · sin 30° = 0,25 m; F = M : d = 2 : 0,25 = 8,0 N.",
+      "5,0 N là lần đẩy xiên 30° ở mép cửa (0,8 m). Ở 0,5 m cánh tay đòn chỉ còn 0,25 m, nên cần 2 : 0,25 = 8,0 N.",
+      "16 N là chia đôi khoảng cách hai lần. Cánh tay đòn là 0,5 · sin 30° = 0,25 m, nên F = 2 : 0,25 = 8,0 N."
+    ]
   }
 }

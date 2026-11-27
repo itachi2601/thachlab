@@ -1,51 +1,68 @@
 {
   "id": "tn-l10-luc-ma-sat-03",
   "ten": "Nâng dần tấm ván",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-luc-ma-sat-03-20261118.mp4",
-  "tong_giay": 47.0,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-luc-ma-sat-03-20261127.mp4",
+  "tong_giay": 45.9,
   "o": [
     {
       "khoa": "gia_thuyet",
       "giay": 0,
-      "chu": "Lúc trượt đều, ván chỉ cần dốc ít hơn lúc bắt đầu trượt.",
-      "kiem": "So h hai lúc thế nào?"
+      "chu": "Ma sát trượt nhỏ hơn ma sát nghỉ cực đại, nên hộp trượt đều được trên dốc thoải hơn dốc lúc nó bắt đầu trượt.",
+      "kiem": "h lúc trượt đều so với lúc bắt đầu trượt?"
     },
     {
       "khoa": "du_doan",
-      "giay": 4.2,
-      "chu": "Lúc trượt đều, độ cao h thế nào so với lúc bắt đầu trượt?"
+      "giay": 3.8,
+      "chu": "Lúc hộp trượt đều, h so với lúc hộp bắt đầu trượt?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 10.5,
-      "chu": "Ván dài 1,00 m, đo độ cao h."
+      "giay": 9.6,
+      "chu": "Ván dài 1,00 m, hộp gỗ, thước."
     },
     {
       "khoa": "quan_sat",
-      "giay": 15.7,
-      "chu": "Hạ ván, búng nhẹ hộp: tìm h lúc trượt đều."
+      "giay": 20.0,
+      "chu": "Bắt đầu trượt: h 0,34 m; trượt đều: h 0,29 m."
     },
     {
       "khoa": "rut_ra",
-      "giay": 21.3,
-      "chu": "Hai độ cao h khác nhau: lúc trượt đều thấp hơn."
+      "giay": 23.2,
+      "chu": "Trượt đều cần dốc thoải hơn: ma sát trượt nhỏ hơn ma sát nghỉ cực đại."
     },
     {
       "khoa": "chua_noi",
-      "giay": 34.7,
-      "chu": "Ván dốc hơn: hộp nhanh dần ra sao? Chưa thử.\nHộp nặng hơn: góc không đổi, chỉ theo mô hình, chưa đo."
+      "giay": 35.0,
+      "chu": "Dốc cao hơn 0,34 m thì hộp nhanh dần ra sao: chưa đo."
     }
   ],
   "dung_dua": {
-    "giay": 10.3,
-    "cau_hoi": "Lúc trượt đều, độ cao h thế nào so với lúc bắt đầu trượt?",
+    "giay": 9.4,
+    "cau_hoi": "Nâng dần đầu ván tới lúc hộp bắt đầu trượt. Hạ bớt, búng nhẹ cho hộp trượt đều. Độ cao h lúc trượt đều so với lúc bắt đầu trượt?",
     "chon": [
       "A. Cao hơn",
       "B. Bằng nhau",
       "C. Thấp hơn"
     ],
     "dung": 2,
-    "giai_thich_dung": "Ma sát trượt nhỏ hơn ma sát nghỉ cực đại nên ván chỉ cần dốc ít hơn, h thấp hơn.",
-    "giai_thich_sai": "Xem so sánh hai độ cao h ở đoạn kế."
+    "giai_thich_dung": "Bắt đầu trượt ở h = 0,34 m, trượt đều ở h = 0,29 m: ma sát trượt nhỏ hơn ma sát nghỉ cực đại nên dốc thoải hơn đã đủ.",
+    "giai_thich_sai": "Xem bảng h ở đoạn kế: so độ cao lúc bắt đầu trượt và lúc trượt đều."
+  },
+  "cau_chot": {
+    "giay": 40.2,
+    "cau_hoi": "Hộp 0,20 kg nằm yên trên ván dài 1,00 m có đầu cao 0,20 m; g = 9,8 m/s². Lực ma sát ván tác dụng lên hộp khoảng bao nhiêu?",
+    "chon": [
+      "A. 0,39 N",
+      "B. 0,69 N",
+      "C. 1,96 N",
+      "D. 0 N"
+    ],
+    "dung": 0,
+    "giai_thich": [
+      "Hộp yên nên ma sát nghỉ cân bằng thành phần trọng lực dọc ván: mg·h/L = 0,20 · 9,8 · 0,20 ≈ 0,39 N.",
+      "0,69 N là ma sát nghỉ cực đại; hộp chưa trượt nên ma sát chỉ bằng thành phần trọng lực dọc ván, mg·h/L ≈ 0,39 N.",
+      "1,96 N là cả trọng lượng hộp. Chỉ phần dọc ván, mg·h/L ≈ 0,39 N, mới cần ma sát giữ lại.",
+      "Hộp yên vẫn có ma sát nghỉ: nó giữ hộp khỏi tụt xuống, bằng mg·h/L ≈ 0,39 N."
+    ]
   }
 }
