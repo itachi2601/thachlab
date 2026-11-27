@@ -195,10 +195,11 @@ def s_bay(img, d, t, sc):
     IMG_REF[0] = img
     M = sc["M"]; mk = M[1]
     ruler(d); floor(d, lab=False)
-    peak_mark(d, HM[0], "", INK)
-    peak_mark(d, HM[1], "đỉnh 1: 0,55 m", BLUE)
+    peak_mark(d, HM[0], "tưởng: 1,0 m", RED)
+    peak_mark(d, HM[1], "thật: 0,55 m", BLUE)
     ks = clamp((t - mk) / 0.4)
-    ball(d, HM[0], alpha=0.35 * (1 - ks))                    # bong "nghi": nay lai dung 1,0 m
+    yg = ym(HM[0]) - RB                                       # bong "nghi": vien do, nay lai dung 1,0 m
+    d.ellipse([XB - RB, yg - RB, XB + RB, yg + RB], outline=A(RED, 1 - 0.6 * ks), width=5)
     if ks > 0:
         y = ym(HM[0]) - RB
         d.line([(XB - 40, y - 40), (XB + 40, y + 40)], fill=A(RED, ks), width=8)
@@ -213,7 +214,7 @@ def s_bay(img, d, t, sc):
         text(d, (W / 2, yy), q, 60, mix(INK, GRAY, ks), alpha=a1)
         if ks > 0: d.line([(W / 2 - lw / 2 - 6, yy + 4), (W / 2 - lw / 2 - 6 + (lw + 12) * ks, yy + 4)], fill=A(RED, 0.85 * a1), width=6)
         k2 = appear(t, mk + 0.2, 0.45)
-        if k2 > 0: text(d, (W / 2, y + 330), "Sàn gạch cứng: chỉ 0,55 m", 60, DORANGE, alpha=a1 * k2)
+        if k2 > 0: text(d, (W / 2, y + 330), "Chỉ lên 0,55 m", 60, DORANGE, alpha=a1 * k2)
     if k3 > 0:
         card(d, (40, y, 1040, y + 340), fill=A(WHITE, k3), outline=A(NAVY, k3), w=6)
         pill(d, W / 2, y + 70, "CHƯA NÓI ĐƯỢC", NAVY, k3)
@@ -225,10 +226,11 @@ def s_end(img, d, t, sc):
     k = appear(t, 0.15, 0.4)
     card(d, (40, 300, 1040, 1150), fill=A(WHITE, k), outline=A(ORANGE, k), w=6)
     pill(d, W / 2, 380, "THỬ NGHĨ", ORANGE, k)
-    text(d, (W / 2, 560), "Thả từ 2,0 m, cùng sàn.", 62, INK, alpha=k)
-    text(d, (W / 2, 700), "Tới đỉnh 1, bao nhiêu J", 62, DORANGE, alpha=k)
-    text(d, (W / 2, 790), "thành nhiệt, âm?", 62, DORANGE, alpha=k)
-    seg_bar(d, 960, t, 1.0, sc["T"] - 0.2, ORANGE, k)
+    text(d, (W / 2, 530), "Bóng 57 g, thả 2,0 m,", 62, INK, alpha=k)
+    text(d, (W / 2, 620), "cùng sàn; g = 9,8 m/s².", 62, INK, alpha=k)
+    text(d, (W / 2, 750), "Tới đỉnh 1: nhiệt, âm", 62, DORANGE, alpha=k)
+    text(d, (W / 2, 840), "bao nhiêu J?", 62, DORANGE, alpha=k)
+    seg_bar(d, 990, t, 1.0, sc["T"] - 0.2, ORANGE, k)
 
 def _cues(clip):
     sc = {s["key"]: s for s in clip["scenes"]}
@@ -242,7 +244,7 @@ CLIP = dict(id="tn-l10-nang-luong-cong-01", header="VẬT LÍ 10 · THÍ NGHIỆ
     footer="Năng lượng. Công cơ học · thachlab.id.vn", scenes=[
  dict(key="hook", title="Bóng tennis nảy trên sàn", draw=s_hook, tail=0.3, caps=[
    ("Thả bóng từ 1,0 m, không ném.", 3.4),
-   ("Dừng lại, tự đoán.", 5.8)]),
+   ("Dừng lại, tự đoán.", 5.4)]),
  dict(key="do", title="Năng lượng đổi dạng", draw=s_do, tail=0.4, caps=[
    ("Quay chậm: xem cột đỏ tăng lúc nào.", 9.7),
    ("Cột đỏ chỉ tăng khi chạm sàn.", 3.6)]),
@@ -254,7 +256,7 @@ CLIP = dict(id="tn-l10-nang-luong-cong-01", header="VẬT LÍ 10 · THÍ NGHIỆ
    ("Sai: chạm sàn vẫn ra nhiệt, âm.", 3.8),
    ("Giới hạn của lần đo.", 3.0)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.6, caps=[
-   ("Dừng lại, tự tính.", 6.0)]),
+   ("Dừng lại, tự tính.", 6.4)]),
 ])
 
 def _kiem_dong_bo():

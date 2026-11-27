@@ -43,7 +43,7 @@ def ruler(d):
         y = ym(i / 10); L = 30 if i % 2 == 0 else 16
         d.line([(XR1 - L, y), (XR1, y)], fill=RULER_D, width=4)
         if i % 2 == 0 and i > 0: text(d, (XR0 - 10, y), fm(i / 10), 56, INK, anchor="rm")
-    text(d, (XR0 + 25, ym(1.08) - 40), "m", 56, INK)
+    text(d, (XR0 + 25, ym(1.08) - 40), "(m)", 56, INK)
 
 def table_top(d):
     d.rectangle([40, YF, 640, YF + 60], fill=STONE)
@@ -145,7 +145,7 @@ def s_rut(img, d, t, sc):
     M = sc["M"]
     k0 = appear(t, 0.3, 0.4)
     card(d, (40, 230, 1040, 440), fill=A(WHITE, k0), outline=A(BLUE, k0), w=4)
-    text(d, (W / 2, 290), "Cơ năng ở đỉnh: W = mgh", 60, INK, alpha=k0)
+    text(d, (W / 2, 290), "Cơ năng W = mgh, h: độ cao đỉnh", 56, INK, alpha=k0)
     text(d, (W / 2, 380), "m = 2,7 g; g = 10 m/s²", 58, BLUE, alpha=k0)
     kb = appear(t, 2.4, 0.4)
     if kb > 0:
@@ -182,20 +182,20 @@ def s_bay(img, d, t, sc):
     def hb(top):                                               # roi tu 1,00 m, nay len top, ve lai tren cung
         if ph < 0.45: return HM[0] * (1 - (ph / 0.45) ** 2)
         u = (ph - 0.45) / 0.55; return top * (1 - (1 - u) ** 2)
-    kk = appear(t, 0.3, 0.4)
+    kk = appear(t, 0.2, 0.4)
     for y in (ym(HM[0]), ym(HM[1])):
         for xx in range(XR1 + 6, 700, 22): d.line([(xx, y), (xx + 12, y)], fill=A(GRAY, kk), width=3)
-    ball(d, hb(HM[0]), 0.9 * kk, x=XA)
-    ball(d, hb(HM[1]), kk, x=XT)
-    text(d, (XA, YF + 120), "nghĩ", 56, RED, alpha=kk)
-    text(d, (XT, YF + 120), "thật", 56, GREEN, alpha=kk)
-    text(d, (720, ym(HM[0])), "1,00 m", 56, RED, anchor="lm", alpha=kk)
-    text(d, (720, ym(HM[1])), "0,80 m", 56, GREEN, anchor="lm", alpha=kk)
+    hn = HM[0] if t >= mk - 0.5 else hb(HM[0])               # bong "nghi" dung o 1,00 m truoc khi bi gach
+    yn = ym(hn) - RB
+    d.ellipse([XA - RB, yn - RB, XA + RB, yn + RB], outline=A(RED, kk), width=6)
+    yt_ = ym(hb(HM[1])) - RB; d.ellipse([XT - RB, yt_ - RB, XT + RB, yt_ + RB], fill=A(BLUE, kk), outline=A(NAVY, kk), width=4)
+    text(d, (720, ym(HM[0])), "nghĩ: 1,00 m", 56, RED, anchor="lm", alpha=kk)
+    text(d, (720, ym(HM[1])), "thật: 0,80 m", 56, BLUE, anchor="lm", alpha=kk)
     ks = clamp((t - mk) / 0.4)
     if ks > 0:                                                 # gach bong "nghi"
         y = ym(HM[0]) - RB
         for s in (1, -1): d.line([(XA - 40, y - 40 * s), (XA - 40 + 80 * ks, y - 40 * s + 80 * s * ks)], fill=RED, width=7)
-    k0 = appear(t, 0.2, 0.4); k3 = appear(t, M[2] - 0.1, 0.45); a1 = k0 * (1 - k3); y = 1200
+    k3 = appear(t, M[2] - 0.1, 0.45); a1 = kk * (1 - k3); y = 1200
     if a1 > 0:
         card(d, (40, y, 1040, y + 420), fill=A(WHITE, a1), outline=A(RED, a1), w=6)
         pill(d, W / 2, y + 70, "BẪY", RED, a1)
@@ -208,7 +208,7 @@ def s_bay(img, d, t, sc):
     if k3 > 0:
         card(d, (40, y, 1040, y + 330), fill=A(WHITE, k3), outline=A(NAVY, k3), w=6)
         pill(d, W / 2, y + 70, "CHƯA NÓI ĐƯỢC", NAVY, k3)
-        text(d, (W / 2, y + 210), "Mới thử một mặt bàn", 62, INK, alpha=k3)
+        text(d, (W / 2, y + 210), "Mới một mặt bàn", 62, INK, alpha=k3)
 
 # ---------------- canh 5: thu nghi (cau chot o khung: 12,2 mJ) ----------------
 def s_end(img, d, t, sc):

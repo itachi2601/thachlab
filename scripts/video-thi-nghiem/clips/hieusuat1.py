@@ -137,7 +137,7 @@ def s_do(img, d, t, sc):
 
 # ---------------- canh 3: dien nang di dau ----------------
 X0, XS, XE, Y0, TH = 80, 400, 840, 520, 300      # Sankey: day 300 px = 45 W
-K_CI, K_HP, K_SO, K_MV = 0.3, 2.8, 5.3, 8.2
+K_CI, K_HP, K_SO, K_MV = 0.3, 2.8, 4.9, 7.6
 
 def sankey(d, h, k_ci, k_hp):
     ci = TH * h / 100
@@ -147,6 +147,8 @@ def sankey(d, h, k_ci, k_hp):
         d.rectangle([XS, Y0, XE, Y0 + ci], fill=A(GREEN, k_ci))
         d.polygon([(XE, Y0 - 18), (XE + 70, Y0 + ci / 2), (XE, Y0 + ci + 18)], fill=A(GREEN, k_ci))
         text(d, (1010, Y0 - 60), "có ích: gió", 58, GREEN, anchor="rm", alpha=k_ci)
+        kn = k_ci * (1 - appear(T_NOW[0], K_MV - 0.3, 0.3))
+        if kn > 0: text(d, ((XS + XE) / 2, Y0 + ci / 2), "29,25 W", 56, WHITE, alpha=kn)
     if k_hp > 0:
         off = lambda x: 240 * ease((x - XS) / 340)
         xs = list(range(XS, 781, 10)); top = Y0 + ci
@@ -155,14 +157,18 @@ def sankey(d, h, k_ci, k_hp):
         yt, yb = top + 240, Y0 + TH + 240
         d.polygon([(780, yt - 16), (820, (yt + yb) / 2), (780, yb + 16)], fill=A(ORANGE, k_hp))
         text(d, (1010, yb + 70), "hao phí: nhiệt, âm", 58, ORANGE, anchor="rm", alpha=k_hp)
+        kn = k_hp * (1 - appear(T_NOW[0], K_MV - 0.3, 0.3))
+        if kn > 0: text(d, (1010, yb + 145), "15,75 W", 58, ORANGE, anchor="rm", alpha=kn)
 
+T_NOW = [0.0]
 def s_rut(img, d, t, sc):
+    T_NOW[0] = t
     h = lerp(65, 90, ease((t - K_MV) / 0.8))
     sankey(d, h, appear(t, K_CI, 0.45), appear(t, K_HP, 0.45))
-    ks = appear(t, K_SO, 0.4) * (1 - appear(t, K_MV - 0.3, 0.3))
+    ks = appear(t, K_SO, 0.4)
     if ks > 0:
         card(d, (60, 1260, 1020, 1390), fill=A(WHITE, ks), outline=A(ORANGE, ks), r=28, w=4)
-        text(d, (W / 2, 1325), "H = 65 %: hao phí 15,75 W", 60, DORANGE, alpha=ks)
+        text(d, (W / 2, 1325), f"hiệu suất H = {round(h)} %", 60, DORANGE, alpha=ks)
 
 # ---------------- canh 4: bay + gioi han ----------------
 def s_bay(img, d, t, sc):
@@ -195,7 +201,7 @@ def s_end(img, d, t, sc):
         pts = [(cx + r * math.cos(a0 + s), cy + r * math.sin(a0 + s)) for r, s in ((20, -0.35), (150, -0.18), (150, 0.18), (20, 0.35))]
         d.polygon(pts, fill=A(BLADE, k))
     dot(d, cx, cy, 24, A(NAVY, k))
-    text(d, (W / 2, 900), "Quạt 45 W, H = 80 %,", 62, INK, alpha=k)
+    text(d, (W / 2, 900), "Quạt 45 W, hiệu suất 80 %,", 62, INK, alpha=k)
     text(d, (W / 2, 990), "chạy 10 phút.", 62, INK, alpha=k)
     text(d, (W / 2, 1120), "Nhiệt và âm toả ra", 64, DORANGE, alpha=k)
     text(d, (W / 2, 1210), "bao nhiêu kJ?", 64, DORANGE, alpha=k)

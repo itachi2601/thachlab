@@ -155,7 +155,7 @@ def s_rut(img, d, t, sc):
     d.rectangle([bx - 60, 510, bx + 60, 600], fill=WOOD, outline=WOOD_D, width=4)
     if v > 0.05:
         arrow(d, (bx + 70, 460), (bx + 70 + 230 * v, 460), BLUE, w=8, head=24)
-        text(d, (bx + 95 + 230 * v, 455), "v", 60, BLUE, anchor="lm")
+        text(d, (bx + 70, 400), "v (m/s)", 56, BLUE, anchor="lm")
         arrow(d, (bx - 10, 590), (bx - 170, 590), RED, w=8, head=24)
         text(d, (bx - 90, 680), "ma sát", 56, RED)
     # cot dong nang
@@ -164,9 +164,8 @@ def s_rut(img, d, t, sc):
     text(d, (850, 300), "động năng", 56, ORANGE, anchor="rm")
     k1 = appear(t, 2.0, 0.45)
     if k1 > 0:
-        card(d, (60, 850, 1020, 1060), fill=A(WHITE, k1), outline=A(NAVY, k1), r=26, w=4)
-        text(d, (W / 2, 905), "Công ma sát = động năng", 58, NAVY, alpha=k1)
-        eq(d, W / 2, 995, "μmg·s = ½mv²", 64, INK, alpha=k1)
+        card(d, (60, 880, 1020, 1020), fill=A(WHITE, k1), outline=A(NAVY, k1), r=26, w=4)
+        text(d, (W / 2, 950), "Công ma sát = động năng", 60, NAVY, alpha=k1)
     k2 = appear(t, M[1] + 0.6, 0.45)
     if k2 > 0:
         card(d, (60, 1100, 1020, 1230), fill=A((236, 253, 243), k2), outline=A(GREEN, k2), r=26, w=5)
@@ -189,16 +188,18 @@ def s_bay(img, d, t, sc):
         d.line([(gx(v), GY0), (gx(v), GY0 + 12)], fill=INK, width=3); text(d, (gx(v), GY0 + 50), vn(v, 1), 56, INK)
     for s in (0.4, 0.8, 1.2):
         d.line([(GX0 - 12, gy(s)), (GX0, gy(s))], fill=INK, width=3); text(d, (GX0 - 20, gy(s)), vn(s, 1), 56, INK, anchor="rm")
-    text(d, (1030, GY0 + 50), "v", 60, INK, anchor="rm"); text(d, (GX0 - 20, GY1 - 10), "s", 60, INK, anchor="rm")
+    text(d, (1040, GY0 + 50), "v (m/s)", 56, INK, anchor="rm"); text(d, (GX0 + 20, GY1 - 30), "s (m)", 56, INK, anchor="lm")
     kp = appear(t, 0.2, 0.4)
     # duong "s ti le v" (bay): qua goc va diem lan 1, net dut do; ve dan theo thoi gian
     gr = clamp((t - 0.4) / 2.0)
     pts = [(gx(v), gy(0.21 * v)) for v in np.linspace(0, 2.5 * gr, 26)]
     for j in range(0, len(pts) - 1, 2): d.line([pts[j], pts[j + 1]], fill=RED, width=7)
+    text(d, (GX1, gy(0.525) + 50), "tỉ lệ v", 56, RED, anchor="rm")
     kc = appear(t, mk + 0.2, 0.6)
     if kc > 0:
         cur = [(gx(v), gy(v * v / 5)) for v in np.linspace(0, 2.5 * kc, 60)]
         d.line(cur, fill=GREEN, width=7, joint="curve")
+        text(d, (GX1 - 90, gy(1.25)), "tỉ lệ v²", 56, GREEN, anchor="rm", alpha=kc)
     for v, s in ROWS: dot(d, gx(v), gy(s), 18, A(BLUE, kp))
     # the bay o tren
     k3 = appear(t, M[2] - 0.1, 0.45)
