@@ -60,9 +60,9 @@ export default function WedmBuDay() {
           <svg viewBox={`0 0 ${SW} ${SH}`} className="w-full" role="img" aria-label="Phóng to một cạnh: dây, khe cắt và biên cần đạt">
             {/* vật liệu giữ lại */}
             {loai === "chay" ? (
-              <rect x={0} y={20} width={Math.max(0, traiKerf)} height={150} fill="var(--color-primary-soft)" />
+              <rect x={0} y={20} width={Math.max(0, traiKerf)} height={150} fill="var(--color-primary)" fillOpacity={0.3} />
             ) : (
-              <rect x={phaiKerf} y={20} width={Math.max(0, SW - phaiKerf)} height={150} fill="var(--color-primary-soft)" />
+              <rect x={phaiKerf} y={20} width={Math.max(0, SW - phaiKerf)} height={150} fill="var(--color-primary)" fillOpacity={0.3} />
             )}
             {/* phần bỏ đi */}
             {loai === "chay" ? (

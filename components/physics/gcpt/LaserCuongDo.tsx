@@ -73,13 +73,13 @@ export default function LaserCuongDo() {
             {DAI.map((z) => (
               <g key={z.ten}>
                 <rect x={bx(z.tu)} y={14} width={bx(z.den) - bx(z.tu)} height={12} fill={z.mau} opacity={0.35} />
-                <text x={(bx(z.tu) + bx(z.den)) / 2} y={42} textAnchor="middle" fontSize={9.5} fill="var(--color-ink)">
+                <text x={(bx(z.tu) + bx(z.den)) / 2} y={42} textAnchor="middle" fontSize={11} fill="var(--color-ink)">
                   {z.ten.split(" (")[0]}
                 </text>
               </g>
             ))}
             {[3, 5, 7, 9].map((l) => (
-              <text key={l} x={bx(l)} y={58} textAnchor="middle" fontSize={9} fill="var(--color-muted)">10{["³", "⁵", "⁷", "⁹"][(l - 3) / 2]}</text>
+              <text key={l} x={bx(l)} y={58} textAnchor="middle" fontSize={10.5} fill="var(--color-muted)">10{["³", "⁵", "⁷", "⁹"][(l - 3) / 2]}</text>
             ))}
             <path d={`M${bx(Math.min(9, Math.max(3, logI)))},12 l-6,-9 h12 Z`} fill="var(--color-ink)" />
           </svg>

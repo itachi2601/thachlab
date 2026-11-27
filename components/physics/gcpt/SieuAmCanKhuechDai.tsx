@@ -81,10 +81,10 @@ export default function SieuAmCanKhuechDai() {
       <div className="grid gap-4 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
         <div className="min-w-0 space-y-2">
           <svg viewBox={`0 0 ${W} ${H}`} className="mx-auto w-full max-w-[260px]" role="img" aria-label="Bộ phát, cần khuếch đại bậc, dụng cụ, bùn hạt mài, phôi">
-            <rect x={100 - 34} y={6} width={68} height={30} rx={4} fill="var(--color-slate-500)" />
+            <rect x={100 - 52} y={6} width={104} height={30} rx={4} fill="var(--color-slate-500)" />
             <text x={100} y={25} textAnchor="middle" fontSize={11} fill="#fff">bộ phát {fk} kHz</text>
-            <rect x={100 - D1 / 2} y={yDau} width={D1} height={len / 2} fill="var(--color-primary-soft)" stroke="var(--color-ink)" />
-            <rect x={100 - D2 / 2} y={yGiua} width={D2} height={len / 2 + dich * 0.5} fill="var(--color-primary-soft)" stroke="var(--color-ink)" />
+            <rect x={100 - D1 / 2} y={yDau} width={D1} height={len / 2} fill="var(--color-primary)" fillOpacity={0.28} stroke="var(--color-ink)" />
+            <rect x={100 - D2 / 2} y={yGiua} width={D2} height={len / 2 + dich * 0.5} fill="var(--color-primary)" fillOpacity={0.28} stroke="var(--color-ink)" />
             <rect x={100 - D2 / 2 + 2} y={yCuoi + dich * 0.5} width={D2 - 4} height={14 + dich * 0.5} fill="var(--color-slate-500)" />
             <line x1={170} y1={yDau} x2={170} y2={yCuoi} stroke="var(--color-ink)" />
             <text x={174} y={(yDau + yCuoi) / 2} fontSize={11} fill="var(--color-ink)">L</text>

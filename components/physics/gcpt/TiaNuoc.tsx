@@ -62,7 +62,7 @@ export default function TiaNuoc() {
       <div className="grid gap-4 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
         <div className="min-w-0 space-y-2">
           <svg viewBox={`0 0 ${W} ${H}`} className="w-full" role="img" aria-label="Mặt cắt dọc: tia cắt cong về phía sau khi chạy nhanh">
-            <rect x={10} y={yTren} width={W - 20} height={day} fill="var(--color-primary-soft)" stroke="var(--color-line-strong)" />
+            <rect x={10} y={yTren} width={W - 20} height={day} fill="var(--color-primary)" fillOpacity={0.28} stroke="var(--color-line-strong)" />
             {/* rãnh đã cắt phía sau */}
             <path
               d={`M10,${yTren} L${xTia},${yTren} Q${xTia - lech * 0.3},${yTren + day * 0.6} ${dl},${yCuoi} L10,${yCuoi} Z`}
@@ -83,7 +83,7 @@ export default function TiaNuoc() {
           </svg>
           <div className="flex items-start gap-3">
             <svg viewBox={`0 0 ${CW} 100`} className="w-[42%] shrink-0" role="img" aria-label="Mặt cắt ngang vết cắt: miệng rộng, đáy hẹp">
-              <rect x={6} y={10} width={CW - 12} height={80} fill="var(--color-primary-soft)" stroke="var(--color-line-strong)" />
+              <rect x={6} y={10} width={CW - 12} height={80} fill="var(--color-primary)" fillOpacity={0.28} stroke="var(--color-line-strong)" />
               <path
                 d={`M${CW / 2 - mieng / 2},10 L${CW / 2 + mieng / 2},10 L${CW / 2 + dayKe / 2},90 L${CW / 2 - dayKe / 2},90 Z`}
                 fill={thung ? "var(--color-panel)" : "var(--color-surface-2)"}

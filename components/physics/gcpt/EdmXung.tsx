@@ -96,7 +96,7 @@ export default function EdmXung() {
             {xung}
             <text x={30 + (ton * kx) / 2} y={H - 8} textAnchor="middle" fontSize={11} fill="var(--color-primary)">Ton</text>
             <text x={30 + (ton + toff / 2) * kx} y={H - 8} textAnchor="middle" fontSize={11} fill="var(--color-muted)">Toff</text>
-            <text x={36 + ton * kx} y={H - 26 - hI + 10} fontSize={11} fill="var(--color-ink)">Ip = {ip} A</text>
+            <text x={34} y={Math.max(12, H - 26 - hI)} fontSize={11} fill="var(--color-ink)">Ip = {ip} A</text>
           </svg>
           <svg viewBox={`0 0 ${W} 80`} className="w-full" role="img" aria-label="Mặt phôi sau phóng điện, kích thước hố theo năng lượng xung">
             <rect x={10} y={44} width={W - 20} height={32} fill="var(--color-surface-2)" stroke="var(--color-line-strong)" />

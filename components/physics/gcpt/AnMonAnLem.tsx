@@ -81,7 +81,7 @@ export default function AnMonAnLem() {
       <div className="grid gap-4 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
         <div className="min-w-0 space-y-2">
           <svg viewBox={`0 0 ${W} ${H}`} className="w-full" role="img" aria-label="Mặt cắt tấm, mặt nạ và vết ăn mòn">
-            <rect x={6} y={Y(0)} width={W - 12} height={T * k} fill="var(--color-primary-soft)" stroke="var(--color-line-strong)" />
+            <rect x={6} y={Y(0)} width={W - 12} height={T * k} fill="var(--color-primary)" fillOpacity={0.28} stroke="var(--color-line-strong)" />
             <path d={ve(0, 1)} fill="var(--color-panel)" />
             {mat === 2 && <path d={ve(T, -1)} fill="var(--color-panel)" />}
             {/* vẽ lại viền tấm ngoài vùng ăn để không lộ phần elip tràn ra ngoài tấm */}

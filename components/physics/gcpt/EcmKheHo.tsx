@@ -128,7 +128,7 @@ export default function EcmKheHo() {
               <rect x={30} y={Math.max(0, yDc - 90)} width={90} height={Math.min(90, yDc)} fill="var(--color-slate-500)" />
               <text x={75} y={Math.max(14, yDc - 8)} textAnchor="middle" fontSize={11} fill="#fff">dụng cụ (−)</text>
               <rect x={10} y={yDc} width={130} height={yPhoi - yDc} fill="var(--color-cyan)" opacity={0.35} />
-              <rect x={10} y={yPhoi} width={130} height={SH - yPhoi - 4} fill="var(--color-primary-soft)" stroke="var(--color-line-strong)" />
+              <rect x={10} y={yPhoi} width={130} height={SH - yPhoi - 4} fill="var(--color-primary)" fillOpacity={0.28} stroke="var(--color-line-strong)" />
               <text x={75} y={yPhoi + 24} textAnchor="middle" fontSize={11} fill="var(--color-ink)">phôi (+)</text>
               <text x={75} y={SH - 12} textAnchor="middle" fontSize={11} fill="var(--color-muted)">phôi tan dần</text>
               <line x1={144} y1={yDc} x2={144} y2={yPhoi} stroke="var(--color-ink)" />
