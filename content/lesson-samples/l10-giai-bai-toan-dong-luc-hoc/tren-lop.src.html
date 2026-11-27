@@ -96,6 +96,7 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
   .qr svg{height:auto;width:100%;max-width:320px}
   .top{flex-wrap:wrap}
   .dk{display:none}
+  .bang{font-size:15px} .bang td,.bang th{padding:.1em .15em;border-width:2px}
 }
 @media print{html{scroll-snap-type:none}.man{height:auto;page-break-after:always}button.mo,a.mo,.dk,video,.vnut{display:none}.buoc{display:flex}.an[hidden]{display:block}}
 </style>
@@ -141,7 +142,7 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
       <li><b>C.</b> Hai người tới gần như cùng lúc</li>
       <li><b>D.</b> Em nhẹ hơn nên xuống nhanh hơn</li>
     </ol>
-    <p class="nho">Khoanh vào Tập, viết một dòng "Vì sao?". Đáp án: cuối tiết (màn "Quay lại cầu trượt").</p>
+    <p class="nho">Viết chữ cái vào ô "Em chọn" (Tập ô 1·2), thêm một dòng "Vì sao?". Đáp án: cuối tiết (màn "Quay lại cầu trượt").</p>
   </div>
 </section>
 
@@ -150,7 +151,7 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
   <div class="giua">
     <p>Mặt nghiêng góc $\alpha$: thành phần của $P$ <b>dọc</b> dốc $=$ ? · <b>vuông góc</b> dốc $=$ ?</p>
     <p>Ma sát trượt: $F_{\text{ms}}=$ ? · với $N=50$ N, $\mu=0{,}2$: $F_{\text{ms}}=$ ? N</p>
-    <p>Định luật II: $a=$ ? ($F$ là ?) · công thức không chứa $t$: ?</p>
+    <p>Định luật II: $a=$ ? ($F$ là ?) · công thức không chứa $t$ (c.động thẳng biến đổi đều): ?</p>
     <button class="mo" data-mo="h1">Mở: hành trang</button>
     <div class="an" id="h1" hidden>
       <p>Dọc dốc <b class="o">$P\sin\alpha$</b> · vuông góc <b class="o">$P\cos\alpha$</b></p>
@@ -164,14 +165,14 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
 <section class="man" id="m2a">
   <div class="top"><span class="so">2/6 · Bốn bước</span><span>phút 4–9</span><span class="tap">tr.1 · ô 1·5</span></div>
   <div class="giua">
-    <p class="fx">Vẽ – <b class="o">Kể lực</b> – <b class="o">Viết $\Sigma\vec F=m\vec a$</b> – <b class="o">Chiếu và giải</b></p>
+    <div class="nut" style="align-items:center;flex-wrap:nowrap"><p class="fx" style="flex:1">Vẽ – <b class="o an-o" data-o="b2">Kể lực</b> – <b class="o an-o" data-o="b2">Viết $\Sigma\vec F=m\vec a$</b> – <b class="o an-o" data-o="b2">Chiếu và giải</b></p>
+    <button class="mo" data-mo="b2" style="align-self:center">Mở: tên bước</button></div>
     <ul>
       <li><b>Bước 1</b> (Vẽ): chọn <b class="o">vật</b> khảo sát; Ox theo chiều <b class="o">chuyển động (dự kiến)</b>, giữ đến hết.</li>
-      <li><b>Bước 2:</b> mỗi lực phải chỉ ra được <b class="o">vật nào gây ra</b>.</li>
+      <li><b>Bước 2:</b> mỗi lực phải chỉ ra được <b class="o">vật nào gây ra</b> — không có "lực đà".</li>
       <li><b>Bước 3:</b> <b class="o">$\vec P+\vec N+\vec F+\dots=m\vec a$</b> (dạng vectơ)</li>
-      <li><b>Bước 4:</b> chiếu lên Ox, Oy tìm $a$; kiểm dấu: $a\lt0$ nghĩa là <b class="o">$\vec a$ ngược chiều Ox</b>.</li>
+      <li><b>Bước 4:</b> <b>chiếu lên</b> Ox, Oy tìm $a$; kiểm dấu: $a\lt0$ nghĩa là <b class="o">$\vec a$ ngược chiều Ox</b>.</li>
     </ul>
-    <p class="nho">Không có vật nào gây ra thì không phải lực: không có "lực đà".</p>
   </div>
 </section>
 
@@ -231,10 +232,10 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
 </section>
 
 <section class="man" id="m3c">
-  <div class="top"><span class="so">3/6 · Làm nhanh</span><span>phút 9–15</span><span class="tap">tr.2 · ô 2·3 · Câu 1</span></div>
+  <div class="top"><span class="so">3/6 · Làm nhanh</span><span>phút 9–15</span><span class="tap">tr.2 · ô 2·3 · Bài 1</span></div>
   <div class="giua">
-    <p><b>Câu 1.</b> Kéo thùng $20$ kg bằng lực $100$ N, dây xiên lên $30^\circ$ so với sàn ($\sin30^\circ=0{,}5$), $\mu=0{,}2$, $g=10\ \text{m/s}^2$. Tính $N$ và lực ma sát trượt. So với kéo nằm ngang cùng $100$ N, ma sát giảm bao nhiêu?</p>
-    <p class="hoi">Biểu quyết trước: lực ma sát trượt bằng</p>
+    <p><b>Bài 1.</b> Kéo thùng $20$ kg bằng lực $100$ N, dây xiên lên $30^\circ$ so với sàn ($\sin30^\circ=0{,}5$), $\mu=0{,}2$, $g=10\ \text{m/s}^2$. Tính $N$ và lực ma sát trượt. So với kéo nằm ngang cùng $100$ N, ma sát giảm bao nhiêu?</p>
+    <p class="hoi">Biểu quyết trước: lực ma sát trượt bằng <span class="nho">(ghi chữ cái ra lề ô 2·3)</span></p>
     <ol class="opt lo hang">
       <li><b>A.</b> $40$ N</li>
       <li data-dung><b>B.</b> $30$ N</li>
@@ -267,7 +268,7 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
 </section>
 
 <section class="man" id="m4b">
-  <div class="top"><span class="so">4/6 · Trượt xuống dốc</span><span>phút 15–21</span><span class="tap">tr.3 · ô 3·1 · dòng 6–8</span></div>
+  <div class="top"><span class="so">4/6 · Trượt xuống dốc</span><span>phút 15–21</span><span class="tap">tr.3 · ô 3·1 · dòng 6–7</span></div>
   <div class="giua">
     <p class="hoi">Ox (vật trượt xuống): viết phương trình, rút ra $a$.</p>
     <button class="mo" data-mo="o4">Mở: chiếu Ox</button>
@@ -275,9 +276,6 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
       <p><b class="o">$mg\sin\alpha-\mu mg\cos\alpha$</b> $=ma$</p>
       <p class="fx">$a=$ <b class="o">$g(\sin\alpha-\mu\cos\alpha)$</b></p>
     </div>
-    <p class="hoi">Trong $a$ còn khối lượng $m$ không? Bỏ ma sát thì $a=$ ?</p>
-    <button class="mo" data-mo="m4">Mở: nhận xét</button>
-    <div class="an" id="m4" hidden><p>Không còn <b class="o">$m$</b>. Bỏ ma sát: $a=$ <b class="o">$g\sin\alpha$</b>.</p></div>
   </div>
 </section>
 
@@ -294,7 +292,7 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
           <li><b>C.</b> Hai hộp tới gần như cùng lúc</li>
           <li><b>D.</b> Hộp rỗng tới trước</li>
         </ol>
-        <p class="nho">Giơ tay trước. Clip vào thẳng phần thả.</p>
+        <p class="nho">Giơ tay, ghi chữ cái vào ô "Em chọn" (ô 3·2). Clip vào thẳng phần thả.</p>
       </div>
       <div class="buoc" data-t="10.8"><p class="nhin">Nhìn vào: hai đồng hồ lúc hộp chạm vạch đỏ.</p><p class="nho">Clip chiếu chậm 4 lần.</p></div>
       <div class="buoc" data-t="17.2"><p class="so-lon">Hộp rỗng: $0{,}91$ s</p><p class="so-lon">Hộp đầy: $0{,}91$ s</p><p class="hoi">Viết dòng "Quan sát", "Rút ra" vào Tập.</p><p class="nho">→ sang màn sau để đối chiếu</p></div>
@@ -311,25 +309,36 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
       <p><b>Quan sát:</b> <b class="o">hai hộp tới chân ván gần như cùng lúc</b> (đáp án <b>C</b>).</p>
       <p><b>Rút ra:</b> gia tốc trượt <b class="o">không phụ thuộc</b> khối lượng.</p>
     </div>
+    <p class="hoi">Nhìn lại $a=g(\sin\alpha-\mu\cos\alpha)$: còn khối lượng $m$ không? Bỏ ma sát thì $a=$ ?</p>
+    <button class="mo" data-mo="m4">Mở: nhận xét</button>
+    <div class="an" id="m4" hidden><p>Không còn <b class="o">$m$</b> — đúng như clip. Bỏ ma sát: $a=$ <b class="o">$g\sin\alpha$</b>.</p></div>
+  </div>
+</section>
+
+<section class="man" id="m4n">
+  <div class="top"><span class="so">4/6 · Vật nằm yên trên dốc</span><span>phút 15–21</span><span class="tap">tr.3 · ô 3·2 · dòng cuối</span></div>
+  <div class="giua">
+    <p>$\mu_n$: <b>hệ số ma sát nghỉ</b>. Ma sát nghỉ tự điều chỉnh, nhưng không vượt <b>mức trần</b> $\mu_nN$ (ma sát nghỉ lớn nhất).</p>
     <p class="hoi">Hộp đặt yên trên dốc, không trượt: ma sát nghỉ bằng bao nhiêu?</p>
     <button class="mo" data-mo="n4">Mở: vật nằm yên</button>
     <div class="an" id="n4" hidden>
       <p>Nằm yên khi $\tan\alpha\le$ <b class="o">$\mu_n$</b>; ma sát nghỉ bằng <b class="o">$mg\sin\alpha$</b>, vừa đủ giữ vật.</p>
-      <p class="nho">Không phải $\mu_n mg\cos\alpha$: đó chỉ là mức trần.</p>
+      <p class="nho">Không phải $\mu_n mg\cos\alpha$: đó chỉ là mức trần (Bẫy 4, ô 4·2).</p>
     </div>
   </div>
 </section>
 
 <section class="man" id="m4e">
-  <div class="top"><span class="so">4/6 · Làm nhanh</span><span>phút 15–21</span><span class="tap">tr.3 · ô 3·3 · Câu 2</span></div>
+  <div class="top"><span class="so">4/6 · Làm nhanh</span><span>phút 15–21</span><span class="tap">tr.3 · ô 3·3 · Bài 2</span></div>
   <div class="giua">
-    <p><b>Câu 2.</b> Hộp trượt xuống dốc nghiêng $30^\circ$ ($\sin30^\circ=0{,}5$; $\cos30^\circ\approx0{,}866$), $\mu=0{,}2$, $g=10\ \text{m/s}^2$. Gia tốc của hộp?</p>
+    <p><b>Bài 2.</b> Hộp trượt xuống dốc nghiêng $30^\circ$ ($\sin30^\circ=0{,}5$; $\cos30^\circ\approx0{,}866$), $\mu=0{,}2$, $g=10\ \text{m/s}^2$. Gia tốc của hộp?</p>
     <ol class="opt lo hang">
       <li><b>A.</b> $5{,}0\ \text{m/s}^2$</li>
       <li><b>B.</b> $3{,}0\ \text{m/s}^2$</li>
       <li><b>C.</b> $6{,}7\ \text{m/s}^2$</li>
       <li data-dung><b>D.</b> $3{,}3\ \text{m/s}^2$</li>
     </ol>
+    <p class="nho">Ghi chữ cái ra lề ô 3·3.</p>
     <button class="mo" data-mo="a4">Mở đáp án</button>
     <div class="an" id="a4" hidden>
       <p><b>D.</b> $a=10\,(0{,}5-0{,}2\cdot0{,}866)\approx3{,}3\ \text{m/s}^2$</p>
@@ -344,6 +353,7 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
   <div class="hai">
     <div class="fig f4"><!--FIG4--></div>
     <div class="ben">
+      <p class="nho">$T$: lực căng dây · $P_2=m_2g$ · $F_{\text{ms}}$: ma sát bàn lên $m_1$</p>
       <p class="hoi">Hai vật nối dây qua ròng rọc: chung những gì?</p>
       <button class="mo" data-mo="d5">Mở: chung gì</button>
       <div class="an" id="d5" hidden>
@@ -376,8 +386,8 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
 <section class="man" id="m5c">
   <div class="top"><span class="so">5/6 · Đo thử: xe lăn</span><span>phút 21–27</span><span class="tap">tr.4 · ô 4·1</span></div>
   <div class="giua">
-    <p>Xe $m_1=0{,}40$ kg trên máng ngang, quả nặng $m_2=0{,}10$ kg. Thả từ nghỉ, đo $t$ xe đi $s=0{,}80$ m; $a=\dfrac{2s}{t^2}$; $g=10\ \text{m/s}^2$.</p>
-    <p class="hoi">Dự đoán (bỏ ma sát): $a=\dfrac{m_2g}{m_1+m_2}=$ ? $\text{m/s}^2$</p>
+    <p>Xe $m_1=0{,}40$ kg trên máng ngang, quả nặng $m_2=0{,}10$ kg. Thả từ nghỉ, đo $t$ (đồng hồ) xe đi $s=0{,}80$ m; $a=\dfrac{2s}{t^2}$; $g=10\ \text{m/s}^2$.</p>
+    <p class="hoi">Dự đoán từ $a=\dfrac{m_2g}{m_1+m_2}=$ ? $\text{m/s}^2$</p>
     <button class="mo" data-mo="p5">Mở: dự đoán</button>
     <div class="an" id="p5" hidden><p>$a=\dfrac{0{,}10\cdot10}{0{,}50}=$ <b class="o">$2{,}0$</b> $\text{m/s}^2$</p></div>
   </div>
@@ -389,17 +399,17 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
     <video src="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-giaibt-dlh-02-20261030.mp4" poster="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-giaibt-dlh-02-20261030.webp" preload="metadata" playsinline title="Xe lăn nối quả nặng qua ròng rọc"></video>
     <div class="ben">
       <div class="buoc" data-t="-1">
-        <p class="hoi">Tính ra $a=2{,}0\ \text{m/s}^2$. Đo thật 5 lần, $a$ đo so với $2{,}0$ thế nào?</p>
+        <p class="hoi">Dự đoán là $a=2{,}0\ \text{m/s}^2$. Đo thật 5 lần, $a$ đo so với $2{,}0$ thế nào?</p>
         <ol class="opt">
           <li><b>A.</b> Lớn hơn $2{,}0$ ở cả 5 lần</li>
           <li><b>B.</b> Lúc lớn, lúc nhỏ hơn $2{,}0$</li>
           <li><b>C.</b> Nhỏ hơn $2{,}0$ ở cả 5 lần</li>
           <li><b>D.</b> Đúng bằng $2{,}0$ ở cả 5 lần</li>
         </ol>
-        <p class="nho">Giơ tay trước. Clip vào thẳng lúc thả.</p>
+        <p class="nho">Giơ tay, ghi chữ cái ra lề ô 4·1. Clip vào thẳng lúc thả.</p>
       </div>
       <div class="buoc" data-t="10.2"><p class="nhin">Nhìn vào: đồng hồ khi xe đi hết $0{,}80$ m.</p><p class="nho">Clip chiếu chậm 3 lần.</p></div>
-      <div class="buoc" data-t="14.2"><p class="so-lon">Lần 1: $t=0{,}93$ s</p><p class="hoi">Tính $a=\dfrac{2\cdot0{,}80}{t^2}$ cho cả 5 lần trong Tập.</p><p class="nho">→ sang màn sau để đối chiếu</p></div>
+      <div class="buoc" data-t="14.2"><p class="so-lon">Lần 1: $t=0{,}93$ s</p><p class="hoi">Tính $a$ lần 1 vào Tập: $a=\dfrac{2\cdot0{,}80}{t^2}$.</p><p class="nho">$t$ lần 2–5: màn sau</p></div>
     </div>
   </div>
   <div class="vnut"><button class="vn" data-v="tiep">▶ Phát</button><button class="vn phu" data-v="lai">↺ Xem lại đoạn</button><span class="moc"></span></div>
@@ -414,10 +424,11 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
       <tr><td>$a$ ($\text{m/s}^2$)</td><td class="ns"><span class="an-o" data-o="b5">1,85</span></td><td class="ns"><span class="an-o" data-o="b5">1,77</span></td><td class="ns"><span class="an-o" data-o="b5">1,89</span></td><td class="ns"><span class="an-o" data-o="b5">1,81</span></td><td class="ns"><span class="an-o" data-o="b5">1,85</span></td></tr>
     </tbody>
   </table>
+  <p class="nho">Chép $t$ lần 2–5 vào Tập · $a$ làm tròn 2 chữ số · lấy trung bình cả 5 lần.<br>Sai số <b>ngẫu nhiên</b>: lúc lớn lúc nhỏ · sai số <b>hệ thống</b>: lệch về một phía.</p>
   <div class="nut"><button class="mo" data-mo="b5">Mở: số</button><button class="mo" data-mo="r5">Mở: rút ra</button></div>
   <div class="an" id="r5" hidden>
     <p>$a$ đo trung bình <b class="o">$1{,}83$</b> $\text{m/s}^2$: cả 5 lần nhỏ hơn $2{,}0$ (<b>C</b>).</p>
-    <p>Lệch một phía ⇒ sai số <b class="o">hệ thống</b>; do <b class="o">ma sát ở trục bánh xe và ròng rọc</b>.</p>
+    <p>Lệch một phía ⇒ sai số <b class="o">hệ thống</b>; do <b class="o">ma sát ở trục bánh xe và ròng rọc</b> (dự đoán đã bỏ ma sát).</p>
   </div>
 </section>
 
@@ -442,14 +453,14 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
       <p class="nhin">Cầu trượt cũng là mặt nghiêng có ma sát.</p>
       <button class="mo" data-mo="a6">Mở: ai tới trước</button>
       <div class="an" id="a6" hidden><p><b>C.</b> Hai người tới gần như cùng lúc: $a=g(\sin\alpha-\mu\cos\alpha)$ không chứa $m$.</p></div>
-      <button class="mo" data-mo="a7">Mở: vì sao không phải A, B, D</button>
+      <button class="mo" data-mo="a7">Mở: vì sao</button>
       <div class="an" id="a7" hidden><p class="nho">A, B: nặng gấp đôi thì lực kéo xuống dốc gấp đôi, nhưng ma sát và khối lượng cũng gấp đôi · D: ma sát của bạn lớn hơn, nhưng chỉ lớn theo đúng tỉ lệ khối lượng.</p></div>
     </div>
   </div>
 </section>
 
 <section class="man" id="m6b">
-  <div class="top"><span class="so">6/6 · Kiểm tra lý thuyết</span><span>phút 30–45</span><span class="tap">nộp xong: tr.5 ô 5·2 ghi kết quả</span></div>
+  <div class="top"><span class="so">6/6 · Kiểm tra lý thuyết</span><span>phút 30–45</span><span class="tap">nộp xong: tr.5 ô 5·2 · điểm, câu sai, câu đoán mò</span></div>
   <div class="qr"><!--QR--></div>
   <p class="made">Mã đề <b>1241</b> · 20 câu · 15 phút</p>
   <p class="nho" style="text-align:center">thachlab → Quét mã, hoặc gõ số đề 1241 · làm một mình, nộp xong mới cất máy</p>
@@ -458,10 +469,10 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
 <section class="man" id="m6c">
   <div class="top"><span class="so">Về nhà theo Tập bài 20</span><span class="tap">chụp lại màn này</span></div>
   <ul>
-    <li><b>tr.1</b> ô 1·3 dòng "Điều em hiểu sai hoặc mới biết"</li>
-    <li><b>tr.3</b> ô 3·4: Câu 3 ($m_1=4$ kg, $m_2=1$ kg, $\mu=0{,}1$)</li>
+    <li><b>tr.1</b> ô 1·1 tích ☒ mục tiêu đã đạt · ô 1·3 dòng "Điều em hiểu sai hoặc mới biết"</li>
+    <li><b>tr.3</b> ô 3·4: Bài 3 ($m_1=4$ kg, $m_2=1$ kg, $\mu=0{,}1$)</li>
     <li><b>tr.4</b> ô 4·2: bốn bẫy, tích bẫy em từng sập và điền chỗ trống · ô 4·3 câu 1, 2, 4, 6 + bạn cùng bàn kiểm</li>
-    <li><b>tr.5</b> ô 5·1 Đề BTVN · ô 5·3 thử thách ⭐ → ⭐⭐⭐ · ô 5·4 mang về</li>
+    <li><b>tr.5</b> ô 5·1 Đề BTVN — <b>mã đề BTVN: thầy ghi bảng</b> · ô 5·3 thử thách ⭐ → ⭐⭐⭐ · ô 5·4 mang về</li>
   </ul>
 </section>
 

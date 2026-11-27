@@ -4,8 +4,11 @@
 #   -> kim lac qua lai theo tung lan doi chieu. Bo dinh sat (khong ve lo lung). Vong 3: Bay "nguon that 50 Hz, kim van lac ro"
 #   (khong viet "doi chieu 50 lan/giay": 50 Hz doi chieu 100 lan/giay), dat TRUOC Rut ra. Rut ra: cuc tu doi theo chieu dong; nguon that doi chieu rat nhanh -> luc len kim doi chieu lien tuc,
 #   kim rung quanh cho cu (KHONG noi "100 lan moi giay", "khong kip quay" = dap an Cau 6). Chua noi duoc = so_lieu_mau.ghi_chu
-#   + mo_hinh.gia_thiet[1] (tu du, viet "sat con tu tinh chut it"). Cau chot (vong 3): doi hai dau day noi vao nguon mot chieu
-#   -> kim lech sang phia kia (bai 93 khong co cau Tu kiem tra nao hoi y vay; hop exp ghi buoc dao cuc). Hop quy tac hien sau >= 4 s.
+#   GD2 27/11 (kiem-v1): Chua noi duoc = "kim rung manh co nao (chua do)" (bo "tu du" ngoai chuong trinh).
+#   Vong 3 (kiem-v2): cau "dinh sat luon bi hut" bai da noi san -> cau chot DEM: nguon mo hinh doi chieu moi 2 s (kho
+#   so_lieu_mau.ghi_chu). Vong 4 (kiem-v3): "0-2 s kim lech phai; giay 5 lech phia nao?" -> phai (4-6 s lai nhu 0-2 s).
+#   Phia lech khop mo phong: i_slow > 0 o 0-2 s -> cuc N gan kim -> lech + = phai. Man ghi "theo mô hình", bo the chot xanh.
+#   Bay: hai o canh nhau "2 s/lần: lắc rõ" va "50 Hz: chỉ rung". Hop quy tac hien sau >= 4 s.
 # Vat li (mo hinh): i > 0 -> dau phai loi (gan kim) la N, day dau N cua kim sang phai (lech +); i < 0 -> S, hut N sang trai.
 #   Nguon cham: i = sin(2*pi*t/(2*HALF)), kim lech DEV*i (gan dung tinh). Kiem: _kiem_so(), _kiem_dong_bo() moi 0,05 s.
 import math
@@ -79,8 +82,6 @@ def table(d, n, hl=None, y=830):
         yy = y + 160 + j * 100
         if hl == j: d.rounded_rectangle([60, yy - 44, 1020, yy + 44], radius=20, fill=(255, 237, 213))
         if j < n: text(d, (XS[0], yy), a, 56, NAVY); text(d, (XS[1], yy), c, 56, PURPLE)
-        else:
-            for x in XS: text(d, (x, yy), "·", 56, GRAY)
 
 # ---------------- canh 1: Du doan ----------------
 THINK_END = 0.3
@@ -149,7 +150,9 @@ def _kiem_so():
     bad = []
     if not (kim_sign(pole_right(1)) == -kim_sign(pole_right(-1)) != 0): bad.append("doi chieu dong phai doi phia kim")
     if abs(i_slow(HALF) ) > 1e-9 or i_slow(HALF / 2) <= 0 or i_slow(1.5 * HALF) >= 0: bad.append("chu ki nguon cham")
-    if kim_sign(pole_right(-1.0)) != -kim_sign(pole_right(1.0)): bad.append("cau chot: dao day phai doi phia kim")
+    if not (kim_sign(pole_right(i_slow(1.0))) > 0): bad.append("cau chot: 0-2 s kim phai lech PHAI (chu tren man)")
+    if kim_sign(pole_right(i_slow(CHOT_S))) != kim_sign(pole_right(i_slow(1.0))): bad.append("cau chot: giay 5 phai cung phia 0-2 s")
+    if kim_sign(pole_right(i_slow(3.0))) != -kim_sign(pole_right(i_slow(1.0))): bad.append("cau chot: 2-4 s phai lech trai")
     if 2 * FHZ != 100: bad.append("50 Hz doi chieu 100 lan/giay")
     return bad
 
@@ -190,15 +193,19 @@ def s_dapan(img, d, t, sc):
     text(d, (W / 2, 1240), "dòng đổi chiều → kim đổi phía", 56, PURPLE, alpha=kb)
 
 # ---------------- canh 4: Bay roi Chua noi duoc (truoc Rut ra) ----------------
-BAY_ST, BAY_OK = 2.0, 2.6
+BAY_ST = 2.0                                # gach o 2,0 s; ✓ o M[1] (>= 3 s sau); Chua noi o M[2] (>= 3 s sau ✓)
 def s_bay(img, d, t, sc):
     M = sc["M"]
-    card(d, (40, 260, 1040, 560), fill=WHITE, outline=LIGHT, w=3)
-    core(d, 200, 620, 410, None, h=64, end=60)
-    stand(d, 800, 400, JIT * math.sin(2 * math.pi * 6 * t), L=120, hw=13)
-    k2 = appear(t, M[1] + 0.3, 0.45)
+    card(d, (40, 260, 1040, 640), fill=WHITE, outline=LIGHT, w=3)      # hai o canh nhau: cham thi lac ro, 50 Hz chi rung
+    d.line([(540, 290), (540, 610)], fill=LIGHT, width=3)
+    stand(d, 290, 400, DEV * i_slow(t), L=130, hw=14)
+    stand(d, 790, 400, JIT * math.sin(2 * math.pi * 6 * t), L=130, hw=14)
+    al = appear(t, 0.2, 0.45)                   # cung luc the Bay (mot khoi)
+    text(d, (290, 590), "2 s/lần: lắc rõ", 56, NAVY, alpha=al)
+    text(d, (790, 590), f"{FHZ} Hz: chỉ rung", 56, PURPLE, alpha=al)
+    k2 = appear(t, M[2] + 0.3, 0.45)
     a1 = appear(t, 0.2, 0.45) * (1 - k2)
-    y0 = 600
+    y0 = 680
     if a1 > 0:
         card(d, (40, y0, 1040, y0 + 560), fill=A(WHITE, a1), outline=A(DRED, a1), w=6)
         pill(d, "BẪY", y0 + 62, a1, DRED)
@@ -208,14 +215,14 @@ def s_bay(img, d, t, sc):
             text(d, (W / 2, yy), q, 58, INK, alpha=a1)
             if ks > 0:
                 d.line([(W / 2 - lw / 2 - 6, yy + 2), (W / 2 - lw / 2 - 6 + (lw + 12) * ks, yy + 2)], fill=A(DRED, a1), width=7)
-        kk = a1 * appear(t, BAY_OK, 0.4)
+        kk = a1 * appear(t, M[1] + 0.1, 0.4)
         card(d, (70, y0 + 340, 1010, y0 + 500), fill=A((236, 253, 243), kk), r=24)
         text(d, (W / 2, y0 + 420), "✓ Kim chỉ rung", 60, DGREEN, alpha=kk)
     if k2 > 0:
         card(d, (40, y0, 1040, y0 + 400), fill=A(WHITE, k2), outline=A(NAVY, k2), w=6)
         text(d, (W / 2, y0 + 110), "Chưa nói được:", 60, NAVY, alpha=k2)
-        text(d, (W / 2, y0 + 220), "từ dư của lõi sắt", 58, INK, alpha=k2)
-        text(d, (W / 2, y0 + 320), "(theo mô hình)", 56, NAVY, alpha=k2)
+        text(d, (W / 2, y0 + 220), "kim rung mạnh cỡ nào", 58, INK, alpha=k2)
+        text(d, (W / 2, y0 + 320), "(chưa đo)", 56, NAVY, alpha=k2)
 
 # ---------------- canh 5: Rut ra ----------------
 def s_rutra(img, d, t, sc):
@@ -232,33 +239,42 @@ def s_rutra(img, d, t, sc):
 
 # ---------------- canh 6: Chot + THU NGHI ----------------
 END_Q, END_C = 0.2, 3.0
+CHOT_S = 5                                  # cau chot: 0-2 s kim lech PHAI (i_slow > 0 -> N -> lech +), giay 5 nam trong 4-6 s -> lai PHAI
 def s_end(img, d, t, sc):
-    k0 = appear(t, END_C, 0.5)
-    card(d, (50, 265, 1030, 425), fill=A((236, 253, 243), k0), outline=A(GREEN, k0), w=6)
-    text(d, (W / 2, 345), "Dòng đổi chiều: cực từ đổi", 58, DGREEN, alpha=k0)
+    # GD2 vong 4 (kiem-v3): hoi phia lech o giay 5 (kiem hieu "kim doi phia moi lan dong doi chieu"), khong chi phep chia
     k1 = appear(t, END_Q, 0.5)
-    card(d, (40, 455, 1040, 1580), fill=A(WHITE, k1), outline=A(ORANGE, k1), w=6)
-    pill(d, "THỬ NGHĨ", 518, k1, ORANGE)
-    text(d, (W / 2, 625), "Đảo hai dây nối nguồn", 60, INK, alpha=k1)
-    text(d, (W / 2, 705), "một chiều. Kim lệch về đâu?", 60, INK, alpha=k1)
-    if k1 > 0:   # hai dau day noi nguon doi cho cho nhau (lap 3 s); KHONG ve kim lech
-        core(d, 200, 600, 900, None, a=k1, h=64, end=56)
-        stand(d, 790, 890, 0.0, a=k1, L=110, hw=12)
-        text(d, (920, 890), "?", 64, PURPLE, alpha=k1)
-        card(d, (360, 1200, 640, 1400), fill=A((245, 243, 255), k1), outline=A(NAVY, k1), r=18, w=4)
-        u = 0.5 - 0.5 * math.cos(2 * math.pi * t / 3.0)
-        xa, xb = 420 + 160 * u, 580 - 160 * u
-        for (x, col, s), xe in (((xa, RED, "+"), 200), ((xb, BLUE, "−"), 600)):
-            d.line([(xe, 932), (xe, 1100), (x, 1100), (x, 1200)], fill=A(WIRE, k1), width=5)
-            dot(d, x, 1200, 26, A(col, k1)); text(d, (x, 1200), s, 54, WHITE, alpha=k1)
-
+    card(d, (40, 300, 1040, 1580), fill=A(WHITE, k1), outline=A(ORANGE, k1), w=6)
+    pill(d, "THỬ NGHĨ", 370, k1, ORANGE)
+    text(d, (W / 2, 485), f"Nguồn đổi chiều mỗi {HALF:.0f} s.", 60, INK, alpha=k1)
+    text(d, (W / 2, 565), "0 → 2 s: kim lệch phải.", 60, INK, alpha=k1)
+    text(d, (W / 2, 645), f"Giây thứ {CHOT_S}: lệch phía nào?", 60, INK, alpha=k1)
+    if k1 > 0:   # truc 0-6 s, o 2 s: 0-2 phai, 2-4 trai, 4-6 "?"; moc 5 s; KHONG ve kim o giay 5
+        X0, PXS, y0, y1 = 120, 140, 820, 1060
+        for q in range(3):
+            xa, xb = X0 + q * 2 * PXS, X0 + (q + 1) * 2 * PXS
+            fill = (237, 233, 254) if q < 1 else (255, 247, 237)       # kiem-v4: chi o 0-2 s co san, 2-4 va 4-6 deu "?"
+            d.rectangle([xa, y0, xb, y1], fill=A(fill, k1), outline=A(NAVY, k1), width=4)
+            xc, yc = (xa + xb) / 2, (y0 + y1) / 2
+            if q == 0:
+                arrow(d, (xc - 70, yc - 30), (xc + 70, yc - 30), A(PURPLE, k1), w=8, head=24)
+                text(d, (xc, yc + 55), "phải", 58, PURPLE, alpha=k1)
+            else:
+                rr = 70 + 50 * math.sin(2 * math.pi * t / 2.4 + (q - 1) * math.pi)   # hai o "?" dap nhip lech pha
+                d.ellipse([xc - rr, yc - rr, xc + rr, yc + rr], fill=A(mix(ORANGE, WHITE, 0.7), k1))
+                text(d, (xc, yc), "?", 80, ORANGE, alpha=k1)
+        for q in range(4):
+            text(d, (X0 + q * 2 * PXS, y1 + 50), str(2 * q), 58, NAVY, alpha=k1)
+        xm = X0 + CHOT_S * PXS
+        d.polygon([(xm, y0 - 8), (xm - 20, y0 - 44), (xm + 20, y0 - 44)], fill=A(DRED, k1))
+        text(d, (xm, y0 - 80), f"{CHOT_S} s", 58, DRED, alpha=k1)
+        text(d, (W / 2, 1260), "(theo mô hình)", 58, NAVY, alpha=k1)
 
 def _cues(clip):
     sc = {s["key"]: s for s in clip["scenes"]}
     h, do, da, r, b, e = sc["hook"], sc["do"], sc["dapan"], sc["rutra"], sc["bay"], sc["end"]
     cs = [(h["t0"] + h["M"][1] - 0.2, "open"), (h["t0"] + h["T"] - 0.1, "ding"),
           (do["t0"] + T_C1, "tap"), (do["t0"] + T_C2, "tap"),
-          (da["t0"] + 0.15, "ding"), (b["t0"] + BAY_ST, "buzz"), (b["t0"] + BAY_OK, "tap"),
+          (da["t0"] + 0.15, "ding"), (b["t0"] + BAY_ST, "buzz"), (b["t0"] + b["M"][1] + 0.1, "tap"),
           (r["t0"] + r["M"][1] - 0.1, "tap"), (e["t0"] + END_Q + 0.1, "open")]
     return sorted(cs)
 
@@ -266,21 +282,22 @@ CLIP = dict(id="tn-l9-xoaychieu-01", header="KHTN 9 · THÍ NGHIỆM", footer="D
             cues=_cues, scenes=[
  dict(key="hook", title="Kim cạnh nam châm điện", draw=s_hook, tail=THINK_END, caps=[
    ("Kim cạnh lõi sắt.", 2.6),
-   ("Dừng lại, tự đoán.", 5.5)]),
+   ("Tự đoán.", 4.3)]),
  dict(key="do", title="Tiến hành", draw=s_do, tail=0.4, caps=[
    ("Lần 1: nguồn một chiều.", 3.0),
-   ("Lần 2: nguồn đổi chiều chậm.", 5.4)]),
+   ("Lần 2: nguồn đổi chiều chậm.", 4.8)]),
  dict(key="dapan", title="Kết quả", draw=s_dapan, tail=0.5, caps=[
    ("Kim đổi phía mỗi 2 giây.", 3.4),
    ("Đổi theo chiều dòng.", 3.0)]),
  dict(key="bay", title="Bẫy và giới hạn", draw=s_bay, tail=0.4, caps=[
-   ("Đúng không?", 4.4),
-   ("Còn bỏ ngỏ.", 3.4)]),
+   ("Đúng không?", 4.9),
+   ("Kim chỉ rung.", 3.3),
+   ("Còn bỏ ngỏ.", 3.0)]),
  dict(key="rutra", title="Rút ra", draw=s_rutra, tail=0.5, caps=[
-   ("Cực từ đổi theo chiều dòng.", 3.4),
-   ("Quá nhanh, kim chỉ rung.", 3.0)]),
+   ("Cực từ đổi theo chiều dòng.", 2.9),
+   ("Quá nhanh: chỉ rung.", 2.4)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.3, caps=[
-   ("Dừng lại, tự nghĩ.", 7.2)]),
+   ("Tự nghĩ.", 7.0)]),
 ])
 
 if __name__ == "__main__":

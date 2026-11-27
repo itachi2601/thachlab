@@ -22,3 +22,22 @@ Nguồn đối chiếu: `../tren-lop.src.html` (23 màn), `../tren-lop-ghi-chu.h
 - HS chọn C ở cầu trượt, không chắc, lý do "rơi tự do nhẹ nặng như nhau": đoán đúng nhờ ý từ chương rơi tự do, chưa hiểu vì ma sát. Thầy không chữa đúng sai, hẹn cuối giờ.
 - Điền đúng cả 27 ô; ô 12–14 chỉ điền được nhờ chữ gạch chân trên màn 2a (Tập không gợi ý). Màn 2a hiện sẵn, không có nút Mở: không còn gì để đoán.
 - Báo lệch tài liệu: màn 1b "Khoanh vào Tập" mà Tập chỉ có ô "Em chọn" (phải đổi thành "viết chữ cái"); ô 1·4 chật (3 dòng sát nhau); Bước 4 của Tập cụt chữ "chiếu"; ô 11 "không chứa t" chỉ nhớ được nhờ chương 2.
+
+## ĐD3–4 (lượt 2)
+
+- HS chọn đúng B (30 N), C (hai hộp), D (3,3). Điền đúng cả ô 28–55. Chỗ HS phải đoán: ô 53 "μ_n (đoán)": màn 4d tới sau ô 3·2 mới nói, Tập chưa nói μ_n là gì.
+- **Màn 4b lộ đáp án trước clip 4c:** nhận xét "Không còn m" hiện trước biểu quyết A–D. HS ghi rõ chọn C nhờ màn 4b. Biểu quyết mất ý nghĩa.
+- Tập 3·2 một ván, màn 4c hai ván, 0,1/0,4 kg chỉ ở màn. Clip và A–D không có trong Tập (không chỗ ghi lựa chọn). Ô 3·1 và ô 41: Tập thiếu chỗ cho biểu thức và chữ chọn.
+
+## ĐD5 (lượt 3)
+
+- HS chọn đúng A (màn 5b) và C (clip 5d); điền đúng ô 56–71. Chỗ phải đoán: ô 59–61 (T, P₂, F_ms chưa định nghĩa ở Tập hay màn 5a), ô 58 "đi vòng theo dây", ô 70 "hệ thống" (từ không có trong Tập), ô 71 do đâu.
+- **Lộ đáp án 5d:** Tập 4·1 và màn 5c in "bỏ ma sát", cả 5 giá trị t in sẵn trong Tập, dòng "Cả 5 lần lệch một phía ⇒ sai số ___" in sẵn: HS chọn C nhờ chữ "bỏ ma sát", ô 70 lộ chữ "một phía".
+- Lệch: màn 5d nói "Tính ra a = 2,0" (Tập gọi dự đoán); màn 5d chỉ cho t lần 1 nhưng bảng Tập có đủ 5 lần. Thứ tự: Tập in bảng a trước, dự đoán sau; màn 5c dự đoán trước, bảng 5e sau.
+
+## ĐD6 (lượt 4)
+
+- Điền đúng ô 62, 72–84, 97–102 (về nhà làm sớm). Chỗ phải đoán: ô 75–76 (quay đầu), 77–78 (μ_n, mức trần), 84 (trượt hay nghỉ), 98 (lực hãm), 99 (không hình).
+- **Ô 5·2 6 dòng, đề 1241 20 câu:** HS ghi "(làm trên máy)", không biết ghi 20 câu. Ghi chú tự nhận mà Tập chưa sửa.
+- Ô 5·1 có mã ô nhưng màn 6c không cho mã đề BTVN, số câu, hạn: ô 87–90 để trống. Ô 1·1 và ô 1·3: Tập 1·3 không chụp lại lựa chọn ô 1·2; tr.4 → tr.1 → tr.5 trong 3 phút cuối.
+- Hai "Câu 3" (ô 3·4 về nhà; ô 4·3 mặt nghiêng) vẫn trùng: HS không nhầm nhưng chữ "Câu 3" trong màn Về nhà dễ hiểu lẫn.

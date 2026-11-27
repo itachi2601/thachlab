@@ -19,3 +19,10 @@
 | ruột tập · ô 3·2 | thêm chữ "tích khi đã biết bẫy này" | thấp | hs-5 không rõ nghĩa tích |
 | ghi chú dạy · điểm dừng 4 | ghi rằng ô 2·3 chỉ He-4 trên lớp nhưng HS có thể bấm cả 4 dòng; liệt kê thứ tự | thấp | hs-4 tự bấm cả 4 dòng |
 | đề 1192 · nhóm câu 14, 16 | giữ; ngoài phạm vi: câu hỏi cộng Zm_e và phổ kế đã dạy ở điểm dừng 3–4, không thấy câu hỏi thứ chưa dạy | thấp | đối chiếu ghi chú "đề so với phần học" |
+
+## Đã xử lý (27/11/2026)
+Làm 16/17 mục, kiểm máy ĐẠT (24 màn, 0 tràn, chữ hình nhỏ nhất 0,7×, katex 0, 375px không cuộn ngang), PDF ruột tập giữ 12 trang.
+- Ruột tập: ô 1·2 hình lucHatNhan ẩn nhãn (an=true); Câu 8 ở ô 3·4 trỏ sang trang Về nhà; tr.5 "1 g He-4" có M = 4 g/mol, chữ "toả ra"; ô 3·2 thêm "tích khi em đã biết bẫy".
+- Màn chiếu: 4a che "toả 28,30 MeV" tới khi trả lời; 5a che nhãn hai mũi tên + 8,8 + một câu nối (E_lkr tăng = toả); Câu 7 D bỏ phép tính; 3d A/D sửa; 3c nối 931,5 đã gồm c²; 5d chữ "mỗi vạch gấp 1000 lần" 22px; chữ prôtôn/nơtron/êlectron; nuclôn giải ở màn 1; 4c2 bảng 3 cột, m_X ở 4b.
+- Ghi chú dạy: ô 2·3 trên lớp chỉ He-4, O-16/Fe-56/U-235 làm SAU Câu 7 (về nhà), bỏ lời nhắc Fe-56 sau Câu 4; điểm dừng 6 nhắc ô 1·1.
+- Bỏ: đề 1192 nhóm câu 14, 16 (giữ nguyên, ngoài phạm vi).

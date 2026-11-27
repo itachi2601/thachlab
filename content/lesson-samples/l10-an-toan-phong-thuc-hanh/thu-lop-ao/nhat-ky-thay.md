@@ -6,3 +6,6 @@
 - Ghi chú dạy nói đáp án câu 13·2 gồm "vỏ nhựa chỉ bọc thân dây" ở màn "Quay lại" chứ không nằm ở điểm dừng 1: thầy không giảng ở lượt này.
 - Ô 13·1 Mục tiêu: chỉ đánh dấu cuối giờ, không có màn riêng (màn 6s ghi "mục tiêu 4").
 - Màn 1a ghi "đáp án cuối tiết" ở góc; ô 13·3 gom hai việc (đáp án + điều hiểu sai) cho khoảng 1 phút cuối giờ.
+
+## Lượt cuối (sau khi HS làm xong 6 điểm dừng)
+Xem gop-y.md. Điểm đáng tin: Tập in sẵn đáp án (13·4 vôn kế, 14·1 Ý nghĩa, 15·1 nhiệt kế) và Câu 4–6 trùng chữ với ba bẫy 5a. Không tin tỉ lệ đúng (HS làm đúng nhờ loại trừ).

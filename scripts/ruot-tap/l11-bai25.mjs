@@ -101,10 +101,10 @@ ${h3(3, 'Thí nghiệm: kiểm nhãn đèn xe máy 12 V – 21 W', '2·3')}
 <div class="card fig-side" style="${fs(42)};padding:1.2mm 3mm"><div>
 <div><b>Làm:</b> đặt hiệu điện thế ${V('12{,}0')}, rồi ${V('9{,}0')} và ${V('6{,}0')}; đọc ampe kế.</div>
 <table class="tbl-ct" style="margin:.8mm 0"><tr><th>${m('U')} (V)</th><th>12,0</th><th>9,0</th><th>6,0</th></tr>
-<tr><td>${m('I')} (A)</td><td>1,75</td><td>1,55</td><td>1,30</td></tr>
+<tr><td>${m('I')} (A)</td><td></td><td></td><td></td></tr>
 <tr><td>${m('P=UI')} (W)</td><td></td><td></td><td></td></tr>
 <tr><td>${m('R=U/I')} (${Om})</td><td></td><td></td><td></td></tr></table>
-<div><b>Rút ra:</b> ở ${V('12{,}0')} công suất ${f(16)} nhãn. Đèn mờ thì ${m('R')} ${f(16)} vì dây tóc ${f(16)}. Bài tập ghi “coi ${m('R')} không đổi” là phép ${f(18)}.</div></div>
+<div><b>Rút ra:</b> ở ${V('12{,}0')} công suất ${f(16)} nhãn. Đèn mờ thì ${m('R')} ${f(16)} vì dây tóc ${f(16)} <span class="hint">(gợi ý: nhiệt độ)</span>. Bài tập ghi “coi ${m('R')} không đổi” là phép ${f(18)}.</div></div>
 ${H.denXe()}</div>
 ${h3(4, 'Làm nhanh', '2·4')}
 ${box(cau(`Đèn ${nhan(220, 100)} mắc vào ${V('110')}, coi ${m('R')} không đổi. Công suất thực? Vì sao không phải ${W('50')}?`, 2))}
@@ -114,7 +114,7 @@ const p3 = `<section class="page">
 ${head('CÔNG SUẤT NGUỒN · HIỆU SUẤT · ĐOẢN MẠCH')}
 ${h3(1, 'II.3 · Công và công suất của nguồn điện', '3·1')}
 <div class="card fig-side" style="${fs(42)};padding:1.2mm 3mm"><div>
-<div>Nguồn đẩy điện lượng ${m('q=It')} qua cả mạch kín: ${m('A_{ng}=')} ${f(16)} · ${m('P_{ng}=')} ${f(14)}</div>
+<div>Dòng ${m('I')} chạy qua cả nguồn lẫn mạch ngoài. Nguồn đẩy điện lượng ${m('q=It')} qua cả mạch kín: ${m('A_{ng}=')} ${f(16)} · ${m('P_{ng}=')} ${f(14)}</div>
 <div>Bài 24: ${m('U=')} ${f(16)}. Nhân hai vế với ${m('I')}:</div>
 <div style="margin:.6mm 0">${m('\\mathcal EI=')} ${f(14)} ${m('+')} ${f(14)} · mạch ngoài nhận ${f(10)} (có ích), nguồn tự nóng ${f(10)} (hao phí)</div>
 <div>Ví dụ: sạc dự phòng ấm lên khi xả dòng lớn là do ${f(14)} toả ngay trong pin.</div></div>
@@ -125,7 +125,7 @@ ${h3(2, 'II.4 · Hiệu suất của nguồn điện', '3·2')}
 <div>Mạch ngoài có quạt, động cơ, pin đang sạc: chỉ dùng ${m('H=')} ${f(12)}</div>
 <div><b>Thí nghiệm:</b> hai pin AA nối tiếp (${m('\\mathcal E=3{,}0\\ \\mathrm V')}, ${m('r=1{,}0\\ \\Omega')}), đổi ${m('R')}, đọc ${m('U')}, ${m('I')}.</div>
 <table class="tbl-ct" style="margin:.6mm 0"><tr><th>${m('R')} (${Om})</th><th>1,0</th><th>2,0</th><th>4,0</th><th>9,0</th></tr>
-<tr><td>${m('I')} (A)</td><td>1,50</td><td>1,00</td><td>0,60</td><td>0,30</td></tr>
+<tr><td>${m('I')} (A)</td><td></td><td></td><td></td><td></td></tr>
 <tr><td>${m('U')} (V)</td><td>1,50</td><td>2,00</td><td>2,40</td><td>2,70</td></tr>
 <tr><td>${m('H=U/\\mathcal E')}</td><td></td><td></td><td></td><td></td></tr></table>
 <div><b>Rút ra:</b> ${m('R')} tăng thì ${m('H')} ${f(14)}; ${m('H')} có đạt 100 % không? ${f(30)}</div></div>
@@ -135,7 +135,7 @@ ${h3(3, 'II.5 · An toàn điện: đoản mạch và cầu chì', '3·3')}
 <div>Đoản mạch: hai cực nguồn nối thẳng, ${m('R\\to0')}, dòng ${m('I=')} <span class="fill" style="min-width:10mm;height:9mm"></span> rất lớn vì ${m('r')} ${f(10)}.</div>
 <div>Ắc quy ${V('12')}, ${m('r=0{,}02\\ \\Omega')} bị chìa khoá chạm hai cực: ${m('I\\approx')} ${f(12)} A, nhiệt trong ắc quy ${m('I^2r=')} ${f(14)} W.</div>
 <div>Cầu chì / aptomat: tự ${f(16)} khi dòng vượt dòng định mức. Chọn cầu chì có dòng định mức ${f(26)} dòng làm việc.</div>
-<div>Ấm ${nhan(220, 1800)}: ${m('I=')} ${f(12)} A ${m('\\to')} chọn cầu chì ${f(10)} A (có 5 A, 10 A, 30 A).</div></div>
+<div>Ấm ${nhan(220, 1800)}: ${m('I=')} ${f(12)} A ${m('\\to')} chọn cầu chì ${f(10)} A (có 5 A, 10 A, 16 A).</div></div>
 ${H.doanMach()}</div>
 ${foot(3)}</section>`;
 
@@ -144,8 +144,8 @@ ${head('BA CÁI BẪY · TRẢ BÀI · TỰ KIỂM TRA')}
 ${h3(1, 'III · Ba cái bẫy hay sập', '4·1')}
 <div class="card fig-side" style="${fs(40)};padding:1mm 3mm"><div>
 <div class="trap">${ck}<span><b>“kW và kWh là một.”</b> kW là ${f(16)} (ghi trên nhãn); kWh là ${f(16)} (ghi trên hoá đơn). Điều hoà ${u('1{,}2\\ \\mathrm{kW}')} chạy 8 giờ mỗi đêm, 30 đêm: ${f(12)} kWh.</span></div>
-<div class="trap">${ck}<span><b>“Công suất nguồn là công suất mạch ngoài.”</b> Nguồn phát ${m('\\mathcal EI')}, lớn hơn ${m('UI')} một phần ${f(10)}. Nguồn ${V('9{,}0')}, ${m('r=0{,}5\\ \\Omega')}, ${m('R=4{,}0\\ \\Omega')}: ${m('P_{ng}=')} ${f(10)} W, mạch ngoài ${f(10)} W.</span></div>
-<div class="trap">${ck}<span><b>“Đèn công suất lớn luôn sáng hơn.”</b> Nối tiếp (cùng ${m('I')}) dùng ${m('P=')} ${f(10)}: ${m('R')} lớn nhận nhiều hơn. Song song (cùng ${m('U')}) dùng ${m('P=')} ${f(10)}. Đèn sáng hơn: ${f(10)}</span></div></div>
+<div class="trap">${ck}<span><b>“Công suất nguồn là công suất mạch ngoài.”</b> Nguồn phát ${m('\\mathcal EI')}, mạch ngoài nhận ${m('UI')}; chênh lệch ${m('\\mathcal EI-UI=')} ${f(10)}. Nguồn ${V('9{,}0')}, ${m('r=0{,}5\\ \\Omega')}, ${m('R=4{,}0\\ \\Omega')}: ${m('P_{ng}=')} ${f(10)} W, mạch ngoài ${f(10)} W.</span></div>
+<div class="trap">${ck}<span><b>“Đèn công suất lớn luôn sáng hơn.”</b> Nối tiếp (cùng ${m('I')}) dùng ${m('P=')} ${f(10)}: đèn có ${m('R')} ${f(10)} nhận nhiều hơn. Song song (cùng ${m('U')}) dùng ${m('P=')} ${f(10)}. Đèn sáng hơn: ${f(10)}</span></div></div>
 ${H.noiTiep()}</div>
 ${h3(2, 'IV · Trả bài 6 câu', '4·2')}
 ${box(`${tb('1. Năng lượng điện tiêu thụ: công thức, đơn vị, đo bằng gì?')}${lines(2)}

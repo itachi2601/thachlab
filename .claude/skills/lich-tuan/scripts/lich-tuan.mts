@@ -197,6 +197,38 @@ slots(rules.the_thao.gym, "Tập gym", rules.the_thao.gym.min_buoi, []); // gym 
   if (cand.length < pt.min_buoi) warn.push(`Phát triển thachlab: chỉ có ${cand.length}/${pt.min_buoi} khoảng trống đủ ${pt.toi_thieu_phut} phút.`);
 }
 
+// 5c. kế hoạch thương hiệu cá nhân (references/ke-hoach-thuong-hieu.json): việc của tuần (không có thì lấy việc của tháng)
+//     gắn vào buổi cà phê bộ môn, cắt 90′ đầu khối "Phát triển thachlab" dài nhất, thêm 20′ xem lại tối Chủ nhật. Không thêm giờ làm mới.
+{
+  const f = path.join(root, ".claude/skills/lich-tuan/references/ke-hoach-thuong-hieu.json");
+  if (fs.existsSync(f)) {
+    const kh = JSON.parse(fs.readFileSync(f, "utf8"));
+    const wk = kh.tuan?.[iso(mon)], th = kh.thang?.[iso(mon).slice(0, 7)];
+    const trong: string | undefined = wk?.trong_truong ?? th?.trong_truong?.join(" · ");
+    const ngoai: string | undefined = wk?.ngoai_truong ?? th?.ngoai_truong?.join(" · ");
+    const nt = kh.nhip_tuan ?? {};
+    const SRC = "cố định";
+    const cf = evs.find((e) => /cà phê/i.test(e.title));
+    if (cf && trong) { cf.lesson = `Trong trường: ${trong}`; cf.note = nt.ca_phe; }
+    else if (trong) warn.push(`Thương hiệu trong trường (chưa có giờ): ${trong}`);
+    if (ngoai && !wk?.nghi) {
+      const n = nt.ngoai_truong_phut ?? 90, keep = nt.ngoai_truong_con_lai_toi_thieu_phut ?? 60;
+      const len = (e: Ev) => toMin(e.end) - toMin(e.start);
+      const p = evs.filter((e) => e.title === "Phát triển thachlab" && len(e) >= n + keep).sort((a, b) => len(b) - len(a))[0];
+      if (p) {
+        const cut = hhmm(toMin(p.start) + n);
+        evs.push({ weekday: p.weekday, start: p.start, end: cut, title: "Thương hiệu ngoài trường", src: SRC, lesson: ngoai });
+        p.start = cut;
+      } else warn.push(`Thương hiệu ngoài trường: không có khối trống đủ ${n + keep} phút — việc tuần này: ${ngoai}`);
+    }
+    const xl = nt.xem_lai;
+    if (xl && (trong || ngoai)) {
+      const gio = (xl.gio as string[]).find((g) => !evs.some((e) => e.weekday === xl.weekday && toMin(e.start) < toMin(g) + xl.phut && toMin(e.end) > toMin(g)));
+      if (gio) evs.push({ weekday: xl.weekday, start: gio, end: hhmm(toMin(gio) + xl.phut), title: "Xem lại tuần: thương hiệu", src: SRC, lesson: wk?.nghi ? "Tuần nghỉ — chỉ ghi số" : "Ghi 5 số, chốt việc tuần tới", note: xl.noi_dung });
+    }
+  }
+}
+
 // 5b. ưu tiên lịch công tác: việc khác trùng giờ thì ghi "nhờ người xem hộ"; hai mục công tác trùng nhau thì để thầy chọn
 {
   const DN = ["", "Thứ 2", "Thứ 3", "Thứ 4", "Thứ 5", "Thứ 6", "Thứ 7", "Chủ nhật"];

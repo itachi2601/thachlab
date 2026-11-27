@@ -81,7 +81,7 @@ def bench(d, d_cm, sx, sharp, rays=1.0, labels=True):
     if labels:
         text(d, (ox + 8, AX - HP - 44), "vật", FM, RED, anchor="lm")
         text(d, (LXF, AX - LH - 42), "thấu kính", FM, BLUE)
-        text(d, (min(sx, 1000), AX - 172), "màn", FM, NAVY)
+        text(d, (min(max(sx, 800), 1000), AX - 172), "màn", FM, NAVY)   # kiem-v1 muc 3: khong dinh "thau kinh" khi man gan kinh
     return ox
 
 
@@ -150,9 +150,18 @@ def do_state(t):
     return dict(d=dcm, sx=sx, rows=rows, sharp=sharp)
 
 
+def segs(d, ox, sx, y=740):
+    """kiem-v1 muc 4: hai doan d (vat - kinh), d' (kinh - man) cap nhat theo hinh"""
+    for x0, x1, col, lab in ((ox, LXF, RED, "d"), (LXF, sx, BLUE, "d'")):
+        d.line([(x0, y), (x1, y)], fill=col, width=5)
+        for x in (x0, x1): d.line([(x, y - 14), (x, y + 14)], fill=col, width=5)
+        text(d, ((x0 + x1) / 2, y - 42), lab, FS, col)
+
+
 def s_do(img, d, t, sc):
     st = do_state(t)
-    bench(d, st["d"], st["sx"], st["sharp"])
+    ox = bench(d, st["d"], st["sx"], st["sharp"])
+    segs(d, ox, st["sx"])
     table(d, st["rows"], 0, hl=st["rows"] - 1 if st["sharp"] and st["rows"] else -1)
 
 
@@ -184,32 +193,29 @@ def s_bay(img, d, t, sc):
     dd, dp, _ = ROWS[-1]
     bench(d, dd, LXF + dp * S, True, rays=0.4, labels=False)
     a1 = appear(t, 0.3, 0.45)
-    if a1 > 0:
+    if a1 > 0:   # kiem-v1 muc 2: bo phep tinh nhieu so moi; ly do sai = khong khop lan do nao
         pill(d, "BẪY", 880, a1, color=DRED)
         card(d, (40, 940, 1040, 1140), fill=A(WHITE, a1), outline=A(DRED, a1), w=5)
         text(d, (90, 992), "Trung bình d, d' rồi tính:", FM, DRED, anchor="lm", alpha=a1)
-        l2 = vn(D_TB) + " · " + vn(DP_TB, 2) + " : " + vn(D_TB + DP_TB, 2) + " = " + vn(F_SAI)
-        text(d, (90, 1080), l2, FS, DRED, anchor="lm", alpha=a1)
+        text(d, (90, 1080), "f = " + vn(F_SAI) + " cm", FS, DRED, anchor="lm", alpha=a1)
         text(d, (980, 1040), "✗", 80, DRED, alpha=a1)
     a2 = appear(t, BAY_R, 0.45)
     if a2 > 0:
         card(d, (40, 1160, 1040, 1350), fill=A(WHITE, a2), outline=A(DGREEN, a2), w=5)
         text(d, (90, 1212), "Trung bình 5 giá trị f:", FM, DGREEN, anchor="lm", alpha=a2)
-        text(d, (90, 1295), "= 10,0 cm", FS, DGREEN, anchor="lm", alpha=a2)
+        text(d, (90, 1295), "f = 10,0 cm, khớp 5 lần", FS, DGREEN, anchor="lm", alpha=a2)
         text(d, (980, 1255), "✓", 80, DGREEN, alpha=a2)
     k3 = appear(t, BAY_E, 0.45)
     if k3 > 0:
         card(d, (40, 1370, 1040, 1565), fill=A(WHITE, k3), outline=A(NAVY, k3), w=5)
         text(d, (W / 2, 1420), "Chưa nói được:", FS, NAVY, alpha=k3)
-        text(d, (W / 2, 1505), "số liệu minh hoạ; sai số của f", FM, INK, alpha=k3)
+        text(d, (W / 2, 1505), "số liệu minh hoạ; sai số f", FM, INK, alpha=k3)
 
 
 # ---------------- canh 5: Chot + THU NGHI (cau chot A-D o khung web) ----------------
 END_Q, END_C = 0.2, 4.3
 def s_end(img, d, t, sc):
-    k0 = appear(t, END_C, 0.5)
-    card(d, (50, 265, 1030, 425), fill=A((236, 253, 243), k0), outline=A(GREEN, k0), w=6)
-    text(d, (W / 2, 345), "Lấy trung bình các giá trị f", FM, DGREEN, alpha=k0)
+    # kiem-v1 muc 1 (GD2): bo the xanh goi y cach lam (chi san huong "trung binh f", loai san nhieu 13,5)
     k1 = appear(t, END_Q, 0.5)
     card(d, (40, 455, 1040, 1560), fill=A(WHITE, k1), outline=A(ORANGE, k1), w=6)
     pw = tw(d, "THỬ NGHĨ", F(FM)) + 56
@@ -224,6 +230,7 @@ def s_end(img, d, t, sc):
             text(d, (x, y0 + 56), h, FM, NAVY, alpha=k1)
         d.line([(140, y0 + 100), (940, y0 + 100)], fill=A(LIGHT, k1), width=3)
         kq = 0.55 + 0.45 * math.sin(2.4 * t) ** 2
+        d.rounded_rectangle([680, y0 + 110, 880, y0 + 320], radius=20, fill=A((253, 186, 116), k1 * (kq - 0.55) / 0.45))   # cot f nhap nhay: hinh khong dung yen
         for j, (a_, b_) in enumerate(CH):
             y = y0 + 160 + j * 100
             text(d, (300, y), str(a_), FS, INK, alpha=k1); text(d, (540, y), str(b_), FS, INK, alpha=k1)
