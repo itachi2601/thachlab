@@ -16,11 +16,13 @@ for p in "l12-su-chuyen-the 2" "l12-thang-nhiet-do 3" "l12-noi-nang-dl1 4" "l12-
          "l12-nang-luong-lien-ket 16" "l12-phan-hach-nhiet-hach 17" "l12-phong-xa 18" "l12-an-toan-phong-xa 19" \
          "l12-may-phat-dien-bien-ap 125" "l12-ung-dung-cam-ung-dien-tu 126" "l12-dien-tu-truong-song-dien-tu 127"; do
   set -- $p
+  # Bài 10: kèm sửa câu Quan sát hộp tn-l12-tutruong-02 (27/11) → khác ngoài khối video đúng 1 câu đó.
+  KHAC=""; [ "$2" = "10" ] && KHAC="--cho-phep-khac"
   echo "===== bai $2 ($1) $(date '+%H:%M:%S')"
   if [ "$YES" = "--yes" ]; then
-    bash scripts/cap-nhat-ly-thuyet.sh "content/lesson-samples/$1/bundle.json" "$2" --chi-video --yes || echo "LOI bai $2"
+    bash scripts/cap-nhat-ly-thuyet.sh "content/lesson-samples/$1/bundle.json" "$2" --chi-video $KHAC --yes || echo "LOI bai $2"
   else
-    echo n | bash scripts/cap-nhat-ly-thuyet.sh "content/lesson-samples/$1/bundle.json" "$2" --chi-video
+    echo n | bash scripts/cap-nhat-ly-thuyet.sh "content/lesson-samples/$1/bundle.json" "$2" --chi-video $KHAC
   fi
 done
 echo "XONG $(date '+%H:%M:%S')"
