@@ -133,12 +133,14 @@ def paper_face(img, d, box, dcm, ka=1.0, title="trên giấy"):
     img.paste(sub, (int(x0 + 10), int(y0 + top)), sub)
 
 
-def table(d, n, y0):
+def table(d, n, y0, hl=-1):
     card(d, (60, y0, 1020, y0 + 240), fill=WHITE, outline=LIGHT, w=3)
     xs = [360 + 140 * j for j in range(5)]
     text(d, (190, y0 + 62), "Lần", FM, DINK)
     text(d, (190, y0 + 168), "cm", FM, DINK)
     d.line([(100, y0 + 112), (990, y0 + 112)], fill=LIGHT, width=3)
+    if hl >= 0:   # kiem-v1 muc 2: to cot lan dang doc, de thay o "kinh -> giay" la so cua lan nay
+        d.rounded_rectangle([xs[hl] - 64, y0 + 18, xs[hl] + 64, y0 + 222], radius=18, fill=(254, 243, 199))
     for j in range(5):
         text(d, (xs[j], y0 + 62), str(j + 1), FM, DINK)
         if j < n: text(d, (xs[j], y0 + 168), vn(ROWS[j]), FS, INK)
@@ -147,7 +149,7 @@ def table(d, n, y0):
 # ---------------- canh 1: Du doan (K10: chi cau hoi + hinh) ----------------
 def s_hook(img, d, t, sc):
     M = sc["M"]
-    bench(d, 2.0, rays=0, ruler=False)
+    bench(d, 0.0, rays=0, ruler=False)
     a = appear(t, M[1] - 0.2, 0.5)
     if a <= 0: return
     y0 = 930 + (1 - a) * 40
@@ -165,7 +167,7 @@ def s_hook(img, d, t, sc):
 
 
 # ---------------- canh 2: Tien hanh ----------------
-SWEEP = [(0.6, 3.6, 2.0, 9.0), (3.8, 5.0, 9.0, ROWS[0])]       # quet 2 -> 9 cm roi quay ve cho ro nhat
+SWEEP = [(0.6, 3.6, 0.0, 9.0), (3.8, 5.0, 9.0, ROWS[0])]       # quet 0 (sat kinh) -> 9 cm roi quay ve cho ro nhat (kiem-v1 muc 3)
 STOPS = [5.2]                                                   # luc dung o lan 1
 for j in range(1, 5): STOPS.append(5.2 + 1.0 * j)              # lan 2..5: dich 0,5 s roi dung
 MOVE = 0.5
@@ -173,7 +175,7 @@ MOVE = 0.5
 
 def state_do(t):
     """(vi tri giay cm, so doc dang hien hoac None, so hang bang)"""
-    if t < SWEEP[0][0]: return 2.0, None, 0
+    if t < SWEEP[0][0]: return 0.0, None, 0
     for a, b, p0, p1 in SWEEP:
         if a <= t < b: return lerp(p0, p1, ease((t - a) / (b - a))), None, 0
     if t < SWEEP[1][1]: return 9.0, None, 0
@@ -196,7 +198,7 @@ def s_do(img, d, t, sc):
     text(d, (790, 1058), "kính → giấy", FM, INK)
     if rd is not None: text(d, (790, 1185), vn(rd) + " cm", 66, INK)
     else: text(d, (790, 1185), "…", 66, DINK)
-    if n > 0: table(d, n, 1325)
+    if n > 0: table(d, n, 1325, hl=n - 1 if rd is not None else -1)
 
 
 def _kiem_dong_bo():
@@ -245,24 +247,28 @@ def s_bay(img, d, t, sc):
     pw = tw(d, "BẪY", F(FM)) + 60
     card(d, (W / 2 - pw / 2, 262, W / 2 + pw / 2, 338), fill=A(DRED, a1), r=38)
     text(d, (W / 2, 300), "BẪY", FM, WHITE, alpha=a1)
-    text(d, (W / 2, 405), "“Giấy ở chỗ vệt sáng to nhất”", FS, INK, alpha=a1)
+    text(d, (W / 2, 405), "“Giấy ở chỗ vệt to nhất”", FS, INK, alpha=a1)
     # o trai: giay lech 3 cm khoi cho ro -> vet to, nhoe; vet "tho" nhe de hinh khong dung yen
-    if a1 > 0:
-        card(d, (50, 470, 530, 1300), fill=A(WHITE, a1), outline=A(DRED, a1), w=5)
-        paper_face(img, d, (80, 500, 500, 1000), 8.0 - DPCM + 0.15 * math.sin(2.2 * t), ka=a1, title="")
-        text(d, (290, 1080), "vệt to, nhoè", FS, DRED, alpha=a1)
-        text(d, (290, 1190), "✗", 80, DRED, alpha=a1)
+    if a1 > 0:   # kiem-v1 muc 1: ghi cho dat giay duoi moi o
+        kp = math.sin(1.8 * t) ** 2 if t > BAY_E else 0                 # nen o sai nhap nhay nhe: hinh khong dung yen
+        card(d, (50, 470, 530, 1290), fill=A((255, 255 - int(40 * kp), 255 - int(40 * kp)), a1), outline=A(DRED, a1), w=5)
+        paper_face(img, d, (80, 500, 500, 940), 8.0 - DPCM + 0.5 * math.sin(2.2 * t), ka=a1, title="")
+        text(d, (290, 1005), "vệt nhoè", FS, DRED, alpha=a1)
+        text(d, (290, 1090), "cách kính 8 cm", FM, INK, alpha=a1)
+        text(d, (290, 1200), "✗", 80, DRED, alpha=a1)
     a2 = appear(t, BAY_R, 0.45)
     if a2 > 0:
-        card(d, (550, 470, 1030, 1300), fill=A(WHITE, a2), outline=A(DGREEN, a2), w=5)
-        paper_face(img, d, (580, 500, 1000, 1000), ROWS[4] - DPCM, ka=a2, title="")
-        text(d, (790, 1080), "ảnh nhỏ, rõ nét", FS, DGREEN, alpha=a2)
-        text(d, (790, 1190), "✓", 80, DGREEN, alpha=a2)
+        card(d, (550, 470, 1030, 1290), fill=A(WHITE, a2), outline=A(DGREEN, a2), w=5)
+        paper_face(img, d, (580, 500, 1000, 940), ROWS[4] - DPCM, ka=a2, title="")
+        text(d, (790, 1005), "ảnh rõ nét", FS, DGREEN, alpha=a2)
+        text(d, (790, 1090), "cách kính 5 cm", FM, INK, alpha=a2)
+        text(d, (790, 1200), "✓", 80, DGREEN, alpha=a2)
     k3 = appear(t, BAY_E, 0.45)
-    if k3 > 0:
-        card(d, (50, 1345, 1030, 1560), fill=A(WHITE, k3), outline=A(NAVY, k3), w=5)
-        text(d, (W / 2, 1405), "Chưa nói được:", FS, NAVY, alpha=k3)
-        text(d, (W / 2, 1495), "số liệu minh hoạ", FM, INK, alpha=k3)
+    if k3 > 0:   # kiem-v1 muc 4: them gioi han that (den gan kinh), khong dap
+        card(d, (50, 1315, 1030, 1570), fill=A(WHITE, k3), outline=A(NAVY, k3), w=5)
+        text(d, (W / 2, 1368), "Chưa nói được:", FS, NAVY, alpha=k3)
+        text(d, (W / 2, 1446), "số liệu minh hoạ;", FM, INK, alpha=k3)
+        text(d, (W / 2, 1520), "đèn gần kính thì sao?", FM, INK, alpha=k3)
 
 
 # ---------------- canh 5: Chot + THU NGHI (cau chot A-D o khung web) ----------------
@@ -318,7 +324,7 @@ CLIP = dict(id="tn-l9-kinhlup-01", header="KHTN 9 · THÍ NGHIỆM", footer="Đo
    ("Ảnh thật: hứng được trên giấy.", 3.6)]),
  dict(key="bay", title="Bẫy và giới hạn", draw=s_bay, tail=0.3, caps=[
    ("So hai chỗ đặt giấy.", BAY_E - 0.4),
-   ("Còn bỏ ngỏ.", 3.6)]),
+   ("Còn bỏ ngỏ.", 4.4)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.3, caps=[
    ("Dừng lại, tự tính.", 8.2)]),
 ])

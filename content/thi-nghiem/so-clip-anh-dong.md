@@ -498,7 +498,7 @@ Nhánh `claude/motion-graphic-deployment-8b27a0`. 4 agent Opus × 8 clip; cổng
 | antoanpx4 | tn-l12-antoanpx-04 | 199 → 132 | 17 → 0 | 49,4 → 48,6 | 1148 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-antoanpx-04-20261126-2.mp4) | bản -2 (lưới chốt 'mỗi ô = 1 tuần', vạch 20 mSv); bỏ bẫy #2 (trùng Dự đoán); chốt 0,5 mSv × 50 = 25 > 20 |
 Sau duyệt (sau 22h hoặc khi thầy bảo): kho + bài đổi sang `-20261126` + `gan-khung-video.mts`, `cap-nhat-ly-thuyet.sh --chi-video` theo mẫu `dang-lo20.sh`.
 
-## Cổng mới — L9 (27/11/2026, nhánh `claude/clip-cong-moi-l9-896df8`) — đợt 1: 12/36 clip qua cổng A + B, ĐÃ TẢI Storage, CHỜ THẦY DUYỆT
+## Cổng mới — L9 (27/11/2026, nhánh `claude/clip-cong-moi-l9-896df8`) — đợt 1: 12/36 clip qua cổng A + B, ĐÃ TẢI Storage, thầy DUYỆT 27/11 ("Duyệt, sửa cả hộp"), **ĐÃ GHI DB 27/11 17:53** (bài 89, 90, 91, 129, 92; `CHI=… KHAC_BAI=… dang-cong-moi-l9.sh --yes`, log `ra/l9-dang-ghi1.log`, kiểm lại dry-run: 5/5 KHÔNG khác, độ dài DB = repo)
 Agent Opus theo nhóm (A điện 9, B điện từ–năng lượng 9, C cơ–âm–mở đầu–tái tạo 10, D quang 8; từ 27/11 trưa tối đa 1 agent dựng + 1 kiem-code vì hạn mức). Cổng A `--do-chu` 0 LỖI; cổng B kiem-code 283 px vòng 1 (mọi clip ĐẠT/NHẸ) + một lượt sửa; `xuat-khung.py --kiem` OK, khung có `cau_chot`, trỏ `-20261127`. Tải `tai-cong-moi-l9.sh` (HEAD 200 mp4 + webp, log `ra/l9-tai-A.log`, `ra/l9-tai-B1.log`). Kho/bài/DB vẫn bản cũ. Sau duyệt: `python3 scripts/video-thi-nghiem/doi-cong-moi-l9.py --apply` rồi `bash scripts/video-thi-nghiem/dang-cong-moi-l9.sh` (dry-run) → `--yes`. Dry-run trước đổi: 16/17 bài KHÔNG khác ngoài khối video; bài 150 (HSG cd15) khác dòng P2 'Đọc ~16 phút…' → script tự `--cho-phep-khac`.
 
 | Clip | tn | Từ/phút | LỖI | Giây | KB | mp4 | Điểm cần quyết |
@@ -517,6 +517,9 @@ Agent Opus theo nhóm (A điện 9, B điện từ–năng lượng 9, C cơ–�
 | l9camung1 | tn-l9-camung-01 | 199 → 164 | 15 → 0 | 49,8 | 1480 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-camung-01-20261127.mp4) | — |
 
 Đang làm (chưa tải): B GĐ2 camung2–3, xoaychieu1 (NẶNG: đổi chốt sang đinh sắt non), xoaychieu2 (ĐẠT), hoathach1–2; D GĐ1 langkinh3…tieucu3 + GĐ2 kinhlup1, langkinh1; C chưa giao. Bài cũng lộ: lang-kinh `:67` (langkinh-01), xoay-chieu `:140-141` hộp nhắc 'đảo hai cực nguồn' mà clip không chiếu.
+
+**Đợt 1 — sửa hộp exp kèm (thầy duyệt 27/11):** `sua-hop-exp.py` 2 vòng (vòng 2 theo kiem-code): ohm-01 số đọc dây B + kết luận gập; congsuat-01 Quan sát/Rút ra thành câu hỏi + gập bảng U·I dưới video; congsuat-03, dongthe-01 kết quả + kết luận gập; dongthe-02 Rút ra thành câu hỏi, gập bảng Wđ, bỏ công thức ghi sẵn ở Làm; doanmach-01 bỏ "U₂ gấp đôi U₁", gập bảng U₁/U₂/U_AB + kết luận; doanmach-03 thêm kết quả tháo bóng (gập), Rút ra thành câu hỏi. Kho ghi_chu thêm ca câu chốt mới (ohm-01, congsuat-01/03, dongthe-01/02/03, camung-01). Còn ghi nhận (chưa sửa): bảng so sánh ngay trên hộp congsuat-03 nói trước "đèn nhiều oát sáng hơn" (kiến thức bài).
+
 ## Cổng mới — L10b (bài 63–79, 38 clip; phiên `clip-cong-moi-l10b`, 27/11/2026) — **đang dựng, chờ thầy duyệt từng nhóm**
 Brief: thư mục ghi chú phiên `l10b-brief-dung.md`/`l10b-brief-kiem.md`. 1 agent Opus dựng + 1 kiem-code song song; tối đa 2 vòng kiem-code/clip, sau v2 sửa lượt cuối tự crop. Script: `tai-cong-moi-l10b.sh` (Storage), `dang-cong-moi-l10b.sh` (DB, `--chi-video`; dry-run 17/17 sạch 27/11). Kho `<tn>.json` + bài giữ bản cũ tới khi duyệt.
 
@@ -564,7 +567,7 @@ Nhánh `claude/clip-cong-moi-l10a-d353cc`. 3 agent Opus dựng (sau 11h: 1 dựn
 
 **Đã đăng mẻ 1 (27/11/2026 17:53):** sửa 4 hộp exp lộ Dự đoán (tdvt-01, tdvt-03 Quan sát + Rút ra, do-toc-do-01, gia-toc-01 Quan sát + Rút ra; `sua-hop-l10a.json`, `sua-hop-l10a-2.json`, kiem-code soát); kho ghi ca câu chốt vào `so_lieu_mau.ghi_chu`; `doi-cong-moi-l10a.py --apply` (kho + 8 bài + gắn khung); `dang-cong-moi-l10a.sh --yes`: 8/8 bài (46–53) ghi mục ly_thuyet, 0 LOI, ngoài khối video chỉ khác đúng các câu hộp đã sửa (log `ra/l10a-dang-1.log`, sao lưu `scripts/logs/ly-thuyet-bai4{6..9}/5{0..3}-backup-*.json`).
 
-## Cổng mới — L11a: 21 clip L11 tự dựng làm lại theo cổng mới (27/11/2026) — **CHỜ THẦY DUYỆT, chưa ghi DB**
+## Cổng mới — L11a: 21 clip L11 tự dựng làm lại theo cổng mới (27/11/2026) — thầy duyệt 27/11 ("Duyệt, sửa cả hộp"), **ĐÃ GHI DB 27/11 17:54** (12/12 bài, log `ra/l11a-dang.log`)
 Nhánh `claude/clip-cong-moi-l11a-6090b6`. 1 agent dựng + 1 kiem-code (hạn mức API); cổng A `--do-chu` 0 LỖI cả 21 (117–168 từ/phút); cổng B kiem-code 283 px 1–2 vòng. `xuat-khung.py --kiem` OK cả 21, khung có `cau_chot` A–D, trỏ `-20261127`. Đã tải `lesson-clips/clip/<tn>-20261127.{mp4,webp}` (HEAD 200 cả 21, `tai-cong-moi-l11a.sh`, log `ra/l11a-tai-{1..4}.log`). Kho + 12 bài đã đổi sang bản mới và gắn lại khung (`doi-ban-cong-moi-l11a.py --apply`, commit f105446525). Ghi DB: `bash scripts/video-thi-nghiem/dang-cong-moi-l11a.sh --yes` (12 bài, `--chi-video`).
 
 | Clip | tn | Từ/phút | LỖI | Giây | KB | mp4 | Điểm cần quyết |
@@ -590,3 +593,5 @@ Nhánh `claude/clip-cong-moi-l11a-6090b6`. 1 agent dựng + 1 kiem-code (hạn m
 | tatdan3 | tn-l11-tatdan-03 | 199 → 163 | 17 → 0 | 49,8 | 1528 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-tatdan-03-20261127.mp4) | chốt mới (thả 30 cm, chu kì 1 giảm 4,4 cm → B. 25,6 cm) chưa có trong kho ghi_chu |
 | vantocdddh1 | tn-l11-vantocdddh-01 | 194 → 143 | 14 → 0 | 49,9 | 1627 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-vantocdddh-01-20261127.mp4) | không có gì đặc biệt |
 | vantocdddh2 | tn-l11-vantocdddh-02 | 134 → 117 | 12 → 0 | 49,2 | 1447 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-vantocdddh-02-20261127.mp4) | không có gì đặc biệt |
+
+Sau duyệt: 5 hộp exp đứng trước video (tatdan1, tatdan2, btnangluong1, conangdddh2, vantocdddh1) đã giấu số đọc/kết luận vào `<details>` "(xem sau video)" (`sua-hop-l11a.py`, kiem-code soát); kho ghi_chu khớp câu chốt/Bẫy mới ở 7 tn, gỡ 3 chỗ tự mâu thuẫn của ddh1. Ghi DB `--chi-video`, riêng bài 22, 24, 25, 26 thêm `--cho-phep-khac` (diff ngoài khối video đúng là các câu hộp đã sửa). Sao lưu DB: `scripts/logs/ly-thuyet-bai<id>-backup-*.json` (worktree clip-cong-moi-l11a). Còn để thầy biết: tatdan1 dòng Làm vẫn ghi f₀ = 2,0 Hz (điều kiện đề); ddh1 độ dãn lò xo vẽ không theo tỉ lệ.

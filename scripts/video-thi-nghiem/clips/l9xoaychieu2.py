@@ -70,7 +70,7 @@ def dial(d, cx, cy, r, v, txt, alpha=1.0):
                fill=A(NAVY, alpha), width=4 if k % 2 == 0 else 3)
     for lv in (0, 0.5, 1.0):
         a = ang(lv); s = "0" if lv == 0 else ("1" if lv == 1 else "0,5")
-        text(d, (cx + (r - 62) * math.cos(a), cy + (r - 62) * math.sin(a)), s, 54, NAVY, alpha=alpha)
+        text(d, (cx + (r - 66) * math.cos(a), cy + (r - 66) * math.sin(a)), s, 60, NAVY, alpha=alpha)
     a = ang(v)
     d.line([(cx, cy), (cx + (r - 18) * math.cos(a), cy + (r - 18) * math.sin(a))], fill=A(RED, alpha), width=7)
     dot(d, cx, cy, 13, A(NAVY, alpha))
@@ -96,12 +96,12 @@ def table(d, ndc, nac, hl=None, y=810, alpha=1.0, vdc=None, vac=None):
         text(d, (XS[0], yy), str(j + 1), 56, NAVY, alpha=alpha)
         for col, n, vals, c in ((1, ndc, DC, NAVY), (2, nac, AC, ORANGE)):
             if hl == (col, j): d.rounded_rectangle([XS[col] - 130, yy - 40, XS[col] + 130, yy + 40], radius=18, fill=A((255, 237, 213), alpha))
-            text(d, (XS[col], yy), vn(vals[j]) + " A" if j < n else "·", 56, c if j < n else GRAY, alpha=alpha)
+            if j < n: text(d, (XS[col], yy), vn(vals[j]) + " A", 56, c, alpha=alpha)          # o trong de trong (kiem-v1 muc 5)
     yy = y + 160 + 3 * 95 + 10
     d.line([(70, yy - 52), (1010, yy - 52)], fill=A(LIGHT, alpha), width=3)
     text(d, (XS[0], yy), "Vôn kế", 56, PURPLE, alpha=alpha)
     for col, n, v in ((1, vdc, UV_DC), (2, vac, UV_AC)):
-        text(d, (XS[col], yy), vn(v) + " V" if n else "·", 56, PURPLE if n else GRAY, alpha=alpha)
+        if n: text(d, (XS[col], yy), vn(v, 1) + " V", 56, PURPLE, alpha=alpha)
 
 # ---------------- canh 1: Du doan ----------------
 THINK_END = 0.3
@@ -115,7 +115,7 @@ def pill(d, s, y, a, color=NAVY, size=56):
 
 def s_hook(img, d, t, sc):
     M = sc["M"]
-    top(d, False, False, 0.0, "0,00 A", "0,00 V", amp=False)
+    top(d, True, False, 0.0, "0,00 A", "0,0 V", amp=False)        # hook ve nguon xoay chieu, khong cuc +/− (kiem-v1 muc 2)
     a = appear(t, M[1] - 0.2, 0.5)
     if a <= 0: return
     y0 = 840 + (1 - a) * 40
@@ -143,14 +143,14 @@ def do_state(t):
     k = sum(1 for r in reads if t >= r)
     if not closed:
         prev = DC[-1]; nd = prev * (1 - ease((t - T_O1) / T_N)) if t >= T_O1 else 0.0
-        return ac, sa, False, nd, ("0,00 A" if nd < 0.003 else "…"), "0,00 V", 3 if t >= T_O1 else 0, 0, None
+        return ac, sa, False, nd, ("0,00 A" if nd < 0.003 else "…"), "0,0 V", 3 if t >= T_O1 else 0, 0, None
     tgt = vals[max(k - 1, 0)]
     if k == 0: nd = tgt * ease((t - tc) / T_N)
     else:
         ts = reads[k - 1]; prev = vals[k - 2] if k >= 2 else vals[0]; nd = lerp(prev, tgt, ease((t - ts) / T_N))
         if k == 1: nd = tgt
     txt = vn(tgt) + " A" if abs(nd - tgt) < 0.002 and (k > 0 or t - tc > T_N) else "…"
-    vtxt = vn(UV_AC if ac else UV_DC) + " V" if t - tc > T_N else "…"
+    vtxt = vn(UV_AC if ac else UV_DC, 1) + " V" if t - tc > T_N else "…"
     ndc = 3 if ac else sum(1 for r in READ if t >= r + T_N)
     nac = sum(1 for r in READ2 if t >= r + T_N) if ac else 0
     hl = (2, nac - 1) if ac and nac else ((1, ndc - 1) if not ac and ndc else None)
@@ -171,7 +171,7 @@ def _kiem_dong_bo():
             bad.append((round(t, 2), "bang DC lech so chi", ndc, txt))
         if closed and ac and nac and txt != "…" and txt != vn(AC[nac - 1]) + " A" and (nac == 3 or t < READ2[nac]):
             bad.append((round(t, 2), "bang AC lech so chi", nac, txt))
-        if not closed and (txt not in ("…", "0,00 A") or vtxt != "0,00 V"): bad.append((round(t, 2), "K mo ma co so"))
+        if not closed and (txt not in ("…", "0,00 A") or vtxt != "0,0 V"): bad.append((round(t, 2), "K mo ma co so"))
         if (t >= T_V2 and (not ac or vtxt == "…")) or (T_V1 <= t < T_O1 and vtxt == "…"): bad.append((round(t, 2), "bang co U truoc von ke"))
         t += 0.05
     return bad
@@ -196,7 +196,7 @@ def s_dapan(img, d, t, sc):
         card(d, (x0, 370, x0 + 480, 1080), fill=A(WHITE, ka), outline=A(TEAL, ka), w=5)
         text(d, (x0 + 240, 430), nm, 58, NAVY, alpha=ka)
         vmeter(d, x0 + 240, 590, nm == "xoay chiều", a=ka, r=70)
-        text(d, (x0 + 240, 730), vn(uv) + " V", 60, PURPLE, alpha=ka)
+        text(d, (x0 + 240, 730), vn(uv, 1) + " V", 60, PURPLE, alpha=ka)            # kho ghi 6,0 V (kiem-v1 muc 1)
         xs = range(x0 + 50, x0 + 431, 4)              # dang u(t): mot chieu phang, xoay chieu chay ngang
         if nm == "một chiều": d.line([(x0 + 50, 800), (x0 + 430, 800)], fill=A(ORANGE, ka), width=6)
         else: d.line([(x, 800 - 30 * math.sin(2 * math.pi * ((x - x0) / 130 - t / 1.2))) for x in xs], fill=A(ORANGE, ka), width=6)
@@ -214,7 +214,9 @@ def s_bay(img, d, t, sc):
     card(d, (40, 260, 1040, 560), fill=WHITE, outline=LIGHT, w=3)
     vmeter(d, 300, 410, True, r=70)
     xs = range(470, 981, 4)                        # u(t) xoay chieu chay ngang (chi minh hoa dang song)
-    d.line([(470, 410), (980, 410)], fill=LIGHT, width=3)
+    d.line([(470, 410), (980, 410)], fill=GRAY, width=3)
+    text(d, (450, 410), "0", 56, NAVY, anchor="rm")                    # duong 0 co nhan (kiem-v1 muc 3)
+    text(d, (280, 522), "u đổi liên tục", 56, ORANGE, alpha=appear(t, 0.2, 0.45))
     d.line([(x, 410 - 90 * math.sin(2 * math.pi * ((x - 470) / 170 - t / 1.5))) for x in xs], fill=ORANGE, width=6)
     k2 = appear(t, M[1] + 0.3, 0.45)
     a1 = appear(t, 0.2, 0.45) * (1 - k2)
@@ -235,7 +237,7 @@ def s_bay(img, d, t, sc):
     if k2 > 0:
         card(d, (40, y0, 1040, y0 + 340), fill=A(WHITE, k2), outline=A(NAVY, k2), w=6)
         text(d, (W / 2, y0 + 110), "Chưa nói được:", 60, NAVY, alpha=k2)
-        text(d, (W / 2, y0 + 220), "điện trở ampe kế", 58, INK, alpha=k2)
+        text(d, (W / 2, y0 + 220), "giá trị lớn nhất của u", 58, INK, alpha=k2)
 
 # ---------------- canh 5: Chot + THU NGHI ----------------
 END_Q, END_C = 0.2, 3.0
@@ -277,8 +279,8 @@ CLIP = dict(id="tn-l9-xoaychieu-02", header="KHTN 9 · THÍ NGHIỆM", footer="D
    ("Vôn kế chỉ như nhau.", 3.0),
    ("Đèn sáng, nóng như nhau.", 5.0)]),
  dict(key="bay", title="Bẫy và giới hạn", draw=s_bay, tail=0.4, caps=[
-   ("Đúng không?", 4.6),
-   ("Còn bỏ ngỏ.", 3.6)]),
+   ("Đúng không?", 5.0),
+   ("Còn bỏ ngỏ.", 3.8)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.3, caps=[
    ("Dừng lại, tự nghĩ.", 7.0)]),
 ])
