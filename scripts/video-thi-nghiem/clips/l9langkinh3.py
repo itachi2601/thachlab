@@ -136,7 +136,7 @@ def d_arc(d, c, r, ka=1.0, lab=True, sweep=1.0):
 
 LAB_X = 960
 def end_name(d, c, ka=1.0):
-    Z = zend(c); ty = zend(1)[1] + (c - 1) * 62                # cot nhan cach nhau 62 px, noi bang vach manh
+    Z = zend(c); ty = zend(1)[1] + (c - 1) * 84                # cot nhan cach nhau 84 px (kiem-v1 muc 3), noi bang vach manh
     d.line([Z, (LAB_X - 50, ty)], fill=A(COLS[c], 0.8 * ka), width=2)
     text(d, (LAB_X, ty), NAMES[c], FM, COLS[c], alpha=ka)
 
@@ -162,6 +162,14 @@ def s_hook(img, d, t, sc):
     M = sc["M"]
     prism(d); normal_E(d)
     pen(d); incident(d, GRAY, appear(t, 0.5, 0.5))
+    kd = appear(t, 1.2, 0.5)                                   # kiem-v1 muc 2: chi ro "goc lech D" tren hinh (mot tia lo xam,
+    if kd > 0:                                                 #   khong mau -> khong lo do chenh giua cac mau)
+        X, th, _ = PATHS[1]; Z = zend(1)
+        d.line([E, X], fill=A(GRAY, 0.6 * kd), width=4); d.line([X, Z], fill=A(GRAY, 0.8 * kd), width=5)
+        dash(d, X, (X[0] + LOUT * DIN[0], X[1] + LOUT * DIN[1]), A(NAVY, 0.6 * kd), w=3)
+        d.arc([X[0] - 150, X[1] - 150, X[0] + 150, X[1] + 150], TH_IN, th, fill=A(NAVY, kd), width=6)
+        m = math.radians((TH_IN + th) / 2)
+        text(d, (X[0] + 190 * math.cos(m), X[1] + 190 * math.sin(m)), "D", FS, NAVY, alpha=kd)
     a = appear(t, M[1] - 0.2, 0.5)
     if a <= 0: return
     y0 = 960 + (1 - a) * 40
@@ -240,6 +248,8 @@ BAY_R, BAY_E = 3.4, 6.6
 def bay_row(d, y_top, ka, grow, wrong):
     tf = mk_tf(300, y_top + 30, 0.62)
     prism(d, tf, labs=False, ka=ka); pen(d, tf, 0.7)
+    X1 = PATHS[1][0]                                          # kiem-v1 muc 1: keo dai tia toi lam moc "lech hon"
+    dash(d, tf(X1), tf((X1[0] + LOUT * DIN[0], X1[1] + LOUT * DIN[1])), A(NAVY, 0.7 * ka), w=3)
     for c in (0, 2):                                          # chi ve do va tim
         geo = (2 - c) if wrong else c                         # ve sai: do di duong cua tim
         beam(d, geo, grow, ka, tf=tf, colc=COLS[c], w=6)
@@ -273,9 +283,7 @@ def s_bay(img, d, t, sc):
 # ---------------- canh 5: Chot + THU NGHI (cau chot A-D o khung web) ----------------
 END_Q, END_C = 0.2, 4.3
 def s_end(img, d, t, sc):
-    k0 = appear(t, END_C, 0.5)
-    card(d, (50, 265, 1030, 425), fill=A((236, 253, 243), k0), outline=A(GREEN, k0), w=6)
-    text(d, (W / 2, 345), "Mỗi màu lệch một góc riêng", FM, DGREEN, alpha=k0)
+    # GD2 kiem-v1 muc 4: bo the xanh nhac lai dieu da biet
     k1 = appear(t, END_Q, 0.5)
     card(d, (40, 455, 1040, 1560), fill=A(WHITE, k1), outline=A(ORANGE, k1), w=6)
     pw = tw(d, "THỬ NGHĨ", F(FM)) + 56
@@ -289,6 +297,7 @@ def s_end(img, d, t, sc):
         incident(d, CAM, k1, tf=tf, w=7)
         kq = 0.55 + 0.45 * math.sin(2.4 * t) ** 2
         q = tf(PATHS[1][0])
+        d.rounded_rectangle([q[0] + 60, q[1] + 60, q[0] + 400, q[1] + 180], radius=24, fill=A((253, 186, 116), k1 * (kq - 0.55) / 0.45))  # nhap nhay
         text(d, (q[0] + 230, q[1] + 120), "D = ?", 80, ORANGE, alpha=k1 * kq)
 
 
