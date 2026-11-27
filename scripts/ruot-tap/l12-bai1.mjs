@@ -5,7 +5,9 @@
 // thử thách ⭐–⭐⭐⭐, 5 dạng bài tập mẫu. Đáp số Bài tương tự (tuongTu.dap) tính bằng Python 12/11/2026.
 // Chạy: node scripts/ruot-tap/l12-bai1.mjs [file.pdf]       → scripts/ruot-tap/out/ruot-tap-vl12-bai1.pdf
 //       node scripts/ruot-tap/l12-bai1.mjs --hinh           → chụp từng hình ở cỡ in (46 mm) vào out/hinh-l12-bai1/ để soát chữ/nét
-import { khoiTao, m, lines, wl, fill as f, nw, ck, box, opt, chon, rkHai } from './khung.mjs';
+import { khoiTao, m, lines, wl, fill as f, nw, ck as ckGoc, box, opt, chon, rkHai, MOC } from './khung.mjs';
+// Kiểu mộc (RUOT_TAP_KIEU=moc): bỏ ô tick ngoài phần Dự đoán, nhãn viết như lời nói thường
+const ck = MOC ? '' : ckGoc;
 import { hinhL12b1 as H } from './hinh-l12-bai1.mjs';
 
 if (process.argv[2] === '--hinh') {
@@ -36,9 +38,9 @@ if (process.argv[2] === '--hinh') {
 const K = khoiTao({ bai: 1, lid: 2, ten: 'SỰ CHUYỂN THỂ', lop: 12, baiDau: 1, sub: 'Vật lí 12 · Chương 1: Vật lí nhiệt' });
 const { head, h3, foot } = K;
 const fs = (w, extra = '') => `grid-template-columns:1fr ${w}mm;${extra}`;
-const tb = (s) => `<div><b>${s}</b><span class="ck" style="float:right;margin:0"></span></div>`;
+const tb = (s) => `<div><b>${s}</b>${MOC ? '' : '<span class="ck" style="float:right;margin:0"></span>'}</div>`;
 const cau = (s, k) => `<div style="padding-top:1mm;line-height:1.35">${s}</div>${lines(k)}`;
-const dong = (s) => `<div style="margin:.3mm 0">${s}</div>`;
+const dong = (s) => `<div style="margin:.3mm 0">${MOC ? '– ' : ''}${s}</div>`;
 const dC = (s) => nw(m(`${s}\\ ^\\circ\\mathrm C`));
 const ph = (s) => nw(`${s} phút`);
 const to = m('\\to');
@@ -53,7 +55,7 @@ const ttCss = '<style>.yo{display:flex;justify-content:space-between;align-items
 
 const p1 = `${ttCss}<section class="page">
 ${head('BÀI 1 · SỰ CHUYỂN THỂ', K.sub)}
-${h3(1, 'Mục tiêu', '1·1')}
+${h3(1, MOC ? 'Học xong bài này, em làm được' : 'Mục tiêu', '1·1')}
 <div class="card soft">
 ${dong(`${ck}Mô tả cấu trúc rắn, lỏng, khí bằng <b>mô hình động học phân tử</b>`)}
 ${dong(`${ck}Gọi tên các <b>quá trình chuyển thể</b> và chiều của chúng`)}
@@ -72,7 +74,7 @@ ${opt('D', 'Tăng nhanh lúc đầu rồi chậm dần')}
 ${H.liDa()}</div>
 </div>
 ${h3(3, 'Học xong, em sửa lại', '1·3')}
-<div class="card soft"><div>Đáp án đúng là: ${f()} &nbsp; Em đoán ${ck}đúng &nbsp;${ck}sai &nbsp;· <span class="hint">Điều em hiểu sai hoặc mới biết:</span></div>${lines(2)}</div>
+<div class="card soft"><div>Đáp án đúng là: ${f()}${MOC ? '. ' : ` &nbsp; Em đoán ${ck}đúng &nbsp;${ck}sai &nbsp;· `}<span class="hint">Điều em hiểu sai hoặc mới biết:</span></div>${lines(2)}</div>
 ${h3(4, 'II.1 · Mô hình động học phân tử', '1·4')}
 <div class="card" style="padding:1.2mm 3mm">
 <div><b>Rời:</b> chất cấu tạo từ những hạt ${f(22)}, giữa chúng có ${f(25)}.</div>
@@ -139,9 +141,9 @@ const p4 = `<section class="page">
 ${head('BA CÁI BẪY · TRẢ BÀI · TỰ KIỂM TRA')}
 ${h3(1, 'III · Ba cái bẫy hay sập', '4·1')}
 <div class="card fig-side" style="${fs(42)};padding:1mm 3mm"><div>
-<div class="trap">${ck}<span><b>“Đang nóng chảy thì nhiệt độ vẫn tăng.”</b> Lẫn nhiệt độ với nhiệt lượng: đang chuyển thể thì nhiệt độ ${f(16)}, nhiệt lượng vẫn ${f(16)}.</span></div>
-<div class="trap">${ck}<span><b>“Nước chỉ bay hơi khi đã sôi.”</b> Quần áo phơi vẫn khô dù chưa tới ${dC('100')}: bay hơi xảy ra ở ${f(22)}.</span></div>
-<div class="trap">${ck}<span><b>“Khí không có thể tích.”</b> Bơm thêm khí vào bình 20 lít đầy oxygen: thể tích khí ${f(14)} lít; thứ tăng là ${f(30)}. Nói đúng: khí không có ${f(25)}.</span></div></div>
+<div class="trap">${MOC ? '<b>1.</b>' : ck}<span><b>“Đang nóng chảy thì nhiệt độ vẫn tăng.”</b> Lẫn nhiệt độ với nhiệt lượng: đang chuyển thể thì nhiệt độ ${f(16)}, nhiệt lượng vẫn ${f(16)}.</span></div>
+<div class="trap">${MOC ? '<b>2.</b>' : ck}<span><b>“Nước chỉ bay hơi khi đã sôi.”</b> Quần áo phơi vẫn khô dù chưa tới ${dC('100')}: bay hơi xảy ra ở ${f(22)}.</span></div>
+<div class="trap">${MOC ? '<b>3.</b>' : ck}<span><b>“Khí không có thể tích.”</b> Bơm thêm khí vào bình 20 lít đầy oxygen: thể tích khí ${f(14)} lít; thứ tăng là ${f(30)}. Nói đúng: khí không có ${f(25)}.</span></div></div>
 ${H.binhKhi()}</div>
 ${h3(2, 'IV · Trả bài 6 câu', '4·2')}
 ${box(`${tb('1. Ba nội dung của mô hình động học phân tử?')}${lines(2)}
@@ -150,7 +152,7 @@ ${tb('3. Vì sao chất lỏng có thể tích xác định mà hình dạng kh�
 ${tb('4. Vì sao nhiệt độ không đổi suốt thời gian nóng chảy?')}${lines(2)}
 ${tb('5. Bay hơi khác sôi ở đâu? Nhiệt độ sôi phụ thuộc gì?')}${lines(2)}
 ${tb('6. Chất rắn kết tinh khác vô định hình ở đâu? Mỗi loại một ví dụ.')}${lines(2)}`)}
-<div class="card soft" style="margin-top:.8mm;padding:.8mm 3mm"><b>Bạn cùng bàn kiểm:</b> ……/6 câu · chưa thuộc câu ${f(16)} → đọc lại ô Tập: câu 1 → 1·4 · câu 2 → 2·2 · câu 3 → 2·1 · câu 4 → 3·1 · câu 5 → 3·2 · câu 6 → 3·3</div>
+<div class="card soft" style="margin-top:.8mm;padding:.8mm 3mm"><b>Bạn cùng bàn kiểm:</b> ……/6 câu${MOC ? `. Câu chưa thuộc: ${f(16)}, lật lại trang 1 (câu 1), trang 2 (câu 2, 3), trang 3 (câu 4, 5, 6).` : ` · chưa thuộc câu ${f(16)} → đọc lại ô Tập: câu 1 → 1·4 · câu 2 → 2·2 · câu 3 → 2·1 · câu 4 → 3·1 · câu 5 → 3·2 · câu 6 → 3·3`}</div>
 ${h3(3, 'Kết quả tự kiểm tra (đề chiếu trên lớp)', '4·3')}
 ${rkHai([1, 2, 3], [4, 5, 6])}
 ${foot(4)}</section>`;
@@ -164,15 +166,16 @@ ${traNC([['nước đá', '0'], ['băng phiến', '80'], ['nhôm', '660']])}.<br
 <b>a)</b> Nhiệt độ nóng chảy? Chất này là gì? &nbsp;<b>b)</b> Nóng chảy kéo dài bao lâu? &nbsp;<b>c)</b> Từ phút 8 đến phút 12, nhiệt độ tăng bao nhiêu độ mỗi phút?</div>
 <div class="fig-side" style="${fs(48)};margin-top:1mm"><div style="background:#fff;border:.3mm solid var(--navy);border-radius:1.5mm;padding:0 3mm">
 ${wl('a) Đoạn nằm ngang ở … ⇒ chất là', 2)}${wl('b) Đếm khoảng giữa hai mốc, không đếm số dòng:', 2)}${wl(`c) ${m('\\dfrac{\\Delta T}{\\Delta t}=')}`, 2)}</div>${H.truc()}</div>
-${h3(2, 'Điền bước còn thiếu: làm nguội chính chất đó từ 140 °C', '5·2')}
+${h3(2, MOC ? 'Giờ làm nguội chính chất đó từ 140 °C' : 'Điền bước còn thiếu: làm nguội chính chất đó từ 140 °C', '5·2')}
 <div style="background:#fff;border:.3mm solid var(--navy);border-radius:1.5mm;padding:0 3mm">
 <div class="ln"><b>Bước 1 (cho sẵn):</b> mỗi phút toả nhiệt đúng bằng lúc đun ⇒ thể lỏng nguội ${nw('15 °C')} mỗi phút.</div>
 ${wl(`Bước 2: từ ${dC('140')} xuống ${dC('80')} mất`, 1)}${wl('Bước 3: đông đặc ở nhiệt độ nào, trong bao lâu?', 1)}${wl('Bước 4: tổng thời gian đến khi đông đặc hoàn toàn:', 1)}</div>
 ${K.btvn().replace('<i>1</i>', '<i>3</i>')}
-${h3(4, 'Thử thách phân tầng', '5·4')}
+${h3(4, MOC ? 'Thử sức' : 'Thử thách phân tầng', '5·4')}
 ${box(wl(`${m('\\bigstar')} Kể tên bốn quá trình chuyển thể chính và chiều của mỗi quá trình.`, 2)
  + cau(`${m('\\bigstar\\bigstar')} Vì sao trời nồm, nền nhà và gương lại “đổ mồ hôi”?`, 1)
  + cau(`${m('\\bigstar\\bigstar\\bigstar')} Trên núi cao 3000 m, nước sôi ở khoảng ${dC('90')}. Vì sao nấu cơm ở đó lâu chín hơn?`, 1))}
+${MOC ? `<div class="tudo" style="margin-top:2mm;height:14mm"><b>Cả bài này, nói gọn lại theo cách của em</b> <span class="hint">(viết, vẽ sơ đồ, gạch đầu dòng đều được)</span></div>` : ''}
 ${foot(5)}</section>`;
 
 const tra3 = `Nhiệt độ nóng chảy: ${['thiếc 232', 'chì 327', 'nhôm 660'].map((x) => nw(x + ' °C')).join(' · ')}`;

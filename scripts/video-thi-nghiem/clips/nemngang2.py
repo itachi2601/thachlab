@@ -57,8 +57,8 @@ def setup(d, h, paper=True, marks=True, ruler=True):
             xx = P(k / 10, 0)[0]; L = 24 if k % 2 == 0 else 14
             d.line([(xx, YF + 30), (xx, YF + 30 + L)], fill=NAVY, width=3)
         for k in (0, 4, 8):
-            text(d, (P(k / 10, 0)[0], YF + 100), "0" if k == 0 else vn(k / 10, 1), 58, INK)
-        text(d, (P(0.85, 0)[0] + 30, YF + 100), "m", 58, INK, anchor="lm")
+            text(d, (P(k / 10, 0)[0], YF + 90), "0" if k == 0 else vn(k / 10, 1), 58, INK)
+        text(d, (P(0.85, 0)[0] + 30, YF + 90), "m", 58, INK, anchor="lm")
     top = YF - 1.36 * PXM
     d.rectangle([POLE - 9, top, POLE + 9, YF], fill=(120, 128, 145))
     d.rectangle([POLE - 60, YF - 16, POLE + 60, YF], fill=(90, 98, 115))
@@ -87,7 +87,7 @@ def s_hook(img, d, t, sc):
     setup(d, h, ruler=False)
     y = P(0, h)[1]
     arrow(d, (X0 + 12, y), (X0 + 170, y), BLUE, w=8, head=24)
-    text(d, (X0 + 240, y), "v₀", 62, BLUE, anchor="lm")
+    text(d, (X0 + 200, y), "v₀: vận tốc ném", 58, BLUE, anchor="lm")
     a = appear(t, M[1] - 0.2, 0.5)
     if a <= 0: return
     y0 = 1120 + (1 - a) * 30
@@ -124,14 +124,14 @@ def shot_state(t):
     return j, h, tau, j + (1 if (t - s - mv) / SLOW >= tt - 1e-9 else 0)
 
 def table(d, y, n, cur=-1, v0col=0.0):
-    card(d, (40, y, 1040, y + 540), fill=WHITE, outline=NAVY, w=4)
+    card(d, (40, y, 1040, y + 500), fill=WHITE, outline=NAVY, w=4)
     xs = (170, 405, 640, 890) if v0col else (220, 540, 860)
-    text(d, (xs[0], y + 60), "h (m)", 62, PURPLE); text(d, (xs[1], y + 60), "t (s)", 62, TEAL)
-    text(d, (xs[2], y + 60), "L (m)", 62, DORANGE)
-    if v0col: text(d, (xs[3], y + 60), "v₀ = L/t", 62, BLUE)
-    d.line([(70, y + 112), (1010, y + 112)], fill=NAVY, width=3)
+    text(d, (xs[0], y + 56), "h (m)", 62, PURPLE); text(d, (xs[1], y + 56), "t (s)", 62, TEAL)
+    text(d, (xs[2], y + 56), "L (m)", 62, DORANGE)
+    if v0col: text(d, (xs[3], y + 56), "v₀ = L/t", 62, BLUE)
+    d.line([(70, y + 104), (1010, y + 104)], fill=NAVY, width=3)
     for i, (h, tt, L, v) in enumerate(ROWS):
-        yy = y + 168 + i * 98
+        yy = y + 156 + i * 92
         if i == cur and n <= i: d.rounded_rectangle([60, yy - 42, 1020, yy + 42], radius=16, fill=(255, 237, 213))
         if i < n:
             text(d, (xs[0], yy), vn(h), 62, INK); text(d, (xs[1], yy), vn(tt, 3), 62, INK)
@@ -164,8 +164,8 @@ def s_do(img, d, t, sc):
             d.line(path_pts(h, L, tt), fill=GHOST, width=4)
             lx = P(L, 0)[0]; d.line([(lx, YF - 22), (lx, YF + 2)], fill=ORANGE, width=7)
         ball(d, bx, by)
-    text(d, (W / 2, 1130), "t tính từ h: t = √(2h/g)", 58, TEAL)
-    table(d, 1180, done, cur=j)
+    text(d, (W / 2, 1118), "t tính từ h: t = √(2h/g)", 58, TEAL)
+    table(d, 1158, done, cur=j)
 
 def _kiem_dong_bo():
     bad = []; t = 0.0
@@ -228,13 +228,13 @@ def s_rutra(img, d, t, sc):
     card(d, (40, y0, 1040, y0 + 540), fill=A(WHITE, k2), outline=A(NAVY, k2), w=6)
     text(d, (W / 2, y0 + 70), "Chưa nói được", 62, NAVY, alpha=k2)
     text(d, (W / 2, y0 + 165), "Nòng chếch lên thì sao?", 62, DRED, alpha=k2)
-    ang = math.radians(8 + 22 * ease((t - M[1]) / 2.5))                     # nong xoay dan len
+    ang = math.radians(8 + 14 * ease((t - M[1]) / 2.5))                     # nong xoay dan len
     cx, cy = 360, y0 + 430; L1 = 230
     ex, ey = cx + L1 * math.cos(ang), cy - L1 * math.sin(ang)
     d.line([(cx, cy), (ex, ey)], fill=NAVY, width=34)
     arrow(d, (ex + 20 * math.cos(ang), ey - 20 * math.sin(ang)), (ex + 190 * math.cos(ang), ey - 190 * math.sin(ang)), A(BLUE, k2), w=8, head=24)
     d.line([(cx - 40, cy + 60), (960, cy + 60)], fill=A(WOOD_D, k2), width=6)
-    text(d, (ex + 250 * math.cos(ang) + 40, ey - 250 * math.sin(ang)), "v₀", 62, BLUE, anchor="lm", alpha=k2)
+    text(d, (ex + 190 * math.cos(ang) + 20, ey - 190 * math.sin(ang) + 64), "v₀", 62, BLUE, anchor="lm", alpha=k2)
 
 # ---------------- canh 5: Bay (L ti le voi h?) ----------------
 BASE, SCL = 900, 380.0
@@ -319,7 +319,7 @@ CLIP = dict(id="tn-l10-nemngang-02", header="VẬT LÍ 10 · THÍ NGHIỆM", foo
    ("Chia L cho t ở từng lần.", 3.2),
    ("Đáp án: gần như bằng nhau.", 3.4)]),
  dict(key="rutra", title="Vì sao?", draw=s_rutra, tail=0.5, caps=[
-   ("Bốn điểm thẳng hàng qua gốc.", 3.4),
+   ("Các điểm thẳng hàng qua gốc.", 3.4),
    ("Mới thử nòng nằm ngang.", 3.4)]),
  dict(key="bay", title="Bẫy: L tỉ lệ với h?", draw=s_bay, tail=0.4, caps=[
    ("Dễ tưởng: hai cột tăng như nhau.", 3.6),
