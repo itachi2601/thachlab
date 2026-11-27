@@ -8,7 +8,7 @@
 // Đáp số Dạng + Bài tương tự tính bằng Python 13/11/2026 (g = 10 m/s², sin/cos ghi trong từng đề).
 // Chạy: node scripts/ruot-tap/l10-bai20.mjs [file.pdf]       → scripts/ruot-tap/out/ruot-tap-vl10-bai20.pdf
 //       node scripts/ruot-tap/l10-bai20.mjs --hinh           → chụp từng hình ở cỡ in (46 mm) vào out/hinh-l10-bai20/ để soát chữ/nét
-import { khoiTao, m, lines, wl, fill as f, nw, ck, box, opt, chon, rkHai } from './khung.mjs';
+import { khoiTao, m, lines, wl, fill as f, nw, ck, box, opt, chon } from './khung.mjs';
 import { hinhL10b20 as H } from './hinh-l10-bai20.mjs';
 
 if (process.argv[2] === '--hinh') {
@@ -72,7 +72,7 @@ ${opt('D', 'Em nhẹ hơn nên xuống nhanh hơn')}
 ${H.cauTruot()}</div>
 </div>
 ${h3(3, 'Học xong, em sửa lại', '1·3')}
-<div class="card soft"><div>Đáp án đúng là: ${f(12)} &nbsp; Em đoán ${ck}đúng &nbsp;${ck}sai &nbsp;· <span class="hint">Điều em hiểu sai hoặc mới biết:</span></div>${lines(1)}</div>
+<div class="card soft"><div>Đã chọn: ${f(8)} · Đúng là: ${f(8)} · Em đoán ${ck}đúng ${ck}sai · <span class="hint">Điều em hiểu sai/mới biết:</span></div>${lines(1)}</div>
 ${h3(4, 'Kiểm tra hành trang', '1·4')}
 <div class="card" style="padding:1.2mm 3mm">
 <div>Mặt nghiêng góc ${al}: thành phần của ${m('P')} <b>dọc</b> dốc ${f(25)} · <b>vuông góc</b> dốc ${f(25)}</div>
@@ -84,7 +84,7 @@ ${h3(5, 'II.1 · Bốn bước, một cầu nối', '1·5')}
 <div><b>Bước 1</b> (Vẽ): chọn ${f(25)} khảo sát; Ox theo chiều ${f(30)}, giữ đến hết.</div>
 <div><b>Bước 2:</b> mỗi lực phải chỉ ra được ${f(30)}</div>
 <div><b>Bước 3:</b> ${f(40)} (dạng vectơ)</div>
-<div><b>Bước 4:</b> theo Ox, Oy tìm ${m('a')}; kiểm dấu: ${m('a<0')} nghĩa là ${f(36)}</div></div>
+<div><b>Bước 4:</b> chiếu lên Ox, Oy tìm ${m('a')}; kiểm dấu: ${m('a<0')} nghĩa là ${f(36)}</div></div>
 ${foot(1)}</section>`;
 
 const p2 = `<section class="page">
@@ -115,7 +115,7 @@ ${h3(2, 'II.2 · Tình huống 1: mặt ngang có ma sát', '2·2')}
 <div>Chỉ lợi khi góc nhỏ: xiên quá thì phần kéo ngang ${f(20)} giảm nhiều.</div></div>
 ${H.keoXien()}</div>
 ${h3(3, 'Làm nhanh', '2·3')}
-${box(cau(`<b>Câu 1.</b> Kéo thùng ${u('20\\ \\mathrm{kg}')} bằng lực ${u('100\\ \\mathrm N')}, dây xiên lên ${u('30^\\circ')} so với sàn (${u('\\sin 30^\\circ=0{,}5')}), ${u('\\mu=0{,}2')}, ${g10}. Tính ${m('N')} và lực ma sát trượt. So với kéo nằm ngang cùng ${u('100\\ \\mathrm N')}, ma sát giảm bao nhiêu?`, 4))}
+${box(cau(`<b>Bài 1.</b> Kéo thùng ${u('20\\ \\mathrm{kg}')} bằng lực ${u('100\\ \\mathrm N')}, dây xiên lên ${u('30^\\circ')} so với sàn (${u('\\sin 30^\\circ=0{,}5')}), ${u('\\mu=0{,}2')}, ${g10}. Tính ${m('N')} và lực ma sát trượt. So với kéo nằm ngang cùng ${u('100\\ \\mathrm N')}, ma sát giảm bao nhiêu?`, 4))}
 ${foot(2)}</section>`;
 
 const p3 = `<section class="page">
@@ -125,44 +125,44 @@ ${h3(1, 'II.3 · Tình huống 2: mặt phẳng nghiêng', '3·1')}
 <div>Chọn Ox <b>dọc mặt nghiêng, chiều xuống dốc</b>; Oy vuông góc mặt nghiêng.</div>
 <div>Chỉ một lực phải tách là ${f(12)}</div>
 <div>dọc dốc: ${f(20)} · vuông góc: ${f(20)}</div>
-<div style="margin-top:.6mm"><b>Oy:</b> ${f(30)} ${m('=0')}</div>
+<div style="margin-top:.6mm"><b>Oy:</b> ${f(36)} ${m('=0')}</div>
 <div>⇒ ${m('N=')} ${f(20)}, ${ck}lớn hơn ${ck}nhỏ hơn ${m('mg')}</div>
 <div style="margin-top:.6mm"><b>Ox</b> (trượt xuống): ${f(36)} ${m('=ma')}</div>
-<div>⇒ ${m('a=')} ${f(36)}</div>
-<div>Trong ${m('a')} không còn ${f(12)}. Bỏ ma sát: ${m('a=')} ${f(16)}</div></div>
+<div>⇒ ${m('a=')} ${f(36)}</div></div>
 ${H.docTach()}</div>
 ${h3(2, 'Thí nghiệm: hai hộp, một nhẹ một nặng', '3·2')}
 <div class="card" style="padding:1.2mm 3mm">
-<div><b>Làm:</b> hai hộp bút giống nhau, một rỗng, một nhét đầy đồ; đặt cạnh nhau ở đầu tấm ván nghiêng khoảng ${u('30^\\circ')}, thả cùng lúc.</div>
-<div><b>Quan sát:</b> ${f(60)}</div>
-<div><b>Rút ra:</b> gia tốc trượt ${f(50)} khối lượng.</div>
-<div><b>Vật nằm yên trên dốc</b> khi ${m('\\tan\\alpha\\le')} ${f(12)}; lúc đó ma sát nghỉ bằng ${f(20)} (không phải ${m('\\mu_n mg\\cos\\alpha')}).</div></div>
+<div><b>Làm:</b> hộp rỗng ${u('0{,}1\\ \\mathrm{kg}')}, hộp đầy ${u('0{,}4\\ \\mathrm{kg}')}, hai ván như nhau nghiêng ${u('30^\\circ')}, thả cùng lúc.</div>
+<div>Em chọn: ${f(10)} · <b>Quan sát</b> (sau clip): ${f(60)}</div>
+<div><b>Rút ra:</b> ${m('a')} ${f(30)} khối lượng (trong ${m('a')} không còn ${f(8)}); bỏ ma sát ${m('a=')} ${f(14)}</div>
+<div><b>Nằm yên</b> (${m('\\mu_n')}: hệ số ma sát nghỉ) khi ${m('\\tan\\alpha\\le')} ${f(12)}; ma sát nghỉ ${m('=')} ${f(20)}, không phải mức trần ${m('\\mu_n mg\\cos\\alpha')}.</div></div>
 ${h3(3, 'Làm nhanh', '3·3')}
-${box(cau(`<b>Câu 2.</b> Hộp trượt xuống dốc nghiêng ${u('30^\\circ')} (${u('\\sin 30^\\circ=0{,}5')}; ${u('\\cos 30^\\circ\\approx 0{,}866')}), ${u('\\mu=0{,}2')}, ${g10}. Gia tốc của hộp?`, 2))}
+${box(cau(`<b>Bài 2.</b> Hộp trượt xuống dốc nghiêng ${u('30^\\circ')} (${u('\\sin 30^\\circ=0{,}5')}; ${u('\\cos 30^\\circ\\approx 0{,}866')}), ${u('\\mu=0{,}2')}, ${g10}. Gia tốc của hộp?`, 2))}
 ${h3(4, 'II.4 · Tình huống 3: hai vật nối dây qua ròng rọc', '3·4')}
 <div class="card fig-side" style="${fs(44)};padding:1.2mm 3mm"><div>
 <div>Dây không dãn ⇒ hai vật cùng độ lớn ${f(25)}</div>
 <div>Dây, ròng rọc nhẹ, không ma sát ⇒ cùng ${f(25)}</div>
 <div>Chiều dương: ${f(50)}</div>
+<div class="hint">${m('T')}: lực căng dây · ${m('P_2=m_2g')} · ${Fms}: ma sát bàn lên ${m('m_1')}</div>
 <div style="margin-top:.6mm">${m('m_1')} (bàn có ma sát): ${f(30)} ${m('=m_1a')}</div>
 <div>${m('m_2')} (treo): ${f(30)} ${m('=m_2a')}</div>
 <div>Cộng hai phương trình: ${f(12)} triệt tiêu.</div></div>
 ${H.rongRoc()}</div>
-${box(cau(`<b>Câu 3.</b> Hình trên với ${u('m_1=4\\ \\mathrm{kg}')}, ${u('m_2=1\\ \\mathrm{kg}')}, ${u('\\mu=0{,}1')}, ${g10}. Hệ có chạy không? Nếu có, tính gia tốc.`, 2))}
+${box(cau(`<b>Bài 3.</b> Hình trên với ${u('m_1=4\\ \\mathrm{kg}')}, ${u('m_2=1\\ \\mathrm{kg}')}, ${u('\\mu=0{,}1')}, ${g10}. Hệ có chạy không? Nếu có, tính gia tốc.`, 2))}
 ${foot(3)}</section>`;
 
 const p4 = `<section class="page">
 ${head('ĐO THỬ · BỐN CÁI BẪY · TRẢ BÀI')}
 ${h3(1, 'II.5 · Đo thử: xe lăn kéo bởi quả nặng', '4·1')}
 <div class="fig-side" style="${fs(38)}"><div>
-<div style="margin-bottom:.6mm">Xe ${u('m_1=0{,}40\\ \\mathrm{kg}')} trên máng ngang, quả nặng ${u('m_2=0{,}10\\ \\mathrm{kg}')}. Thả từ nghỉ, đo ${m('t')} xe đi ${u('s=0{,}80\\ \\mathrm m')}; ${u('a=2s/t^2')}; ${g10}.</div>
+<div style="margin-bottom:.6mm">Xe ${u('m_1=0{,}40\\ \\mathrm{kg}')} trên máng ngang, quả nặng ${u('m_2=0{,}10\\ \\mathrm{kg}')}. Thả từ nghỉ, bấm giờ ${m('t')} xe đi ${u('s=0{,}80\\ \\mathrm m')}; ${u('a=2s/t^2')} (2 chữ số); ${g10}.</div>
 <table class="tbl-ct" style="font-size:var(--fs-sm)"><tr><th>Lần</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr>
-<tr><td>${m('t\\ (\\mathrm s)')}</td><td>0,93</td><td>0,95</td><td>0,92</td><td>0,94</td><td>0,93</td></tr>
+<tr><td>${m('t\\ (\\mathrm s)')}</td><td>0,93</td><td></td><td></td><td></td><td></td></tr>
 <tr><td>${m('a\\ (\\mathrm{m/s^2})')}</td><td></td><td></td><td></td><td></td><td></td></tr></table>
 </div>${H.xeLan()}</div>
 <div class="card" style="margin-top:.6mm;padding:1mm 3mm">
-<div>Dự đoán (bỏ ma sát): ${m('a=m_2g/(m_1+m_2)=')} ${f(12)}&nbsp;${u('\\mathrm{m/s^2}')} · ${m('a')} đo trung bình ${f(12)}&nbsp;${u('\\mathrm{m/s^2}')}</div>
-<div>Cả 5 lần lệch một phía ⇒ sai số ${f(25)}; do ${f(40)}</div></div>
+<div>Dự đoán từ ${m('a=m_2g/(m_1+m_2)=')} ${f(12)}&nbsp;${u('\\mathrm{m/s^2}')} · ${m('a')} đo trung bình 5 lần ${f(12)}&nbsp;${u('\\mathrm{m/s^2}')}</div>
+<div>So ${m('a')} đo với dự đoán: ${f(24)}; sai số ${f(20)}; do ${f(36)}</div></div>
 ${h3(2, 'III · Bốn cái bẫy', '4·2')}
 <div class="card fig-side" style="${fs(33)};padding:1mm 3mm"><div>
 <div class="trap">${ck}<span><b>Thiếu/thừa lực.</b> Không có “lực đà”: mỗi lực do một vật gây ra. Hộp trượt lên, tay đã buông, chịu các lực ${f(30)}</span></div>
@@ -183,12 +183,12 @@ ${foot(4)}</section>`;
 const p5 = `<section class="page">
 ${head('BÀI TẬP VỀ NHÀ · THỬ THÁCH · MANG VỀ')}
 ${K.btvn()}
-${h3(2, 'Kết quả tự kiểm tra (đề chiếu trên lớp)', '5·2')}
-${rkHai([1, 2, 3], [4, 5, 6])}
+${h3(2, 'Đề 1241 (20 câu, cuối tiết)', '5·2')}
+<div class="card soft" style="padding:1mm 3mm"><b>Điểm:</b> ……/20 &nbsp;· <b>Câu sai:</b> ${f(30)} &nbsp;· <b>Câu đoán mò:</b> ${f(22)}</div>
 ${h3(3, 'Thử thách phân tầng', '5·3')}
 <div class="fig-side" style="${fs(44)}">${box(cau(`${m('\\bigstar')} Vật trượt không ma sát, từ nghỉ, trên dốc ${u('30^\\circ')} (${u('\\sin 30^\\circ=0{,}5')}), ${g10}. Gia tốc? Tốc độ sau ${u('2\\ \\mathrm s')}?`, 2)
- + cau(`${m('\\bigstar\\bigstar')} <b>Bài toán ngược.</b> Ô tô ${u('1000\\ \\mathrm{kg}')} đang chạy ${u('20\\ \\mathrm{m/s}')} thì phanh gấp, trượt ${u('40\\ \\mathrm m')} rồi dừng (đường ngang, ${g10}). Lực hãm? Hệ số ma sát trượt?`, 2)
- + cau(`${m('\\bigstar\\bigstar\\bigstar')} <b>Vật chồng.</b> Ván ${u('2\\ \\mathrm{kg}')} trên sàn nhẵn, khối ${u('1\\ \\mathrm{kg}')} đặt trên ván, hệ số ma sát khối–ván ${u('0{,}3')} (nghỉ và trượt như nhau), ${g10}. Kéo ván ngang ${u('6\\ \\mathrm N')}: khối có trượt trên ván không? Kéo ${u('12\\ \\mathrm N')} thì sao?`, 4))}${H.vatChong()}</div>
+ + cau(`${m('\\bigstar\\bigstar')} <b>Bài toán ngược.</b> Ô tô ${u('1000\\ \\mathrm{kg}')} đang chạy ${u('20\\ \\mathrm{m/s}')} thì phanh gấp, trượt ${u('40\\ \\mathrm m')} rồi dừng (đường ngang, ${g10}). Lực hãm (chỉ là ma sát trượt)? Hệ số ma sát trượt?`, 2)
+ + cau(`${m('\\bigstar\\bigstar\\bigstar')} <b>Vật chồng</b> (hình bên). Ván ${u('2\\ \\mathrm{kg}')} trên sàn nhẵn, khối ${u('1\\ \\mathrm{kg}')} đặt trên ván, hệ số ma sát khối–ván ${u('0{,}3')} (nghỉ và trượt như nhau), ${g10}. Kéo ván ngang ${u('6\\ \\mathrm N')}: khối có trượt trên ván không? Kéo ${u('12\\ \\mathrm N')} thì sao?`, 4))}${H.vatChong()}</div>
 ${h3(4, 'VI · Mang về: điều em dễ quên nhất', '5·4')}
 ${box(wl('1.', 2) + wl('2.', 2) + wl('3.', 2))}
 ${foot(5)}</section>`;

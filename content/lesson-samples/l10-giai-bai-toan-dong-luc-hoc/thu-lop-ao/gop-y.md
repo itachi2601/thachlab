@@ -29,3 +29,29 @@ Ba file nói tới: **src** = `content/lesson-samples/l10-giai-bai-toan-dong-luc
 | 19 | **.mjs** p5 ô 5·3 (⭐⭐ ô tô, ⭐⭐⭐ vật chồng) | ⭐⭐ ghi rõ "lực hãm chỉ là ma sát trượt"; ⭐⭐⭐ thêm hình hai vật chồng. Cần build. | thấp | hs-4 "Ô 98… đề nói 'phanh gấp' nhưng không cho lực hãm"; "Ô 99… Tập không có hình, em tự vẽ" |
 | 20 | **ghi chú** ĐD6 + **.mjs** p4 ô 4·3 câu 6 ("Khi nào được dùng $F_{\text{ms}}=\mu N$") | Ghi đáp án mẫu câu 6 trong ghi chú: "khi vật trượt; nghỉ thì $F_{\text{ms}}\le\mu_nN$" để HS không trả lời theo ý trượt thôi. | thấp | hs-4 "Ô 84 (câu 6): Tập không hỏi 'trượt' hay 'nghỉ'; em trả lời theo ý ma sát trượt" |
 | 21 | **ghi chú** phân bổ phút ĐD3–ĐD5 (9–27) + **src** thứ tự màn 6a → 6b → 6c | ĐD3–5 mỗi điểm 6 phút nhưng 3–5 màn, có biểu quyết, bấm máy, clip; thứ tự lật Tập tr.4 → tr.1 → tr.5 trong 3 phút cuối. Cắt: bỏ ô 3·3 Câu 2 và Câu 3 về nhà đã có; ghi chú thêm cách bỏ màn khi trễ giờ. Chưa đo giờ thật nên mức thấp. | thấp | nhat-ky-thay "Phân bổ phút" và "Ô 1·3 / 1·1: mãi tới cuối tiết"; hs-3 "Màn 5a–5e" (5 màn trong một điểm dừng) |
+
+## Đã xử lý (2026-11-27)
+
+- 1 làm: màn 4b bỏ câu "còn $m$ không / bỏ ma sát" và nút nhận xét; chuyển sang màn 4d SAU "quan sát, rút ra" của clip. Tập: bỏ dòng "Trong $a$ không còn … Bỏ ma sát" ở ô 3·1, đưa vào dòng "Rút ra" ô 3·2 (điền sau clip). Ghi chú ĐD4: dặn không nói "không phụ thuộc $m$" trước clip.
+- 2 làm: màn 5c "Dự đoán từ $a=m_2g/(m_1+m_2)$" (không nêu "bỏ ma sát"); "dự đoán đã bỏ ma sát" chỉ hiện trong ô "rút ra" màn 5e. Tập ô 4·1: "Dự đoán từ …" và dòng "So $a$ đo với dự đoán: ___; sai số ___; do ___" (bỏ "lệch một phía" in sẵn).
+- 3 làm: Tập hàng $t$ chỉ in lần 1 (0,93), lần 2–5 để trống, chép từ màn 5e. Màn 5d: "Dự đoán là $a=2{,}0$", điểm dừng cuối "Tính $a$ lần 1 vào Tập · $t$ lần 2–5: màn sau".
+- 4 làm: Tập ô 5·2 thành "Đề 1241 (20 câu, cuối tiết)" + dòng "Điểm ……/20 · Câu sai · Câu đoán mò" (như L11 bài 20); màn 6b nhãn "tr.5 ô 5·2 · điểm, câu sai, câu đoán mò"; ghi chú ĐD6 sửa theo, bỏ cảnh báo "ô 5·2 lệch đề".
+- 5 làm: màn 5a thêm dòng "$T$: lực căng dây · $P_2=m_2g$ · $F_{\text{ms}}$: ma sát bàn lên $m_1$"; Tập ô 3·4 thêm đúng dòng đó. Hình (Tập và web) đã có nhãn $T$, $P_2$, $F_{\text{ms}}$ nên không vẽ lại.
+- 6 làm: màn mới 4n "Vật nằm yên trên dốc": định nghĩa $\mu_n$ (hệ số ma sát nghỉ) và mức trần $\mu_nN$ trước nút mở; Tập ô 3·2 dòng cuối "Nằm yên ($\mu_n$: hệ số ma sát nghỉ) khi … không phải mức trần $\mu_n mg\cos\alpha$".
+- 7 làm: Tập ô 3·2 theo màn/clip: "hộp rỗng 0,1 kg, hộp đầy 0,4 kg, hai ván như nhau nghiêng 30°" + ô "Em chọn" trước "Quan sát (sau clip)"; màn 4c dặn ghi chữ cái vào ô Em chọn.
+- 8 làm (ghi chú): ĐD4 thêm một câu ví dụ "ném hòn bi lên rồi rơi xuống" cho bẫy 3. Tập không thêm vì dòng bẫy 3 thêm chữ làm tr.4 tràn.
+- 9 làm: gộp với 6 (màn 4n + Tập 3·2); ghi chú ĐD4 dạy bẫy 4 bằng đúng ví dụ tủ 50 kg (ma sát 120 N, mức trần 200 N).
+- 10 làm: màn Về nhà "ô 5·1 Đề BTVN — mã đề BTVN: thầy ghi bảng"; ghi chú ĐD6 "ghi mã đề BTVN lên bảng trước khi hết giờ".
+- 11 làm: "Câu 1/2/3" ở ô 2·3, 3·3, 3·4 đổi thành "Bài 1/2/3" (Tập, màn 3c, 4e, Về nhà, ghi chú). Trả bài giữ "câu 1–6".
+- 12 làm (cách rẻ): màn 3c, 4e dặn "ghi chữ cái ra lề ô 2·3 / 3·3"; thêm ô "Em chọn" vào Tập làm tr.2 tràn nên không thêm.
+- 13 làm: Tập ô 4·1 "bấm giờ $t$ … (2 chữ số)", "$a$ đo trung bình 5 lần"; màn 5e thêm dòng "chép $t$ lần 2–5 · làm tròn 2 chữ số · trung bình cả 5 lần" và dòng phân biệt sai số ngẫu nhiên / hệ thống.
+- 14 làm: Hình 5 Tập đã có chú "Vẽ chiều (+) vào hình"; ghi chú ĐD5 dặn vẽ mẫu mũi tên (+) đi vòng theo dây lên bảng. Không vẽ thêm vào hình (hình Tập ở file hinh-l10-bai20.mjs, hình web ở theory.html — ngoài phạm vi).
+- 15 làm: màn 1b "Viết chữ cái vào ô Em chọn (Tập ô 1·2)"; ghi chú ĐD1 theo.
+- 16 làm một phần: Tập Bước 4 "chiếu lên Ox, Oy"; màn 1c thêm "(c.động thẳng biến đổi đều)" cho công thức không chứa $t$; màn 2a tên ba bước ẩn sau nút "Mở: tên bước" (không còn hiện sẵn để chép). Bỏ: gợi ý trong Tập ô 11–14 và tách ô 1·4 thành 3 dòng — làm tr.1 tràn.
+- 17 làm một phần: Tập ô 45 (Oy ô 3·1) nới 30 → 36 mm. Ô 33–34, 39–40 (tr.2) giữ, vì tr.2 dư 0 mm.
+- 18 làm: Tập ô 1·3 "Đã chọn: ___ · Đúng là: ___"; nút màn cầu trượt đổi "Mở: vì sao" (không lộ C); màn Về nhà + ghi chú ĐD6 nói rõ tích ☒ từng mục tiêu ô 1·1.
+- 19 làm: Tập ⭐⭐ "Lực hãm (chỉ là ma sát trượt)?"; ⭐⭐⭐ "Vật chồng (hình bên)" — hình vatChong đã có cạnh ô 5·3.
+- 20 làm: ghi chú ĐD6 thêm đáp án mẫu câu 6 (trượt: $\mu N$; nằm yên: ma sát nghỉ $\le\mu_nN$, tính từ cân bằng lực).
+- 21 bỏ: phân bổ phút chưa đo giờ thật (theo giao việc).
+- Thêm: 375px bảng màn 5e cuộn ngang (scrollWidth 388, có từ trước) → CSS mobile thu chữ/padding bảng `.bang`.
+- Kiểm: `kiem-tren-lop.mjs` ĐẠT — 24 màn, không màn tràn ở 1280×720 và 1920×1080, chữ hình nhỏ nhất 0,72, katex-error 0, 375px không cuộn ngang. PDF Tập 12 trang trước và sau (tr.1 dư 3 mm, tr.2 0, tr.3 4, tr.4 2, tr.5 7), katexErr 0.
