@@ -1,52 +1,69 @@
 {
   "id": "tn-l10-roi-tu-do-03",
   "ten": "Đo g bằng nam châm điện, cổng quang và đồng hồ hiện số",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-roi-tu-do-03-20261110.mp4",
-  "tong_giay": 49.9,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-roi-tu-do-03-20261127.mp4",
+  "tong_giay": 49.5,
   "o": [
     {
       "khoa": "gia_thuyet",
       "giay": 0,
-      "chu": "Tại một nơi, vật rơi tự do với cùng gia tốc g. Từ s = ½gt² suy ra g = 2s/t²; số đo có thể lệch khỏi 9,8 m/s².",
-      "kiem": "Năm giá trị g đo được so với 9,8 m/s² ra sao?"
+      "chu": "Bi rơi nhanh dần: mỗi 20 cm sau mất ít thời gian hơn. Từ s = ½gt² suy ra g = 2s/t².",
+      "kiem": "20 cm cuối mất bao lâu?"
     },
     {
       "khoa": "du_doan",
-      "giay": 4.2,
-      "chu": "So với 9,8 m/s², năm giá trị g thế nào?"
+      "giay": 3.2,
+      "chu": "20 cm đầu mất 0,205 s. 20 cm cuối (0,80 → 1,00 m) mất bao lâu?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 10.7,
-      "chu": "Nam châm điện giữ bi; cổng quang đặt ở s = 0,20 đến 1,00 m; đồng hồ hiện số đếm từ lúc ngắt điện tới lúc bi qua cổng."
+      "giay": 9.5,
+      "chu": "Nam châm điện, cổng quang, đồng hồ hiện số."
     },
     {
       "khoa": "quan_sat",
-      "giay": 28.4,
-      "chu": "g: 9,52; 9,58; 9,63; 9,66; 9,66 m/s²."
+      "giay": 16.9,
+      "chu": "Mỗi 20 cm: 0,205; 0,084; 0,064; 0,054; 0,048 s. 20 cm cuối: 0,455 − 0,407 = 0,048 s."
     },
     {
       "khoa": "rut_ra",
-      "giay": 31.8,
-      "chu": "g sát nhau, gần 9,8: bi rơi cùng gia tốc."
+      "giay": 24.1,
+      "chu": "g = 2s/t²: 9,52; 9,58; 9,63; 9,66; 9,66 m/s², sát nhau, gần 9,8: cùng một gia tốc."
     },
     {
       "khoa": "chua_noi",
-      "giay": 35.0,
-      "chu": "Vì sao cả năm giá trị đều nhỏ hơn 9,8? Clip chưa giải thích."
+      "giay": 39.1,
+      "chu": "Cả năm giá trị g đều nhỏ hơn 9,8: vì sao? Clip chưa giải thích."
     }
   ],
   "dung_dua": {
-    "giay": 10.55,
-    "cau_hoi": "Đo t ở 5 quãng rơi s = 0,20 đến 1,00 m rồi tính g = 2s/t². So với 9,8 m/s², năm giá trị g thế nào?",
+    "giay": 8.95,
+    "cau_hoi": "Cổng quang ở s = 0,20 m: đồng hồ hiện 0,205 s (20 cm đầu). Bi đi 20 cm cuối, từ 0,80 m tới 1,00 m, mất bao lâu?",
     "chon": [
-      "A. Đều bằng 9,8",
-      "B. Lúc lớn hơn, lúc nhỏ hơn 9,8",
-      "C. Đều nhỏ hơn 9,8",
-      "D. Đều lớn hơn 9,8"
+      "A. 0,05 s",
+      "B. 0,10 s",
+      "C. 0,21 s",
+      "D. 0,41 s"
+    ],
+    "dung": 0,
+    "giai_thich_dung": "Đồng hồ hiện 0,407 s ở 0,80 m và 0,455 s ở 1,00 m: 20 cm cuối mất 0,455 − 0,407 = 0,048 s ≈ 0,05 s, ngắn hơn 20 cm đầu khoảng 4 lần vì bi rơi nhanh dần.",
+    "giai_thich_sai": "Bi rơi nhanh dần nên càng xuống, mỗi 20 cm càng mất ít thời gian: 0,455 − 0,407 = 0,048 s, không phải bằng hay dài hơn 0,205 s."
+  },
+  "cau_chot": {
+    "giay": 43.6,
+    "cau_hoi": "Lấy g = 9,8 m/s². Đặt cổng quang cách điểm thả 1,20 m. Theo mô hình rơi tự do, bi tới cổng mất bao lâu?",
+    "chon": [
+      "A. 0,24 s",
+      "B. 0,35 s",
+      "C. 0,49 s",
+      "D. 0,55 s"
     ],
     "dung": 2,
-    "giai_thich_dung": "Năm giá trị từ 9,52 đến 9,66 m/s²: sát nhau, gần 9,8 nhưng đều nhỏ hơn. Vì sao lệch cùng một phía? Câu hỏi dưới bảng trong bài sẽ hỏi.",
-    "giai_thich_sai": "Xem cảnh Kết quả: g tính ra từ 9,52 đến 9,66 m/s², cả năm chấm đều nằm bên trái vạch 9,8."
+    "giai_thich": [
+      "0,24 là 2s : g, chưa lấy căn: t = √(2 · 1,20 : 9,8) = √0,245 ≈ 0,49 s.",
+      "0,35 s là quên số 2 (√(1,20 : 9,8)). Đúng: t = √(2s : g) = √(2,40 : 9,8) ≈ 0,49 s.",
+      "s = ½gt² → t = √(2s : g) = √(2,40 : 9,8) ≈ 0,495 s ≈ 0,49 s.",
+      "0,55 s là coi t tỉ lệ với s (0,455 × 1,2). t tỉ lệ với √s: t = √(2,40 : 9,8) ≈ 0,49 s."
+    ]
   }
 }

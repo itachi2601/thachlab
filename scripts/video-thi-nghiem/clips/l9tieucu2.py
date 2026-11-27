@@ -10,6 +10,8 @@
 #   Cau 4 (do toi mep gia), Cau 5 (trung diem khoang net), Cau 6 (do mot lan) -> khong dung lam bay.
 #   Khac tieucu-03 (anh bang vat, f = L/4): khong noi toi L, 2f.
 # THU NGHI: thau kinh khac, (d = 18, d' = 36) va (d = 36, d' = 18) cm -> f = 12 cm moi lan, f tb = 12 cm (bay: 13,5 cm).
+# Dung lai 27/11/2026 theo cong moi (viec 4, L9 nhom D): chu >= 55 (ra >= 48 px), K10, thanh dem 70 px, Bay hai hang
+#   (11,0 ✗ / 10,0 ✓) moi nhip >= 3 s, man chot KHONG goi y. Du doan + chot giu nhu cu.
 from engine import *
 
 AX, LXF, S, HP = 500, 580, 13, 90           # truc chinh, thau kinh co dinh, px/cm, chieu cao vat (px)
@@ -18,6 +20,17 @@ RAIL = 790; LH = 150
 ROWS = [(15.0, 30.4, 10.0), (20.0, 19.7, 9.9), (25.0, 16.9, 10.1), (30.0, 14.6, 9.8), (40.0, 13.6, 10.1)]
 F_TB = 9.98
 DRED = (185, 28, 28); DGREEN = (21, 110, 55); LBLUE = (147, 197, 253)
+FS, FM = 58, 56
+CH = [(18, 36), (36, 18)]                    # ca chot (kho ghi_chu): f = 12 cm moi lan
+
+
+def _kiem():
+    import json, os
+    k = json.load(open(os.path.join(HERE, "..", "..", "content", "thi-nghiem", "tn-l9-tieucu-02.json")))
+    assert [tuple(h) for h in k["so_lieu_mau"]["hang"]] == ROWS
+    for dd, dp, ff in ROWS: assert abs(dd * dp / (dd + dp) - ff) < 0.051
+    assert abs(sum(r[2] for r in ROWS) / 5 - F_TB) < 1e-9 and "f = 648/54 = 12 cm" in k["so_lieu_mau"]["ghi_chu"]
+    assert all(a * b / (a + b) == 12 for a, b in CH)
 
 
 def vn(x, n=1):
@@ -54,7 +67,7 @@ def bench(d, d_cm, sx, sharp, rays=1.0, labels=True):
     d.line([(20, AX), (1060, AX)], fill=A(NAVY, 0.6), width=3)
     d.rounded_rectangle([sx - 9, AX - 130, sx + 9, AX + 222], radius=4, fill=WHITE, outline=NAVY, width=3)
     lens(d)
-    dot(d, LXF + FP, AX, 7, NAVY); text(d, (LXF + FP, AX - 42), "F'", 40, NAVY)
+    dot(d, LXF + FP, AX, 7, NAVY); text(d, (LXF + FP, AX - 44), "F'", FM, NAVY)
     arrow(d, (ox, AX), (ox, AX - HP), RED, w=8, head=22)
     if sharp and rays > 0:
         dp = dtrue(d_cm) * S; k = dp / (d_cm * S)
@@ -66,27 +79,34 @@ def bench(d, d_cm, sx, sharp, rays=1.0, labels=True):
         q2 = at(B, Bt, sx); d.line([B, q2], fill=c, width=4); chev(d, B, (LXF, AX), c)
         arrow(d, (sx, AX), (sx, (q1[1] + q2[1]) / 2), BLUE, w=8, head=22)
     if labels:
-        text(d, (ox + 8, AX - HP - 40), "vật", 40, RED, anchor="lm")
-        text(d, (LXF, AX - LH - 38), "thấu kính", 40, BLUE)
-        text(d, (sx, AX - 168), "màn", 40, NAVY)
+        text(d, (ox + 8, AX - HP - 44), "vật", FM, RED, anchor="lm")
+        text(d, (LXF, AX - LH - 42), "thấu kính", FM, BLUE)
+        text(d, (min(sx, 1000), AX - 172), "màn", FM, NAVY)
     return ox
 
 
 TX = (250, 540, 830)
-def table(d, n_rows, n_f, hl=-1, y0=850, a=1.0, fa=None):
-    card(d, (60, y0, 1020, y0 + 110 + max(1, n_rows) * 74), fill=A(WHITE, a), outline=A(LIGHT, a), w=3)
+RH = 80
+def table(d, n_rows, n_f, hl=-1, y0=850, a=1.0, fa=None, under=None):
+    card(d, (60, y0, 1020, y0 + 112 + 5 * RH), fill=A(WHITE, a), outline=A(LIGHT, a), w=3)
+    if under: under(d)
     for x, h in zip(TX, ("d (cm)", "d' (cm)", "f (cm)")):
-        text(d, (x, y0 + 56), h, 42, MUTED, alpha=a)
+        text(d, (x, y0 + 56), h, FM, NAVY, alpha=a)
     d.line([(90, y0 + 100), (990, y0 + 100)], fill=A(LIGHT, a), width=3)
     for i, (dd, dp, ff) in enumerate(ROWS):
-        y = y0 + 138 + i * 74
-        if i == hl: d.rounded_rectangle([80, y - 33, 1000, y + 33], radius=14, fill=A((254, 243, 199), a))
+        y = y0 + 144 + i * RH
+        if i == hl: d.rounded_rectangle([80, y - 36, 1000, y + 36], radius=14, fill=A((254, 243, 199), a))
         if i < n_rows:
-            text(d, (TX[0], y), vn(dd), 44, INK, alpha=a)
-            text(d, (TX[1], y), vn(dp), 44, INK, alpha=a)
+            text(d, (TX[0], y), vn(dd), FS, INK, alpha=a)
+            text(d, (TX[1], y), vn(dp), FS, INK, alpha=a)
         if i < n_f:
-            text(d, (TX[2], y), vn(ff), 44, DGREEN, alpha=a * (1 if fa is None else fa(i)))
-    return y0 + 120 + 5 * 74
+            text(d, (TX[2], y), vn(ff), FS, DGREEN, alpha=a * (1 if fa is None else fa(i)))
+
+
+def pill(d, s, y, a, color=NAVY, size=FM):
+    pw = tw(d, s, F(size)) + 60
+    card(d, (W / 2 - pw / 2, y - 40, W / 2 + pw / 2, y + 40), fill=A(color, a), r=38)
+    text(d, (W / 2, y), s, size, WHITE, alpha=a)
 
 
 # ---------------- canh 1: Du doan (K10) ----------------
@@ -97,18 +117,17 @@ def s_hook(img, d, t, sc):
     a = appear(t, M[1] - 0.2, 0.5)
     if a <= 0: return
     y0 = 870 + (1 - a) * 40
-    card(d, (50, y0, 1030, y0 + 640), fill=A(WHITE, a), outline=A(PURPLE, a), w=6)
-    pw = tw(d, "DỰ ĐOÁN", F(40)) + 52
-    card(d, (W / 2 - pw / 2, y0 + 26, W / 2 + pw / 2, y0 + 90), fill=A(PURPLE, a), r=32)
-    text(d, (W / 2, y0 + 58), "DỰ ĐOÁN", 40, WHITE, alpha=a)
-    ctext(d, y0 + 270, "Dịch vật ra xa thấu kính\n(15 cm → 40 cm). Muốn ảnh\nnét lại, màn phải dịch sao?",
-          50, INK, maxw=930, alpha=a)
-    text(d, (W / 2, y0 + 500), "Chọn đáp án ở khung câu hỏi", 40, MUTED, bold=False, alpha=a)
-    tc, tend = M[1] + 0.6, sc["T"] - 0.3
+    card(d, (50, y0, 1030, y0 + 640), fill=A(WHITE, a), outline=A(NAVY, a), w=6)
+    pw = tw(d, "DỰ ĐOÁN", F(FM)) + 56
+    card(d, (W / 2 - pw / 2, y0 + 22, W / 2 + pw / 2, y0 + 96), fill=A(NAVY, a), r=36)
+    text(d, (W / 2, y0 + 59), "DỰ ĐOÁN", FM, WHITE, alpha=a)
+    for j, s_ in enumerate(("Dịch vật ra xa: 15 → 40 cm.", "Muốn ảnh nét lại,", "màn phải dịch thế nào?")):
+        text(d, (W / 2, y0 + 170 + j * 82), s_, 60, INK, alpha=a)
+    tc, tend = M[1] + 0.3, sc["T"] - 0.1
     if t > tc:
         p = clamp((t - tc) / (tend - tc))
-        d.rounded_rectangle([140, y0 + 578, 940, y0 + 590], radius=6, fill=A(LIGHT, a))
-        d.rounded_rectangle([140, y0 + 578, 140 + 800 * (1 - p), y0 + 590], radius=6, fill=A(PURPLE, a))
+        d.rounded_rectangle([110, y0 + 520, 970, y0 + 590], radius=35, fill=A((226, 232, 240), a))
+        if p < 1: d.rounded_rectangle([110, y0 + 520, 110 + max(70, 860 * (1 - p)), y0 + 590], radius=35, fill=A(NAVY, a))
 
 
 # ---------------- canh 2: Tien hanh ----------------
@@ -134,109 +153,109 @@ def do_state(t):
 def s_do(img, d, t, sc):
     st = do_state(t)
     bench(d, st["d"], st["sx"], st["sharp"])
-    table(d, st["rows"], 0, hl=st["rows"] - 1 if st["sharp"] and st["rows"] else -1, a=appear(t, 0.2, 0.4))
+    table(d, st["rows"], 0, hl=st["rows"] - 1 if st["sharp"] and st["rows"] else -1)
 
 
 # ---------------- canh 3: Dap an + rut ra ----------------
+DA_F, DA_R = 1.0, 5.4
 def s_dapan(img, d, t, sc):
-    M = sc["M"]
-    ka = appear(t, 0.1, 0.5)
-    lab = "ĐÁP ÁN · màn dịch lại gần"
-    pw = tw(d, lab, F(42)) + 56
-    card(d, (W / 2 - pw / 2, 226, W / 2 + pw / 2, 292), fill=A(NAVY, ka), r=33)
-    text(d, (W / 2, 259), lab, 42, WHITE, alpha=ka)
+    pill(d, "ĐÁP ÁN: màn dịch lại gần", 260, appear(t, 0.15, 0.4))
     dd, dp, _ = ROWS[-1]
     bench(d, dd, LXF + dp * S, True, rays=0.5, labels=False)
-    f0 = M[0] + 0.2
-    yb = table(d, 5, 5, fa=lambda i: appear(t, f0 + 0.35 * i, 0.35))
-    k2 = appear(t, M[1] + 0.2, 0.4)
+    def under(d):                                              # o f to nen xanh nhat khi tinh xong tung lan
+        for i in range(5):
+            kf = appear(t, DA_F + 0.6 * i, 0.4)
+            if kf > 0:
+                y = 850 + 144 + i * RH
+                d.rounded_rectangle([80, y - 36, 80 + 920 * kf, y + 36], radius=16, fill=(187, 247, 208))
+    table(d, 5, 5, fa=lambda i: appear(t, DA_F + 0.6 * i + 0.2, 0.3), under=under)
+    k2 = appear(t, DA_R, 0.5)
     if k2 > 0:
-        card(d, (60, yb + 24, 1020, yb + 214), fill=A((236, 253, 243), k2), outline=A(GREEN, k2), r=22, w=3)
-        text(d, (W / 2, yb + 84), "f trung bình = " + vn(F_TB, 2) + " cm", 46, DGREEN, alpha=k2)
-        text(d, (W / 2, yb + 156), "làm tròn: 10,0 cm", 44, INK, alpha=k2)
+        pw = 110 + 25 * math.sin(2.4 * (t - DA_R)) ** 2          # khung cot f nhap nhay: lay trung binh ca cot
+        d.rounded_rectangle([TX[2] - pw, 850 + 100, TX[2] + pw, 850 + 112 + 5 * RH - 6], radius=20, outline=A(GREEN, k2), width=6)
+        card(d, (60, 1390, 1020, 1530), fill=A((236, 253, 243), k2), outline=A(GREEN, k2), r=26, w=4)
+        text(d, (W / 2, 1460), "f trung bình = 9,98 ≈ 10,0 cm", FS, DGREEN, alpha=k2)
 
 
-# ---------------- canh 4: Bay roi Chua noi duoc ----------------
+# ---------------- canh 4: Bay + chua noi duoc ----------------
 D_TB = sum(r[0] for r in ROWS) / 5; DP_TB = sum(r[1] for r in ROWS) / 5; F_SAI = D_TB * DP_TB / (D_TB + DP_TB)
-
-
+BAY_R, BAY_E = 3.4, 6.6
 def s_bay(img, d, t, sc):
-    M = sc["M"]
-    k2 = appear(t, M[1] - 0.1, 0.45)
-    a1 = appear(t, 0.2, 0.45) * (1 - k2)
     dd, dp, _ = ROWS[-1]
     bench(d, dd, LXF + dp * S, True, rays=0.4, labels=False)
+    a1 = appear(t, 0.3, 0.45)
     if a1 > 0:
-        k3 = a1 * appear(t, 0.5, 0.5); k4 = a1 * appear(t, M[0] + 2.3, 0.5)
-        y0 = 860
-        card(d, (40, y0, 1040, lerp(y0 + 370, y0 + 580, k4 / max(a1, 1e-3))), fill=A(WHITE, a1), outline=A(DRED, a1), w=6)
-        pw = tw(d, "BẪY", F(40)) + 52
-        card(d, (W / 2 - pw / 2, y0 + 28, W / 2 + pw / 2, y0 + 92), fill=A(DRED, a1), r=32)
-        text(d, (W / 2, y0 + 60), "BẪY", 40, WHITE, alpha=a1)
-        l1 = "Trung bình: d = " + vn(D_TB) + "; d' = " + vn(DP_TB, 2)
-        l2 = "f = " + vn(D_TB) + " · " + vn(DP_TB, 2) + " : " + vn(D_TB + DP_TB, 2) + " = " + vn(F_SAI)
-        text(d, (W / 2, y0 + 160), l1, 42, MUTED, alpha=k3)
-        text(d, (450, y0 + 240), l2, 44, DRED, alpha=k3)
-        if k3 > 0:
-            hw = tw(d, l2, F(44)) / 2 + 8; d.line([(450 - hw, y0 + 242), (450 + hw, y0 + 242)], fill=A(DRED, k3), width=5)
-        text(d, (930, y0 + 240), "✗", 100, DRED, alpha=k3)
-        text(d, (W / 2, y0 + 320), "tính f từ d, d' trung bình", 42, DRED, alpha=k3)
-        text(d, (450, y0 + 440), "trung bình 5 giá trị f", 46, DGREEN, alpha=k4)
-        text(d, (450, y0 + 512), "= 10,0 cm", 46, DGREEN, alpha=k4)
-        text(d, (910, y0 + 470), "✓", 100, DGREEN, alpha=k4)
-    if k2 > 0:
-        y0 = 950 + (1 - k2) * 30
-        card(d, (40, y0, 1040, y0 + 320), fill=A(WHITE, k2), outline=A(NAVY, k2), w=6)
-        text(d, (W / 2, y0 + 70), "Chưa nói được", 46, NAVY, alpha=k2)
-        for j, l1 in enumerate(("• Số liệu minh hoạ", "• Chưa tính sai số của f")):
-            kk = k2 * appear(t, M[1] + 0.1 + 0.3 * j, 0.4)
-            text(d, (90, y0 + 165 + j * 95), l1, 44, INK, anchor="lm", alpha=kk)
+        pill(d, "BẪY", 880, a1, color=DRED)
+        card(d, (40, 940, 1040, 1140), fill=A(WHITE, a1), outline=A(DRED, a1), w=5)
+        text(d, (90, 992), "Trung bình d, d' rồi tính:", FM, DRED, anchor="lm", alpha=a1)
+        l2 = vn(D_TB) + " · " + vn(DP_TB, 2) + " : " + vn(D_TB + DP_TB, 2) + " = " + vn(F_SAI)
+        text(d, (90, 1080), l2, FS, DRED, anchor="lm", alpha=a1)
+        text(d, (980, 1040), "✗", 80, DRED, alpha=a1)
+    a2 = appear(t, BAY_R, 0.45)
+    if a2 > 0:
+        card(d, (40, 1160, 1040, 1350), fill=A(WHITE, a2), outline=A(DGREEN, a2), w=5)
+        text(d, (90, 1212), "Trung bình 5 giá trị f:", FM, DGREEN, anchor="lm", alpha=a2)
+        text(d, (90, 1295), "= 10,0 cm", FS, DGREEN, anchor="lm", alpha=a2)
+        text(d, (980, 1255), "✓", 80, DGREEN, alpha=a2)
+    k3 = appear(t, BAY_E, 0.45)
+    if k3 > 0:
+        card(d, (40, 1370, 1040, 1565), fill=A(WHITE, k3), outline=A(NAVY, k3), w=5)
+        text(d, (W / 2, 1420), "Chưa nói được:", FS, NAVY, alpha=k3)
+        text(d, (W / 2, 1505), "số liệu minh hoạ; sai số của f", FM, INK, alpha=k3)
 
 
-# ---------------- canh 5: Chot + THU NGHI ----------------
+# ---------------- canh 5: Chot + THU NGHI (cau chot A-D o khung web) ----------------
+END_Q, END_C = 0.2, 4.3
 def s_end(img, d, t, sc):
-    """THU NGHI: thau kinh khac, (18; 36) va (36; 18) cm -> f = 12 cm (bay: 13,5). Goi y tre 2,6 s, trung tinh."""
-    M = sc["M"]; k0 = appear(t, 0.2, 0.5)
-    card(d, (60, 490, 1020, 790), fill=A((236, 253, 243), k0), outline=A(GREEN, k0), w=6)
-    ctext(d, 640, "Tính f từng lần,\nrồi lấy trung bình các f", 52, GREEN, maxw=880, alpha=k0)
-    k1 = appear(t, M[0] + 0.6, 0.5)
-    if k1 <= 0: return
-    kh = appear(t, M[0] + 0.9 + 2.6, 0.5)
-    card(d, (40, 850, 1040, lerp(1340, 1610, kh)), fill=A(WHITE, k1), outline=A(ORANGE, k1), w=6)
-    pw = tw(d, "THỬ NGHĨ", F(40)) + 52
-    card(d, (W / 2 - pw / 2, 880, W / 2 + pw / 2, 944), fill=A(ORANGE, k1), r=32)
-    text(d, (W / 2, 912), "THỬ NGHĨ", 40, WHITE, alpha=k1)
-    ctext(d, 1130, "Thấu kính khác, đo hai lần:\nd = 18, d' = 36 (cm) rồi\nd = 36, d' = 18 (cm).\nf trung bình là bao nhiêu?",
-          48, INK, maxw=930, alpha=appear(t, M[0] + 0.9, 0.5))
-    if kh > 0:
-        card(d, (110, 1340, 970, 1580), fill=A((255, 247, 237), kh), r=24)
-        ctext(d, 1395, "Gợi ý", 40, INK, alpha=kh)
-        ctext(d, 1495, "Nhìn lại bảng vừa rồi", 46, ORANGE, maxw=820, alpha=kh)
+    k0 = appear(t, END_C, 0.5)
+    card(d, (50, 265, 1030, 425), fill=A((236, 253, 243), k0), outline=A(GREEN, k0), w=6)
+    text(d, (W / 2, 345), "Lấy trung bình các giá trị f", FM, DGREEN, alpha=k0)
+    k1 = appear(t, END_Q, 0.5)
+    card(d, (40, 455, 1040, 1560), fill=A(WHITE, k1), outline=A(ORANGE, k1), w=6)
+    pw = tw(d, "THỬ NGHĨ", F(FM)) + 56
+    card(d, (W / 2 - pw / 2, 480, W / 2 + pw / 2, 556), fill=A(ORANGE, k1), r=38)
+    text(d, (W / 2, 518), "THỬ NGHĨ", FM, WHITE, alpha=k1)
+    text(d, (W / 2, 630), "Thấu kính khác, đo hai lần.", FS, INK, alpha=k1)
+    text(d, (W / 2, 712), "f trung bình bằng bao nhiêu?", FS, INK, alpha=k1)
+    if k1 > 0:   # bang hai lan do, cot f de trong
+        y0 = 830
+        card(d, (110, y0, 970, y0 + 340), fill=A(WHITE, k1), outline=A(LIGHT, k1), w=3)
+        for x, h in zip((300, 540, 780), ("d (cm)", "d' (cm)", "f (cm)")):
+            text(d, (x, y0 + 56), h, FM, NAVY, alpha=k1)
+        d.line([(140, y0 + 100), (940, y0 + 100)], fill=A(LIGHT, k1), width=3)
+        kq = 0.55 + 0.45 * math.sin(2.4 * t) ** 2
+        for j, (a_, b_) in enumerate(CH):
+            y = y0 + 160 + j * 100
+            text(d, (300, y), str(a_), FS, INK, alpha=k1); text(d, (540, y), str(b_), FS, INK, alpha=k1)
+            text(d, (780, y), "?", FS, ORANGE, alpha=k1 * kq)
+        text(d, (W / 2, 1360), "?", 150, ORANGE, alpha=k1 * kq)
 
 
 def _cues(clip):
     sc = {s["key"]: s for s in clip["scenes"]}
     h, do, da, b, e = sc["hook"], sc["do"], sc["dapan"], sc["bay"], sc["end"]
-    out = [(h["t0"] + h["M"][1] - 0.2, "open"), (h["t0"] + h["T"] - 0.6, "ding")]
-    out += [(do["t0"] + T1, "tick")] + [(do["t0"] + T1 + 0.4 + (i - 1) * STEP + MV + MS, "tick") for i in range(1, 5)]
-    out += [(da["t0"] + 0.1, "ding"), (b["t0"] + 0.5, "buzz"), (e["t0"] + e["M"][0] + 0.6, "open")]
+    out = [(h["t0"] + h["M"][1] - 0.2, "open"), (h["t0"] + h["T"] - 0.1, "ding")]
+    out += [(do["t0"] + T1, "tap")] + [(do["t0"] + T1 + 0.4 + (i - 1) * STEP + MV + MS, "tap") for i in range(1, 5)]
+    out += [(da["t0"] + 0.1, "ding"), (b["t0"] + 0.3, "buzz"), (e["t0"] + END_Q + 0.1, "open")]
     return out
 
 
 CLIP = dict(id="tn-l9-tieucu-02", header="KHTN 9 · THÍ NGHIỆM", footer="Đo tiêu cự thấu kính · thachlab.id.vn",
             cues=_cues, scenes=[
- dict(key="hook", title="Đổi vị trí vật 5 lần", draw=s_hook, tail=0.8, caps=[
+ dict(key="hook", title="Đổi vị trí vật 5 lần", draw=s_hook, tail=0.3, caps=[
    ("Ảnh nét trên màn khi d = 15 cm.", 3.0),
-   ("Tự đoán trước khi xem tiếp.", 6.0)]),
- dict(key="do", title="Tiến hành", draw=s_do, tail=0.5, caps=[
+   ("Dừng lại, tự đoán.", 5.4)]),
+ dict(key="do", title="Tiến hành", draw=s_do, tail=0.4, caps=[
    ("Dịch vật xa dần, tìm lại ảnh nét.", 5.0),
-   ("Đọc d' tới 1 mm.", 4.6)]),
- dict(key="dapan", title="Kết quả", draw=s_dapan, tail=0.7, caps=[
-   ("Mỗi lần tính f = d·d' : (d + d').", 3.8),
-   ("Năm f hơi khác nhau.", 4.2)]),
- dict(key="bay", title="Bẫy và giới hạn", draw=s_bay, tail=0.8, caps=[
-   ("Lấy trung bình d, d' trước?", 3.8),
-   ("Chưa nói được điều gì?", 4.2)]),
- dict(key="end", title="Chốt lại", draw=s_end, tail=1.3, caps=[
-   ("Dừng video, tự trả lời.", 6.6)]),
+   ("Đọc d' tới 1 mm.", 5.0)]),
+ dict(key="dapan", title="Kết quả", draw=s_dapan, tail=0.4, caps=[
+   ("Mỗi lần tính một giá trị f.", 4.4),
+   ("Năm f hơi khác nhau.", 4.4)]),
+ dict(key="bay", title="Bẫy và giới hạn", draw=s_bay, tail=0.3, caps=[
+   ("So hai cách lấy trung bình.", BAY_E - 0.4),
+   ("Còn bỏ ngỏ.", 3.6)]),
+ dict(key="end", title="Chốt lại", draw=s_end, tail=0.3, caps=[
+   ("Dừng lại, tự trả lời.", 8.2)]),
 ])
+
+_kiem()

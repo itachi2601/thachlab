@@ -1,8 +1,8 @@
 {
   "id": "tn-l9-tieucu-02",
   "ten": "Đo d, d' ở năm vị trí vật",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-tieucu-02-20261118.mp4",
-  "tong_giay": 48.1,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-tieucu-02-20261127.mp4",
+  "tong_giay": 49.7,
   "o": [
     {
       "khoa": "gia_thuyet",
@@ -12,32 +12,32 @@
     },
     {
       "khoa": "du_doan",
-      "giay": 4.2,
+      "giay": 4.0,
       "chu": "Dịch vật ra xa thấu kính (15 cm → 40 cm). Muốn ảnh nét lại, màn phải dịch sao?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 11.0,
+      "giay": 9.9,
       "chu": "Ghế quang học, thấu kính f cỡ 10 cm, màn, vật mũi tên."
     },
     {
       "khoa": "quan_sat",
-      "giay": 19.5,
+      "giay": 20.7,
       "chu": "d tăng 15 → 40 cm thì d' giảm 30,4 → 13,6 cm."
     },
     {
       "khoa": "rut_ra",
-      "giay": 25.7,
+      "giay": 26.1,
       "chu": "Tính f từng lần rồi lấy trung bình: f̄ = 9,98 cm, làm tròn 10,0 cm."
     },
     {
       "khoa": "chua_noi",
-      "giay": 34.8,
+      "giay": 36.9,
       "chu": "Số liệu minh hoạ; chưa tính sai số của f."
     }
   ],
   "dung_dua": {
-    "giay": 10.8,
+    "giay": 9.75,
     "cau_hoi": "Dịch vật ra xa thấu kính (15 cm → 40 cm). Muốn ảnh nét lại, màn phải dịch sao?",
     "chon": [
       "A. Ra xa thấu kính",
@@ -48,5 +48,22 @@
     "dung": 1,
     "giai_thich_dung": "d' giảm từ 30,4 cm xuống 13,6 cm khi d tăng từ 15 lên 40 cm: vật càng xa, ảnh càng gần F'.",
     "giai_thich_sai": "So cột d' trong bảng khi d tăng dần."
+  },
+  "cau_chot": {
+    "giay": 41.6,
+    "cau_hoi": "Một thấu kính hội tụ khác, đo hai lần: d = 18 cm, d' = 36 cm rồi d = 36 cm, d' = 18 cm. Tiêu cự trung bình là bao nhiêu?",
+    "chon": [
+      "A. 12 cm",
+      "B. 13,5 cm",
+      "C. 18 cm",
+      "D. 27 cm"
+    ],
+    "dung": 0,
+    "giai_thich": [
+      "Mỗi lần f = 18·36 : 54 = 12 cm, trung bình 12 cm.",
+      "13,5 cm là tính từ d, d' đã lấy trung bình (27·27 : 54): đúng cái bẫy vừa xem.",
+      "18 cm chỉ là một giá trị d hoặc d', không phải tiêu cự.",
+      "27 cm là trung bình cộng của d và d', chưa dùng công thức tính f."
+    ]
   }
 }

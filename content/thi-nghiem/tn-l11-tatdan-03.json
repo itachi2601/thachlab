@@ -55,7 +55,7 @@
       ["ngoi_yen_va_nhun", 2, 29.0, 40.0],
       ["ngoi_yen_va_nhun", 3, 24.8, 40.0]
     ],
-    "ghi_chu": "A_ngoi_yen = 40 * exp(-0,08 * n * 2) = 40 * exp(-0,16 n), làm tròn 0,1 cm. A_nhun giữ 40 cm. Bài HTML không in bảng số này; hai lần làm là ngồi yên và nhún."
+    "ghi_chu": "A_ngoi_yen = 40 * exp(-0,08 * n * 2) = 40 * exp(-0,16 n), làm tròn 0,1 cm. A_nhun giữ 40 cm. Bài HTML không in bảng số này; hai lần làm là ngồi yên và nhún. Câu chốt clip tatdan3 (bản 27/11/2026): thả từ 30 cm, nhịp 1 ngồi yên tụt 30·(1 − e^(−0,16)) ≈ 4,4 cm, từ nhịp 2 nhún bù đúng phần mất → hết nhịp 3 còn ≈ 25,6 cm."
   },
   "ket_qua_ky_vong": "Ngồi yên thì biên độ giảm. Nhún đúng nhịp thì biên độ giữ, chu kì vẫn là chu kì riêng.",
   "hien_tuong_hay_sai": [
@@ -71,8 +71,8 @@
     "y_tuong": "Hai mũi tên song song: chiều đi và lực nhún. Tắt mũi nhún thì biên độ tụt."
   },
   "video": {
-    "mp4": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-tatdan-03-20261110-2.mp4",
-    "poster": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-tatdan-03-20261110-2.webp",
+    "mp4": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-tatdan-03-20261127.mp4",
+    "poster": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-tatdan-03-20261127.webp",
     "tieu_de_hop": "Xem thí nghiệm dựng lại",
     "nhan": "xích đu: ngồi yên và nhún (minh hoạ)",
     "nhin_vao": "Sau ba nhịp, hai xích đu cao cỡ nào?",

@@ -1,15 +1,15 @@
-# Clip: tn-l11-daodongdieuhoa-01 - Con lac lo xo TREO DUNG: vat di qua lai quanh moc nao (9/11/2026, L11 Ch.1)
-# So lieu lay nguyen tu content/thi-nghiem/tn-l11-daodongdieuhoa-01.json:
+# Clip: tn-l11-daodongdieuhoa-01 - Con lac lo xo TREO DUNG: keo xuong roi tha (9/11/2026, L11 Ch.1;
+#       dung lai 27/11/2026 theo cong moi: --do-chu 0 LOI, chu >= 55 px, Du doan K10, cau chot A-D ra khung web).
+# So lieu lay nguyen tu content/thi-nghiem/tn-l11-daodongdieuhoa-01.json (_kiem_so() doi chieu):
 #   tham_so: A = 5 cm (2-10), T = 1 s (0,5-3); mo_hinh x = A.cos(2.pi.t/T); gia_thiet: bo qua ma sat, tha o bien duong.
-#   so_lieu_mau (t s, x cm): 0 5 ; 0,25 0 ; 0,5 -5 ; 0,75 0 ; 1 5 (khong hien li do giua cac moc).
-#   hien_tuong_hay_sai[0]: VTCB la cho lo xo khong bien dang (treo thang dung thi khong phai) -> Du doan + Bay.
-#   Do gian lo xo khi vat dung yen KHONG co trong kho -> ve moc "lo xo chua gian" khong ghi so, ngoai thuoc.
-#   Cau chot: keo xuong 3 cm (A trong khoang tham_so, chua tung hien) -> vat len cao nhat toi dau? (3 cm tren VTCB,
-#   khong hien; phan xa sai: toi moc lo xo chua gian). Goi y: moc giua van la cho vat dung yen.
-# Dan canh rieng (khac motadddh1 ray ngang): lo xo TREO DUNG, chieu duong huong xuong, thuoc doc canh vat,
-#   bang t / x ben phai; quay cham x4 (0,25 s that = 1,0 s video), dung hinh o moi moc ghi so.
-# Canh: Du doan (K10: chi cau hoi + hinh, hai moc cung kieu) -> Tien hanh -> Dap an + Rut ra -> Bay roi Chua noi duoc
-#       -> Chot + cau hoi tu nho lai (goi y tre 2,5 s, ve qua body).
+#   so_lieu_mau (t s, x cm): 0 5 ; 0,25 0 ; 0,5 -5 ; 0,75 0 ; 1 5. Chieu duong huong xuong.
+# DOI CA Du doan (27/11): ca cu "vat qua lai quanh moc nao" da co dap an trong hop exp ngay tren video.
+#   Ca moi: keo xuong 5 cm, tha -> vat len cao nhat toi dau? -> 5 cm tren cho vat dung yen (x = -5, t = 0,5 s);
+#   nhieu = moc lo xo chua gian (hien_tuong_hay_sai[0]), cho dung yen, 10 cm. Do gian khi dung yen KHONG co trong kho
+#   -> moc "lo xo chua gian" khong ghi so.
+# Bay = hien_tuong_hay_sai[0]: VTCB la cho lo xo chua gian.
+# Thu nghi (= cau_chot khung web): cung lo xo (T = 1 s), keo xuong 3 cm, luc t = 1,5 s vat o dau? -> 3 cm tren VTCB
+#   (buoc chua chieu: 1,5 s = T + T/2). Nhieu: cho tha (3 cm duoi), O, moc lo xo chua gian.
 from engine import *
 
 AMP, PER = 5.0, 1.0
@@ -19,7 +19,15 @@ def num(v):
     s = f"{v:g}".replace(".", ",")
     return s.replace("-", "−")
 def tlab(tt): return "0" if tt == 0 else f"{tt:g}".replace(".", ",")
-DGREEN = (21, 110, 55); DRED = (185, 28, 28); BLOCK = (59, 130, 246)
+DGREEN = (21, 110, 55); DRED = (185, 28, 28); BLOCK = (59, 130, 246); DORANGE = (176, 64, 8); EMPTY = (148, 140, 128)
+
+def _kiem_so():
+    import json
+    k = json.load(open(os.path.join(HERE, "..", "..", "content", "thi-nghiem", "tn-l11-daodongdieuhoa-01.json")))
+    ts = {p["ky_hieu"]: p for p in k["tham_so"]}
+    assert ts["A"]["mac_dinh"] == AMP and ts["T"]["mac_dinh"] == PER and ts["A"]["min"] <= 3 <= ts["A"]["max"]
+    assert [(r[2], r[3]) for r in k["so_lieu_mau"]["hang"]] == [(a, float(b)) for a, b in ROWS]
+_kiem_so()
 
 # ---------------- con lac treo (khung nguon 1080x1920; vung thay y 200..1690) ----------------
 SX = 330                       # truc lo xo
@@ -54,11 +62,11 @@ def rig(d, xcm, a=1.0, cy=None, ab=1.0):
     card(d, (SX - BW / 2, cy - BH / 2, SX + BW / 2, cy + BH / 2), fill=A(BLOCK, a * ab), outline=A(NAVY, a * ab), r=12, w=4)
     d.line([(SX + BW / 2, cy), (RX - 12, cy)], fill=A(RED, a * ab), width=5)          # kim chi vi tri tam vat, toi sat thuoc
 
-def marks(d, a=1.0, lab_o="vật treo đứng yên", lab_n="lò xo chưa giãn"):
-    """Hai moc cung kieu (net dut xam, chu cung co) - khong goi y moc nao la dap an."""
+def marks(d, a=1.0, lab_o="vật đứng yên", lab_n="lò xo chưa giãn", x_lab=560):
+    """Hai moc cung kieu (net dut xam, chu cung co)."""
     for y, lab in ((NAT, lab_n), (OY, lab_o)):
         hdash(d, y, 160, 500, A(GRAY, a), w=4)
-        if lab: text(d, (690, y), lab, 40, INK, anchor="lm", alpha=a)
+        if lab: text(d, (x_lab, y), lab, 56, INK, anchor="lm", alpha=a)
 
 RX = 600                                                     # thuoc doc: x = 600..640
 def ruler(d, a=1.0):
@@ -68,46 +76,46 @@ def ruler(d, a=1.0):
         L = 26 if k % 5 == 0 else 14
         d.line([(RX, py(k)), (RX + L, py(k))], fill=c(NAVY), width=3)
     for k, s in ((-5, "−5"), (0, "0"), (5, "+5")):
-        text(d, (RX + 56, py(k)), s, 40, NAVY, anchor="lm", alpha=a)
-    arrow(d, (RX + 20, py(6) + 4), (RX + 20, py(6) + 60), c(NAVY), w=4, head=16)
-    text(d, (RX + 56, py(6) + 40), "x (cm)", 40, NAVY, anchor="lm", alpha=a)
+        text(d, (RX + 60, py(k)), s, 56, NAVY, anchor="lm", alpha=a)
+    text(d, (RX + 160, py(6) - 10), "x (cm) ↓", 56, NAVY, anchor="lm", alpha=a)
 
 def pill(d, cx, cy, s, size, fg, bg, a=1.0):
     pw = tw(d, s, F(size)) + 52
-    card(d, (cx - pw / 2, cy - size * 0.85, cx + pw / 2, cy + size * 0.85), fill=A(bg, a), r=int(size * 0.85))
+    card(d, (cx - pw / 2, cy - size * 0.8, cx + pw / 2, cy + size * 0.8), fill=A(bg, a), r=int(size * 0.8))
     text(d, (cx, cy), s, size, fg, alpha=a)
 
-# ---------------- canh 1: Du doan ----------------
+def seg_bar(d, y, t, t0, t1, col, a=1.0, n=6):
+    """Thanh dem lien khoi, tat lan luot tu PHAI sang TRAI; cao 76 px."""
+    p = clamp((t - t0) / (t1 - t0)); on = n - int(p * n + 1e-9); wseg = 820 / n
+    for i in range(n):
+        x = 130 + i * wseg
+        if i < on: card(d, (x, y, x + wseg - 14, y + 76), fill=A(col, a), r=16)
+        else: card(d, (x, y, x + wseg - 14, y + 76), fill=A(WHITE, a), outline=A(EMPTY, a), r=16, w=4)
+
+# ---------------- canh 1: Du doan (K10: chi cau hoi + hinh) ----------------
 def s_hook(img, d, t, sc):
     M = sc["M"]
-    kh = ease((t - 1.0) / 0.8)                               # treo vat: tam vat tu moc 1 xuong moc 2
-    k = ease((t - 2.4) / 1.0)                                # tay keo vat xuong 5 cm
-    rig(d, 0, cy=lerp(NAT, OY, kh) + AMP * PC * k, ab=appear(t, 1.0, 0.3))
-    am1 = appear(t, 0.4, 0.4); am2 = appear(t, 2.0, 0.4)
-    hdash(d, NAT, 160, 500, A(GRAY, am1), w=4); text(d, (560, NAT), "mốc 1", 40, INK, anchor="lm", alpha=am1)
-    hdash(d, OY, 160, 500, A(GRAY, am2), w=4); text(d, (560, OY), "mốc 2", 40, INK, anchor="lm", alpha=am2)
-    ka = appear(t, 2.4, 0.4)
-    if ka > 0 and k > 0.1:
-        arrow(d, (SX - BW / 2 - 40, OY), (SX - BW / 2 - 40, py(AMP * k) - 4), A(ORANGE, ka), w=6, head=20)
-        if k > 0.95: text(d, (SX - BW / 2 - 60, py(2.5)), "kéo 5 cm", 40, ORANGE, anchor="rm", alpha=appear(t, 3.4, 0.3))
+    kh = ease((t - 0.6) / 0.8)                               # treo vat: tam vat tu moc lo xo chua gian xuong cho dung yen
+    k = ease((t - 2.0) / 1.0)                                # tay keo vat xuong 5 cm
+    rig(d, 0, cy=lerp(NAT, OY, kh) + AMP * PC * k, ab=appear(t, 0.6, 0.3))
+    marks(d)
+    if k > 0.1:
+        arrow(d, (SX - BW / 2 - 40, OY), (SX - BW / 2 - 40, py(AMP * k) - 4), ORANGE, w=7, head=22)
     a = appear(t, M[1] - 0.2, 0.5)
     if a <= 0: return
-    y0 = 1120 + (1 - a) * 40
-    card(d, (50, y0, 1030, y0 + 460), fill=A(WHITE, a), outline=A(PURPLE, a), w=6)
-    pill(d, W / 2, y0 + 60, "DỰ ĐOÁN", 40, WHITE, PURPLE, a)
-    ctext(d, y0 + 160, "Bỏ qua ma sát.", 44, MUTED, maxw=920, alpha=a)
-    ctext(d, y0 + 290, "Vật đi qua lại\nquanh mốc nào?", 54, INK, maxw=920, alpha=a)
-    tc, tend = M[1] + 0.6, sc["T"] - 0.3
-    if t > tc:
-        p = clamp((t - tc) / (tend - tc))
-        d.rounded_rectangle([140, y0 + 410, 940, y0 + 422], radius=6, fill=A(LIGHT, a))
-        d.rounded_rectangle([140, y0 + 410, 140 + 800 * (1 - p), y0 + 422], radius=6, fill=A(PURPLE, a))
+    y0 = 1100 + (1 - a) * 40
+    card(d, (50, y0, 1030, y0 + 560), fill=A(WHITE, a), outline=A(PURPLE, a), w=6)
+    pill(d, W / 2, y0 + 64, "DỰ ĐOÁN", 56, WHITE, PURPLE, a)
+    text(d, (W / 2, y0 + 160), "Kéo xuống 5 cm rồi thả,", 60, INK, alpha=a)
+    text(d, (W / 2, y0 + 235), "bỏ qua ma sát.", 60, INK, alpha=a)
+    text(d, (W / 2, y0 + 330), "Vật lên cao nhất tới đâu?", 62, PURPLE, alpha=a)
+    seg_bar(d, y0 + 440, t, M[1] + 0.4, sc["T"] - 0.2, PURPLE, a)
 
 # ---------------- canh 2: Tien hanh (quay cham x4, dung o moi moc 0,25 s) ----------------
-REL, RUN, PAUSE = 1.0, 1.0, 0.7
+REL, RUN, PAUSE = 0.6, 1.0, 0.7
 def tau_do(v):
     """-> (thoi gian that, so hang bang da ghi, dang dung o moc?)"""
-    if v < REL: return 0.0, (1 if v >= 0.3 else 0), True
+    if v < REL: return 0.0, 1, True
     u = v - REL; tau = 0.0; rows = 1
     for i in range(1, 5):
         if u < RUN: return tau + 0.25 * u / RUN, rows, False
@@ -116,16 +124,14 @@ def tau_do(v):
         if i < 4: u -= PAUSE
     return tau, rows, True
 
-def table(d, rows):
-    x0, x1, y0 = 735, 1045, 560
-    card(d, (x0, y0, x1, y0 + 500), fill=WHITE, outline=NAVY, r=22, w=3)
-    d.line([(880, y0 + 15), (880, y0 + 485)], fill=LIGHT, width=3)
-    text(d, (808, y0 + 48), "t (s)", 40, NAVY); text(d, (962, y0 + 48), "x (cm)", 40, NAVY)
-    d.line([(x0 + 12, y0 + 92), (x1 - 12, y0 + 92)], fill=NAVY, width=3)
-    for i in range(rows):
-        tt, xx = ROWS[i]; y = y0 + 140 + i * 78
-        text(d, (808, y), tlab(tt), 44, INK)
-        text(d, (962, y), num(xx) if xx <= 0 else "+" + num(xx), 44, ORANGE)
+def table(d, rows, y0=1150):
+    card(d, (30, y0, 1050, y0 + 220), fill=WHITE, outline=NAVY, r=22, w=3)
+    d.line([(30, y0 + 110), (1050, y0 + 110)], fill=LIGHT, width=3)
+    text(d, (130, y0 + 55), "t (s)", 56, NAVY); text(d, (130, y0 + 165), "x (cm)", 56, NAVY)
+    for i in range(5):
+        tt, xx = ROWS[i]; cx = 330 + i * 170
+        text(d, (cx, y0 + 55), tlab(tt), 58, INK)
+        if i < rows: text(d, (cx, y0 + 165), num(xx) if xx <= 0 else "+" + num(xx), 58, DORANGE)
 
 def s_do(img, d, t, sc):
     tau, rows, hold = tau_do(t)
@@ -136,111 +142,94 @@ def s_do(img, d, t, sc):
         lo = AMP if tau == 0 else min(AMP, xof(min(tau, PER / 2)))
         d.rectangle([RX - 16, py(lo) - 3, RX - 4, py(AMP) + 3], fill=A(ORANGE, 0.8))
     rig(d, xb)
-    for i in range(rows): dot(d, RX - 10, py(ROWS[i][1]), 9, GREEN, outline=WHITE)
     table(d, rows)
-    pill(d, 300, 1200, "quay chậm ×4", 40, WHITE, ORANGE)
-    card(d, (560, 1150, 1000, 1250), fill=(70, 78, 100), r=22)
-    text(d, (780, 1200), (f"t = {tlab(tau)} s" if hold else "▶ đang chạy"), 44, WHITE)
+    pill(d, 230, 1470, "chậm ×4", 56, WHITE, ORANGE)
+    pill(d, 750, 1470, f"t = {tlab(round(tau, 2)) if hold else vn2(tau)} s", 56, WHITE, NAVY)
 
-# ---------------- canh 3: Dap an + Rut ra ----------------
+def vn2(v): return f"{v:.2f}".replace(".", ",")
+
+# ---------------- canh 3: Ket qua + rut ra + chua noi duoc ----------------
 def s_dapan(img, d, t, sc):
     M = sc["M"]
-    xb = xof(t / 4.0)                                        # van chay quay cham x4, khong hien so
-    ka = appear(t, 0.1, 0.5)
-    marks(d, 1.0, lab_o=None)
-    text(d, (720, OY), "đứng yên", 40, INK, anchor="lm")
+    xb = xof(t / 4.0)                                        # van chay quay cham x4
+    marks(d, 1.0, lab_n="chưa giãn", lab_o="đứng yên", x_lab=720)
     ruler(d)
     d.rectangle([RX - 16, py(-AMP) - 3, RX - 4, py(AMP) + 3], fill=A(ORANGE, 0.8))
     rig(d, xb)
-    pill(d, 870, 420, "chậm ×4", 40, WHITE, ORANGE)
-    pill(d, W / 2, 1185, "ĐÁP ÁN · quanh chỗ đứng yên", 40, WHITE, NAVY, ka)
-    k1 = appear(t, M[0] + 0.4, 0.45)
+    k1 = appear(t, 2.2, 0.45)
     if k1 > 0:
-        card(d, (60, 1250, 1020, 1370), fill=A(WHITE, k1), outline=A(TEAL, k1), r=24, w=4)
-        text(d, (W / 2, 1310), "x: +5 cm ↔ −5 cm", 46, INK, alpha=k1)
+        card(d, (40, 1110, 1040, 1230), fill=A((255, 247, 237), k1), outline=A(ORANGE, k1), r=24, w=5)
+        text(d, (W / 2, 1170), "Cao nhất: x = −5 cm", 60, DORANGE, alpha=k1)
     k2 = appear(t, M[1] - 0.05, 0.45)
     if k2 > 0:
-        card(d, (60, 1400, 1020, 1560), fill=A((236, 253, 243), k2), outline=A(GREEN, k2), r=24, w=4)
-        text(d, (W / 2, 1480), "Chỗ đứng yên = vị trí cân bằng O", 46, DGREEN, alpha=k2)
+        card(d, (40, 1260, 1040, 1380), fill=A((236, 253, 243), k2), outline=A(GREEN, k2), r=24, w=5)
+        text(d, (W / 2, 1320), "Chỗ đứng yên = VTCB O", 60, DGREEN, alpha=k2)
+    k3 = appear(t, M[2] - 0.05, 0.45)
+    if k3 > 0:
+        card(d, (40, 1410, 1040, 1660), fill=A(WHITE, k3), outline=A(NAVY, k3), r=24, w=5)
+        text(d, (W / 2, 1460), "Chưa nói được", 58, NAVY, alpha=k3)
+        text(d, (80, 1540), "• Ma sát: đã bỏ qua", 56, INK, anchor="lm", alpha=k3)
+        text(d, (80, 1615), "• Mới thử A = 5 cm", 56, INK, anchor="lm", alpha=appear(t, M[2] + 2.5, 0.4))
 
-# ---------------- canh 4: Bay roi Chua noi duoc ----------------
+# ---------------- canh 4: Bay - VTCB la cho lo xo chua gian ----------------
 def s_bay(img, d, t, sc):
     M = sc["M"]
-    rig(d, 0.0)
-    marks(d, 1.0, lab_o="O")
-    kc = appear(t, 1.8, 0.4)                                 # do gian hien CUNG luc chu ✓
+    rig(d, 1.5 * math.sin(2 * math.pi * t / 3.0))            # dao dong nho quanh O (khong dung hinh)
+    marks(d, 1.0, lab_o="đứng yên (O)")
+    y0 = 1110
+    card(d, (40, y0, 1040, y0 + 150), fill=(254, 242, 242), outline=DRED, r=24, w=5)
+    text(d, (W / 2, y0 + 75), "✗ VTCB: chỗ lò xo chưa giãn", 58, DRED)
+    kc = appear(t, M[1] - 0.1, 0.4)                          # nhip 2 cach nhip 1 >= 3 s
     if kc > 0:
-        x = SX + BW / 2 + 110
-        arrow(d, (x, NAT + 6), (x, OY - 8), A(ORANGE, kc), w=6, head=20)
-        arrow(d, (x, OY - 6), (x, NAT + 8), A(ORANGE, kc), w=6, head=20)
-        text(d, (x + 24, (NAT + OY) / 2), "đã giãn", 40, ORANGE, anchor="lm", alpha=kc)
-    a1 = appear(t, 0.0, 0.3) * (1 - appear(t, M[1] - 0.3, 0.2))
-    if a1 > 0:
-        y0 = 1060
-        card(d, (40, y0, 1040, y0 + 500), fill=A(WHITE, a1), outline=A(DRED, a1), w=6)
-        pill(d, W / 2, y0 + 62, "BẪY", 40, WHITE, DRED, a1)
-        q = "“VTCB là chỗ lò xo chưa giãn”"
-        yy = y0 + 200; f = F(46); lw = tw(d, q, f)
-        text(d, (W / 2, yy), q, 46, DRED, alpha=a1)
-        ks = clamp((t - 1.4) / 0.4)
-        if ks > 0: d.line([(W / 2 - lw / 2 - 6, yy + 2), (W / 2 - lw / 2 - 6 + (lw + 12) * ks, yy + 2)], fill=A((140, 15, 15), a1), width=4)
-        ctext(d, y0 + 340, "✓ Treo đứng: VTCB thấp hơn", 46, DGREEN, maxw=940, alpha=a1 * kc)
-    k2 = appear(t, M[1] - 0.1, 0.45)
-    if k2 > 0:
-        y0 = 1060 + (1 - k2) * 30
-        card(d, (40, y0, 1040, y0 + 450), fill=A(WHITE, k2), outline=A(NAVY, k2), w=6)
-        text(d, (W / 2, y0 + 70), "Chưa nói được", 46, NAVY, alpha=k2)
-        for j, l1 in enumerate(("• Ma sát: đã bỏ qua", "• Mới thử A = 5 cm")):
-            kk = k2 * appear(t, M[1] + 0.3 + 0.5 * j, 0.4)
-            text(d, (90, y0 + 190 + j * 120), l1, 44, INK, anchor="lm", alpha=kk)
+        x = SX + BW / 2 + 90
+        arrow(d, (x, NAT + 6), (x, OY - 8), A(ORANGE, kc), w=7, head=22)
+        text(d, (x + 24, (NAT + OY) / 2), "đã giãn", 56, DORANGE, anchor="lm", alpha=kc)
+        card(d, (40, y0 + 190, 1040, y0 + 340), fill=A((236, 253, 243), kc), outline=A(GREEN, kc), r=24, w=5)
+        text(d, (W / 2, y0 + 265), "✓ VTCB thấp hơn", 58, DGREEN, alpha=kc)
 
-# ---------------- canh 5: Chot + cau hoi tu nho lai ----------------
-def _end_body(sc):
-    M = sc["M"]
-    def body(d, t, k1):
-        kq = appear(t, M[0] + 0.4, 0.5)
-        bx, b0, oy, pc = 300, 900, 1140, 22                      # hinh nho: keo xuong 3 cm, khong ve vi tri cao nhat
-        d.rectangle([200, b0 - 20, 400, b0], fill=A((205, 200, 190), kq), outline=A(NAVY, kq), width=3)
-        cy = oy + 3 * pc
-        spring(d, b0, cy - 30, A(NAVY, kq), n=9, amp=20, w=4, x=bx)
-        card(d, (bx - 45, cy - 30, bx + 45, cy + 30), fill=A(BLOCK, kq), outline=A(NAVY, kq), r=10, w=3)
-        hdash(d, oy, 180, 420, A(GRAY, kq), w=4)
-        text(d, (450, oy), "đứng yên", 40, INK, anchor="lm", alpha=kq)
-        arrow(d, (bx + 80, oy + 4), (bx + 80, cy - 4), A(ORANGE, kq), w=5, head=16)
-        text(d, (bx + 104, cy - 10), "3 cm", 40, ORANGE, anchor="lm", alpha=kq)
-        kh = appear(t, M[0] + 0.4 + 2.5, 0.5)                # goi y tre 2,5 s sau cau hoi
-        card(d, (110, 1300, 970, 1530), fill=A((255, 247, 237), kh), r=24)
-        ctext(d, 1360, "Gợi ý", 40, INK, alpha=kh)
-        ctext(d, 1450, "Mốc giữa: chỗ đứng yên", 42, ORANGE, maxw=820, alpha=kh)
-    return body
-
+# ---------------- canh 5: THU NGHI (= cau_chot khung web) ----------------
 def s_end(img, d, t, sc):
-    chot_hoi(d, t, sc, "Dao động quanh VTCB:\nchỗ vật đứng yên",
-             "Kéo xuống 3 cm rồi thả.\nVật lên cao nhất tới đâu?", body=_end_body(sc))
+    if t < 0.15: return
+    card(d, (40, 215, 1040, 1585), fill=WHITE, outline=ORANGE, w=6)
+    pill(d, W / 2, 280, "THỬ NGHĨ", 56, WHITE, ORANGE)
+    bx, b0, oy, pc = 300, 380, 640, 30                       # hinh nho: keo xuong 3 cm, khong ve vi tri luc 1,5 s
+    d.rectangle([200, b0 - 22, 400, b0], fill=(205, 200, 190), outline=NAVY, width=3)
+    cy = oy + 3 * pc
+    spring(d, b0, cy - 32, NAVY, n=10, amp=22, w=4, x=bx)
+    card(d, (bx - 50, cy - 32, bx + 50, cy + 32), fill=BLOCK, outline=NAVY, r=10, w=3)
+    hdash(d, oy, 160, 440, GRAY, w=4)
+    text(d, (470, oy), "đứng yên", 56, INK, anchor="lm")
+    arrow(d, (bx + 90, oy + 4), (bx + 90, cy - 4), ORANGE, w=6, head=18)
+    text(d, (bx + 116, cy + 20), "kéo 3 cm", 56, DORANGE, anchor="lm")
+    text(d, (W / 2, 900), "Cùng lò xo, T = 1 s.", 60, INK)
+    text(d, (W / 2, 985), "Kéo xuống 3 cm rồi thả.", 60, INK)
+    text(d, (W / 2, 1100), "Lúc t = 1,5 s,", 64, DORANGE)
+    text(d, (W / 2, 1185), "vật ở đâu?", 64, DORANGE)
+    seg_bar(d, 1320, t, 0.8, sc["T"] - 0.2, ORANGE)
 
 def _cues(clip):
     sc = {s["key"]: s for s in clip["scenes"]}
     h, do, da, b, e = sc["hook"], sc["do"], sc["dapan"], sc["bay"], sc["end"]
-    out = [(h["t0"] + h["M"][1] - 0.2, "open")]            # K9: khong co tieng nao sat diem dung cuoi hook
-    out += [(do["t0"] + REL, "tap")]
+    out = [(h["t0"] + h["M"][1] - 0.2, "open"), (h["t0"] + h["T"] - 0.6, "ding"), (do["t0"] + REL, "tap")]
     out += [(do["t0"] + REL + i * RUN + (i - 1) * PAUSE, "tick") for i in (1, 2, 3, 4)]
-    out += [(da["t0"] + 0.1, "ding"), (b["t0"] + 0.2, "buzz"), (e["t0"] + e["M"][0] + 0.1, "open")]
+    out += [(da["t0"] + 0.5, "ding"), (b["t0"] + 0.2, "buzz"), (e["t0"] + 0.15, "open")]
     return out
 
 CLIP = dict(id="tn-l11-daodongdieuhoa-01", header="VẬT LÍ 11 · THÍ NGHIỆM", footer="Dao động điều hoà · thachlab.id.vn",
             cues=_cues, scenes=[
- dict(key="hook", title="Treo vật vào lò xo", draw=s_hook, tail=0.6, caps=[
-   ("Đánh dấu hai mốc, kéo xuống.", 3.6),
-   ("Tự đoán trước khi xem tiếp.", 5.6)]),
- dict(key="do", title="Tiến hành", draw=s_do, tail=0.6, caps=[
-   ("Thả tay, ghi li độ mỗi 0,25 s.", 4.2),
-   ("Chiều dương hướng xuống.", 4.0)]),
- dict(key="dapan", title="Kết quả", draw=s_dapan, tail=0.9, caps=[
-   ("Vật không chạm mốc chưa giãn.", 4.4),
-   ("Dao động: qua lại quanh O.", 4.0)]),
- dict(key="bay", title="Bẫy và giới hạn", draw=s_bay, tail=1.0, caps=[
-   ("Bẫy khi treo thẳng đứng.", 4.4),
-   ("Kết quả này còn giới hạn.", 3.8)]),
- dict(key="end", title="Chốt lại", draw=s_end, tail=1.7, caps=[
-   ("Dừng video, tự trả lời.", 7.6)]),
+ dict(key="hook", title="Treo vật vào lò xo", draw=s_hook, tail=0.3, caps=[
+   ("Treo vật rồi kéo xuống.", 4.4),
+   ("Dừng lại, tự đoán.", 6.0)]),
+ dict(key="do", title="Tiến hành", draw=s_do, tail=0.3, caps=[
+   ("Thả tay, ghi li độ mỗi 0,25 s.", 4.4),
+   ("Chiều dương hướng xuống.", 3.4)]),
+ dict(key="dapan", title="Kết quả", draw=s_dapan, tail=0.3, caps=[
+   ("Hai đầu cách đều chỗ đứng yên.", 4.2),
+   ("Không chạm mốc chưa giãn.", 4.4),
+   ("Mới thử một biên độ.", 4.4)]),
+ dict(key="bay", title="Bẫy hay gặp", draw=s_bay, tail=0.3, caps=[
+   ("Bẫy khi treo thẳng đứng.", 3.6),
+   ("Nhìn lại hai mốc.", 4.6)]),
+ dict(key="end", title="Chốt lại", draw=s_end, tail=0.3, caps=[
+   ("Dừng lại, tự tính.", 6.4)]),
 ])

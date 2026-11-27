@@ -1,51 +1,69 @@
 {
   "id": "tn-l11-vantocdddh-02",
   "ten": "Ba đồ thị x, v, a trên cùng trục thời gian",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-vantocdddh-02-20261110-2.mp4",
-  "tong_giay": 48.0,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-vantocdddh-02-20261127.mp4",
+  "tong_giay": 49.2,
   "o": [
     {
       "khoa": "gia_thuyet",
       "giay": 0,
-      "chu": "v sớm x một góc π/2 (đồ thị v là đồ thị x dịch đi T/4); a ngược pha với x.",
-      "kiem": "Đồ thị v giống hay khác đồ thị x ra sao?"
+      "chu": "Từ O ra biên, v và a trái dấu (chậm dần); từ biên về O, v và a cùng dấu (nhanh dần). Đọc trên cùng một thời điểm của ba đồ thị.",
+      "kiem": "Ở một thời điểm, đọc dấu v và a thế nào?"
     },
     {
       "khoa": "du_doan",
-      "giay": 3.8,
-      "chu": "A = 4 cm, T = 0,8 s, φ = 0: lúc t = 0 vật ở biên +A. Đồ thị v có dạng thế nào so với đồ thị x?"
+      "giay": 4.0,
+      "chu": "A = 4 cm, T = 0,8 s, φ = 0. Lúc t = 0,3 s, v và a cùng dấu hay trái dấu?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 10.0,
+      "giay": 10.1,
       "chu": "Ba đồ thị xếp dọc, cùng trục t."
     },
     {
       "khoa": "quan_sat",
-      "giay": 14.6,
+      "giay": 14.7,
       "chu": "t = 0: x = 4, v = 0, a = −246,7. t = 0,2 s: x = 0, v = −31,42, a = 0."
     },
     {
       "khoa": "rut_ra",
-      "giay": 24.6,
-      "chu": "Đỉnh v đến trước đỉnh x 0,2 s = T/4: v sớm x góc π/2. Đường a lật ngược đường x: a ngược pha với x."
+      "giay": 23.0,
+      "chu": "Lúc 0,3 s: v âm, a dương, trái dấu.\nVật đang từ O ra biên âm nên chậm dần.\nv cực tiểu lúc 0,2 s thì a = 0: a sớm v góc π/2."
     },
     {
       "khoa": "chua_noi",
-      "giay": 34.0,
+      "giay": 35.9,
       "chu": "Mới vẽ một ca φ = 0; bỏ qua ma sát."
     }
   ],
   "dung_dua": {
-    "giay": 9.8,
-    "cau_hoi": "φ = 0: lúc t = 0 vật ở biên +A. Đồ thị v có dạng thế nào so với đồ thị x?",
+    "giay": 9.9,
+    "cau_hoi": "A = 4 cm, T = 0,8 s, φ = 0 (t = 0 vật ở biên +A). Lúc t = 0,3 s, dấu của v và a thế nào?",
     "chon": [
-      "A. Trùng dạng với đồ thị x",
-      "B. Cùng dạng x nhưng dịch đi một phần tư chu kì",
-      "C. Lộn ngược so với đồ thị x"
+      "A. Cùng dấu, cả hai âm",
+      "B. Cùng dấu, cả hai dương",
+      "C. Trái dấu: v âm, a dương",
+      "D. Trái dấu: v dương, a âm"
+    ],
+    "dung": 2,
+    "giai_thich_dung": "Từ 0,2 s đến 0,4 s vật đi từ O ra biên âm: v âm, còn a = −ω²x dương vì x âm. Xem dấu đọc trên đồ thị ở đoạn kế.",
+    "giai_thich_sai": "Tìm x lúc 0,3 s trước: vật đã qua O (0,2 s) và đang ra biên âm (0,4 s). a luôn trái dấu x; v theo chiều chuyển động. Xem đoạn kế."
+  },
+  "cau_chot": {
+    "giay": 43.4,
+    "cau_hoi": "Giữ A = 4 cm, φ = 0, đổi T thành 1,6 s. Lúc t = 0,8 s, gia tốc bằng:",
+    "chon": [
+      "A. −246,7 cm/s²",
+      "B. +61,7 cm/s²",
+      "C. −61,7 cm/s²",
+      "D. +123,4 cm/s²"
     ],
     "dung": 1,
-    "giai_thich_dung": "Lúc t = 0, x lớn nhất còn v = 0; đỉnh v (0,6 s) đến trước đỉnh x (0,8 s) đúng 0,2 s = T/4: v sớm x một góc π/2.",
-    "giai_thich_sai": "Ở biên, vật dừng lại nên v = 0 khi x lớn nhất: hai đồ thị không trùng nhau. Đường lộn ngược x là đồ thị a. Xem tiếp: ba chấm cùng một thời điểm."
+    "giai_thich": [
+      "−246,7 là số đọc ở 0,8 s trên đồ thị cũ (T = 0,8 s). Với T = 1,6 s, t = 0,8 s là T/2: vật ở biên âm, a = +Aω² = +4·(2π/1,6)² ≈ +61,7 cm/s².",
+      "t = 0,8 s = T/2 nên x = −4 cm. ω = 2π/1,6 nhỏ đi 2 lần nên ω² nhỏ 4 lần: a = +246,7/4 ≈ +61,7 cm/s².",
+      "Độ lớn đúng nhưng sai dấu: lúc T/2 vật ở biên âm (x = −4 cm), a = −ω²x dương, ≈ +61,7 cm/s².",
+      "123,4 là chia 2. ω giảm 2 lần thì ω² giảm 4 lần: a = +246,7/4 ≈ +61,7 cm/s²."
+    ]
   }
 }

@@ -1,44 +1,44 @@
 {
   "id": "tn-l11-baitapnangluong-02",
   "ten": "Xích đu ở sân trường: ba lần đẩy 10°, 20°, 30°",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-baitapnangluong-02-20261110-2.mp4",
-  "tong_giay": 49.1,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-baitapnangluong-02-20261127.mp4",
+  "tong_giay": 46.6,
   "o": [
     {
       "khoa": "gia_thuyet",
       "giay": 0,
-      "chu": "Cơ năng W = mgh tăng theo độ cao biên h; tốc độ qua đáy v = √(2gh) chỉ tăng theo căn của W.",
+      "chu": "Tính h, W, v qua đáy cho ba góc đẩy của xích đu.",
       "kiem": "Góc lớn hơn, tốc độ qua đáy tăng ra sao?"
     },
     {
       "khoa": "du_doan",
-      "giay": 3.6,
-      "chu": "Góc lệch lớn nhất tăng từ 10° lên 30°. Tốc độ qua chỗ thấp nhất gấp mấy lần?"
+      "giay": 3.8,
+      "chu": "Xích đu dây 2,0 m, bỏ ma sát. Góc lệch lớn nhất từ 10° lên 30°: tốc độ qua đáy gấp mấy lần?"
     },
     {
       "khoa": "dung_cu",
       "giay": 10.1,
-      "chu": "Xích đu dây 2,0 m, bạn 40 kg, điện thoại đo góc."
+      "chu": "Dây 2,0 m, bạn 40 kg, điện thoại đo góc."
     },
     {
       "khoa": "quan_sat",
-      "giay": 16.7,
-      "chu": "Ở biên đu dừng một thoáng. 10° → h 0,03 m, W 11,9 J; 20° → 0,121 m, 47,3 J; 30° → 0,268 m, 105,0 J."
+      "giay": 13.9,
+      "chu": "10°: v 0,77 m/s. 20°: 1,54. 30°: 2,29 m/s."
     },
     {
       "khoa": "rut_ra",
-      "giay": 26.6,
-      "chu": "W: 105,0 : 11,9 ≈ 9. Tốc độ qua đáy 0,77 → 2,29 m/s, gấp ≈ 3. Vì v = √(2gh), W gấp 9 thì v chỉ gấp 3."
+      "giay": 18.4,
+      "chu": "Góc 10° → 30°: h gấp khoảng 9, tốc độ chỉ gấp khoảng 3 (2,29 : 0,77)."
     },
     {
       "khoa": "chua_noi",
-      "giay": 34.8,
-      "chu": "Bỏ ma sát trong một lượt; coi người + ghế là một điểm; số tính từ mô hình."
+      "giay": 26.2,
+      "chu": "Bẫy: h = l(1 − cos α0), không phải l·cos α0 = 1,73 m. Ma sát chưa xét; số tính từ mô hình."
     }
   ],
   "dung_dua": {
-    "giay": 9.9,
-    "cau_hoi": "Góc lệch lớn nhất tăng từ 10° lên 30°. Tốc độ qua chỗ thấp nhất gấp mấy lần?",
+    "giay": 9.6,
+    "cau_hoi": "Xích đu dây 2,0 m, bỏ ma sát. Góc lệch lớn nhất từ 10° lên 30°: tốc độ qua đáy gấp mấy lần?",
     "chon": [
       "A. Khoảng 1,7 lần",
       "B. Khoảng 3 lần",
@@ -48,5 +48,22 @@
     "dung": 1,
     "giai_thich_dung": "Theo bảng, tốc độ qua đáy từ 0,77 m/s lên 2,29 m/s, gấp khoảng 3. Cơ năng gấp khoảng 9, nhưng v = √(2gh) nên v chỉ gấp √9 = 3.",
     "giai_thich_sai": "Khoảng 9 lần là cơ năng (105,0 : 11,9), không phải tốc độ; v = √(2gh) nên v gấp √9 = 3. Không đổi thì sai vì đẩy cao hơn là nạp thêm năng lượng. Xem đoạn kế: ba lần đẩy và bảng kết quả."
+  },
+  "cau_chot": {
+    "giay": 40.9,
+    "cau_hoi": "Xích đu dây dài 3,0 m, bỏ ma sát, vẫn đẩy tới góc lệch 30° (g = 9,8 m/s²). Tốc độ qua đáy bằng bao nhiêu?",
+    "chon": [
+      "A. 2,29 m/s",
+      "B. 2,81 m/s",
+      "C. 3,44 m/s",
+      "D. 7,88 m/s"
+    ],
+    "dung": 1,
+    "giai_thich": [
+      "2,29 m/s là của dây 2,0 m; dây dài hơn thì h lớn hơn.",
+      "h = 3,0(1 − cos 30°) ≈ 0,402 m; v = √(2·9,8·0,402) ≈ 2,81 m/s.",
+      "Nhân 2,29 với 3,0/2,0 là coi v tỉ lệ l; thật ra v tỉ lệ căn của h.",
+      "7,88 là v², quên lấy căn."
+    ]
   }
 }
