@@ -11,7 +11,8 @@
 #   - Cau 3A + thu thach sao (keo cuon/nam cham ra xa): cau chot doi sang BIEN TRO (bai khong co bien tro).
 #   - Tinh huong mau "dong, ngat lien tuc -> hai den thay nhau chop": khong dung lam cau chot.
 # Du doan (K10): dong K mot luc roi ngat -> luc ngat, kim cua B the nao? -> lech sang trai (nguoc luc dong) roi ve 0.
-# Cau chot: K van dong, van bien tro cho dong o A giam dan -> kim B co lech khong? -> co (dong A doi). The chot sau 4 s.
+# Cau chot (GD2 27/11, theo kiem-v1): K van dong, van bien tro cho dong A giam mot chut roi DUNG tay -> luc da dung kim B?
+#   -> o so 0 (dong A khong con doi). Bien tro: kho khong co, chi theo mo hinh; co nhan "biến trở" tren man.
 # Mo hinh (truc thoi gian so do, chieu cham): i_A tang muot 0 -> I0 trong [a,b], giam I0 -> 0 trong [c,e];
 #   kim B ~ toc do doi cua i_A (ham sin) -> phai khi i_A tang, trai khi giam, 0 khi i_A khong doi. _kiem_vat_li() kiem.
 import copy
@@ -107,11 +108,11 @@ def plot(d, u, bands=0.0, pen=True, y_off=0):
         text(d, (xl, yl), lab, 56, col)
     d.line([(PX0, ya0), (PX1 + 10, ya0)], fill=NAVY, width=4)
     d.line([(PX0, yb0), (PX1 + 10, yb0)], fill=NAVY, width=4)
-    text(d, (PX0 - 16, yb0 - 80), "phải", 56, NAVY, anchor="rm")
-    text(d, (PX0 - 16, yb0 + 80), "trái", 56, NAVY, anchor="rm")
-    text(d, (PX0 - 16, yb0), "0", 56, NAVY, anchor="rm")
+    text(d, (PX0 - 16, yb0 - 80), "phải", 60, NAVY, anchor="rm")
+    text(d, (PX0 - 16, yb0 + 80), "trái", 60, NAVY, anchor="rm")
+    text(d, (PX0 - 16, yb0), "0", 60, NAVY, anchor="rm")
     for uu, lab in (((UA[0] + UA[1]) / 2, "đóng"), ((UA[1] + UA[2]) / 2, "giữ"), ((UA[2] + UA[3]) / 2, "ngắt")):
-        text(d, (X(uu), yb0 + YBS + 56), lab, 56, INK)
+        text(d, (X(uu), yb0 + YBS + 58), lab, 60, INK)
     if u > 0:
         us = sorted(set([k / 500 * u for k in range(501)] + [x for x in UA if x <= u]))
         d.line([(X(v), ya0 - iA(v) * (ya0 - ya1)) for v in us], fill=COLA, width=7, joint="curve")
@@ -227,7 +228,7 @@ def s_dapan(img, d, t, sc):
 
 
 # ---------------- canh 4: Bay + Chua noi duoc ----------------
-BAY_ST, BAY_OK = 2.2, 2.7
+BAY_ST = 2.2                                # gach o 2,2 s; ✓ o M[1] (>= 3 s sau); Chua noi o M[2] (>= 3 s sau ✓)
 def s_bay(img, d, t, sc):
     M = sc["M"]
     ph = (t % 2.4) / 2.4                          # lap lai luc ngat: kim lech trai roi ve 0
@@ -236,7 +237,7 @@ def s_bay(img, d, t, sc):
     LAB[0] = False
     try: apparatus(d, closed, ia, kb)
     finally: LAB[0] = True
-    k2 = appear(t, M[1] + 0.3, 0.45); a1 = appear(t, 0.2, 0.45) * (1 - k2)
+    k2 = appear(t, M[2] + 0.3, 0.45); a1 = appear(t, 0.2, 0.45) * (1 - k2)
     y0 = 990
     if a1 > 0:
         card(d, (40, y0, 1040, y0 + 540), fill=A(WHITE, a1), outline=A(RED, a1), w=6)
@@ -248,7 +249,7 @@ def s_bay(img, d, t, sc):
             if ks > 0:
                 lw = tw(d, q, F(58))
                 d.line([(W / 2 - lw / 2 - 6, yy + 2), (W / 2 - lw / 2 - 6 + (lw + 12) * ks, yy + 2)], fill=A(DRED, a1), width=7)
-        text(d, (W / 2, y0 + 380), "✓ Đang giảm vẫn lệch", 58, DGREEN, alpha=a1 * appear(t, BAY_OK, 0.4))
+        text(d, (W / 2, y0 + 380), "✓ Đang giảm vẫn lệch", 58, DGREEN, alpha=a1 * appear(t, M[1] + 0.1, 0.4))
     if k2 > 0:
         card(d, (40, y0, 1040, y0 + 540), fill=A(WHITE, k2), outline=A(NAVY, k2), w=6)
         text(d, (W / 2, y0 + 80), "Chưa nói được:", 60, NAVY, alpha=k2)
@@ -266,19 +267,23 @@ def s_end(img, d, t, sc):
     card(d, (40, 455, 1040, 1580), fill=A(WHITE, k1), outline=A(ORANGE, k1), w=6)
     pill(d, "THỬ NGHĨ", 518, k1, ORANGE)
     text(d, (W / 2, 625), "K vẫn đóng. Vặn biến trở", 60, INK, alpha=k1)
-    text(d, (W / 2, 705), "cho dòng ở A giảm dần.", 60, INK, alpha=k1)
-    text(d, (W / 2, 785), "Kim B thế nào?", 60, INK, alpha=k1)
+    text(d, (W / 2, 705), "cho dòng A giảm chút, rồi DỪNG.", 60, INK, alpha=k1)
+    text(d, (W / 2, 785), "Đã dừng: kim B thế nào?", 60, INK, alpha=k1)
     if k1 > 0:
         cy = 1060
         for x0, x1, col in ((230, 430, COLA), (620, 820, COLB)):
             for j in range(6):
                 x = x0 + j * (x1 - x0) / 5
                 d.arc([x - 14, cy - 70, x + 14, cy + 70], 0, 360, fill=A(col, k1), width=7)
-        sx = 200 + 640 * (0.5 - 0.5 * math.cos(2 * math.pi * t / 3.0))              # bien tro dai, con chay chay qua lai
+        sx = 600                                                                    # con chay da DUNG (khong ve kim, khong lo dap an)
         d.rounded_rectangle([200, cy + 150, 880, cy + 230], radius=14, fill=A((254, 243, 199), k1), outline=A(INK, k1), width=6)
         d.rounded_rectangle([200, cy + 150, max(214, sx), cy + 230], radius=14, fill=A(ORANGE, k1))
         d.polygon([(sx, cy + 150), (sx - 26, cy + 105), (sx + 26, cy + 105)], fill=A(PURPLE, k1))
-        text(d, (W / 2, 1420), "kim B = ?", 62, ORANGE, alpha=k1)
+        text(d, (330, cy + 300), "biến trở", 58, NAVY, alpha=k1)
+        rr = 70 + 55 * math.sin(2 * math.pi * t / 2.4)                              # dia dap nhip: cho hinh khong dung
+        d.ellipse([760 - rr, cy + 300 - rr, 760 + rr, cy + 300 + rr], fill=A(mix(ORANGE, WHITE, 0.75), k1))
+        text(d, (760, cy + 300), "?", 72, ORANGE, alpha=k1)
+        text(d, (760, cy + 420), "kim B", 58, ORANGE, alpha=k1)
 
 
 def _cues(clip):
@@ -302,9 +307,10 @@ CLIP = dict(id="tn-l9-camung-02", header="KHTN 9 · THÍ NGHIỆM", footer="Cả
    ("Nam châm điện cũng tạo dòng.", 4.0)]),
  dict(key="bay", title="Bẫy và giới hạn", draw=s_bay, tail=0.6, caps=[
    ("Đúng không?", 4.8),
+   ("Sai: dòng đang giảm thì kim vẫn lệch.", 4.2),
    ("Còn bỏ ngỏ.", 4.2)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.3, caps=[
-   ("Dừng lại, tự nghĩ.", 7.6)]),
+   ("Dừng lại, tự nghĩ.", 9.4)]),
 ])
 
 if __name__ == "__main__":
