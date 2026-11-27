@@ -73,6 +73,8 @@ ol.opt.hai-cot{grid-template-columns:1fr 1fr}
 .fx{font-size:1.45em;text-align:center;border:4px solid var(--accent);border-radius:16px;padding:.15em .4em}
 table{border-collapse:collapse;width:100%}
 #m5a{gap:1vh}
+#m2d .fx2 svg text{font-size:25px}
+#m2d .ben{gap:.9vh}
 th,td{border:3px solid var(--line);padding:.12em .4em;text-align:left;vertical-align:middle}
 th{background:#eef2f7;font-size:.8em}
 td.trong{min-width:4.5em;font-weight:800;color:var(--accent);text-align:center;outline:none}
@@ -117,7 +119,7 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
     <ul>
       <li>Nhổ đinh: lực lớn hơn chưa chắc thắng. Vậy điều gì quyết định?</li>
       <li>Đẩy cửa ở chỗ nào thì nhẹ tay nhất? Chỗ nào đẩy mãi không mở?</li>
-      <li>$M=F\cdot d$ · quy tắc moment · hai điều kiện cân bằng · ngẫu lực.</li>
+      <li>Moment lực · quy tắc moment · hai điều kiện cân bằng · ngẫu lực.</li>
     </ul>
   </div>
   <p class="nho">Phím → ← sang màn · Enter mở ô kế tiếp</p>
@@ -138,7 +140,7 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
       </ol>
     </div>
   </div>
-  <p class="nho">Khoanh vào Tập, đánh dấu chắc / không chắc, viết một dòng "Vì sao?". Đáp án: cuối tiết.</p>
+  <p class="nho">$O$ = trục quay (chỗ đầu búa tì lên gỗ). Giá của lực = đường thẳng chứa lực. Khoanh vào Tập, đánh dấu chắc / không chắc, viết một dòng "Vì sao?". Đáp án: cuối tiết.</p>
 </section>
 
 <!-- ================= 2. Moment lực ================= -->
@@ -147,19 +149,58 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
   <div class="giua">
     <p>Khoảng cách từ điểm $O$ tới đường thẳng $\Delta$ = độ dài đoạn <b class="o">vuông góc</b> kẻ từ $O$ xuống $\Delta$.</p>
     <p>Tam giác vuông: cạnh đối = huyền × <b class="o">$\sin$</b> · cạnh kề = huyền × <b class="o">$\cos$</b></p>
-    <p class="hoi">Thử: $OA=0{,}4$ m, $\Delta$ qua $A$ hợp với $OA$ góc $30^\circ$. Khoảng cách từ $O$ tới $\Delta$?</p>
-    <button class="mo" data-mo="n2">Mở: khoảng cách</button>
-    <div class="an" id="n2" hidden><p>$OA$ là cạnh huyền, khoảng cách đối diện góc $30^\circ$: $0{,}4\sin30^\circ=$ <b class="o">$0{,}2$</b> m</p></div>
+    <div class="hai hep">
+      <div class="fig fx2"><svg viewBox="0 0 320 190" role="img" aria-label="Điểm O, điểm A cách O 0,4 m, đường thẳng Delta qua A hợp với OA góc 30 độ"><line x1="40" y1="150" x2="190" y2="150" stroke="#1c2540" stroke-width="5"/><circle cx="40" cy="150" r="6" fill="#fff" stroke="#1c2540" stroke-width="3"/><circle cx="40" cy="150" r="1.8" fill="#1c2540"/><line x1="190" y1="150" x2="300" y2="150" stroke="#8a94ad" stroke-width="2" stroke-dasharray="3 4"/><line x1="138" y1="180" x2="285" y2="95" stroke="#b3261e" stroke-width="3"/><path d="M230,150 A40,40 0 0 0 224.6,130" fill="none" stroke="#1c2540" stroke-width="2.4"/><text x="236" y="134" fill="#1c2540" font-size="22" font-weight="700">30°</text><text x="26" y="184" fill="#1c2540" font-size="22" font-weight="700">O</text><text x="180" y="132" fill="#1c2540" font-size="22" font-weight="700" text-anchor="end">A</text><text x="114" y="124" fill="#1c2540" font-size="22" font-weight="700" text-anchor="middle">0,4 m</text><text x="285" y="84" fill="#b3261e" font-size="22" font-weight="700" text-anchor="end">Δ</text></svg></div>
+      <div class="ben">
+        <p class="hoi">Thử: $OA=0{,}4$ m, $\Delta$ qua $A$ hợp với $OA$ góc $30^\circ$. Khoảng cách từ $O$ tới $\Delta$?</p>
+        <button class="mo" data-mo="n2">Mở: khoảng cách</button>
+        <div class="an" id="n2" hidden><p>$OA$ là cạnh huyền, khoảng cách đối diện góc $30^\circ$: $0{,}4\sin30^\circ=$ <b class="o">$0{,}2$</b> m</p></div>
+      </div>
+    </div>
   </div>
 </section>
 
 <section class="man" id="m2b">
   <div class="top"><span class="so">2/6 · Moment lực</span><span>phút 3–10</span><span class="tap">tr.1 · ô 1·5</span></div>
-  <div class="giua">
-    <p>Moment lực đặc trưng cho tác dụng <b class="o">làm quay</b> của lực quanh một trục.</p>
-    <div class="fx">$M=$ <b class="o">$F$</b> $\cdot$ <b class="o">$d$</b> &nbsp;&nbsp; đơn vị: <b class="o">$\text{N}\cdot\text{m}$</b></div>
-    <p><b>Cánh tay đòn</b> $d$ = khoảng cách từ <b class="o">trục quay</b> tới <b class="o">giá</b> của lực, đo <b class="o">vuông góc</b>.</p>
-    <p class="nho">Giá của lực = đường thẳng chứa lực.</p>
+  <div class="hai">
+    <div class="fig fx2"><svg viewBox="0 0 320 230" role="img" aria-label="Giá của lực là đường thẳng chứa lực; cánh tay đòn d là đoạn vuông góc từ trục quay O tới giá"><defs><marker id="gA" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 z" fill="context-stroke"/></marker></defs>
+<line x1="125.6" y1="49.2" x2="220" y2="120" stroke="#64748b" stroke-width="2.6" stroke-dasharray="7 5"/>
+<line x1="220" y1="120" x2="283" y2="167.3" stroke="#b3261e" stroke-width="3.2" marker-end="url(#gA)"/>
+<line x1="60" y1="170" x2="141.6" y2="61.2" stroke="#b3261e" stroke-width="2.8" stroke-dasharray="5 4"/>
+<path d="M152.8,69.6 L144.4,80.8 L133.2,72.4" fill="none" stroke="#1c2540" stroke-width="2"/>
+<circle cx="60" cy="170" r="7" fill="#fff" stroke="#1c2540" stroke-width="3"/><circle cx="60" cy="170" r="2" fill="#1c2540"/>
+<circle cx="220" cy="120" r="4" fill="#1c2540"/>
+<text x="20" y="208" fill="#1c2540" font-size="22" font-weight="700">O: trục quay</text>
+<text x="226" y="106" fill="#1c2540" font-size="22" font-weight="700">A</text>
+<text x="286" y="190" fill="#b3261e" font-size="22" font-weight="700">F</text>
+<text x="86" y="112" fill="#b3261e" font-size="22" font-weight="700" text-anchor="end">d</text>
+<text x="204" y="48" fill="#475569" font-size="22" font-weight="700">giá của F</text></svg></div>
+    <div class="ben">
+      <p>Moment lực đặc trưng cho tác dụng <b class="o">làm quay</b> của lực quanh một trục.</p>
+      <div class="fx">$M=$ <b class="o">$F$</b> $\cdot$ <b class="o">$d$</b> &nbsp;&nbsp; đơn vị: <b class="o">$\text{N}\cdot\text{m}$</b></div>
+      <p><b>Giá</b> của lực = đường thẳng chứa lực (nét đứt xám).</p>
+      <p><b>Cánh tay đòn</b> $d$ = khoảng cách từ <b class="o">trục quay</b> tới <b class="o">giá</b> của lực, đo <b class="o">vuông góc</b>.</p>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m2d">
+  <div class="top"><span class="so">2/6 · Lực xiên</span><span>phút 3–10</span><span class="tap">tr.2 · ô 2·1</span></div>
+  <p class="hoi">Lực $F$ đặt tại $A$, $OA=r$, giá của $F$ hợp với $OA$ góc $\alpha$ ($0^\circ\lt\alpha\lt90^\circ$). Cánh tay đòn $d$?</p>
+  <div class="hai hep">
+    <div class="fig fx2"><svg viewBox="0 0 320 250" role="img" aria-label="Cánh tay đòn của lực xiên"><defs><marker id="lxA" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 z" fill="context-stroke"/></marker></defs><polygon points="34,178 214,178 108.4,89.4" fill="#fdeceb"/><defs><marker id="lxB" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 z" fill="context-stroke"/></marker></defs><line x1="34.0" y1="178.0" x2="214.0" y2="178.0" stroke="#1c2540" stroke-width="5"/><circle cx="34" cy="178" r="6" fill="#fff" stroke="#1c2540" stroke-width="2.8"/><circle cx="34" cy="178" r="1.8" fill="#1c2540"/><text x="30" y="208" fill="#1c2540" font-size="20" text-anchor="start" font-weight="700">O</text><text x="212" y="208" fill="#1c2540" font-size="20" text-anchor="start" font-weight="700">A</text><text x="124" y="206" fill="#1c2540" font-size="20" text-anchor="middle" font-weight="700">r</text><line x1="91.5" y1="75.2" x2="214.0" y2="178.0" stroke="#8a94ad" stroke-width="2.4" stroke-dasharray="7 5"/><line x1="214.0" y1="178.0" x2="279.9" y2="233.3" stroke="#b3261e" stroke-width="2.8" marker-end="url(#lxA)"/><text x="283.87982210823213" y="229.2797344330424" fill="#b3261e" font-size="20" text-anchor="start" font-weight="700">F</text><line x1="34.0" y1="178.0" x2="108.4" y2="89.4" stroke="#b3261e" stroke-width="2.6" stroke-dasharray="4 3"/><path d="M101.5,83.6 l5.8,-6.9 l6.9,5.8" fill="none" stroke="#1c2540" stroke-width="1.8"/><text x="53.18583200498813" y="131.68365111445064" fill="#b3261e" font-size="20" text-anchor="start" font-weight="700">d</text><text x="86.37166400997627" y="83.3673022289013" fill="#1c2540" font-size="20" text-anchor="middle" font-weight="400">H</text><path d="M243.1,202.4 A38,38 0 0 0 252.0,178.0" fill="none" stroke="#1c2540" stroke-width="2.2"/><line x1="214.0" y1="178.0" x2="274.0" y2="178.0" stroke="#8a94ad" stroke-width="2" stroke-dasharray="3 4"/><text x="258" y="212" fill="#1c2540" font-size="20" text-anchor="start" font-weight="400"><tspan font-family="KaTeX_Math" font-style="italic">α</tspan></text></svg></div>
+    <div class="ben">
+      <div class="nut"><button class="mo" data-mo="t2">Mở: tam giác</button><button class="mo" data-mo="x2">Mở: lượt 1</button><button class="mo" data-mo="x2b">Mở: lượt 2</button></div>
+      <div class="an" id="t2" hidden><p>Tam giác $OAH$: huyền $OA=r$; $OH=d$ đối diện $\alpha$.</p></div>
+      <div class="an" id="x2" hidden>
+        <p>$d=$ <b class="o">$r\sin\alpha$</b> nên $d$ <b class="o">$\lt r$</b></p>
+        <p>Vuông góc ($\alpha=90^\circ$): $d=$ <b class="o">$r$</b></p>
+      </div>
+      <div class="an" id="x2b" hidden>
+        <p>Giá qua trục: $d=$ <b class="o">$0$</b> nên $M=$ <b class="o">$0$</b></p>
+        <p>Góc giữa lực và $OA$ → <b class="o">$\sin$</b>; góc với phương vuông góc $OA$ → <b class="o">$\cos$</b></p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -181,25 +222,8 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
   </div>
 </section>
 
-<section class="man" id="m2d">
-  <div class="top"><span class="so">2/6 · Lực xiên</span><span>phút 3–10</span><span class="tap">tr.2 · ô 2·1</span></div>
-  <p class="hoi">Lực $F$ đặt tại $A$, $OA=r$, giá của $F$ hợp với $OA$ góc $\alpha$. Cánh tay đòn $d$?</p>
-  <div class="hai">
-    <div class="fig fx2"><svg viewBox="0 0 320 250" role="img" aria-label="Cánh tay đòn của lực xiên"><defs><marker id="lxA" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 z" fill="context-stroke"/></marker></defs><defs><marker id="lxB" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 z" fill="context-stroke"/></marker></defs><line x1="34.0" y1="178.0" x2="214.0" y2="178.0" stroke="#1c2540" stroke-width="5"/><circle cx="34" cy="178" r="6" fill="#fff" stroke="#1c2540" stroke-width="2.8"/><circle cx="34" cy="178" r="1.8" fill="#1c2540"/><text x="30" y="208" fill="#1c2540" font-size="20" text-anchor="start" font-weight="700">O</text><text x="212" y="208" fill="#1c2540" font-size="20" text-anchor="start" font-weight="700">A</text><text x="124" y="206" fill="#1c2540" font-size="20" text-anchor="middle" font-weight="700">r</text><line x1="91.5" y1="75.2" x2="214.0" y2="178.0" stroke="#8a94ad" stroke-width="2.4" stroke-dasharray="7 5"/><line x1="214.0" y1="178.0" x2="279.9" y2="233.3" stroke="#b3261e" stroke-width="2.8" marker-end="url(#lxA)"/><text x="283.87982210823213" y="229.2797344330424" fill="#b3261e" font-size="20" text-anchor="start" font-weight="700">F</text><line x1="34.0" y1="178.0" x2="108.4" y2="89.4" stroke="#b3261e" stroke-width="2.6" stroke-dasharray="4 3"/><path d="M101.5,83.6 l5.8,-6.9 l6.9,5.8" fill="none" stroke="#1c2540" stroke-width="1.8"/><text x="53.18583200498813" y="131.68365111445064" fill="#b3261e" font-size="20" text-anchor="start" font-weight="700">d</text><text x="86.37166400997627" y="83.3673022289013" fill="#1c2540" font-size="20" text-anchor="middle" font-weight="400">H</text><path d="M243.1,202.4 A38,38 0 0 0 252.0,178.0" fill="none" stroke="#1c2540" stroke-width="2.2"/><line x1="214.0" y1="178.0" x2="274.0" y2="178.0" stroke="#8a94ad" stroke-width="2" stroke-dasharray="3 4"/><text x="258" y="212" fill="#1c2540" font-size="20" text-anchor="start" font-weight="400"><tspan font-family="KaTeX_Math" font-style="italic">α</tspan></text></svg></div>
-    <div class="ben">
-      <button class="mo" data-mo="x2">Mở: cánh tay đòn</button>
-      <div class="an" id="x2" hidden>
-        <p>$d=$ <b class="o">$r\sin\alpha$</b> nên $d$ <b class="o">$\lt r$</b></p>
-        <p>Lực vuông góc $OA$: $d=$ <b class="o">$r$</b></p>
-        <p>Giá qua trục: $d=$ <b class="o">$0$</b> nên $M=$ <b class="o">$0$</b></p>
-      </div>
-      <p>Góc giữa lực và $OA$ → dùng <b class="o">$\sin$</b> · góc với phương vuông góc $OA$ → dùng <b class="o">$\cos$</b></p>
-    </div>
-  </div>
-</section>
-
 <section class="man" id="m2e">
-  <div class="top"><span class="so">2/6 · Câu 3 · 30 giây</span><span>phút 3–10</span><span class="tap">tr.4 · ô 4·1 · Câu 3 · tr.3 ô 3·3</span></div>
+  <div class="top"><span class="so">2/6 · Câu 3 · 30 giây</span><span>phút 3–10</span><span class="tap">tr.4 · ô 4·1 · Câu 3</span></div>
   <div class="giua">
     <p class="hoi">Câu 3. Lực $100$ N đặt ở tay cầm búa cách điểm tì $0{,}25$ m, hợp với cán góc $30^\circ$. Moment lực:</p>
     <ol class="opt lo hai-cot">
@@ -220,32 +244,14 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
 <section class="man" id="m3a">
   <div class="top"><span class="so">3/6 · Thí nghiệm: mở cửa lớp</span><span>phút 10–17 · làm thật</span><span class="tap">tr.2 · ô 2·2</span></div>
   <div class="giua">
-    <p>Một ngón tay đẩy cửa, vuông góc mặt cửa:</p>
-    <p>① ở mép ngoài &nbsp; ② ở giữa &nbsp; ③ sát bản lề</p>
+    <p>Một ngón tay đẩy cửa, vuông góc mặt cửa: ① mép ngoài · ② giữa · ③ sát bản lề</p>
     <p>④ ở mép ngoài, hướng thẳng vào bản lề</p>
     <p class="hoi">Lần nào nhẹ tay nhất? Lần ④ cửa thế nào?</p>
     <button class="mo" data-mo="c3">Mở: quan sát, rút ra</button>
     <div class="an" id="c3" hidden>
       <p>Nhẹ nhất khi đẩy ở <b class="o">mép ngoài</b>; đẩy vào bản lề thì cửa <b class="o">không quay</b>.</p>
       <p>Tác dụng làm quay tăng theo <b class="o">cánh tay đòn</b>; giá lực qua trục thì $M=$ <b class="o">$0$</b>.</p>
-    </div>
-  </div>
-</section>
-
-<section class="man" id="m3b">
-  <div class="top"><span class="so">3/6 · Câu 4 · 30 giây</span><span>phút 10–17</span><span class="tap">tr.4 · ô 4·1 · Câu 4 · tr.3 ô 3·3</span></div>
-  <div class="giua">
-    <p class="hoi">Câu 4. Đẩy mép cánh cửa rộng $0{,}8$ m bằng lực $50$ N, hướng dọc mặt cửa thẳng vào bản lề. Moment lực đối với trục bản lề:</p>
-    <ol class="opt lo hai-cot">
-      <li><b>A.</b> $40\ \text{N}\cdot\text{m}$</li>
-      <li data-dung><b>B.</b> $0$</li>
-      <li><b>C.</b> $62{,}5\ \text{N}\cdot\text{m}$</li>
-      <li><b>D.</b> Lớn nhất có thể, vì lực đặt xa bản lề nhất</li>
-    </ol>
-    <button class="mo" data-mo="a4">Mở đáp án</button>
-    <div class="an" id="a4" hidden>
-      <p><b>B.</b> Giá lực đi qua trục bản lề: $d=0$, $M=0$. Cửa chỉ bị ép vào bản lề.</p>
-      <p class="nho">A, D: lấy $0{,}8$ m (khoảng cách tới điểm đặt) làm cánh tay đòn · C: chia $F/d$.</p>
+      <p>① và ④ đẩy cùng chỗ mà ④ cửa không quay: $d$ tính tới <b>giá của lực</b>, không tới chỗ đẩy.</p>
     </div>
   </div>
 </section>
@@ -267,10 +273,10 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
   <div class="vg" data-bat="12.0" data-het="19.2">
     <video src="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-moment-luc-02-20261118.mp4" poster="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-moment-luc-02-20261118.webp" preload="metadata" playsinline title="Thước có trục quay ở giữa"></video>
     <div class="ben">
-      <div class="buoc" data-t="-1"><p class="nhin">Nhìn vào: số chỉ lực kế mỗi lần dời móc ra xa trục.</p><p class="nho">Quả nặng $P_1=2{,}0$ N cách trục $15$ cm. Úp Tập xuống trước khi đoán.</p></div>
+      <div class="buoc" data-t="-1"><p class="nhin">Nhìn vào: số chỉ lực kế mỗi lần dời móc ra xa trục.</p><p class="nho">Chép số chỉ lực kế vào cột $F_2$ của bảng khi thấy.</p></div>
       <div class="buoc" data-t="12.0"><p class="hoi">Ở $10$ cm: $3{,}10$ N. Dời móc ra $15$ cm, kéo cho thước nằm ngang.</p></div>
-      <div class="buoc" data-t="14.3" data-dung><p class="so-lon">$15$ cm: $2{,}00$ N</p><p class="hoi">Móc ở $20$ cm (xa gấp đôi $10$ cm), lực kế chỉ khoảng…</p>
-        <ol class="opt lo hang"><li><b>A.</b>$6{,}2$ N</li><li><b>B.</b>$3{,}1$ N</li><li data-dung><b>C.</b>$1{,}5$ N</li></ol></div>
+      <div class="buoc" data-t="14.3" data-dung><p class="so-lon">$15$ cm: $2{,}00$ N</p><p class="nho">$P_1=2{,}0$ N và vị trí $15$ cm giữ nguyên. Thước nằm ngang = cân bằng, nên khoảng cách trên thước là cánh tay đòn.</p><p class="hoi">Móc ở $20$ cm (xa gấp đôi $10$ cm), lực kế chỉ khoảng…</p>
+        <ol class="opt lo hai-cot"><li><b>A.</b>$6{,}2$ N</li><li><b>B.</b>$3{,}1$ N</li><li data-dung><b>C.</b>$1{,}5$ N</li><li><b>D.</b>$2{,}0$ N (không đổi)</li></ol></div>
       <div class="buoc" data-t="14.4"><p class="hoi">Dời móc ra $20$ cm, rồi $30$ cm.</p></div>
       <div class="buoc" data-t="19.2"><table class="bang"><tr><td>$10$ cm</td><td>$15$ cm</td><td>$20$ cm</td><td>$30$ cm</td></tr><tr><td class="ns">$3{,}10$</td><td class="ns">$2{,}00$</td><td class="ns">$1{,}52$</td><td class="ns">$0{,}99$</td></tr></table><p class="hoi">Đáp án <b>C</b>: xa gấp đôi, lực còn khoảng một nửa.</p></div>
     </div>
@@ -292,7 +298,25 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
       </table>
       <p>$P_1d_1=2{,}0\cdot15=$ <b class="o"><span class="an-o" data-o="t3">$30$</span></b> N·cm $=$ <b class="o"><span class="an-o" data-o="t3">$0{,}30$</span></b> N·m</p>
       <div class="nut"><button class="mo" data-mo="t3">Mở: tích</button><button class="mo" data-mo="r3">Mở: rút ra</button></div>
-      <div class="an" id="r3" hidden><p>Lệch nhiều nhất ở $d_2=$ <b class="o">$10$</b> cm: đọc sai vị trí móc $0{,}5$ cm đã là $5\,\%$ của $10$ cm.</p><p>Càng xa trục, số chỉ càng <b class="o">nhỏ</b>; moment hai bên <b class="o">bằng nhau</b>.</p></div>
+      <div class="an" id="r3" hidden><p>Lệch nhiều nhất ở $d_2=10$ cm: đọc lệch vị trí móc $0{,}5$ cm đã là $5\,\%$ của $10$ cm.</p><p>Càng xa trục, số chỉ càng <b class="o">nhỏ</b>; moment hai bên <b class="o">bằng nhau</b>.</p></div>
+  </div>
+</section>
+
+<section class="man" id="m3b">
+  <div class="top"><span class="so">3/6 · Câu 4 · 30 giây</span><span>phút 10–17</span><span class="tap">tr.4 · ô 4·1 · Câu 4</span></div>
+  <div class="giua">
+    <p class="hoi">Câu 4. Đẩy mép cánh cửa rộng $0{,}8$ m bằng lực $50$ N, hướng dọc mặt cửa thẳng vào bản lề. Moment lực đối với trục bản lề:</p>
+    <ol class="opt lo hai-cot">
+      <li><b>A.</b> $40\ \text{N}\cdot\text{m}$</li>
+      <li data-dung><b>B.</b> $0$</li>
+      <li><b>C.</b> $62{,}5\ \text{N}\cdot\text{m}$</li>
+      <li><b>D.</b> Lớn nhất có thể, vì lực đặt xa bản lề nhất</li>
+    </ol>
+    <button class="mo" data-mo="a4">Mở đáp án</button>
+    <div class="an" id="a4" hidden>
+      <p><b>B.</b> Giá lực đi qua trục bản lề: $d=0$, $M=0$. Cửa chỉ bị ép vào bản lề.</p>
+      <p class="nho">A, D: lấy $0{,}8$ m (khoảng cách tới điểm đặt) làm cánh tay đòn · C: chia $F/d$.</p>
+    </div>
   </div>
 </section>
 
@@ -319,10 +343,10 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
   <div class="top"><span class="so">4/6 · Điều kiện cân bằng</span><span>phút 17–22</span><span class="tap">tr.3 · ô 3·1</span></div>
   <div class="giua">
     <p>Không tịnh tiến: <b class="o">$\sum\vec F$</b> $=\vec 0$ &nbsp;·&nbsp; Không quay: <b class="o">$\sum M$</b> $=0$ đối với điểm <b class="o">bất kì</b></p>
-    <p>Chiều quay chọn làm dương: moment mang dấu <b class="o">$+$</b>; chiều kia mang dấu <b class="o">$-$</b></p>
-    <p>Mẹo chọn trục: ở chỗ có lực <b class="o">chưa biết</b>, vì lực đó có $d=$ <b class="o">$0$</b></p>
-    <p class="hoi">Thử: ván đồng chất dài $2$ m, $P=200$ N, hai đầu gác lên hai bờ mương. Trục qua bờ trái: $N_2=$ ? · tổng lực: $N_1=$ ?</p>
-    <button class="mo" data-mo="v4">Mở: tấm ván</button>
+    <p>Chiều quay dương: moment mang dấu $+$; chiều kia $-$</p>
+    <p>Chọn trục (điểm tự chọn, không cần là trục quay thật) ở chỗ có lực <b class="o">chưa biết</b> thì lực đó biến mất, vì $d=$ <b class="o">$0$</b></p>
+    <p class="hoi">Thử (về nhà): ván đồng chất dài $2$ m, $P=200$ N, gác lên hai bờ mương (lực đỡ $N_1$, $N_2$). Trục qua bờ trái: $N_2=$ ? · tổng lực: $N_1=$ ?</p>
+    <button class="mo" data-mo="v4">Mở: tấm ván (chép về nhà)</button>
     <div class="an" id="v4" hidden><p>$N_2\cdot2=200\cdot1$ ⇒ $N_2=$ <b class="o">$100$</b> N · $N_1=200-100=$ <b class="o">$100$</b> N</p></div>
   </div>
 </section>
@@ -332,7 +356,7 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
   <div class="vg" data-bat="7.8" data-het="16.6">
     <video src="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-moment-luc-03-20261030.mp4" poster="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-moment-luc-03-20261030.webp" preload="metadata" playsinline title="Đẩy hai đầu thước ngược chiều"></video>
     <div class="ben">
-      <div class="buoc" data-t="-1"><p class="nhin">Nhìn vào: thước trượt đi hay quay, và điểm nào đứng yên.</p><p class="nho">Thước $30$ cm trên mặt bàn nhẵn.</p></div>
+      <div class="buoc" data-t="-1"><p class="nhin">Nhìn vào: thước trượt đi hay quay, và điểm nào đứng yên.</p><p class="nho">Thước $30$ cm trên mặt bàn nhẵn (ma sát không đáng kể).</p></div>
       <div class="buoc" data-t="7.8"><p class="hoi">Hai ngón tay đẩy hai đầu thước, ngược chiều, mạnh như nhau, vuông góc thước.</p></div>
       <div class="buoc" data-t="8.9" data-dung><p class="hoi">Thước sẽ:</p>
         <ol class="opt lo hai-cot"><li><b>A.</b> Đứng yên</li><li><b>B.</b> Trượt theo chiều một lực</li><li data-dung><b>C.</b> Quay quanh điểm giữa thước</li><li><b>D.</b> Quay quanh một đầu thước</li></ol></div>
@@ -350,14 +374,16 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
     <div class="ben">
       <p>Hai lực <b class="o">song song</b>, <b class="o">ngược</b> chiều, cùng <b class="o">độ lớn</b>, cùng đặt vào <b class="o">một vật</b>.</p>
       <p>Tổng hai lực $=$ <b class="o">$0$</b>: chỉ làm vật <b class="o">quay</b>.</p>
-      <p>Vật tự do: quay quanh trục qua <b class="o">trọng tâm</b>; có trục cố định: quanh <b class="o">trục đó</b>.</p>
-      <p>$M=$ <b class="o">$F$</b>$\cdot$<b class="o">$d$</b>, $d$: khoảng cách giữa <b class="o">hai giá</b>; <b class="o">không</b> phụ thuộc vị trí trục.</p>
+      <p>Vật tự do: quay quanh trục qua <b class="o">trọng tâm</b> (khối tâm); có trục cố định: quanh trục ấy.</p>
+      <p>$M=$ <b class="o">$F$</b>$\cdot$<b class="o">$d$</b>, $d$: khoảng cách giữa <b class="o">hai giá</b>.</p>
+      <p class="nho">Ví dụ trục ở giữa hai lực: $F\cdot\frac d2+F\cdot\frac d2=F\cdot d$.</p>
+      <p>Moment ngẫu lực <b class="o">không</b> phụ thuộc vị trí trục.</p>
     </div>
   </div>
 </section>
 
 <section class="man" id="m4d">
-  <div class="top"><span class="so">4/6 · Câu 5 · 30 giây</span><span>phút 17–22</span><span class="tap">tr.4 · ô 4·1 · Câu 5 · tr.3 ô 3·2 dòng Thử</span></div>
+  <div class="top"><span class="so">4/6 · Câu 5 · 30 giây</span><span>phút 17–22</span><span class="tap">tr.4 · ô 4·1 · Câu 5</span></div>
   <div class="giua">
     <p class="hoi">Câu 5. Hai tay tác dụng ngẫu lực lên vô lăng, mỗi lực $20$ N, hai giá cách nhau $0{,}36$ m. Kết luận nào đúng?</p>
     <ol class="opt lo">
@@ -375,15 +401,15 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
 
 <!-- ================= 5. Bài toán mẫu ================= -->
 <section class="man" id="m5a">
-  <div class="top"><span class="so">5/6 · Bài toán mẫu</span><span>phút 22–27</span><span class="tap">tr.4 · ô 4·2 · Phân tích đề</span></div>
+  <div class="top"><span class="so">5/6 · Bài toán mẫu</span><span>phút 22–27</span><span class="tap">tr.4 · ô 4·2a · Phân tích đề</span></div>
   <p>Thanh đồng chất $AB$ dài $1{,}2$ m, nặng $40$ N, kê trên giá nhọn $O$, $OA=0{,}4$ m. Treo túi gạo ở $A$, thanh cân bằng ngang. Tìm trọng lượng túi và lực giá đỡ.</p>
   <table>
     <thead><tr><th>Câu trong đề</th><th>Kiến thức</th></tr></thead>
     <tbody>
       <tr><td>"đồng chất, 1,2 m"</td><td>$G$ ở giữa: $AG=0{,}6$ m</td></tr>
       <tr><td>"trọng lượng 40 N"</td><td class="ns"><span class="an-o" data-o="p5">$P=40$ N tại $G$</span></td></tr>
-      <tr><td>"cách đầu A 0,4 m"</td><td class="ns"><span class="an-o" data-o="p5">$OG=0{,}2$ m</span></td></tr>
-      <tr><td>"treo túi gạo ở A"</td><td class="ns"><span class="an-o" data-o="p5">$P_1=?$ quay ngược kim</span></td></tr>
+      <tr><td>"cách đầu A 0,4 m"</td><td class="ns"><span class="an-o" data-o="p5">$OA=0{,}4$ m ⇒ $OG=0{,}2$ m</span></td></tr>
+      <tr><td>"treo túi gạo ở A"</td><td class="ns"><span class="an-o" data-o="p5">$P_1$ ẩn số; quay ngược kim</span></td></tr>
       <tr><td>Ngầm: "cân bằng"</td><td class="ns"><span class="an-o" data-o="p5">$\sum F=0$, $\sum M=0$</span></td></tr>
     </tbody>
   </table>
@@ -391,9 +417,25 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
 </section>
 
 <section class="man" id="m5b">
-  <div class="top"><span class="so">5/6 · Bài toán mẫu</span><span>phút 22–27</span><span class="tap">tr.4 · ô 4·2 · Giải</span></div>
+  <div class="top"><span class="so">5/6 · Bài toán mẫu</span><span>phút 22–27</span><span class="tap">tr.4 · ô 4·2b · Giải</span></div>
   <div class="hai">
-    <div class="fig f4"><!--FIG4--></div>
+    <div class="fig dapf"><svg viewBox="0 0 440 256" role="img" aria-label="Thanh AB trên giá đỡ O, thứ tự A, O, G, B; OA 0,4 m; OG 0,2 m"><defs><marker id="m5r" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 z" fill="context-stroke"/></marker></defs>
+<rect x="40" y="93" width="360" height="14" rx="2" fill="#fff" stroke="#1c2540" stroke-width="3"/>
+<path d="M160,107 L142,137 H178 z" fill="#fff" stroke="#1c2540" stroke-width="3"/>
+<line x1="160" y1="93" x2="160" y2="26" stroke="#0369a1" stroke-width="4" stroke-dasharray="9 5" marker-end="url(#m5r)"/>
+<line x1="42" y1="107" x2="42" y2="164" stroke="#b91c1c" stroke-width="4" marker-end="url(#m5r)"/>
+<line x1="220" y1="107" x2="220" y2="164" stroke="#b91c1c" stroke-width="4" marker-end="url(#m5r)"/>
+<text x="178" y="46" fill="#0369a1" font-size="26" font-weight="700">N</text>
+<text x="60" y="160" fill="#b91c1c" font-size="26" font-weight="700">P<tspan font-size="19" dy="6">1</tspan><tspan dy="-6"> (túi gạo)</tspan></text>
+<text x="238" y="160" fill="#b91c1c" font-size="26" font-weight="700">P (thanh)</text>
+<text x="40" y="78" fill="#1c2540" font-size="26" font-weight="700" text-anchor="middle">A</text>
+<text x="400" y="78" fill="#1c2540" font-size="26" font-weight="700" text-anchor="middle">B</text>
+<text x="220" y="78" fill="#1c2540" font-size="26" font-weight="700" text-anchor="middle">G</text>
+<text x="132" y="132" fill="#1c2540" font-size="26" font-weight="700" text-anchor="end">O</text>
+<g stroke="#64748b" stroke-width="2.4"><line x1="40" y1="186" x2="160" y2="186"/><line x1="40" y1="178" x2="40" y2="194"/><line x1="160" y1="178" x2="160" y2="194"/><line x1="160" y1="222" x2="220" y2="222"/><line x1="160" y1="214" x2="160" y2="230"/><line x1="220" y1="214" x2="220" y2="230"/></g>
+<text x="100" y="212" fill="#1c2540" font-size="26" font-weight="700" text-anchor="middle">OA = 0,4 m</text>
+<text x="190" y="248" fill="#1c2540" font-size="26" font-weight="700" text-anchor="middle">OG = 0,2 m</text></svg>
+    <p class="nho" style="text-align:center">Vị trí vẽ đúng tỉ lệ; độ dài mũi tên không theo lực.</p></div>
     <div class="ben">
       <button class="mo" data-mo="g5a">Mở: chọn trục, tìm $P_1$</button>
       <div class="an" id="g5a" hidden>
@@ -412,7 +454,7 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
 <section class="man" id="m5c">
   <div class="top"><span class="so">5/6 · Tự kiểm tra</span><span>phút 22–27 · 30 giây</span><span class="tap">tr.4 · ô 4·1 · Câu 6</span></div>
   <div class="giua">
-    <p class="hoi">Câu 6. Thanh ở đề bài gốc (giá đỡ tại $O$, $OA=0{,}4$ m) đang cân bằng với túi gạo $20$ N ở $A$. Treo thêm vật $10$ N ở đầu $B$. Muốn thanh vẫn nằm ngang, ở $A$ phải treo thêm:</p>
+    <p class="hoi">Câu 6. Thanh ở đề bài gốc (nặng $40$ N, giá đỡ tại $O$, $OA=0{,}4$ m) đang cân bằng với túi gạo $20$ N ở $A$. Treo thêm vật $10$ N ở đầu $B$. Muốn thanh vẫn nằm ngang, ở $A$ phải treo thêm:</p>
     <ol class="opt lo hai-cot">
       <li data-dung><b>A.</b> $20$ N</li>
       <li><b>B.</b> $10$ N</li>
@@ -458,7 +500,7 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
 </section>
 
 <section class="man" id="m6b">
-  <div class="top"><span class="so">6/6 · Kiểm tra lý thuyết</span><span>phút 30–45</span><span class="tap">nộp xong: ghi điểm vào dòng tiêu đề tr.4 ô 4·1</span></div>
+  <div class="top"><span class="so">6/6 · Kiểm tra lý thuyết</span><span>phút 30–45 · nộp xong, ghi điểm vào khung "Bạn cùng bàn kiểm"</span><span class="tap">tr.4 · ô 4·1</span></div>
   <div class="qr"><!--QR--></div>
   <p class="made">Mã đề <b>1242</b> · 20 câu · 15 phút</p>
   <p class="nho" style="text-align:center">thachlab → Quét mã, hoặc gõ số đề 1242 · làm một mình, nộp xong mới cất máy</p>
@@ -467,9 +509,10 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
 <section class="man" id="m6c">
   <div class="top"><span class="so">Về nhà theo Tập bài 21</span><span class="tap">chụp lại màn này</span></div>
   <ul>
-    <li><b>tr.1</b> ô 1·3 dòng "điều em hiểu sai" (nếu chưa xong)</li>
-    <li><b>tr.3</b> ô 3·3: đọc lại 3 bẫy, đánh dấu bẫy em từng mắc</li>
-    <li><b>tr.4</b> dòng "Bạn cùng bàn kiểm Trả bài" · ô 4·2 "Điền bước còn thiếu" (giá đỡ cách $A$ đúng $0{,}3$ m)</li>
+    <li><b>tr.1</b> ô 1·1 đánh dấu mục tiêu đã đạt · ô 1·3 dòng "điều em hiểu sai" (nếu chưa xong)</li>
+    <li><b>tr.3</b> ô 3·1 và 3·2 dòng "Thử (về nhà)": chép đáp số từ màn "Mở: tấm ván" và màn Câu 5</li>
+    <li><b>tr.3</b> ô 3·3: điền "Đúng phải là" cho 3 bẫy, đánh dấu bẫy em từng mắc</li>
+    <li><b>tr.4</b> dòng "Bạn cùng bàn kiểm Trả bài" · ô 4·2c "Điền bước còn thiếu" (giá đỡ cách $A$ đúng $0{,}3$ m)</li>
     <li><b>tr.5</b> ô 5·1 Đề BTVN (ghi đề thầy giao trên web) · ô 5·2 thử thách ⭐ ⭐⭐ ⭐⭐⭐ · ô 5·3 câu 2, 3, 5, 6 · ô 5·4</li>
   </ul>
 </section>
