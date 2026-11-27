@@ -1,52 +1,69 @@
 {
   "id": "tn-l10-giaibt-dlh-01",
-  "ten": "Hai hộp bút, một rỗng một đầy, trên ván nghiêng: hộp nào tới trước?",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-giaibt-dlh-01-20261030.mp4",
-  "tong_giay": 48.1,
+  "ten": "Hai hộp bút, một rỗng một đầy, trên ván nghiêng: ma sát gấp mấy lần?",
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-giaibt-dlh-01-20261127.mp4",
+  "tong_giay": 49.5,
   "o": [
     {
       "khoa": "gia_thuyet",
       "giay": 0,
-      "chu": "Hai vật cùng chất liệu đáy trượt trên cùng một dốc thì có cùng gia tốc, không phụ thuộc khối lượng: a = g(sinα − μcosα).",
-      "kiem": "Hộp nặng, hộp nhẹ: hộp nào xuống dốc nhanh hơn?"
+      "chu": "Hai vật cùng chất liệu đáy trượt trên cùng một dốc thì có cùng gia tốc: a = g(sinα − μcosα).",
+      "kiem": "Hộp nặng hay nhẹ xuống dốc nhanh hơn?"
     },
     {
       "khoa": "du_doan",
-      "giay": 4.2,
-      "chu": "Hai hộp bút, một rỗng, một đầy, thả cùng lúc trên hai ván nghiêng như nhau. Hộp nào tới chân ván trước?"
+      "giay": 3.0,
+      "chu": "Hộp đầy nặng gấp 4 hộp rỗng, đáy như nhau. Ma sát ván lên hộp đầy gấp mấy lần?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 10.4,
-      "chu": "Hai ván nghiêng 30°; hộp 0,1 kg và 0,4 kg; đồng hồ."
+      "giay": 9.8,
+      "chu": "Hai ván 30°, hai hộp bút, đồng hồ."
     },
     {
       "khoa": "quan_sat",
-      "giay": 15.6,
-      "chu": "Hai đồng hồ cùng dừng ở 0,91 s: hai hộp tới chân ván cùng lúc. Bảng: m từ 0,05 đến 0,4 kg, a vẫn là 2,4 m/s²."
+      "giay": 14.8,
+      "chu": "Hai đồng hồ cùng dừng ở 0,91 s: hai hộp tới chân ván cùng lúc."
     },
     {
       "khoa": "rut_ra",
       "giay": 31.0,
-      "chu": "Fms = μN với N = mg·cosα. Mọi số hạng đều chứa m, giản ước: a = g(sinα − μcosα)."
+      "chu": "Fms = μ·mg·cosα tỉ lệ m: nặng gấp 4, ma sát gấp 4. m giản ước: a = g(sinα − μcosα)."
     },
     {
       "khoa": "chua_noi",
-      "giay": 37.4,
-      "chu": "Chưa thử hai đáy khác chất liệu (μ khác nhau): khi đó gia tốc hai hộp còn bằng nhau không?"
+      "giay": 40.0,
+      "chu": "Hai đáy cùng chất liệu: đáy khác chất (μ khác) thì gia tốc hai hộp còn bằng nhau không?"
     }
   ],
   "dung_dua": {
-    "giay": 9.7,
-    "cau_hoi": "Hai hộp bút giống nhau, một rỗng, một nhét đầy đồ, thả cùng lúc trên hai ván nghiêng như nhau. Hộp nào tới chân ván trước?",
+    "giay": 9.4,
+    "cau_hoi": "Hai hộp bút đáy như nhau trượt xuống hai ván nghiêng như nhau. Hộp đầy nặng gấp 4 hộp rỗng. Lực ma sát ván tác dụng lên hộp đầy gấp mấy lần lên hộp rỗng?",
     "chon": [
-      "A. Hộp đầy tới trước, nhanh hơn rõ rệt",
-      "B. Hộp đầy tới trước một chút",
-      "C. Hai hộp tới gần như cùng lúc",
-      "D. Hộp rỗng tới trước"
+      "A. Bằng nhau, vì đáy như nhau",
+      "B. Gấp 2 lần",
+      "C. Gấp 4 lần",
+      "D. Nhỏ hơn lên hộp rỗng"
     ],
     "dung": 2,
-    "giai_thich_dung": "Hộp đầy bị kéo xuống dốc mạnh hơn, nhưng ma sát và khối lượng cần tăng tốc cũng lớn theo đúng tỉ lệ, nên gia tốc hai hộp như nhau.",
-    "giai_thich_sai": "Nặng gấp bốn thì lực kéo xuống dốc gấp bốn, nhưng ma sát và khối lượng cần tăng tốc cũng gấp bốn. Xem hai đồng hồ."
+    "giai_thich_dung": "Ma sát trượt Fms = μN = μ·mg·cosα tỉ lệ với khối lượng: nặng gấp 4 thì ma sát gấp 4. Lực kéo xuống dốc P·sinα cũng gấp 4.",
+    "giai_thich_sai": "Xem đoạn kế: cùng loại đáy chỉ cho cùng μ; ma sát còn tỉ lệ với áp lực N = mg·cosα, mà hộp đầy đè gấp 4."
+  },
+  "cau_chot": {
+    "giay": 44.5,
+    "cau_hoi": "Hộp bút 0,4 kg trượt xuống tấm ván nghiêng 30°, hệ số ma sát trượt μ = 0,3, lấy g = 10 m/s². Lực ma sát ván tác dụng lên hộp khoảng bao nhiêu?",
+    "chon": [
+      "A. 1,2 N",
+      "B. 1,0 N",
+      "C. 0,60 N",
+      "D. 0,26 N"
+    ],
+    "dung": 1,
+    "giai_thich": [
+      "1,2 N = μmg là lấy áp lực N = mg. Trên dốc N = mg·cosα ≈ 3,46 N, nên Fms = μN ≈ 1,0 N.",
+      "N = mg·cosα = 0,4·10·0,866 ≈ 3,46 N; Fms = μN = 0,3·3,46 ≈ 1,0 N.",
+      "0,60 N là nhân với sinα. Áp lực vuông góc mặt dốc nên dùng cosα: Fms = μ·mg·cosα ≈ 1,0 N.",
+      "0,26 N là ma sát lên hộp rỗng 0,1 kg. Hộp 0,4 kg nặng gấp 4 nên ma sát gấp 4: ≈ 1,0 N."
+    ]
   }
 }
