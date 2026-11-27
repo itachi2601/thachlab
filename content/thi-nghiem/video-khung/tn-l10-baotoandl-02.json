@@ -1,51 +1,69 @@
 {
   "id": "tn-l10-baotoandl-02",
   "ten": "Hai xe cùng khối lượng có lò xo lá ở đầu",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-baotoandl-02-20261118.mp4",
-  "tong_giay": 48.8,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-baotoandl-02-20261127.mp4",
+  "tong_giay": 49.5,
   "o": [
     {
       "khoa": "gia_thuyet",
       "giay": 0,
-      "chu": "Hai xe cùng khối lượng đổi tốc độ cho nhau: xe 1 dừng.",
-      "kiem": "Sau va chạm, mỗi xe chạy thế nào?"
+      "chu": "Hai xe bằng nhau va chạm đàn hồi thì đổi tốc độ cho nhau.",
+      "kiem": "Sau va chạm, xe 2 chạy nhanh cỡ nào?"
     },
     {
       "khoa": "du_doan",
-      "giay": 3.4,
-      "chu": "Ngay sau va chạm, mỗi xe chạy thế nào?"
+      "giay": 3.8,
+      "chu": "Xe 1 tới 0,80 m/s, xe 2 đứng yên. Xe 2 bị đẩy đi nhanh cỡ nào?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 9.6,
-      "chu": "Hai xe cùng khối lượng gắn lò xo lá; xe 1 tới xe 2 đứng yên, làm ba lần."
+      "giay": 9.7,
+      "chu": "Ray đệm khí, hai cổng quang, lò xo lá."
     },
     {
       "khoa": "quan_sat",
-      "giay": 21.5,
-      "chu": "Xe 1 dừng, xe 2 lao đi; động lượng sang xe 2."
+      "giay": 18.0,
+      "chu": "Ba lần: xe 1 dừng, xe 2 đi bằng tốc độ xe 1."
     },
     {
       "khoa": "rut_ra",
-      "giay": 25.9,
-      "chu": "Động lượng và cả động năng chuyển gần trọn sang xe 2 (va chạm gần đàn hồi)."
+      "giay": 22.9,
+      "chu": "Động lượng và động năng của xe 1 chuyển gần trọn sang xe 2: va chạm gần đàn hồi."
     },
     {
       "khoa": "chua_noi",
-      "giay": 34.0,
-      "chu": "Hai xe khác khối lượng thì kết quả ra sao?\nXe 2 cũng đang chạy thì sao?"
+      "giay": 35.3,
+      "chu": "Hai xe dính nhau thì chỉ đi chung nửa tốc độ. Hai xe khác khối lượng thì sao?"
     }
   ],
   "dung_dua": {
-    "giay": 9.4,
-    "cau_hoi": "Hai xe cùng khối lượng, xe 1 tới 0,50 m/s, xe 2 đứng yên, có lò xo lá. Ngay sau va chạm mỗi xe chạy thế nào?",
+    "giay": 9.5,
+    "cau_hoi": "Hai xe cùng 0,20 kg, có lò xo lá. Xe 1 tới 0,80 m/s, xe 2 đứng yên. Ngay sau va chạm, xe 2 bị đẩy đi nhanh cỡ nào?",
     "chon": [
-      "A. Xe 1 dừng, xe 2 đi 0,50 m/s",
-      "B. Hai xe cùng đi 0,25 m/s",
-      "C. Xe 1 bật ngược 0,50 m/s, xe 2 đi 0,50 m/s"
+      "A. 0,40 m/s",
+      "B. 0,80 m/s",
+      "C. 1,2 m/s",
+      "D. 1,6 m/s"
     ],
-    "dung": 0,
-    "giai_thich_dung": "Hai xe cùng khối lượng va chạm qua lò xo lá nên đổi tốc độ cho nhau: xe 1 dừng, xe 2 đi 0,50 m/s.",
-    "giai_thich_sai": "Thử tính tổng động lượng và tổng động năng sau va chạm ở từng phương án: phương án nào giữ được cả hai?"
+    "dung": 1,
+    "giai_thich_dung": "Hai xe bằng khối lượng, va chạm qua lò xo lá gần như không mất động năng nên đổi tốc độ cho nhau: xe 1 dừng, xe 2 đi 0,80 m/s.",
+    "giai_thich_sai": "Thử kiểm hai điều cho từng phương án: tổng động lượng sau có bằng trước không, và động năng có tự tăng lên không. Phương án nào giữ được cả hai?"
+  },
+  "cau_chot": {
+    "giay": 44.5,
+    "cau_hoi": "Hai xe cùng 0,20 kg, có lò xo lá. Xe 2 đang chạy 0,20 m/s thì xe 1 đuổi tới với 0,60 m/s cùng chiều. Ngay sau va chạm, mỗi xe đi bao nhanh?",
+    "chon": [
+      "A. Xe 1 dừng, xe 2 đi 0,80 m/s",
+      "B. Xe 1 đi 0,20 m/s, xe 2 đi 0,60 m/s",
+      "C. Hai xe cùng đi 0,40 m/s",
+      "D. Xe 1 dừng, xe 2 đi 0,60 m/s"
+    ],
+    "dung": 1,
+    "giai_thich": [
+      "Động lượng thì giữ được (0,20·0,80 = 0,20·0,60 + 0,20·0,20), nhưng động năng tăng từ 0,040 J lên 0,064 J — tự sinh ra từ đâu? Theo mô hình, hai xe bằng nhau đổi vận tốc: xe 1 đi 0,20 m/s, xe 2 đi 0,60 m/s.",
+      "Theo mô hình đàn hồi, hai xe bằng khối lượng đổi vận tốc cho nhau: xe 1 lấy 0,20 m/s của xe 2, xe 2 lấy 0,60 m/s của xe 1. Kiểm: động lượng 0,16 kg·m/s và động năng 0,040 J đều giữ nguyên.",
+      "Đây là kết quả khi hai xe dính nhau (va chạm mềm): động năng giảm còn 0,032 J. Lò xo lá làm hai xe bật ra, giữ gần trọn động năng: xe 1 đi 0,20 m/s, xe 2 đi 0,60 m/s.",
+      "Tổng động lượng sau chỉ còn 0,12 kg·m/s, mất phần 0,04 kg·m/s của xe 2 lúc trước. Xe 1 chỉ dừng khi xe 2 lúc đầu đứng yên; ở đây hai xe đổi vận tốc: 0,20 m/s và 0,60 m/s."
+    ]
   }
 }

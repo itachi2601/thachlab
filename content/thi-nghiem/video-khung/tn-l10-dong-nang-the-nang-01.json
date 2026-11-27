@@ -1,52 +1,69 @@
 {
   "id": "tn-l10-dong-nang-the-nang-01",
   "ten": "Khúc gỗ trượt qua cổng quang: đo v và quãng trượt s",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-dong-nang-the-nang-01-20261031.mp4",
-  "tong_giay": 49.7,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-dong-nang-the-nang-01-20261127.mp4",
+  "tong_giay": 48.8,
   "o": [
     {
       "khoa": "gia_thuyet",
       "giay": 0,
-      "chu": "Quãng trượt s tỉ lệ với v².",
-      "kiem": "Đổi v thì s đổi thế nào?"
+      "chu": "Ma sát lấy hết động năng nên s tỉ lệ với v².",
+      "kiem": "Đổi tốc độ thì quãng trượt đổi ra sao?"
     },
     {
       "khoa": "du_doan",
-      "giay": 3.3,
-      "chu": "Tốc độ qua cổng tăng từ 1,00 lên 2,00 m/s. Quãng trượt s dài gấp mấy lần?"
+      "giay": 3.8,
+      "chu": "Lần 1 qua cổng 1,00 m/s. Qua cổng 2,50 m/s thì quãng trượt gấp mấy lần?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 9.4,
-      "chu": "Khúc gỗ có tấm chắn sáng, cổng quang nối đồng hồ số, thước dọc mặt bàn."
+      "giay": 9.9,
+      "chu": "Khúc gỗ, cổng quang, đồng hồ số, thước."
     },
     {
       "khoa": "quan_sat",
       "giay": 17.4,
-      "chu": "v = 1,00; 1,50; 2,00; 2,50 m/s ứng với s = 0,21; 0,44; 0,82; 1,22 m."
+      "chu": "v = 1,00; 1,50; 2,00; 2,50 m/s ứng với s = 0,21; 0,44; 0,82; 1,22 m. Lần 4 so lần 1: 1,22 : 0,21 ≈ 5,8."
     },
     {
       "khoa": "rut_ra",
-      "giay": 25.1,
-      "chu": "s/v² gần như không đổi (≈ 0,20 s²/m): v gấp đôi thì s gấp ≈ 4.\nMa sát sinh công âm."
+      "giay": 26.0,
+      "chu": "Ma sát lấy dần động năng: μmg·s = ½mv², nên s tỉ lệ với v². v gấp 2,5 thì s gấp 2,5² ≈ 6."
     },
     {
       "khoa": "chua_noi",
-      "giay": 39.9,
-      "chu": "m triệt tiêu, nhưng chưa đo kiểm.\nChỉ một mặt bàn, một μ."
+      "giay": 37.7,
+      "chu": "Mới thử một mặt bàn, một hệ số ma sát."
     }
   ],
   "dung_dua": {
-    "giay": 9.3,
-    "cau_hoi": "Tốc độ qua cổng tăng từ 1,00 lên 2,00 m/s. Quãng trượt s dài gấp mấy lần?",
+    "giay": 9.75,
+    "cau_hoi": "Lần 1, khúc gỗ qua cổng với tốc độ 1,00 m/s. Nếu qua cổng với 2,50 m/s thì quãng trượt tới khi dừng dài gấp mấy lần?",
     "chon": [
-      "A. Khoảng gấp 2",
-      "B. Khoảng gấp 3",
-      "C. Khoảng gấp 4",
-      "D. Khoảng gấp 8"
+      "A. Khoảng 2,5 lần",
+      "B. Khoảng 4 lần",
+      "C. Khoảng 6 lần",
+      "D. Khoảng 12 lần"
     ],
     "dung": 2,
-    "giai_thich_dung": "Động năng tỉ lệ v², ma sát không đổi nên s tỉ lệ v²: v gấp đôi thì s gấp khoảng 4 (0,82 so với 0,21 m).",
-    "giai_thich_sai": "Xem số đo ở đoạn kế: so s của lần 1,00 và 2,00 m/s."
+    "giai_thich_dung": "Động năng tỉ lệ v², ma sát không đổi nên s tỉ lệ v²: v gấp 2,5 thì s gấp 2,5² ≈ 6 (1,22 so với 0,21 m).",
+    "giai_thich_sai": "Xem bảng ở đoạn kế: so quãng trượt lần 1 (1,00 m/s) với lần 4 (2,50 m/s)."
+  },
+  "cau_chot": {
+    "giay": 43.0,
+    "cau_hoi": "Cùng khúc gỗ, cùng mặt bàn. Lần 4 qua cổng 2,50 m/s thì trượt 1,22 m. Nếu qua cổng 1,25 m/s (bằng nửa) thì khúc gỗ trượt khoảng bao xa?",
+    "chon": [
+      "A. 0,61 m",
+      "B. 0,41 m",
+      "C. 0,31 m",
+      "D. 0,15 m"
+    ],
+    "dung": 2,
+    "giai_thich": [
+      "0,61 m là chia đôi quãng trượt như thể s tỉ lệ với v. Thật ra s tỉ lệ với v²: v giảm một nửa thì s còn 1/4, tức 1,22 : 4 ≈ 0,31 m.",
+      "0,41 m là chia 3, không theo quy luật nào. s tỉ lệ với v² nên v còn một nửa thì s còn 1/4: 1,22 : 4 ≈ 0,31 m.",
+      "s tỉ lệ với v²: v còn một nửa thì s còn (1/2)² = 1/4, tức 1,22 : 4 ≈ 0,31 m (mô hình s = v²/5 cho 0,31 m).",
+      "0,15 m là chia 8 (lấy 1/2 lũy thừa 3). Quãng trượt tỉ lệ v², chỉ chia (1/2)² = 1/4: 1,22 : 4 ≈ 0,31 m."
+    ]
   }
 }

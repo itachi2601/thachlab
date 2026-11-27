@@ -1,51 +1,69 @@
 {
   "id": "tn-l10-dong-nang-the-nang-02",
   "ten": "Con lắc dây 1,0 m, dời đinh",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-dong-nang-the-nang-02-20261118.mp4",
-  "tong_giay": 48.0,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-dong-nang-the-nang-02-20261127.mp4",
+  "tong_giay": 48.5,
   "o": [
     {
       "khoa": "gia_thuyet",
       "giay": 0,
-      "chu": "Công trọng lực chỉ phụ thuộc độ cao còn lực căng không sinh công, nên quả nặng lên đúng độ cao lúc thả.",
+      "chu": "Lực căng không sinh công, nên quả nặng lên lại đúng độ cao lúc thả.",
       "kiem": "Vướng đinh, quả nặng lên cao thế nào?"
     },
     {
       "khoa": "du_doan",
       "giay": 4.2,
-      "chu": "Dây vướng đinh. Bên kia, quả nặng lên tới đâu?"
+      "chu": "Đinh ở 0,7 m dưới điểm treo. Bên kia, quả nặng lên tới đâu?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 10.2,
+      "giay": 10.7,
       "chu": "Dây 1,0 m, đinh dời được, vạch 0,20 m."
     },
     {
       "khoa": "quan_sat",
-      "giay": 17.0,
-      "chu": "Dời đinh, quả nặng vẫn lên đúng vạch 0,20 m; góc khác nhau."
+      "giay": 17.1,
+      "chu": "Không đinh, đinh 0,5 m, đinh 0,7 m: quả nặng đều lên đúng vạch 0,20 m; góc lệch 37°, 53°, 71°."
     },
     {
       "khoa": "rut_ra",
-      "giay": 21.7,
-      "chu": "Lực căng vuông góc đường đi nên không sinh công."
+      "giay": 25.4,
+      "chu": "Lực căng vuông góc vận tốc nên không sinh công. Hai đỉnh đều có v = 0, nên công trọng lực lúc xuống bằng lúc lên."
     },
     {
       "khoa": "chua_noi",
-      "giay": 28.5,
-      "chu": "Dây dưới đinh ngắn hơn 0,20 m:\ndây chùng, chưa xét."
+      "giay": 37.4,
+      "chu": "Đinh quá thấp (dây dưới đinh ngắn hơn 0,20 m): dây chùng, chưa xét."
     }
   ],
   "dung_dua": {
     "giay": 10.1,
-    "cau_hoi": "Dây vướng đinh. Bên kia, quả nặng lên tới đâu?",
+    "cau_hoi": "Thả con lắc dây 1,0 m từ vạch 0,20 m. Dây vướng đinh ở 0,7 m dưới điểm treo. Bên kia, quả nặng lên tới đâu?",
     "chon": [
-      "A. lệch cùng góc 37° như lúc thả",
-      "B. lên đúng độ cao 0,20 m",
-      "C. lên cao hơn 0,20 m"
+      "A. Lệch cùng góc 37° như lúc thả",
+      "B. Lên đúng vạch 0,20 m",
+      "C. Lên cao hơn vạch 0,20 m",
+      "D. Thấp hơn hẳn vạch 0,20 m"
     ],
     "dung": 1,
-    "giai_thich_dung": "Công trọng lực chỉ phụ thuộc độ cao đầu và cuối, lực căng không sinh công: quả nặng lên đúng 0,20 m dù góc lệch khác.",
+    "giai_thich_dung": "Lực căng không sinh công, công trọng lực chỉ phụ thuộc độ cao: quả nặng lên đúng 0,20 m dù góc lệch khác.",
     "giai_thich_sai": "Xem đoạn kế: mỗi lần dời đinh, quả nặng lên tới vạch nào và góc lệch ra sao?"
+  },
+  "cau_chot": {
+    "giay": 43.0,
+    "cau_hoi": "Con lắc dây 1,0 m, đinh ở 0,5 m dưới điểm treo, thả nhẹ từ độ cao 0,20 m; g = 10 m/s². Bên kia đinh, khi quả nặng ở độ cao 0,15 m, tốc độ của nó bằng bao nhiêu?",
+    "chon": [
+      "A. 0,5 m/s",
+      "B. 1,0 m/s",
+      "C. 1,7 m/s",
+      "D. 2,0 m/s"
+    ],
+    "dung": 1,
+    "giai_thich": [
+      "0,5 m/s là lấy 2·10·0,05 rồi chia đôi, quên căn. Quả nặng mới hạ 0,20 − 0,15 = 0,05 m: v = √(2·10·0,05) = 1,0 m/s.",
+      "Lực căng không sinh công, quả nặng hạ 0,20 − 0,15 = 0,05 m so với lúc thả: v = √(2·10·0,05) = 1,0 m/s, không phụ thuộc chỗ đóng đinh.",
+      "1,7 m/s là lấy cả độ cao 0,15 m. Phải lấy độ hạ so với lúc thả: 0,20 − 0,15 = 0,05 m, nên v = √(2·10·0,05) = 1,0 m/s.",
+      "2,0 m/s là tốc độ ở điểm thấp nhất (hạ 0,20 m). Ở độ cao 0,15 m quả nặng mới hạ 0,05 m: v = √(2·10·0,05) = 1,0 m/s."
+    ]
   }
 }

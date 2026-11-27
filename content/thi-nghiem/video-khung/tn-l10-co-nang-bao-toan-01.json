@@ -1,44 +1,44 @@
 {
   "id": "tn-l10-co-nang-bao-toan-01",
   "ten": "Con lắc qua cổng quang: thả từ bốn độ cao",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-co-nang-bao-toan-01-20261031.mp4",
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-co-nang-bao-toan-01-20261127.mp4",
   "tong_giay": 49.9,
   "o": [
     {
       "khoa": "gia_thuyet",
       "giay": 0,
-      "chu": "Cơ năng bảo toàn gần đúng: mgh ≈ ½mv².",
-      "kiem": "Thả cao hơn thì v ra sao?"
+      "chu": "Cơ năng bảo toàn gần đúng: thế năng lúc thả mgh ≈ động năng ở đáy ½mv².",
+      "kiem": "Thả cao hơn thì tốc độ qua cổng đổi ra sao?"
     },
     {
       "khoa": "du_doan",
       "giay": 4.2,
-      "chu": "Kéo lên 20 cm, cao gấp 4. Tốc độ qua cổng gấp mấy lần?"
+      "chu": "Thả từ 20 cm (cao gấp 4). Tốc độ gấp mấy lần?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 9.2,
-      "chu": "Con lắc có tấm chắn sáng, cổng quang ở đáy, đồng hồ số hiện v, thước đo độ cao h."
+      "giay": 10.3,
+      "chu": "Con lắc dây 1 m, cổng quang, thước."
     },
     {
       "khoa": "quan_sat",
-      "giay": 17.0,
-      "chu": "h = 5; 10; 15; 20 cm cho v = 0,98; 1,39; 1,70; 1,97 m/s: h gấp 4, v gấp ≈ 2."
+      "giay": 18.1,
+      "chu": "h = 5; 10; 15; 20 cm cho v = 0,98; 1,39; 1,70; 1,97 m/s: h gấp 4, v gấp khoảng 2."
     },
     {
       "khoa": "rut_ra",
-      "giay": 25.2,
-      "chu": "Thế năng thành động năng: ½mv² đạt 96–97 % mgh."
+      "giay": 29.3,
+      "chu": "½mv² ở đáy gần bằng mgh lúc thả; luôn thiếu một chút do lực cản, ma sát ở điểm treo."
     },
     {
       "khoa": "chua_noi",
-      "giay": 29.4,
-      "chu": "Chỉ dùng một quả nặng: chưa đo v theo khối lượng."
+      "giay": 38.5,
+      "chu": "Mới thử một quả nặng: chưa biết v có đổi theo khối lượng không."
     }
   ],
   "dung_dua": {
-    "giay": 9.05,
-    "cau_hoi": "Kéo lên 20 cm, cao gấp 4. Tốc độ qua cổng gấp mấy lần?",
+    "giay": 10.15,
+    "cau_hoi": "Thả con lắc từ 5 cm, tốc độ qua cổng quang là 0,98 m/s. Thả từ 20 cm (cao gấp 4) thì tốc độ qua cổng gấp mấy lần?",
     "chon": [
       "A. Gần như không đổi",
       "B. Gấp khoảng 2 lần",
@@ -46,7 +46,24 @@
       "D. Gấp khoảng 16 lần"
     ],
     "dung": 1,
-    "giai_thich_dung": "mgh ≈ ½mv² nên v² tỉ lệ h: h gấp 4 thì v gấp khoảng 2 (0,98 lên 1,97 m/s).",
-    "giai_thich_sai": "Xem bảng ở đoạn kế: so v lúc thả 5 cm với 20 cm."
+    "giai_thich_dung": "mgh ≈ ½mv² nên v² tỉ lệ với h: h gấp 4 thì v gấp khoảng √4 = 2 (0,98 lên 1,97 m/s).",
+    "giai_thich_sai": "Xem bảng ở đoạn kế: so tốc độ lúc thả 5 cm với lúc thả 20 cm."
+  },
+  "cau_chot": {
+    "giay": 43.9,
+    "cau_hoi": "Cùng con lắc, thả từ 10 cm thì tốc độ qua cổng là 1,39 m/s. Muốn tốc độ qua cổng gấp 1,5 lần, phải thả từ độ cao nào?",
+    "chon": [
+      "A. 15 cm",
+      "B. 20 cm",
+      "C. 22,5 cm",
+      "D. 30 cm"
+    ],
+    "dung": 2,
+    "giai_thich": [
+      "15 cm là lấy h gấp 1,5 lần như v. Nhưng v² tỉ lệ với h, nên v gấp 1,5 thì h gấp 1,5² = 2,25 lần: h = 22,5 cm.",
+      "20 cm (h gấp 2) chỉ cho v gấp √2 ≈ 1,41 lần. Cần h gấp 1,5² = 2,25 lần: h = 22,5 cm.",
+      "v² tỉ lệ với h (mgh ≈ ½mv²), nên v gấp 1,5 lần thì h gấp 1,5² = 2,25 lần: h = 2,25 · 10 = 22,5 cm (theo mô hình của thí nghiệm).",
+      "30 cm (h gấp 3) cho v gấp √3 ≈ 1,73 lần, quá 1,5. Cần h gấp 1,5² = 2,25 lần: h = 22,5 cm."
+    ]
   }
 }
