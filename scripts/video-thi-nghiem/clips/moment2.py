@@ -58,7 +58,7 @@ def meter(d, phi, d2, f, oy=OY, a=1.0):
     """Luc ke treo duoi thuoc o d2 (cm), keo thang dung xuong. f = so chi (N) hoac None (che '?')."""
     p = rot(d2 * PXC, HT, phi, oy)
     Q = lambda s, h: (p[0] + h, p[1] + s)
-    se = luc_ke(d, Q, 30, 50, 380, FMAX, f, nho=0.2, so=(0, 1, 2, 3, 4), hw=40, ben=-1, alpha=a, co=55)
+    se = luc_ke(d, Q, 30, 50, 380, FMAX, f, nho=0.2, so=(0, 1, 2, 3, 4, 5), hw=40, ben=-1, alpha=a, co=55)
     hx, hy = Q(se + 30, 0); dot(d, hx, hy, 30, A(SKIN, a), A((190, 140, 105), a))
 
 def dims(d, d2, d1=D1, oy=OY, a=1.0):
@@ -150,7 +150,8 @@ def s_do5(img, d, t, sc):
     table(d, 4)
     if t >= M[1] - 0.1:
         text(d, (230, 1000), "hết thang", 58, DRED)
-        text(d, (255, 380), "thước vẫn nghiêng", 58, DRED)
+        text(d, (255, 330), "thước nghiêng", 58, DRED)
+        text(d, (255, 397), "(theo mô hình)", 55, NOTE)
 
 def _kiem_dong_bo():
     """Do: so tren the = kim = hang cuoi bang khi on dinh, thuoc ngang khi va chi khi so hien. Do5: khong bao gio ngang."""
@@ -236,7 +237,7 @@ CLIP = dict(id="tn-l10-moment-luc-02", header="VẬT LÍ 10 · THÍ NGHIỆM", f
    ("Nhân hai cột.", 3.4),
    ("So với bên quả nặng.", 3.5)]),
  dict(key="bay", title="Bẫy hay gặp", draw=s_bay, tail=0.3, caps=[
-   ("Đúng không?", 3.0),
+   ("Đúng không?", 3.3),
    ("So tích, không so lực.", 3.4),
    ("Còn bỏ ngỏ.", 3.0)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.3, caps=[
