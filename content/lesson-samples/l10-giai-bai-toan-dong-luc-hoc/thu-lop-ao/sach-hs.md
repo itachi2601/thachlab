@@ -98,15 +98,15 @@ Trong $a$ không còn [49: m (khối lượng)]. Bỏ ma sát: $a=$ [50: g sinα
 [55: a = 10(0,5 − 0,2·0,866) ≈ 3,3 m/s²] (2 dòng)
 
 ### 3·4 · II.4 · Tình huống 3: hai vật nối dây qua ròng rọc
-Dây không dãn ⇒ hai vật cùng độ lớn [__56__]
-Dây, ròng rọc nhẹ, không ma sát ⇒ cùng [__57__]
-Chiều dương: [__58__]
-$m_1$ (bàn có ma sát): [__59__] $=m_1a$
-$m_2$ (treo): [__60__] $=m_2a$
-Cộng hai phương trình: [__61__] triệt tiêu.
+Dây không dãn ⇒ hai vật cùng độ lớn [56: độ lớn gia tốc a]
+Dây, ròng rọc nhẹ, không ma sát ⇒ cùng [57: độ lớn lực căng T]
+Chiều dương: [58: đi vòng theo dây: từ m₁ qua ròng rọc xuống m₂]
+$m_1$ (bàn có ma sát): [59: T − F_ms (đoán: T là lực căng, F_ms là ma sát bàn)] $=m_1a$
+$m_2$ (treo): [60: P₂ − T] $=m_2a$
+Cộng hai phương trình: [61: T] triệt tiêu.
 [Hình: $m_1$ trên bàn, dây vắt qua ròng rọc ở mép bàn, $m_2$ treo.]
 **Câu 3.** Hình trên với $m_1=4$ kg, $m_2=1$ kg, $\mu=0{,}1$, $g=10$ m/s². Hệ có chạy không? Nếu có, tính gia tốc.
-[__62__] (2 dòng)
+[62: có chạy: P₂ = 10 N > F_ms tối đa = μm₁g = 4 N, nên a = (10 − 4)/5 = 1,2 m/s²] (2 dòng)
 
 ---
 
@@ -118,65 +118,65 @@ Xe $m_1=0{,}40$ kg trên máng ngang, quả nặng $m_2=0{,}10$ kg. Thả từ n
 | Lần | 1 | 2 | 3 | 4 | 5 |
 |---|---|---|---|---|---|
 | $t$ (s) | 0,93 | 0,95 | 0,92 | 0,94 | 0,93 |
-| $a$ (m/s²) | [__63__] | [__64__] | [__65__] | [__66__] | [__67__] |
+| $a$ (m/s²) | [63: 1,85] | [64: 1,77] | [65: 1,89] | [66: 1,81] | [67: 1,85] |
 
-Dự đoán (bỏ ma sát): $a=m_2g/(m_1+m_2)=$ [__68__] m/s² · $a$ đo trung bình [__69__] m/s²
-Cả 5 lần lệch một phía ⇒ sai số [__70__]; do [__71__]
+Dự đoán (bỏ ma sát): $a=m_2g/(m_1+m_2)=$ [68: 2,0] m/s² · $a$ đo trung bình [69: 1,83] m/s²
+Cả 5 lần lệch một phía ⇒ sai số [70: hệ thống (lệch một phía, cả 5 lần nhỏ hơn 2,0)]; do [71: ma sát của xe với máng (đoán: dự đoán đã bỏ ma sát)]
 [Hình: xe lăn trên máng, dây vắt ròng rọc, quả nặng.]
 
 ### 4·2 · III · Bốn cái bẫy
-☐ **Thiếu/thừa lực.** Không có "lực đà": mỗi lực do một vật gây ra. Hộp trượt lên, tay đã buông, chịu các lực [__72__]
-☐ **$N=mg$ mọi lúc.** Mặt ngang kéo xiên: $N=$ [__73__] · mặt nghiêng: $N=$ [__74__]
-☐ **Đổi chiều dương giữa chừng.** Vật quay đầu: [__75__] đổi dấu, [__76__] không đổi dấu.
-☐ **Ma sát nghỉ cũng tính $\mu N$.** Tủ $50$ kg bị đẩy ngang $120$ N vẫn đứng yên, $\mu_n=0{,}4$, $g=10$ m/s²: $F_{\text{ms}}=$ [__77__] N, mức trần [__78__] N
+☐ **Thiếu/thừa lực.** Không có "lực đà": mỗi lực do một vật gây ra. Hộp trượt lên, tay đã buông, chịu các lực [72: P, N, F_ms (ma sát hướng xuống dốc)]
+☐ **$N=mg$ mọi lúc.** Mặt ngang kéo xiên: $N=$ [73: mg − F sinα] · mặt nghiêng: $N=$ [74: mg cosα]
+☐ **Đổi chiều dương giữa chừng.** Vật quay đầu: [75: v] đổi dấu, [76: a (đoán)] không đổi dấu.
+☐ **Ma sát nghỉ cũng tính $\mu N$.** Tủ $50$ kg bị đẩy ngang $120$ N vẫn đứng yên, $\mu_n=0{,}4$, $g=10$ m/s²: $F_{\text{ms}}=$ [77: 120] N, mức trần [78: 200] N
 [Hình: hộp trượt lên dốc.]
 
 ### 4·3 · IV · Trả bài 6 câu
 1. Bốn bước giải bài toán động lực học là gì?
-[__79__] (1 dòng)
+[79: vẽ hình; kể lực; viết ΣF = ma dạng vectơ; chiếu lên trục rồi giải] (1 dòng)
 2. Đại lượng nào nối lực với chuyển động? Hai loại bài toán?
-[__80__] (1 dòng)
+[80: gia tốc a. Thuận: biết lực → tìm chuyển động; ngược: biết chuyển động → tìm lực] (1 dòng)
 3. Mặt nghiêng góc $\alpha$: chọn trục thế nào, $N$ bằng bao nhiêu, $a$ khi trượt xuống?
-[__81__] (1 dòng)
+[81: Ox dọc dốc xuống, Oy vuông góc mặt nghiêng; N = mg cosα; a = g(sinα − μcosα) khi trượt xuống] (1 dòng)
 4. Kéo xiên lên góc $\alpha$ trên mặt ngang: áp lực bằng bao nhiêu?
-[__82__] (1 dòng)
+[82: N = mg − F sinα] (1 dòng)
 5. Hai vật nối dây qua ròng rọc: chung những gì, chiều dương chọn ra sao?
-[__83__] (1 dòng)
+[83: độ lớn gia tốc a và lực căng T; chiều dương đi vòng theo dây] (1 dòng)
 6. Khi nào được dùng $F_{\text{ms}}=\mu N$?
-[__84__] (1 dòng)
+[84: khi vật đang trượt (ma sát trượt); lúc đứng yên không dùng] (1 dòng)
 
-**Bạn cùng bàn kiểm:** ……/6 câu · chưa thuộc: [__85__] → đọc lại ô [__86__] Tập
+**Bạn cùng bàn kiểm:** ……/6 câu · chưa thuộc: [85: (về nhà)] → đọc lại ô [86: (về nhà)] Tập
 
 ---
 
 ## TRANG 5 — BÀI TẬP VỀ NHÀ · THỬ THÁCH · MANG VỀ
 
 ### 5·1 · Đề BTVN
-**Đề:** [__87__]  **Số câu:** [__88__]
+**Đề:** [87: (về nhà)]  **Số câu:** [88: (về nhà)]
 **Làm ở:** ☐thachlab ☐Azota ☐giấy · **Hạn:** ……/……
-Ghi chú của thầy về đề: [__89__] (2 dòng)
-☐ **Đã nộp** · **Điểm:** ……/…… · **Câu sai:** [__90__]
+Ghi chú của thầy về đề: [89: (về nhà)] (2 dòng)
+☐ **Đã nộp** · **Điểm:** ……/…… · **Câu sai:** [90: (về nhà)]
 
 ### 5·2 · Kết quả tự kiểm tra (đề chiếu trên lớp)
 Bảng 6 dòng (Câu 1–6), mỗi dòng: Em chọn | Chắc? ☐ | Đúng? ☐
 | Câu | Em chọn | Chắc? | Đúng? |
 |---|---|---|---|
-| 1 | [__91__] | ☐ | ☐ |
-| 2 | [__92__] | ☐ | ☐ |
-| 3 | [__93__] | ☐ | ☐ |
-| 4 | [__94__] | ☐ | ☐ |
-| 5 | [__95__] | ☐ | ☐ |
-| 6 | [__96__] | ☐ | ☐ |
+| 1 | [91: (làm trên máy)] | ☐ | ☐ |
+| 2 | [92: (làm trên máy)] | ☐ | ☐ |
+| 3 | [93: (làm trên máy)] | ☐ | ☐ |
+| 4 | [94: (làm trên máy)] | ☐ | ☐ |
+| 5 | [95: (làm trên máy)] | ☐ | ☐ |
+| 6 | [96: (làm trên máy)] | ☐ | ☐ |
 
 ### 5·3 · Thử thách phân tầng
 ⭐ Vật trượt không ma sát, từ nghỉ, trên dốc $30^\circ$ ($\sin30^\circ=0{,}5$), $g=10$ m/s². Gia tốc? Tốc độ sau $2$ s?
-[__97__] (2 dòng)
+[97: a = g·sin30° = 5 m/s²; v = at = 10 m/s sau 2 s] (2 dòng)
 ⭐⭐ **Bài toán ngược.** Ô tô $1000$ kg đang chạy $20$ m/s thì phanh gấp, trượt $40$ m rồi dừng (đường ngang, $g=10$ m/s²). Lực hãm? Hệ số ma sát trượt?
-[__98__] (2 dòng)
+[98: F_hãm = 5000 N (ngược chiều chuyển động, a = −5 m/s²); μ = 0,5] (2 dòng)
 ⭐⭐⭐ **Vật chồng.** Ván $2$ kg trên sàn nhẵn, khối $1$ kg đặt trên ván, hệ số ma sát khối–ván $0{,}3$ (nghỉ và trượt như nhau), $g=10$ m/s². Kéo ván ngang $6$ N: khối có trượt trên ván không? Kéo $12$ N thì sao?
-[__99__] (4 dòng)
+[99: 6 N: không trượt (a chung 2 m/s², khối cần 2 N ≤ 3 N); 12 N: có trượt (khối a = 3 m/s², ván a = 4,5 m/s²)] (4 dòng)
 
 ### 5·4 · VI · Mang về: điều em dễ quên nhất
-1. [__100__] (2 dòng)
-2. [__101__] (2 dòng)
-3. [__102__] (2 dòng)
+1. [100: mỗi lực do một vật gây ra, không có lực đà] (2 dòng)
+2. [101: N không luôn bằng mg (kéo xiên, mặt nghiêng)] (2 dòng)
+3. [102: ma sát nghỉ không tính μN; μN chỉ là mức tối đa] (2 dòng)
