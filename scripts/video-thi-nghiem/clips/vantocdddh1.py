@@ -124,10 +124,11 @@ def s_hook(img, d, t, sc):
     y0 = 960 + (1 - a) * 30
     card(d, (50, y0, 1030, y0 + 600), fill=A(WHITE, a), outline=A(PURPLE, a), w=6)
     pill(d, y0 + 70, "DỰ ĐOÁN", PURPLE, a)
-    text(d, (W / 2, y0 + 190), "Thước lệch 1 mm.", 60, INK, alpha=a)
-    text(d, (W / 2, y0 + 275), "Bấm giờ lệch vài phần trăm giây.", 58, INK, alpha=a)
-    eq(d, W / 2, y0 + 380, "Cái nào làm v_{max} sai hơn?", 62, PURPLE, alpha=a)
-    seg_bar(d, y0 + 480, t, M[1] + 0.4, sc["T"] - 0.3, PURPLE, a)
+    text(d, (W / 2, y0 + 170), "Thước lệch 1 mm.", 60, INK, alpha=a)
+    text(d, (W / 2, y0 + 250), "Bấm giờ 10 dao động,", 58, INK, alpha=a)
+    text(d, (W / 2, y0 + 330), "lệch vài phần trăm giây.", 58, INK, alpha=a)
+    eq(d, W / 2, y0 + 425, "Cái nào làm v_{max} sai hơn?", 62, PURPLE, alpha=a)
+    seg_bar(d, y0 + 500, t, M[1] + 0.4, sc["T"] - 0.3, PURPLE, a)
 
 # ---------------- canh 2: Tien hanh ----------------
 REL = 0.3                       # tha vat sau M[1] + REL
@@ -171,7 +172,7 @@ def s_do(img, d, t, sc):
     if stop:                                             # T trung binh, omega, v_max
         kt = appear(t, M[1] + REL + T10[4] / FAST + 0.4, 0.45)
         card(d, (40, 1200, 1040, 1440), fill=A((239, 246, 255), kt), outline=A(BLUE, kt), r=22, w=3)
-        eq(d, W / 2, 1265, "T = 0,800 s · ω = 7,854 rad/s", 58, INK, alpha=kt)
+        eq(d, W / 2, 1265, "T = 0,800 s       ω = 7,854 rad/s", 58, INK, alpha=kt)
         eq(d, W / 2, 1370, "v_{max} = Aω = 31,42 cm/s", 58, DBLUE, alpha=kt)
 
 def _kiem_dong_bo():
@@ -192,9 +193,9 @@ def bar(d, y, lab, col, pct, k, val, a):
 def s_dapan(img, d, t, sc):
     M = sc["M"]
     card(d, (40, 215, 1040, 820), fill=WHITE, outline=LIGHT, w=3)
-    bar(d, 330, "thước", DORANGE, 2.5, ease((t - 0.4) / 1.4), "0,1 / 4,0 = 0,025", appear(t, 0.4, 0.4))
+    bar(d, 330, "thước", DORANGE, 2.5, ease((t - 0.4) / 1.4), "0,1 cm / 4,0 cm = 0,025", appear(t, 0.4, 0.4))
     if t > 2.9:
-        bar(d, 600, "bấm giờ", DBLUE, DT / T_TB * 100, ease((t - 2.9) / 1.4), "0,007 / 0,800 ≈ 0,009", appear(t, 2.9, 0.4))
+        bar(d, 600, "bấm giờ", DBLUE, DT / T_TB * 100, ease((t - 2.9) / 1.4), "0,007 s / 0,800 s ≈ 0,009", appear(t, 2.9, 0.4))
     kb = appear(t, M[1] - 0.1, 0.4)
     if kb > 0:
         pill(d, 920, "ĐÁP ÁN · thước đo A", NAVY, kb)
@@ -228,11 +229,12 @@ def s_bay(img, d, t, sc):
 def s_gioihan(img, d, t, sc):
     card(d, (40, 215, 1040, 560), fill=WHITE, outline=NAVY, w=6)
     text(d, (W / 2, 300), "Chưa nói được", 64, NAVY)
-    text(d, (W / 2, 440), "Ma sát lớn thì sao?", 62, INK)
+    text(d, (W / 2, 440), "Nếu có ma sát?", 62, INK)
     amp = A_CM * math.exp(-0.45 * t)                     # minh hoa: bien do nho dan khi co ma sat (khong ghi so)
     rail(d, amp * math.cos(2 * math.pi * t / 1.6), ry=760, ruler=False)
-    for sgn in (1, -1):
-        xx = X(sgn * amp); d.line([(xx, 660), (xx, 700)], fill=PURPLE, width=6)
+    text(d, (W / 2, 620), "biên độ", 56, PURPLE)
+    arrow(d, (W / 2 - 10, 680), (X(-amp), 680), PURPLE, w=6, head=18)
+    arrow(d, (W / 2 + 10, 680), (X(amp), 680), PURPLE, w=6, head=18)
 
 # ---------------- canh 6: Chot + THU NGHI (= cau_chot khung web) ----------------
 def s_end(img, d, t, sc):
@@ -274,7 +276,7 @@ CLIP = dict(id="tn-l11-vantocdddh-01", header="VẬT LÍ 11 · THÍ NGHIỆM", f
    ("Vật lệch sang phải O.", 3.4),
    ("Lò xo kéo vật về O.", 3.4)]),
  dict(key="gioihan", title="Giới hạn", draw=s_gioihan, tail=0.4, caps=[
-   ("Ở đây bỏ qua ma sát.", 3.6)]),
+   ("Bỏ qua ma sát.", 3.6)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.3, caps=[
    ("Sai số chủ yếu do thước.", 3.4),
    ("Dừng lại, tự tính.", 4.4)]),

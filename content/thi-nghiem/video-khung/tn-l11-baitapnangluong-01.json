@@ -1,44 +1,44 @@
 {
   "id": "tn-l11-baitapnangluong-01",
   "ten": "Con lắc lò xo treo kéo hai biên độ: so sánh cơ năng",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-baitapnangluong-01-20261031-2.mp4",
-  "tong_giay": 49.6,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-baitapnangluong-01-20261127.mp4",
+  "tong_giay": 47.8,
   "o": [
     {
       "khoa": "gia_thuyet",
       "giay": 0,
-      "chu": "Kiểm bằng số đo rằng cơ năng tỉ lệ bình phương biên độ.",
-      "kiem": "Kéo con lắc xa hơn: cơ năng thay đổi thế nào?"
+      "chu": "Đo tốc độ qua VTCB ở bốn biên độ, tính cơ năng.",
+      "kiem": "Kéo xa hơn: cơ năng đổi thế nào?"
     },
     {
       "khoa": "du_doan",
-      "giay": 4.2,
-      "chu": "Con lắc lò xo treo, biên độ tăng từ 1 cm lên 4 cm. Cơ năng gấp mấy lần?"
+      "giay": 3.8,
+      "chu": "Con lắc lò xo treo, cùng lò xo, biên độ tăng từ 1 cm lên 4 cm. Cơ năng gấp mấy lần?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 10.3,
+      "giay": 10.1,
       "chu": "Quả 250 g, lò xo, thước mm, điện thoại."
     },
     {
       "khoa": "quan_sat",
-      "giay": 22.9,
-      "chu": "A = 1; 1,5; 2; 3; 4 cm. W = 2,3; 5,3; 9,5; 21,5; 37,8 mJ."
+      "giay": 14.5,
+      "chu": "A = 1; 2; 3; 4 cm. W = 2,3; 9,5; 21,5; 37,8 mJ."
     },
     {
       "khoa": "rut_ra",
-      "giay": 28.2,
-      "chu": "W gấp khoảng 16 khi A gấp 4 (16 = 4²). W : A² ≈ 2,3–2,4 mJ/cm², gần như không đổi."
+      "giay": 19.4,
+      "chu": "W gấp khoảng 16 khi A gấp 4 (37,8 : 2,3). Điểm đo bám đường ½kA², thấp hơn chút ít."
     },
     {
       "khoa": "chua_noi",
-      "giay": 37.3,
-      "chu": "Đổi A ra mét: ½·49·0,04² = 0,0392 J, không phải ½·49·4² rồi ghi J. A từ 5 cm trở lên: chưa thử. Khối lượng lò xo: bỏ qua."
+      "giay": 27.2,
+      "chu": "Bẫy: ½·49·2² = 98 J là sai; đổi A = 0,02 m thì W = 9,8 mJ. Lực cản chưa xét; số minh hoạ."
     }
   ],
   "dung_dua": {
-    "giay": 10.2,
-    "cau_hoi": "Biên độ tăng từ 1 cm lên 4 cm. Cơ năng gấp…",
+    "giay": 9.6,
+    "cau_hoi": "Cùng lò xo treo, biên độ tăng từ 1 cm lên 4 cm. Cơ năng gấp mấy lần?",
     "chon": [
       "A. 4 lần",
       "B. 8 lần",
@@ -47,6 +47,23 @@
     ],
     "dung": 2,
     "giai_thich_dung": "W = ½kA² nên A gấp 4 thì W gấp 4² = 16. Bảng cho 2,3 mJ lên 37,8 mJ, khoảng 16 lần.",
-    "giai_thich_sai": "Cơ năng tỉ lệ A², không phải A hay A³: gấp 4 lần biên độ thì gấp 4² = 16 lần. Xem đoạn kế: năm điểm đo."
+    "giai_thich_sai": "Cơ năng tỉ lệ A², không phải A hay A³: gấp 4 lần biên độ thì gấp 4² = 16 lần. Xem đoạn kế: bốn lần đo."
+  },
+  "cau_chot": {
+    "giay": 42.1,
+    "cau_hoi": "Cùng lò xo k = 49 N/m, kéo tới A = 2,5 cm rồi thả. Theo mô hình ½kA², cơ năng bằng bao nhiêu mJ?",
+    "chon": [
+      "A. 12,3 mJ",
+      "B. 15,3 mJ",
+      "C. 6,1 mJ",
+      "D. 153 mJ"
+    ],
+    "dung": 1,
+    "giai_thich": [
+      "Lấy 9,8 mJ (A = 2 cm) nhân 2,5/2 là coi W tỉ lệ A, quên bình phương.",
+      "W = ½·49·0,025² = 0,0153 J = 15,3 mJ.",
+      "6,1 mJ là ½·49·0,025·10³: quên bình phương A.",
+      "153 mJ lệch 10 lần: đổi cm ra m hoặc J ra mJ sai một bậc."
+    ]
   }
 }

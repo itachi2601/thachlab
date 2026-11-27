@@ -1,44 +1,44 @@
 {
   "id": "tn-l11-tatdan-01",
   "ten": "Quét tần số lực cưỡng bức, đọc biên độ",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-tatdan-01-20261110-2.mp4",
-  "tong_giay": 49.5,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-tatdan-01-20261127.mp4",
+  "tong_giay": 49.8,
   "o": [
     {
       "khoa": "gia_thuyet",
       "giay": 0,
-      "chu": "Biên độ ổn định cực đại khi tần số lực bằng tần số riêng f₀.",
-      "kiem": "Biên độ ổn định phụ thuộc tần số lực thế nào?"
+      "chu": "Mô-tơ lệch tâm lắc con lắc lò xo; đổi tần số lực, đọc biên độ ổn định.",
+      "kiem": "Tần số lực đổi, biên độ đổi ra sao?"
     },
     {
       "khoa": "du_doan",
-      "giay": 4.2,
-      "chu": "Đặt lần lượt f = 1,0; 1,5; 2,0; 2,5; 3,0 Hz. Biên độ ổn định A đổi thế nào theo f?"
+      "giay": 3.8,
+      "chu": "Giữ nguyên lực, chỉ tăng tần số lực từ 1,0 lên 3,0 Hz. Biên độ ổn định A thay đổi thế nào?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 10.6,
-      "chu": "Con lắc lò xo, mô-tơ lệch tâm, thước. f₀ = 2,0 Hz. Chờ ổn định rồi đọc A, sai số ±0,2 cm."
+      "giay": 10.1,
+      "chu": "Lò xo f₀ = 2,0 Hz, mô-tơ lệch tâm, thước ±0,2 cm."
     },
     {
       "khoa": "quan_sat",
-      "giay": 18.9,
+      "giay": 15.5,
       "chu": "Số đọc: 2,7; 4,2; 6,0; 4,2; 2,7 cm."
     },
     {
       "khoa": "rut_ra",
-      "giay": 22.0,
-      "chu": "Biên độ lớn nhất ở 2,0 Hz, trùng tần số riêng."
+      "giay": 21.2,
+      "chu": "Biên độ tăng rồi giảm, lớn nhất ở 2,0 Hz, trùng tần số riêng."
     },
     {
       "khoa": "chua_noi",
-      "giay": 26.2,
-      "chu": "Mới thử một mức lực cản: cản lớn hơn thì đỉnh ra sao? Số minh hoạ, chưa đo thật."
+      "giay": 28.8,
+      "chu": "Bẫy: lực mạnh không phải là cộng hưởng; giữ lực, chỉ đổi f mà A từ 2,7 lên 6,0 cm. Mới thử một mức cản; số minh hoạ."
     }
   ],
   "dung_dua": {
-    "giay": 10.4,
-    "cau_hoi": "Đặt lần lượt f = 1,0 → 3,0 Hz. Biên độ ổn định A đổi thế nào theo f?",
+    "giay": 9.6,
+    "cau_hoi": "Giữ nguyên lực, chỉ tăng tần số lực từ 1,0 lên 3,0 Hz. Biên độ ổn định A thay đổi thế nào?",
     "chon": [
       "A. Tăng dần theo f, lớn nhất ở 3,0 Hz",
       "B. Lớn nhất ở 2,0 Hz, nhỏ dần hai bên",
@@ -48,5 +48,22 @@
     "dung": 1,
     "giai_thich_dung": "Biên độ ổn định lớn nhất khi tần số lực trùng tần số riêng 2,0 Hz; càng lệch xa 2,0 Hz, biên độ càng nhỏ.",
     "giai_thich_sai": "Biên độ không đi một chiều theo f, cũng không như nhau: nó lớn nhất khi tần số lực trùng tần số riêng 2,0 Hz. Xem đoạn kế: chấm năm số đọc lên đồ thị."
+  },
+  "cau_chot": {
+    "giay": 44.1,
+    "cau_hoi": "Cùng con lắc (f₀ = 2,0 Hz), cùng lực. Ở f = 3,0 Hz đọc được A = 2,7 cm. Đặt f = 3,5 Hz thì biên độ ổn định khoảng bao nhiêu?",
+    "chon": [
+      "A. 6,0 cm",
+      "B. 2,7 cm",
+      "C. 1,9 cm",
+      "D. 4,2 cm"
+    ],
+    "dung": 2,
+    "giai_thich": [
+      "6,0 cm là biên độ khi f trùng f₀ = 2,0 Hz; 3,5 Hz lệch xa f₀ nên không thể lớn nhất.",
+      "2,7 cm là số đọc ở 3,0 Hz; 3,5 Hz còn xa f₀ hơn nên biên độ phải nhỏ hơn 2,7 cm.",
+      "3,5 Hz lệch f₀ 1,5 Hz, xa hơn 3,0 Hz, nên A nhỏ hơn 2,7 cm: theo mô hình A = 6,0·0,5/√(1,5² + 0,5²) ≈ 1,9 cm.",
+      "4,2 cm là số đọc ở 2,5 Hz, gần f₀ hơn; ở 3,5 Hz biên độ phải nhỏ hơn cả 2,7 cm."
+    ]
   }
 }

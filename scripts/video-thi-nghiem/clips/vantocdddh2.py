@@ -195,7 +195,8 @@ def s_dapan(img, d, t, sc):
         arrow(d, (xc, 1400), (xc + la, 1400), A(RED, km), w=8, head=24)
         text(d, (xc - 30, 1400), "a", 60, DRED, anchor="rm", alpha=km)
         text(d, (XO, 1490), "O", 58, NAVY, alpha=km)
-        text(d, (XO - 4 * PX, 1490), "−4 cm", 58, NAVY, alpha=km)
+        d.line([(XO - 4 * PX, 1352), (XO - 4 * PX, 1440)], fill=A(NAVY, km), width=5)
+        text(d, (XO - 4 * PX, 1490), "biên −4 cm", 58, NAVY, alpha=km)
 
 # ---------------- canh 4: Bay (a cung pha v?) ----------------
 def s_bay(img, d, t, sc):
@@ -204,6 +205,10 @@ def s_bay(img, d, t, sc):
     for k in ("x", "v", "a"): curve(d, k, PER)
     card(d, (60, 1060, 1020, 1180), fill=(254, 242, 242), outline=DRED, r=24, w=6)
     text(d, (W / 2, 1120), "✗ Dễ tưởng: a cùng pha với v", 58, DRED)
+    for k, tp, val, col in (("v", 0.6, VM, BLUE), ("a", 0.4, AM, RED)):   # dinh cua tung duong de so bang mat
+        px_, py_ = gx(tp), gy(k, val)
+        for yy in range(int(py_) + 14, 960, 22): d.line([(px_, yy), (px_, yy + 11)], fill=col, width=4)
+        d.ellipse([px_ - 14, py_ - 14, px_ + 14, py_ + 14], fill=col, outline=WHITE, width=3)
     k2 = appear(t, M[1] - 0.1, 0.45)                       # nhip 2: con tro truot toi 0,2 s
     if k2 > 0:
         tt = 0.2 * ease((t - M[1] + 0.1) / 1.0)
@@ -228,11 +233,11 @@ def s_end(img, d, t, sc):
     k1 = appear(t, 0.15, 0.4)
     card(d, (40, 215, 1040, 1560), fill=A(WHITE, k1), outline=A(ORANGE, k1), w=6)
     pill(d, 290, "THỬ NGHĨ", ORANGE, k1)
-    for j, (lab, val) in enumerate((("A", "4 cm"), ("T", "1,6 s"), ("t", "0,8 s"))):
-        x0 = 80 + j * 315
-        card(d, (x0, 400, x0 + 290, 610), fill=A((245, 243, 255), k1), outline=A(PURPLE, k1), r=18, w=3)
-        text(d, (x0 + 145, 455), lab, 62, PURPLE, alpha=k1)
-        text(d, (x0 + 145, 550), val, 60, INK, alpha=k1)
+    for j, (lab, val) in enumerate((("A", "4 cm"), ("T", "1,6 s"), ("t", "0,8 s"), ("φ", "0"))):
+        x0 = 70 + j * 240
+        card(d, (x0, 400, x0 + 220, 610), fill=A((245, 243, 255), k1), outline=A(PURPLE, k1), r=18, w=3)
+        text(d, (x0 + 110, 455), lab, 62, PURPLE, alpha=k1)
+        text(d, (x0 + 110, 550), val, 60, INK, alpha=k1)
     kq = appear(t, 2.6, 0.45)
     if kq > 0:
         text(d, (W / 2, 760), "Giữ A, đổi T thành 1,6 s.", 60, INK, alpha=kq)

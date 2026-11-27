@@ -1,52 +1,69 @@
 {
   "id": "tn-l11-conangdddh-01",
-  "ten": "Con lắc lò xo ở nửa biên độ: động năng và thế năng so nhau thế nào?",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-conangdddh-01-20261031-2.mp4",
-  "tong_giay": 49.1,
+  "ten": "Con lắc lò xo thả từ biên: đoạn nào động năng tăng nhiều hơn?",
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-conangdddh-01-20261127.mp4",
+  "tong_giay": 49.6,
   "o": [
     {
       "khoa": "gia_thuyet",
       "giay": 0,
-      "chu": "Đo k, tính Et, Ed, W tại các li độ: tổng không đổi.",
-      "kiem": "Ở nửa biên độ: hai năng lượng so sao?"
+      "chu": "Đo k, tính Et, Ed tại các vạch li độ khi vật đi từ biên về O.",
+      "kiem": "Hai đoạn bằng nhau, tăng như nhau?"
     },
     {
       "khoa": "du_doan",
-      "giay": 3.0,
-      "chu": "Con lắc lò xo nằm ngang, bỏ qua ma sát, A = 8,0 cm. Vật qua x = 4,0 cm: động năng và thế năng so với nhau?"
+      "giay": 3.4,
+      "chu": "Lò xo nằm ngang, bỏ qua ma sát, thả từ biên 8,0 cm. Đoạn 8 → 4 cm hay đoạn 4 → 0 cm, động năng tăng thêm nhiều hơn?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 9.4,
+      "giay": 9.7,
       "chu": "Lò xo, quả 200 g, thước mm, giá."
     },
     {
       "khoa": "quan_sat",
-      "giay": 22.6,
-      "chu": "Mỗi hàng W = 0,128 J; Et giảm, Ed tăng bù."
+      "giay": 16.0,
+      "chu": "k = 40 N/m. Tại 8,0; 4,0; 0 cm: Et giảm, Ed tăng, tổng luôn 0,128 J."
     },
     {
       "khoa": "rut_ra",
-      "giay": 26.2,
-      "chu": "Tại x = 4,0 cm: Et = 0,032 J, Ed = 0,096 J = 3 Et; Et chỉ một phần tư W."
+      "giay": 23.8,
+      "chu": "Đoạn 8 → 4 cm: Ed tăng 0,096 J; đoạn 4 → 0 cm chỉ 0,032 J, vì Et tỉ lệ x²."
     },
     {
       "khoa": "chua_noi",
-      "giay": 38.3,
-      "chu": "Treo đứng, mốc ở chỗ chưa dãn: tại VTCB Et = 0,04802 J chứ không bằng 0. Ed chỉ tính, chưa đo v. Ma sát chưa xét."
+      "giay": 31.4,
+      "chu": "Treo đứng mà đặt mốc ở chỗ chưa dãn thì VTCB ra 0,04802 J, sai: mốc ở VTCB. Ma sát chưa xét."
     }
   ],
   "dung_dua": {
     "giay": 9.2,
-    "cau_hoi": "Vật qua x = 4,0 cm, nửa biên độ. Động năng và thế năng so với nhau…",
+    "cau_hoi": "Thả vật từ biên 8,0 cm. Động năng tăng thêm ở đoạn nào nhiều hơn?",
     "chon": [
-      "A. Bằng nhau",
-      "B. Động năng gấp 2 thế năng",
-      "C. Động năng gấp 3 thế năng",
-      "D. Thế năng gấp 3 động năng"
+      "A. Đoạn 8 → 4 cm",
+      "B. Đoạn 4 → 0 cm",
+      "C. Hai đoạn như nhau",
+      "D. Tuỳ khối lượng vật"
     ],
-    "dung": 2,
-    "giai_thich_dung": "Et = ½kx² tỉ lệ x², nên ở nửa biên độ Et chỉ bằng W/4 = 0,032 J; Ed là phần còn lại 0,096 J, gấp 3 lần Et.",
-    "giai_thich_sai": "Thế năng tỉ lệ x² chứ không tỉ lệ x: nửa biên độ chỉ cho một phần tư cơ năng, phần còn lại là động năng. Xem đoạn kế: bảng các vạch."
+    "dung": 0,
+    "giai_thich_dung": "Et = ½kx² tỉ lệ x²: từ 8 về 4 cm, Et giảm từ 0,128 xuống 0,032 J (mất 0,096 J); từ 4 về 0 chỉ mất 0,032 J. Phần Et mất chuyển hết thành Ed.",
+    "giai_thich_sai": "Gần O vật nhanh nhất, nhưng phần động năng tăng thêm lại nhỏ: thế năng tỉ lệ x² nên phần lớn đã chuyển đổi ở nửa đường đầu. Xem đoạn kế: bảng các vạch."
+  },
+  "cau_chot": {
+    "giay": 45.0,
+    "cau_hoi": "Giữ lò xo k = 40 N/m, kéo tới A = 10 cm rồi thả. Vật qua x = 4,0 cm thì động năng bằng bao nhiêu?",
+    "chon": [
+      "A. 0,096 J",
+      "B. 0,168 J",
+      "C. 0,200 J",
+      "D. 0,120 J"
+    ],
+    "dung": 1,
+    "giai_thich": [
+      "0,096 J là Ed tại 4,0 cm khi A = 8,0 cm; biên độ mới làm cơ năng lớn hơn.",
+      "W = ½kA² = ½·40·0,10² = 0,200 J; Et tại 4,0 cm vẫn 0,032 J; Ed = 0,200 − 0,032 = 0,168 J.",
+      "0,200 J là cơ năng; tại x = 4,0 cm còn một phần là thế năng.",
+      "Nhân 0,096 J theo tỉ lệ 10/8 là sai: năng lượng tỉ lệ bình phương, không tỉ lệ bậc nhất."
+    ]
   }
 }
