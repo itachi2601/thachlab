@@ -539,6 +539,21 @@ Agent Opus theo nhóm (A điện 9, B điện từ–năng lượng 9, C cơ–�
 | tieucu-02 | tn-l9-tieucu-02 | 133 | 0 | 49,7 | 1336 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-tieucu-02-20261127.mp4) | — |
 | tieucu-03 | tn-l9-tieucu-03 | 142 | 0 | 49,6 | 1357 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-tieucu-03-20261127.mp4) | chốt tự suy theo mô hình: ảnh nét cao gấp đôi vật, vẫn tính f = L : 4 → lớn hơn f thật |
 
+**Đợt 3 (nhóm C) — 10 clip qua cổng A + B (kiem-code 2 vòng: 3 ĐẠT ngay, 7 sửa nhẹ; congco1 thêm vòng 3), ĐÃ TẢI Storage (HEAD 200), CHỜ THẦY DUYỆT** (27/11 ~23h45). Clip commit 29576aa9fa, d4d7774d66; bài 128 mở đầu, 130 cơ năng, 131 công, 95 tái tạo, 150 HSG âm thanh.
+
+| Clip | tn | Từ/phút | LỖI | Giây | KB | mp4 | Điểm cần quyết |
+|---|---|---|---|---|---|---|---|
+| conang-01 | tn-l9-conang-01 | 145 | 0 | 49,9 | 1404 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-conang-01-20261127.mp4) | hộp exp bài 130 lộ đáp án Dự đoán (sửa khi duyệt) |
+| conang-02 | tn-l9-conang-02 | 141 | 0 | 49,4 | 1443 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-conang-02-20261127-2.mp4) | kho ghi 0,25 m / 60 %, clip dùng 0,20 m / 75 % → cập nhật kho |
+| conang-03 | tn-l9-conang-03 | 143 | 0 | 48,8 | 1138 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-conang-03-20261127.mp4) | Bẫy trùng ý Câu 5 A trong bài: giữ hay đổi? |
+| congco-01 | tn-l9-congco-01 | 147 | 0 | 49,9 | 1791 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-congco-01-20261127-2.mp4) | hộp exp bài 131 lộ "quãng đường gấp đôi thì công gấp đôi" |
+| modau-01 | tn-l9-modau-01 | 142 | 0 | 49,4 | 1260 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-modau-01-20261127.mp4) | chốt mới 18.50 (thang 20 mA); kho còn chốt cũ 60 mA |
+| modau-02 | tn-l9-modau-02 | 146 | 0 | 48,2 | 1115 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-modau-02-20261127.mp4) | kho còn hàng 3 V cũ; dòng "Nhìn vào…" bài 128 có thể lộ 6 V |
+| hsgamthanh-01 | tn-l9-hsgamthanh-01 | 141 | 0 | 44,1 | 1209 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-hsgamthanh-01-20261127.mp4) | chốt mới thò 12 cm → 25–56,3 Hz (không cần 1/L²); kho còn ca cũ |
+| hsgamthanh-02 | tn-l9-hsgamthanh-02 | 133 | 0 | 49,7 | 1471 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-hsgamthanh-02-20261127-2.mp4) | Thử thách 2 bài 150 dùng lại cặp 68 m ↔ 0,4 s; kho còn chốt cũ |
+| taitao-01 | tn-l9-taitao-01 | 134 | 0 | 49,2 | 1884 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-taitao-01-20261127.mp4) | chốt "gió 1 m/s → ≈ 0 V" dựa kéo dài đường thẳng của mô hình |
+| taitao-02 | tn-l9-taitao-02 | 157 | 0 | 49,0 | 1810 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-taitao-02-20261127.mp4) | chốt mới 0,25 W; đoạn dưới video bài 95 lộ "che nửa → chậm hẳn"; kho còn 0,5 W |
+
 ## Cổng mới — L10b (bài 63–79, 38 clip; phiên `clip-cong-moi-l10b`, 27/11/2026) — **đang dựng, chờ thầy duyệt từng nhóm**
 Brief: thư mục ghi chú phiên `l10b-brief-dung.md`/`l10b-brief-kiem.md`. 1 agent Opus dựng + 1 kiem-code song song; tối đa 2 vòng kiem-code/clip, sau v2 sửa lượt cuối tự crop. Script: `tai-cong-moi-l10b.sh` (Storage), `dang-cong-moi-l10b.sh` (DB, `--chi-video`; dry-run 17/17 sạch 27/11). Kho `<tn>.json` + bài giữ bản cũ tới khi duyệt.
 
