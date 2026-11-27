@@ -1,44 +1,43 @@
 {
   "id": "tn-l11-songdung-01",
   "ten": "Dây thun rung bằng tay: vung nhanh hơn thì dây ra sao?",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-songdung-01-20261119.mp4",
-  "poster": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-songdung-01-20261119.webp",
-  "tong_giay": 48.9,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-songdung-01-20261127.mp4",
+  "tong_giay": 49.6,
   "o": [
     {
       "khoa": "gia_thuyet",
       "giay": 0,
-      "chu": "Sóng tới và sóng phản xạ ở đầu buộc tạo sóng dừng; vung càng nhanh thì dây chia càng nhiều múi.",
+      "chu": "Nhịp vung tay có thể làm đổi cách dây thun rung.",
       "kiem": "Vung nhanh hơn, dây sẽ đổi thế nào?"
     },
     {
       "khoa": "du_doan",
-      "giay": 4.6,
-      "chu": "Vung nhanh gấp đôi, 4 Hz: dây sẽ có mấy múi?"
+      "giay": 3.8,
+      "chu": "Vung 2 Hz, dây có 1 múi. Vung nhanh gấp đôi, 4 Hz: dây có mấy múi?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 10.9,
+      "giay": 9.9,
       "chu": "Dây thun dài 1 m, chân ghế, tay vung."
     },
     {
       "khoa": "quan_sat",
-      "giay": 18.4,
+      "giay": 19.0,
       "chu": "2 Hz: 1 múi. 4 Hz: 2 múi. 6 Hz: 3 múi."
     },
     {
       "khoa": "rut_ra",
-      "giay": 25.4,
+      "giay": 24.1,
       "chu": "Nhịp gấp đôi thì số múi gấp đôi. Sóng dội lại ở chân ghế, hai sóng ngược chiều tạo múi."
     },
     {
       "khoa": "chua_noi",
-      "giay": 35.6,
+      "giay": 38.6,
       "chu": "Mới đổi nhịp vung. Căng dây hơn thì sao?"
     }
   ],
   "dung_dua": {
-    "giay": 10.4,
+    "giay": 9.8,
     "cau_hoi": "Vung 2 Hz, dây có 1 múi. Vung nhanh gấp đôi, 4 Hz: dây sẽ có mấy múi?",
     "chon": [
       "A. Vẫn 1 múi, vồng cao hơn",
@@ -49,5 +48,22 @@
     "dung": 1,
     "giai_thich_dung": "Nhịp gấp đôi thì dây chia gấp đôi số múi: 2 múi, mỗi múi ngắn bằng nửa, vẫn đứng yên tại chỗ.",
     "giai_thich_sai": "Giữ đều tay ở 4 Hz, dây chia thành 2 múi đứng yên tại chỗ, mỗi múi dài bằng nửa dây."
+  },
+  "cau_chot": {
+    "giay": 43.1,
+    "cau_hoi": "Vẫn dây thun dài 1 m, căng như cũ. Muốn dây có 4 múi thì phải vung với nhịp bao nhiêu?",
+    "chon": [
+      "A. 4 Hz",
+      "B. 8 Hz",
+      "C. 6 Hz",
+      "D. 16 Hz"
+    ],
+    "dung": 1,
+    "giai_thich": [
+      "4 Hz chỉ cho 2 múi (đã thấy trong bảng). Bảng cho thấy mỗi múi ứng với 2 Hz: 1 múi 2 Hz, 2 múi 4 Hz, 3 múi 6 Hz, nên 4 múi cần 4 × 2 = 8 Hz.",
+      "Nhịp tỉ lệ với số múi: 1 múi 2 Hz, 2 múi 4 Hz, 3 múi 6 Hz. Vậy 4 múi cần 4 × 2 = 8 Hz.",
+      "6 Hz cho 3 múi, như hàng cuối của bảng. Thêm một múi phải thêm 2 Hz nữa: 4 múi cần 8 Hz.",
+      "16 Hz là nhân đôi hai lần, như thể số múi tỉ lệ với bình phương nhịp. Bảng cho thấy nhịp và số múi tăng cùng tỉ lệ: 4 múi cần 4 × 2 = 8 Hz."
+    ]
   }
 }

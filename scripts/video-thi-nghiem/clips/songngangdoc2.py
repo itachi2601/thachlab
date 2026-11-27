@@ -127,13 +127,13 @@ def s_hook(img, d, t, sc):
     y0 = 1040 + (1 - a) * 40
     card(d, (50, y0, 1030, y0 + 610), fill=A(WHITE, a), outline=A(PURPLE, a), w=6)
     pill(d, W / 2, y0 + 75, "DỰ ĐOÁN", 58, WHITE, PURPLE, a)
-    text(d, (W / 2, y0 + 205), "Tăng lên 5 Hz:", 64, INK, alpha=a)
+    text(d, (W / 2, y0 + 205), "Nhịp đẩy – kéo lên 5 Hz:", 64, INK, alpha=a)
     text(d, (W / 2, y0 + 300), "hai vùng nén liền nhau", 64, INK, alpha=a)
     text(d, (W / 2, y0 + 395), "ra sao?", 64, DPURPLE, alpha=a)
     cbar(d, y0 + 490, t, M[1] + 0.4, sc["T"] - 0.3, PURPLE, a)
 
 # ---------------- canh 2: Tien hanh ----------------
-RUN, STEP = 2.6, 4.0                                  # giay chay truoc khi dung hinh ; giay moi nhip
+RUN, STEP = 2.5, 3.6                                  # giay chay truoc khi dung hinh ; giay moi nhip
 def starts(): return [i * STEP for i in range(3)]
 def do_state(t):
     """-> (i, tp vat li, ka, dung hinh?, so hang da ghi)."""
@@ -201,7 +201,7 @@ def s_dapan(img, d, t, sc):
     y = 450 + 142
     arrow(d, (175, y), (175, y + 164), ORANGE, w=6, head=18)
     arrow(d, (905, y), (905, y + 164), ORANGE, w=6, head=18)
-    kr = appear(t, M[1] - 0.1, 0.45)
+    kr = appear(t, 2.6, 0.45)
     if kr > 0:
         card(d, (60, 830, 1020, 1060), fill=A((236, 253, 243), kr), outline=A(GREEN, kr), r=26, w=5)
         text(d, (W / 2, 900), "Nhịp gấp 2,5 lần,", 60, DGREEN, alpha=kr)
@@ -267,19 +267,18 @@ CLIP = dict(id="tn-l11-songngangdoc-02", header="VẬT LÍ 11 · THÍ NGHIỆM",
             cues=_cues, scenes=[
  dict(key="hook", title="Lò xo slinky trên sàn", draw=s_hook, tail=0.3, caps=[
    ("Đẩy – kéo đầu lò xo, dọc trục.", 3.8),
-   ("Dừng lại, tự đoán.", 5.8)]),
+   ("Dừng lại, tự đoán.", 5.6)]),
  dict(key="do", title="Tiến hành", draw=s_do, tail=0.4, caps=[
-   ("Tăng dần nhịp, đo hai vùng nén.", 6.0),
-   ("Mỗi nhịp, ghi một hàng.", 5.6)]),
+   ("Tăng dần nhịp, đo hai vùng nén.", 5.4),
+   ("Mỗi nhịp, ghi một hàng.", 5.2)]),
  dict(key="dapan", title="Kết quả", draw=s_dapan, tail=0.6, caps=[
-   ("Nhịp tăng, vùng nén sít lại.", 3.6),
-   ("Vẫn cùng một lò xo.", 3.4)]),
+   ("Nhịp tăng, vùng nén sít lại.", 6.4)]),
  dict(key="bay", title="Bẫy hay gặp", draw=s_bay, tail=0.3, caps=[
-   ("Vòng màu trôi theo sóng?", 3.4),
-   ("Nhìn vạch cũ của nó.", 3.4),
+   ("Vòng màu trôi theo sóng?", 3.2),
+   ("Nhìn vạch cũ của nó.", 3.2),
    ("Chỉ dao động tại chỗ.", 3.0)]),
  dict(key="gioi", title="Giới hạn", draw=s_gioi, tail=0.3, caps=[
-   ("Mới đổi nhịp.", 3.6)]),
+   ("Mới đổi nhịp.", 3.2)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.3, caps=[
    ("Đẩy càng nhanh, nén càng sít.", 6.4)]),
 ])

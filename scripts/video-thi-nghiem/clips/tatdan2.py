@@ -100,8 +100,8 @@ def s_hook(img, d, t, sc):
     y0 = 860 + (1 - a) * 40
     card(d, (50, y0, 1030, y0 + 700), fill=A(WHITE, a), outline=A(PURPLE, a), w=6)
     pill(d, W / 2, y0 + 80, "DỰ ĐOÁN", 58, WHITE, PURPLE, a)
-    text(d, (W / 2, y0 + 270), "Sau 2 s, đỉnh còn lại", 66, INK, alpha=a)
-    text(d, (W / 2, y0 + 400), "xếp thế nào?", 66, DPURPLE, alpha=a)
+    text(d, (W / 2, y0 + 270), "Sau 2 s, đỉnh ở ba nơi", 66, INK, alpha=a)
+    text(d, (W / 2, y0 + 400), "xếp từ cao xuống thấp?", 66, DPURPLE, alpha=a)
     cbar(d, y0 + 560, t, M[1] + 0.4, sc["T"] - 0.3, PURPLE, a)
 
 # ---------------- canh 2: Tien hanh ----------------

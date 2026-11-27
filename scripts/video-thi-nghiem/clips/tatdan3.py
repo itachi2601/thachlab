@@ -11,9 +11,10 @@
 #   KHONG noi "chu ki rieng", khong dung bay "luc cuong buc lien tuc".
 # Bay = hien_tuong_hay_sai[1] "nhun luc nao cung cao them": hai khung canh nhau, luc nhun cung chieu / nguoc chieu chieu di;
 #   du chay tiep toi bien: cung chieu cham vach dut (giu do cao), nguoc chieu dung thap hon (khong ghi so).
-# THU NGHI (= cau_chot khung web): ngoi yen 1 nhip (40 -> 34,1 cm) roi moi nhun dung luc nhu lan hai -> sau nhip 3 cao?
-#   -> 34,1 cm (nhun bu dung phan mat, giu muc luc bat dau nhun). Nhieu: 40 cm (tuong nhun dua ve cao ban dau),
-#   24,8 cm (chep lan ngoi yen), 29,0 cm. So 34,1 hien o Tien hanh nhung CAU HOI can buoc "giu muc hien tai" chua chieu.
+# THU NGHI (= cau_chot khung web; sua theo cong B vong 1, 27/11): tha tu 30 cm (A0 trong khoang kho 20-60), nhip 1 ngoi
+#   yen tut 4,4 cm (30 e^-0,16 = 25,57), tu nhip 2 moi nhip nhun bu dung phan ma sat lay di -> het nhip 3 cao 25,6 cm.
+#   Doi so tu ca 40 cm de dap so khong hien tren man va khong nam trong de (de chi cho "tut 4,4 cm" -> phai tru va
+#   hieu "giu muc"). Nhieu: 30 cm (ve cao luc tha), 21,2 cm (tru them mot nhip), 18,6 cm (ngoi yen ca 3 nhip).
 from engine import *
 
 A0, BETA, PER = 40.0, 0.08, 2.0
@@ -29,6 +30,9 @@ def _kiem_so():
     assert ts["A0"]["mac_dinh"] == A0 and ts["beta"]["gia_tri"] == BETA and ts["T"]["gia_tri"] == PER
     for r, h in zip(ROWS, k["so_lieu_mau"]["hang"]): assert tuple(h[1:]) == r, (r, h)
     for n, al, ap in ROWS: assert abs(A0 * math.exp(-BETA * n * PER) - al) < 0.051
+    a1 = 30 * math.exp(-BETA * PER)                                   # cau chot
+    assert abs((30 - a1) - 4.4) < 0.05 and abs(a1 - 25.6) < 0.05
+    assert abs(a1 - 4.4 - 21.2) < 0.05 and abs(30 * math.exp(-3 * BETA * PER) - 18.6) < 0.05
 _kiem_so()
 
 def pill(d, cx, cy, s, size, fg, bg, a=1.0):
@@ -124,7 +128,7 @@ def bars(d, nshow, diffs=False):
         if n >= nshow: continue
         for v, col, dx in ((al, BLUE, -42), (ap, ORANGE, 42)):
             d.rounded_rectangle([x + dx - 36, BASE - v * HS, x + dx + 36, BASE], radius=8, fill=col)
-        if n > 0: text(d, (x, BASE - A0 * HS - 70), fs(al), 55, BLUE)      # hang so rieng tren vach 40 cm
+        if n > 0: text(d, (x - 60, BASE - al * HS - 40), fs(al), 55, BLUE)  # nhan ngay tren dinh cot xanh (cong B)
 
 # ---------------- canh 1: Du doan (K10) ----------------
 def s_hook(img, d, t, sc):
@@ -177,7 +181,7 @@ def s_dapan(img, d, t, sc):
             d.rounded_rectangle([x + 2, BASE - A0 * HS - 12, x + 82, BASE + 4], radius=12, outline=A(DGREEN, u), width=8)
 
 # ---------------- canh 4: Bay - "nhun luc nao cung cao them" ----------------
-BR, BTH, BLOW = 330, 0.75, 0.2
+BR, BTH, BLOW = 330, 0.75, 0.45
 def mini(d, cx, th, col):
     py = 330
     d.line([(cx - 120, py), (cx + 120, py)], fill=NAVY, width=7)
@@ -242,10 +246,10 @@ def s_end(img, d, t, sc):
     k1 = 1.0
     card(d, (40, 330, 1040, 1560), fill=A(WHITE, k1), outline=A(ORANGE, k1), w=6)
     pill(d, W / 2, 410, "THỬ NGHĨ", 58, WHITE, ORANGE, k1)
-    text(d, (W / 2, 560), "Nhịp 1 ngồi yên: 40 → 34,1 cm", 60, BLUE, alpha=k1)
-    text(d, (W / 2, 690), "Rồi nhún như lần hai", 62, ORANGE, alpha=k1)
-    text(d, (W / 2, 880), "Hết nhịp 3,", 66, INK, alpha=k1)
-    text(d, (W / 2, 975), "đu cao bao nhiêu?", 66, INK, alpha=k1)
+    text(d, (W / 2, 560), "Thả 30 cm, nhịp 1 ngồi yên:", 60, BLUE, alpha=k1)
+    text(d, (W / 2, 660), "tụt 4,4 cm.", 60, BLUE, alpha=k1)
+    text(d, (W / 2, 790), "Rồi nhún bù đúng phần mất.", 62, ORANGE, alpha=k1)
+    text(d, (W / 2, 960), "Cao sau nhịp 3?", 66, INK, alpha=k1)
     cbar(d, 1200, t, 1.2, sc["T"] - 0.2, ORANGE, k1)
 
 def _cues(clip):
@@ -274,5 +278,5 @@ CLIP = dict(id="tn-l11-tatdan-03", header="VẬT LÍ 11 · VÍ DỤ", footer="T�
  dict(key="gioi", title="Giới hạn", draw=s_gioi, tail=0.3, caps=[
    ("Số minh hoạ, chưa đo thật.", 4.4)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.3, caps=[
-   ("Không bù thì tắt.", 7.2)]),
+   ("Tự tính.", 7.5)]),
 ])
