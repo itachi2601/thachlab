@@ -17,6 +17,15 @@ import {
   ThucHanhTongHopLucLazy,
   ThuocKepLazy,
 } from "@/components/physics/SimulationsLazy";
+import {
+  GcptAnMonLazy,
+  GcptEcmLazy,
+  GcptEdmLazy,
+  GcptLaserLazy,
+  GcptSieuAmLazy,
+  GcptTiaNuocLazy,
+  GcptWedmLazy,
+} from "@/components/physics/SimulationsLazy";
 
 /**
  * Gắn mô phỏng tự kéo (C1, C2 — content/thi-nghiem/de-xuat-bo-sung-2026-11-12.md mục C) vào hộp
@@ -37,6 +46,14 @@ const MO_PHONG = {
   "thuc-hanh-dong-luong": ThucHanhDongLuongLazy,
   "thuc-hanh-toc-do": ThucHanhTocDoLazy,
   "thuc-hanh-tong-hop-luc": ThucHanhTongHopLucLazy,
+  /* Gia công phi truyền thống (gcpt) */
+  "gcpt-edm-xung": GcptEdmLazy,
+  "gcpt-wedm-bu-day": GcptWedmLazy,
+  "gcpt-ecm-khe-ho": GcptEcmLazy,
+  "gcpt-laser-cuong-do": GcptLaserLazy,
+  "gcpt-tia-nuoc": GcptTiaNuocLazy,
+  "gcpt-sieu-am": GcptSieuAmLazy,
+  "gcpt-an-mon-an-lem": GcptAnMonLazy,
 } as const;
 type Khoa = keyof typeof MO_PHONG;
 

@@ -1,52 +1,69 @@
 {
   "id": "tn-l10-nang-luong-cong-01",
   "ten": "Bóng tennis nảy trên sàn gạch",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-nang-luong-cong-01-20261118.mp4",
-  "tong_giay": 48.4,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-nang-luong-cong-01-20261127.mp4",
+  "tong_giay": 49.8,
   "o": [
     {
       "khoa": "gia_thuyet",
       "giay": 0,
-      "chu": "Phần lớn năng lượng thành nhiệt và âm sinh ra lúc bóng chạm sàn; tổng năng lượng không mất, chỉ đổi dạng.",
+      "chu": "Mỗi lần bóng chạm sàn, một phần cơ năng thành nhiệt và âm; tổng năng lượng không mất, chỉ đổi dạng.",
       "kiem": "Mỗi lần nảy, năng lượng thay đổi ra sao?"
     },
     {
       "khoa": "du_doan",
-      "giay": 4.0,
-      "chu": "Phần lớn năng lượng thành nhiệt và âm sinh ra lúc nào?"
+      "giay": 3.6,
+      "chu": "Phần lớn nhiệt và âm sinh ra vào lúc nào?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 10.0,
-      "chu": "Bóng tennis 57 g, sàn gạch, thước dọc."
+      "giay": 10.3,
+      "chu": "Bóng tennis 57 g, sàn gạch, thước dựng đứng, quay chậm."
     },
     {
       "khoa": "quan_sat",
-      "giay": 16.2,
+      "giay": 19.6,
       "chu": "Cột đỏ (nhiệt và âm) chỉ tăng khi bóng chạm sàn."
     },
     {
       "khoa": "rut_ra",
-      "giay": 24.4,
-      "chu": "Tổng vẫn 0,559 J: không mất, chỉ đổi dạng."
+      "giay": 24.6,
+      "chu": "Ở đỉnh 3: thế năng 0,093 J + nhiệt, âm 0,466 J = 0,559 J, bằng lúc thả."
     },
     {
       "khoa": "chua_noi",
-      "giay": 27.7,
-      "chu": "Thước chỉ đo thế năng;\nnhiệt + âm là suy ra."
+      "giay": 39.3,
+      "chu": "Thước chỉ đo thế năng; nhiệt và âm là suy ra, chưa đo."
     }
   ],
   "dung_dua": {
-    "giay": 9.8,
-    "cau_hoi": "Phần lớn năng lượng thành nhiệt và âm sinh ra lúc nào?",
+    "giay": 9.6,
+    "cau_hoi": "Thả bóng tennis từ 1,0 m xuống sàn gạch, bóng nảy thấp dần. Phần lớn nhiệt và âm sinh ra vào lúc nào?",
     "chon": [
-      "A. lúc bóng rơi xuống",
-      "B. lúc bóng chạm sàn",
-      "C. lúc bóng bay lên",
-      "D. chia đều cả ba lúc"
+      "A. Lúc bóng rơi xuống",
+      "B. Lúc bóng chạm sàn",
+      "C. Lúc bóng bay lên",
+      "D. Chia đều cả ba lúc"
     ],
     "dung": 1,
     "giai_thich_dung": "Cột nhiệt và âm chỉ tăng khi bóng chạm sàn: va chạm với sàn là lúc cơ năng bị lấy bớt.",
     "giai_thich_sai": "Xem đoạn kế: cột đỏ tăng vào lúc nào trong mỗi lần nảy?"
+  },
+  "cau_chot": {
+    "giay": 43.3,
+    "cau_hoi": "Bóng tennis 57 g thả từ 2,0 m xuống đúng sàn gạch trong clip (g = 9,8 m/s², bỏ qua lực cản không khí). Từ lúc thả tới đỉnh lần nảy 1, bao nhiêu năng lượng đã thành nhiệt và âm?",
+    "chon": [
+      "A. 0,25 J",
+      "B. 0,50 J",
+      "C. 0,61 J",
+      "D. 1,12 J"
+    ],
+    "dung": 1,
+    "giai_thich": [
+      "0,25 J là số của lần thả 1,0 m. Thả 2,0 m: sàn như cũ nên đỉnh 1 = 0,55 · 2,0 = 1,10 m; nhiệt + âm = 0,057 · 9,8 · (2,0 − 1,10) ≈ 0,50 J.",
+      "Cùng sàn nên tỉ lệ nảy vẫn 0,55: đỉnh 1 = 1,10 m. Cơ năng mất = mg(2,0 − 1,10) = 0,057 · 9,8 · 0,90 ≈ 0,50 J thành nhiệt và âm.",
+      "0,61 J là thế năng còn lại ở đỉnh 1 (0,057 · 9,8 · 1,10). Phần thành nhiệt, âm là phần mất: 1,12 − 0,61 ≈ 0,50 J.",
+      "1,12 J là toàn bộ thế năng lúc thả. Bóng vẫn còn lên tới 1,10 m, nên chỉ phần mg(2,0 − 1,10) ≈ 0,50 J thành nhiệt và âm."
+    ]
   }
 }

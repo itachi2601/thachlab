@@ -1,9 +1,9 @@
 {
   "id": "tn-l9-doanmach-03",
   "ten": "Tháo một bóng đèn: nối tiếp và song song",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-doanmach-03-20261119.mp4",
-  "poster": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-doanmach-03-20261119.webp",
-  "tong_giay": 49.3,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-doanmach-03-20261127.mp4",
+  "poster": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-doanmach-03-20261127.webp",
+  "tong_giay": 48.1,
   "o": [
     {
       "khoa": "gia_thuyet",
@@ -13,32 +13,32 @@
     },
     {
       "khoa": "du_doan",
-      "giay": 3.8,
+      "giay": 3.6,
       "chu": "Hai bóng giống nhau, nguồn 3 V. Lắp cả hai: ampe kế mạch chính chỉ 0,25 A (nối tiếp) và 1,0 A (song song). Tháo Đ1 ở cả hai mạch, ampe kế mạch chính chỉ bao nhiêu?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 10.3,
+      "giay": 9.1,
       "chu": "Hai bóng giống nhau, nguồn 3 V, khoá K, ampe kế mạch chính."
     },
     {
       "khoa": "quan_sat",
-      "giay": 17.0,
+      "giay": 14.4,
       "chu": "Nối tiếp: Đ2 tắt, ampe kế 0 A. Song song: Đ2 vẫn sáng, ampe kế 0,5 A."
     },
     {
       "khoa": "rut_ra",
-      "giay": 24.7,
+      "giay": 26.5,
       "chu": "Nối tiếp: hở một chỗ là hở cả mạch. Song song: dòng mạch chính bằng tổng dòng các nhánh, mất nhánh Đ1 còn 0,5 A."
     },
     {
       "khoa": "chua_noi",
-      "giay": 34.9,
-      "chu": "Ở đây coi nguồn luôn giữ 3 V. Pin dùng lâu, yếu đi thì sao?"
+      "giay": 37.4,
+      "chu": "Số liệu minh hoạ, chưa đo thật.\nCoi điện trở bóng không đổi; thật ra dây tóc nguội thì điện trở nhỏ hơn."
     }
   ],
   "dung_dua": {
-    "giay": 10.1,
+    "giay": 8.95,
     "cau_hoi": "Hai bóng giống nhau, nguồn 3 V. Lắp cả hai: ampe kế mạch chính chỉ 0,25 A (nối tiếp) và 1,0 A (song song). Tháo Đ1 ở cả hai mạch, ampe kế mạch chính chỉ bao nhiêu?",
     "chon": [
       "A. Nối tiếp 0 A; song song 0,5 A",
@@ -49,5 +49,22 @@
     "dung": 0,
     "giai_thich_dung": "Mạch nối tiếp chỉ có một đường đi: tháo Đ1 là mạch hở, ampe kế chỉ 0 A. Mạch song song: dòng mạch chính bằng tổng dòng hai nhánh (0,5 A + 0,5 A); tháo Đ1 thì chỉ còn nhánh Đ2 với 0,5 A.",
     "giai_thich_sai": "Tháo một bóng ở mạch nối tiếp là cắt đường đi duy nhất, nên không còn dòng. Ở mạch song song, nhánh Đ2 vẫn nhận đủ 3 V nên giữ 0,5 A, nhưng nhánh Đ1 mất đi nên ampe kế mạch chính giảm từ 1,0 A xuống 0,5 A."
+  },
+  "cau_chot": {
+    "giay": 43.7,
+    "cau_hoi": "Ba bóng giống như trên mắc song song vào nguồn 3 V. Tháo một bóng. Ampe kế mạch chính chỉ bao nhiêu?",
+    "chon": [
+      "A. 0,5 A",
+      "B. 1,0 A",
+      "C. 1,5 A",
+      "D. 0 A"
+    ],
+    "dung": 1,
+    "giai_thich": [
+      "0,5 A là dòng của một nhánh. Tháo một bóng còn hai nhánh, mỗi nhánh nhận đủ 3 V và cho 0,5 A: mạch chính 0,5 + 0,5 = 1,0 A.",
+      "Còn hai nhánh, mỗi nhánh vẫn nhận đủ 3 V nên vẫn 0,5 A. Dòng mạch chính bằng tổng các nhánh: 2 × 0,5 = 1,0 A.",
+      "1,5 A là lúc đủ ba bóng (3 × 0,5 A). Mất một nhánh thì mạch chính mất 0,5 A, còn 1,0 A.",
+      "0 A chỉ đúng với mạch nối tiếp, nơi hở một chỗ là hở cả mạch. Song song, hai nhánh còn lại vẫn nối thẳng vào nguồn: 1,0 A."
+    ]
   }
 }

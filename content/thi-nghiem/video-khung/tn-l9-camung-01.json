@@ -1,52 +1,70 @@
 {
   "id": "tn-l9-camung-01",
   "ten": "Nam châm thẳng đưa lại gần rồi kéo ra khỏi cuộn dây kín",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-camung-01-20261118.mp4",
-  "poster": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-camung-01-20261118.webp",
-  "tong_giay": 49.4,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-camung-01-20261127.mp4",
+  "poster": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-camung-01-20261127.webp",
+  "tong_giay": 49.8,
   "o": [
     {
       "khoa": "gia_thuyet",
       "giay": 0,
-      "chu": "Nam châm chuyển động so với cuộn dây kín thì trong cuộn có dòng điện cảm ứng; lại gần và ra xa cho dòng ngược chiều.",
+      "chu": "Nam châm chuyển động so với cuộn dây kín thì trong cuộn có dòng điện cảm ứng; chiều dòng tuỳ chiều chuyển động.",
       "kiem": "Nam châm chuyển động, kim điện kế sao?"
     },
     {
       "khoa": "du_doan",
-      "giay": 3.8,
+      "giay": 3.6,
       "chu": "Đưa N lại gần: kim lệch phải. Kéo N ra xa: kim sẽ thế nào?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 10.0,
+      "giay": 9.7,
       "chu": "Nam châm thẳng, cuộn dây kín, điện kế."
     },
     {
       "khoa": "quan_sat",
-      "giay": 19.6,
-      "chu": "Đứng yên: kim ở 0. Lại gần: lệch phải, 1,0 mA. Ra xa: lệch trái, 1,0 mA."
+      "giay": 18.5,
+      "chu": "Đứng yên: kim ở 0. Lại gần: lệch phải 1,0 mA. Ra xa: lệch trái 1,0 mA."
     },
     {
       "khoa": "rut_ra",
-      "giay": 26.1,
+      "giay": 24.8,
       "chu": "Nam châm và cuộn dây chuyển động đối với nhau thì có dòng điện cảm ứng."
     },
     {
       "khoa": "chua_noi",
-      "giay": 36.9,
-      "chu": "Vì sao có dòng điện? Số trên kim chỉ minh hoạ."
+      "giay": 38.1,
+      "chu": "Cái gì thay đổi mà sinh ra dòng điện? Số trên kim chỉ minh hoạ."
     }
   ],
   "dung_dua": {
-    "giay": 9.8,
+    "giay": 9.0,
     "cau_hoi": "Đưa N lại gần: kim lệch phải. Kéo N ra xa: kim sẽ thế nào?",
     "chon": [
       "A. Đứng yên ở số 0",
       "B. Vẫn lệch phải",
-      "C. Lệch trái"
+      "C. Lệch trái",
+      "D. Lệch phải mạnh hơn"
     ],
     "dung": 2,
     "giai_thich_dung": "Kéo ra xa là chuyển động ngược lại nên dòng cảm ứng đổi chiều: kim lệch sang phía ngược với lúc lại gần.",
     "giai_thich_sai": "Nam châm vẫn chuyển động so với cuộn dây nên có dòng, nhưng chiều dòng đổi khi đổi chiều chuyển động; kim lệch trái chứ không đứng yên hay lệch phải."
+  },
+  "cau_chot": {
+    "giay": 42.7,
+    "cau_hoi": "Đưa cực N lại gần rồi ra xa cuộn dây, liên tục không nghỉ. Kim điện kế thế nào?",
+    "chon": [
+      "A. Đứng yên ở số 0",
+      "B. Lệch phải, đứng yên ở đó",
+      "C. Lệch qua lại liên tục",
+      "D. Lệch phải, mạnh dần"
+    ],
+    "dung": 2,
+    "giai_thich": [
+      "Nam châm luôn chuyển động so với cuộn dây kín nên lúc nào cũng có dòng cảm ứng; kim không đứng ở 0.",
+      "Lại gần thì kim lệch phải, nhưng ngay sau đó ra xa thì dòng đổi chiều, kim lệch trái. Kim không đứng yên một phía.",
+      "Lại gần: kim lệch phải; ra xa: kim lệch trái. Hai chuyển động nối nhau liên tục nên kim lệch qua lại liên tục.",
+      "Chỉ lúc lại gần kim mới lệch phải; lúc ra xa dòng đổi chiều nên kim lệch trái, không lệch phải mãi."
+    ]
   }
 }

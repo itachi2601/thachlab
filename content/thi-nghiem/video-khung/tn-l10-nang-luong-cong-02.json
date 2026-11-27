@@ -1,8 +1,8 @@
 {
   "id": "tn-l10-nang-luong-cong-02",
   "ten": "Kéo xe lên cùng độ cao qua nhiều máng",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-nang-luong-cong-02-20261118.mp4",
-  "tong_giay": 48.9,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-nang-luong-cong-02-20261127.mp4",
+  "tong_giay": 49.3,
   "o": [
     {
       "khoa": "gia_thuyet",
@@ -12,33 +12,33 @@
     },
     {
       "khoa": "du_doan",
-      "giay": 3.4,
-      "chu": "Hai máng cùng cao 0,20 m. Máng dài gấp đôi thì công kéo F·s thế nào?"
+      "giay": 3.6,
+      "chu": "Cùng cao 0,20 m, máng dài gấp đôi. Công kéo F·s thế nào?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 9.6,
-      "chu": "Lực kế kéo đều xe 2,0 N: lần đầu thẳng đứng, rồi song song máng, cùng lên cao 0,20 m."
+      "giay": 10.3,
+      "chu": "Lực kế kéo đều xe 2,0 N: lần đầu thẳng đứng, rồi song song máng."
     },
     {
       "khoa": "quan_sat",
-      "giay": 22.8,
+      "giay": 22.5,
       "chu": "F·s = 0,400; 0,424; 0,448; 0,460 J, đều sát P·h = 0,40 J."
     },
     {
       "khoa": "rut_ra",
-      "giay": 26.6,
-      "chu": "Đi lên, công trọng lực A_P = −P·h = −0,40 J ở cả bốn đường: mặt nghiêng không lợi về công."
+      "giay": 27.1,
+      "chu": "Mặt nghiêng lợi về lực, thiệt về đường đi, không lợi về công."
     },
     {
       "khoa": "chua_noi",
-      "giay": 36.3,
-      "chu": "Phần F·s dôi ra đi đâu?\nKéo không đều thì sao?"
+      "giay": 38.9,
+      "chu": "Chưa thử kéo không đều: lực kế khi đó chỉ sai."
     }
   ],
   "dung_dua": {
-    "giay": 9.4,
-    "cau_hoi": "Hai máng cùng cao 0,20 m. Máng dài gấp đôi thì công kéo F·s thế nào?",
+    "giay": 9.6,
+    "cau_hoi": "Kéo đều xe 2,0 N lên cùng độ cao 0,20 m. Máng dài gấp đôi (0,40 m lên 0,80 m) thì công kéo F·s thế nào?",
     "chon": [
       "A. Giảm còn một nửa",
       "B. Gấp đôi",
@@ -47,5 +47,22 @@
     "dung": 2,
     "giai_thich_dung": "Máng dài gấp đôi thì lực kéo giảm gần một nửa nên F·s gần như không đổi: 0,424 J ở máng 0,40 m, 0,448 J ở máng 0,80 m.",
     "giai_thich_sai": "Xem đoạn kế: lực F giảm bao nhiêu khi máng dài gấp đôi, rồi nhân với s."
+  },
+  "cau_chot": {
+    "giay": 43.0,
+    "cau_hoi": "Máng trơn (bỏ qua ma sát) dài 0,75 m, đỉnh máng cao 0,30 m. Kéo đều xe trọng lượng 3,0 N lên máng, lực kế giữ song song mặt máng. Lực kế chỉ bao nhiêu?",
+    "chon": [
+      "A. 0,90 N",
+      "B. 1,20 N",
+      "C. 2,75 N",
+      "D. 3,00 N"
+    ],
+    "dung": 1,
+    "giai_thich": [
+      "0,90 N là P·h = 0,90 J, đó là công chứ chưa phải lực. Không ma sát: F·s = P·h nên F = 0,90 ÷ 0,75 = 1,20 N.",
+      "Máng trơn, kéo đều: công kéo bằng công nâng, F·s = P·h = 3,0 · 0,30 = 0,90 J. F = 0,90 ÷ 0,75 = 1,20 N.",
+      "2,75 N là P·cos θ (sin θ = 0,30 ÷ 0,75 = 0,4), tức thành phần ép vào máng. Lực kéo dọc máng: F = P·h ÷ s = 3,0 · 0,30 ÷ 0,75 = 1,20 N.",
+      "3,00 N là lực kéo thẳng đứng. Kéo theo máng dài 0,75 m thì lợi về lực: F = P·h ÷ s = 1,20 N."
+    ]
   }
 }

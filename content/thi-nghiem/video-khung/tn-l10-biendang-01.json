@@ -1,44 +1,44 @@
 {
   "id": "tn-l10-biendang-01",
   "ten": "Lò xo bút bi kéo rồi thả",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-biendang-01-20261118.mp4",
-  "tong_giay": 49.5,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-biendang-01-20261127.mp4",
+  "tong_giay": 49.4,
   "o": [
     {
       "khoa": "gia_thuyet",
       "giay": 0,
-      "chu": "Lực nhỏ thì thôi lực lò xo về cũ; lực quá giới hạn đàn hồi thì không về.",
+      "chu": "Lực nhỏ thì thôi lực lò xo về chiều dài cũ; lực quá giới hạn đàn hồi thì không về.",
       "kiem": "Kéo 6 N rồi thả, lò xo ra sao?"
     },
     {
       "khoa": "du_doan",
-      "giay": 3.2,
-      "chu": "Kéo 6 N rồi thả. Lò xo dài bao nhiêu?"
+      "giay": 3.4,
+      "chu": "Kéo 6 N rồi thả ra. Lò xo dài bao nhiêu?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 8.9,
+      "giay": 9.3,
       "chu": "Lò xo bút bi dài 4,0 cm, lực kế, thước."
     },
     {
       "khoa": "quan_sat",
-      "giay": 12.5,
-      "chu": "Kéo nhẹ 1 N rồi thả: lò xo về đúng 4,0 cm."
+      "giay": 16.0,
+      "chu": "Kéo 1 N, 3 N rồi thả: lò xo về đúng 4,0 cm."
     },
     {
       "khoa": "rut_ra",
-      "giay": 21.8,
-      "chu": "1 N, 3 N: đàn hồi. 6 N: dẻo, dư 2,5 cm."
+      "giay": 25.9,
+      "chu": "Lực nhỏ: đàn hồi, thả ra là về. Kéo 6 N: dẻo, thả ra còn dài 6,5 cm."
     },
     {
       "khoa": "chua_noi",
-      "giay": 25.9,
-      "chu": "Giới hạn ở đâu giữa 3 N và 6 N thì chưa nói."
+      "giay": 37.9,
+      "chu": "Giới hạn đàn hồi đúng bao nhiêu N thì chưa đo."
     }
   ],
   "dung_dua": {
-    "giay": 8.8,
-    "cau_hoi": "Kéo 6 N rồi thả. Lò xo dài bao nhiêu?",
+    "giay": 9.15,
+    "cau_hoi": "Lò xo dài 4,0 cm. Kéo 6 N rồi thả ra. Lò xo dài bao nhiêu?",
     "chon": [
       "A. Về đúng 4,0 cm như lần kéo nhẹ",
       "B. Dài hơn 4,0 cm, không về như cũ",
@@ -46,6 +46,23 @@
     ],
     "dung": 1,
     "giai_thich_dung": "Kéo 6 N đã vượt giới hạn đàn hồi, lò xo biến dạng dẻo nên thả ra vẫn dài hơn 4,0 cm.",
-    "giai_thich_sai": "Xem chiều dài lò xo sau mỗi lần thả ở đoạn kế."
+    "giai_thich_sai": "Xem cột \"đã thả\" của bảng sau mỗi lần kéo ở đoạn kế."
+  },
+  "cau_chot": {
+    "giay": 42.3,
+    "cau_hoi": "Một lò xo MỚI cùng loại, dài 4,0 cm khi chưa kéo. Kéo nó bằng lực 2,5 N. Lúc đang kéo, lò xo dài bao nhiêu?",
+    "chon": [
+      "A. 1,25 cm",
+      "B. 5,25 cm",
+      "C. 6,5 cm",
+      "D. 9,0 cm"
+    ],
+    "dung": 1,
+    "giai_thich": [
+      "1,25 cm mới là phần dài thêm. Chiều dài lúc kéo phải cộng chiều dài ban đầu: 4,0 + 1,25 = 5,25 cm.",
+      "Bảng cho 1 N dài 4,5 cm, 3 N dài 5,5 cm: mỗi 1 N lò xo dài thêm 0,5 cm. 2,5 N nhỏ hơn 3 N nên còn đàn hồi: dài thêm 2,5 · 0,5 = 1,25 cm, tức 4,0 + 1,25 = 5,25 cm.",
+      "6,5 cm là chiều dài lò xo ĐÃ HỎNG sau lần kéo 6 N. Lò xo mới kéo 2,5 N (dưới 3 N) vẫn đàn hồi: 4,0 + 2,5 · 0,5 = 5,25 cm.",
+      "9,0 cm là lấy 2 cm cho mỗi 1 N (chia ngược). Từ bảng: tăng 2 N (1 N → 3 N) thì dài thêm 1 cm, tức 0,5 cm mỗi N: 4,0 + 1,25 = 5,25 cm."
+    ]
   }
 }
