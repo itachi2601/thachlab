@@ -68,7 +68,7 @@ def bench(d, dd, img_on=True, rays=1.0, guide=False, labels=True, ftag=True, sx_
     d.line([(20, AX), (1060, AX)], fill=A(NAVY, 0.6), width=3)              # truc chinh
     if guide:                                                              # muc chieu cao vat, phia duoi truc
         dash(d, (OX, AX + HP), (sx + 30, AX + HP), A(GRAY, 0.9), w=3)
-        text(d, (OX + 8, AX + HP + 44), "mức 3,0 cm", FM, MUTED, bold=False, anchor="lm")
+        text(d, (OX + 8, AX + HP + 44), "mức 3,0 cm", FM, NAVY, anchor="lm")   # kiem-v1 muc 4: chu phu mau dam
     d.rounded_rectangle([sx - 9, AX - 230, sx + 9, AX + 300], radius=4, fill=WHITE, outline=NAVY, width=3)   # man
     lens(d, lx)
     for x, nm in ((lx - FP, "F"), (lx + FP, "F'")):
@@ -104,7 +104,7 @@ def bar_card(d, k, state, sub=None):
     text(d, (370, cy - 44), "ảnh", FM, BLUE)
     if state:
         text(d, (745, cy - (40 if sub else 0)), state, FS, INK)
-        if sub: text(d, (745, cy + 44), sub, FM, MUTED, bold=False)
+        if sub: text(d, (745, cy + 44), sub, FM, INK)
 
 
 # ---------------- canh 1: Du doan (K10) ----------------
@@ -192,8 +192,8 @@ def s_dapan(img, d, t, sc):
     k4 = appear(t, DA_E, 0.4)
     if k4 > 0:
         card(d, (40, 1340, 1040, 1530), fill=A((255, 247, 237), k4), outline=A(ORANGE, k4), r=22, w=4)
-        text(d, (W / 2, 1395), "L lệch 0,4 cm", FS, (154, 52, 18), alpha=k4)
-        text(d, (W / 2, 1475), "→ f chỉ lệch 0,1 cm", FS, (154, 52, 18), alpha=k4)
+        text(d, (W / 2, 1395), "Nếu L sai 0,4 cm", FS, (154, 52, 18), alpha=k4)      # kiem-v1 muc 2: gia dinh, khong
+        text(d, (W / 2, 1475), "thì f chỉ sai 0,1 cm", FS, (154, 52, 18), alpha=k4)  #   neu so lech khong co nguon
 
 
 # ---------------- canh 4: Bay + chua noi duoc ----------------
@@ -202,14 +202,16 @@ def s_bay(img, d, t, sc):
     lx, sx, k = bench(d, 2 * FP, rays=0.4, labels=False)
     a1 = appear(t, 0.3, 0.45)
     if a1 > 0:
-        seg(d, OX, lx, 935, A(DRED, a1), w=8)                          # L:2 = doan vat - kinh = d
+        seg(d, OX, lx, 310, A(DRED, a1), w=8)                          # L:2 = doan vat - kinh = d (kiem-v1 muc 3: dua len tren,
+        text(d, ((OX + lx) / 2, 356), "d", FS, DRED, alpha=a1)         #   xa chu BAY, co nhan d / f)
         pill(d, "BẪY", 1000, a1, color=DRED)
         card(d, (40, 1050, 1040, 1190), fill=A(WHITE, a1), outline=A(DRED, a1), w=5)
         text(d, (90, 1120), "f = L : 2 = 20,2 cm", FS, DRED, anchor="lm", alpha=a1)
         text(d, (980, 1120), "✗", 80, DRED, alpha=a1)
     a2 = appear(t, BAY_R, 0.45)
     if a2 > 0:
-        seg(d, lx, lx + FP, 935, A(DGREEN, a2), w=8)                   # f = OF' : mot phan tu L
+        seg(d, lx, lx + FP, 310, A(DGREEN, a2), w=8)                   # f = OF' : mot phan tu L
+        text(d, (lx + FP / 2 + 40, 356), "f", FS, DGREEN, alpha=a2)
         card(d, (40, 1205, 1040, 1345), fill=A(WHITE, a2), outline=A(DGREEN, a2), w=5)
         text(d, (90, 1275), "f = L : 4 = 10,1 cm", FS, DGREEN, anchor="lm", alpha=a2)
         text(d, (980, 1275), "✓", 80, DGREEN, alpha=a2)
@@ -224,9 +226,7 @@ def s_bay(img, d, t, sc):
 END_Q, END_C = 0.2, 4.3
 EY = 1180
 def s_end(img, d, t, sc):
-    k0 = appear(t, END_C, 0.5)
-    card(d, (50, 265, 1030, 425), fill=A((236, 253, 243), k0), outline=A(GREEN, k0), w=6)
-    text(d, (W / 2, 345), "Ảnh bằng vật: f = L : 4", FS, DGREEN, alpha=k0)
+    # GD2 kiem-v1 muc 1: bo the xanh "f = L : 4" (tra loi san)
     k1 = appear(t, END_Q, 0.5)
     card(d, (40, 455, 1040, 1560), fill=A(WHITE, k1), outline=A(ORANGE, k1), w=6)
     pw = tw(d, "THỬ NGHĨ", F(FM)) + 56
@@ -243,6 +243,7 @@ def s_end(img, d, t, sc):
         arrow(d, (sx, EY), (sx, EY + 120), A(BLUE, k1), w=9, head=24)
         d.rounded_rectangle([sx + 14, EY - 180, sx + 30, EY + 180], radius=4, fill=A(WHITE, k1), outline=A(NAVY, k1), width=3)
         kq = 0.55 + 0.45 * math.sin(2.4 * t) ** 2
+        d.rounded_rectangle([ox, EY + 205, lx, EY + 360], radius=20, fill=A((253, 186, 116), k1 * (kq - 0.55) / 0.45))  # nhap nhay: hinh khong dung yen
         seg(d, ox, lx, EY + 230, A(ORANGE, k1), w=5)
         text(d, ((ox + lx) / 2, EY + 290), "?", 84, ORANGE, alpha=k1 * kq)
 
