@@ -255,7 +255,7 @@ CLIP = dict(id="tn-l10-giaibt-dlh-02", header="VẬT LÍ 10 · THÍ NGHIỆM", f
    ("Định luật II cho từng vật.", 3.4),
    ("Đo nhỏ hơn: có lực cản.", 3.4)]),
  dict(key="bay", title="Bẫy hay gặp", draw=s_bay, tail=0.3, caps=[
-   ("Số đo sai?", 3.0),
+   ("Số đo sai?", 3.2),
    ("Không, 2,0 bỏ ma sát.", 3.0),
    ("Cản ở đâu?", 3.0)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.3, caps=[
