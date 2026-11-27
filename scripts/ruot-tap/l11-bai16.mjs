@@ -94,7 +94,7 @@ ${h3(2, 'Thí nghiệm: thước nhựa, giấy vụn, lon nhôm', '2·2')}
 <div class="card fig-side" style="${fs(42)};padding:1.2mm 3mm"><div>
 <div><b>Làm:</b> cọ thước nhựa vào tóc khô, đưa lại gần giấy vụn; rồi đưa lại gần (không chạm) lon nhôm rỗng nằm ngang.</div>
 <div><b>Quan sát:</b> giấy vụn ${f(32)}; lon nhôm ${f(32)}</div>
-<div><b>Rút ra:</b> thước nhiễm điện do ${f(18)}. Lon nhiễm điện do ${f(18)}: đầu gần thước nhiễm điện ${f(14)} dấu nên bị hút; đầu xa bị đẩy nhưng ở xa hơn nên lực yếu hơn.</div></div>
+<div><b>Rút ra:</b> thước nhiễm điện do ${f(18)}. Lon nhiễm điện do ${f(18)}: đầu gần thước nhiễm điện ${f(14)} dấu, đầu xa nhiễm điện ${f(14)} dấu; lực lên hai đầu ${f(14)} nhau nên lon ${f(22)}.</div></div>
 ${H.lonNhom()}</div>
 ${h3(3, 'II.2 · Định luật Coulomb', '2·3')}
 <div class="card fig-side" style="${fs(44)};padding:1.2mm 3mm"><div>
@@ -156,8 +156,8 @@ ${tb('4. Định luật Coulomb: phát biểu, công thức, đơn vị.')}${lin
 ${tb(`5. Hai lực vuông góc; hai lực bằng nhau hợp góc ${al}: hợp lực?`)}${lines(2)}
 ${tb(`6. Đặt ${q0} ở đâu để cân bằng giữa ${q1}, ${q2}?`)}${lines(2)}`)}
 <div class="card soft" style="margin-top:.8mm;padding:.8mm 3mm"><b>Bạn cùng bàn kiểm:</b> ……/6 câu · chưa thuộc: ${f(25)} ${nw(`→ đọc lại ô ${f(12)} Tập`)}</div>
-${h3(3, 'Kết quả tự kiểm tra (đề chiếu trên lớp)', '4·3')}
-${rkHai([1, 2, 3], [4, 5, 6])}
+${h3(3, 'Đề 1211 (20 câu, cuối tiết)', '4·3')}
+<div class="card soft" style="padding:1mm 3mm"><b>Điểm:</b> ……/20 &nbsp;· <b>Câu sai:</b> ${f(30)} &nbsp;· <b>Câu đoán mò:</b> ${f(22)}</div>
 ${foot(4)}</section>`;
 
 const p5 = `<section class="page">

@@ -3,12 +3,12 @@
   "ten": "Kim nam châm cạnh lõi sắt của nam châm điện",
   "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-xoaychieu-01-20261127.mp4",
   "poster": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-xoaychieu-01-20261127.webp",
-  "tong_giay": 49.1,
+  "tong_giay": 50.0,
   "o": [
     {
       "khoa": "gia_thuyet",
       "giay": 0,
-      "chu": "Dòng đổi chiều thì cực từ của nam châm điện đổi theo, nên kim bị hút rồi đẩy luân phiên và lắc qua lại.",
+      "chu": "Cực từ của nam châm điện phụ thuộc chiều dòng điện; kim nam châm phản ứng theo cực từ đó.",
       "kiem": "Nguồn đổi chiều, kim sẽ ra sao?"
     },
     {
@@ -18,31 +18,31 @@
     },
     {
       "khoa": "dung_cu",
-      "giay": 8.8,
+      "giay": 7.6,
       "chu": "Nam châm điện, kim nam châm, nguồn một chiều và nguồn đổi chiều."
     },
     {
       "khoa": "quan_sat",
-      "giay": 16.6,
+      "giay": 15.4,
       "chu": "Nguồn một chiều: kim lệch một phía. Nguồn đổi chiều chậm: kim lắc qua lại."
     },
     {
       "khoa": "rut_ra",
-      "giay": 37.6,
+      "giay": 35.9,
       "chu": "Cực từ đổi theo dòng. Nguồn thật: kim chỉ rung."
     },
     {
       "khoa": "chua_noi",
-      "giay": 41.4,
-      "chu": "Theo mô hình. Bỏ qua từ dư của lõi sắt."
+      "giay": 39.4,
+      "chu": "Kim rung mạnh cỡ nào: chưa đo."
     }
   ],
   "dung_dua": {
-    "giay": 8.5,
+    "giay": 7.3,
     "cau_hoi": "Nguồn đổi chiều chậm, mỗi 2 giây một lần (mô hình). Kim nam châm thế nào?",
     "chon": [
       "A. Lệch một phía rồi đứng yên",
-      "B. Lắc qua lại, đổi phía theo chiều dòng",
+      "B. Lắc qua lại",
       "C. Quay tròn liên tục",
       "D. Đứng yên, không lệch"
     ],
@@ -51,20 +51,20 @@
     "giai_thich_sai": "Cực từ của lõi sắt đổi theo chiều dòng, nên kim không đứng yên một phía và không quay tròn; nó lắc qua lại."
   },
   "cau_chot": {
-    "giay": 42.0,
-    "cau_hoi": "Lần 1, nguồn một chiều làm kim lệch về một phía. Đảo hai dây nối nguồn một chiều thì kim thế nào?",
+    "giay": 43.0,
+    "cau_hoi": "Nguồn mô hình đổi chiều mỗi 2 s. Từ 0 đến 2 s, kim lệch sang phải. Ở giây thứ 5, kim lệch phía nào?",
     "chon": [
-      "A. Lệch về phía cũ",
-      "B. Lệch sang phía kia",
-      "C. Đứng yên, không lệch",
-      "D. Lắc qua lại mãi"
+      "A. Sang phải",
+      "B. Sang trái",
+      "C. Đứng thẳng giữa",
+      "D. Quay tròn"
     ],
-    "dung": 1,
+    "dung": 0,
     "giai_thich": [
-      "Đảo dây thì dòng trong cuộn đổi chiều, cực từ ở đầu lõi đổi theo, nên kim không lệch về phía cũ.",
-      "Đảo dây làm dòng đổi chiều; cực từ ở đầu lõi gần kim đổi N thành S, nên kim lệch sang phía kia và đứng đó.",
-      "Vẫn có dòng một chiều trong cuộn nên lõi vẫn là nam châm điện; kim vẫn bị lệch, chỉ đổi phía.",
-      "Dòng sau khi đảo dây vẫn là một chiều, không đổi chiều liên tục, nên kim lệch một phía rồi đứng yên, không lắc."
+      "0–2 s kim lệch phải, 2–4 s dòng đổi chiều nên kim lệch trái, 4–6 s dòng đổi chiều lần nữa nên kim lại lệch phải; giây thứ 5 nằm trong 4–6 s (theo mô hình).",
+      "Lệch trái là đếm nhầm một lần đổi chiều: 2–4 s mới lệch trái, tới 4 s dòng đã đổi chiều lần nữa nên ở giây thứ 5 kim lệch phải (theo mô hình).",
+      "Dòng chỉ bằng 0 đúng lúc đổi chiều (2, 4, 6 s). Ở giây thứ 5 dòng đang đủ lớn nên kim lệch hẳn sang phải, không đứng giữa (theo mô hình).",
+      "Kim chỉ lắc qua lại theo cực từ ở đầu lõi, không quay tròn; ở giây thứ 5 kim lệch phải (theo mô hình)."
     ]
   }
 }

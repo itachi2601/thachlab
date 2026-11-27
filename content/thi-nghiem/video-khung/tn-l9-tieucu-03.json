@@ -51,19 +51,19 @@
   },
   "cau_chot": {
     "giay": 41.6,
-    "cau_hoi": "Thấu kính hội tụ f = 15 cm cho ảnh thật cao bằng vật. Thấu kính cách vật bao nhiêu?",
+    "cau_hoi": "Thấu kính hội tụ f thật 10 cm. Một bạn dừng khi ảnh trên màn đã nét nhưng cao gấp đôi vật, rồi vẫn tính f = L : 4 (L là khoảng vật – màn). Kết quả so với f thật thế nào?",
     "chon": [
-      "A. 7,5 cm",
-      "B. 15 cm",
-      "C. 30 cm",
-      "D. 60 cm"
+      "A. Lớn hơn f thật",
+      "B. Bằng đúng f thật",
+      "C. Nhỏ hơn f thật",
+      "D. Bằng nửa f thật"
     ],
-    "dung": 2,
+    "dung": 0,
     "giai_thich": [
-      "7,5 cm là f : 2: khi đó vật ở trong khoảng f, không có ảnh thật hứng trên màn.",
-      "15 cm là f: vật ở tiêu điểm thì không có ảnh trên màn.",
-      "Ảnh bằng vật khi d = d' = 2f = 30 cm.",
-      "60 cm là L = 4f, khoảng vật – màn, không phải vật – kính."
+      "L = d + d' nhỏ nhất bằng 4f khi ảnh cao bằng vật (d = 2f); ảnh khác cỡ thì L > 4f nên L : 4 lớn hơn f (theo mô hình: d = 15, d' = 30 → L = 45 cm, L : 4 ≈ 11,3 cm).",
+      "Chỉ khi ảnh cao bằng vật (d = d') thì L : 4 mới bằng f; ở đây ảnh gấp đôi nên không bằng.",
+      "Khi ảnh khác cỡ vật, L luôn lớn hơn 4f, nên L : 4 không thể nhỏ hơn f.",
+      "L : 4 không nhỏ hơn f được, vì L luôn từ 4f trở lên; nên không thể bằng nửa f."
     ]
   }
 }

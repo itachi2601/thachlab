@@ -207,11 +207,11 @@ def s_bay(img, d, t, sc):
     M = sc["M"]
     ka = appear(t, 0.2, 0.45)
     card(d, (40, 230, 1040, 440), fill=A((254, 242, 242), ka), outline=A(DRED, ka), w=6, r=24)
-    text(d, (W / 2, 295), "✗ Dễ tưởng: cùng lực kéo", 62, DRED, alpha=ka)
+    text(d, (W / 2, 295), "Dễ tưởng: cùng lực kéo", 62, DRED, alpha=ka)
+    kx = appear(t, M[2] - 0.1, 0.4)                                          # dau ✗ chi hien o nhip 3 (khong lo som)
+    if kx > 0: text(d, (W / 2 - tw(d, "Dễ tưởng: cùng lực kéo", F(62)) / 2 - 50, 295), "✗", 62, DRED, alpha=kx)
     text(d, (W / 2, 375), "thì cùng gia tốc", 62, DRED, alpha=ka)
     t0 = M[1] + 0.3
-    if t < M[1] - 0.2: return
-    kb = clamp((t - M[2]) / 0.8)
     for (nb, r), ty in zip(RACE, LANE):
         card(d, (40, ty - 250, 1040, ty + 160), fill=WHITE, outline=LIGHT, w=3)
         track(d, ty, legs=False)
@@ -219,11 +219,18 @@ def s_bay(img, d, t, sc):
         xf = X0 + S_M * PPM * (tau / tk) ** 2
         cart(d, xf, nb, ty=ty, rope=False)
         d.line([(xf + 26, ty - 34), (PUX, ty + 6 - PUR)], fill=NAVY, width=3)
-        text(d, (60, ty + 70), vn(r[0]) + " kg", 60, INK, anchor="lm")
-        text(d, (540, ty + 70), "F = 0,40 N", 60, DORANGE, anchor="lm")
-        if kb > 0: d.rounded_rectangle([60, ty + 112, 60 + 500 * r[1] * ease(kb) + 8, ty + 146], radius=10, fill=BLUE)   # thanh a
+        kl = appear(t, 2.2, 0.45)                                           # nhan sau the "De tuong" >= 2 s
+        text(d, (60, ty + 85), "xe " + vn(r[0]) + " kg", 68, INK, anchor="lm", alpha=kl)
+        text(d, (540, ty + 85), "F = 0,40 N", 64, DORANGE, anchor="lm", alpha=kl)
+        if ty == LANE[0]: text(d, (60, ty - 200), "chiếu chậm", 58, INK, anchor="lm", alpha=kl)
         if tau >= tk - 1e-9:
-            text(d, (X0 + S_M * PPM + 40, ty - 200), "a = " + vn(r[1]), 60, BLUE, anchor="lm")
+            text(d, (560, ty - 200), "a = " + vn(r[1]) + " m/s²", 64, BLUE, anchor="lm")
+    kd = appear(t, M[2] + 1.2, 0.5)                                         # nhip 3: mui ten "÷ 2" giua hai gia toc
+    if kd > 0:
+        xa = 1008; ym = (LANE[0] + 160 + LANE[1] - 250) / 2
+        arrow(d, (xa, LANE[0] - 160), (xa, LANE[1] - 236), A(PURPLE, kd), w=8, head=24)
+        card(d, (800, ym - 44, 960, ym + 44), fill=A(PURPLE, kd), r=30)
+        text(d, (880, ym), "÷ 2", 62, WHITE, alpha=kd)
 
 # ---------------- canh 5: Chua noi duoc ----------------
 def s_gioihan(img, d, t, sc):
@@ -276,10 +283,10 @@ CLIP = dict(id="tn-l10-dl2-newton-02", header="VẬT LÍ 10 · THÍ NGHIỆM", f
    ("Mỗi lần chất thêm gia trọng.", 3.4),
    ("Ghi a ở mỗi lần đo.", 3.0)]),
  dict(key="dapan", title="Kết quả", draw=s_dapan, tail=0.4, caps=[
-   ("Bốn điểm trên một đường cong.", 3.4),
+   ("Đáp án: đường cong đi xuống.", 3.4),
    ("Nhân m với a ở từng hàng.", 4.2)]),
  dict(key="bay", title="Bẫy: cùng lực kéo", draw=s_bay, tail=0.3, caps=[
-   ("Đúng hay sai?", 3.0),
+   ("Hai xe khác khối lượng.", 3.0),
    ("Thả hai xe cùng lúc.", 3.2),
    ("Xe nặng gấp đôi, a còn một nửa.", 3.8)]),
  dict(key="gioihan", title="Giới hạn", draw=s_gioihan, tail=0.4, caps=[

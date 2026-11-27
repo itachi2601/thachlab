@@ -1,8 +1,8 @@
 {
   "id": "tn-l10-klr-apsuat-01",
   "ten": "Bốn khối nhôm to nhỏ: cân và bình chia độ",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-klr-apsuat-01-20261030.mp4",
-  "tong_giay": 46.8,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-klr-apsuat-01-20261127.mp4",
+  "tong_giay": 49.9,
   "o": [
     {
       "khoa": "gia_thuyet",
@@ -12,33 +12,33 @@
     },
     {
       "khoa": "du_doan",
-      "giay": 3.4,
-      "chu": "Khối nhôm càng to thì ρ = m/V tính ra thay đổi thế nào?"
+      "giay": 4.0,
+      "chu": "Khối nhôm càng to, khối lượng riêng ρ = m/V tính ra đổi thế nào?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 10.0,
-      "chu": "Cân điện tử (độ chia 0,1 g), bình chia độ 100 cm³ (độ chia 1 cm³), bốn khối nhôm. Cân lấy m; thả chìm, nước dâng cho V."
+      "giay": 10.1,
+      "chu": "Cân, bình chia độ, bốn khối nhôm."
     },
     {
       "khoa": "quan_sat",
-      "giay": 20.4,
-      "chu": "Bốn khối to nhỏ khác nhau, ρ đều gần 2,7 g/cm³."
+      "giay": 22.1,
+      "chu": "Bốn khối khác cỡ, ρ đều gần 2,7 g/cm³."
     },
     {
       "khoa": "rut_ra",
-      "giay": 25.0,
+      "giay": 24.9,
       "chu": "Đường thẳng qua gốc: m tỉ lệ với V, ρ gần như không đổi.\nKhối 8 cm³ lệch nhiều nhất do đọc vạch ±0,5 cm³."
     },
     {
       "khoa": "chua_noi",
-      "giay": 34.3,
-      "chu": "Mới đo nhôm: chất khác có ρ khác không thì chưa biết.\nVật nổi (gỗ) đo V cách nào thì chưa nói tới."
+      "giay": 38.7,
+      "chu": "Mới đo nhôm: chất khác có ρ khác không thì chưa biết."
     }
   ],
   "dung_dua": {
-    "giay": 9.6,
-    "cau_hoi": "Khối nhôm càng to thì ρ = m/V tính ra…",
+    "giay": 9.95,
+    "cau_hoi": "Khối nhôm càng to thì khối lượng riêng ρ = m/V tính ra…",
     "chon": [
       "A. tăng theo V",
       "B. gần như không đổi",
@@ -48,5 +48,22 @@
     "dung": 1,
     "giai_thich_dung": "m và V cùng tăng theo một tỉ lệ nên m/V gần như giữ ở 2,7 g/cm³: khối lượng riêng là đặc trưng của chất nhôm.",
     "giai_thich_sai": "Xem bảng ở đoạn kế: so m/V của khối 8 cm³ với khối 37 cm³."
+  },
+  "cau_chot": {
+    "giay": 43.0,
+    "cau_hoi": "Một khối nhôm đặc khác có thể tích 60 cm³. Khối nhôm này nặng bao nhiêu gam?",
+    "chon": [
+      "A. 22 g",
+      "B. 162 g",
+      "C. 60 g",
+      "D. 1620 g"
+    ],
+    "dung": 1,
+    "giai_thich": [
+      "22 g là lấy 60 chia 2,7. Khối lượng riêng ρ = m/V nên m = ρ · V = 2,7 · 60 = 162 g.",
+      "Nhôm có ρ ≈ 2,7 g/cm³ bất kể to nhỏ, nên m = ρ · V = 2,7 · 60 = 162 g.",
+      "60 g là coi mỗi cm³ nặng 1 g như nước. Nhôm 2,7 g/cm³: m = 2,7 · 60 = 162 g.",
+      "1620 g là nhân thêm 10 nhầm đơn vị. Đơn vị g/cm³ nhân cm³ ra thẳng gam: 2,7 · 60 = 162 g."
+    ]
   }
 }

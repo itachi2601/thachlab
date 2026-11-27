@@ -19,7 +19,12 @@ RAIL = 900                                  # ghe quang hoc
 LH = 200                                    # nua chieu cao thau kinh
 DRED = (185, 28, 28); DGREEN = (21, 110, 55); LBLUE = (147, 197, 253)
 FS, FM = 58, 56
-L_DO, F_DO, CH_F = 40.4, 10.1, 15                # kho so_lieu_mau ; ca chot: f = 15 cm -> d = 2f = 30 cm
+L_DO, F_DO = 40.4, 10.1                          # kho so_lieu_mau
+# Ca chot v3 (27/11, phien chinh: ca d = 2f da chieu o Ket qua = cau on lai): kho hien_tuong_hay_sai[1] "coi anh bang vat
+#   khi chi moi gan bang". Theo mo hinh f = 10 cm: anh net nhung cao GAP DOI vat -> d = 15, d' = 30, L = 45,0 cm;
+#   van tinh f = L : 4 = 11,25 > 10 (A. lon hon). Khong hoi L = 4f / d = 2f (bai :150, :192, :197), khong dung L = 48 (Cau 3),
+#   khac sai so +-0,1 (bai :250 va the cam o Ket qua).
+CH_FT, CH_D, CH_DP = 10, 15, 30
 
 
 def _kiem():
@@ -27,7 +32,8 @@ def _kiem():
     k = json.load(open(os.path.join(HERE, "..", "..", "content", "thi-nghiem", "tn-l9-tieucu-03.json")))
     assert k["so_lieu_mau"]["hang"] == [[L_DO, F_DO]] and abs(L_DO / 4 - F_DO) < 0.001
     tf = {x["ky_hieu"]: x for x in k["tham_so"]}["f"]
-    assert tf["min"] <= CH_F <= tf["max"]
+    assert tf["min"] <= CH_FT <= tf["max"] and abs(1 / CH_D + 1 / CH_DP - 1 / CH_FT) < 1e-12 and CH_DP / CH_D == 2
+    assert (CH_D + CH_DP) / 4 > CH_FT
 
 
 def dprime(dd): return FP * dd / (dd - FP)
@@ -68,7 +74,7 @@ def bench(d, dd, img_on=True, rays=1.0, guide=False, labels=True, ftag=True, sx_
     d.line([(20, AX), (1060, AX)], fill=A(NAVY, 0.6), width=3)              # truc chinh
     if guide:                                                              # muc chieu cao vat, phia duoi truc
         dash(d, (OX, AX + HP), (sx + 30, AX + HP), A(GRAY, 0.9), w=3)
-        text(d, (OX + 8, AX + HP + 44), "mức 3,0 cm", FM, MUTED, bold=False, anchor="lm")
+        text(d, (OX + 8, AX + HP + 44), "mức 3,0 cm", FM, NAVY, anchor="lm")   # kiem-v1 muc 4: chu phu mau dam
     d.rounded_rectangle([sx - 9, AX - 230, sx + 9, AX + 300], radius=4, fill=WHITE, outline=NAVY, width=3)   # man
     lens(d, lx)
     for x, nm in ((lx - FP, "F"), (lx + FP, "F'")):
@@ -104,7 +110,7 @@ def bar_card(d, k, state, sub=None):
     text(d, (370, cy - 44), "ảnh", FM, BLUE)
     if state:
         text(d, (745, cy - (40 if sub else 0)), state, FS, INK)
-        if sub: text(d, (745, cy + 44), sub, FM, MUTED, bold=False)
+        if sub: text(d, (745, cy + 44), sub, FM, INK)
 
 
 # ---------------- canh 1: Du doan (K10) ----------------
@@ -192,8 +198,8 @@ def s_dapan(img, d, t, sc):
     k4 = appear(t, DA_E, 0.4)
     if k4 > 0:
         card(d, (40, 1340, 1040, 1530), fill=A((255, 247, 237), k4), outline=A(ORANGE, k4), r=22, w=4)
-        text(d, (W / 2, 1395), "L lệch 0,4 cm", FS, (154, 52, 18), alpha=k4)
-        text(d, (W / 2, 1475), "→ f chỉ lệch 0,1 cm", FS, (154, 52, 18), alpha=k4)
+        text(d, (W / 2, 1395), "Nếu L sai 0,4 cm", FS, (154, 52, 18), alpha=k4)      # kiem-v1 muc 2: gia dinh, khong
+        text(d, (W / 2, 1475), "thì f chỉ sai 0,1 cm", FS, (154, 52, 18), alpha=k4)  #   neu so lech khong co nguon
 
 
 # ---------------- canh 4: Bay + chua noi duoc ----------------
@@ -202,14 +208,16 @@ def s_bay(img, d, t, sc):
     lx, sx, k = bench(d, 2 * FP, rays=0.4, labels=False)
     a1 = appear(t, 0.3, 0.45)
     if a1 > 0:
-        seg(d, OX, lx, 935, A(DRED, a1), w=8)                          # L:2 = doan vat - kinh = d
+        seg(d, OX, lx, 310, A(DRED, a1), w=8)                          # L:2 = doan vat - kinh = d (kiem-v1 muc 3: dua len tren,
+        text(d, ((OX + lx) / 2, 356), "d", FS, DRED, alpha=a1)         #   xa chu BAY, co nhan d / f)
         pill(d, "BẪY", 1000, a1, color=DRED)
         card(d, (40, 1050, 1040, 1190), fill=A(WHITE, a1), outline=A(DRED, a1), w=5)
         text(d, (90, 1120), "f = L : 2 = 20,2 cm", FS, DRED, anchor="lm", alpha=a1)
         text(d, (980, 1120), "✗", 80, DRED, alpha=a1)
     a2 = appear(t, BAY_R, 0.45)
     if a2 > 0:
-        seg(d, lx, lx + FP, 935, A(DGREEN, a2), w=8)                   # f = OF' : mot phan tu L
+        seg(d, lx, lx + FP, 310, A(DGREEN, a2), w=8)                   # f = OF' : mot phan tu L
+        text(d, (lx + FP / 2 + 40, 356), "f", FS, DGREEN, alpha=a2)
         card(d, (40, 1205, 1040, 1345), fill=A(WHITE, a2), outline=A(DGREEN, a2), w=5)
         text(d, (90, 1275), "f = L : 4 = 10,1 cm", FS, DGREEN, anchor="lm", alpha=a2)
         text(d, (980, 1275), "✓", 80, DGREEN, alpha=a2)
@@ -224,27 +232,27 @@ def s_bay(img, d, t, sc):
 END_Q, END_C = 0.2, 4.3
 EY = 1180
 def s_end(img, d, t, sc):
-    k0 = appear(t, END_C, 0.5)
-    card(d, (50, 265, 1030, 425), fill=A((236, 253, 243), k0), outline=A(GREEN, k0), w=6)
-    text(d, (W / 2, 345), "Ảnh bằng vật: f = L : 4", FS, DGREEN, alpha=k0)
+    # GD2 kiem-v1 muc 1: bo the xanh "f = L : 4" (tra loi san)
     k1 = appear(t, END_Q, 0.5)
     card(d, (40, 455, 1040, 1560), fill=A(WHITE, k1), outline=A(ORANGE, k1), w=6)
     pw = tw(d, "THỬ NGHĨ", F(FM)) + 56
     card(d, (W / 2 - pw / 2, 480, W / 2 + pw / 2, 556), fill=A(ORANGE, k1), r=38)
     text(d, (W / 2, 518), "THỬ NGHĨ", FM, WHITE, alpha=k1)
-    text(d, (W / 2, 630), f"Thấu kính f = {CH_F} cm,", FS, INK, alpha=k1)
-    text(d, (W / 2, 712), "ảnh cao bằng vật.", FS, INK, alpha=k1)
-    text(d, (W / 2, 794), "Kính cách vật bao nhiêu?", FS, INK, alpha=k1)
-    if k1 > 0:   # hinh: vat - kinh - man, anh nguoc chieu bang vat; khong ve tia, khong ghi so
-        ox, lx, sx = 150, 540, 930
-        d.line([(80, EY), (1000, EY)], fill=A(NAVY, 0.6 * k1), width=3)
-        arrow(d, (ox, EY), (ox, EY - 120), A(RED, k1), w=9, head=24)
+    text(d, (W / 2, 630), "Ảnh nét nhưng cao gấp đôi vật.", FS, INK, alpha=k1)
+    text(d, (W / 2, 712), "Vẫn tính f = L : 4.", FS, INK, alpha=k1)
+    text(d, (W / 2, 794), f"So với f thật {CH_FT} cm?", FS, INK, alpha=k1)
+    if k1 > 0:   # hinh theo mo hinh: vat - kinh (d = 15) - man (d' = 30), anh nguoc chieu gap doi; khong ve tia, khong ghi d, d', L so (kiem v3)
+        sc_ = 18; ox = 110; lx, sx = ox + CH_D * sc_, ox + (CH_D + CH_DP) * sc_
+        d.line([(70, EY), (1010, EY)], fill=A(NAVY, 0.6 * k1), width=3)
+        arrow(d, (ox, EY), (ox, EY - 90), A(RED, k1), w=9, head=24)
         d.ellipse([lx - 22, EY - 170, lx + 22, EY + 170], fill=A(LBLUE, 0.8 * k1), outline=A(BLUE, k1), width=4)
-        arrow(d, (sx, EY), (sx, EY + 120), A(BLUE, k1), w=9, head=24)
-        d.rounded_rectangle([sx + 14, EY - 180, sx + 30, EY + 180], radius=4, fill=A(WHITE, k1), outline=A(NAVY, k1), width=3)
+        arrow(d, (sx, EY), (sx, EY + 180), A(BLUE, k1), w=9, head=24)
+        d.rounded_rectangle([sx + 14, EY - 190, sx + 30, EY + 200], radius=4, fill=A(WHITE, k1), outline=A(NAVY, k1), width=3)
+        seg(d, ox, sx, EY + 240, A(NAVY, k1), w=5)
+        text(d, ((ox + sx) / 2, EY + 290), "L", FS, NAVY, alpha=k1)
         kq = 0.55 + 0.45 * math.sin(2.4 * t) ** 2
-        seg(d, ox, lx, EY + 230, A(ORANGE, k1), w=5)
-        text(d, ((ox + lx) / 2, EY + 290), "?", 84, ORANGE, alpha=k1 * kq)
+        d.rounded_rectangle([300, 900, 780, 1000], radius=24, fill=A((253, 186, 116), k1 * (kq - 0.55) / 0.45))  # nhap nhay
+        text(d, (540, 950), "L : 4 ? f thật", 66, ORANGE, alpha=k1)
 
 
 def _cues(clip):

@@ -1,8 +1,8 @@
 {
   "id": "tn-l10-biendang-03",
   "ten": "Hai lò xo, cùng một quả nặng: lò xo nào dãn nhiều hơn?",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-biendang-03-20261101.mp4",
-  "tong_giay": 49.7,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-biendang-03-20261127.mp4",
+  "tong_giay": 49.9,
   "o": [
     {
       "khoa": "gia_thuyet",
@@ -12,32 +12,32 @@
     },
     {
       "khoa": "du_doan",
-      "giay": 3.4,
-      "chu": "Treo lần lượt quả 100 g. So sánh độ dãn hai lò xo?"
+      "giay": 3.6,
+      "chu": "Treo quả 100 g lần lượt. Lò xo nào dãn nhiều hơn?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 9.1,
-      "chu": "Hai lò xo cùng chiều dài tự nhiên, quả 100 g, thước có vạch 0 ngang đầu dưới lò xo."
+      "giay": 9.7,
+      "chu": "Hai lò xo bằng nhau, quả 100 g."
     },
     {
       "khoa": "quan_sat",
-      "giay": 17.5,
+      "giay": 17.8,
       "chu": "Dây to dãn 1,96 cm, dây mảnh dãn 3,92 cm: gấp đôi."
     },
     {
       "khoa": "rut_ra",
-      "giay": 29.4,
+      "giay": 23.9,
       "chu": "Cùng lực 0,98 N: dây to k = 50 N/m, dây mảnh k = 25 N/m."
     },
     {
       "khoa": "chua_noi",
-      "giay": 34.2,
-      "chu": "Chỉ thử một lực 0,98 N: chưa thấy k không đổi khi đổi lực."
+      "giay": 38.4,
+      "chu": "Mới thử một lực 0,98 N: đổi lực thì k có đổi không, chưa biết."
     }
   ],
   "dung_dua": {
-    "giay": 8.95,
+    "giay": 9.55,
     "cau_hoi": "Treo lần lượt cùng một quả nặng 100 g vào lò xo dây to và lò xo dây mảnh. Độ dãn của hai lò xo so với nhau thế nào?",
     "chon": [
       "A. Bằng nhau, vì cùng một quả nặng",
@@ -48,5 +48,22 @@
     "dung": 2,
     "giai_thich_dung": "Cùng 0,98 N, dây mảnh dãn 3,92 cm, gấp đôi dây to (1,96 cm): độ cứng k của nó nhỏ hơn.",
     "giai_thich_sai": "Xem đoạn kế: cùng quả 100 g, thước đọc 1,96 cm ở dây to và 3,92 cm ở dây mảnh."
+  },
+  "cau_chot": {
+    "giay": 42.8,
+    "cau_hoi": "Coi độ cứng hai lò xo trên không đổi (k dây to 50 N/m, dây mảnh 25 N/m). Treo vật X vào lò xo dây mảnh thì nó dãn 5,0 cm. Treo vật X vào lò xo dây to thì nó dãn bao nhiêu?",
+    "chon": [
+      "A. 1,25 cm",
+      "B. 2,5 cm",
+      "C. 5,0 cm",
+      "D. 10 cm"
+    ],
+    "dung": 1,
+    "giai_thich": [
+      "1,25 là lực của vật X tính bằng N (25 · 0,05 = 1,25 N), chưa phải độ dãn. Chia tiếp cho k dây to: 1,25 : 50 = 0,025 m = 2,5 cm.",
+      "Vật X kéo lò xo dây mảnh dãn 5,0 cm nên lực là 25 · 0,05 = 1,25 N. Cùng lực đó lên dây to: 1,25 : 50 = 0,025 m = 2,5 cm, bằng nửa vì k gấp đôi.",
+      "Cùng vật X thì cùng lực, nhưng dây to có k gấp đôi nên dãn chỉ bằng nửa: 1,25 : 50 = 0,025 m = 2,5 cm, không phải 5,0 cm.",
+      "10 cm là nhân đôi ngược chiều. Dây to cứng hơn nên dãn ít hơn dây mảnh: lực 1,25 N, độ dãn 1,25 : 50 = 0,025 m = 2,5 cm."
+    ]
   }
 }

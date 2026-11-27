@@ -6,7 +6,7 @@
 #   A. ve dung 4,0 cm ; B. dai hon 4,0 cm, khong ve (DUNG) ; C. ngan hon 4,0 cm.
 # Bay = hien_tuong_hay_sai[1] (chi vat mem nhu dat nan moi bien dang deo): hai hinh canh nhau - dat nan bep, kep giay
 #   thep be cong - ca hai tha ra KHONG ve (khong lap cap so 6 N / 6,5 cm cua Du doan).
-# Chot (ca tu suy, ghi_chu kho): lo xo MOI cung loai, keo 2,5 N -> dai 4,0 + 2,5 . 0,5 = 5,25 cm. So 2,5 N va 5,25
+# Chot (ca tu suy, ghi_chu kho): lo xo MOI cung loai, keo 1,5 N -> dai 4,0 + 1,5 . 0,5 = 4,75 cm (v2: doi so tranh gan quiz bai). So 1,5 N va 4,75
 #   khong hien truoc; can 2 buoc (dan moi N tu bang, cong l0).
 from engine import *
 
@@ -70,7 +70,7 @@ def rig(d, l, f_read, alpha=1.0, gap=0.0):
     clamp_wall(d, alpha); ruler(d, alpha)
     xe = xl(l); spring_at(d, X0, xe, SY, alpha=alpha, amp=24)
     Q = lambda s, h: (xe + gap + s, SY + h)
-    luc_ke(d, Q, 0, 22, 352, FMAX, f_read, nho=0.5, so=(0, 3, 6), hw=42, ben=-1, alpha=alpha, co=56)
+    luc_ke(d, Q, 0, 22, 352, FMAX, f_read, nho=0.5, so=(0, 3, 6), hw=42, ben=-1, alpha=alpha, co=62)
     marker(d, l, alpha=alpha)
 
 # ---------------- canh 1: du doan ----------------
@@ -153,7 +153,7 @@ def _kiem_dong_bo():
     P = plan(sc)
     for i, (a, b, c, e) in enumerate(P):
         if e + SET > (sc["M"][i + 1] if i + 1 < len(sc["M"]) else sc["T"]): bad.append(("tran", i))
-    if t_dapan(sc) + 2.4 > sc["T"]: bad.append("dap an sat cuoi")
+    if t_dapan(sc) + 2.4 > sc["T"] + 1e-6: bad.append("dap an sat cuoi")
     for f, l1, _ in ROWS[:2]:
         if abs(L0 + f * 100 / 200 - l1) > 1e-6: bad.append(("k", f))
     if xl(ROWS[2][1]) + 352 + 40 > 1060: bad.append("luc ke tran mep")
@@ -167,6 +167,7 @@ def mini(d, x0, y, l, alpha, ghost=None):
     if ghost is not None:
         xg = x0 + ghost * PX
         for yy in range(y - 60, y + 64, 18): d.line([(xg, yy), (xg, yy + 9)], fill=A(RED, alpha), width=4)
+        text(d, (xg, y + 95), "4,0 cm", 55, RED, alpha=alpha)
 
 def s_rut(img, d, t, sc):
     IMG_REF[0] = img; M = sc["M"]
@@ -177,7 +178,7 @@ def s_rut(img, d, t, sc):
     text(d, (120 + L0 * PX + 70, 520), "Đàn hồi", 64, GREEN, anchor="lm", alpha=a)
     b = appear(t, M[1] + 0.1, 0.4)
     if b > 0:
-        card(d, (40, 680, 1040, 1020), fill=A(WHITE, b), outline=A(RED, b), w=5)
+        card(d, (40, 680, 1040, 1060), fill=A(WHITE, b), outline=A(RED, b), w=5)
         text(d, (W / 2, 750), "6 N: thả ra còn 6,5 cm", 58, INK, alpha=b)
         mini(d, 120, 900, L_DU, b, ghost=L0)
         text(d, (120 + L_DU * PX + 50, 900), "Dẻo", 64, RED, anchor="lm", alpha=b)
@@ -197,6 +198,7 @@ def clip_wire(d, cx, cy, ang, a, ghost=True):
         for i in range(8):
             x = cx + i * 20
             d.line([(x, cy), (x + 10, cy)], fill=A(GRAY, a), width=5)
+        text(d, (cx + 95, cy + 45), "lúc đầu", 55, NOTE, alpha=a)
     d.line([p0, pm, p1], fill=A((90, 100, 120), a), width=12, joint="curve")
 
 def s_bay(img, d, t, sc):
@@ -224,7 +226,7 @@ def s_bay(img, d, t, sc):
             r = math.radians(55 * ease(pr)); tip = (795 + 150 * math.cos(r), 820 - 150 * math.sin(r))
             arrow(d, (tip[0] + 10, tip[1] - 90), (tip[0] + 2, tip[1] - 14), A(RED, kp), w=8, head=24)
         text(d, (795, 960), "kẹp giấy thép", 58, NAVY, alpha=kp)
-    k2 = appear(t, M[1] + 2.3, 0.45) * (1 - k3)
+    k2 = appear(t, M[1] + 3.0, 0.45) * (1 - k3)
     if k2 > 0:
         card(d, (40, 1070, 1040, 1200), fill=A(WHITE, k2), outline=A(GREEN, k2), w=5)
         text(d, (W / 2, 1135), "Cả hai không về", 60, GREEN, alpha=k2)
@@ -251,10 +253,10 @@ def s_end(img, d, t, sc):
     spring_at(d, x0, x0 + L0 * PX, y, alpha=k, amp=24)
     xe = x0 + L0 * PX
     arrow(d, (xe, y), (xe + 230, y), A(RED, k), w=9, head=28)
-    text(d, (xe + 250, y), "2,5 N", 60, RED, anchor="lm", alpha=k)
+    text(d, (xe + 250, y), "1,5 N", 60, RED, anchor="lm", alpha=k)
     text(d, (x0 + L0 * PX / 2, y + 110), "4,0 cm", 56, NOTE, alpha=k)
     text(d, (W / 2, 820), "Lò xo mới, cùng loại,", 64, INK, alpha=k)
-    text(d, (W / 2, 910), "kéo 2,5 N.", 64, INK, alpha=k)
+    text(d, (W / 2, 910), "kéo 1,5 N.", 64, INK, alpha=k)
     text(d, (W / 2, 1040), "Lúc kéo, lò xo dài", 64, DORANGE, alpha=k)
     text(d, (W / 2, 1130), "bao nhiêu cm?", 64, DORANGE, alpha=k)
     seg_bar(d, 1320, t, 1.0, sc["T"] - 0.2, ORANGE, k)
@@ -272,20 +274,20 @@ CLIP = dict(id="tn-l10-biendang-01", header="VẬT LÍ 10 · THÍ NGHIỆM", cue
     footer="Biến dạng của vật rắn · thachlab.id.vn", scenes=[
  dict(key="hook", title="Lò xo bút bi trên thước", draw=s_hook, tail=0.3, caps=[
    ("Lò xo nằm trên thước.", 3.0),
-   ("Dừng lại, tự đoán.", 5.6)]),
+   ("Dừng lại, tự đoán.", 5.4)]),
  dict(key="do", title="Kéo rồi thả", draw=s_do, tail=2.6, caps=[
    ("Kéo nhẹ 1 N rồi thả.", 3.1),
    ("Kéo 3 N rồi thả.", 3.1),
    ("Kéo mạnh 6 N rồi thả.", 3.6)]),
  dict(key="rut", title="Hai kết cục", draw=s_rut, tail=0.6, caps=[
    ("Lực nhỏ: thả ra là về.", 3.4),
-   ("Lực lớn: thả ra vẫn dài.", 3.8)]),
+   ("Lực lớn: thả ra vẫn dài.", 3.4)]),
  dict(key="bay", title="Bẫy hay gặp", draw=s_bay, tail=0.4, caps=[
-   ("Đúng không?", 2.6),
-   ("Bóp rồi bỏ tay.", 4.6),
-   ("Chưa nói được.", 3.4)]),
+   ("Đúng không?", 3.0),
+   ("Bóp rồi bỏ tay.", 6.1),
+   ("Chưa nói được.", 3.2)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.7, caps=[
-   ("Dừng lại, tự tính.", 6.6)]),
+   ("Dừng lại, tự tính.", 6.0)]),
 ])
 
 if __name__ == "__main__" and "--kiem-dong-bo" in __import__("sys").argv:

@@ -51,19 +51,19 @@
   },
   "cau_chot": {
     "giay": 45.0,
-    "cau_hoi": "Lực kế chỉ đo được tới 2,5 N. Treo tối đa mấy quả 50 g thì kim chưa vượt thang (g = 9,8 m/s²)?",
+    "cau_hoi": "Lực kế chỉ đo được tới 2,5 N. Treo tối đa mấy quả nặng 120 g thì kim chưa vượt thang (g = 9,8 m/s²)?",
     "chon": [
-      "A. 4 quả",
-      "B. 5 quả",
-      "C. 6 quả",
-      "D. 50 quả"
+      "A. 2 quả",
+      "B. 3 quả",
+      "C. 5 quả",
+      "D. 20 quả"
     ],
-    "dung": 1,
+    "dung": 0,
     "giai_thich": [
-      "4 quả mới chỉ 1,95 N. Theo mô hình P = m·g, mỗi quả thêm khoảng 0,49 N: 5 quả là 0,25 kg, P = 0,25 × 9,8 ≈ 2,45 N, vẫn dưới 2,5 N.",
-      "Theo mô hình P = m·g: 5 quả là 0,25 kg, P ≈ 2,45 N, chưa vượt 2,5 N; 6 quả là 0,30 kg, P ≈ 2,94 N, vượt thang. Tối đa 5 quả.",
-      "6 quả là 0,30 kg, P = 0,30 × 9,8 ≈ 2,94 N, đã vượt 2,5 N. Chỉ treo được tới 5 quả (≈ 2,45 N).",
-      "50 quả là lấy 2,5 chia 0,05, như thể 2,5 N là 2,5 kg. Phải đổi ra trọng lượng: mỗi quả khoảng 0,49 N, nên chỉ treo được 5 quả (≈ 2,45 N)."
+      "Mỗi quả 0,12 kg nặng P = 0,12 × 9,8 ≈ 1,18 N. 2 quả ≈ 2,35 N, chưa vượt 2,5 N; 3 quả ≈ 3,53 N đã vượt. Tối đa 2 quả.",
+      "3 quả là 0,36 kg, P = 0,36 × 9,8 ≈ 3,53 N, vượt thang 2,5 N. 2,5 : 1,18 ≈ 2,1 chỉ được lấy phần nguyên: tối đa 2 quả.",
+      "5 quả đúng cho quả 50 g. Quả 120 g nặng hơn: mỗi quả ≈ 1,18 N, 5 quả ≈ 5,9 N, vượt xa 2,5 N. Tối đa 2 quả.",
+      "20 quả là lấy 2,5 chia 0,12, coi 2,5 N như 2,5 kg. Phải đổi ra trọng lượng: mỗi quả ≈ 1,18 N, nên chỉ treo được 2 quả (≈ 2,35 N)."
     ]
   }
 }

@@ -16,9 +16,12 @@ for slug, tns in {
     "l10-thuc-hanh-sai-so": "sai-so-01 sai-so-02", "l10-do-dich-chuyen-quang-duong": "dd-qd-01",
     "l10-toc-do-van-toc": "tdvt-01 tdvt-03", "l10-thuc-hanh-do-toc-do": "do-toc-do-01",
     "l10-do-thi-dich-chuyen-thoi-gian": "dt-dctg-01 dt-dctg-02", "l10-chuyen-dong-bien-doi-gia-toc": "gia-toc-01 gia-toc-02",
+    # mẻ 2 (thầy duyệt 27/11 "sửa hết")
+    "l10-chuyen-dong-thang-bien-doi-deu": "ctbdd-01", "l10-thuc-hanh-do-g": "do-g-01 do-g-02 do-g-03",
+    "l10-su-roi-tu-do": "roi-tu-do-02 roi-tu-do-03", "l10-thuc-hanh-do-toc-do#2": "do-toc-do-02",
 }.items():
     for t in tns.split():
-        BAI["tn-l10-" + t] = slug
+        BAI["tn-l10-" + t] = slug.split("#")[0]
 loi = 0; can_gan = {}
 for tn, slug in BAI.items():
     if CHI and tn not in CHI: continue

@@ -81,6 +81,20 @@ if "--nam" in args and args[args.index("--nam") + 1] == "l11":
     WORK = os.path.join(ROOT, "scripts/logs/de-l11")
     SRC23 = SRC11
 
+DRAFT_ALL = False
+if "--nam" in args and args[args.index("--nam") + 1] == "2526":
+    # Đề cuối HK1 năm 2025-2026 của trường/sở (tải từ vndethi 27/11/2026): --nam 2526 --lop 10|11|12.
+    # Nguồn: Lop<N>/NamHoc/2025-2026/03_Kiem_tra/CK1/So_hoa/2. HK1/<Trường – Tỉnh>/ (đề .docx + đáp án .xlsx dựng từ bảng trong PDF).
+    # Đích: mục "Kiểm tra cuối học kì 1" của từng lớp; luôn đăng Bản nháp (--draft) để thầy duyệt rồi mới Hiện.
+    _lop = args[args.index("--lop") + 1] if "--lop" in args else "10"
+    SRC = f"/Users/MAC/Documents/THPT/Lop{_lop}/NamHoc/2025-2026/03_Kiem_tra/CK1/So_hoa"
+    NAM = f"2025–2026 – {_lop}"
+    TARGET = {"2. HK1": {"10": (114, 54), "11": (118, 58), "12": (121, 61)}[_lop]}
+    LOG = os.path.join(ROOT, f"scripts/data/de-ck1-2526-l{_lop}-log.json")
+    RUN = os.path.join(ROOT, f"scripts/data/de-ck1-2526-l{_lop}-run.json")
+    WORK = os.path.join(ROOT, f"scripts/logs/de-ck1-2526-l{_lop}")
+    DRAFT_ALL = True
+
 
 def opt(n, d=None):
     return args[args.index(n) + 1] if n in args else d
@@ -868,7 +882,15 @@ def process(s, log):
         res["status"] = "LỖI"
         res["notes"].append("không chuyển được .doc")
         return res
-    for k in s["keys"]:
+    # dap_an.json đặt cạnh đề (dựng tay/bằng script từ bảng đáp án PDF) → dùng thẳng, không đọc file rời/AI
+    jf = os.path.join(os.path.dirname(exam), "dap_an.json")
+    if os.path.exists(jf):
+        j = json.load(open(jf, encoding="utf-8"))
+        dap = {1: {int(k): v for k, v in j.get("p1", {}).items()},
+               2: {int(k): v for k, v in j.get("p2", {}).items()},
+               3: {int(k): v for k, v in j.get("p3", {}).items()}}
+        key_src = "json"
+    for k in ([] if dap else s["keys"]):
         try:
             if k.lower().endswith(".xlsx"):
                 dap, key_src = key_from_xlsx(k, made), "xlsx"
@@ -957,7 +979,7 @@ def process(s, log):
     res["xuat"] = [ln for ln in (x.stdout + x.stderr).splitlines() if ln.startswith("[đề]")][:8]
     lesson, item = TARGET[s["ky"]]
     cmd = ["npx", "tsx", "scripts/upload-exam-docx.mts", f"{wd}/de_thachlab.docx", "--title", res["title"], "--lesson", str(lesson),
-           "--item", str(item), "--duration", "45", "--drop-bad", "--min-keep", "10", "--drop-mathtype", "--log", LOG, "--src", res["bo"]] + (["--draft"] if item == 58 and SRC == SRC11 else [])
+           "--item", str(item), "--duration", "45", "--drop-bad", "--min-keep", "10", "--drop-mathtype", "--log", LOG, "--src", res["bo"]] + (["--draft"] if DRAFT_ALL or (item == 58 and SRC == SRC11) else [])
     if DRY:
         cmd.append("--dry")
     u = run(cmd, cwd=ROOT)
