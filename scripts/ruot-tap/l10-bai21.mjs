@@ -139,7 +139,7 @@ ${foot(3)}</section>`;
 
 const p4 = `<section class="page">
 ${head('TỰ KIỂM TRA · BÀI TOÁN MẪU')}
-${h3(1, 'Kết quả tự kiểm tra (đề chiếu trên lớp)', '4·1')}
+${h3(1, 'Tự kiểm tra Câu 1–6 · Đề 1242: ……/20 · sai câu ………', '4·1')}
 ${rkHai([1, 2, 3], [4, 5, 6])}
 <div class="card soft" style="margin-top:.8mm;padding:.8mm 3mm"><b>Bạn cùng bàn kiểm Trả bài:</b> ……/6 câu · chưa thuộc: ${f(25)} ${nw(`→ đọc lại ô ${fx()} Tập`)}</div>
 ${h3(2, 'V · Bài toán mẫu: thanh gỗ và túi gạo', '4·2')}
@@ -163,7 +163,7 @@ ${foot(4)}</section>`;
 
 const p5 = `<section class="page">
 ${head('BÀI TẬP VỀ NHÀ · THỬ THÁCH · TRẢ BÀI')}
-${K.btvn()}
+${K.btvn().replace('Đề BTVN</h3>', 'Đề BTVN</h3>' + K.tag('5·1'))}
 ${h3(2, 'Thử thách phân tầng', '5·2')}
 <div class="fig-side" style="${fs(44)}">${box(wl(`${m('\\bigstar')} Lực ${u('15', 'N')} vuông góc tay quay, cách trục ${u('0{,}2', 'm')}. Moment?`, 2)
  + wl(`${m('\\bigstar\\bigstar')} Lực ${u('40', 'N')} đặt ở mép cửa cách bản lề ${u('0{,}9', 'm')}, hợp với mặt cửa góc ${m('60^\\circ')}. Moment?`, 2)
