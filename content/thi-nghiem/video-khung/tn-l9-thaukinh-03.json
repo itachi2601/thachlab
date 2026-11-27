@@ -1,8 +1,8 @@
 {
   "id": "tn-l9-thaukinh-03",
   "ten": "Đo d, d' trên thước quang học",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-thaukinh-03-20261118.mp4",
-  "tong_giay": 48.5,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-thaukinh-03-20261127.mp4",
+  "tong_giay": 49.7,
   "o": [
     {
       "khoa": "gia_thuyet",
@@ -12,33 +12,33 @@
     },
     {
       "khoa": "du_doan",
-      "giay": 4.2,
-      "chu": "Đặt vật ở 5 chỗ. Mỗi lần ảnh rõ, tính d·d' : (d + d'). Năm kết quả sẽ thế nào?"
+      "giay": 4.0,
+      "chu": "Đặt vật ở 5 chỗ. Mỗi lần ảnh rõ, tính d·d' : (d + d'). Năm kết quả thế nào?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 11.0,
+      "giay": 9.9,
       "chu": "Thước quang học, đèn chữ F, thấu kính f = 10 cm, màn."
     },
     {
       "khoa": "quan_sat",
-      "giay": 16.4,
+      "giay": 19.7,
       "chu": "Vật càng xa kính, ảnh rõ khi màn càng gần: d' giảm dần."
     },
     {
       "khoa": "rut_ra",
       "giay": 26.1,
-      "chu": "f = d·d'/(d + d') ra 9,91–10,06 cm, gần như không đổi, xấp xỉ 10 cm."
+      "chu": "f = d·d' : (d + d') ra từ 9,91 đến 10,06 cm: lần nào cũng gần 10 cm."
     },
     {
       "khoa": "chua_noi",
-      "giay": 35.2,
-      "chu": "Số liệu minh hoạ; chưa thử vật trong khoảng f (ảnh ảo)."
+      "giay": 36.9,
+      "chu": "Số liệu minh hoạ; chưa xét vật trong khoảng f (ảnh ảo)."
     }
   ],
   "dung_dua": {
-    "giay": 10.8,
-    "cau_hoi": "Đặt vật ở 5 chỗ. Mỗi lần ảnh rõ, tính d·d' : (d + d'). Năm kết quả sẽ thế nào?",
+    "giay": 9.75,
+    "cau_hoi": "Đặt vật ở 5 chỗ. Mỗi lần ảnh rõ, tính d·d' : (d + d'). Năm kết quả thế nào?",
     "chon": [
       "A. Tăng dần khi vật ra xa",
       "B. Giảm dần khi vật ra xa",
@@ -48,5 +48,22 @@
     "dung": 2,
     "giai_thich_dung": "Năm giá trị 9,91–10,06 cm sát nhau, xấp xỉ f = 10 cm: d và d' đổi nhưng d·d'/(d + d') giữ nguyên.",
     "giai_thich_sai": "Xem cột f (cm) ở cảnh Kết quả: năm số chênh nhau bao nhiêu?"
+  },
+  "cau_chot": {
+    "giay": 41.6,
+    "cau_hoi": "Một thấu kính hội tụ khác cho ảnh rõ trên màn khi d = 30 cm, d' = 60 cm. Tiêu cự f là bao nhiêu?",
+    "chon": [
+      "A. 20 cm",
+      "B. 30 cm",
+      "C. 45 cm",
+      "D. 90 cm"
+    ],
+    "dung": 0,
+    "giai_thich": [
+      "f = d·d' : (d + d') = 30·60 : 90 = 20 cm.",
+      "30 cm chỉ là d; ảnh thật luôn cho f nhỏ hơn cả d và d'.",
+      "45 cm là trung bình (30 + 60) : 2: đúng cái bẫy vừa xem.",
+      "90 cm là d + d', khoảng cách vật tới màn, không phải tiêu cự."
+    ]
   }
 }
