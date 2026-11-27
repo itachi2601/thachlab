@@ -283,7 +283,6 @@ def s_end(img, d, t, sc):
         rr = 70 + 55 * math.sin(2 * math.pi * t / 2.4)                              # dia dap nhip: cho hinh khong dung
         d.ellipse([760 - rr, cy + 300 - rr, 760 + rr, cy + 300 + rr], fill=A(mix(ORANGE, WHITE, 0.75), k1))
         text(d, (760, cy + 300), "?", 72, ORANGE, alpha=k1)
-        text(d, (760, cy + 420), "kim B", 58, ORANGE, alpha=k1)
 
 
 def _cues(clip):
@@ -298,19 +297,19 @@ CLIP = dict(id="tn-l9-camung-02", header="KHTN 9 · THÍ NGHIỆM", footer="Cả
             cues=_cues, scenes=[
  dict(key="hook", title="Nam châm điện và cuộn dây", draw=s_hook, tail=THINK_END, caps=[
    ("A nối pin, B nối điện kế.", 3.0),
-   ("Dừng lại, tự đoán.", 5.6)]),
+   ("Dừng lại, tự đoán.", 4.6)]),
  dict(key="do", title="Tiến hành", draw=s_do, tail=0.6, caps=[
-   ("Đóng K rồi giữ đóng.", 5.4),
-   ("Bây giờ ngắt K.", 4.0)]),
+   ("Đóng K rồi giữ đóng.", 4.4),
+   ("Bây giờ ngắt K.", 3.6)]),
  dict(key="dapan", title="Kết quả", draw=s_dapan, tail=0.8, caps=[
-   ("Ngược phía lúc đóng.", 5.2),
-   ("Nam châm điện cũng tạo dòng.", 4.0)]),
+   ("Ngược phía lúc đóng.", 4.6),
+   ("Nam châm điện cũng tạo dòng.", 3.6)]),
  dict(key="bay", title="Bẫy và giới hạn", draw=s_bay, tail=0.6, caps=[
    ("Đúng không?", 4.8),
    ("Sai: dòng đang giảm thì kim vẫn lệch.", 4.2),
    ("Còn bỏ ngỏ.", 4.2)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.3, caps=[
-   ("Dừng lại, tự nghĩ.", 9.4)]),
+   ("Tự nghĩ.", 8.2)]),
 ])
 
 if __name__ == "__main__":
