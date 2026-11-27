@@ -136,14 +136,14 @@ def s_dapan(img, d, t, sc):
     k1 = clamp((t - 0.4) / 1.6)                         # M quay tu day vong (qua O) 30 do, lap lai cham
     loop = ((t - 0.4) % 3.2) / 3.2 if t > 2.0 else k1
     for r, col in ((110, TEAL), (220, ORANGE)):
-        d.line(arc_pts(-90, -60, r, k1), fill=col, width=14, joint="curve")
+        d.line(arc_pts(-90, -60, r, k1), fill=col, width=20, joint="curve")
         ang = -90 + 30 * loop
         mx, my = CX + r * math.cos(math.radians(ang)), CY - r * math.sin(math.radians(ang))
         d.line([(mx, my), (mx, CY)], fill=PURPLE, width=3)
         dot(d, mx, my, 14, col, outline=WHITE)
     for xc, lab in ((0, "O"), (55, "2"), (110, "4"), (220, "8")):
         d.line([(CX + xc, CY - 12), (CX + xc, CY + 12)], fill=NAVY, width=3)
-    text(d, (CX + 230, CY - 48), "8", 56, INK); text(d, (CX + 120, CY - 48), "4", 56, INK)
+    text(d, (CX + 285, CY - 48), "8 cm", 56, INK); text(d, (CX + 115, CY - 48), "4 cm", 56, INK)
     kg = appear(t, 1.8, 0.4)
     text(d, (800, 560), "cùng 30°", 60, PURPLE, alpha=kg)
     text(d, (800, 650), "16 khung", 60, TEAL, alpha=kg)
@@ -179,7 +179,7 @@ def s_bay(img, d, t, sc):
         d.rounded_rectangle([110, yT + 40, 110 + u * N1 - 8, yT + 120], radius=12, fill=A(GREEN, kt))
         d.rounded_rectangle([110 + u * N1, yT + 40, 110 + u * (N1 + N2) - 8, yT + 120], radius=12, fill=A(ORANGE, kt))
         text(d, (110 + u * N1 / 2, yT + 175), "T/12", 58, DGREEN, alpha=kt)
-        text(d, (110 + u * (N1 + N2 / 2), yT + 175), "T/6", 58, DORANGE, alpha=kt)
+        text(d, (110 + u * (N1 + N2 / 2), yT + 175), "lâu hơn", 58, DORANGE, alpha=kt)
 
 # ---------------- canh 5: THU NGHI (= cau_chot khung web) ----------------
 def s_end(img, d, t, sc):
@@ -209,7 +209,7 @@ def _cues(clip):
 CLIP = dict(id="tn-l11-baitapdaodong-03", header="VẬT LÍ 11 · THÍ NGHIỆM", footer="Bài tập dao động · thachlab.id.vn",
             cues=_cues, scenes=[
  dict(key="hook", title="Quay chậm rồi đếm khung", draw=s_hook, tail=0.3, caps=[
-   ("Băng dính đánh dấu O, 2, 4, 8 cm.", 4.4),
+   ("Đánh dấu O, 2, 4, 8 cm.", 4.4),
    ("Dừng lại, tự đoán.", 5.4)]),
  dict(key="do", title="Tiến hành", draw=s_do, tail=0.3, caps=[
    ("Thả từ 4 cm, đếm tới 2 cm.", 4.0),
