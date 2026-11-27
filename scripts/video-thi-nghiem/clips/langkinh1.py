@@ -8,9 +8,10 @@
 #   -> dap an: ve day, ca 6 lan. KHONG hoi D giam roi tang (goc lech cuc tieu, ngoai KHTN 9).
 #   Khong trung cau Tu kiem tra: C1 (mat thu hai: xa phap tuyen) -> clip KHONG noi tia lo gan/xa phap tuyen;
 #   C4 (lang kinh dat nguoc -> len/xuong) ; C5 (thu tu mau) ; C6 (A = 20 do).
-# THU NGHI (doi 27/11, ca cu "day quay sang phai" trung y Cau 4): tam kinh HAI MAT SONG SONG, tia lo di the nao?
-#   -> song song voi tia toi, chi dich ngang. Buoc suy luan chua chieu: lang kinh lech vi hai mat ben NGHIENG nhau;
-#   hai mat song song thi lan be o mat ra tra lai dung lan be o mat vao. Man chot khong ve tia trong tam kinh.
+# THU NGHI (GD2 27/11, kiem-v1 muc 3): bo ca "tam kinh hai mat song song" (ngoai bai + CT KHTN 9; ca cu "day quay sang
+#   phai" trung y Cau 4). Ca moi trong pham vi lang kinh, so lieu kho: i = 45 do (mac_dinh) o MAT THU NHAT -> goc khuc xa
+#   r = ? (khong khi vao thuy tinh: gan phap tuyen, r1 = 28,1 do theo mo hinh n = 1,5). Cau 1 hoi mat THU HAI, Cau 6 hoi
+#   tia vuong goc -> khong trung. Man chot ve tia toi + phap tuyen + cung i, KHONG ve tia trong lang kinh.
 # Hinh: lang kinh deu dinh tren, day duoi; diem toi E co dinh tren mat trai, xoay but laser. Duong tia tinh bang Snell
 #   va do D tu chinh hai huong ve -> assert khop kho (< 0,06 do), tia lo ra o mat phai, lech ve phia day.
 # Bay = hien_tuong_hay_sai[1] (ve tia di thang). Chua noi duoc = ghi_chu kho (so lieu minh hoa, n gia dinh).
@@ -131,12 +132,21 @@ def ray(d, i, col=BEAM, ka=1.0, arc=True, lab="D", tf=None, k=1.0, straight=Fals
     return X
 
 
-def readout(d, i, ds, y=830):
-    card(d, (80, y - 45, 500, y + 45), fill=WHITE, outline=NAVY, r=24, w=4)
-    text(d, (290, y), f"i = {i}°", FS, NAVY)
-    card(d, (560, y - 45, 1000, y + 45), fill=WHITE, outline=ORANGE, r=24, w=4)
-    if ds: text(d, (780, y), f"D = {ds}°", FS, DORG)
-    else: text(d, (780, y), "D = …", FS, DINK)
+def readout(d, i, ds, y=830):   # kiem-v1 muc 1: goi ten D la goc lech
+    card(d, (60, y - 45, 360, y + 45), fill=WHITE, outline=NAVY, r=24, w=4)
+    text(d, (210, y), f"i = {i}°", FS, NAVY)
+    card(d, (390, y - 45, 1030, y + 45), fill=WHITE, outline=ORANGE, r=24, w=4)
+    text(d, (420, y), "D (góc lệch) =", FM, DORG, anchor="lm")     # nhan co dinh, chi so doi -> khong tinh khoi chu moi
+    if ds: text(d, (1005, y), f"{ds}°", FS, DORG, anchor="rm")
+    else: text(d, (1005, y), "…", FS, DINK, anchor="rm")
+
+
+def arc_i(d, i, ka=1.0, tf=None, k=1.0, lab="i"):
+    """kiem-v1 muc 1: cung goc toi i giua phap tuyen (phia ngoai, 210 do) va tia toi o mat thu nhat"""
+    tf = tf or mk_tf(); Et = tf(E); R = 85 * k
+    d.arc([Et[0] - R, Et[1] - R, Et[0] + R, Et[1] + R], 210 - i, 210, fill=A(NAVY, ka), width=5)
+    m = math.radians(210 - i / 2)
+    text(d, (Et[0] + 150 * k * math.cos(m), Et[1] + 150 * k * math.sin(m)), lab, FS, NAVY, alpha=ka)
 
 
 XS = (290, 700); RH = 68
@@ -197,6 +207,7 @@ def s_do(img, d, t, sc):
     ang, k_on, rows = do_state(t)
     prism(d); normal_E(d)
     ray(d, ang, arc=k_on >= 0, lab=None)
+    arc_i(d, ang)
     readout(d, *card_state(ang, k_on, rows))
     table(d, rows)
 
@@ -242,7 +253,7 @@ def s_dapan(img, d, t, sc):
         text(d, (E[0] - 20, E[1] + 90), "1", FS, DORG, alpha=km)
         text(d, (X[0] + 30, X[1] + 75), "2", FS, DORG, alpha=km)
     pill(d, "ĐÁP ÁN: lệch về phía đáy", 900, appear(t, 0.15, 0.4))
-    ka = appear(t, DA_MARK + 2.6, 0.6)                    # tia minh hoa i = 50: cung D giua tia toi keo dai va tia lo
+    ka = appear(t, DA_MARK + 2.3, 0.6)                    # kiem-v1 muc 5: giu khung nay >= 3 s                    # tia minh hoa i = 50: cung D giua tia toi keo dai va tia lo
     if ka > 0:
         th_in, X, th_out, D, _ = path(50); vi = u(th_in)
         dash(d, X, (X[0] + LOUT * vi[0], X[1] + LOUT * vi[1]), A(NAVY, 0.75 * ka), w=4)
@@ -284,25 +295,30 @@ def s_bay(img, d, t, sc):
 # ---------------- canh 5: Chot + THU NGHI (cau chot A-D o khung web) ----------------
 END_Q, END_C = 0.2, 4.3
 SL_Y0, SL_Y1, SL_X = 1080, 1260, 470           # tam kinh hai mat song song (nam ngang); diem toi tren mat tren
+CH_I = 45                                                    # ca chot: i = 45 do (kho mac_dinh), hoi r o mat 1
 def s_end(img, d, t, sc):
-    k0 = appear(t, END_C, 0.5)
+    k0 = appear(t, END_C, 0.5)                                # kiem-v1 muc 2: the xanh trung tinh, khong goi y dap an
     card(d, (50, 265, 1030, 425), fill=A((236, 253, 243), k0), outline=A(GREEN, k0), w=6)
-    text(d, (W / 2, 345), "Khúc xạ hai lần, lệch về đáy", FM, DGREEN, alpha=k0)
+    text(d, (W / 2, 345), "Mỗi mặt bên: một lần khúc xạ", FM, DGREEN, alpha=k0)
     k1 = appear(t, END_Q, 0.5)
     card(d, (40, 455, 1040, 1560), fill=A(WHITE, k1), outline=A(ORANGE, k1), w=6)
     pw = tw(d, "THỬ NGHĨ", F(FM)) + 56
     card(d, (W / 2 - pw / 2, 480, W / 2 + pw / 2, 556), fill=A(ORANGE, k1), r=38)
     text(d, (W / 2, 518), "THỬ NGHĨ", FM, WHITE, alpha=k1)
-    text(d, (W / 2, 630), "Tấm kính hai mặt song song:", FS, INK, alpha=k1)
-    text(d, (W / 2, 712), "tia ló đi thế nào?", FS, INK, alpha=k1)
-    if k1 > 0:   # hinh: chi tia toi + phap tuyen; KHONG ve tia trong kinh, KHONG ve tia lo
-        d.rectangle([150, SL_Y0, 930, SL_Y1], fill=A(GLASS, 0.85 * k1), outline=A(BLUE, k1), width=4)
-        dash(d, (SL_X, SL_Y0 - 170), (SL_X, SL_Y1 + 110), A(NAVY, 0.7 * k1), w=3)
-        v = u(45 + 0.0); a = (SL_X - 260 * v[0], SL_Y0 - 260 * v[1])
-        d.line([a, (SL_X, SL_Y0)], fill=A(BEAM, k1), width=7); chev(d, a, (SL_X, SL_Y0), A(BEAM, k1))
-        dot(d, a[0], a[1], 9, BEAM)
-        kq = 0.55 + 0.45 * math.sin(2.4 * t) ** 2          # dau ? nhap nhay nhe o phia duoi tam kinh
-        text(d, (680, SL_Y1 + 140), "?", 96, ORANGE, alpha=k1 * kq)
+    text(d, (W / 2, 630), f"Góc tới i = {CH_I}° ở mặt thứ nhất.", FS, INK, alpha=k1)
+    text(d, (W / 2, 712), "Góc khúc xạ r khoảng bao nhiêu?", FS, INK, alpha=k1)
+    if k1 > 0:   # hinh: lang kinh, tia toi, phap tuyen, cung i; KHONG ve tia trong lang kinh
+        tf = mk_tf(560, 860, 1.25)
+        d.polygon([tf(P), tf(BR), tf(BL)], fill=A(GLASS, 0.85 * k1), outline=A(BLUE, k1))
+        d.line([tf(P), tf(BR), tf(BL), tf(P)], fill=A(BLUE, k1), width=4)
+        nrm = (-math.sqrt(3) / 2, -0.5)
+        dash(d, tf((E[0] + 150 * nrm[0], E[1] + 150 * nrm[1])), tf((E[0] - 190 * nrm[0], E[1] - 190 * nrm[1])), A(NAVY, 0.7 * k1), w=3)
+        v = u(30.0 - CH_I); a = (E[0] - 190 * v[0], E[1] - 190 * v[1])
+        d.line([tf(a), tf(E)], fill=A(BEAM, k1), width=7); chev(d, tf(a), tf(E), A(BEAM, k1))
+        arc_i(d, CH_I, ka=k1, tf=tf, k=1.0)
+        kq = 0.55 + 0.45 * math.sin(2.4 * t) ** 2          # "r = ?" nhap nhay nhe ben trong lang kinh
+        Et = tf(E)
+        text(d, (Et[0] + 190, Et[1] + 150), "r = ?", 72, ORANGE, alpha=k1 * kq)
 
 
 def _cues(clip):
@@ -324,7 +340,7 @@ CLIP = dict(id="tn-l9-langkinh-01", header="KHTN 9 · THÍ NGHIỆM", footer="L�
    ("Đo D bằng thước đo góc.", 5.0)]),
  dict(key="dapan", title="Kết quả", draw=s_dapan, tail=0.4, caps=[
    ("So sáu tia ló với tia tới.", 3.4),
-   ("Mỗi lần đều khúc xạ hai lần.", 5.0)]),
+   ("Mỗi lần đều khúc xạ hai lần.", 5.4)]),
  dict(key="bay", title="Bẫy và giới hạn", draw=s_bay, tail=0.3, caps=[
    ("So hai cách vẽ.", BAY_E - 0.4),
    ("Còn bỏ ngỏ.", 3.6)]),
