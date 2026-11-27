@@ -51,19 +51,19 @@
   },
   "cau_chot": {
     "giay": 44.3,
-    "cau_hoi": "Cùng Rx = 0 Ω. Pin mới: ℰ = 1,58 V, U = 1,40 V, I = 0,701 A. Pin cũ: ℰ = 1,50 V, U = 1,06 V, I = 0,534 A. Pin nào toả nhiệt bên trong nhiều hơn?",
+    "cau_hoi": "Cùng Rx = 0 Ω. Pin mới: ℰ = 1,58 V, U = 1,40 V, I = 0,701 A. Pin cũ: ℰ = 1,50 V, U = 1,06 V, I = 0,534 A. Hiệu suất H = U/ℰ của pin cũ kém pin mới khoảng:",
     "chon": [
-      "A. Pin mới, vì dòng qua nó lớn hơn",
-      "B. Pin cũ, dù dòng qua nó nhỏ hơn",
-      "C. Bằng nhau, vì cùng R0 = 2,0 Ω",
-      "D. Chưa biết được, vì chưa có r"
+      "A. Khoảng 5 điểm %",
+      "B. Khoảng 18 điểm %",
+      "C. Khoảng 34 điểm %",
+      "D. Không kém, cùng mạch"
     ],
     "dung": 1,
     "giai_thich": [
-      "Dòng lớn hơn chưa đủ: nhiệt trong pin là (ℰ − U)·I. Pin mới (1,58 − 1,40) · 0,701 ≈ 0,13 W; pin cũ (1,50 − 1,06) · 0,534 ≈ 0,23 W.",
-      "Phần U mất bên trong pin là ℰ − U = I·r. Nhiệt trong pin (ℰ − U)·I: pin cũ 0,44 · 0,534 ≈ 0,23 W, pin mới 0,18 · 0,701 ≈ 0,13 W. Pin cũ nóng hơn dù dòng nhỏ hơn.",
-      "R0 ở mạch ngoài, không quyết định nhiệt trong pin. Nhiệt trong pin (ℰ − U)·I: pin cũ ≈ 0,23 W, pin mới ≈ 0,13 W.",
-      "Không cần r: ℰ − U chính là I·r, nên nhiệt trong pin = (ℰ − U)·I. Pin cũ ≈ 0,23 W, pin mới ≈ 0,13 W."
+      "5 % chỉ là chênh ℰ (0,08/1,58), lúc chưa có dòng. Có dòng thì H = U/ℰ: pin mới 1,40/1,58 ≈ 89 %, pin cũ 1,06/1,50 ≈ 71 %, kém khoảng 18 điểm %.",
+      "H = U/ℰ: pin mới 1,40/1,58 ≈ 0,89 = 89 %, pin cũ 1,06/1,50 ≈ 0,71 = 71 %. Pin cũ kém khoảng 18 điểm %, vì r lớn làm U tụt nhiều.",
+      "0,34 V là chênh U, không phải chênh hiệu suất. Phải chia cho ℰ của từng pin: pin mới ≈ 89 %, pin cũ ≈ 71 %, kém khoảng 18 điểm %.",
+      "Cùng mạch ngoài nhưng r khác nên U khác: pin mới 1,40/1,58 ≈ 89 %, pin cũ 1,06/1,50 ≈ 71 %, kém khoảng 18 điểm %."
     ]
   }
 }

@@ -56,14 +56,14 @@
       "A. Pin mới, vì dòng qua nó lớn hơn",
       "B. Pin cũ, vì r của nó lớn hơn",
       "C. Bằng nhau, vì cùng E và cùng R",
-      "D. Không pin nào, vì R lớn hơn r"
+      "D. Pin mới, vì hiệu suất cao hơn"
     ],
     "dung": 1,
     "giai_thich": [
       "Pin mới có dòng lớn hơn (0,30 A so với 0,25 A) nhưng nhiệt trong pin là I²r, mà r của pin cũ gấp ba: pin mới 0,30² · 1,0 = 0,09 W, pin cũ 0,25² · 3,0 ≈ 0,19 W.",
       "Pin cũ: I = 3,0/(9,0 + 3,0) = 0,25 A, nhiệt trong pin I²r = 0,25² · 3,0 ≈ 0,19 W. Pin mới: I = 0,30 A, I²r = 0,09 W. Dòng nhỏ hơn một chút nhưng r gấp ba nên pin cũ nóng hơn.",
       "Cùng E, cùng R nhưng r khác nên dòng khác và nhiệt I²r khác: pin mới 0,09 W, pin cũ ≈ 0,19 W.",
-      "R lớn chỉ làm phần hao phí nhỏ đi, không bằng 0: còn dòng qua pin thì còn nhiệt I²r. Pin cũ ≈ 0,19 W, pin mới 0,09 W."
+      "Hiệu suất cao nghĩa là phần hao phí chiếm tỉ lệ nhỏ hơn, không phải nhiệt trong pin nhiều hơn. Nhiệt trong pin I²r: pin cũ ≈ 0,19 W, pin mới 0,09 W."
     ]
   }
 }

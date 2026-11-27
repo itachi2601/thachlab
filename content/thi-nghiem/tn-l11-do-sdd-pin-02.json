@@ -175,7 +175,7 @@
     1.4
    ]
   ],
-  "ghi_chu": "Tính bằng script từ I = E/(R0 + Rx + r), U = E − I·r, rồi cộng nhiễu đều ngẫu nhiên trong ±0,002 A và ±0,01 V (random.Random(seed).uniform) và làm tròn I tới 0,001 A, U tới 0,01 V để mô phỏng sai số dụng cụ. Mô hình E = 1,58 V, r = 0,25 Ω, R0 = 2,0 Ω, seed = 11. Khớp bình phương tối thiểu: U = 1,583 − 0,259·I. Hai điểm trên đường (0; 1,58) và (0,500; 1,45) cho r = 0,26 Ω. Sáu cặp này được liệt kê trong hộp 'Lặp lại với pin mới' ở mục V của bài. Câu chốt clip: cùng Rx = 0 Ω, pin mới (1,58 → 1,40 V; 0,701 A) và pin cũ (1,50 → 1,06 V; 0,534 A, thí nghiệm 01) → nhiệt trong pin (ℰ − U)·I: pin cũ 0,44 · 0,534 ≈ 0,23 W, pin mới 0,18 · 0,701 ≈ 0,13 W, pin cũ nóng hơn dù dòng nhỏ hơn (tự suy)."
+  "ghi_chu": "Tính bằng script từ I = E/(R0 + Rx + r), U = E − I·r, rồi cộng nhiễu đều ngẫu nhiên trong ±0,002 A và ±0,01 V (random.Random(seed).uniform) và làm tròn I tới 0,001 A, U tới 0,01 V để mô phỏng sai số dụng cụ. Mô hình E = 1,58 V, r = 0,25 Ω, R0 = 2,0 Ω, seed = 11. Khớp bình phương tối thiểu: U = 1,583 − 0,259·I. Hai điểm trên đường (0; 1,58) và (0,500; 1,45) cho r = 0,26 Ω. Sáu cặp này được liệt kê trong hộp 'Lặp lại với pin mới' ở mục V của bài. Câu chốt clip: cùng Rx = 0 Ω, pin mới (1,58 → 1,40 V; 0,701 A) và pin cũ (1,50 → 1,06 V; 0,534 A, thí nghiệm 01) → hiệu suất H = U/ℰ: pin mới 1,40/1,58 ≈ 89 %, pin cũ 1,06/1,50 ≈ 71 %, pin cũ kém khoảng 18 điểm % (tự suy)."
  },
  "ket_qua_ky_vong": "E = 1,58 ± 0,01 V; r = 0,26 ± 0,04 Ω (tính theo cách của bài: hai điểm trên đường thẳng khớp (0; 1,58) và (0,500; 1,45), ΔU = 0,13 V → Δr/r ≈ 0,02/0,13 + 0,004/0,500 ≈ 0,16); hệ số góc nhỏ hơn pin cũ khoảng 3 lần.",
  "hien_tuong_hay_sai": [

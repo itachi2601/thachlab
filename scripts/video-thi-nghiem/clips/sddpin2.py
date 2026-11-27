@@ -11,9 +11,9 @@
 #   KHONG hien r (0,26 / 0,82) va cac so o I = 0,5 A: hop "Dien buoc con thieu" ngay sau video hoi dung cac so do.
 # Bay = hien_tuong_hay_sai[1]: do ho mach la du biet pin con tot. Khong dung cap so cua Du doan.
 # CHUA NOI DUOC: trong pin, dieu gi lam r tang? (bai muc VI)
-# THU NGHI v2 (27/11, = cau_chot khung, CA TU SUY tu so kho): Rx = 0, pin moi (1,58 -> 1,40 V; 0,701 A) va pin cu
-#   (1,50 -> 1,06 V; 0,534 A): pin nao toa nhiet trong pin nhieu hon? -> pin cu (E - U)*I = 0,44*0,534 = 0,23 W so voi
-#   0,18*0,701 = 0,13 W. Bo ca "hai diem gan nhau, r khong tin duoc" vi trung Tu kiem tra 4 cua bai.
+# THU NGHI v3 (27/11, = cau_chot khung, CA TU SUY tu so kho): Rx = 0, pin moi (1,58 -> 1,40 V) va pin cu
+#   (1,50 -> 1,06 V): hieu suat H = U/E cua pin cu kem pin moi bao nhieu? -> 1,40/1,58 = 89 %, 1,06/1,50 = 71 %,
+#   kem ~18 diem %. Bo ca "nhiet trong pin" (trung thu thach cuoi bai + kieu cau chot nangluong3).
 from engine import *
 
 NEW = [(100, 0.015, 1.58), (20, 0.073, 1.56), (10, 0.129, 1.55), (5, 0.217, 1.53), (2, 0.372, 1.49), (0, 0.701, 1.40)]
@@ -30,6 +30,7 @@ def _kiem_so():
     assert [tuple(r) for r in k1["so_lieu_mau"]["hang"]] == OLD
     assert round(E_NEW - E_OLD, 2) == 0.08 and round(NEW[-1][2] - OLD[-1][2], 2) == 0.34
     assert round(NEW[0][2] - NEW[1][2], 2) == 0.02
+    assert round(100 * (NEW[-1][2] / E_NEW - OLD[-1][2] / E_OLD)) == 18
     for rx, i, u in NEW:
         assert abs(E_NEW / (R0 + rx + 0.25) - i) <= 0.003 and abs(E_NEW - i * 0.25 - u) <= 0.015, rx
 _kiem_so()
@@ -289,8 +290,9 @@ def s_end(img, d, t, sc):
         y = 615 + 92 * j
         text(d, (130, y), nm, 56, col, alpha=k)
         for x, v in zip((300, 560, 820), (e, u, i)): text(d, (x, y), v, 56, col, alpha=k)
-    text(d, (W / 2, 900), "Pin nào nóng lên bên trong", 64, DORANGE, alpha=k)
-    text(d, (W / 2, 990), "nhiều hơn?", 64, DORANGE, alpha=k)
+    mt(d, (W / 2, 880), "Hiệu suất H = U/ℰ:", 64, DORANGE, k)
+    text(d, (W / 2, 970), "pin cũ kém pin mới", 64, DORANGE, alpha=k)
+    text(d, (W / 2, 1060), "khoảng bao nhiêu?", 64, DORANGE, alpha=k)
     seg_bar(d, 1200, t, 1.0, sc["T"] - 0.2, ORANGE, k)
 
 def _cues(clip):
