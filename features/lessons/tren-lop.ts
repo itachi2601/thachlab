@@ -20,6 +20,7 @@ export const BAN_CHIEU_TREN_LOP: BanChieuTrenLop[] = [
   { lessonId: 15, slug: "l12-hat-nhan-mo-hinh-nguyen-tu", ten: "Vật lí 12 · Bài 14 · Hạt nhân và mô hình nguyên tử", ghiChu: "27 màn · cuối tiết đề 1191 (QR)" },
   { lessonId: 16, slug: "l12-nang-luong-lien-ket", ten: "Vật lí 12 · Bài 15 · Năng lượng liên kết", ghiChu: "24 màn · cuối tiết đề 1192 (QR)" },
   { lessonId: 17, slug: "l12-phan-hach-nhiet-hach", ten: "Vật lí 12 · Bài 16 · Phân hạch, nhiệt hạch", ghiChu: "24 màn · cuối tiết đề 1193 (QR)" },
+  { lessonId: 18, slug: "l12-phong-xa", ten: "Vật lí 12 · Bài 17 · Hiện tượng phóng xạ", ghiChu: "29 màn · cuối tiết đề 1194 (QR)" },
 ];
 
 export const banChieuCuaBai = (lessonId: number) => BAN_CHIEU_TREN_LOP.find((b) => b.lessonId === lessonId);
