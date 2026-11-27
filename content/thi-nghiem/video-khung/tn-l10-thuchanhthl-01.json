@@ -8,12 +8,12 @@
       "khoa": "gia_thuyet",
       "giay": 0,
       "chu": "Lực tổng hợp F của F1, F2 vẽ bằng hình bình hành ngược chiều và cùng độ lớn với lực kéo của lực kế 3.",
-      "kiem": "F hướng thế nào so với lực kế 3?"
+      "kiem": "Lực kế 3 chỉ đúng bằng F?"
     },
     {
       "khoa": "du_doan",
       "giay": 3.8,
-      "chu": "F1, F2 hợp thành F. F hướng thế nào so với lực kéo của lực kế 3?"
+      "chu": "F1 = F2 = 2,0 N, góc giữa hai dây 120°. Lực kế 3 chỉ nhỏ hơn, bằng hay lớn hơn mỗi lực kế 1, 2?"
     },
     {
       "khoa": "dung_cu",
@@ -28,7 +28,7 @@
     {
       "khoa": "rut_ra",
       "giay": 26.3,
-      "chu": "Chéo 5,7 cm → F vẽ = 2,85 N, hướng lên, ngược chiều lực kéo của lực kế 3; δ = 0,05 N ≤ Δ = 0,3 N: cùng độ lớn trong sai số."
+      "chu": "Hình bình hành góc 120° là hình thoi gồm hai tam giác đều: chéo 4,0 cm → F vẽ = 2,0 N, bằng số chỉ lực kế 3. Hợp lực không luôn lớn hơn từng lực."
     },
     {
       "khoa": "chua_noi",
@@ -38,15 +38,15 @@
   ],
   "dung_dua": {
     "giay": 9.8,
-    "cau_hoi": "Lần 1: lực kế 1 chỉ 1,6 N, lực kế 2 chỉ 2,1 N, góc giữa hai dây 80°, lực kế 3 treo vật kéo nút O xuống. Lực tổng hợp F của F1 và F2 hướng thế nào so với lực kéo của lực kế 3?",
+    "cau_hoi": "Lực kế 1 và lực kế 2 cùng chỉ 2,0 N, góc giữa hai dây 120°, lực kế 3 treo vật kéo nút O xuống, nút O đứng yên. Lực kế 3 chỉ thế nào so với mỗi lực kế 1, 2?",
     "chon": [
-      "A. Cùng chiều",
-      "B. Ngược chiều",
-      "C. Vuông góc"
+      "A. Nhỏ hơn 2,0 N",
+      "B. Bằng 2,0 N",
+      "C. Lớn hơn 2,0 N"
     ],
     "dung": 1,
-    "giai_thich_dung": "Nút O đứng yên nên F cân bằng với lực kéo của lực kế 3: F hướng lên, ngược chiều, cùng độ lớn.",
-    "giai_thich_sai": "Nút O đứng yên thì tổng các lực lên O bằng 0. Xem đoạn kế: F vẽ bằng hình bình hành hướng về đâu so với F3."
+    "giai_thich_dung": "Hình bình hành dựng trên hai lực 2,0 N góc 120° là hình thoi gồm hai tam giác đều, nên đường chéo F = 2,0 N; nút O đứng yên nên lực kế 3 chỉ 2,0 N.",
+    "giai_thich_sai": "Hợp lực không luôn lớn hơn từng lực: góc giữa hai lực càng lớn thì hợp lực càng nhỏ. Xem đoạn kế: vẽ hình bình hành rồi đo đường chéo."
   },
   "cau_chot": {
     "giay": 44.0,
