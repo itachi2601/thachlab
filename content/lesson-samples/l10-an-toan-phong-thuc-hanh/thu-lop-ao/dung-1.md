@@ -46,3 +46,6 @@ Chưa có ô nào được mở trong điểm dừng này. Đáp án ô "B. Tắ
 3. Chỗ nào trên màn hoặc trong Tập em thấy khó hiểu, hoặc màn và Tập ghi khác nhau?
 
 — Chờ học sinh trả lời —
+
+--- sau khi lớp làm ---
+(Đáp án mở cuối tiết ở màn "Quay lại dây chưa nối", ô 13·3.) **B. Tắt công tắc nguồn, rồi mới nối dây.** Vỏ nhựa chỉ bọc thân dây, đầu hở không có vỏ; găng mỏng, ẩm thì hết tác dụng; làm một tay chỉ giảm rủi ro, không loại được nguy hiểm.
