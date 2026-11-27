@@ -119,7 +119,7 @@ def s_hook(img, d, t, sc):
 # ---------------- canh 2: Tien hanh ----------------
 GAP = 70                       # khe thuoc - lon o hinh Rut ra
 RX2, RL2 = 760, 220            # thuoc dung yen o pha 2 (dau trai x 760, het o 980)
-ROLL_MAX = RX2 - 36 - CR - CX0 # lon lan toi khi khe con 36 px
+ROLL_MAX = RX2 - 90 - CR - CX0 # lon lan toi khi khe con 90 px (cong B v3: thay ro khong cham)
 def do_state(t, M):
     """-> (pha, ruler_x, ruler_y, k_giay, cx_lon, roll). Pha 1: giay vun ; pha 2: thuoc hien dan o vi tri dung yen, lon lan toi sat."""
     t2 = M[1]
@@ -152,7 +152,7 @@ def s_do(img, d, t, sc):
     if ph == 1 and kp >= 1: n = 1
     if ph == 2: n = 1 + (1 if roll > 0.8 * ROLL_MAX else 0)
     obs_table(d, 1020, n)
-    if n >= 2: pill(d, "ĐÁP ÁN ↑", 1490, 1.0)   # cong B v2: chi hang "lăn về phía thước" ngay tren, luc lon lan
+    if n >= 2: pill(d, "ĐÁP ÁN: hàng trên ↑", 1490, 1.0)   # cong B v2: chi hang "lăn về phía thước" ngay tren, luc lon lan
 
 def obs_table(d, y, n):
     card(d, (40, y, 1040, y + 110 + 3 * 96), fill=WHITE, outline=NAVY, w=4)
@@ -293,9 +293,9 @@ CLIP = dict(id="tn-l11-coulomb-01", header="VẬT LÍ 11 · THÍ NGHIỆM", foot
  dict(key="rutra", title="Vì sao lon bị hút?", draw=s_rutra, tail=0.6, caps=[
    ("Hai đầu lon trái dấu.", 3.0),
    ("Đầu gần sát thước hơn.", 3.4),
-   ("Chỉ thấy hút: chưa đủ.", 3.4)]),
+   ("Chỉ thấy hút: chưa đủ.", 3.8)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.6, caps=[
-   ("Dừng lại, tự trả lời.", 7.2)]),
+   ("Dừng lại, tự trả lời.", 6.8)]),
 ])
 
 _b = _kiem_dong_bo(); assert not _b, _b

@@ -178,6 +178,11 @@ def s_bay(img, d, t, sc):
     k2 = appear(t, M[1] - 0.1, 0.45)
     a1 = 1.0 - k2
     tray(d, probe=2.0, reading="1,18 V")
+    km = a1 * appear(t, 3.0, 0.4)               # nhip 2: hinh tu giai thich - moc W = 0 o la am (cong B v2)
+    if km > 0:
+        d.rectangle([XN - 11, YT + 25, XN + 11, YB - 25], fill=A(ORANGE, km), outline=NAVY, width=3)
+        card(d, (XN + 22, 625, XN + 330, 695), fill=A(WHITE, 0.92 * km), outline=A(ORANGE, km), r=14, w=3)
+        text(d, (XN + 176, 660), "mốc: W = 0", 56, (176, 64, 8), alpha=km)
     y0 = 1040
     if a1 > 0:
         card(d, (40, y0, 1040, y0 + 500), fill=A(WHITE, a1), outline=A(DRED, a1), w=6)
@@ -232,7 +237,7 @@ CLIP = dict(id="tn-l11-the-nang-dien-01", header="VẬT LÍ 11 · THÍ NGHIỆM"
    ("Thế năng tăng đều theo x.", 4.6)]),
  dict(key="bay", title="Bẫy và giới hạn", draw=s_bay, tail=0.4, caps=[
    ("Bẫy thường gặp.", 5.8),
-   ("Que chỉ dời giữa hai lá.", 3.4)]),
+   ("Que chỉ dời giữa hai lá.", 4.0)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.8, caps=[
    ("Dừng lại, tự tính.", 7.6)]),
 ])

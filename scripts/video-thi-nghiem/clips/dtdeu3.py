@@ -270,9 +270,9 @@ CLIP = dict(id="tn-l11-dien-truong-deu-03", header="VẬT LÍ 11 · THÍ NGHIỆ
    ("U gấp đôi, độ lệch gấp đôi.", 4.4)]),
  dict(key="bay", title="Bẫy và giới hạn", draw=s_bay, tail=0.4, caps=[
    ("Bẫy thường gặp.", 5.8),
-   ("Câu còn bỏ ngỏ.", 3.4)]),
+   ("Câu còn bỏ ngỏ.", 4.0)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.8, caps=[
-   ("Dừng lại, tự trả lời.", 7.8)]),
+   ("Dừng lại, tự trả lời.", 7.6)]),
 ])
 
 _b = _kiem_dong_bo(); assert not _b, _b

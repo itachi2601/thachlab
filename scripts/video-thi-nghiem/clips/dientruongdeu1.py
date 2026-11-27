@@ -11,13 +11,13 @@
 #   chieu E tai tam huong tu (+) sang (-).
 # Bay = hien_tuong_hay_sai[1] (o mep duong suc cung thang deu). KHONG dung [0] (gan ban duong manh hon) vi trung cau Tu kiem tra.
 # Chua noi duoc = gia_thiet "hat bot chi dinh huong": hat cho thay huong, khong do duoc E.
-# Thu nghi (cong B v1, 27/11): giu 15 kV, dua hai la con 1 cm -> E vung giua? Dap an 1 500 000 V/m (khong hien tren man).
-#   Mot buoc clip chua chieu: lai halve d lan nua (2 -> 1 cm) -> E gap doi tu 750 000. Clip chi doi d nen KHONG hoi doi U.
+# Thu nghi (cong B v2, 27/11): giu 15 kV, hai la con 3 cm -> E vung giua? Dap an 500 000 V/m (khong hien tren man).
+#   Buoc clip chua chieu: E ti le nghich d o khoang cach khong phai ÷2 (375 000 . 4/3 hay 750 000 . 2/3). Khong hoi doi U.
 from engine import *
 
 ROWS = [(4, 15, 375000), (2, 15, 750000)]           # hai hang chieu trong clip
 ROW3 = (4, 30, 750000)                               # hang 3 kho (khong chieu)
-CHOT = (1, 15, 1500000)                              # dap an cau chot (ghi_chu kho), khong hien tren man
+CHOT = (3, 15, 500000)                              # dap an cau chot (ghi_chu kho), khong hien tren man
 def num(n): return f"{n:,}".replace(",", " ")
 
 def _kiem_so():
@@ -253,13 +253,13 @@ def s_bay(img, d, t, sc):
         text(d, (W / 2, y + 190), "Hạt chỉ cho thấy hướng,", 58, INK, alpha=k3)
         text(d, (W / 2, y + 300), "chưa đo được E.", 58, INK, alpha=k3)
 
-# ---------------- canh 5: THU NGHI (cau chot o khung: 1 cm, 15 kV -> 1 500 000 V/m, khong hien) ----------------
+# ---------------- canh 5: THU NGHI (cau chot o khung: 3 cm, 15 kV -> 500 000 V/m, khong hien) ----------------
 def s_end(img, d, t, sc):
     M = sc["M"]; k = appear(t, 0.15, 0.4)
-    tray(d, 2, 1.0, d_lbl=False)
+    tray(d, 3, 1.0, d_lbl=False)
     card(d, (40, 1020, 1040, 1580), fill=A(WHITE, k), outline=A(ORANGE, k), w=6)
     pill(d, "THỬ NGHĨ", 1085, k, ORANGE)
-    text(d, (W / 2, 1190), "Giữ 15 kV, hai lá còn 1 cm.", 60, INK, alpha=k)
+    text(d, (W / 2, 1190), "Giữ 15 kV, hai lá còn 3 cm.", 60, INK, alpha=k)
     text(d, (W / 2, 1280), "E vùng giữa bao nhiêu?", 62, (176, 64, 8), alpha=k)
     seg_bar(d, 1360, t, 1.0, sc["T"] - 0.2, ORANGE, k)
     kh = appear(t, M[0] + 3.0, 0.5)
@@ -288,7 +288,7 @@ CLIP = dict(id="tn-l11-dien-truong-deu-01", header="VẬT LÍ 11 · THÍ NGHIỆ
    ("Đường sức vẫn thẳng, song song.", 4.6)]),
  dict(key="bay", title="Bẫy và giới hạn", draw=s_bay, tail=0.6, caps=[
    ("Bẫy thường gặp.", 5.8),
-   ("Hạt bột cho biết gì?", 3.6)]),
+   ("Hạt bột cho biết gì?", 3.8)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.6, caps=[
    ("Dừng lại, tự tính.", 7.4)]),
 ])

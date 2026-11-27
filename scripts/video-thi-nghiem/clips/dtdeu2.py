@@ -191,7 +191,7 @@ def s_end(img, d, t, sc):
     kh = appear(t, M[0] + 3.0, 0.5)
     if kh > 0:
         card(d, (90, y0 + 380, 990, y0 + 470), fill=A((255, 237, 213), kh), outline=A(ORANGE, kh), r=24, w=4)
-        text(d, (W / 2, y0 + 425), "Gợi ý: E giờ bao nhiêu V/m?", 58, (176, 64, 8), alpha=kh)
+        text(d, (W / 2, y0 + 425), "Gợi ý: hai thanh gần lại, gì đổi?", 58, (176, 64, 8), alpha=kh)
 
 def _cues(clip):
     sc = {s["key"]: s for s in clip["scenes"]}
@@ -215,7 +215,7 @@ CLIP = dict(id="tn-l11-dien-truong-deu-02", header="VẬT LÍ 11 · THÍ NGHIỆ
    ("Chia V cho x ở từng hàng.", 4.4)]),
  dict(key="bay", title="Bẫy và giới hạn", draw=s_bay, tail=0.4, caps=[
    ("Bẫy thường gặp.", 5.8),
-   ("Mới đo ở giữa tờ giấy.", 3.4)]),
+   ("Mới đo ở giữa tờ giấy.", 4.0)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.6, caps=[
    ("Dừng lại, tự tính.", 7.4)]),
 ])

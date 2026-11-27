@@ -191,7 +191,7 @@ def s_end(img, d, t, sc):
     kh = appear(t, M[0] + 3.0, 0.5)
     if kh > 0:
         card(d, (110, 1508, 970, 1590), fill=A((255, 237, 213), kh), outline=A(ORANGE, kh), r=24, w=4)
-        text(d, (W / 2, 1549), "Gợi ý: điện thế từng điểm?", 58, (176, 64, 8), alpha=kh)
+        text(d, (W / 2, 1549), "Gợi ý: nhìn kĩ hình nối.", 58, (176, 64, 8), alpha=kh)
 
 def _cues(clip):
     sc = {s["key"]: s for s in clip["scenes"]}
@@ -216,7 +216,7 @@ CLIP = dict(id="tn-l11-dien-the-02", header="VẬT LÍ 11 · THÍ NGHIỆM", foo
    ("Mọi điểm trên dây cùng điện thế.", 4.2)]),
  dict(key="bay", title="Bẫy và giới hạn", draw=s_bay, tail=0.4, caps=[
    ("Bẫy thường gặp.", 5.8),
-   ("Mới thử pin để hở.", 3.4)]),
+   ("Mới thử pin để hở.", 4.0)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=1.0, caps=[
-   ("Dừng lại, tự tính.", 7.6)]),
+   ("Dừng lại, tự tính.", 7.0)]),
 ])

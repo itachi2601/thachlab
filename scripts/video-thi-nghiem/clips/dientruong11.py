@@ -243,7 +243,7 @@ CLIP = dict(id="tn-l11-dien-truong-02", header="VẬT LÍ 11 · THÍ NGHIỆM", 
    ("Còn r gấp đôi thì E giảm khoảng 4 lần.", 4.6)]),
  dict(key="bay", title="Bẫy và giới hạn", draw=s_bay, tail=0.4, caps=[
    ("Bẫy thường gặp.", 5.8),
-   ("Q luôn là 40 nC.", 3.4)]),
+   ("Q luôn là 40 nC.", 4.0)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.6, caps=[
    ("Dừng lại, tự trả lời.", 7.4)]),
 ])
