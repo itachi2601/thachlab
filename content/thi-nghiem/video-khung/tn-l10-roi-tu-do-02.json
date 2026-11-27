@@ -1,52 +1,69 @@
 {
   "id": "tn-l10-roi-tu-do-02",
-  "ten": "Dây dọi và video quay chậm: bi ở đâu sau mỗi 0,1 s?",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-roi-tu-do-02-20261031.mp4",
-  "tong_giay": 49.9,
+  "ten": "Dây dọi và video quay chậm: đánh dấu dày hơn thì các khoảng đổi thế nào?",
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-roi-tu-do-02-20261127.mp4",
+  "tong_giay": 49.5,
   "o": [
     {
       "khoa": "gia_thuyet",
       "giay": 0,
-      "chu": "Rơi tự do nhanh dần đều: các khoảng dài thêm đều nhau.",
-      "kiem": "Vị trí bi cho biết gì về cách rơi?"
+      "chu": "Hiệu hai khoảng liền nhau = g·T²: T nhỏ 2 lần thì hiệu nhỏ 4 lần.",
+      "kiem": "Đánh dấu dày hơn, các khoảng đổi sao?"
     },
     {
       "khoa": "du_doan",
-      "giay": 3.4,
-      "chu": "Thả nhẹ, bỏ qua lực cản, đánh dấu vị trí bi mỗi 0,1 s. Khoảng giữa hai vị trí liền nhau đổi thế nào?"
+      "giay": 3.2,
+      "chu": "Đánh dấu mỗi 0,1 s: khoảng sau dài thêm 9,8 cm. Đánh dấu mỗi 0,05 s thì mỗi khoảng dài thêm bao nhiêu?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 10.4,
-      "chu": "Thước đứng, dây dọi, bi thép, điện thoại quay chậm."
+      "giay": 9.5,
+      "chu": "Thước, dây dọi, bi thép, máy quay chậm."
     },
     {
       "khoa": "quan_sat",
-      "giay": 22.4,
-      "chu": "Bi rơi dọc dây dọi. Vị trí: 0; 4,9; 19,6; 44,1; 78,4; 122,5 cm. Mỗi khoảng dài hơn khoảng trước 9,8 cm."
+      "giay": 16.8,
+      "chu": "Mỗi 0,05 s: 1,225; 3,675; 6,125 cm, dài thêm 2,45 cm. Mỗi 0,1 s: dài thêm 9,8 cm."
     },
     {
       "khoa": "rut_ra",
-      "giay": 32.2,
-      "chu": "Thẳng đứng, từ trên xuống. Tốc độ trung bình tăng đều: nhanh dần đều."
+      "giay": 24.1,
+      "chu": "Hiệu không đổi: nhanh dần đều. Hiệu = g·T²: T nhỏ 2 lần, hiệu nhỏ 4 lần."
     },
     {
       "khoa": "chua_noi",
-      "giay": 37.6,
-      "chu": "Mới thử một viên bi: chưa biết bi nặng hơn có rơi khác không."
+      "giay": 39.1,
+      "chu": "Mới thử một viên bi: bi nặng hơn có rơi khác không?"
     }
   ],
   "dung_dua": {
-    "giay": 10.2,
-    "cau_hoi": "Thả nhẹ bi sát dây dọi, bỏ qua lực cản, đánh dấu vị trí bi mỗi 0,1 s. Khoảng giữa hai vị trí liền nhau thay đổi thế nào?",
+    "giay": 8.95,
+    "cau_hoi": "Thả bi sát dây dọi. Đánh dấu mỗi 0,1 s thì mỗi khoảng dài hơn khoảng trước 9,8 cm. Đánh dấu mỗi 0,05 s thì mỗi khoảng dài hơn khoảng trước bao nhiêu?",
     "chon": [
-      "A. Bằng nhau",
-      "B. Dài dần, mỗi khoảng dài thêm một lượng như nhau",
-      "C. Dài dần, mỗi khoảng gấp đôi khoảng trước",
-      "D. Ngắn dần"
+      "A. 2,45 cm",
+      "B. 4,9 cm",
+      "C. 9,8 cm",
+      "D. 19,6 cm"
     ],
-    "dung": 1,
-    "giai_thich_dung": "Các khoảng là 4,9; 14,7; 24,5; 34,3; 44,1 cm: mỗi khoảng dài hơn khoảng trước đúng 9,8 cm.",
-    "giai_thich_sai": "Xem đoạn kế: lấy hai khoảng liền nhau trừ cho nhau, lần nào cũng ra cùng một số."
+    "dung": 0,
+    "giai_thich_dung": "Hiệu hai khoảng liền nhau = g·T² = 9,8 · 0,05² = 0,0245 m = 2,45 cm: T nhỏ 2 lần thì hiệu nhỏ 4 lần.",
+    "giai_thich_sai": "Hiệu = g·T² tỉ lệ với T², không tỉ lệ với T: T giảm 2 lần thì hiệu giảm 4 lần, 9,8 : 4 = 2,45 cm."
+  },
+  "cau_chot": {
+    "giay": 43.6,
+    "cau_hoi": "Thả bi sát dây dọi, đánh dấu đều đặn. Hai khoảng liền nhau chênh nhau 22,05 cm (g ≈ 9,8 m/s²). Mỗi lần đánh dấu cách nhau bao nhiêu giây?",
+    "chon": [
+      "A. 0,0225 s",
+      "B. 0,10 s",
+      "C. 0,15 s",
+      "D. 1,5 s"
+    ],
+    "dung": 2,
+    "giai_thich": [
+      "0,0225 là T², chưa lấy căn: T = √(0,2205 : 9,8) = √0,0225 = 0,15 s.",
+      "0,10 s cho hiệu 9,8 cm, nhỏ hơn 22,05 cm. Từ g·T² = 0,2205 m: T² = 0,0225, T = 0,15 s.",
+      "g·T² = 22,05 cm = 0,2205 m → T² = 0,2205 : 9,8 = 0,0225 → T = 0,15 s.",
+      "1,5 s là quên đổi cm ra m (√(22,05 : 9,8)). Đổi 22,05 cm = 0,2205 m: T = 0,15 s."
+    ]
   }
 }
