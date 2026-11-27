@@ -1,52 +1,69 @@
 {
   "id": "tn-l10-dongluong-01",
   "ten": "Đo độ biến thiên động lượng và xung lượng khi xe bật vào đệm lò xo",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-dongluong-01-20261031.mp4",
-  "tong_giay": 49.33,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-dongluong-01-20261127.mp4",
+  "tong_giay": 49.7,
   "o": [
     {
       "khoa": "gia_thuyet",
       "giay": 0,
-      "chu": "Xung lượng của lực bằng Δp.",
-      "kiem": "Δp và xung lượng cảm biến so nhau ra sao?"
+      "chu": "Xung lượng lực đệm bằng độ biến thiên động lượng của xe.",
+      "kiem": "Đệm đẩy xe theo hướng nào?"
     },
     {
       "khoa": "du_doan",
       "giay": 3.8,
-      "chu": "Độ biến thiên động lượng của xe có độ lớn bao nhiêu?"
+      "chu": "Lúc xe nén đệm và lúc bật ra, đệm đẩy xe theo hướng nào?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 10.2,
-      "chu": "Ray đệm khí, xe 0,250 kg, cổng quang, cảm biến lực."
+      "giay": 9.7,
+      "chu": "Ray đệm khí, xe 0,250 kg, cổng quang, cảm biến lực gắn đệm lò xo."
     },
     {
       "khoa": "quan_sat",
-      "giay": 19.4,
-      "chu": "v2 ngược dấu v1 và nhỏ hơn về độ lớn."
+      "giay": 18.3,
+      "chu": "Lực đệm luôn ngược chiều dương; bốn lần đo, v₂ luôn âm."
     },
     {
       "khoa": "rut_ra",
-      "giay": 23.2,
-      "chu": "Độ lớn m(v2 − v1) khớp xung lượng cảm biến (lệch 1,5–2,2 %): Δp = F·Δt."
+      "giay": 24.5,
+      "chu": "Độ lớn m·|v₂ − v₁| khớp số cảm biến, lệch dưới 2,5 phần trăm: Δp = F·Δt."
     },
     {
       "khoa": "chua_noi",
-      "giay": 31.8,
-      "chu": "Chưa kiểm: ray có ma sát không?\nXe khối lượng khác thì sao?"
+      "giay": 35.8,
+      "chu": "v₂ ngược chiều nên mang dấu trừ, không lấy hiệu hai tốc độ. Ray có ma sát thì sao?"
     }
   ],
   "dung_dua": {
-    "giay": 10.0,
-    "cau_hoi": "Độ biến thiên động lượng của xe có độ lớn bao nhiêu?",
+    "giay": 9.5,
+    "cau_hoi": "Xe chạy tới nén đệm lò xo rồi bật ngược lại. Lúc nén và lúc bật ra, đệm đẩy xe theo hướng nào?",
     "chon": [
-      "A. khoảng 0,02 kg·m/s",
-      "B. khoảng 0,08 kg·m/s",
-      "C. khoảng 0,10 kg·m/s",
-      "D. khoảng 0,18 kg·m/s"
+      "A. Cùng chiều xe chạy tới, cả hai lúc",
+      "B. Ngược chiều xe chạy tới, cả hai lúc",
+      "C. Lúc nén ngược chiều, lúc bật ra cùng chiều xe chạy tới",
+      "D. Bằng 0 khi xe dừng, rồi đổi chiều"
     ],
-    "dung": 3,
-    "giai_thich_dung": "Chọn chiều dương là chiều tới: Δp = 0,250·(−0,32 − 0,40) ≈ −0,18, độ lớn khoảng 0,18 kg·m/s.",
-    "giai_thich_sai": "Xem phần kế: chú ý dấu của v2 so với v1 khi lấy hiệu."
+    "dung": 1,
+    "giai_thich_dung": "Lò xo bị nén luôn đẩy ra xa đệm, tức ngược chiều xe chạy tới, cả lúc xe đang nén lẫn lúc xe bật ra. Vì thế Δp của xe cũng ngược chiều dương.",
+    "giai_thich_sai": "Lò xo bị nén đẩy về phía nào? Lúc xe bật ra lò xo vẫn đang bị nén chứ chưa duỗi hết."
+  },
+  "cau_chot": {
+    "giay": 44.8,
+    "cau_hoi": "Cùng xe 0,250 kg chạy tới đệm với tốc độ 0,50 m/s nhưng dính luôn vào đệm (dừng hẳn). Độ lớn độ biến thiên động lượng của xe bằng bao nhiêu?",
+    "chon": [
+      "A. 0 kg·m/s",
+      "B. 0,125 kg·m/s",
+      "C. 0,225 kg·m/s",
+      "D. 0,250 kg·m/s"
+    ],
+    "dung": 1,
+    "giai_thich": [
+      "Xe đổi từ đang chạy sang đứng yên nên động lượng có đổi: v₂ = 0, |Δp| = 0,250·|0 − 0,50| = 0,125 kg·m/s.",
+      "Dính vào đệm thì v₂ = 0: Δp = 0,250·(0 − 0,50) = −0,125 kg·m/s, độ lớn 0,125 kg·m/s.",
+      "Số này ra khi cho xe bật lại 0,40 m/s như đệm cũ. Ở đây xe dính vào đệm nên v₂ = 0: |Δp| = 0,250·0,50 = 0,125 kg·m/s.",
+      "Số này ra khi cho xe bật lại nguyên tốc độ 0,50 m/s. Xe dính vào đệm nên v₂ = 0: |Δp| = 0,250·0,50 = 0,125 kg·m/s."
+    ]
   }
 }

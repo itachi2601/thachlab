@@ -1,51 +1,68 @@
 {
   "id": "tn-l10-hieu-suat-02",
   "ten": "Ván nghiêng nhiều góc, cùng nâng xe lên 20 cm",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-hieu-suat-02-20261118.mp4",
-  "tong_giay": 49.3,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-hieu-suat-02-20261127.mp4",
+  "tong_giay": 49.8,
   "o": [
     {
       "khoa": "gia_thuyet",
       "giay": 0,
-      "chu": "H = W_ci/W_tp luôn nhỏ hơn 100 phần trăm, và ván càng thoải thì H càng thấp.",
-      "kiem": "Đổi độ nghiêng ván, H thay đổi ra sao?"
+      "chu": "Cùng nâng xe 4,0 N lên 20 cm thì công có ích W_ci = mgh như nhau; công kéo W_tp đổi theo góc ván.",
+      "kiem": "Ván thoải hơn thì công có ích có đổi không?"
     },
     {
       "khoa": "du_doan",
-      "giay": 3.8,
-      "chu": "Cùng nâng xe lên cao 20 cm. Ván thoải hơn thì hiệu suất H thế nào?"
+      "giay": 3.6,
+      "chu": "Ván 15° dài hơn ván 45°. Công có ích ở 15° so với ở 45°?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 10.0,
-      "chu": "Lực kế kéo đều xe song song mặt ván, luôn nâng cao 20 cm; đổi góc."
+      "giay": 10.3,
+      "chu": "Xe gỗ, ván nghiêng đổi góc, lực kế kéo song song mặt ván."
     },
     {
       "khoa": "quan_sat",
-      "giay": 22.8,
-      "chu": "W_tp: 1,55; 1,22; 1,09; 1,00 J ứng với 15°, 25°, 35°, 45°."
+      "giay": 20.5,
+      "chu": "Từ 15° đến 45°: F tăng 2,01 → 3,52 N, s giảm 77,3 → 28,3 cm, W_tp giảm 1,55 → 1,00 J."
     },
     {
       "khoa": "rut_ra",
       "giay": 27.2,
-      "chu": "H = W_ci ÷ W_tp < 100 phần trăm vì có ma sát giữa xe và ván; H = 51,6; 65,6; 73,4; 80,0 phần trăm ở 15°, 25°, 35°, 45°."
+      "chu": "W_ci = 0,80 J ở mọi góc; phần W_tp vượt quá W_ci là công thắng ma sát."
     },
     {
       "khoa": "chua_noi",
-      "giay": 36.7,
-      "chu": "Vì sao ván thoải hao phí nhiều hơn?\nBôi trơn ván thì H đổi ra sao?"
+      "giay": 38.9,
+      "chu": "Chưa thử ván bôi trơn: chưa biết hao phí giảm bao nhiêu."
     }
   ],
   "dung_dua": {
-    "giay": 9.8,
-    "cau_hoi": "Cùng nâng xe lên cao 20 cm. Ván thoải hơn thì hiệu suất H thế nào?",
+    "giay": 9.6,
+    "cau_hoi": "Cùng nâng xe 4,0 N lên cao 20 cm bằng ván nghiêng. Ván 15° dài hơn ván 45°. Công có ích ở 15° so với ở 45° thế nào?",
     "chon": [
-      "A. Cao hơn",
-      "B. Thấp hơn",
-      "C. Như nhau vì cùng W_ci 0,80 J"
+      "A. Lớn hơn",
+      "B. Bằng nhau",
+      "C. Nhỏ hơn"
     ],
     "dung": 1,
-    "giai_thich_dung": "Ván thoải hơn thì H thấp hơn: từ 80,0 % ở 45° xuống 51,6 % ở 15°, vì công kéo W_tp lớn hơn trong khi W_ci vẫn 0,80 J.",
-    "giai_thich_sai": "Xem đoạn kế: so cột công kéo và H ở 15° với ở 45°."
+    "giai_thich_dung": "Công có ích là công nâng xe: W_ci = mgh = 4,0 · 0,20 = 0,80 J, không phụ thuộc ván dài hay ngắn.",
+    "giai_thich_sai": "Xem đoạn kế: phần xanh của bốn cột (công có ích) cao bằng nhau, chỉ phần cam (thắng ma sát) khác."
+  },
+  "cau_chot": {
+    "giay": 43.0,
+    "cau_hoi": "Ván nghiêng 60°: kéo đều xe trọng lượng 4,0 N lên theo ván 23,1 cm thì xe được nâng cao 20 cm, lực kế (song song mặt ván) chỉ 3,96 N. Hiệu suất của ván nghiêng khoảng bao nhiêu?",
+    "chon": [
+      "A. 20 %",
+      "B. 87 %",
+      "C. 100 %",
+      "D. 114 %"
+    ],
+    "dung": 1,
+    "giai_thich": [
+      "20 % là lấy 0,80 J chia 3,96 N, quên nhân quãng đường. W_tp = F·s = 3,96 · 0,231 ≈ 0,915 J; H = 0,80 ÷ 0,915 ≈ 87 %.",
+      "W_ci = mgh = 4,0 · 0,20 = 0,80 J; W_tp = F·s = 3,96 · 0,231 ≈ 0,915 J. H = W_ci ÷ W_tp ≈ 0,87 = 87 %.",
+      "100 % là bỏ qua ma sát. Lực kế chỉ 3,96 N nên W_tp ≈ 0,915 J lớn hơn W_ci = 0,80 J: H ≈ 87 %.",
+      "114 % là lấy W_tp chia W_ci (lộn ngược). Hiệu suất là có ích chia toàn phần: 0,80 ÷ 0,915 ≈ 87 %."
+    ]
   }
 }

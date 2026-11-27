@@ -14,6 +14,12 @@ export const SUBJECTS: SubjectDefinition[] = [
   { code: "cnc", label: "Gia công CNC", joinPrefix: "CNC", hasCurriculum: true, workshop: "C1.2", isPracticum: true },
   { code: "tien-phay", label: "Tiện – Phay truyền thống", joinPrefix: "TP", hasCurriculum: false, workshop: "C1.1", isPracticum: true },
   { code: "avcn", label: "Anh văn chuyên ngành", joinPrefix: "AVCN", hasCurriculum: false, workshop: "", isPracticum: false },
+  // Học phần "Các phương pháp gia công phi truyền thống" (27/11/2026, CĐ CK 25B): nội dung ở /lop-hoc/gcpt,
+  // lớp học phần có mã tham gia riêng; thêm vào danh mục môn để tạo/chọn lớp trong dashboard GV.
+  { code: "gcpt", label: "Các phương pháp gia công phi truyền thống", joinPrefix: "GCPT", hasCurriculum: false, workshop: "", isPracticum: false },
+  // Học phần "Công nghệ chế tạo máy 1" (27/11/2026, CĐ CK 25C): nội dung ở /lop-hoc/cnctm; cùng lý do —
+  // thiếu mã môn thì lớp học phần tạo trong dashboard rơi vào "Môn khác (lý thuyết)".
+  { code: "cnctm", label: "Công nghệ chế tạo máy 1", joinPrefix: "CNCTM", hasCurriculum: false, workshop: "", isPracticum: false },
   { code: "khac", label: "Môn khác (lý thuyết)", joinPrefix: "LOP", hasCurriculum: false, workshop: "", isPracticum: false },
   { code: "gddd-ptnn", label: "Giáo dục đạo đức & phát triển nghề nghiệp", joinPrefix: "GDDD", hasCurriculum: false, workshop: "", isPracticum: false },
 ];
@@ -26,9 +32,14 @@ export function getSubject(code: string): SubjectDefinition {
 }
 
 /** Trang học tập của từng môn CTTC (nút "Học tiếp" ở trang chủ, hub CTTC). Môn chưa có trang riêng → /tai-khoan. */
+const LEARNING_HREF_BY_SUBJECT: Record<string, string> = {
+  cnc: "/lop-hoc/cnc",
+  "tien-phay": "/lop-hoc/tien-phay",
+  avcn: "/lop-hoc/avcn",
+  gcpt: "/lop-hoc/gcpt",
+  cnctm: "/lop-hoc/cnctm",
+};
+
 export function learningHrefOf(subjectCode: string): string {
-  if (subjectCode === "cnc") return "/lop-hoc/cnc";
-  if (subjectCode === "tien-phay") return "/lop-hoc/tien-phay";
-  if (subjectCode === "avcn") return "/lop-hoc/avcn";
-  return "/tai-khoan";
+  return LEARNING_HREF_BY_SUBJECT[subjectCode] ?? "/tai-khoan";
 }

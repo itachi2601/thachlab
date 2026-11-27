@@ -1,8 +1,8 @@
 {
   "id": "tn-l9-ohm-03",
   "ten": "Bốn dây dẫn khác nhau mắc vào cùng một nguồn 1,5 V",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-ohm-03-20261118.mp4",
-  "poster": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-ohm-03-20261118.webp",
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-ohm-03-20261127.mp4",
+  "poster": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-ohm-03-20261127.webp",
   "tong_giay": 49.8,
   "o": [
     {
@@ -13,32 +13,32 @@
     },
     {
       "khoa": "du_doan",
-      "giay": 3.0,
+      "giay": 3.1,
       "chu": "Dây (1): 0,30 A. Dây (3): cũng constantan, dài 1 m, tiết diện 0,2 mm². Ampe kế chỉ khoảng?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 9.4,
+      "giay": 8.6,
       "chu": "Nguồn 1,5 V, khoá K, ampe kế, bốn dây dẫn."
     },
     {
       "khoa": "quan_sat",
-      "giay": 19.6,
+      "giay": 19.1,
       "chu": "Dây (1): 0,30 A. Dây (2) dài 2 m: 0,15 A. Dây (3) 0,2 mm²: 0,60 A. Dây (4) nichrome: 0,14 A."
     },
     {
       "khoa": "rut_ra",
-      "giay": 26.8,
-      "chu": "Mỗi dây có một điện trở riêng, R = U : I."
+      "giay": 28.9,
+      "chu": "Mỗi lần chỉ đổi một thứ: dài gấp 2 thì R gấp 2; tiết diện gấp 2 thì R giảm một nửa; nichrome cản trở hơn constantan."
     },
     {
       "khoa": "chua_noi",
-      "giay": 37.9,
-      "chu": "Số liệu minh hoạ, chưa đo thật.\nDây nóng lên: coi R không đổi."
+      "giay": 39.3,
+      "chu": "Số liệu minh hoạ, chưa đo thật.\nDây nóng lên: coi nhiệt độ, R không đổi."
     }
   ],
   "dung_dua": {
-    "giay": 9.2,
+    "giay": 8.45,
     "cau_hoi": "Dây (1): ampe kế chỉ 0,30 A. Dây (3): cũng constantan, dài 1 m, tiết diện 0,2 mm². Ampe kế chỉ khoảng?",
     "chon": [
       "A. 0,15 A",
@@ -49,5 +49,22 @@
     "dung": 2,
     "giai_thich_dung": "Dây (3) cùng chất, cùng chiều dài nhưng tiết diện lớn hơn nên cho dòng 0,60 A, lớn hơn 0,30 A của dây (1).",
     "giai_thich_sai": "Dây (3) khác dây (1) ở tiết diện: 0,2 mm² thay vì 0,1 mm², còn chất và chiều dài giữ nguyên. Ampe kế chỉ 0,60 A, nên 0,15 A, 0,30 A hay 1,20 A đều không khớp số đo."
+  },
+  "cau_chot": {
+    "giay": 45.6,
+    "cau_hoi": "Dây nichrome dài 1,5 m, tiết diện 0,2 mm², vẫn nối nguồn 1,5 V. Ampe kế chỉ khoảng bao nhiêu? (Dây (4): nichrome 1 m, 0,1 mm², 11 Ω.)",
+    "chon": [
+      "A. 0,09 A",
+      "B. 0,14 A",
+      "C. 0,18 A",
+      "D. 0,27 A"
+    ],
+    "dung": 2,
+    "giai_thich": [
+      "Ra 0,09 A là mới tính chiều dài (R = 16,5 Ω) mà quên tiết diện gấp đôi làm R giảm một nửa: R = 8,25 Ω, I = 1,5 : 8,25 ≈ 0,18 A.",
+      "0,14 A là số của dây (4) dài 1 m, 0,1 mm². Dây mới dài gấp 1,5 lần và tiết diện gấp 2 lần nên R = 11 × 1,5 : 2 = 8,25 Ω, I ≈ 0,18 A.",
+      "Từ dây (4): dài × 1,5 → R × 1,5; tiết diện × 2 → R : 2. R = 11 × 1,5 : 2 = 8,25 Ω, I = 1,5 : 8,25 ≈ 0,18 A.",
+      "Ra 0,27 A là chỉ tính tiết diện (R = 5,5 Ω) mà quên chiều dài 1,5 m làm R tăng 1,5 lần: R = 8,25 Ω, I ≈ 0,18 A."
+    ]
   }
 }

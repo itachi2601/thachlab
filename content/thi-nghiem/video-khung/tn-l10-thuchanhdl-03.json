@@ -1,52 +1,69 @@
 {
   "id": "tn-l10-thuchanhdl-03",
-  "ten": "Băng đệm khí nghiêng nhẹ làm lệch tốc độ đo được",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-thuchanhdl-03-20261031.mp4",
-  "tong_giay": 50.0,
+  "ten": "Băng đệm khí kê cao một đầu vài milimét",
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-thuchanhdl-03-20261127.mp4",
+  "tong_giay": 49.7,
   "o": [
     {
       "khoa": "gia_thuyet",
       "giay": 0,
-      "chu": "Băng nghiêng nhẹ làm tốc độ thật lệch số đọc.",
-      "kiem": "Băng nghiêng vài mm ảnh hưởng thế nào?"
+      "chu": "Băng nghiêng vài milimét thì xe chạy nhanh dần, tốc độ ở chỗ va chạm khác số đọc ở cổng 1.",
+      "kiem": "Kê vài milimét có đáng kể không?"
     },
     {
       "khoa": "du_doan",
       "giay": 3.8,
-      "chu": "Tốc độ ở cổng 2 lệch bao nhiêu % so với cổng 1?"
+      "chu": "Kê một đầu cao 6 mm, cổng 1 chỉ 0,505 m/s. Cổng 2 cách 0,30 m chỉ khoảng bao nhiêu?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 9.8,
-      "chu": "Băng đệm khí, xe, cổng 1; cổng 2 là phép thử thêm, bài thật không có."
+      "giay": 9.6,
+      "chu": "Băng đệm khí dài 1,20 m, tấm kê mỏng, hai cổng quang."
     },
     {
       "khoa": "quan_sat",
-      "giay": 18.5,
-      "chu": "Kê 2; 4; 6 mm: cổng 2 nhanh hơn 1,9; 3,8; 5,6 %."
+      "giay": 18.4,
+      "chu": "Kê 6 mm: cổng 1 chỉ 0,505 m/s, cổng 2 chỉ 0,533 m/s."
     },
     {
       "khoa": "rut_ra",
-      "giay": 24.3,
-      "chu": "Xe xuống dốc nên nhanh dần: a = g·h/L, nên tốc độ cổng 2 lớn hơn."
+      "giay": 25.1,
+      "chu": "Kê 2; 4; 6 mm, cổng 2 lệch 1,9; 3,8; 5,6 phần trăm. Xe nhanh dần, phải chỉnh băng ngang trước khi đo."
     },
     {
       "khoa": "chua_noi",
-      "giay": 30.5,
-      "chu": "Chưa nói được: ma sát, sức cản, băng võng ở giữa."
+      "giay": 35.9,
+      "chu": "Kê 2 mm đã lệch 1,9 phần trăm; kiểm băng ngang bằng cách thả xe đứng yên. Mô hình bỏ qua ma sát, sức cản."
     }
   ],
   "dung_dua": {
-    "giay": 9.6,
-    "cau_hoi": "Tốc độ ở cổng 2 lệch bao nhiêu % so với cổng 1?",
+    "giay": 9.5,
+    "cau_hoi": "Băng đệm khí dài 1,20 m kê một đầu cao 6 mm. Xe xuống dốc qua cổng 1 với 0,505 m/s. Cổng 2 đặt cách cổng 1 0,30 m chỉ khoảng bao nhiêu?",
     "chon": [
-      "A. Gần như không lệch",
-      "B. Khoảng 0,5 %",
-      "C. Khoảng 6 %",
-      "D. Khoảng 20 %"
+      "A. Vẫn 0,505 m/s",
+      "B. Khoảng 0,51 m/s",
+      "C. Khoảng 0,53 m/s",
+      "D. Khoảng 0,60 m/s"
     ],
     "dung": 2,
-    "giai_thich_dung": "Kê 6 mm thì a ≈ 0,049 m/s², v tại cổng 2 ≈ 0,533 m/s so với 0,505 m/s, nhanh hơn khoảng 5,6 %.",
-    "giai_thich_sai": "Xem biểu đồ ở đoạn kế: lệch (%) khi kê 6 mm."
+    "giai_thich_dung": "Băng dốc nên xe có gia tốc a = g·h/L = 9,8·0,006/1,20 ≈ 0,049 m/s². Sau 0,30 m: v² = 0,505² + 2·0,049·0,30, v ≈ 0,533 m/s, lệch khoảng 5,6 phần trăm.",
+    "giai_thich_sai": "6 mm trên 1,20 m tuy nhỏ nhưng vẫn cho xe một gia tốc dọc dốc. Thử tính gia tốc đó rồi xem xe nhanh thêm bao nhiêu sau 0,30 m."
+  },
+  "cau_chot": {
+    "giay": 44.8,
+    "cau_hoi": "Kê một đầu băng cao 4 mm, xe vẫn qua cổng 1 với 0,505 m/s, nhưng cổng 2 dời ra xa cổng 1 gấp đôi (0,60 m). Tốc độ ở cổng 2 lệch khoảng bao nhiêu phần trăm so với cổng 1?",
+    "chon": [
+      "A. Vẫn khoảng 3,8 %",
+      "B. Khoảng 7,4 %",
+      "C. Khoảng 15 %",
+      "D. Khoảng 1,9 %"
+    ],
+    "dung": 1,
+    "giai_thich": [
+      "Gia tốc không đổi nhưng đoạn dốc dài gấp đôi nên xe nhanh thêm nhiều hơn: v² = 0,505² + 2·0,0327·0,60, v ≈ 0,542 m/s, lệch khoảng 7,4 %.",
+      "a = 9,8·0,004/1,20 ≈ 0,0327 m/s²; v² = 0,505² + 2·0,0327·0,60 ⇒ v ≈ 0,542 m/s; lệch ≈ 7,4 %, gần gấp đôi 3,8 % vì phần tăng thêm nhỏ so với 0,505.",
+      "Phần cộng thêm vào v² gấp đôi chứ không gấp bốn: v ≈ 0,542 m/s, lệch khoảng 7,4 %.",
+      "Xe đi xa hơn trên dốc thì càng nhanh, không chậm lại: v ≈ 0,542 m/s, lệch khoảng 7,4 %."
+    ]
   }
 }

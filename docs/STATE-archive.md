@@ -1007,3 +1007,4 @@ Kiểm chỉ đọc (`scripts/data/gan-chu-de-l11/kiem.sql`): 126/129 câu chủ
 ## 27/11/2026 — CNCTM 2 bài 14–19
 - ĐÃ CHẠY 27/11 07:03 `20261127090000_lop_cnctm2_bai_14_19` (log `scripts/logs/20261127-070336-*`); upload 6 bundle vào lesson 229–234 (đề 1424–1429, 8 câu), published=true; sinh lại DATABASE.md. Mục gốc trong STATE:
 - **CNCTM 2 (27/11)**: `20261127090000` CHƯA CHẠY; 6 bài `cnctm2-bai-1{4..9}-*` chờ thầy duyệt xem-thu → migration → upload-lesson → published → deploy; thiếu course_offering.
+- 27/11/2026 · GCPT 7 mô phỏng (`components/physics/gcpt/`, khoá `gcpt-*` trong MoPhongPortals): deploy b8b6f2c07 (nguồn adde806a82); cap-nhat-ly-thuyet.sh ghi lý thuyết bài 217–222, 224 (sao lưu scripts/logs/ly-thuyet-bai2xx-backup-1795755*.json). Chưa xem bằng tài khoản đăng nhập.

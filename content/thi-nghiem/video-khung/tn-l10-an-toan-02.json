@@ -1,52 +1,69 @@
 {
   "id": "tn-l10-an-toan-02",
-  "ten": "Đèn cồn và nhiệt kế: ra xa thì nhiệt độ giảm kiểu nào?",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-an-toan-02-20261101.mp4",
-  "tong_giay": 49.7,
+  "ten": "Đèn cồn và nhiệt kế: ra xa ngoài bảng số thì sao?",
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-an-toan-02-20261127.mp4",
+  "tong_giay": 49.5,
   "o": [
     {
       "khoa": "gia_thuyet",
       "giay": 0,
-      "chu": "Gần lửa tụt nhanh, xa tụt chậm dần.",
-      "kiem": "Ra xa ngọn lửa, nhiệt độ đổi ra sao?"
+      "chu": "Phần nóng hơn phòng giảm rất nhanh khi ra xa: ở 40 cm nhiệt kế gần như bằng nhiệt độ phòng.",
+      "kiem": "Ra xa ngoài 20 cm, nhiệt kế chỉ gì?"
     },
     {
       "khoa": "du_doan",
-      "giay": 3.3,
-      "chu": "Dời nhiệt kế ra xa 2 → 5 → 10 → 20 cm: nhiệt độ giảm theo kiểu nào?"
+      "giay": 4.0,
+      "chu": "Ở 20 cm nhiệt kế chỉ 26 °C. Dời ra 40 cm thì nhiệt kế chỉ khoảng bao nhiêu?"
     },
     {
       "khoa": "dung_cu",
       "giay": 10.1,
-      "chu": "Đèn cồn, nhiệt kế trên giá đỡ, thước. Giáo viên dời giá đỡ, lớp đứng xa."
+      "chu": "Đèn cồn, nhiệt kế trên giá, thước."
     },
     {
       "khoa": "quan_sat",
-      "giay": 20.6,
-      "chu": "Nhiệt kế: 125; 41; 29; 26 °C (phòng 25 °C)."
+      "giay": 13.9,
+      "chu": "125; 41; 29; 26 °C, ở 40 cm khoảng 25 °C (theo mô hình)."
     },
     {
       "khoa": "rut_ra",
-      "giay": 24.5,
-      "chu": "Gần lửa tụt nhanh (2 → 5 cm: tụt 84 °C), xa tụt chậm (10 → 20 cm: tụt 3 °C)."
+      "giay": 21.6,
+      "chu": "Gần lửa nóng hơn nhiều lần; ra xa nguội rất nhanh."
     },
     {
       "khoa": "chua_noi",
-      "giay": 32.2,
-      "chu": "Số minh hoạ từ mô hình đơn giản, bỏ qua gió: chưa nói được quy luật chính xác."
+      "giay": 29.8,
+      "chu": "Số minh hoạ từ mô hình chọn cho dễ tính, không phải quy luật."
     }
   ],
   "dung_dua": {
     "giay": 9.95,
-    "cau_hoi": "Dời nhiệt kế ra xa ngọn đèn cồn: 2 → 5 → 10 → 20 cm. Nhiệt độ giảm theo kiểu nào?",
+    "cau_hoi": "Ở 20 cm nhiệt kế chỉ 26 °C. Dời nhiệt kế ra 40 cm thì nhiệt kế chỉ khoảng bao nhiêu?",
     "chon": [
-      "A. Giảm đều, mỗi cm giảm như nhau",
-      "B. Giảm nhanh lúc gần, chậm dần khi ra xa",
-      "C. Giảm chậm lúc gần, nhanh dần khi ra xa",
-      "D. Ra khỏi ngọn lửa thì gần như không đổi"
+      "A. Khoảng 13 °C",
+      "B. Khoảng 23 °C",
+      "C. Khoảng 25 °C",
+      "D. Khoảng 26 °C"
     ],
-    "dung": 1,
-    "giai_thich_dung": "Từ 2 ra 5 cm nhiệt kế tụt 84 °C, còn từ 10 ra 20 cm chỉ tụt 3 °C: gần lửa tụt nhanh, xa tụt chậm.",
-    "giai_thich_sai": "Xem đoạn kế: dời 3 cm gần lửa tụt 84 °C, dời 10 cm ở xa chỉ tụt 3 °C; ở 5 cm, ngoài ngọn lửa, vẫn 41 °C."
+    "dung": 2,
+    "giai_thich_dung": "Ở 20 cm nhiệt kế chỉ nóng hơn phòng 1 °C; ra xa hơn phần đó còn nhỏ nữa (theo mô hình khoảng 0,25 °C), nên nhiệt kế gần bằng nhiệt độ phòng 25 °C.",
+    "giai_thich_sai": "Phòng 25 °C, ngọn lửa chỉ làm nóng thêm nên nhiệt kế không xuống dưới 25 °C. Ở 20 cm đã chỉ hơn phòng 1 °C, ra 40 cm phần nóng thêm còn nhỏ hơn nữa: khoảng 25 °C."
+  },
+  "cau_chot": {
+    "giay": 44.9,
+    "cau_hoi": "Giả sử nhiệt độ giảm đúng theo kiểu các điểm 5 → 10 → 20 cm (mô hình của thí nghiệm). Đặt nhiệt kế cách ngọn lửa 4 cm thì nhiệt kế chỉ khoảng bao nhiêu?",
+    "chon": [
+      "A. 75 °C",
+      "B. 69 °C",
+      "C. 50 °C",
+      "D. 41 °C"
+    ],
+    "dung": 2,
+    "giai_thich": [
+      "75 °C là lấy nửa phần nóng thêm ở 2 cm (100 : 2 = 50). Nhưng từ 5 ra 10 cm hay 10 ra 20 cm, xa gấp đôi thì phần nóng thêm còn một phần tư (16 → 4, 4 → 1), không phải một nửa.",
+      "69 °C là chia đều độ giảm từ 2 đến 5 cm theo từng cm. Các điểm 5 → 10 → 20 cm cho thấy không giảm đều: xa gấp đôi thì phần nóng hơn phòng còn một phần tư (16 → 4 → 1).",
+      "4 cm xa gấp đôi 2 cm, nên phần nóng thêm còn một phần tư: 100 : 4 = 25 °C. Nhiệt kế chỉ khoảng 25 + 25 = 50 °C (theo mô hình).",
+      "41 °C là số chỉ ở 5 cm. Ở 4 cm gần lửa hơn nên phải nóng hơn 41 °C."
+    ]
   }
 }
