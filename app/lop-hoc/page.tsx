@@ -32,6 +32,8 @@ import {
   CNCTM_SUBJECT_CODE,
   GCPT_CLASS_SLUG,
   GCPT_SUBJECT_CODE,
+  CNCTM2_CLASS_SLUG,
+  CNCTM2_SUBJECT_CODE,
   isCttcClassSlug,
   expandClassIdsByGrade,
   fetchMyClassRequest,
@@ -258,6 +260,7 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
   const isWorldSkills = active?.slug === WORLDSKILLS_CLASS_SLUG;
   const isCnctm = active?.slug === CNCTM_CLASS_SLUG;
   const isGcpt = active?.slug === GCPT_CLASS_SLUG;
+  const isCnctm2 = active?.slug === CNCTM2_CLASS_SLUG;
   const isCttc = isCttcClassSlug(active?.slug);
   const subjectCode = isAvcn
     ? AVCN_SUBJECT_CODE
@@ -269,11 +272,13 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
     ? CNCTM_SUBJECT_CODE
     : isGcpt
     ? GCPT_SUBJECT_CODE
+    : isCnctm2
+    ? CNCTM2_SUBJECT_CODE
     : classGrade(active?.name ?? "") === "9"
     ? activeSubjectCode
     : "vat-ly";
   const activeDisplayName = active
-    ? isAvcn || isCasio || isWorldSkills || isCnctm || isGcpt
+    ? isAvcn || isCasio || isWorldSkills || isCnctm || isGcpt || isCnctm2
       ? active.name
       : classGrade(active.name) === "9"
       ? subjectCode === HSG_SUBJECT_CODE

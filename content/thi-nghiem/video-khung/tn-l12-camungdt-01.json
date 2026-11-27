@@ -1,8 +1,8 @@
 {
   "id": "tn-l12-camungdt-01",
   "ten": "Nam châm và cuộn dây nối điện kế",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-camungdt-01-20261112-2.mp4",
-  "tong_giay": 51.8,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-camungdt-01-20261126.mp4",
+  "tong_giay": 49.5,
   "o": [
     {
       "khoa": "gia_thuyet",
@@ -17,27 +17,27 @@
     },
     {
       "khoa": "dung_cu",
-      "giay": 8.9,
+      "giay": 9.7,
       "chu": "Cuộn 600 vòng nối điện kế nhạy (số 0 giữa); nam châm.\nCắm cực Bắc vào nhanh, rồi chậm."
     },
     {
       "khoa": "quan_sat",
-      "giay": 16.7,
-      "chu": "Cắm nhanh lệch nhiều, cắm chậm lệch ít, để yên kim về 0."
+      "giay": 21.6,
+      "chu": "Cắm nhanh +3,9 mA, cắm chậm +1,0 mA, nằm yên 0, rút ra −2,0 mA."
     },
     {
       "khoa": "rut_ra",
-      "giay": 23.5,
-      "chu": "Dòng cảm ứng chỉ có khi từ thông biến thiên; biến thiên càng nhanh thì dòng càng lớn.\nRút ra thì kim lệch ngược lại."
+      "giay": 29.2,
+      "chu": "Từ thông biến thiên mới có dòng cảm ứng; càng nhanh dòng càng lớn, rút ra thì dòng đổi chiều."
     },
     {
       "khoa": "chua_noi",
-      "giay": 36.2,
-      "chu": "Chưa cho biết chiều dòng điện (đó là định luật Lenz). Chưa thử đổi diện tích S. (đề 2026: thanh kim loại trượt trên hai ray)"
+      "giay": 38.9,
+      "chu": "Chưa cho quy tắc xác định chiều dòng cảm ứng (định luật Lenz); số liệu là minh hoạ."
     }
   ],
   "dung_dua": {
-    "giay": 8.7,
+    "giay": 9.1,
     "cau_hoi": "Nam châm nằm yên trong cuộn dây, kim điện kế sẽ:",
     "chon": [
       "A. Lệch một bên, giữ nguyên",
@@ -47,5 +47,22 @@
     "dung": 1,
     "giai_thich_dung": "Nam châm đứng yên thì từ thông không đổi, không có dòng cảm ứng.",
     "giai_thich_sai": "Xem điện kế ở đoạn kế lúc nam châm nằm yên."
+  },
+  "cau_chot": {
+    "giay": 43.0,
+    "cau_hoi": "Lần 1: cắm nhanh cực N vào cuộn dây (0,4 m/s), kim điện kế chỉ +3,9 mA. Đổi để cực S vào trước, cắm nhanh như lần 1. Kim điện kế chỉ khoảng:",
+    "chon": [
+      "A. +3,9 mA",
+      "B. −3,9 mA",
+      "C. 0 mA",
+      "D. +7,8 mA"
+    ],
+    "dung": 1,
+    "giai_thich": [
+      "Đổi cực thì từ trường qua cuộn đổi chiều, từ thông biến thiên ngược lại nên dòng không còn cùng chiều.",
+      "Cùng tốc độ nên độ lớn như lần 1, nhưng cực S vào làm từ thông biến thiên theo chiều ngược lại: kim lệch ngược, khoảng −3,9 mA.",
+      "Nam châm vẫn chuyển động nên từ thông vẫn biến thiên, vẫn có dòng cảm ứng.",
+      "Tốc độ không đổi nên độ lớn dòng không tăng gấp đôi; đổi cực chỉ đổi chiều."
+    ]
   }
 }

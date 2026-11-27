@@ -1,8 +1,8 @@
 {
   "id": "tn-l12-antoanpx-02",
   "ten": "Giấy, nhôm, chì chắn trước chùm gamma",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-antoanpx-02-20261114.mp4",
-  "tong_giay": 49.2,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-antoanpx-02-20261126.mp4",
+  "tong_giay": 48.6,
   "o": [
     {
       "khoa": "gia_thuyet",
@@ -17,27 +17,27 @@
     },
     {
       "khoa": "dung_cu",
-      "giay": 9.7,
+      "giay": 8.8,
       "chu": "Nguồn gamma, đầu dò cách 1 m, đếm 1 phút."
     },
     {
       "khoa": "quan_sat",
-      "giay": 17.9,
+      "giay": 18.4,
       "chu": "Không chắn 360; giấy 355; nhôm 335; chì 154."
     },
     {
       "khoa": "rut_ra",
-      "giay": 21.3,
+      "giay": 22.4,
       "chu": "Giấy lệch trong sai số; nhôm 3 mm giảm ít (còn 0,93); chì 5 mm giảm rõ (còn 0,43)."
     },
     {
       "khoa": "chua_noi",
-      "giay": 29.0,
+      "giay": 30.2,
       "chu": "Nguồn chỉ phát gamma: chưa thử giấy có chặn α.\nChưa đo liều trên cơ thể người."
     }
   ],
   "dung_dua": {
-    "giay": 9.5,
+    "giay": 8.7,
     "cau_hoi": "Chùm gamma cho 360 xung/phút ở đầu dò cách nguồn 1 m. Lần lượt chèn giấy, nhôm 3 mm, chì 5 mm. Số đếm đổi thế nào?",
     "chon": [
       "A. Giấy làm giảm mạnh nhất",
@@ -48,5 +48,22 @@
     "dung": 2,
     "giai_thich_dung": "Giấy còn 355 (lệch trong sai số ±19), nhôm 3 mm còn 335 (giảm ít), chì 5 mm còn 154 (khoảng 0,43 lần). Gamma xuyên tốt, cần chì đủ dày.",
     "giai_thich_sai": "Gamma xuyên giấy và nhôm mỏng gần như nguyên vẹn (355, 335); chì 5 mm giảm rõ nhưng không chặn hết (còn 154)."
+  },
+  "cau_chot": {
+    "giay": 43.0,
+    "cau_hoi": "Thay tấm chì 5 mm bằng tấm chì cùng độ dày nhưng hẹp hơn chùm tia, một phần tia lọt qua mép tới đầu dò. Số đếm khi đó thế nào?",
+    "chon": [
+      "A. Nhỏ hơn 154 xung/phút",
+      "B. Đúng bằng 154 xung/phút",
+      "C. Lớn hơn 154 xung/phút",
+      "D. Bằng 0 xung/phút"
+    ],
+    "dung": 2,
+    "giai_thich": [
+      "Tia lọt qua mép không bị chì làm yếu, nên cộng thêm vào số đếm chứ không bớt đi.",
+      "154 là khi chì phủ kín chùm; phần tia lọt qua mép đến thẳng đầu dò làm số đếm tăng thêm.",
+      "Phần tia lọt mép không qua chì, đến thẳng đầu dò; cộng với phần xuyên qua chì nên số đếm lớn hơn 154.",
+      "Chì phủ kín cũng chỉ làm yếu (còn 154), không chặn hết; tia lọt mép còn làm số đếm lớn hơn nữa."
+    ]
   }
 }

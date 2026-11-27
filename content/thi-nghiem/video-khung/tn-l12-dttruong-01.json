@@ -1,52 +1,69 @@
 {
   "id": "tn-l12-dttruong-01",
   "ten": "Nam châm qua ống dây: số chỉ đồng hồ phụ thuộc gì?",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-dttruong-01-20261118.mp4",
-  "tong_giay": 49.9,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-dttruong-01-20261126.mp4",
+  "tong_giay": 49.8,
   "o": [
     {
       "khoa": "gia_thuyet",
       "giay": 0,
       "chu": "Điện trường làm điện tích trong dây chuyển động là do từ trường biến thiên sinh ra, không phải do từ trường mạnh.",
-      "kiem": "Số chỉ đồng hồ phụ thuộc vào gì?"
+      "kiem": "Khi nào đồng hồ chỉ khác 0?"
     },
     {
       "khoa": "du_doan",
       "giay": 3.8,
-      "chu": "Nam châm qua ống với v = 0,25 m/s rồi 0,50 m/s. Suất điện động lớn nhất e thay đổi thế nào?"
+      "chu": "Giữ nam châm yên giữa ống, nơi B mạnh nhất. Đồng hồ chỉ bao nhiêu?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 10.5,
-      "chu": "Ống dây 1000 vòng nối đồng hồ số; nam châm qua ống với v tăng dần."
+      "giay": 9.7,
+      "chu": "Ống dây 1000 vòng nối đồng hồ số; nam châm qua ống."
     },
     {
       "khoa": "quan_sat",
-      "giay": 19.6,
-      "chu": "v = 0,25 m/s: e ≈ 75,5 mV; v = 0,50 m/s: e ≈ 149,0 mV. Nam châm nằm yên giữa ống: 0,0 mV."
+      "giay": 14.1,
+      "chu": "v = 0,25; 0,50; 1,00 m/s: e ≈ 75,5; 149,0; 298,0 mV. Nằm yên giữa ống: 0,0 mV."
     },
     {
       "khoa": "rut_ra",
-      "giay": 27.3,
-      "chu": "B trong ống đổi càng nhanh thì e càng lớn; B đứng yên thì không có e. Từ trường biến thiên sinh điện trường xoáy."
+      "giay": 21.4,
+      "chu": "e chỉ có khi B trong ống đang đổi, và tỉ lệ với tốc độ đổi (v gấp đôi, e gấp đôi); B mạnh mà đứng yên thì e = 0. Từ trường biến thiên sinh điện trường xoáy khép kín đẩy electron trong dây."
     },
     {
       "khoa": "chua_noi",
-      "giay": 38.1,
-      "chu": "Đồng hồ chỉ cho một số e, không cho thấy điện trường quanh ống trông ra sao."
+      "giay": 37.7,
+      "chu": "Chưa đo được hình đường sức điện trường xoáy (chỉ suy ra từ mô hình); chưa xem e lúc nam châm ra khỏi ống."
     }
   ],
   "dung_dua": {
-    "giay": 9.9,
-    "cau_hoi": "Nam châm qua ống với v = 0,25 m/s rồi 0,50 m/s. Suất điện động lớn nhất e:",
+    "giay": 9.6,
+    "cau_hoi": "Giữ nam châm yên giữa ống, nơi B mạnh nhất. Đồng hồ chỉ:",
     "chon": [
-      "A. Gần như không đổi",
-      "B. Tăng gần gấp đôi",
-      "C. Tăng gần gấp bốn",
-      "D. Giảm còn một nửa"
+      "A. Số lớn nhất trong thí nghiệm",
+      "B. 0,0 mV",
+      "C. Nhỏ nhưng khác 0",
+      "D. Tăng dần theo thời gian"
     ],
     "dung": 1,
-    "giai_thich_dung": "Tốc độ gấp đôi thì từ thông qua ống đổi nhanh gấp đôi, nên e gần gấp đôi (75,5 → 149,0 mV).",
-    "giai_thich_sai": "Thử nghĩ: e phụ thuộc lượng từ thông đổi, hay tốc độ từ thông đổi?"
+    "giai_thich_dung": "Từ thông qua ống không đổi khi nam châm đứng yên, dù B rất mạnh, nên không có suất điện động: 0,0 mV.",
+    "giai_thich_sai": "Thử nghĩ: e phụ thuộc B mạnh hay yếu, hay B đang đổi nhanh hay chậm?"
+  },
+  "cau_chot": {
+    "giay": 44.0,
+    "cau_hoi": "Giữ nam châm đứng yên, kéo ống dây lên qua nó với tốc độ 0,40 m/s. Đồng hồ chỉ e lớn nhất khoảng bao nhiêu?",
+    "chon": [
+      "A. 0 mV",
+      "B. 40 mV",
+      "C. 120 mV",
+      "D. 300 mV"
+    ],
+    "dung": 2,
+    "giai_thich": [
+      "Nam châm đứng yên nhưng ống chuyển động, nên B trong ống vẫn đổi; chỉ cần chuyển động tương đối là có e.",
+      "Lấy thẳng số 0,40 thành 40 mV là quên hệ số: trên đồ thị 0,50 m/s đã cho 149 mV.",
+      "Chỉ chuyển động tương đối mới quan trọng: e ≈ 0,3·v = 0,3·0,40 = 0,12 V = 120 mV, nằm giữa 75,5 mV (0,25 m/s) và 149,0 mV (0,50 m/s).",
+      "300 mV ứng với khoảng 1,0 m/s; ở 0,40 m/s e nhỏ hơn nhiều vì e tỉ lệ với v."
+    ]
   }
 }

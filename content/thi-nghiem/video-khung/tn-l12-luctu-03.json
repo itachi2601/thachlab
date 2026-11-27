@@ -1,8 +1,8 @@
 {
   "id": "tn-l12-luctu-03",
   "ten": "Khung dây có dòng điện giữa hai cực nam châm sẽ làm gì?",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-luctu-03-20261114.mp4",
-  "tong_giay": 49.1,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-luctu-03-20261126.mp4",
+  "tong_giay": 49.3,
   "o": [
     {
       "khoa": "gia_thuyet",
@@ -13,7 +13,7 @@
     {
       "khoa": "du_doan",
       "giay": 3.8,
-      "chu": "Nối pin vào khung 20 vòng: khung thế nào?"
+      "chu": "Nối pin vào khung 20 vòng: khung sẽ thế nào?"
     },
     {
       "khoa": "dung_cu",
@@ -22,22 +22,22 @@
     },
     {
       "khoa": "quan_sat",
-      "giay": 13.9,
-      "chu": "Nối pin: khung quay, lắc rồi dừng khi mặt khung vuông góc đường sức. Đảo cực pin: khung quay ngược."
+      "giay": 19.8,
+      "chu": "Khung quay rồi dừng, vuông góc đường sức; đảo cực pin thì quay ngược."
     },
     {
       "khoa": "rut_ra",
-      "giay": 25.9,
+      "giay": 25.3,
       "chu": "Hai cạnh dài chịu hai lực ngược chiều tạo ngẫu lực làm khung quay. Mặt khung vuông góc B thì mômen bằng 0 nên khung dừng."
     },
     {
       "khoa": "chua_noi",
-      "giay": 37.0,
-      "chu": "Chưa giải thích được động cơ quay liên tục (cần cổ góp đảo dòng mỗi nửa vòng); chưa đo trực tiếp được mômen."
+      "giay": 37.2,
+      "chu": "Chưa giải thích được vì sao động cơ quay mãi (cần cổ góp đảo dòng mỗi nửa vòng)."
     }
   ],
   "dung_dua": {
-    "giay": 10.15,
+    "giay": 10.0,
     "cau_hoi": "Khung dây 20 vòng nằm ngang giữa hai cực nam châm chữ U, mặt khung song song đường sức. Nối pin 1,5 V vào khung. Khung sẽ thế nào?",
     "chon": [
       "A. Bị đẩy ra khỏi nam châm",
@@ -48,5 +48,22 @@
     "dung": 2,
     "giai_thich_dung": "Hai cạnh dài chịu hai lực ngược chiều (ngẫu lực) nên khung quay tại chỗ. Khi mặt khung vuông góc đường sức, hai lực nằm trong mặt khung, mômen bằng 0; quá vị trí đó mômen kéo ngược lại nên khung dừng ở đây.",
     "giai_thich_sai": "Xem cảnh Tiến hành: khung không bị đẩy đi mà quay tại chỗ, lắc qua lại rồi đứng yên. Lúc dừng, mặt khung nằm thế nào so với đường sức?"
+  },
+  "cau_chot": {
+    "giay": 41.7,
+    "cau_hoi": "Cùng một nam châm, hai khung 3×4 cm: khung thứ nhất 40 vòng có I = 0,5 A, khung thứ hai 20 vòng có I = 1,0 A. Mômen lực từ cực đại lên khung nào lớn hơn?",
+    "chon": [
+      "A. Khung 40 vòng lớn hơn",
+      "B. Khung 20 vòng lớn hơn",
+      "C. Hai khung bằng nhau",
+      "D. Chưa so được vì thiếu B"
+    ],
+    "dung": 2,
+    "giai_thich": [
+      "Nhiều vòng hơn nhưng dòng chỉ bằng một nửa: M = N·B·I·S có N·I = 40·0,5 = 20, như khung kia.",
+      "Dòng lớn gấp đôi nhưng số vòng chỉ bằng một nửa: N·I = 20·1,0 = 20, như khung kia.",
+      "M cực đại = N·B·I·S; cùng B, cùng S và N·I = 20 ở cả hai khung nên hai mômen bằng nhau.",
+      "Hai khung chung một nam châm nên B như nhau và triệt tiêu khi so sánh; chỉ cần so N·I."
+    ]
   }
 }

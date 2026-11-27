@@ -1,8 +1,8 @@
 {
   "id": "tn-l12-thangnhietdo-02",
   "ten": "Nhiệt kế trong nước đá đang tan và hơi nước đang sôi",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-thangnhietdo-02-20261114.mp4",
-  "tong_giay": 49.8,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-thangnhietdo-02-20261126.mp4",
+  "tong_giay": 49.6,
   "o": [
     {
       "khoa": "gia_thuyet",
@@ -12,32 +12,32 @@
     },
     {
       "khoa": "du_doan",
-      "giay": 3.2,
+      "giay": 3.8,
       "chu": "Nhiệt kế sai số ±0,5 °C cắm vào nước đá đang tan, đọc 3 lần: số đọc ra sao?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 8.7,
+      "giay": 9.3,
       "chu": "Hai cốc: nước đá tan, hơi nước sôi; đọc 3 lần cách nhau 1 phút, nhiệt kế sai số ±0,5 °C."
     },
     {
       "khoa": "quan_sat",
-      "giay": 17.7,
+      "giay": 18.1,
       "chu": "Nước đá: 0,2; 0,1; 0,3 °C. Hơi nước: 99,6; 99,7; 100,1 °C. Cả sáu số trong dải xanh."
     },
     {
       "khoa": "rut_ra",
-      "giay": 26.4,
+      "giay": 26.7,
       "chu": "Đúng ở hai mốc: lệch nằm trong sai số."
     },
     {
       "khoa": "chua_noi",
-      "giay": 29.4,
+      "giay": 35.3,
       "chu": "Chưa biết nhiệt kế có chia đều ở giữa (50 °C) không.\nChưa biết có đúng ngoài 0–100 °C không."
     }
   ],
   "dung_dua": {
-    "giay": 8.4,
+    "giay": 9.1,
     "cau_hoi": "Nhiệt kế có sai số ±0,5 °C, cắm vào nước đá đang tan, đọc 3 lần. Số đọc sẽ ra sao?",
     "chon": [
       "A. Đúng 0,0 °C cả ba lần",
@@ -48,5 +48,22 @@
     "dung": 1,
     "giai_thich_dung": "Số đọc dao động nhỏ quanh 0 °C, trong phạm vi sai số của nhiệt kế. Xem số đo ở đoạn kế.",
     "giai_thich_sai": "Nhiệt kế có sai số nên số đọc không đứng yên ở đúng 0,0 °C, cũng không tăng dần hay xuống dưới mức sai số. Xem số đo ở đoạn kế rồi so với dự đoán của em."
+  },
+  "cau_chot": {
+    "giay": 43.9,
+    "cau_hoi": "Trên núi, áp kế chỉ 80 kPa. Cùng nhiệt kế đó đặt trong hơi nước đang sôi chỉ 94 °C. Kết luận nào đúng?",
+    "chon": [
+      "A. Nhiệt kế hỏng, chỉ thiếu 6 °C",
+      "B. Nhiệt kế đúng, nước sôi dưới 100 °C",
+      "C. Lệch 6 °C là do sai số ±0,5 °C",
+      "D. Hơi nước chưa sôi hẳn nên còn nguội"
+    ],
+    "dung": 1,
+    "giai_thich": [
+      "Nhiệt kế đã chỉ đúng hai mốc ở 1 atm. Mốc 100 °C chỉ đúng ở 101,325 kPa; ở 80 kPa nước sôi ở khoảng 94 °C, nên số đọc 94 °C là đúng.",
+      "Mốc 100 °C chỉ đúng ở áp suất 101,325 kPa. Áp suất thấp hơn thì nước sôi ở nhiệt độ thấp hơn: 80 kPa ứng với khoảng 94 °C.",
+      "Nhiệt kế chỉ có sai số dụng cụ ±0,5 °C, không thể gây lệch 6 °C. Lệch này là thật: ở 80 kPa nước sôi ở khoảng 94 °C.",
+      "Nước đang sôi đều thì nhiệt độ hơi không tăng thêm nữa. Ở 80 kPa nước sôi ở khoảng 94 °C, thấp hơn 100 °C vì áp suất thấp."
+    ]
   }
 }

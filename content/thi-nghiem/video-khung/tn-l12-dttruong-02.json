@@ -1,8 +1,8 @@
 {
   "id": "tn-l12-dttruong-02",
   "ten": "Dòng xoay chiều qua tụ điện: đổi tần số thì sao?",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-dttruong-02-20261112-2.mp4",
-  "tong_giay": 50.6,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-dttruong-02-20261126.mp4",
+  "tong_giay": 49.6,
   "o": [
     {
       "khoa": "gia_thuyet",
@@ -12,32 +12,32 @@
     },
     {
       "khoa": "du_doan",
-      "giay": 3.3,
-      "chu": "Tụ nối tiếp đồng hồ, tăng f từ 50 lên 800 Hz. Dòng thay đổi thế nào?"
+      "giay": 3.4,
+      "chu": "Tăng f từ 50 lên 800 Hz, giữ U = 12 V. Dòng qua tụ thế nào?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 9.3,
-      "chu": "Tụ 1,0 μF nối tiếp đồng hồ, U = 12 V. Đọc dòng ở 50 đến 800 Hz."
+      "giay": 9.1,
+      "chu": "Tụ 1,0 μF nối tiếp đồng hồ, U = 12 V."
     },
     {
       "khoa": "quan_sat",
-      "giay": 17.7,
-      "chu": "Dòng thay đổi theo tần số: 3,6 mA ở 50 Hz, 58,0 mA ở 800 Hz. Nguồn một chiều: 0 mA."
+      "giay": 13.5,
+      "chu": "50 → 800 Hz: I = 3,6 → 58,0 mA. Nguồn một chiều: 0 mA."
     },
     {
       "khoa": "rut_ra",
-      "giay": 28.7,
-      "chu": "Điện môi cách điện mà mạch vẫn có dòng.\nI tỉ lệ thuận f: dòng điện dịch."
+      "giay": 20.8,
+      "chu": "I/f gần như không đổi (≈ 0,073 mA/Hz): I tỉ lệ thuận với f. Điện môi cách điện mà mạch vẫn có dòng: điện trường biến thiên giữa hai bản tương đương dòng điện (dòng điện dịch)."
     },
     {
       "khoa": "chua_noi",
-      "giay": 34.8,
+      "giay": 37.5,
       "chu": "Đồng hồ chỉ đo dòng trong dây, không cho thấy điện trường biến thiên giữa hai bản. Cũng không thấy từ trường nó sinh ra."
     }
   ],
   "dung_dua": {
-    "giay": 9.15,
+    "giay": 9.05,
     "cau_hoi": "Tăng f: 50 → 800 Hz. Dòng thay đổi thế nào?",
     "chon": [
       "A. Luôn bằng 0",
@@ -48,5 +48,22 @@
     "dung": 2,
     "giai_thich_dung": "Dòng tỉ lệ thuận với tần số: f gấp 16 lần thì dòng gấp khoảng 16 lần.",
     "giai_thich_sai": "Xem số chỉ đồng hồ ở 50 Hz và ở 800 Hz ở đoạn kế rồi so lại."
+  },
+  "cau_chot": {
+    "giay": 43.8,
+    "cau_hoi": "Cùng tụ 1,0 μF, cùng 12 V, tăng tần số lên 1 600 Hz. Đồng hồ chỉ khoảng bao nhiêu?",
+    "chon": [
+      "A. 3,6 mA",
+      "B. 29 mA",
+      "C. 58 mA",
+      "D. 116 mA"
+    ],
+    "dung": 3,
+    "giai_thich": [
+      "3,6 mA là dòng ở 50 Hz; tần số cao hơn 32 lần thì dòng cũng lớn hơn khoảng 32 lần.",
+      "29 mA là dòng ở 400 Hz; tăng tần số thì dòng qua tụ tăng chứ không giảm.",
+      "58 mA là dòng ở 800 Hz; f gấp đôi mà dòng giữ nguyên là quên I tỉ lệ với f.",
+      "I tỉ lệ thuận với f: 1 600 Hz gấp đôi 800 Hz nên I ≈ 2 × 58,0 ≈ 116 mA (I/f ≈ 0,073 mA/Hz)."
+    ]
   }
 }

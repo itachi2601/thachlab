@@ -31,9 +31,15 @@ const COURSES: Course[] = [
     icon: Sigma,
   },
   {
-    title: "Công nghệ chế tạo máy",
+    title: "Công nghệ chế tạo máy 1",
     description: "Nguyên công, gá, bước, dạng sản xuất và các hình thức gia công cơ khí. Lớp CĐ CK 25C, vào có duyệt.",
     href: "/lop-hoc/cnctm",
+    icon: Factory,
+  },
+  {
+    title: "Công nghệ chế tạo máy 2",
+    description: "Quy trình gia công chi tiết điển hình: trục, càng, bạc, hộp, bánh răng; công nghệ lắp ráp. Vào có duyệt.",
+    href: "/lop-hoc/cnctm2",
     icon: Factory,
   },
   {

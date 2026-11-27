@@ -1,8 +1,8 @@
 {
   "id": "tn-l12-tutruong-04",
   "ten": "Ra xa nam châm gấp đôi, cảm biến đọc bao nhiêu?",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-tutruong-04-20261112-2.mp4",
-  "tong_giay": 53.9,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-tutruong-04-20261126.mp4",
+  "tong_giay": 46.9,
   "o": [
     {
       "khoa": "gia_thuyet",
@@ -12,32 +12,32 @@
     },
     {
       "khoa": "du_doan",
-      "giay": 3.8,
-      "chu": "Máy đọc 1000 µT ở 2 cm. Ra 4 cm (xa gấp đôi), máy đọc khoảng bao nhiêu?"
+      "giay": 3.6,
+      "chu": "Ở 2 cm máy đọc 1000 µT. Ra 4 cm (xa gấp đôi), máy đọc khoảng bao nhiêu?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 10.2,
+      "giay": 10.1,
       "chu": "Điện thoại cảm biến, thước, nam châm trụ; đọc 3 lần."
     },
     {
       "khoa": "quan_sat",
       "giay": 14.4,
-      "chu": "Số đọc tụt nhanh: 1000 µT (2 cm) còn 31 µT (10 cm)."
+      "chu": "Số đọc tụt nhanh: 1000 µT (2 cm), 129 µT (4 cm), rồi chững quanh 31 µT (10 cm)."
     },
     {
       "khoa": "rut_ra",
-      "giay": 19.4,
-      "chu": "Gấp đôi khoảng cách, B còn khoảng 1/8: nhanh hơn 1/d và 1/d²."
+      "giay": 23.1,
+      "chu": "Từ 2 cm ra 4 cm, B còn khoảng 1/8: giảm nhanh hơn chia 2, khớp mô hình lưỡng cực."
     },
     {
       "khoa": "chua_noi",
-      "giay": 31.9,
-      "chu": "Ba lần đọc ở mỗi chỗ lệch 1–2 µT; số đọc sai số vài µT. Số liệu là minh hoạ."
+      "giay": 35.0,
+      "chu": "Ở xa, số đọc lẫn từ trường Trái Đất (≈ 30 µT) nên chưa tách được B nam châm; số liệu là minh hoạ."
     }
   ],
   "dung_dua": {
-    "giay": 10.05,
+    "giay": 9.5,
     "cau_hoi": "Máy đọc 1000 µT ở 2 cm. Ra 4 cm (xa gấp đôi), máy đọc khoảng:",
     "chon": [
       "A. 500 µT",
@@ -48,5 +48,22 @@
     "dung": 2,
     "giai_thich_dung": "Cảm ứng từ giảm nhanh hơn tỉ lệ nghịch với khoảng cách: gấp đôi khoảng cách còn khoảng 1/8, tức cỡ 125 µT.",
     "giai_thich_sai": "Xem kỹ số đọc ở 2 cm và 4 cm trong đoạn đo phía sau."
+  },
+  "cau_chot": {
+    "giay": 39.8,
+    "cau_hoi": "Cảm biến đặt trên trục nam châm trụ. Theo mô hình đã khớp với số đo gần nam châm, đưa cảm biến từ 4 cm ra 12 cm (xa gấp 3) thì cảm ứng từ của riêng nam châm còn khoảng:",
+    "chon": [
+      "A. 1/3",
+      "B. 1/9",
+      "C. 1/27",
+      "D. 1/81"
+    ],
+    "dung": 2,
+    "giai_thich": [
+      "1/3 ứng với B tỉ lệ nghịch d; số đo cho thấy gấp đôi d thì B còn 1/8, nhanh hơn nhiều.",
+      "1/9 ứng với B tỉ lệ nghịch d²; gấp đôi d khi ấy chỉ còn 1/4, không khớp 1000 → 129 µT.",
+      "Gấp đôi d còn 1/8 = 1/2³ nên B tỉ lệ 1/d³; xa gấp 3 thì còn 1/3³ = 1/27 (theo mô hình: 125 µT → khoảng 4,6 µT).",
+      "1/81 ứng với 1/d⁴, giảm nhanh hơn mức số đo cho thấy."
+    ]
   }
 }

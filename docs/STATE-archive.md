@@ -999,3 +999,7 @@ Kiểm chỉ đọc (`scripts/data/gan-chu-de-l11/kiem.sql`): 126/129 câu chủ
 - 26/11/2026 ~22h45 · Thầy chạy thêm `.p5-ghi.sh` (phiên P5) sau lần đăng trên: 24, 36, 22 ghi lại y nguyên; **54, 50 nay đã có dòng hai mốc P2 trên DB** (trước khi P2 được duyệt). Bản DB ngay trước đó: `scripts/logs/ly-thuyet-bai54-backup-1795707915879.json`, `ly-thuyet-bai50-backup-1795707918473.json`.
 - 26/11/2026 ~22h50 · Thầy chốt: giữ dòng hai mốc trên bài 54, 50 và duyệt P2 ("Giữ, duyệt P2").
 - 26/11/2026 · Bật published=true 12 bài gcpt (lesson 216–227).
+
+## 27/11/2026 — dọn STATE.md (mục đã xong / trùng AGENTS.md)
+- L11 đề 693/701: đã bỏ 11 câu ngoài CT 22/11 (chi tiết STATE-archive 25/11).
+- **GitHub 12/11 06:46**: có ruleset `bao-ve-main-deploy` (chỉ admin cập nhật `main`/`deploy`) → workflow `gop-claude-vao-main.yml` KHÔNG đẩy được vào main nữa (GH013). Phiên Mac: `git push origin HEAD:main` (fast-forward, sau khi `git merge origin/main`); phiên cloud: không tự vào main được, chờ thầy quyết. Repo vẫn công khai, `nhmkct1`/`zKdKaidO` vẫn quyền ghi.

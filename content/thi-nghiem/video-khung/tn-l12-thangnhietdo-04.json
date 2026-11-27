@@ -1,8 +1,8 @@
 {
   "id": "tn-l12-thangnhietdo-04",
   "ten": "Một cốc nước ấm, ba loại nhiệt kế",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-thangnhietdo-04-20261112-2.mp4",
-  "tong_giay": 52.6,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-thangnhietdo-04-20261126.mp4",
+  "tong_giay": 49.4,
   "o": [
     {
       "khoa": "gia_thuyet",
@@ -12,32 +12,32 @@
     },
     {
       "khoa": "du_doan",
-      "giay": 3.3,
-      "chu": "Cốc nước ấm khoảng 50 °C. Bắn hồng ngoại cách 5 cm vào giấy bạc dán ngoài cốc: số đọc sẽ thế nào?"
+      "giay": 3.8,
+      "chu": "Cốc nước ấm 50 °C. Bắn hồng ngoại cách 5 cm vào giấy bạc dán ngoài cốc: số đọc so với 50 °C thế nào?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 9.6,
-      "chu": "Cốc nước ấm 50 °C; nhiệt kế thuỷ ngân và điện trở ngâm trong nước; nhiệt kế hồng ngoại; giấy bạc."
+      "giay": 9.9,
+      "chu": "Nhiệt kế thuỷ ngân và điện tử nhúng trong nước; nhiệt kế hồng ngoại bắn cách 5 cm."
     },
     {
       "khoa": "quan_sat",
-      "giay": 18.2,
-      "chu": "Tiếp xúc: 49,8 và 50,2; giấy bạc hồng ngoại: 41,0 °C."
+      "giay": 20.3,
+      "chu": "Tiếp xúc: 49,8 và 50,2 °C.\nHồng ngoại: mặt nước 48,4; thành sứ 47,1; giấy bạc 41,0 °C."
     },
     {
       "khoa": "rut_ra",
-      "giay": 21.8,
-      "chu": "Tiếp xúc đo nơi chạm, hai nhiệt kế lệch dưới 0,5 °C.\nHồng ngoại đo bức xạ bề mặt; giấy bạc bức xạ yếu nên số đọc thấp giả."
+      "giay": 27.4,
+      "chu": "Hồng ngoại đo bức xạ bề mặt.\nGiấy bạc phát xạ yếu, máy đặt sẵn ε = 0,95: tính ra nhiệt độ thấp giả."
     },
     {
       "khoa": "chua_noi",
-      "giay": 40.5,
-      "chu": "Chưa kết luận nhiệt kế nào tốt hơn nói chung. Số liệu chỉ minh hoạ; lùi xa 25 cm còn cho số thấp hơn (38,5 °C)."
+      "giay": 36.2,
+      "chu": "Một số hồng ngoại chưa phải nhiệt độ thật: lùi ra 25 cm, vết đo trùm ra nền phòng, số còn tụt xuống 38,5 °C."
     }
   ],
   "dung_dua": {
-    "giay": 9.45,
+    "giay": 9.6,
     "cau_hoi": "Cốc nước ấm khoảng 50 °C. Bắn nhiệt kế hồng ngoại cách 5 cm vào mảnh giấy bạc dán ngoài cốc. Số đọc sẽ…",
     "chon": [
       "A. gần 50 °C",
@@ -47,5 +47,22 @@
     "dung": 1,
     "giai_thich_dung": "Giấy bạc phát xạ yếu nên máy hồng ngoại suy ra nhiệt độ thấp giả: 41,0 °C.",
     "giai_thich_sai": "Xem số hồng ngoại trên giấy bạc ở đoạn kế và so với 50 °C."
+  },
+  "cau_chot": {
+    "giay": 41.4,
+    "cau_hoi": "Dán một mảnh băng dính giấy (mặt nhám) đè lên mảnh giấy bạc ngoài cốc nước ấm 50 °C, rồi vẫn bắn hồng ngoại cách 5 cm vào băng dính. Số đọc gần nhất:",
+    "chon": [
+      "A. khoảng 38 °C",
+      "B. khoảng 41 °C",
+      "C. khoảng 47 °C",
+      "D. trên 50 °C"
+    ],
+    "dung": 2,
+    "giai_thich": [
+      "38,5 °C là số khi lùi ra 25 cm, vết đo trùm ra nền phòng. Ở 5 cm, băng dính nhám phát xạ mạnh như thành sứ nên số đọc gần 47 °C.",
+      "41,0 °C là số trên giấy bạc bóng, phát xạ yếu. Băng dính nhám che mất mặt bóng, phát xạ mạnh như thành sứ nên số đọc gần 47 °C.",
+      "Băng dính nhám có độ phát xạ gần 0,95 như thành sứ và ấm như thành cốc, nên máy đọc gần số bắn thành sứ, 47,1 °C (theo mô hình).",
+      "Băng dính dán ngoài thành cốc không nóng hơn nước. Mặt nhám phát xạ như thành sứ nên số đọc gần 47 °C, vẫn dưới 50 °C."
+    ]
   }
 }

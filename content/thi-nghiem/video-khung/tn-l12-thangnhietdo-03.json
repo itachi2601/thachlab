@@ -1,8 +1,8 @@
 {
   "id": "tn-l12-thangnhietdo-03",
   "ten": "Bình khí kín ngâm 5 mức nhiệt độ: kéo dài đồ thị p theo t",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-thangnhietdo-03-20261114.mp4",
-  "tong_giay": 49.8,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-thangnhietdo-03-20261126.mp4",
+  "tong_giay": 49.2,
   "o": [
     {
       "khoa": "gia_thuyet",
@@ -17,27 +17,27 @@
     },
     {
       "khoa": "dung_cu",
-      "giay": 9.1,
+      "giay": 9.3,
       "chu": "Bình khí kín, thể tích không đổi, ngâm 5 mức nhiệt độ; mỗi mức chờ số ổn định."
     },
     {
       "khoa": "quan_sat",
-      "giay": 16.4,
+      "giay": 18.1,
       "chu": "p: 100,0 → 136,6 kPa khi 0 → 100 °C. Đường kẻ qua 5 điểm cắt trục ở ≈ −273 °C."
     },
     {
       "khoa": "rut_ra",
-      "giay": 25.8,
-      "chu": "p không âm nên có nhiệt độ thấp nhất (≈ −273 °C)."
+      "giay": 26.5,
+      "chu": "Mọi lượng khí cho cùng điểm cắt ≈ −273 °C: đó là nhiệt độ thấp nhất, chọn làm 0 K của thang Kelvin."
     },
     {
       "khoa": "chua_noi",
-      "giay": 30.6,
+      "giay": 35.1,
       "chu": "Khí thật hoá lỏng trước −273 °C, nên điểm cắt là đường kéo dài chứ không phải số đo.\nỞ 0 K vật chất ra sao thì chưa nói được."
     }
   ],
   "dung_dua": {
-    "giay": 8.8,
+    "giay": 9.1,
     "cau_hoi": "Bình khí kín, thể tích không đổi, ngâm lần lượt ở 0, 25, 50, 75, 100 °C. Kéo dài đồ thị p theo t tới p = 0: đường thẳng cắt trục nhiệt độ ở đâu?",
     "chon": [
       "A. Ngay tại 0 °C",
@@ -48,5 +48,22 @@
     "dung": 2,
     "giai_thich_dung": "Đường thẳng đi qua 5 điểm cắt trục nhiệt độ ở khoảng −273 °C, không phải 0 °C. Xem đồ thị ở đoạn kế.",
     "giai_thich_sai": "Áp suất vẫn còn khoảng 100 kPa ở 0 °C và giảm dần theo từng độ, nên điểm p = 0 nằm thấp hơn nhiều so với suy đoán đó. Xem đồ thị ở đoạn kế rồi so với dự đoán của em."
+  },
+  "cau_chot": {
+    "giay": 43.5,
+    "cau_hoi": "Cùng bình đó (ở 0 °C, p = 100,0 kPa), giữ thể tích, coi khí lí tưởng, đun tới 273 °C. Áp suất khoảng:",
+    "chon": [
+      "A. 100 kPa",
+      "B. 137 kPa",
+      "C. 200 kPa",
+      "D. 273 kPa"
+    ],
+    "dung": 2,
+    "giai_thich": [
+      "Thể tích giữ nguyên mà nhiệt độ tăng thì áp suất tăng. 273 °C là 546 K, gấp đôi 273 K (0 °C), nên p gấp đôi: khoảng 200 kPa.",
+      "137 kPa là áp suất ở 100 °C. Đun tới 273 °C (546 K, gấp đôi 273 K) thì p gấp đôi 100 kPa: khoảng 200 kPa.",
+      "Theo thang Kelvin p tỉ lệ với T: 273 °C = 546 K, gấp đôi 273 K, nên p ≈ 2 × 100 = 200 kPa.",
+      "p tỉ lệ với nhiệt độ Kelvin, không phải với số đọc °C. 546 K gấp đôi 273 K nên p ≈ 200 kPa, không phải 273 kPa."
+    ]
   }
 }

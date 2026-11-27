@@ -23,7 +23,7 @@ const selectCls = `${inputCls} bg-panel`;
 const pageSize = 12;
 
 /** Môn của hệ CTTC trong bảng academic_subjects; ngân hàng CNC thì nhận ra bằng cnc_key (subject_code của chúng là mặc định). */
-const CTTC_SUBJECT_CODES = ["avcn", "worldskills-im", "cnctm", "gcpt"];
+const CTTC_SUBJECT_CODES = ["avcn", "worldskills-im", "cnctm", "gcpt", "cnctm2"];
 
 interface ExamListRow {
   id: number;
