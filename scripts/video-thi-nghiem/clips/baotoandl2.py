@@ -211,7 +211,8 @@ def s_kq(img, d, t, sc):
     M = sc["M"]; L = 0.80 * 330                                 # mui ten dong luong dai theo m.v
     card(d, (40, 265, 1040, 960), fill=WHITE, outline=LIGHT, w=3)
     text(d, (80, 330), "Lần 3", 56, INK, anchor="lm")
-    for j, at in enumerate((-1.0, 2.8)):
+    text(d, (W / 2, 330), "p = m·v", 56, INK)
+    for j, at in enumerate((-1.0, 0.6)):
         yb = 520 + j * 290; kk = appear(t, at, 0.45)
         if kk <= 0: continue
         text(d, (1000, yb - 150), "trước" if j == 0 else "sau", 56, NOTE, anchor="rm", alpha=kk)
@@ -225,21 +226,23 @@ def s_kq(img, d, t, sc):
         else:
             x1 = XC1 + 0.8 * TC / 2
             cart(d, yb, x1, C1, C1D, "1", kk, ring=RING); cart(d, yb, 0.92, C2, C2D, "2", kk)
-            text(d, (sx(x1) - 40, yb + 75), "dừng", 56, C1D, alpha=kk)
+            text(d, (sx(x1) - 110, yb - 45), "dừng", 56, C1D, anchor="rm", alpha=kk)
             X = sx(0.92) - L + 40
             if g > 0: arrow(d, (X, yb + 75), (X + L * g, yb + 75), C2, w=9, head=24)
-            text(d, (X - 30, yb + 140), "p xe 2", 56, C2D, anchor="lm", alpha=g)
-    k2 = appear(t, M[1] + 1.0, 0.45)
+            text(d, (X - 20, yb + 75), "p xe 2", 56, C2D, anchor="rm", alpha=kk)
+    k2 = appear(t, M[1] - 0.1, 0.45)
     if k2 <= 0: return
     card(d, (40, 1000, 1040, 1570), fill=A(WHITE, k2), outline=A(LIGHT, k2), w=3)
     text(d, (W / 2, 1070), "Động năng", 60, INK, alpha=k2)
     by, H0 = 1420, 230
-    for j, (lab, col, cd, at) in enumerate((("xe 1 trước", C1, C1D, M[1] + 1.3), ("xe 2 sau", C2, C2D, M[1] + 2.1))):
+    for j, (lab, col, cd, at) in enumerate((("xe 1 trước", C1, C1D, M[1] + 0.2), ("xe 2 sau", C2, C2D, M[1] + 0.9))):
         cx = 300 + j * 480; g = ease((t - at) / 0.5); h = H0 * g
         if h > 2: d.rectangle([cx - 90, by - h, cx + 90, by], fill=col)
         text(d, (cx, by + 55), lab, 56, cd, alpha=k2)
     d.line([(150, by), (930, by)], fill=A(INK, k2), width=4)
-    d.line([(390, by - H0), (690, by - H0)], fill=A(NAVY, ease((t - M[1] - 2.6) / 0.4)), width=5)
+    ke = ease((t - M[1] - 1.4) / 0.4)
+    d.line([(390, by - H0), (690, by - H0)], fill=A(NAVY, ke), width=5)
+    text(d, (540, by - H0 / 2), "=", 80, NAVY, alpha=ke)
 
 # ---------------- canh 4: Bay (lan 2, cap so khac Du doan) + chua noi duoc ----------------
 def s_bay(img, d, t, sc):
@@ -253,7 +256,7 @@ def s_bay(img, d, t, sc):
     if ks > 0: d.line([(W / 2 - lw / 2 - 6, yy + 2), (W / 2 - lw / 2 - 6 + (lw + 12) * ks, yy + 2)], fill=A(RED, 0.85 * a1), width=6)
     kk = appear(t, M[1] + 0.1, 0.45)
     if kk > 0: card(d, (40, 600, 1040, 1275), fill=A(WHITE, kk), outline=A(NAVY, kk), w=5)
-    for j, (lab, at) in enumerate((("Sáp, dính nhau", M[1] + 0.1), ("Lò xo lá", M[1] + 2.7))):
+    for j, (lab, at) in enumerate((("Sáp, dính nhau", M[1] + 0.1), ("Lò xo lá", M[1] + 3.0))):
         yb = 830 + j * 320; g = appear(t, at, 0.4)
         if g <= 0: continue
         text(d, (80, yb - 170), lab, 56, PURPLE if j == 0 else DGREEN, anchor="lm", alpha=g)
@@ -276,7 +279,7 @@ def s_bay(img, d, t, sc):
         pill(d, W / 2, y0 + 70, "CHƯA NÓI ĐƯỢC", NAVY, k5)
         text(d, (W / 2, y0 + 190), "hai xe khác khối lượng", 60, INK, alpha=k5)
 
-# ---------------- canh 5: THU NGHI (cau chot o khung web: v1' = 0,20 ; v2' = 0,60 m/s) ----------------
+# ---------------- canh 5: THU NGHI (cau chot o khung web: doi dau, moi xe bat nguoc: xe 1 0,20 ; xe 2 0,60 m/s) ----------------
 def s_end(img, d, t, sc):
     M = sc["M"]; k = appear(t, 0.2, 0.4)
     card(d, (40, 265, 1040, 1570), fill=A(WHITE, k), outline=A(ORANGE, k), w=6)
@@ -287,18 +290,18 @@ def s_end(img, d, t, sc):
     X1, X2 = sx(0.25), sx(0.75)
     arrow(d, (X1 - 80, yb + 75), (X1 + 100, yb + 75), A(C1, k), w=8, head=22)          # 0,60 m/s ~ 180 px
     text(d, (X1 + 10, yb + 140), "0,60 m/s", 56, C1D, alpha=k)
-    arrow(d, (X2 - 30, yb + 75), (X2 + 30, yb + 75), A(C2, k), w=8, head=22)           # 0,20 m/s ~ 60 px
+    arrow(d, (X2 + 30, yb + 75), (X2 - 30, yb + 75), A(C2, k), w=8, head=22)           # 0,20 m/s ~ 60 px, nguoc chieu
     text(d, (X2, yb + 140), "0,20 m/s", 56, C2D, alpha=k)
     k1 = appear(t, 2.6, 0.45)
     text(d, (W / 2, 920), "Hai xe cùng 0,20 kg.", 62, INK, alpha=k1)
     k2 = appear(t, 5.0, 0.45)
-    text(d, (W / 2, 1075), "Ngay sau, mỗi xe đi bao nhanh?", 60, ORANGE, alpha=k2)
+    text(d, (W / 2, 1075), "Ngay sau, mỗi xe đi thế nào?", 60, ORANGE, alpha=k2)
     seg_bar(d, 1160, t, 5.2, sc["T"] - 0.2, ORANGE, k2)
     kh = appear(t, 7.5, 0.45)
     if kh > 0:
         card(d, (90, 1290, 990, 1530), fill=A((255, 247, 237), kh), r=24)
         text(d, (W / 2, 1350), "Gợi ý", 56, INK, alpha=kh)
-        text(d, (W / 2, 1445), "kiểm cả động lượng, động năng", 56, DORANGE, alpha=kh)
+        text(d, (W / 2, 1445), "chọn chiều dương trước", 56, DORANGE, alpha=kh)
 
 def _cues(clip):
     sc = {s["key"]: s for s in clip["scenes"]}
@@ -306,7 +309,7 @@ def _cues(clip):
     out = [(h["t0"] + h["M"][1] - 0.2, "open"), (h["t0"] + h["T"] - 0.1, "ding")]
     for j, (v1, a, bb) in enumerate(ROWS):                   # va cham
         out.append((do["t0"] + STARTS[j] + 0.15 + (XC1 - X1S) / v1, "tap"))
-    out += [(kq["t0"] + 3.1, "ding"), (b["t0"] + b["M"][1], "buzz"), (e["t0"] + 5.0, "open")]
+    out += [(kq["t0"] + 0.9, "ding"), (b["t0"] + b["M"][1], "buzz"), (e["t0"] + 5.0, "open")]
     return out
 
 CLIP = dict(id="tn-l10-baotoandl-02", header="VẬT LÍ 10 · THÍ NGHIỆM", footer="Bảo toàn động lượng · thachlab.id.vn",
@@ -317,15 +320,15 @@ CLIP = dict(id="tn-l10-baotoandl-02", header="VẬT LÍ 10 · THÍ NGHIỆM", fo
  dict(key="do", title="Tiến hành", draw=s_do, tail=0.3, caps=[
    ("Ba lần, đổi tốc độ xe 1.", 3.6),
    ("Nhìn xe 1 sau va chạm.", 3.4)]),
- dict(key="kq", title="Kết quả", draw=s_kq, tail=0.6, caps=[
-   ("Xe 1 dừng, xe 2 đi 0,80 m/s.", 3.8),
-   ("Động lượng chuyển hết sang xe 2.", 4.4)]),
- dict(key="bay", title="Bẫy hay gặp", draw=s_bay, tail=0.4, caps=[
-   ("Đúng không?", 2.5),
-   ("Sai: chỉ dính nhau mới đi chung.", 5.6),
+ dict(key="kq", title="Kết quả", draw=s_kq, tail=0.7, caps=[
+   ("Xe 1 dừng, xe 2 đi tiếp.", 3.4),
+   ("Động năng cũng chuyển sang xe 2.", 3.8)]),
+ dict(key="bay", title="Bẫy hay gặp", draw=s_bay, tail=0.3, caps=[
+   ("Đúng không?", 3.0),
+   ("Sai: chỉ dính nhau mới đi chung.", 6.0),
    ("Thí nghiệm này còn thiếu gì?", 3.2)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.5, caps=[
-   ("Xe 2 cũng đang chạy.", 2.8),
+   ("Xe 2 chạy ngược lại.", 2.8),
    ("Dừng lại, tự tính.", 6.6)]),
 ])
 

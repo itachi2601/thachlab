@@ -2,7 +2,7 @@
   "id": "tn-l10-baotoandl-02",
   "ten": "Hai xe cùng khối lượng có lò xo lá ở đầu",
   "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-baotoandl-02-20261127.mp4",
-  "tong_giay": 49.5,
+  "tong_giay": 49.8,
   "o": [
     {
       "khoa": "gia_thuyet",
@@ -23,16 +23,16 @@
     {
       "khoa": "quan_sat",
       "giay": 18.0,
-      "chu": "Ba lần: xe 1 dừng, xe 2 đi bằng tốc độ xe 1."
+      "chu": "Ba lần: xe 1 dừng, xe 2 đi tiếp."
     },
     {
       "khoa": "rut_ra",
-      "giay": 22.9,
+      "giay": 21.8,
       "chu": "Động lượng và động năng của xe 1 chuyển gần trọn sang xe 2: va chạm gần đàn hồi."
     },
     {
       "khoa": "chua_noi",
-      "giay": 35.3,
+      "giay": 35.7,
       "chu": "Hai xe dính nhau thì chỉ đi chung nửa tốc độ. Hai xe khác khối lượng thì sao?"
     }
   ],
@@ -50,20 +50,20 @@
     "giai_thich_sai": "Thử kiểm hai điều cho từng phương án: tổng động lượng sau có bằng trước không, và động năng có tự tăng lên không. Phương án nào giữ được cả hai?"
   },
   "cau_chot": {
-    "giay": 44.5,
-    "cau_hoi": "Hai xe cùng 0,20 kg, có lò xo lá. Xe 2 đang chạy 0,20 m/s thì xe 1 đuổi tới với 0,60 m/s cùng chiều. Ngay sau va chạm, mỗi xe đi bao nhanh?",
+    "giay": 44.8,
+    "cau_hoi": "Hai xe cùng 0,20 kg, có lò xo lá, chạy ngược chiều nhau: xe 1 tới 0,60 m/s, xe 2 tới 0,20 m/s rồi va vào nhau. Ngay sau va chạm, mỗi xe đi thế nào?",
     "chon": [
-      "A. Xe 1 dừng, xe 2 đi 0,80 m/s",
-      "B. Xe 1 đi 0,20 m/s, xe 2 đi 0,60 m/s",
-      "C. Hai xe cùng đi 0,40 m/s",
-      "D. Xe 1 dừng, xe 2 đi 0,60 m/s"
+      "A. Cả hai xe dừng hẳn lại trên ray",
+      "B. Mỗi xe bật ngược: xe 1 đi 0,20; xe 2 đi 0,60 m/s",
+      "C. Dính nhau, cùng đi 0,20 m/s theo chiều xe 1",
+      "D. Mỗi xe bật ngược: xe 1 đi 0,60; xe 2 đi 0,20 m/s"
     ],
     "dung": 1,
     "giai_thich": [
-      "Động lượng thì giữ được (0,20·0,80 = 0,20·0,60 + 0,20·0,20), nhưng động năng tăng từ 0,040 J lên 0,064 J — tự sinh ra từ đâu? Theo mô hình, hai xe bằng nhau đổi vận tốc: xe 1 đi 0,20 m/s, xe 2 đi 0,60 m/s.",
-      "Theo mô hình đàn hồi, hai xe bằng khối lượng đổi vận tốc cho nhau: xe 1 lấy 0,20 m/s của xe 2, xe 2 lấy 0,60 m/s của xe 1. Kiểm: động lượng 0,16 kg·m/s và động năng 0,040 J đều giữ nguyên.",
-      "Đây là kết quả khi hai xe dính nhau (va chạm mềm): động năng giảm còn 0,032 J. Lò xo lá làm hai xe bật ra, giữ gần trọn động năng: xe 1 đi 0,20 m/s, xe 2 đi 0,60 m/s.",
-      "Tổng động lượng sau chỉ còn 0,12 kg·m/s, mất phần 0,04 kg·m/s của xe 2 lúc trước. Xe 1 chỉ dừng khi xe 2 lúc đầu đứng yên; ở đây hai xe đổi vận tốc: 0,20 m/s và 0,60 m/s."
+      "Chọn chiều dương theo xe 1: động lượng trước 0,20·0,60 − 0,20·0,20 = 0,08 kg·m/s, không phải 0. Hai xe cùng dừng thì động lượng sau bằng 0, không giữ được.",
+      "Hai xe bằng khối lượng, va chạm qua lò xo lá thì đổi vận tốc cho nhau: xe 1 lấy −0,20 m/s, xe 2 lấy +0,60 m/s, nên cả hai bật ngược. Kiểm: động lượng 0,08 kg·m/s và động năng 0,040 J đều giữ nguyên.",
+      "Đây là kết quả khi hai xe dính nhau (va chạm mềm): động lượng giữ 0,08 kg·m/s nhưng động năng giảm còn 0,008 J. Lò xo lá làm hai xe bật ra, giữ gần trọn động năng.",
+      "Nếu mỗi xe chỉ quay đầu, giữ tốc độ cũ thì động lượng sau là −0,08 kg·m/s, đổi dấu so với trước. Hai xe bằng nhau phải đổi vận tốc cho nhau: xe 1 đi 0,20 m/s, xe 2 đi 0,60 m/s."
     ]
   }
 }

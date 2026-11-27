@@ -1,51 +1,69 @@
 {
   "id": "tn-l10-thuchanhdl-02",
-  "ten": "Hai xe nối lò xo nén, cắt dây",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-thuchanhdl-02-20261118.mp4",
-  "tong_giay": 47.4,
+  "ten": "Lò xo nén giữa hai xe trên băng đệm khí",
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-thuchanhdl-02-20261127.mp4",
+  "tong_giay": 49.7,
   "o": [
     {
       "khoa": "gia_thuyet",
       "giay": 0,
-      "chu": "Hai xe đứng yên rồi đẩy nhau: động lượng hai xe trái dấu nên tổng sau gần bằng 0.",
-      "kiem": "Động lượng hai xe sau cắt dây ra sao?"
+      "chu": "Hai xe đứng yên thì tổng động lượng bằng 0; đẩy nhau xong tổng vẫn gần bằng 0.",
+      "kiem": "Đẩy nhau xong, tổng động lượng thế nào?"
     },
     {
       "khoa": "du_doan",
       "giay": 3.8,
-      "chu": "Hai xe đứng yên. Cắt dây. Tổng động lượng hai xe sau đó?"
+      "chu": "Xe 1 nặng 0,405 kg, xe 2 nặng 0,198 kg. Cắt dây: tổng động lượng hai xe sau đó?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 10.0,
-      "chu": "Hai xe giữ lò xo nén bằng dây; hai cổng quang đo thời gian, khối lượng ghi sẵn."
+      "giay": 9.7,
+      "chu": "Băng đệm khí, lò xo, hai cổng quang."
     },
     {
       "khoa": "quan_sat",
-      "giay": 21.1,
-      "chu": "Xe 1 đi ngược chiều dương; tổng |p′| ≤ 0,0007 kg·m/s."
+      "giay": 18.3,
+      "chu": "Hai xe chạy ngược chiều; hai mũi tên động lượng gần dài bằng nhau."
     },
     {
       "khoa": "rut_ra",
-      "giay": 25.1,
-      "chu": "|p′| ≤ Δp′ (sai số) ở cả ba lần: tổng sau ≈ tổng trước = 0."
+      "giay": 24.9,
+      "chu": "Ba lần tổng p′ = +0,0007; −0,0007; −0,0006 kg·m/s, đều có |p′| ≤ Δp′: tổng sau bằng 0 trong sai số."
     },
     {
       "khoa": "chua_noi",
-      "giay": 34.8,
-      "chu": "Lò xo đẩy mỗi xe mạnh bao nhiêu?\nVa chạm mềm thì còn bảo toàn không?"
+      "giay": 35.9,
+      "chu": "Phải cộng có dấu: xe 1 đi ngược chiều dương. Hai xe đang chạy rồi mới đẩy nhau thì sao?"
     }
   ],
   "dung_dua": {
-    "giay": 9.8,
-    "cau_hoi": "Hai xe đứng yên. Cắt dây. Tổng động lượng hai xe sau đó?",
+    "giay": 9.5,
+    "cau_hoi": "Hai xe đứng yên, lò xo nén giữa, dây buộc (xe 1 0,405 kg, xe 2 0,198 kg). Cắt dây, hai xe bật ra hai phía. Tổng động lượng hai xe sau đó?",
     "chon": [
-      "A. khoảng 0,10 kg·m/s",
+      "A. Khoảng 0,10 kg·m/s",
       "B. Gần bằng 0",
-      "C. Lệch về phía xe nhẹ"
+      "C. Âm rõ rệt, vì xe nặng hơn có nhiều đà hơn",
+      "D. Dương rõ rệt, vì xe nhẹ chạy nhanh hơn"
     ],
     "dung": 1,
-    "giai_thich_dung": "Trước khi cắt, tổng động lượng bằng 0; hai xe đi ngược chiều nên động lượng trái dấu, tổng sau gần bằng 0 (cỡ 0,0007 kg·m/s).",
-    "giai_thich_sai": "Xem đoạn kế: hai xe đi hai hướng, nên động lượng của chúng mang dấu thế nào?"
+    "giai_thich_dung": "Trước khi cắt dây cả hai xe đứng yên, tổng động lượng bằng 0. Hai xe đi ngược chiều nên p₁′ và p₂′ trái dấu, gần bằng nhau về độ lớn: lần 2 đo được −0,0502 + 0,0495 = −0,0007 kg·m/s, nhỏ hơn sai số.",
+    "giai_thich_sai": "Trước khi cắt dây hai xe có động lượng bao nhiêu? Hai xe đi ngược chiều nhau thì hai động lượng mang dấu thế nào?"
+  },
+  "cau_chot": {
+    "giay": 44.8,
+    "cau_hoi": "Lần đo mới: hai xe đứng yên rồi đẩy nhau bằng lò xo. Xe 1 nặng 0,300 kg đi sang trái qua cổng 1 hết 0,200 s, tấm cản quang rộng 5,00 cm; chiều dương sang phải. Động lượng p₂′ của xe 2 xấp xỉ bao nhiêu?",
+    "chon": [
+      "A. −0,0750 kg·m/s",
+      "B. +0,0750 kg·m/s",
+      "C. +0,0150 kg·m/s",
+      "D. +7,50 kg·m/s"
+    ],
+    "dung": 1,
+    "giai_thich": [
+      "−0,0750 kg·m/s là p₁′ của xe 1 (đi ngược chiều dương). Tổng sau bằng 0 nên p₂′ = −p₁′ = +0,0750 kg·m/s.",
+      "v₁ = 0,0500/0,200 = 0,250 m/s; p₁′ = −0,300·0,250 = −0,0750 kg·m/s. Lúc đầu tổng bằng 0 nên p₂′ = +0,0750 kg·m/s, không cần biết khối lượng xe 2.",
+      "Số này ra khi quên chia cho thời gian (0,300·0,0500). Phải lấy v₁ = s/t₁′ = 0,250 m/s, p₁′ = −0,0750, nên p₂′ = +0,0750 kg·m/s.",
+      "Số này ra khi để bề rộng 5,00 cm mà không đổi sang 0,0500 m. Đổi đúng: v₁ = 0,250 m/s, p₂′ = +0,0750 kg·m/s."
+    ]
   }
 }

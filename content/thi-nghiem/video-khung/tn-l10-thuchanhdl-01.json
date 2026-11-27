@@ -1,52 +1,69 @@
 {
   "id": "tn-l10-thuchanhdl-01",
   "ten": "Hai xe qua hai cổng quang trên băng đệm khí",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-thuchanhdl-01-20261118.mp4",
-  "tong_giay": 49.4,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-thuchanhdl-01-20261127.mp4",
+  "tong_giay": 49.8,
   "o": [
     {
       "khoa": "gia_thuyet",
       "giay": 0,
-      "chu": "Dính nhau thì tổng động lượng sau va chạm gần bằng trước.",
-      "kiem": "Thời gian chắn cổng 2 so với cổng 1?"
+      "chu": "Va chạm mềm: tổng động lượng gần như giữ nguyên.",
+      "kiem": "Cổng 2 chỉ số lớn hơn hay nhỏ hơn?"
     },
     {
       "khoa": "du_doan",
-      "giay": 3.4,
-      "chu": "Hai xe dính nhau qua cổng 2. Đồng hồ cổng 2 chỉ khoảng?"
+      "giay": 3.8,
+      "chu": "Xe 1 nặng 0,405 kg, xe 2 nặng 0,198 kg. Dính nhau qua cổng 2, đồng hồ chỉ khoảng bao nhiêu?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 9.6,
-      "chu": "Hai cổng quang đo thời gian chắn tia, tấm chắn rộng 5,00 cm."
+      "giay": 9.7,
+      "chu": "Băng đệm khí, hai cổng quang, gia trọng."
     },
     {
       "khoa": "quan_sat",
-      "giay": 21.7,
-      "chu": "Lần 1: t1′ ≈ 0,199 s, gấp đôi t1; p′ hơi nhỏ hơn p."
+      "giay": 18.3,
+      "chu": "Lần 2: cổng 1 chỉ 0,101 s, cổng 2 chỉ 0,153 s."
     },
     {
       "khoa": "rut_ra",
-      "giay": 26.7,
-      "chu": "Lần 1: độ lệch của p′ so với p (2,2 phần trăm) nhỏ hơn sai số đo (2,5 phần trăm)."
+      "giay": 25.1,
+      "chu": "Lần 2: p′ gần bằng p; độ lệch δ (1,6 phần trăm) nhỏ hơn sai số đo ε (2,2 phần trăm), nên động lượng bảo toàn trong sai số."
     },
     {
       "khoa": "chua_noi",
-      "giay": 34.8,
-      "chu": "Lần 2, 3: p′ so với p ra sao?\nKhối lượng nào được nhân với v′?"
+      "giay": 36.1,
+      "chu": "Sau va chạm hai xe cùng chạy, nhân v′ với m₁ + m₂. Hai xe nảy ra, không dính thì sao?"
     }
   ],
   "dung_dua": {
-    "giay": 9.4,
-    "cau_hoi": "Xe 1 qua cổng 1 hết 0,099 s, va vào xe 2 cùng khối lượng rồi dính nhau. Đồng hồ cổng 2 chỉ khoảng bao nhiêu?",
+    "giay": 9.5,
+    "cau_hoi": "Xe 1 (0,405 kg) qua cổng 1 hết 0,101 s, va vào xe 2 (0,198 kg) đứng yên rồi dính nhau. Đồng hồ cổng 2 chỉ khoảng bao nhiêu?",
     "chon": [
-      "A. 0,050 s",
-      "B. 0,099 s",
-      "C. 0,20 s",
-      "D. 0,40 s"
+      "A. 0,101 s",
+      "B. Khoảng 0,15 s",
+      "C. Khoảng 0,20 s",
+      "D. Khoảng 0,30 s"
     ],
-    "dung": 2,
-    "giai_thich_dung": "Hai xe cùng khối lượng dính nhau nên tổng khối lượng gấp đôi; động lượng giữ nguyên nên tốc độ còn một nửa, thời gian chắn cổng gấp đôi, khoảng 0,20 s.",
-    "giai_thich_sai": "Tấm chắn rộng không đổi. Nếu tốc độ sau va chạm thay đổi thì thời gian chắn tia phải thay đổi theo hướng nào?"
+    "dung": 1,
+    "giai_thich_dung": "Hai xe dính nhau nặng 0,603 kg, khoảng 1,5 lần xe 1. Động lượng gần như giữ nguyên nên tốc độ còn khoảng 2/3, thời gian chắn tia dài ra khoảng 1,5 lần: đo được 0,153 s.",
+    "giai_thich_sai": "Tấm cản quang rộng không đổi. Sau va chạm khối lượng đang chạy tăng bao nhiêu lần, nên tốc độ và thời gian chắn tia đổi thế nào?"
+  },
+  "cau_chot": {
+    "giay": 44.9,
+    "cau_hoi": "Lần đo mới: xe 1 nặng 0,305 kg, xe 2 nặng 0,198 kg, tấm cản quang rộng 5,00 cm. Hai xe dính nhau qua cổng 2, đồng hồ chỉ 0,169 s. Động lượng p′ của hệ sau va chạm bằng bao nhiêu?",
+    "chon": [
+      "A. 0,090 kg·m/s",
+      "B. 0,149 kg·m/s",
+      "C. 0,153 kg·m/s",
+      "D. 0,252 kg·m/s"
+    ],
+    "dung": 1,
+    "giai_thich": [
+      "Số này ra khi chỉ nhân với khối lượng xe 1 (0,305·0,296). Sau va chạm cả hai xe cùng chạy: p′ = (0,305 + 0,198)·0,296 ≈ 0,149 kg·m/s.",
+      "v′ = 0,0500/0,169 ≈ 0,296 m/s; p′ = (0,305 + 0,198)·0,296 = 0,503·0,296 ≈ 0,149 kg·m/s.",
+      "Số này gần động lượng xe 1 trước va chạm (0,305·0,500). Câu hỏi hỏi p′ sau va chạm: v′ = 0,0500/0,169 ≈ 0,296 m/s, p′ = 0,503·0,296 ≈ 0,149 kg·m/s.",
+      "Số này ra khi dùng tốc độ trước va chạm (0,503·0,500). Sau va chạm phải lấy v′ từ số đồng hồ cổng 2: v′ = 0,0500/0,169 ≈ 0,296 m/s, p′ ≈ 0,149 kg·m/s."
+    ]
   }
 }

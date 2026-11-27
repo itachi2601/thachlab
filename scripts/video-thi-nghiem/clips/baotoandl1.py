@@ -203,26 +203,26 @@ def s_kq(img, d, t, sc):
     text(d, (80, 330), "Lần 4", 56, INK, anchor="lm")
     x0 = 150; w1 = M1 * MX; k1 = ease((t - 0.3) / 0.6); h1 = v1 * VY * k1
     if h1 > 2: d.rectangle([x0, BY - h1, x0 + w1, BY], fill=(254, 215, 170), outline=C1, width=5)
-    if k1 > 0.95: text(d, (x0 + w1 / 2, BY - h1 - 40), vn(v1), 56, C1D)
+    if k1 > 0.95: text(d, (x0 + w1 / 2, BY - h1 - 40), vn(v1) + " m/s", 56, C1D)
     text(d, (x0 + w1 / 2, BY + 50), "trước", 56, C1D)
     x2 = 380; w2 = (M1 + m2) * MX; k2 = ease((t - 1.1) / 0.6); h2 = v * VY * k2
     if h2 > 2: d.rectangle([x2, BY - h2, x2 + w2, BY], fill=(221, 214, 254), outline=PURPLE, width=5)
-    if k2 > 0.95: text(d, (x2 + w2 / 2, BY - h2 - 40), vn(v), 56, PURPLE)
+    if k2 > 0.95: text(d, (x2 + w2 / 2, BY - h2 - 40), vn(v) + " m/s", 56, PURPLE)
     text(d, (x2 + w2 / 2, BY + 50), "sau", 56, PURPLE)
     d.line([(100, BY), (1000, BY)], fill=INK, width=4)
     card(d, (40, 1000, 1040, 1560), fill=WHITE, outline=LIGHT, w=3)
-    ka = appear(t, M[1] - 0.6, 0.4)
+    ka = appear(t, 2.1, 0.4)
     if ka > 0:
         text(d, (W / 2, 1090), "rộng = khối lượng", 60, INK, alpha=ka)
         d.line([(x2, 560), (x2 + w2, 560)], fill=A(NAVY, ka), width=5)
         for xx in (x2, x2 + w2): d.line([(xx, 540), (xx, 580)], fill=A(NAVY, ka), width=5)
-    kb = appear(t, M[1] + 1.9, 0.4)
+    kb = appear(t, 4.4, 0.4)
     if kb > 0:
         text(d, (W / 2, 1210), "cao = tốc độ", 60, INK, alpha=kb)
         xa = x0 + w1 + 40
         d.line([(xa, BY - v1 * VY), (xa, BY)], fill=A(NAVY, kb), width=5)
         for yy in (BY - v1 * VY, BY): d.line([(xa - 20, yy), (xa + 20, yy)], fill=A(NAVY, kb), width=5)
-    kc = appear(t, M[1] + 4.4, 0.45)
+    kc = appear(t, 6.7, 0.45)
     if kc > 0:
         card(d, (90, 1310, 990, 1480), fill=A((236, 253, 243), kc), r=24)
         text(d, (W / 2, 1395), "m₁·v₁ ≈ (m₁ + m₂)·v", 66, DGREEN, alpha=kc)
@@ -247,7 +247,7 @@ def s_bay(img, d, t, sc):
             if h > 2: d.rectangle([x - 90, by - h, x + 90, by], fill=col)
             text(d, (x, by + 55), lab, 56, colD, alpha=kk)
         d.line([(180, by), (900, by)], fill=INK, width=4)
-        k3 = appear(t, M[1] + 2.0, 0.4)
+        k3 = appear(t, M[1] + 1.4, 0.4)
         text(d, (710 + 120, by - H0 * 0.46 - 10), "≈ ½", 64, PURPLE, anchor="lm", alpha=k3)
     k5 = appear(t, M[2] + 0.1, 0.45)
     if k5 > 0:
@@ -299,12 +299,12 @@ CLIP = dict(id="tn-l10-baotoandl-01", header="VẬT LÍ 10 · THÍ NGHIỆM", fo
  dict(key="do", title="Tiến hành", draw=s_do, tail=0.3, caps=[
    ("Cổng quang đo tốc độ.", 3.4),
    ("Thêm gia trọng cho xe 2.", 5.6)]),
- dict(key="kq", title="Kết quả", draw=s_kq, tail=0.6, caps=[
-   ("Đáp án: còn khoảng một phần tư.", 3.8),
+ dict(key="kq", title="Kết quả", draw=s_kq, tail=1.1, caps=[
+   ("Đáp án: khoảng một phần tư.", 3.4),
    ("Hai hình gần bằng diện tích.", 4.8)]),
- dict(key="bay", title="Bẫy hay gặp", draw=s_bay, tail=0.4, caps=[
-   ("Đúng không?", 2.5),
-   ("Sai: dính nhau mất động năng.", 3.8),
+ dict(key="bay", title="Bẫy hay gặp", draw=s_bay, tail=0.3, caps=[
+   ("Đúng không?", 3.0),
+   ("Sai: dính nhau mất động năng.", 3.4),
    ("Thí nghiệm này còn thiếu gì?", 3.2)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.5, caps=[
    ("Đổi chiều câu hỏi.", 2.8),
