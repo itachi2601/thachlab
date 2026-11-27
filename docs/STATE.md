@@ -79,6 +79,7 @@ Nạp mỗi phiên, giữ dưới 15 KB: hiện trạng + ĐANG CHỜ (1–2 dò
 
 - P2/P4 xong 26–27/11: L10–12, KHTN 9, CNC (file nguồn CNC đã khớp DB, có neo `muc-N`), bài 31, 38, 39; P3 đã lên site. Sao lưu `scripts/logs/p2p4-2026-11-26/`, `ly-thuyet-bai*-backup-17957*`.
 - Clip L12 lô 32 (Việc 4): ĐÃ GHI DB 27/11 07:20 (20/20 ✓, bài 10 kèm sửa câu Quan sát tutruong-02). 27/11: 150 clip tự dựng L9/L10/L11 chưa qua cổng mới (chưa `cau_chot`) giao 5 phiên nhánh `clip-cong-moi-*` (L9, L10a, L10b, L11a, L11b), mỗi phiên dừng ở lô duyệt.
+- Clip L10b cổng mới (nhánh `clip-cong-moi-l10b`): nhóm A+C 16 clip ĐÃ GHI DB 27/11 18:05 (bài 68–75, kèm sửa hộp); nhóm B (8) qua cổng B chờ sửa nhẹ; D đang dựng; E chưa làm. Sổ: `so-clip-anh-dong.md` mục L10b.
 
 ## CHƯA làm (roadmap)
 - `/luyen-tap` lọc Lớp → Chương → Bài → YCCĐ → mức; `/lo-trinh`; Động học 10 ≥30 câu/bài.

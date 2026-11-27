@@ -520,7 +520,7 @@ Agent Opus theo nhóm (A điện 9, B điện từ–năng lượng 9, C cơ–�
 ## Cổng mới — L10b (bài 63–79, 38 clip; phiên `clip-cong-moi-l10b`, 27/11/2026) — **đang dựng, chờ thầy duyệt từng nhóm**
 Brief: thư mục ghi chú phiên `l10b-brief-dung.md`/`l10b-brief-kiem.md`. 1 agent Opus dựng + 1 kiem-code song song; tối đa 2 vòng kiem-code/clip, sau v2 sửa lượt cuối tự crop. Script: `tai-cong-moi-l10b.sh` (Storage), `dang-cong-moi-l10b.sh` (DB, `--chi-video`; dry-run 17/17 sạch 27/11). Kho `<tn>.json` + bài giữ bản cũ tới khi duyệt.
 
-**Nhóm A (8 clip) — qua cổng A + B (kiem-code 2 vòng), đã tải `-20261127.{mp4,webp}` HEAD 200**
+**Nhóm A (8 clip) — qua cổng A + B (kiem-code 2 vòng), đã tải `-20261127.{mp4,webp}` HEAD 200 — ✅ THẦY DUYỆT 27/11, ĐÃ GHI DB 27/11 18:03–18:05 (bài 68–75, kèm sửa hộp)**
 | Clip | tn | Từ/phút | LỖI | Giây | KB | mp4 | Điểm cần quyết |
 |---|---|---|---|---|---|---|---|
 | baotoandl1 | tn-l10-baotoandl-01 | 199 → 142 | 15 → 0 | 49,9 → 49,9 | 1437 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-baotoandl-01-20261127.mp4) | thanh p ghi 0,20/0,80 kg; gợi ý "so động lượng trước và sau" |
@@ -532,7 +532,9 @@ Brief: thư mục ghi chú phiên `l10b-brief-dung.md`/`l10b-brief-kiem.md`. 1 a
 | dongluong2 | tn-l10-dongluong-02 | 193 → 163 | 18 → 0 | 49,7 | 1291 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-dongluong-02-20261127.mp4) | kết luận dựa giả thiết gỗ nặng hơn bi nhiều (chưa nêu); không vẽ vết gỗ dừng ở Kết quả |
 | congsuat1 | tn-l10-cong-suat-01 | 163 → 133 | 14 → 0 | 49,7 | 1316 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-cong-suat-01-20261127.mp4) | chốt 12,5 s; "gấp 3" gần ý quiz mở bài |
 
-**Nhóm C L10b (8 clip) — qua cổng A + B (kiem-code 2 vòng; conang/dongnang lượt sửa cuối tự crop), đã tải `-20261127.{mp4,webp}` HEAD 200**
+Duyệt A+C ("Duyệt, sửa cả hộp"): 16 clip đổi URL kho/bài sang `-20261127`, gắn khung 8 bài 68–75; sửa hộp 2 đợt (`sua-hop-l10b.py`, đợt 2 theo kiem-code `hop-kiem-v1`: 17 câu Quan sát/Rút ra/Nhìn vào không nói sẵn đáp án Dự đoán/chốt; dongluong thêm "gỗ nặng hơn bi nhiều"); 11 `ghi_chu` kho khớp câu chốt mới (baotoandl-02 ngược chiều; giữ m₁ 0,305 kg). Ghi DB: `dang-cong-moi-l10b.sh --chi 68,…,75 --khac 68,…,75 --yes` → 8/8 ✓, log `ra/l10b-ghi1.log`.
+
+**Nhóm C L10b (8 clip) — qua cổng A + B (kiem-code 2 vòng; conang/dongnang lượt sửa cuối tự crop), đã tải `-20261127.{mp4,webp}` HEAD 200 — ✅ THẦY DUYỆT 27/11, ĐÃ GHI DB cùng nhóm A**
 | Clip | tn | Từ/phút | LỖI | Giây | KB | mp4 | Điểm cần quyết |
 |---|---|---|---|---|---|---|---|
 | conang1 | tn-l10-co-nang-bao-toan-01 | 192 → 153 | 15 → 0 | 49,7 | 2063 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-co-nang-bao-toan-01-20261127.mp4) | chốt 1,26 m/s tự suy |
