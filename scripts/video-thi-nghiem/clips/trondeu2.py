@@ -101,7 +101,7 @@ def trial_at(t):
 def table(d, n, hl=None, y0=1030, y1=1590, k=1.0):
     card(d, (40, y0, 1040, y1), fill=A(WHITE, k), outline=A(LIGHT, k), w=3)
     xs = (230, 540, 850); yh = y0 + 75
-    for x, h, col in zip(xs, ("r (cm)", "s (cm)", "góc đo"), (NAVY, DORANGE, BLUE)):
+    for x, h, col in zip(xs, ("r (cm)", "s (cm)", "góc đo (°)"), (NAVY, DORANGE, BLUE)):
         text(d, (x, yh), h, 58, col, alpha=k)
     d.line([(90, yh + 48), (990, yh + 48)], fill=A(LIGHT, k), width=3)
     for i in range(3):
@@ -177,9 +177,10 @@ def s_rutra(img, d, t, sc):
     k1 = appear(t, 0.4, 0.4)
     card(d, (40, 1085, 1040, 1585), fill=A(WHITE, k1), outline=A(GREEN, k1), w=6)
     pill(d, W / 2, 1155, "RÚT RA", GREEN, k1)
-    eq(d, W / 2, 1290, "θ = s/r (rad)", 64, PURPLE, alpha=k1)
+    eq(d, W / 2, 1255, "θ = s/r (rad)", 64, PURPLE, alpha=k1)
+    eq(d, W / 2, 1340, "θ: góc ở tâm, s: độ dài cung", 55, MUTED, alpha=k1)
     k2 = appear(t, M[1], 0.4)
-    eq(d, W / 2, 1420, "cả vòng: 2π rad = 360°", 60, INK, alpha=k2)
+    eq(d, W / 2, 1430, "cả vòng: 2π rad = 360°", 60, INK, alpha=k2)
     eq(d, W / 2, 1515, "1 rad ≈ 57,3°", 60, TEAL, alpha=k2)
 
 # ---------------- canh 5: Bay + chua noi duoc ----------------
@@ -250,9 +251,9 @@ CLIP = dict(id="tn-l10-trondeu-02", header="VẬT LÍ 10 · THÍ NGHIỆM", foot
    ("Đáp án: hơn 6 sợi một chút.", 3.4)]),
  dict(key="rutra", title="Rút ra", draw=s_rutra, tail=0.3, caps=[
    ("Cung dài bằng r: góc 1 rad.", 3.8),
-   ("Cả vòng: 2π rad.", 3.4)]),
+   ("Cả vòng: 2π rad.", 3.2)]),
  dict(key="bay", title="Bẫy hay gặp", draw=s_bay, tail=0.3, caps=[
-   ("1 rad có phải 1°?", 3.0),
+   ("1 rad có phải 1°?", 3.2),
    ("Không: 1 rad ≈ 57,3°.", 3.0),
    ("Thước chỉ đọc tới 1°.", 2.8)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.3, caps=[
