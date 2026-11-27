@@ -3,19 +3,23 @@
 #   bash scripts/video-thi-nghiem/dang-cong-moi-l10b.sh          # xem thử (dry-run)
 #   bash scripts/video-thi-nghiem/dang-cong-moi-l10b.sh --yes    # ghi thật (chạy khi thầy bảo; không hẹn giờ bằng sleep)
 # Trước đó: kho + bài đã đổi URL và gắn lại khung (gan-khung-video.mts) — chỉ khác khối video → không cần --cho-phep-khac.
+#   --chi 68,69,...   chỉ chạy các bài này (nhóm đã duyệt) · --khac 70,71,...  bài có sửa hộp → thêm --cho-phep-khac
 cd "$(dirname "$0")/../.."
-YES="${1:-}"
+YES=""; CHI=""; KHAC=""
+while [ $# -gt 0 ]; do case "$1" in --yes) YES=--yes;; --chi) CHI=",$2,"; shift;; --khac) KHAC=",$2,"; shift;; esac; shift; done
 for p in "l10-luc-ma-sat 63" "l10-luc-can-luc-nang 64" "l10-giai-bai-toan-dong-luc-hoc 65" "l10-moment-luc 66" \
          "l10-thuc-hanh-tong-hop-luc 67" "l10-nang-luong-cong-co-hoc 68" "l10-cong-suat 69" "l10-dong-nang-the-nang 70" \
          "l10-co-nang-bao-toan 71" "l10-hieu-suat 72" "l10-dong-luong 73" "l10-bao-toan-dong-luong 74" \
          "l10-thuc-hanh-dong-luong 75" "l10-chuyen-dong-tron-deu 76" "l10-luc-huong-tam 77" "l10-bien-dang-vat-ran 78" \
          "l10-khoi-luong-rieng-ap-suat 79"; do
   set -- $p
-  echo "===== bai $2 ($1) $(date '+%H:%M:%S')"
+  [ -n "$CHI" ] && [[ "$CHI" != *",$2,"* ]] && continue
+  X=""; [[ "$KHAC" == *",$2,"* ]] && X="--cho-phep-khac"
+  echo "===== bai $2 ($1) $X $(date '+%H:%M:%S')"
   if [ "$YES" = "--yes" ]; then
-    bash scripts/cap-nhat-ly-thuyet.sh "content/lesson-samples/$1/bundle.json" "$2" --chi-video --yes || echo "LOI bai $2"
+    bash scripts/cap-nhat-ly-thuyet.sh "content/lesson-samples/$1/bundle.json" "$2" --chi-video $X --yes || echo "LOI bai $2"
   else
-    echo n | bash scripts/cap-nhat-ly-thuyet.sh "content/lesson-samples/$1/bundle.json" "$2" --chi-video
+    echo n | bash scripts/cap-nhat-ly-thuyet.sh "content/lesson-samples/$1/bundle.json" "$2" --chi-video $X
   fi
 done
 echo "XONG $(date '+%H:%M:%S')"

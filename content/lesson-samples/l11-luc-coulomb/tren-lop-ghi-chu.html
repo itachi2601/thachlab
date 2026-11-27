@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lực tương tác giữa hai điện tích · ghi chú dạy</title>
+<link rel="stylesheet" href="/fonts/be-vietnam-pro/be-vietnam-pro.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body,{delimiters:[{left:'$',right:'$',display:false}],throwOnError:false})"></script>
+<style>
+/* token nền sáng của web (app/globals.css) */
+:root{--bg:#f5f7fa;--ink:#0f172a;--muted:#475569;--line:rgba(15,23,42,.12);--accent:#1d4ed8;--warn:#b45309;--warn-bg:#fffbeb}
+*{box-sizing:border-box}
+body{margin:0 auto;max-width:860px;padding:20px 16px 40px;background:var(--bg);color:var(--ink);font-family:"Be Vietnam Pro","Segoe UI",system-ui,-apple-system,sans-serif;font-size:16px;line-height:1.5}
+h1{font-size:1.5em;margin:.2em 0}
+h2{font-size:1.15em;margin:1.4em 0 .3em;padding-top:.6em;border-top:2px solid var(--line)}
+h2 small{color:var(--muted);font-weight:400}
+ul{margin:.3em 0;padding-left:1.3em}
+li{margin:.15em 0}
+.k{font-weight:700;color:var(--accent)}
+.sai{background:var(--warn-bg);border-left:4px solid var(--warn);padding:.3em .7em;border-radius:0 8px 8px 0;margin:.4em 0}
+table{border-collapse:collapse;width:100%;margin:.4em 0}
+th,td{border:1px solid var(--line);padding:.25em .5em;text-align:left;vertical-align:top}
+th{background:#eef2f7}
+.nho{color:var(--muted);font-size:.92em}
+@media print{body{max-width:none;font-size:12pt}h2{break-after:avoid}}
+</style>
+</head>
+<body>
+<h1>Lực tương tác giữa hai điện tích (L11 Bài 16) — ghi chú dạy một tiết</h1>
+<p class="nho">Đi kèm màn chiếu <code>tren-lop.html</code> (cùng thư mục). Trang này không chiếu. Bản thử, chưa chạy lớp ảo.</p>
+
+<h2>Chuẩn bị trước giờ</h2>
+<ul>
+  <li><b>Thí nghiệm thước nhựa (điểm dừng 3):</b> thước nhựa, tóc khô (hoặc mảnh len), giấy vụn, một lon nhôm rỗng nằm ngang trên bàn nhẵn. Thử ở nhà trời nồm khó thành công: cọ lâu, bàn phẳng. Thiếu dụng cụ thì chỉ chiếu clip.</li>
+  <li>Màn chiếu cần mạng để tải công thức (KaTeX từ cdn.jsdelivr.net) và clip. Mở trước khi vào lớp để trình duyệt nhớ sẵn.</li>
+  <li>Cuối tiết làm <b>đề 1211 "Kiểm tra nhanh — Bài 16. Lực tương tác giữa hai điện tích"</b> (20 câu, 15 phút, mục 186) trên điện thoại: màn 6e có mã QR (đã giải mã lại, ra đúng <code>thachlab.id.vn/kiem-tra/lam/?id=1211&amp;item=186</code>) và số đề để gõ tay ở trang Quét mã. Thiếu máy thì dùng phiếu giấy dự phòng cuối trang này.</li>
+  <li><b>PhET "Định luật Coulomb"</b> (cần mạng, tiếng Việt): mở sẵn một tab. Chỉ dùng ở màn 4d khi dư giờ.</li>
+  <li><b>Chiếu tivi 50 inch:</b> 24 màn, mỗi màn một ý. Chữ thường = 5,2% chiều cao màn. Mở toàn màn hình (F11 hoặc ⌃⌘F). Trước giờ ngồi thử ở bàn cuối.</li>
+  <li><b>Chữ gạch chân xanh</b> trên màn = đúng chữ của chỗ trống trong Tập; góc phải màn ghi trang, ô và dòng.</li>
+  <li><b>Clip thước nhựa</b> (màn 3b): chạy từ "Tiến hành" (bỏ phần dự đoán, đã hỏi trên màn 3a), <b>tự dừng 2 lần</b>: ① giấy vụn bám thước; ② lon lăn về phía thước (đối chiếu câu giơ tay). <b>Clip cân điện tử</b> (màn 5a): <b>tự dừng 3 lần</b>: ① $r=2$ cm, $0{,}92$ g (hàng đầu Tập đã tính sẵn); ② bốn số cân còn lại → lớp tự tính $Fr^2$ (1–2 phút); ③ bảng đối chiếu $Fr^2\approx3{,}6\cdot10^{-6}$. <b>Enter</b> (Space, bấm clip, nút ▶) = phát tiếp; ↺ xem lại đoạn. Số liệu clip cân là <b>số liệu mô phỏng</b> (clip có ghi), nói rõ với lớp. Trước giờ bấm ▶ rồi ↺ để máy tải sẵn.</li>
+  <li>Điều khiển: → / PageDown sang màn sau, ← / PageUp quay lại, <b>Enter</b> mở ô kế tiếp trong màn.</li>
+</ul>
+
+<h2>Cách biểu quyết (dùng cho mọi câu A/B/C/D)</h2>
+<ul>
+  <li>Đọc câu, cho 30 giây tự nghĩ, cả lớp giơ tay theo từng phương án. Đếm nhanh, nói to tỉ lệ.</li>
+  <li>Gọi hai em chọn khác nhau, mỗi em 30 giây thuyết phục bạn. Biểu quyết lại rồi mới bấm Mở.</li>
+  <li>Đúng &gt; 80% ngay lần đầu: bỏ qua bước thuyết phục. &lt; 30%: giảng lại trước khi biểu quyết lần hai.</li>
+  <li>Câu dự đoán siêu thị (màn 1) và câu lon nhôm (màn 3a) có 3 phương án A, B, C.</li>
+</ul>
+
+<h2>Đi theo Tập bài 16 <small>thứ tự lật: tr.1 → tr.2 → tr.3 → tr.4 → tr.1</small></h2>
+<table>
+<thead><tr><th>Điểm dừng</th><th>Phút</th><th>Ô trong Tập</th><th>Ô trống điền trên lớp</th></tr></thead>
+<tbody>
+<tr><td>1 · Dự đoán siêu thị</td><td>0–3</td><td>tr.1 ô 1·2</td><td>khoanh 1 phương án, chắc/không chắc, 1 dòng "Vì sao"</td></tr>
+<tr><td>2 · Nhiễm điện, bảo toàn điện tích</td><td>3–9</td><td>tr.1 ô 1·4 → tr.2 ô 2·1</td><td>ô 1·4: 7 chỗ + ví dụ 13 nC (2 dòng) · ô 2·1: 3 chỗ + $q'$ (bảng 3 cách ở ô 1·4: về nhà)</td></tr>
+<tr><td>3 · Thước nhựa, giấy vụn, lon nhôm</td><td>9–14</td><td>tr.2 ô 2·2</td><td>2 quan sát + 6 chỗ rút ra</td></tr>
+<tr><td>4 · Định luật Coulomb</td><td>14–20</td><td>tr.2 ô 2·3, 2·4</td><td>ô 2·3: 9 chỗ + công thức · câu 1, 2 ô 2·4 (mỗi câu 1 dòng)</td></tr>
+<tr><td>5 · Cân điện tử, tổng hợp lực</td><td>20–26</td><td>tr.3 ô 3·1, 3·2</td><td>4 ô $Fr^2$ + 2 rút ra · bảng hợp lực 5 hàng + 3 chỗ điền</td></tr>
+<tr><td>6 · Cân bằng, bẫy, trả bài, đề 1211</td><td>26–30, đề 30–45</td><td>tr.3 ô 3·3, 3·4 → tr.4 ô 4·1, 4·2 → tr.1 ô 1·3, 1·1 → đề xong: tr.4 ô 4·3</td><td>9 chỗ điền + 1 dòng làm nhanh + trả bài 2 câu + đáp án dự đoán + điểm đề</td></tr>
+</tbody>
+</table>
+<p class="nho">Điểm dừng 5 và 6 dày nhất (màn 6b, 6g có thể bỏ nếu thiếu giờ). Bài toán mẫu (tr.5 ô 5·1, 5·2) không làm trên lớp: về nhà. Bẫy 1 (đổi đơn vị, bình phương $r$) và Bẫy 2 (chạm nhau rồi tách) chưa chiếu: nhắc miệng khi chữa ô 2·4 và ô 2·1; Bẫy 3 chỉ nói miệng. Ô 4·1 Tập in sẵn cả ba bẫy để đọc ở nhà.</p>
+
+<h2>Điểm dừng 1 · Dự đoán siêu thị <small>phút 0–3 · Tập tr.1 ô 1·2</small></h2>
+<ul>
+  <li><span class="k">Gợi mở:</span> "Ai từng bị giật khi chạm tay nắm cửa sắt? Điện đó từ đâu ra?"</li>
+  <li>Khoanh vào Tập, đánh dấu chắc/không chắc, viết "Vì sao". Màn 1 không có ô đáp án: ghi tỉ lệ biểu quyết lên góc bảng; đáp án ở màn "Quay lại siêu thị".</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> chọn A (điện có sẵn trong sàn) hoặc C (cơ thể tự sinh điện): điện tích không tự sinh ra, chỉ dời chỗ.</div>
+
+<h2>Điểm dừng 2 · Nhiễm điện, bảo toàn <small>phút 3–9 · tr.1 ô 1·4 → tr.2 ô 2·1</small></h2>
+<ul>
+  <li>Màn 2a: đọc to từng dòng, lớp chép chữ gạch chân ($N$ = số electron thừa/thiếu). Màn 2b: lớp tính 30 giây rồi mới mở ($N\approx8{,}1\cdot10^{10}$; lụa âm). <b>Bảng ba cách nhiễm điện (ô 1·4) không làm trên lớp</b>: về nhà, hưởng ứng đã thấy ở điểm dừng 3.</li>
+  <li>Màn 2d (ô 2·1): điền dòng hệ cô lập và công thức $n$ quả ($q'$ = tổng chia $n$), rồi biểu quyết $-5$ nC chạm $+1$ nC; lớp ghi đáp án vào lề ô 2·1. Nhấn "cộng có dấu". Số liệu khác ví dụ Bẫy 2 in sẵn ở tr.4: dặn <b>chưa lật tr.4 trước điểm dừng 6</b>.</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> cộng độ lớn ($6$ nC), quên chia đôi, quên dấu; tính số electron quên chia cho $|e|$.</div>
+
+<h2>Điểm dừng 3 · Thước nhựa, lon nhôm <small>phút 9–14 · tr.2 ô 2·2</small></h2>
+<ul>
+  <li>Màn 3a: hình lon + câu giơ tay A/B/C. <b>Không mở đáp án</b>; làm thí nghiệm thật (nếu có) hoặc phát clip màn 3b, dừng ① rồi ②. Lớp điền dòng "Quan sát".</li>
+  <li>Màn 3c: nói rõ "giả sử thước âm"; lớp điền "Rút ra" (cọ xát, hưởng ứng, trái dấu, cùng dấu); hưởng ứng = electron trong lon bị đẩy dồn về đầu xa, vật không chạm. Mở lời giải: lực hai đầu không bằng nhau, đầu gần mạnh hơn.</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> nghĩ phải chạm mới nhiễm điện; chọn A (lon trung hoà không bị hút).</div>
+
+<h2>Điểm dừng 4 · Định luật Coulomb <small>phút 14–20 · tr.2 ô 2·3, 2·4</small></h2>
+<ul>
+  <li>Màn 4a: hình hai điện tích; điền chỗ trống rồi viết công thức vào ô lớn. Nhấn: $q_1$, $q_2$ lấy độ lớn; dấu chỉ để biết hút hay đẩy; quả cầu tích điện đều coi điện tích đặt ở tâm (dòng cuối ô 2·3).</li>
+  <li>Màn 4b: $\varepsilon$ (điện môi làm yếu lực nên chia) + câu 2 ô 2·4 (16 N), lớp tính 1 phút rồi mở. Màn 4c: câu 1 ô 2·4, biểu quyết (đáp án C, giảm 8 lần). Màn 4d (PhET) chỉ khi dư giờ.</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> quên bình phương $r$; chia thay vì nhân khi lực tăng vì $r$ giảm; đưa $\varepsilon$ lên tử.</div>
+
+<h2>Điểm dừng 5 · Cân điện tử, tổng hợp lực <small>phút 20–26 · tr.3 ô 3·1, 3·2</small></h2>
+<ul>
+  <li>Màn 5a: nhắc đổi đơn vị (g → kg, cm → m) rồi clip cân, dừng ① (hàng đầu), ② (lớp tự tính $Fr^2$ cho 4 cột, 1–2 phút), ③ đối chiếu. Màn 5b: điền dòng "Rút ra" ($Fr^2$ không đổi, $F\sim1/r^2$).</li>
+  <li>Màn 5c: hình tổng hợp lực, nói rõ $\alpha$ là góc ACB (cùng hút/đẩy) hoặc $180^\circ-\widehat{ACB}$. Màn 5e: mở bảng để lớp điền 5 hàng. Màn 5d: biểu quyết hai lực vuông góc 3 N (đáp án B, $4{,}2$ N).</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> quên đổi gam ra kilôgam; cộng thẳng hai lực vuông góc; nhầm $\alpha$ khi một hút, một đẩy (phải lấy $180^\circ-\widehat{ACB}$).</div>
+
+<h2>Điểm dừng 6 · Cân bằng, trả bài, đề 1211 <small>phút 26–30 · đề 30–45 · tr.3 ô 3·3, 3·4 → tr.4 ô 4·2 → tr.1 ô 1·3</small></h2>
+<ul>
+  <li>Màn 6a: hình cân bằng, C nằm trên đường thẳng AB, trong/ngoài đoạn. Màn 6g: suy ra $r_1/r_2=\sqrt{|q_1|/|q_2|}$ từ hai lực bằng nhau; kết quả không phụ thuộc $q_0$. Màn 6b: làm nhanh ô 3·4 (CA = 6 cm, CB = 2 cm), lớp tính 1 phút. <b>Bẫy 3</b> (hai lực bằng độ lớn, đặt lên hai vật khác nhau) không có màn: nói miệng nếu dư giờ, ô 4·1 đã in sẵn để đọc ở nhà.</li>
+  <li>Màn 6d: trả bài 2 câu (4 và 6 của ô 4·2; câu 4 gồm phát biểu, công thức, đơn vị): viết <b>1,5 phút, chưa bấm Mở</b>; câu 1, 2, 3, 5 về nhà.</li>
+  <li>Màn 6ct "Quay lại siêu thị" (1 phút): Enter mở đáp án B. Lớp lật tr.1 ô 1·3: ghi đáp án, đúng/sai, "điều em hiểu sai"; <b>20 giây: đánh dấu ô 1·1</b> (màn có nhắc).</li>
+  <li>Chiếu mã QR, cả lớp quét, làm đề 1211 trong 15 phút. Nộp xong ghi vào tr.4 ô 4·3: điểm …/20, câu sai, câu đoán mò. Đọc màn "Về nhà".</li>
+</ul>
+
+<h2>Phiếu giấy dự phòng (mất mạng / thiếu điện thoại) <small>4 câu, $k=9\cdot10^9$ N·m²/C², $|e|=1{,}6\cdot10^{-19}$ C</small></h2>
+<ol>
+<li>Hai quả cầu giống nhau mang $+7$ nC và $-3$ nC, chạm nhau rồi tách ra. Mỗi quả mang: A. $+4$ nC · B. $+2$ nC · C. $+5$ nC · D. $+10$ nC</li>
+<li>Hai điện tích $+2$ nC và $-2$ nC trong không khí cách nhau $3$ cm. Lực tương tác: A. $4{,}0\cdot10^{-5}$ N, hút · B. $4{,}0\cdot10^{-5}$ N, đẩy · C. $1{,}2\cdot10^{-3}$ N, hút · D. $4{,}0\cdot10^{-8}$ N, hút</li>
+<li>Hai lực $F_1=F_2=5$ N cùng điểm đặt, hợp nhau góc $120^\circ$. Hợp lực: A. $10$ N · B. $5$ N · C. $7{,}1$ N · D. $0$ N</li>
+<li>$q_1=+4\ \mu$C tại A, $q_2=+1\ \mu$C tại B, $AB=9$ cm. $q_0$ cân bằng cách A: A. $3$ cm · B. $4{,}5$ cm · C. $6$ cm · D. $9$ cm</li>
+</ol>
+<table>
+<thead><tr><th>Câu</th><th>Đáp án</th><th>Lời giải</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>B</td><td>$(7-3)/2=+2$ nC</td></tr>
+<tr><td>2</td><td>A</td><td>$F=9\cdot10^9\cdot\dfrac{(2\cdot10^{-9})^2}{(0{,}03)^2}=4{,}0\cdot10^{-5}$ N, trái dấu nên hút</td></tr>
+<tr><td>3</td><td>B</td><td>$F=2\cdot5\cos60^\circ=5$ N</td></tr>
+<tr><td>4</td><td>C</td><td>Cùng dấu: C trong AB; $CA/CB=\sqrt4=2$, $CA+CB=9$ → $CA=6$ cm</td></tr>
+</tbody>
+</table>
+
+<h2>Nếu thiếu giờ / dư giờ</h2>
+<ul>
+  <li>Thiếu: bỏ màn 4d (PhET), 5d (biểu quyết hợp lực, đưa vào đề), 6b (làm nhanh ô 3·4, về nhà), ở màn 5a chỉ làm dừng ① và ③; không cắt giờ làm đề 1211 — chưa xong thì làm nốt ở nhà trong ngày.</li>
+  <li>Dư: PhET màn 4d, hoặc bài toán mẫu ô 5·1 ($|q|=20$ nC) làm mẫu.</li>
+</ul>
+
+<h2>Sau buổi dạy — ghi lại để quyết có làm bài khác không</h2>
+<ul>
+  <li>Bàn cuối đọc được những màn nào; nhãn trong hình (q, F, r, A, B, C) có đọc được không.</li>
+  <li>Tỉ lệ đoán đúng ô dự đoán (B) lúc đầu giờ; tỉ lệ đúng lần đầu ở 4 câu biểu quyết (2d, 3a, 4c, 5d).</li>
+  <li>Thí nghiệm thước nhựa thật: lon có lăn không; mất bao lâu.</li>
+  <li>Đề 1211: điểm trung bình lớp, câu sai nhiều nhất, số em chưa nộp kịp trong 15 phút.</li>
+  <li>Điểm dừng nào vượt mốc phút (dự đoán: điểm dừng 5, 6).</li>
+</ul>
+</body>
+</html>
