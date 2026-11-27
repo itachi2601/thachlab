@@ -7,10 +7,10 @@
 #   trung binh ~ 440,5 Hz. Kiem: _kiem_so() (assert khi nap).
 # Du doan (khung 6 o): "Am thoa 440 Hz. Doan 10 chu ki tren dang song dai bao lau?" -> ~22,7 ms.
 # Bay = hien_tuong_hay_sai[1] (quen doi ms ra s). DOI CA so voi Du doan (khong lap cap 10 chu ki / 22,6 ms):
-#   am khac, 8 chu ki trong 20 ms -> de tuong 8/20 = 0,4 Hz; dung 8/0,020 = 400 Hz.
+#   8 chu ki cua chinh am thoa 440 Hz = 18,2 ms -> de tuong 8/18,2 = 0,44 Hz; dung 8/0,0182 = 440 Hz (cong B: 20 ms mau thuan 440 Hz).
 # Gioi han = giong noi, song khong deu (chua_noi cua kho).
 # THU NGHI (= cau_chot khung web; ca ghi trong kho ghi_chu): am thoa 440 Hz, chi dem N = 2 chu ki, doc t lech 0,1 ms
-#   -> f nam trong khoang 430-450 Hz (2/4,645 ms = 430,6 ; 2/4,445 ms = 449,9). Hoi KHOANG (khong hoi "lech 10 Hz")
+#   (doc t sai +-0,1 ms) -> f nam trong khoang 430-450 Hz (2/4,645 ms = 430,6 ; 2/4,445 ms = 449,9). Hoi KHOANG (khong hoi "lech 10 Hz")
 #   vi so 10 hien tren man (N = 10). Nhieu: 438-442 Hz (do lech khi dem 10 chu ki, gan bang tren man).
 from engine import *
 import copy
@@ -29,7 +29,7 @@ def _kiem_so():
         assert abs(N / (tt / 1000) - f) < 0.05, (n, tt, f)
         assert abs(tt - N * 1000 / F0) < 0.15, ("t xa mo hinh", tt)
     assert abs(sum(r[2] for r in ROWS) / 3 - F_TB) < 0.05
-    assert abs(8 / 20 - 0.4) < 1e-9 and abs(8 / 0.020 - 400) < 1e-6          # bay
+    assert abs(8 / F0 * 1000 - 18.2) < 0.05 and abs(8 / 18.2 - 0.44) < 0.005 and abs(8 / 0.0182 - F0) < 0.5   # bay
     hi, lo = 2 / (2000 / F0 - 0.1) * 1000, 2 / (2000 / F0 + 0.1) * 1000          # cau chot: N = 2, lech 0,1 ms
     assert 449 < hi < 451 and 430 < lo < 431, (hi, lo)
     hi10, lo10 = 10 / (10000 / F0 - 0.1) * 1000, 10 / (10000 / F0 + 0.1) * 1000  # nhieu A: dem 10 chu ki
@@ -79,8 +79,8 @@ def screen(d, oy, amp, win, shift=0.0, sel=None, counts=0):
         if x1 - x0 > 3: d.line([(x1, cy - 145), (x1, cy + 145)], fill=SEL, width=5)
     pts = [(x, cy - amp * math.cos(2 * math.pi * (x - SX + shift) / P)) for x in range(X0 + 30, X1 - 30, 3)]
     d.line(pts, fill=WAVE, width=6, joint="curve")
-    for j in range(counts):
-        text(d, (SX + (j + 0.5) * P, cy - 195), str(j + 1), 55, SEL)
+    for j in range(1, counts, 2):                                   # so 2, 4, ... 10 (cong B: to, thua)
+        text(d, (SX + (j + 0.5) * P, cy - 195), str(j + 1), 62, SEL)
     return cy
 
 def readout(d, y, t_txt):
@@ -166,15 +166,12 @@ def s_dapan(img, d, t, sc):
         text(d, (W / 2, 1265), "Trung bình ≈ 440,5 Hz", 60, DGREEN, alpha=km)
 
 # ---------------- canh 4: Bay - quen doi ms ra s (ca khac: 8 chu ki / 20 ms) ----------------
-PB = 0.95 * P
+PB = P
 def mini_wave(d, y, t, n=8, a=1.0):
     X0 = 90; x0 = 150; x1 = x0 + n * PB
     d.rectangle([x0, y - 95, x1, y + 95], fill=(250, 204, 21, int(55 * a)))
     pts = [(x, y - 80 * math.cos(2 * math.pi * (x - x0) / PB)) for x in range(X0 + 10, 990, 3)]
     d.line(pts, fill=A(WAVE, a), width=6, joint="curve")
-    xd = x0 + (x1 - x0) * ((t * 0.35) % 1.0)                          # cham sang chay doc doan chon
-    yd = y - 80 * math.cos(2 * math.pi * (xd - x0) / PB)
-    d.ellipse([xd - 26, yd - 26, xd + 26, yd + 26], fill=A(LRED, a), outline=A(WHITE, a), width=6)
     return x0, x1
 
 def s_bay(img, d, t, sc):
@@ -183,17 +180,17 @@ def s_bay(img, d, t, sc):
     text(d, (75, 280), "✗ Chia ngay", 58, DRED, anchor="lm")
     card(d, (70, 330, 1010, 650), fill=SCR_BG, r=26)
     x0, x1 = mini_wave(d, 470, t)
-    text(d, ((x0 + x1) / 2, 605), "8 chu kì · t = 20 ms", 56, SEL)
-    text(d, (W / 2, 740), "f = 8 / 20 = 0,4 Hz", 62, DRED)
+    text(d, ((x0 + x1) / 2, 605), "8 chu kì · t = 18,2 ms", 56, SEL)
+    text(d, (W / 2, 740), "f = 8 / 18,2 = 0,44 Hz", 62, DRED)
     k2 = appear(t, M[1], 0.45)
     if k2 > 0:
         card(d, (40, 860, 1040, 1180), fill=A(WHITE, k2), outline=A(BLUE, k2), w=6)
-        text(d, (75, 925), "Đổi trước: 20 ms = 0,020 s", 58, BLUE, anchor="lm", alpha=k2)
-        text(d, (W / 2, 1080), "f = 8 / 0,020 = 400 Hz", 62, INK, alpha=k2)
+        text(d, (75, 925), "Đổi: 18,2 ms = 0,0182 s", 58, BLUE, anchor="lm", alpha=k2)
+        text(d, (W / 2, 1080), "f = 8 / 0,0182 ≈ 440 Hz", 62, INK, alpha=k2)
     kc = appear(t, M[2], 0.45)
     if kc > 0:
         card(d, (60, 1220, 1020, 1350), fill=A((236, 253, 243), kc), outline=A(GREEN, kc), r=26, w=5)
-        text(d, (W / 2, 1285), "✓ 0,4 Hz: tai không nghe", 60, DGREEN, alpha=kc)
+        text(d, (W / 2, 1285), "✓ 0,44 Hz: tai không nghe", 60, DGREEN, alpha=kc)
 
 # ---------------- canh 5: Gioi han ----------------
 def s_gioi(img, d, t, sc):
@@ -215,7 +212,7 @@ def s_end(img, d, t, sc):
     card(d, (40, 215, 1040, 1300), fill=A(WHITE, k1), outline=A(ORANGE, k1), w=6)
     pill(d, W / 2, 290, "THỬ NGHĨ", 58, WHITE, ORANGE, k1)
     text(d, (W / 2, 450), "Âm thoa 440 Hz, đếm 2 chu kì,", 62, INK, alpha=k1)
-    text(d, (W / 2, 570), "đọc t lệch 0,1 ms.", 62, INK, alpha=k1)
+    text(d, (W / 2, 570), "đọc t sai ±0,1 ms.", 62, INK, alpha=k1)
     text(d, (W / 2, 690), "f nằm trong khoảng nào?", 64, DORANGE, alpha=k1)
     cbar(d, 1100, t, 1.2, sc["T"] - 0.2, ORANGE, k1)
 
@@ -256,7 +253,7 @@ CLIP = dict(id="tn-l11-dotansoam-02", header="VẬT LÍ 11 · THÍ NGHIỆM", fo
    ("Đổi t ra giây rồi chia.", 2.9),
    ("Ba lần gần nhau.", 2.6)]),
  dict(key="bay", title="Bẫy hay gặp", draw=s_bay, tail=0.3, caps=[
-   ("8 chu kì trong 20 ms.", 3.4),
+   ("8 chu kì trong 18,2 ms.", 3.4),
    ("Đổi ms ra giây trước.", 3.0),
    ("Số nhỏ, vô lí.", 2.6)]),
  dict(key="gioi", title="Giới hạn", draw=s_gioi, tail=0.3, caps=[

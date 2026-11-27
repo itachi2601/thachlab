@@ -51,19 +51,19 @@
   },
   "cau_chot": {
     "giay": 42.8,
-    "cau_hoi": "Âm thoa 440 Hz. Chỉ đếm 2 chu kì, đọc thời gian t lệch tới 0,1 ms. Tần số tính ra nằm trong khoảng nào?",
+    "cau_hoi": "Âm thoa 440 Hz. Chỉ đếm 2 chu kì, đọc thời gian t sai ±0,1 ms. Tần số tính ra nằm trong khoảng nào?",
     "chon": [
       "A. 438–442 Hz",
       "B. 430–450 Hz",
       "C. 439,9–440,1 Hz",
-      "D. 400–480 Hz"
+      "D. 410–425 Hz"
     ],
     "dung": 1,
     "giai_thich": [
       "438–442 Hz là độ lệch khi đếm 10 chu kì, như bảng trong clip. Hai chu kì chỉ dài cỡ 4,5 ms, nên 0,1 ms đã là khoảng 2 % của đoạn đo; f lệch cùng tỉ lệ, cỡ ±10 Hz: 430–450 Hz.",
       "Hai chu kì dài 2/440 s ≈ 4,55 ms. Đọc 4,45 ms thì f = 2/0,00445 ≈ 450 Hz; đọc 4,65 ms thì f ≈ 430 Hz. Đoạn ngắn nên cùng 0,1 ms lệch làm f lệch nhiều: muốn sai số nhỏ thì đếm nhiều chu kì.",
       "Lấy 0,1 làm độ lệch của f là lẫn đại lượng: 0,1 ms là lệch thời gian, không phải lệch tần số. Tính lại f = 2/t với t = 4,45 ms và 4,65 ms: 430–450 Hz.",
-      "Lệch ±40 Hz là gần 10 %, trong khi 0,1 ms chỉ là khoảng 2 % của đoạn 4,55 ms. f lệch cùng tỉ lệ đó, cỡ ±10 Hz: 430–450 Hz."
+      "410–425 Hz nằm hẳn dưới 440 Hz, như thể t luôn bị đọc dài ra và lệch tới 4–7 %. Sai ±0,1 ms trên đoạn 4,55 ms chỉ cỡ ±2 %, nên f nằm quanh 440 Hz, trong khoảng 430–450 Hz."
     ]
   }
 }

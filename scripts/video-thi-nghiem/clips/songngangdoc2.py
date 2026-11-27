@@ -231,7 +231,7 @@ def s_bay(img, d, t, sc):
         lo, hi = X0 + (2.0 - AM) * S, X0 + (2.0 + AM) * S
         d.line([(lo, 1170), (hi, 1170)], fill=A(ORANGE, k2), width=5)
         for p in (lo, hi): d.line([(p, 1156), (p, 1184)], fill=A(ORANGE, k2), width=5)
-        text(d, (hi + 30, 1170), "±10 cm", 56, DORANGE, anchor="lm", alpha=k2)
+        text(d, ((lo + hi) / 2, 1215), "biên độ ±10 cm", 56, DORANGE, alpha=k2)
     kc = appear(t, M[2] - 0.1, 0.45)
     if kc > 0:
         card(d, (60, 1290, 1020, 1420), fill=A((236, 253, 243), kc), outline=A(GREEN, kc), r=26, w=5)
@@ -275,12 +275,12 @@ CLIP = dict(id="tn-l11-songngangdoc-02", header="VẬT LÍ 11 · THÍ NGHIỆM",
    ("Nhịp tăng, vùng nén sít lại.", 6.4)]),
  dict(key="bay", title="Bẫy hay gặp", draw=s_bay, tail=0.3, caps=[
    ("Vòng màu trôi theo sóng?", 3.2),
-   ("Nhìn vạch cũ của nó.", 3.2),
+   ("Nhìn vạch cũ.", 3.2),
    ("Chỉ dao động tại chỗ.", 3.0)]),
  dict(key="gioi", title="Giới hạn", draw=s_gioi, tail=0.3, caps=[
    ("Mới đổi nhịp.", 3.2)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.3, caps=[
-   ("Đẩy càng nhanh, nén càng sít.", 6.4)]),
+   ("Dừng lại, tự tính.", 6.4)]),
 ])
 
 _kiem_nen()

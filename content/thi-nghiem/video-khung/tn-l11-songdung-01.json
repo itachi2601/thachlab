@@ -51,19 +51,19 @@
   },
   "cau_chot": {
     "giay": 43.1,
-    "cau_hoi": "Vẫn dây thun dài 1 m, căng như cũ. Muốn dây có 4 múi thì phải vung với nhịp bao nhiêu?",
+    "cau_hoi": "Dây thun dài 1 m được rút ngắn còn 0,5 m, căng như cũ. Muốn dây có 2 múi thì phải vung với nhịp bao nhiêu?",
     "chon": [
       "A. 4 Hz",
       "B. 8 Hz",
-      "C. 6 Hz",
+      "C. 2 Hz",
       "D. 16 Hz"
     ],
     "dung": 1,
     "giai_thich": [
-      "4 Hz chỉ cho 2 múi (đã thấy trong bảng). Bảng cho thấy mỗi múi ứng với 2 Hz: 1 múi 2 Hz, 2 múi 4 Hz, 3 múi 6 Hz, nên 4 múi cần 4 × 2 = 8 Hz.",
-      "Nhịp tỉ lệ với số múi: 1 múi 2 Hz, 2 múi 4 Hz, 3 múi 6 Hz. Vậy 4 múi cần 4 × 2 = 8 Hz.",
-      "6 Hz cho 3 múi, như hàng cuối của bảng. Thêm một múi phải thêm 2 Hz nữa: 4 múi cần 8 Hz.",
-      "16 Hz là nhân đôi hai lần, như thể số múi tỉ lệ với bình phương nhịp. Bảng cho thấy nhịp và số múi tăng cùng tỉ lệ: 4 múi cần 4 × 2 = 8 Hz."
+      "4 Hz là nhịp cho 2 múi trên dây 1 m. Dây ngắn còn một nửa thì mỗi múi cũng ngắn một nửa, sóng phải có bước sóng nửa cũ: với cùng tốc độ truyền, nhịp gấp đôi, 8 Hz.",
+      "Dây 1 m: 2 múi ở 4 Hz. Rút còn 0,5 m, 2 múi chỉ dài 0,25 m mỗi múi, bước sóng giảm một nửa. Dây căng như cũ nên tốc độ truyền không đổi, nhịp gấp đôi: 8 Hz.",
+      "2 Hz là tưởng dây ngắn thì vung chậm hơn. Dây ngắn đi, múi ngắn đi, bước sóng nhỏ lại; tốc độ truyền giữ nguyên nên nhịp phải tăng, thành 8 Hz.",
+      "16 Hz là nhân 4, như thể vừa gấp đôi số múi vừa rút ngắn dây. Số múi vẫn là 2, chỉ chiều dài giảm một nửa, nên nhịp chỉ gấp đôi: 8 Hz."
     ]
   }
 }

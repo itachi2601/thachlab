@@ -11,7 +11,7 @@
 # Bay = hien_tuong_hay_sai[0] "mui chay doc day roi bien mat": khung tren (de tuong) buou chay doc day, cham do chay theo ;
 #   khung duoi (that) 2 mui dung tai cho, cham do o nut giua khong doi cho.
 # Gioi han: moi doi nhip vung, chua doi do cang day (gia_thiet kho: v = 4 m/s cho day cang vua).
-# THU NGHI (= cau_chot khung web): day 1 m, cang nhu cu, muon 4 mui phai vung bao nhieu Hz? -> 8 Hz (f_4 = 4.4/(2.1)).
+# THU NGHI (= cau_chot khung web; doi theo cong B 27/11): day 1 m rut con 0,5 m, cang nhu cu, muon 2 mui vung bao nhieu Hz? -> 8 Hz (f = 2.4/(2.0,5)); can buoc "day ngan nua -> f gap doi", 8 khong hien tren man.
 #   Buoc suy luan chua chieu: moi mui them can them 2 Hz (f ti le so mui). 8 Hz va "4 mui" KHONG hien tren man
 #   (8 Hz nam trong tham_so f max cua kho).
 # Hinh day: y = A.sin(pi(k - 0,03)s).cos(2pi f t), s = 0 o chan ghe (nut that), dau tay lech nut mot chut (tay vung nho).
@@ -31,6 +31,7 @@ def _kiem_so():
     assert "4 m/s" in " ".join(k["mo_hinh"]["gia_thiet"])
     assert abs(4 * V / (2 * L_DAY) - 8) < 1e-9 and tp["f"]["max"] >= 8   # cau chot: 4 mui -> 8 Hz
 _kiem_so()
+assert abs(2 * V / (2 * 0.5) - 8) < 1e-9                    # cau chot (cong B): l = 0,5 m, 2 mui -> 8 Hz
 
 def pill(d, cx, cy, s, size, fg, bg, a=1.0):
     pw = tw(d, s, F(size)) + 56
@@ -172,7 +173,7 @@ def s_bay(img, d, t, sc):
     M = sc["M"]
     # khung tren: de tuong - mot buou chay tu tay ve chan ghe, cham do chay theo
     card(d, (40, 215, 1040, 680), fill=(254, 242, 242), outline=DRED, w=6)
-    text(d, (75, 280), "✗ Dễ tưởng: múi chạy đi", 58, DRED, anchor="lm")
+    text(d, (75, 280), "✗ Dễ tưởng: gợn chạy đi", 58, DRED, anchor="lm")
     yc = 490; N = 160
     pos = 1.02 - ((t * 0.45) % 1.04)                     # tam buou chay tu phai sang trai, lap lai
     pts = [(X0 + (X1 - X0) * i / N, yc - 95 * math.exp(-((i / N - pos) / 0.12) ** 2)) for i in range(N + 1)]
@@ -207,9 +208,9 @@ def s_end(img, d, t, sc):
     k1 = appear(t, 0.15, 0.4)
     card(d, (40, 215, 1040, 1300), fill=A(WHITE, k1), outline=A(ORANGE, k1), w=6)
     pill(d, W / 2, 290, "THỬ NGHĨ", 58, WHITE, ORANGE, k1)
-    text(d, (W / 2, 480), "Vẫn dây đó, căng như cũ.", 64, INK, alpha=k1)
-    text(d, (W / 2, 600), "Muốn 4 múi, vung", 66, INK, alpha=k1)
-    text(d, (W / 2, 720), "bao nhiêu Hz?", 66, DORANGE, alpha=k1)
+    text(d, (W / 2, 480), "Dây 1 m rút còn 0,5 m,", 64, INK, alpha=k1)
+    text(d, (W / 2, 600), "căng như cũ. Muốn 2 múi,", 64, INK, alpha=k1)
+    text(d, (W / 2, 720), "vung bao nhiêu Hz?", 66, DORANGE, alpha=k1)
     cbar(d, 1100, t, 1.2, sc["T"] - 0.2, ORANGE, k1)
 
 def _cues(clip):
@@ -238,7 +239,7 @@ CLIP = dict(id="tn-l11-songdung-01", header="VẬT LÍ 11 · THÍ NGHIỆM", foo
  dict(key="gioi", title="Giới hạn", draw=s_gioi, tail=0.3, caps=[
    ("Mới đổi nhịp.", 3.2)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.3, caps=[
-   ("Vung càng nhanh, càng nhiều múi.", 6.4)]),
+   ("Dừng lại, tự tính.", 6.4)]),
 ])
 
 _b = _kiem_dong_bo(); assert not _b, _b

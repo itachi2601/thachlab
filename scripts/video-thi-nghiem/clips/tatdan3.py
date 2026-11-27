@@ -181,7 +181,7 @@ def s_dapan(img, d, t, sc):
             d.rounded_rectangle([x + 2, BASE - A0 * HS - 12, x + 82, BASE + 4], radius=12, outline=A(DGREEN, u), width=8)
 
 # ---------------- canh 4: Bay - "nhun luc nao cung cao them" ----------------
-BR, BTH, BLOW = 330, 0.75, 0.45
+BR, BTH, BLOW = 330, 0.75, 0.55
 def mini(d, cx, th, col):
     py = 330
     d.line([(cx - 120, py), (cx + 120, py)], fill=NAVY, width=7)
@@ -246,9 +246,9 @@ def s_end(img, d, t, sc):
     k1 = 1.0
     card(d, (40, 330, 1040, 1560), fill=A(WHITE, k1), outline=A(ORANGE, k1), w=6)
     pill(d, W / 2, 410, "THỬ NGHĨ", 58, WHITE, ORANGE, k1)
-    text(d, (W / 2, 560), "Thả 30 cm, nhịp 1 ngồi yên:", 60, BLUE, alpha=k1)
-    text(d, (W / 2, 660), "tụt 4,4 cm.", 60, BLUE, alpha=k1)
-    text(d, (W / 2, 790), "Rồi nhún bù đúng phần mất.", 62, ORANGE, alpha=k1)
+    text(d, (W / 2, 550), "Thả 30 cm; nhịp 1 tụt 4,4 cm.", 60, BLUE, alpha=k1)
+    text(d, (W / 2, 680), "Mỗi nhịp sau nhún bù đúng", 60, ORANGE, alpha=k1)
+    text(d, (W / 2, 780), "phần mất trong nhịp đó.", 60, ORANGE, alpha=k1)
     text(d, (W / 2, 960), "Cao sau nhịp 3?", 66, INK, alpha=k1)
     cbar(d, 1200, t, 1.2, sc["T"] - 0.2, ORANGE, k1)
 
@@ -266,8 +266,8 @@ CLIP = dict(id="tn-l11-tatdan-03", header="VẬT LÍ 11 · VÍ DỤ", footer="T�
    ("Cùng một đu, hai cách.", 3.6),
    ("Dừng lại, tự đoán.", 5.4)]),
  dict(key="do", title="Tiến hành", draw=s_do, tail=0.4, caps=[
-   ("Hai lần làm, đặt cạnh nhau.", 3.6),
-   ("Ghi độ cao sau mỗi nhịp.", 3.8)]),
+   ("Hai lần làm, đặt cạnh nhau.", 3.4),
+   ("Ghi độ cao sau mỗi nhịp.", 3.4)]),
  dict(key="dapan", title="Kết quả", draw=s_dapan, tail=0.7, caps=[
    ("Đu thật tắt chậm.", 3.4),
    ("Lần nhún giữ nguyên.", 3.6)]),
@@ -278,5 +278,5 @@ CLIP = dict(id="tn-l11-tatdan-03", header="VẬT LÍ 11 · VÍ DỤ", footer="T�
  dict(key="gioi", title="Giới hạn", draw=s_gioi, tail=0.3, caps=[
    ("Số minh hoạ, chưa đo thật.", 4.4)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.3, caps=[
-   ("Tự tính.", 7.5)]),
+   ("Tính.", 8.1)]),
 ])

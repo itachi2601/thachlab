@@ -91,7 +91,7 @@ def schematic(d, D, t, show_d=True):
     text(d, (135, YB + 72), "laser", 56, INK)
     text(d, (sx + 34, YB), "màn", 56, INK, anchor="lm")
     u = (t * 0.9) % 1.0                                # cham sang chay tu khe toi man (hinh khong dung yen)
-    dot(d, SX + 10 + u * (sx - SX - 20), YB, 30, LRED, outline=NAVY)
+    dot(d, SX + 10 + u * (sx - SX - 20), YB, 24, LRED, outline=NAVY)
     y = 545
     d.line([(SX, y), (sx, y)], fill=NAVY, width=3)
     for x in (SX, sx): d.line([(x, y - 14), (x, y + 14)], fill=NAVY, width=3)
@@ -181,7 +181,7 @@ def s_dapan(img, d, t, sc):
         text(d, (GX0, y - 55), f"D = {D} m", 56, INK, anchor="lm")
         fringes(d, y, y + 90, i)
         u = ((t * 0.35 + 0.5 * j) % 1.0)                 # dau do chay doc dai van (hinh khong dung yen)
-        dot(d, GX0 + 20 + u * (GX1 - GX0 - 40), y + 45, 15, WHITE, outline=NAVY)
+        dot(d, GX0 + 20 + u * (GX1 - GX0 - 40), y + 45, 9, WHITE)
         xa, xb = GC, GC + i * PMM
         d.line([(xa, y + 120), (xb, y + 120)], fill=ORANGE, width=6)
         for x in (xa, xb): d.line([(x, y + 104), (x, y + 136)], fill=ORANGE, width=6)
@@ -207,8 +207,6 @@ def s_bay(img, d, t, sc):
     n1 = min(5, int((t - 0.3) / 0.5) + 1) if t > 0.3 else 0
     for k in range(n1):
         x = GC + (k - 2) * I0 * PMM; text(d, (x, fy - 40), str(k + 1), 56, DRED)
-    if n1 >= 1:
-        x = GC + (n1 - 1 - 2) * I0 * PMM; dot(d, x, fy + 45, 18, WHITE, outline=DRED)
     text(d, (W / 2, fy + 175), "26 : 5 = 5,2 mm", 60, DRED)
     # khung duoi: that - dem khoang giua hai van, 4 khoang
     k2 = appear(t, M[1], 0.45)
@@ -219,8 +217,6 @@ def s_bay(img, d, t, sc):
             x0, x1 = GC + (k - 2) * I0 * PMM, GC + (k - 1) * I0 * PMM
             d.arc([x0 + 6, fy2 - 40, x1 - 6, fy2 + 10], 180, 360, fill=ORANGE, width=6)
             text(d, ((x0 + x1) / 2, fy2 - 62), str(k + 1), 56, DORANGE)
-        if n2 >= 1:
-            x = GC + (n2 - 1 - 1.5) * I0 * PMM; dot(d, x, fy2 + 45, 18, WHITE, outline=BLUE)
         text(d, (W / 2, fy2 + 175), "26 : 4 = 6,5 mm", 60, BLUE)
     kc = appear(t, M[2] - 0.1, 0.45)
     if kc > 0:
@@ -273,7 +269,7 @@ CLIP = dict(id="tn-l11-giaothoa-03", header="VẬT LÍ 11 · THÍ NGHIỆM", foo
  dict(key="gioi", title="Giới hạn", draw=s_gioi, tail=0.3, caps=[
    ("Chỉ mới đổi D.", 3.2)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.3, caps=[
-   ("Màn càng xa, vân càng thưa.", 6.4)]),
+   ("Dừng lại, tự tính.", 6.4)]),
 ])
 
 _b = _kiem_dong_bo(); assert not _b, _b

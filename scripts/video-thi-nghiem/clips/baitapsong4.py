@@ -83,7 +83,7 @@ def tube(d, y, Lm, blow=0.0, env=0.0, t=0.0, labels=0.0, len_lbl=True):
             yy = y - 120 + ((t * 260 + k * 60) % 180)
             d.line([(xa, yy), (xa, yy + 34)], fill=A(AIR, blow), width=8)
         arrow(d, (xa, y - 120), (xa, y + 70), A(AIR, blow), w=6, head=20)
-    if len_lbl:
+    if len_lbl and any(abs(Lm - r[0]) < 1e-6 for r in ROWS):        # cong B: khong in chieu dai trung gian khi dang noi
         d.line([(XC, y + HH + 34), (x1, y + HH + 34)], fill=NAVY, width=3)
         for xx in (XC, x1): d.line([(xx, y + HH + 22), (xx, y + HH + 46)], fill=NAVY, width=3)
         text(d, ((XC + x1) / 2, y + HH + 88), vn(Lm) + " m", 56, INK)
@@ -182,7 +182,8 @@ def s_bay(img, d, t, sc):
     M = sc["M"]
     card(d, (40, 215, 1040, 690), fill=(254, 242, 242), outline=DRED, w=6)
     text(d, (75, 280), "✗ Dễ tưởng: như dây đàn", 58, DRED, anchor="lm")
-    tube(d, 390, 0.68, blow=1.0, t=t)
+    tube(d, 390, 0.68, blow=1.0, t=t, len_lbl=False)
+    text(d, (W / 2, 530), "v = 340 m/s · L = 0,68 m", 56, INK)
     text(d, (W / 2, 625), "f = v/(2L) → 250 Hz", 62, DRED)
     k2 = appear(t, M[1], 0.45)
     if k2 > 0:
@@ -208,8 +209,8 @@ def s_end(img, d, t, sc):
     k1 = appear(t, 0.15, 0.4)
     card(d, (40, 215, 1040, 1300), fill=A(WHITE, k1), outline=A(ORANGE, k1), w=6)
     pill(d, W / 2, 290, "THỬ NGHĨ", 58, WHITE, ORANGE, k1)
-    text(d, (W / 2, 480), "Ống 0,17 m kêu 500 Hz.", 64, INK, alpha=k1)
-    text(d, (W / 2, 600), "Nốt cao kế tiếp", 66, INK, alpha=k1)
+    text(d, (W / 2, 480), "Ống bịt một đầu 0,17 m", 64, INK, alpha=k1)
+    text(d, (W / 2, 600), "kêu 500 Hz. Nốt cao kế tiếp", 64, INK, alpha=k1)
     text(d, (W / 2, 720), "bao nhiêu Hz?", 66, DORANGE, alpha=k1)
     cbar(d, 1100, t, 1.2, sc["T"] - 0.2, ORANGE, k1)
 
@@ -239,7 +240,7 @@ CLIP = dict(id="tn-l11-baitapsong-04", header="VẬT LÍ 11 · THÍ NGHIỆM", f
  dict(key="gioi", title="Giới hạn", draw=s_gioi, tail=0.3, caps=[
    ("Nốt thật thấp hơn chút.", 3.8)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.3, caps=[
-   ("Ống càng dài, nốt càng trầm.", 6.0)]),
+   ("Tự tính.", 6.0)]),
 ])
 
 _b = _kiem_dong_bo(); assert not _b, _b
