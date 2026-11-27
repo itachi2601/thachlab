@@ -3,9 +3,10 @@
 # So lieu lay nguyen tu content/thi-nghiem/tn-l10-dt-dctg-01.json (_kiem_so() doi chieu):
 #   tham_so: v = 5 cm/s (mien 1-10, buoc 0,5), vach d = 10..50 cm, t bam tay sai so 0,1 s.
 #   so_lieu_mau (d, t tinh, t doc, d/t): 10 2,0 2,1 | 20 4,0 3,9 | 30 6,0 6,1 | 40 8,0 7,9 | 50 10,0 10,0.
-#   rut_ra: do doc 30 cm / 6 s = 5 cm/s.
+#   rut_ra (kho: 30 cm / 6 s); clip lay hai diem tren duong ke (0; 0) va (10 s; 50 cm) -> 50 cm / 10 s = 5 cm/s
+#   (27/11 kiem v1: tam giac 2-8 s lech diem do 2,1/7,9 s).
 # Du doan (K10: khong nut A-D): cham cac diem (t, d) -> do thi d-t dang nao? -> gan mot duong thang qua goc.
-# Bay = hien_tuong_hay_sai "noi gap khuc": hai khung phong to x10 quanh diem vach 20 cm xep tren duoi (gap khuc / duong thang,
+# Bay = hien_tuong_hay_sai "noi gap khuc": hai khung cung 5 diem, do lech t phong x5 (noi tung diem ra rang cua / mot duong thang,
 #   khoang lech 0,1 s = tham_so sai_so_do). Chua noi duoc: gia_thiet "mot do nghieng" -> nghieng hon thi v ra sao.
 # Thu nghi (= cau_chot khung web, theo mo hinh d = v.t, v trong mien tham_so): do thi qua goc va (2 s; 8 cm) ->
 #   v = 4 cm/s -> qua vach 50 cm luc 12,5 s (ngoai thang dong ho 0-10 s cua clip, khong thoang hien).
@@ -133,7 +134,7 @@ def s_do(img, d, t, sc):
     for i, r in enumerate(ROWS):
         if 0 <= t - lap_at(i) < 0.6: fl[r[0]] = 1.0
     tube(d, bub(t), fl); stopwatch(d, clock(t))
-    text(d, (1020, 268), "tua nhanh ×2", 58, INK, anchor="rm")
+    text(d, (1015, 540), "tua nhanh ×2", 56, INK, anchor="rm")
     axes(d); nd = n_done(t)
     points(d, nd, pop=[(t - lap_at(i)) / 0.4 for i in range(5)])
     htable(d, nd)
@@ -170,7 +171,7 @@ def s_dapan(img, d, t, sc):
 # ---------------- canh 4: Rut ra (do doc) ----------------
 def slope_tri(d, k):
     if k <= 0: return
-    xa, ya, xb, yb = X(2), Y(10), X(8), Y(40)
+    xa, ya, xb, yb = X(0), Y(0), X(10), Y(50)
     d.line([(xa, ya), (xa + (xb - xa) * clamp(k * 2), ya)], fill=ORANGE, width=7)
     k2 = clamp(k * 2 - 1)
     if k2 > 0: d.line([(xb, ya), (xb, ya + (yb - ya) * k2)], fill=BLUE, width=7)
@@ -182,46 +183,40 @@ def s_rutra(img, d, t, sc):
     axes(d); fit_line(d, 1.0); points(d, 5)
     slope_tri(d, clamp((t - 0.6) / 1.4))
     a1 = appear(t, 1.3, 0.4)
-    text(d, ((X(2) + X(8)) / 2, Y(10) + 56), "Δt = 6 s", 58, DORANGE, alpha=a1)
-    text(d, (X(8) + 25, Y(25) - 36), "Δd =", 58, DBLUE, anchor="lm", alpha=a1)
-    text(d, (X(8) + 25, Y(25) + 36), "30 cm", 58, DBLUE, anchor="lm", alpha=a1)
+    text(d, ((X(0) + X(10)) / 2 + 60, Y(0) - 45), "Δt = 10 s", 58, DORANGE, alpha=a1)
+    text(d, (X(10) - 25, Y(25) - 36), "Δd =", 58, DBLUE, anchor="rm", alpha=a1)
+    text(d, (X(10) - 25, Y(25) + 36), "50 cm", 58, DBLUE, anchor="rm", alpha=a1)
     k = appear(t, M[1] + 0.3, 0.45)
     card(d, (40, 1320, 1040, 1585), fill=A(WHITE, k), outline=A(TEAL, k), w=6)
     text(d, (W / 2, 1400), "v = Δd / Δt", 62, DTEAL, alpha=k)
-    text(d, (W / 2, 1505), "= 30 cm / 6 s = 5 cm/s", 62, DTEAL, alpha=k)
+    text(d, (W / 2, 1505), "= 50 cm / 10 s = 5 cm/s", 62, DTEAL, alpha=k)
 
-# ---------------- canh 5: Bay (hai khung phong to x10 quanh diem vach 20 cm) ----------------
-ZK = 10.0
+# ---------------- canh 5: Bay (hai khung cung 5 diem, do lech t phong x5 de thay) ----------------
+ZK = 5.0
+ZP = [(0.0, 0.0)] + [(tt + ZK * (td - tt), dm) for dm, tt, td, vv in ROWS]       # t phong lech: 2,5 3,5 6,5 7,5 10
 def zoom_panel(d, y0, straight, t, lab, col, at):
-    """Khung 1000 x 470: cung ti le x/y nhu do thi chinh, phong to ZK lan quanh diem (3,9 s; 20 cm)."""
-    card(d, (40, y0, 1040, y0 + 500), fill=WHITE, outline=col, w=6)
-    sx, sy = (GX1 - GX0) / 11 * ZK, (GYB - GYT) / 55 * ZK
-    tc, dc = ROWS[1][2], ROWS[1][0]; cx, cy = 560, y0 + 290
-    P = lambda tt, dm: (cx + (tt - tc) * sx, cy - (dm - dc) * sy)
-    sub = Image.new("RGB", (988, 400), WHITE); sd = ImageDraw.Draw(sub, "RGBA")
-    Q = lambda tt, dm: (P(tt, dm)[0] - 46, P(tt, dm)[1] - (y0 + 90))
-    k = ease((t - at) / 0.9)
-    if straight:
-        t1 = 3.5 + 0.9 * k; sd.line([Q(3.5, V * 3.5), Q(t1, V * t1)], fill=TEAL, width=9)
-    else:
-        a, b, c = (ROWS[0][2], ROWS[0][0]), (tc, dc), (ROWS[2][2], ROWS[2][0])
-        u = lambda p, q, s: (p[0] + (q[0] - p[0]) * s, p[1] + (q[1] - p[1]) * s)
-        s1 = clamp(k * 2); s2 = clamp(k * 2 - 1)
-        sd.line([Q(*u(a, b, 0.75)), Q(*u(a, b, 0.75 + 0.25 * s1))], fill=DRED, width=9)
-        if s2 > 0: sd.line([Q(*b), Q(*u(b, c, 0.2 * s2))], fill=DRED, width=9)
-    img = IMG_REF[0]; img.paste(sub, (46, y0 + 90))
-    dot(d, *P(tc, dc), 18, NAVY, WHITE)
+    card(d, (40, y0, 1040, y0 + 520), fill=WHITE, outline=col, w=6)
     text(d, (75, y0 + 55), lab, 60, col, anchor="lm")
-    text(d, (1010, y0 + 55), "×10", 58, INK, anchor="rm")
-    if straight and k >= 1:
-        xa, xb = P(tc, dc)[0] + 22, P(dc / V, dc)[0] - 8; yy = P(tc, dc)[1]
-        d.line([(xa, yy), (xb, yy)], fill=DORANGE, width=6)
-        for xx in (xa, xb): d.line([(xx, yy - 16), (xx, yy + 16)], fill=DORANGE, width=6)
-        text(d, ((xa + xb) / 2, yy - 62), "0,1 s", 58, DORANGE)
+    xb, yb = 150, y0 + 470
+    P = lambda tt, dm: (xb + tt * 78, yb - dm * 6.6)
+    d.line([(xb, yb), (1000, yb)], fill=NAVY, width=5); d.line([(xb, yb), (xb, y0 + 115)], fill=NAVY, width=5)
+    text(d, (xb + 20, y0 + 135), "d (cm)", 56, DBLUE, anchor="lm")
+    text(d, (1010, yb - 40), "t (s)", 56, DORANGE, anchor="rm")
+    text(d, (1010, yb - 115), "lệch t phóng ×5", 56, INK, anchor="rm")
+    k = ease((t - at) / 1.0)
+    if straight:
+        if k > 0: d.line([P(0, 0), P(10.4 * k, V * 10.4 * k)], fill=TEAL, width=10)
+    else:
+        n = k * 5
+        for i in range(5):
+            if n <= i: break
+            a, b = ZP[i], ZP[i + 1]; u = clamp(n - i)
+            d.line([P(*a), P(a[0] + (b[0] - a[0]) * u, a[1] + (b[1] - a[1]) * u)], fill=DRED, width=10)
+    for tt, dm in ZP[1:]: dot(d, *P(tt, dm), 15, NAVY, WHITE)
 
 def s_bay(img, d, t, sc):
     M = sc["M"]
-    zoom_panel(d, 230, False, t, "✗ Gấp khúc", DRED, 0.4)
+    zoom_panel(d, 230, False, t, "✗ Nối từng điểm", DRED, 0.4)
     if t >= M[1] - 0.1: zoom_panel(d, 790, True, t, "✓ Một đường thẳng", DTEAL, M[1])
 
 # ---------------- canh 6: Chua noi duoc ----------------
@@ -257,7 +252,7 @@ def s_end(img, d, t, sc):
     text(d, (EX1 + 20, EY(50) - 50), "?", 80, DORANGE, alpha=k)
     d.line([(EX(0), EY(0)), (EX(10), EY(40))], fill=A(TEAL, k), width=8)
     dot(d, EX(CHOT[0]), EY(CHOT[1]), 16, A(NAVY, k), WHITE)
-    text(d, (EX(CHOT[0]) + 30, EY(CHOT[1]) + 40), "(2 s; 8 cm)", 58, NAVY, anchor="lm", alpha=k)
+    text(d, (EX(CHOT[0]) + 60, EY(CHOT[1]) + 22), "(2 s; 8 cm)", 58, NAVY, anchor="lm", alpha=k)
     seg_bar(d, 1430, t, 1.0, sc["T"] - 0.2, ORANGE, k)
 
 def _cues(clip):
@@ -288,5 +283,5 @@ CLIP = dict(id="tn-l10-dt-dctg-01", header="VẬT LÍ 10 · THÍ NGHIỆM", foot
  dict(key="gioihan", title="Giới hạn", draw=s_gioihan, tail=0.6, caps=[
    ("Mới thử một độ nghiêng.", 3.6)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.3, caps=[
-   ("Đồ thị thẳng: vận tốc không đổi.", 6.4)]),
+   ("Thử tính, rồi chọn đáp án.", 6.4)]),
 ])
