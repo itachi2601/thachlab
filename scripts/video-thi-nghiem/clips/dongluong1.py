@@ -129,6 +129,7 @@ def s_do(img, d, t, sc):
         text(d, (x, 320), lab, 56, INK)
         card(d, (x - 120, 360, x + 120, 440), fill=NAVY, r=14)
         text(d, (x, 400), val if on else "—", 56, YELLOW if on else GRAY)
+    text(d, (880, 400), "m = 0,250 kg", 56, INK)
     # do thi F - t
     card(d, (40, 930, 1040, 1530), fill=WHITE, outline=LIGHT, w=3)
     text(d, (W / 2, 985), "diện tích = xung lượng (N·s)", 56, INK)
@@ -144,7 +145,7 @@ def s_do(img, d, t, sc):
             d.polygon(poly, fill=A((253, 186, 116), appear(uc, TC, 0.5)))
         n = 120; pts = [(gx(-G_PAD + (ue + G_PAD) * i / n), G_Y0 - gF(-G_PAD + (ue + G_PAD) * i / n)) for i in range(n + 1)]
         d.line(pts, fill=RED, width=6); dot(d, pts[-1][0], pts[-1][1], 9, RED)
-        if uc >= TC: text(d, (gx(TC / 2), G_Y0 - 100), "0,176", 60, INK, alpha=appear(uc, TC + 0.2, 0.5))
+        if uc >= TC: text(d, (gx(TC / 2), G_Y0 - 100), "0,176 N·s", 60, INK, alpha=appear(uc, TC + 0.2, 0.5))
 
 # ---------------- canh 3: Ket qua ----------------
 XS = (170, 420, 670, 900)
@@ -175,7 +176,7 @@ def s_kq(img, d, t, sc):
     if kb > 0:
         card(d, (40, 1380, 1040, 1640), fill=A((236, 253, 243), kb), outline=A(GREEN, kb), w=5)
         text(d, (W / 2, 1460), "|Δp| = m·|v₂ − v₁|", 60, INK, alpha=kb)
-        text(d, (W / 2, 1560), "lệch dưới 2,5 %", 56, DGREEN, alpha=kb)
+        text(d, (W / 2, 1560), "Δp: biến thiên động lượng", 56, DGREEN, alpha=kb)
 
 # ---------------- canh 4: Bay + chua noi duoc ----------------
 def s_bay(img, d, t, sc):
@@ -186,6 +187,7 @@ def s_bay(img, d, t, sc):
     q = "Δp = 0,250 · (0,40 − 0,32)"
     ks = clamp((t - M[1]) / 0.4); lw = tw(d, q, F(62)); yy = 470
     text(d, (W / 2, yy), q, 62, mix(INK, DRED, ks), alpha=a1)
+    text(d, (W / 2, yy + 75), "m (kg) · tốc độ (m/s)", 56, NOTE, alpha=a1)
     if ks > 0: d.line([(W / 2 - lw / 2 - 6, yy + 2), (W / 2 - lw / 2 - 6 + (lw + 12) * ks, yy + 2)], fill=A(RED, 0.85 * a1), width=6)
     kk = appear(t, M[1] + 0.1, 0.45)
     if kk > 0:
@@ -216,7 +218,7 @@ def s_end(img, d, t, sc):
     card(d, (40, y0, 1040, 1665), fill=WHITE, outline=ORANGE, w=6)
     pill(d, W / 2, y0 + 70, "THỬ NGHĨ", ORANGE)
     k1 = appear(t, 2.6, 0.45)
-    text(d, (W / 2, y0 + 195), "Xe 0,250 kg dính vào đệm.", 60, INK, alpha=k1)
+    text(d, (W / 2, y0 + 195), "Xe 0,250 kg dính đệm, dừng hẳn.", 60, INK, alpha=k1)
     k2 = appear(t, 5.0, 0.45)
     text(d, (W / 2, y0 + 300), "|Δp| của xe bằng bao nhiêu?", 62, ORANGE, alpha=k2)
     seg_bar(d, y0 + 370, t, 5.2, sc["T"] - 0.2, ORANGE, k2)
@@ -224,7 +226,7 @@ def s_end(img, d, t, sc):
     if kh > 0:
         card(d, (90, y0 + 475, 990, y0 + 680), fill=A((255, 247, 237), kh), r=24)
         text(d, (W / 2, y0 + 530), "Gợi ý", 56, INK, alpha=kh)
-        text(d, (W / 2, y0 + 620), "viết v₁, v₂ kèm dấu", 58, (176, 64, 8), alpha=kh)
+        text(d, (W / 2, y0 + 620), "viết v₁, v₂ trước khi tính", 58, (176, 64, 8), alpha=kh)
 
 def _cues(clip):
     sc = {s["key"]: s for s in clip["scenes"]}
@@ -243,13 +245,13 @@ CLIP = dict(id="tn-l10-dongluong-01", header="VẬT LÍ 10 · THÍ NGHIỆM", fo
    ("Cảm biến vẽ đồ thị lực.", 3.4)]),
  dict(key="kq", title="Kết quả", draw=s_kq, tail=0.5, caps=[
    ("Đáp án: đệm đẩy ngược lại.", 3.4),
-   ("Bốn lần đo, v₂ luôn âm.", 3.4),
-   ("Δp khớp số cảm biến.", 3.4)]),
+   ("Bốn lần, v₂ đều âm.", 3.4),
+   ("|Δp| khớp cảm biến.", 3.4)]),
  dict(key="bay", title="Bẫy hay gặp", draw=s_bay, tail=0.3, caps=[
    ("Đúng không?", 3.0),
    ("Sai: v₂ ngược chiều, mang dấu trừ.", 4.0),
    ("Thí nghiệm này còn thiếu gì?", 3.2)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.5, caps=[
-   ("Lần đo mới.", 2.8),
-   ("Dừng lại, tự tính.", 6.6)]),
+   ("Lần đo mới.", 4.6),
+   ("Dừng lại, tự tính.", 4.8)]),
 ])

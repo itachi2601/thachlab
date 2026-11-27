@@ -231,8 +231,8 @@ def s_kq(img, d, t, sc):
         card(d, (40, y0, 1040, y0 + 520), fill=A(WHITE, ka), outline=A(LIGHT, ka), w=3)
         xs = (170, 540, 870)
         text(d, (xs[0], y0 + 60), "Lần", 60, INK, alpha=ka)
-        text(d, (xs[1], y0 + 60), "tổng p′", 60, DGREEN, alpha=ka); text(d, (xs[2], y0 + 60), "Δp′", 60, INK, alpha=ka)
-        text(d, (W / 2, y0 + 130), "đơn vị kg·m/s", 56, NOTE, bold=False, alpha=ka)
+        text(d, (xs[1], y0 + 60), "tổng p′", 60, DGREEN, alpha=ka); text(d, (xs[2], y0 + 60), "sai số Δp′", 60, INK, alpha=ka)
+        text(d, (W / 2, y0 + 130), "đơn vị kg·m/s", 56, INK, alpha=ka)
         d.line([(70, y0 + 175), (1010, y0 + 175)], fill=A(LIGHT, ka), width=3)
         for j, rr in enumerate(ROWS):
             yy = y0 + 245 + j * 95
@@ -241,7 +241,7 @@ def s_kq(img, d, t, sc):
     kb = appear(t, M[2] - 0.1, 0.45)
     if kb > 0:
         card(d, (40, 1240, 1040, 1560), fill=A((236, 253, 243), kb), outline=A(GREEN, kb), w=5)
-        text(d, (W / 2, 1340), "|p′| ≤ Δp′ cả ba lần", 64, INK, alpha=kb)
+        text(d, (W / 2, 1340), "|tổng p′| ≤ sai số", 64, INK, alpha=kb)
         text(d, (W / 2, 1460), "tổng sau = 0 trong sai số", 60, DGREEN, alpha=kb)
 
 # ---------------- canh 4: Bay + chua noi duoc ----------------
@@ -255,6 +255,7 @@ def s_bay(img, d, t, sc):
     xl = W / 2 - (lw + l0) / 2
     text(d, (xl, yy), q0, 62, INK, anchor="lm", alpha=a1)
     text(d, (xl + l0, yy), q, 62, mix(INK, DRED, ks), anchor="lm", alpha=a1)
+    text(d, (xl + l0 + lw / 2, yy + 75), "p₁′ + p₂′ (kg·m/s)", 56, NOTE, alpha=a1)
     if ks > 0: d.line([(xl + l0 - 6, yy + 2), (xl + l0 - 6 + (lw + 12) * ks, yy + 2)], fill=A(RED, 0.85 * a1), width=6)
     kk = appear(t, M[1] + 0.1, 0.45)
     if kk > 0:
@@ -270,8 +271,8 @@ def s_bay(img, d, t, sc):
         text(d, (sx(x2) + 10, yb + 150), sg(r[6]), 60, C2D, alpha=kk)
         text(d, (XC, yb - 110), "chiều dương", 56, NAVY, alpha=kk)
         arrow(d, (XC - 80, yb - 40), (XC + 80, yb - 40), A(NAVY, kk), w=6, head=20)
-        text(d, (W / 2, 1090), "p′ = −0,0500 + 0,0507", 62, DGREEN, alpha=kk)
-        text(d, (W / 2, 1180), "= +0,0007 ✓", 62, DGREEN, alpha=kk)
+        text(d, (W / 2, 1090), "p₁′ + p₂′ = −0,0500 + 0,0507", 62, DGREEN, alpha=kk)
+        text(d, (W / 2, 1180), "= +0,0007 kg·m/s ✓", 62, DGREEN, alpha=kk)
     k5 = appear(t, M[2] + 0.1, 0.45)
     if k5 > 0:
         y0 = 1270 + (1 - k5) * 30
@@ -321,8 +322,8 @@ CLIP = dict(id="tn-l10-thuchanhdl-02", header="VẬT LÍ 10 · THỰC HÀNH", fo
    ("Sai: xe 1 đi ngược chiều dương.", 4.0),
    ("Thí nghiệm này còn thiếu gì?", 3.2)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.5, caps=[
-   ("Một lần đo mới.", 2.8),
-   ("Dừng lại, tự tính.", 6.6)]),
+   ("Một lần đo mới.", 4.6),
+   ("Dừng lại, tự tính.", 4.8)]),
 ])
 
 if __name__ == "__main__" and "--kiem" in __import__("sys").argv:

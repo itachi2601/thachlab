@@ -172,7 +172,8 @@ def table(d, cells, hl=None, y=920):
             text(d, (XS[1], yy), vn(m1), 60, C1D); text(d, (XS[2], yy), vn(m2), 60, C2D)
         if c1: text(d, (XS[3], yy), vn(t1), 60, C1D)
         if c2: text(d, (XS[4], yy), vn(t1p), 60, C2D)
-    text(d, (W / 2, y + 590), "tấm cản quang rộng 5,00 cm", 56, NOTE)
+    text(d, (W / 2, y + 520), "thời gian chắn: t₁ cổng 1, t₁′ cổng 2", 56, NOTE)
+    text(d, (W / 2, y + 600), "tấm cản quang rộng 5,00 cm", 56, NOTE)
 
 def cells_at(t):
     i, u, k = do_state(t); out = []
@@ -217,16 +218,17 @@ def s_kq(img, d, t, sc):
     if ka > 0:
         card(d, (40, 740, 1040, 1150), fill=A(WHITE, ka), outline=A(LIGHT, ka), w=3)
         text(d, (W / 2, 805), "động lượng lần 2 (kg·m/s)", 56, INK, alpha=ka)
-        L = 3400                                              # px / (kg.m/s)
-        for j, (lab, val, col) in enumerate((("p", 0.2005, C1), ("p′", 0.1972, PURPLE))):
+        L = 3000                                              # px / (kg.m/s)
+        for j, (lab, val, col, tag) in enumerate((("p", 0.2005, C1, "trước"), ("p′", 0.1972, PURPLE, "sau"))):
             y = 925 + j * 125; g = ease((t - M[1] - 0.3 - 0.5 * j) / 0.6)
             text(d, (150, y), lab, 64, col)
             if g > 0: d.rounded_rectangle([220, y - 38, 220 + L * val * g, y + 38], radius=12, fill=col)
+            text(d, (220 + L * val + 30, y), tag, 56, col, anchor="lm", alpha=ka)
     kb = appear(t, M[2] - 0.1, 0.45)
     if kb > 0:
         card(d, (40, 1190, 1040, 1560), fill=A((236, 253, 243), kb), outline=A(GREEN, kb), w=5)
-        text(d, (W / 2, 1290), f"lệch δ = {vn(DELTA, 1)} %", 62, ORANGE, alpha=kb)
-        text(d, (W / 2, 1390), f"sai số ε = {vn(EPS, 1)} %", 62, NOTE, alpha=kb)
+        text(d, (W / 2, 1290), f"p lệch p′: δ = {vn(DELTA, 1)} %", 62, ORANGE, alpha=kb)
+        text(d, (W / 2, 1390), f"sai số phép đo ε = {vn(EPS, 1)} %", 62, NOTE, alpha=kb)
         text(d, (W / 2, 1490), "bảo toàn trong sai số", 60, DGREEN, alpha=kb)
 
 # ---------------- canh 4: Bay + chua noi duoc ----------------
@@ -240,6 +242,7 @@ def s_bay(img, d, t, sc):
     xl = W / 2 - (lw + l0) / 2
     text(d, (xl, yy), q0, 62, INK, anchor="lm", alpha=a1)
     text(d, (xl + l0, yy), q, 62, mix(INK, DRED, ks), anchor="lm", alpha=a1)
+    text(d, (xl + l0 + lw / 2, yy + 75), "m₁ (kg) · v′ (m/s)", 56, NOTE, alpha=a1)
     if ks > 0: d.line([(xl + l0 - 6, yy + 2), (xl + l0 - 6 + (lw + 12) * ks, yy + 2)], fill=A(RED, 0.85 * a1), width=6)
     kk = appear(t, M[1] + 0.1, 0.45)
     if kk > 0:
@@ -254,8 +257,9 @@ def s_bay(img, d, t, sc):
         y = yb + 70
         d.line([(X1 - w, y), (X2 + w, y)], fill=A(DGREEN, kk), width=5)
         for xx in (X1 - w, X2 + w): d.line([(xx, y - 18), (xx, y)], fill=A(DGREEN, kk), width=5)
-        text(d, (W / 2, y + 60), "cả hai xe cùng chạy", 56, DGREEN, alpha=kk)
-        text(d, (W / 2, 1150), "p′ = 0,403 · 0,251 ✓", 62, DGREEN, alpha=kk)
+        text(d, (W / 2, y + 50), "cả hai xe cùng chạy", 56, DGREEN, alpha=kk)
+        text(d, (W / 2, 1100), "p′ = (0,205 + 0,198) · 0,251 ✓", 58, DGREEN, alpha=kk)
+        text(d, (W / 2, 1180), "(m₁ + m₂) · v′ (kg·m/s)", 56, NOTE, alpha=kk)
     k5 = appear(t, M[2] + 0.1, 0.45)
     if k5 > 0:
         y0 = 1270 + (1 - k5) * 30
@@ -297,8 +301,8 @@ CLIP = dict(id="tn-l10-thuchanhdl-01", header="VẬT LÍ 10 · THỰC HÀNH", fo
    ("Xe 1 chắn tia hết 0,101 s.", 3.4),
    ("Dừng lại, tự đoán.", 5.6)]),
  dict(key="do", title="Tiến hành", draw=s_do, tail=0.3, caps=[
-   ("Đọc số đầu tiên mỗi cổng.", 3.4),
-   ("Thêm gia trọng, đo ba lần.", 3.4)]),
+   ("Đọc số đầu mỗi cổng.", 3.4),
+   ("Thêm gia trọng, đo lại.", 3.4)]),
  dict(key="kq", title="Kết quả", draw=s_kq, tail=0.3, caps=[
    ("Đáp án: cổng 2 chỉ 0,153 s.", 3.2),
    ("Tính p, p′: gần bằng nhau.", 3.4),
@@ -308,8 +312,8 @@ CLIP = dict(id="tn-l10-thuchanhdl-01", header="VẬT LÍ 10 · THỰC HÀNH", fo
    ("Sai: hai xe dính, cùng chạy.", 4.0),
    ("Thí nghiệm này còn thiếu gì?", 3.2)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.5, caps=[
-   ("Thêm một lần đo.", 2.8),
-   ("Dừng lại, tự tính.", 6.6)]),
+   ("Thêm một lần đo.", 4.6),
+   ("Dừng lại, tự tính.", 4.8)]),
 ])
 
 if __name__ == "__main__" and "--kiem" in __import__("sys").argv:

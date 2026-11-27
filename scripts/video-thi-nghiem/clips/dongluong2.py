@@ -86,6 +86,10 @@ def rig(d, O, s, marks=(10, 20), floor_r=540, alpha=1.0, block_dx=None, loff=80)
     for hcm in marks:
         sx, sy = surf(hcm)
         d.line([P(O, s, sx, sy), P(O, s, sx - 26 * NX, sy - 26 * NY)], fill=c(NAVY), width=4)
+        xa, ya = P(O, s, sx, sy); xb = P(O, s, TOPX, sy)[0]
+        for k in range(int(abs(xa - xb) // 24) + 1):
+            x1 = xa - k * 24 if xa > xb else xa + k * 24
+            d.line([(x1, ya), (x1 - 12 if xa > xb else x1 + 12, ya)], fill=c(NAVY), width=3)
         lx, ly = P(O, s, sx + loff / s * NX - 30, sy + loff / s * NY)
         text(d, (lx, ly), f"{hcm} cm", 56, NAVY, alpha=alpha)
     if block_dx is not None:
@@ -147,15 +151,18 @@ def s_do(img, d, t, sc):
         d.line([(X, OD[1] + 34), (X, OD[1] + 40 + 60 * (i % 2))], fill=INK, width=3)
         text(d, (X, OD[1] + 75 + 60 * (i % 2)), str(i + 1), 56, INK)
     ball(d, OD, SD, x, y, r)
+    text(d, (1010, 330), "h: độ cao, 10 cm = 0,1 m", 56, NAVY, anchor="rm")
+    text(d, (1010, 410), "gỗ nặng hơn bi nhiều", 56, WOOD_D, anchor="rm")
     y = 990
     card(d, (40, y, 1040, y + 600), fill=WHITE, outline=LIGHT, w=3)
     for xx, lab, unit in zip(XS, ("Lần", "m", "h", "v", "p"), ("", "kg", "m", "m/s", "kg·m/s")):
         text(d, (xx, y + 55), lab, 58, INK)
         if unit: text(d, (xx, y + 118), unit, 56, NOTE, bold=False)
     d.line([(70, y + 160), (1010, y + 160)], fill=LIGHT, width=3)
+    text(d, (W / 2, y + 555), "v: tốc độ chân máng · p: động lượng", 56, NOTE)
     for i, row in enumerate(ROWS):
         if t < R0 + RGAP * i: continue
-        yy = y + 220 + i * 95
+        yy = y + 215 + i * 86
         if i == cur and not run_state(i, t)[5]:
             d.rounded_rectangle([60, yy - 42, 1020, yy + 42], radius=18, fill=(239, 246, 255))
         text(d, (XS[0], yy), str(i + 1), 58, INK)
@@ -226,7 +233,7 @@ def s_end(img, d, t, sc):
     if kh > 0:
         card(d, (90, y0 + 475, 990, y0 + 680), fill=A((255, 247, 237), kh), r=24)
         text(d, (W / 2, y0 + 530), "Gợi ý", 56, INK, alpha=kh)
-        text(d, (W / 2, y0 + 620), "so tốc độ hai bi trước", 58, (176, 64, 8), alpha=kh)
+        text(d, (W / 2, y0 + 620), "tính v từng bi rồi so", 58, (176, 64, 8), alpha=kh)
 
 def _cues(clip):
     sc = {s["key"]: s for s in clip["scenes"]}
@@ -244,7 +251,7 @@ CLIP = dict(id="tn-l10-dongluong-02", header="VẬT LÍ 10 · THÍ NGHIỆM", cu
    ("Dừng lại, tự đoán.", 5.6)]),
  dict(key="do", title="Tiến hành", draw=s_do, tail=0.9, caps=[
    ("Đánh dấu chỗ gỗ dừng.", 3.4),
-   ("Đổi bi, đổi độ cao.", 3.4)]),
+   ("Đổi bi, độ cao.", 3.4)]),
  dict(key="kq", title="Kết quả", draw=s_kq, tail=0.3, caps=[
    ("Đáp án: bi 100 g, 10 cm.", 3.4),
    ("Nặng gấp đôi, p gấp đôi.", 3.4),
@@ -254,6 +261,6 @@ CLIP = dict(id="tn-l10-dongluong-02", header="VẬT LÍ 10 · THÍ NGHIỆM", cu
    ("Sai: cùng độ cao, cùng v.", 4.0),
    ("Thí nghiệm này còn thiếu gì?", 3.2)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.5, caps=[
-   ("Hai bi mới.", 2.8),
-   ("Dừng lại, tự so.", 6.6)]),
+   ("Hai bi mới.", 4.6),
+   ("Dừng lại, tự so.", 4.8)]),
 ])
