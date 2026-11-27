@@ -3,12 +3,11 @@
 #   lan 1: F1 1,6 ; F2 2,1 ; alpha 80 ; F3 2,9 N (cheo 5,7 cm -> F ve 2,85 N, delta 0,05) | lan 2: 2,0 ; 2,0 ; 60 ; 3,5 N
 #   lan 3: 1,4 ; 1,6 ; 110 ; F3 doc 2,1 N gom so 0 lech 0,3 N -> 1,8 N ; F ve 1,75 N ; delta 0,35 -> 0,05.
 #   ti le xich 1 cm ung 0,5 N ; Delta = 0,3 N ; luc ke 5 N. Huong day: tinh tu mo hinh (nut O can bang, F3 thang dung).
-# Du doan (K10, khong nut) = hien_tuong_hay_sai[0]: lan 1, luc ke 3 chi lon hon, bang hay nho hon 1,6 N + 2,1 N?
-#   (dap an: nho hon, 2,9 N). Doi so voi ban 1 (lan 2 -> 3,5 N) vi "Bam xem: kiem lan 2" trong bai tinh san 3,46 N.
-#   Luu y: bang __BANG_A1__ ngay duoi clip co F3 lan 1 = 2,9 N (giong moi hang kho) -> bao thay.
+# Du doan (K10, khong nut; v2 theo kiem-code 27/11) = hien_tuong_hay_sai[3]: F (tong hop F1, F2) huong the nao so voi
+#   luc keo cua luc ke 3? (dap an: nguoc chieu). Bang trong bai khong co huong; ban 1 hoi do lon -> bang __BANG_A1__ lo.
 # Bay = hien_tuong_hay_sai[2]: lan 3 delta = 0,35 N > Delta -> "quy tac sai"; thao vat, luc ke 3 chi 0,3 N.
-# Chot (ca tu suy trong ghi_chu kho): F1 = F2 = 1,5 N, hai day vuong goc -> 2,12 N ; so 2,1/2,12 khong hien.
-#   Khong trung Cau 1 (1,2 & 1,6), Cau 2 (1,0 & 1,0), Cau 6 (2,0 & 2,0, 90 do).
+# Chot (v2): F1 = 0,9 N, F2 = 1,2 N, hai day vuong goc -> 1,5 N (3-4-5; khong so nao trung bang; cong thang 2,1 N la
+#   dap an nhieu). Ca nay chua co trong ghi_chu kho (phien chinh sua). So 1,5 khong hien o canh end.
 from engine import *
 
 DRED = (185, 28, 28); NOTE = (60, 64, 84); DGREEN = (21, 110, 55); DORANGE = (176, 64, 8); EMPTY = (148, 140, 128)
@@ -43,7 +42,7 @@ def _kiem_so():
     assert "Lực kế 5 N, độ chia 0,1 N" in [x["ten"] for x in k["dung_cu"]]
     assert LAN[0][3] < LAN[0][0] + LAN[0][1]                                        # du doan: nho hon tong
     assert abs(abs(1.75 - 2.1) - 0.35) < 1e-9 and abs((2.1 - SO0) - 1.8) < 1e-9 and abs(abs(1.75 - 1.8) - 0.05) < 1e-9
-    assert abs(fmodel(1.5, 1.5, 90) - 2.121) < 1e-3 and "1,5 N" in k["so_lieu_mau"]["ghi_chu"]   # ca chot
+    assert abs(fmodel(0.9, 1.2, 90) - 1.5) < 1e-9                                   # ca chot
     for f1, f2, a, _ in LAN:                                                         # day can bang: thanh phan ngang triet tieu
         b1, b2 = betas(f1, f2, a); assert abs(f1 * math.sin(math.radians(b1)) - f2 * math.sin(math.radians(b2))) < 1e-9
 _kiem_so()
@@ -83,11 +82,16 @@ def rig(d, b1, b2, f1, f2, f3, al, show, hide3=False):
     text(d, (OX - 60, OY + 20), "O", 55, NAVY)
     r = 90; a0 = -90 - b1; a1 = -90 + b2                                            # cung goc alpha giua hai day
     d.arc([OX - r, OY - r, OX + r, OY + r], a0, a1, fill=ORANGE, width=5)
-    atext(d, (OX, OY - 150), "α = ···" if not show else f"α = {al:g}°", 55, DORANGE)
+    goc(d, "α = ···" if not show else f"α = {al:g}°")
     v = lambda x: "···" if not show else vn(x) + " N"
     chip(d, (60, 760, 400, 850), "F1 = " + v(f1), BLUE)
     chip(d, (680, 760, 1020, 850), "F2 = " + v(f2), BLUE)
     chip(d, (650, 980, 1020, 1070), "F3 = " + ("?" if hide3 else v(f3)), RED)
+
+def goc(d, s, a=1.0):
+    card(d, (42, 870, 492, 1060), fill=A(WHITE, a), outline=A(ORANGE, a), r=24, w=4)
+    text(d, (267, 920), "góc giữa hai dây", 55, DORANGE, alpha=a)
+    atext(d, (267, 1005), s, 55, DORANGE, alpha=a)
 
 def table(d, n, y=1250, hl=-1):
     card(d, (40, y, 1040, y + 335), fill=WHITE, outline=NAVY, w=4)
@@ -121,7 +125,7 @@ def s_hook(img, d, t, sc):
     y0 = 1085 + (1 - k) * 30
     card(d, (40, y0, 1040, y0 + 500), fill=A(WHITE, k), outline=A(PURPLE, k), w=6)
     pill(d, W / 2, y0 + 70, "DỰ ĐOÁN", PURPLE, k)
-    for j, s1 in enumerate(("Lực kế 3 chỉ lớn hơn,", "bằng hay nhỏ hơn", "1,6 N + 2,1 N?")):
+    for j, s1 in enumerate(("F1, F2 hợp thành F.", "F hướng thế nào so với", "lực kéo của lực kế 3?")):
         text(d, (W / 2, y0 + 165 + j * 75), s1, 58, PURPLE if j == 2 else INK, alpha=k)
     seg_bar(d, y0 + 400, t, M[1] + 0.4, sc["T"] - 0.3, PURPLE, k)
 
@@ -170,11 +174,10 @@ PXCM = 60                          # px moi cm tren giay
 def s_dapan(img, d, t, sc):
     M = sc["M"]
     k0 = appear(t, 0.1, 0.4)
-    pill(d, W / 2, 320, "ĐÁP ÁN · Nhỏ hơn tổng", NAVY, k0, size=55)
     card(d, (50, 380, 1030, 1130), fill=A(PAPER, k0), outline=A(LIGHT, k0), r=18, w=3)
     f1, f2, a, f3 = LAN[0]; b1, b2 = betas(f1, f2, a); o = (540, 770)
     u1, u2 = ux(b1, -1), ux(b2, 1)
-    g = 0.05 + 0.95 * ease((t - 0.4) / 2.6)
+    g = 0.05 + 0.95 * ease((t - 0.4) / 1.6)
     L1, L2 = f1 / XICH * PXCM, f2 / XICH * PXCM
     p1 = (o[0] + u1[0] * L1, o[1] + u1[1] * L1); p2 = (o[0] + u2[0] * L2, o[1] + u2[1] * L2)
     pf = (p1[0] + p2[0] - o[0], p1[1] + p2[1] - o[1])
@@ -186,7 +189,7 @@ def s_dapan(img, d, t, sc):
     text(d, (p2[0] + 25, p2[1] + 40), "F2 = 2,1 N", 55, BLUE, anchor="lm", alpha=k0)
     text(d, (o[0] - 45, o[1] + 30), "O", 55, NAVY, alpha=k0)
     text(d, (1010, 1090), "1 cm ứng 0,5 N", 55, NOTE, anchor="rm", alpha=k0)
-    k2 = appear(t, M[1] + 0.6, 0.5); kc = appear(t, M[1] + 2.7, 0.45)
+    k2 = appear(t, 2.2, 0.5)
     for q, p in ((p1, pf), (p2, pf)):                                               # canh song song (net dut)
         for j in range(12):
             s0, s1 = j / 12, (j + 0.55) / 12
@@ -194,7 +197,7 @@ def s_dapan(img, d, t, sc):
     if k2 > 0:
         arrow(d, o, pf, A(GREEN, k2), w=9, head=28)
         text(d, (pf[0] - 40, pf[1] + 10), "F vẽ", 55, DGREEN, anchor="rm", alpha=k2)
-    k3 = appear(t, M[2] + 0.2, 0.5); kd = appear(t, M[2] + 2.3, 0.45)
+    k3 = appear(t, M[1], 0.5); kc = appear(t, M[1], 0.5)
     if k3 > 0:                                                                       # F3 do duoc: nguoc chieu, dung ti le
         L3 = f3 / XICH * PXCM; p3 = (o[0], o[1] + L3)
         arrow(d, o, p3, A(RED, k3), w=9, head=28)
@@ -202,6 +205,8 @@ def s_dapan(img, d, t, sc):
     dot(d, o[0], o[1], 10, NAVY, WHITE)
     card(d, (40, 1150, 1040, 1250), fill=A(WHITE, kc), outline=A(GREEN, kc), r=24, w=4)
     text(d, (W / 2, 1200), "chéo 5,7 cm → F vẽ = 2,85 N", 55, DGREEN, alpha=kc)
+    kd = appear(t, M[2], 0.45)
+    pill(d, W / 2, 320, "ĐÁP ÁN · Ngược chiều", NAVY, kd, size=55)
     card(d, (40, 1270, 1040, 1460), fill=A(WHITE, kd), outline=A(NAVY, kd), r=24, w=4)
     text(d, (W / 2, 1320), "δ = 0,05 N ≤ Δ = 0,3 N", 55, NAVY, alpha=kd)
     text(d, (W / 2, 1405), "độ lệch nhỏ hơn sai số", 55, DGREEN, alpha=kd)
@@ -216,10 +221,10 @@ def s_bay(img, d, t, sc):
         meter_on(d, b1, -1, f1, alpha=a0); meter_on(d, b2, 1, f2, alpha=a0); meter3(d, f3, alpha=a0)
         dot(d, OX, OY, 14, A(NAVY, a0), A(WHITE, a0))
         d.arc([OX - 90, OY - 90, OX + 90, OY + 90], -90 - b1, -90 + b2, fill=A(ORANGE, a0), width=5)
-        atext(d, (OX, OY - 150), "α = 110°", 55, DORANGE, alpha=a0)
+        goc(d, "α = 110°", a0)
         chip(d, (60, 760, 400, 850), "F1 = 1,4 N", BLUE, a=a0); chip(d, (680, 760, 1020, 850), "F2 = 1,6 N", BLUE, a=a0)
         chip(d, (650, 980, 1020, 1070), "F3 = 2,1 N", RED, a=a0)
-        chip(d, (60, 980, 450, 1070), "F vẽ = 1,75 N", DGREEN, a=a0)
+        chip(d, (650, 870, 1020, 960), "F vẽ = 1,75 N", DGREEN, a=a0)
     if kz > 0:                                                                       # luc ke 3 thao ra, treo thang dung, chua moc vat
         meter3(d, SO0, weight=False, alpha=kz, y_ring=420)
         chip(d, (650, 700, 1000, 790), "chỉ 0,3 N", DRED, a=kz)
@@ -243,24 +248,26 @@ def s_bay(img, d, t, sc):
         text(d, (W / 2, yk + 215), "Sai số vẽ thì sao?", 58, INK, alpha=k3)
 
 # ---------------- canh 5: Thu nghi ----------------
+E1, E2 = 0.9, 1.2                  # ca chot: hai day vuong goc
 def s_end(img, d, t, sc):
     k = appear(t, 0.15, 0.4)
     card(d, (40, 290, 1040, 1530), fill=A(WHITE, k), outline=A(ORANGE, k), w=6)
     pill(d, W / 2, 350, "THỬ NGHĨ", ORANGE, k)
-    o = (540, 690); L = 200
-    for side, lab in ((-1, "F1 = 1,5 N"), (1, "F2 = 1,5 N")):
-        u = ux(45, side); p = (o[0] + u[0] * L, o[1] + u[1] * L)
+    o = (540, 720); PN = 190                                                        # px moi N
+    b1, b2 = betas(E1, E2, 90); assert abs(b1 + b2 - 90) < 1e-9
+    us = []
+    for side, f, b, lab in ((-1, E1, b1, "F1 = 0,9 N"), (1, E2, b2, "F2 = 1,2 N")):
+        u = ux(b, side); us.append(u); p = (o[0] + u[0] * f * PN, o[1] + u[1] * f * PN)
         arrow(d, o, p, A(BLUE, k), w=8, head=26)
         text(d, (p[0] + side * 20, p[1] - 30), lab, 55, BLUE, anchor="lm" if side > 0 else "rm", alpha=k)
-    s = 34; c1 = ux(45, -1); c2 = ux(45, 1)                                         # dau goc vuong
-    q1 = (o[0] + c1[0] * s, o[1] + c1[1] * s); q2 = (o[0] + c2[0] * s, o[1] + c2[1] * s)
+    s_ = 34; q1 = (o[0] + us[0][0] * s_, o[1] + us[0][1] * s_); q2 = (o[0] + us[1][0] * s_, o[1] + us[1][1] * s_)
     qm = (q1[0] + q2[0] - o[0], q1[1] + q2[1] - o[1])
-    d.line([q1, qm, q2], fill=A(DORANGE, k), width=4)
-    meter3(d, None, weight=True, alpha=k, y_ring=740)
-    d.line([o, (o[0], 740)], fill=A(NAVY, k), width=4)
+    d.line([q1, qm, q2], fill=A(DORANGE, k), width=4)                               # dau goc vuong
+    meter3(d, None, weight=True, alpha=k, y_ring=770)
+    d.line([o, (o[0], 770)], fill=A(NAVY, k), width=4)
     dot(d, o[0], o[1], 13, A(NAVY, k), A(WHITE, k))
     text(d, (o[0] - 50, o[1] + 25), "O", 55, NAVY, alpha=k)
-    text(d, (290, 1000), "Hai dây", 55, INK, alpha=k); text(d, (290, 1070), "vuông góc.", 55, INK, alpha=k)
+    text(d, (290, 1030), "Hai dây", 55, INK, alpha=k); text(d, (290, 1100), "vuông góc.", 55, INK, alpha=k)
     text(d, (W / 2, 1350), "Lực kế 3 chỉ bao nhiêu?", 60, DORANGE, alpha=k)
     seg_bar(d, 1420, t, 1.0, sc["T"] - 0.2, ORANGE, k)
 
@@ -269,7 +276,7 @@ def _cues(clip):
     h, do, da, b, e = sc["hook"], sc["do"], sc["dapan"], sc["bay"], sc["end"]
     return ([(h["t0"] + h["M"][1] - 0.2, "open"), (h["t0"] + h["T"] - 0.6, "ding"), (do["t0"] + TS[0] + SETTLE, "tap")]
             + [(do["t0"] + s + MOVE + SETTLE, "tap") for s in TS[1:]]
-            + [(da["t0"] + 0.1, "ding"), (b["t0"] + b["M"][2], "buzz"), (e["t0"] + 0.15, "open")])
+            + [(da["t0"] + da["M"][2], "ding"), (b["t0"] + b["M"][2], "buzz"), (e["t0"] + 0.15, "open")])
 
 CLIP = dict(id="tn-l10-thuchanhthl-01", header="VẬT LÍ 10 · THÍ NGHIỆM", footer="Thực hành tổng hợp lực · thachlab.id.vn",
             cues=_cues, scenes=[
@@ -280,11 +287,11 @@ CLIP = dict(id="tn-l10-thuchanhthl-01", header="VẬT LÍ 10 · THÍ NGHIỆM", 
    ("Chờ nút O đứng yên rồi đọc.", 3.6),
    ("Đổi chốt hoặc vật, đọc lại.", 3.6)]),
  dict(key="dapan", title="Vẽ hình bình hành lần 1", draw=s_dapan, tail=0.3, caps=[
-   ("Đáp án: nhỏ hơn tổng.", 3.2),
    ("Vẽ hình bình hành, 1 cm ứng 0,5 N.", 4.2),
-   ("So F vẽ với lực kế 3.", 3.4)]),
+   ("So F vẽ với lực kế 3.", 3.4),
+   ("Đáp án: ngược chiều.", 2.6)]),
  dict(key="bay", title="Bẫy hay gặp", draw=s_bay, tail=0.3, caps=[
-   ("Lần 3 lệch quá sai số.", 3.4),
+   ("Lần 3: độ lệch quá Δ.", 3.4),
    ("Tháo vật, xem lực kế 3.", 3.4),
    ("Trừ số 0 lệch rồi so lại.", 3.8),
    ("Còn bỏ ngỏ.", 2.6)]),
