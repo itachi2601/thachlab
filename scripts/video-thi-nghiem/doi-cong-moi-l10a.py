@@ -19,6 +19,10 @@ for slug, tns in {
     # mẻ 2 (thầy duyệt 27/11 "sửa hết")
     "l10-chuyen-dong-thang-bien-doi-deu": "ctbdd-01", "l10-thuc-hanh-do-g": "do-g-01 do-g-02 do-g-03",
     "l10-su-roi-tu-do": "roi-tu-do-02 roi-tu-do-03", "l10-thuc-hanh-do-toc-do#2": "do-toc-do-02",
+    # mẻ 3 (thầy duyệt 28/11 "sửa hộp")
+    "l10-chuyen-dong-nem": "nemngang-02", "l10-tong-hop-phan-tich-luc": "tonghopluc-02",
+    "l10-dinh-luat-1-newton": "dl1-newton-01", "l10-dinh-luat-2-newton": "dl2-newton-01 dl2-newton-02",
+    "l10-dinh-luat-3-newton": "newton3-01", "l10-trong-luc-luc-cang": "trong-luc-luc-cang-01 trong-luc-luc-cang-02 trong-luc-luc-cang-03",
 }.items():
     for t in tns.split():
         BAI["tn-l10-" + t] = slug.split("#")[0]
