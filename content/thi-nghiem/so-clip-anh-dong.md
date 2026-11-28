@@ -649,8 +649,8 @@ Nhánh `claude/clip-cong-moi-l10a-d353cc`. 3 agent Opus dựng (sau 11h: 1 dựn
 | roitudo3 | tn-l10-roi-tu-do-03 | 179 → 132 | 13 → 0 | 49,5 | 1207 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-roi-tu-do-03-20261127.mp4) | chốt cổng ở 1,20 m → t ≈ 0,49 s 'theo mô hình' (C; đồng hồ thật ≈ 0,498 s) |
 | dotocdo2 | tn-l10-do-toc-do-02 | 198 → 135 | 15 → 0 | 48,4 | 1476 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-do-toc-do-02-20261127.mp4) | chốt bi d = 8 mm → 12 mm 'theo mô hình'; clip nói trước đáp án Câu 4 của bài ('d : t lớn hơn thật 25 %') — đúng ý Nhìn vào, bài lặp lại ở Bẫy 2 + bảng lệch tâm (`theory.src.html:334`) |
 
-### Mẻ 3 (9 clip nhóm C, bài Ném · Tổng hợp lực · ĐL1/2/3 Newton · Trọng lực–lực căng; qua cổng A + B (3 clip sửa thêm vòng 2, kiem-v2 ĐẠT), đã tải -20261127 HEAD 200 mp4 + webp, CHỜ THẦY DUYỆT, chưa đổi kho/bài/DB)
-Nháp sửa 4 hộp exp lộ Dự đoán: `scripts/video-thi-nghiem/sua-hop-l10a-5.json` (chưa áp). Mọi cảnh Chốt dùng phụ đề trung tính "Thử tính, rồi chọn đáp án."
+### Mẻ 3 (9 clip nhóm C, bài Ném · Tổng hợp lực · ĐL1/2/3 Newton · Trọng lực–lực căng; qua cổng A + B (3 clip sửa thêm vòng 2, kiem-v2 ĐẠT), đã tải -20261127 HEAD 200 mp4 + webp) — THẦY DUYỆT 28/11 ("Duyệt, sửa hộp"), **ĐÃ GHI DB 28/11 09:48** (bài 57–62; `ME=3 dang-cong-moi-l10a.sh --yes`, log `ra/l10a-dang-3.log`, 6/6 ✓; 59–61 ngoài khối video KHÔNG khác; 57, 58, 62 chỉ khác các câu hộp exp đã sửa — `sua-hop-l10a-5/6/7.json`, 13 chỗ, đối chiếu sao lưu đã áp sửa: khớp; kho ghi_chu thêm ca chốt 4 clip)
+Sửa 4 hộp exp lộ Dự đoán: `sua-hop-l10a-5.json` + vòng 2 theo kiem-code `-6` (nemngang bảng cột v₀ để "…", tonghopluc Rút ra thành việc làm, trongluc3 Rút ra trung tính) + `-7` (nemngang bỏ câu "lệch nhau nhiều nhất 0,02 m/s" trong tính mẫu) — ĐÃ ÁP. Mọi cảnh Chốt dùng phụ đề trung tính "Thử tính, rồi chọn đáp án."
 
 | Clip | tn | Từ/phút | LỖI | Giây | KB | mp4 | Điểm cần quyết |
 |---|---|---|---|---|---|---|---|
