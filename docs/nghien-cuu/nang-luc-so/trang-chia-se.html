@@ -1,0 +1,280 @@
+<title>Năng lực số trong giáo án</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+/* Bố cục: một cột đọc ~68 ký tự, bảng rộng tràn ra khung riêng; mã năng lực in kiểu số hiệu bản vẽ. */
+:root{
+  --bg:#f3f5f7; --surface:#ffffff; --fg:#17212b; --muted:#566473; --line:#d3dae1;
+  --accent:#1b4f9c; --accent-soft:#e3ecf8; --warn:#8a5a00; --warn-soft:#fbf0d6;
+  --font:"Be Vietnam Pro",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#12171d; --surface:#1a222b; --fg:#e6ebf0; --muted:#9fadbb; --line:#33404d;
+  --accent:#8db8f2; --accent-soft:#1f3350; --warn:#f0c268; --warn-soft:#3a2f14; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#12171d; --surface:#1a222b; --fg:#e6ebf0; --muted:#9fadbb; --line:#33404d;
+  --accent:#8db8f2; --accent-soft:#1f3350; --warn:#f0c268; --warn-soft:#3a2f14; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--font);font-size:17px;line-height:1.65}
+.wrap{max-width:46rem;margin:0 auto;padding-block:2.5rem 4rem;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));
+  display:flex;flex-direction:column;gap:2.75rem}
+section,header{display:flex;flex-direction:column;gap:1rem;min-width:0}
+h1{font-size:clamp(1.9rem,6vw,2.6rem);line-height:1.15;font-weight:700;margin:0;text-wrap:balance;letter-spacing:-.01em}
+h2{font-size:1.4rem;line-height:1.25;font-weight:700;margin:0;text-wrap:balance}
+h3{font-size:1.05rem;font-weight:600;margin:0}
+p,ul,ol{margin:0}
+ul,ol{padding-left:1.25rem;display:flex;flex-direction:column;gap:.4rem}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.eyebrow{font-family:var(--mono);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.lead{font-size:1.1rem;color:var(--muted)}
+.code{font-family:var(--mono);font-weight:600;font-size:.86em;color:var(--accent);white-space:nowrap}
+.note{background:var(--warn-soft);color:var(--fg);border:1px solid var(--line);border-radius:6px;padding:.8rem 1rem;font-size:.95rem}
+.note b{color:var(--warn)}
+.domains{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.domains div{background:var(--surface);padding:.9rem 1rem;display:flex;flex-direction:column;gap:.25rem;min-width:0}
+.domains .n{font-family:var(--mono);font-weight:600;color:var(--accent);font-size:.85rem}
+.domains b{font-weight:600}
+.domains span{font-size:.92rem;color:var(--muted)}
+.scroll{overflow-x:auto;border:1px solid var(--line);border-radius:6px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:.92rem;line-height:1.5}
+th,td{text-align:left;vertical-align:top;padding:.6rem .75rem;border-bottom:1px solid var(--line)}
+tr:last-child td{border-bottom:0}
+th{font-size:.78rem;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);font-weight:600;background:var(--bg)}
+table.wide{min-width:46rem}
+td.num{font-family:var(--mono);font-variant-numeric:tabular-nums;color:var(--muted)}
+details{border:1px solid var(--line);border-radius:6px;background:var(--surface)}
+summary{cursor:pointer;padding:.75rem 1rem;font-weight:600}
+details .scroll{border:0;border-top:1px solid var(--line);border-radius:0}
+.steps{list-style:none;padding:0;gap:0;border-top:1px solid var(--line)}
+.steps li{display:grid;grid-template-columns:5.5rem 1fr;gap:1rem;padding:.9rem 0;border-bottom:1px solid var(--line)}
+.steps .when{font-family:var(--mono);font-size:.8rem;color:var(--accent);font-weight:600;padding-top:.2rem}
+.steps p{font-size:.95rem;color:var(--muted)}
+@media (max-width:30rem){.steps li{grid-template-columns:1fr;gap:.2rem}}
+.tools{display:flex;flex-wrap:wrap;gap:.75rem;align-items:center}
+button{font:inherit;font-weight:600;color:var(--surface);background:var(--accent);border:0;border-radius:6px;padding:.55rem 1rem;cursor:pointer}
+#copy-status{font-size:.9rem;color:var(--muted)}
+textarea{width:100%;font-family:var(--mono);font-size:.78rem;line-height:1.5;color:var(--fg);background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:.75rem;resize:vertical}
+.check{list-style:none;padding:0}
+.check li{padding-left:1.6rem;position:relative}
+.check li::before{content:"";position:absolute;left:0;top:.42em;width:.85rem;height:.85rem;border:1.5px solid var(--muted);border-radius:2px}
+.src{font-size:.9rem;color:var(--muted)}
+.src li{overflow-wrap:anywhere}
+footer{font-size:.85rem;color:var(--muted);border-top:1px solid var(--line);padding-top:1rem}
+</style>
+
+<div class="wrap">
+
+<header>
+  <span class="eyebrow">Tài liệu dùng chung của bộ môn · đọc 8 phút</span>
+  <h1>Ghi năng lực số vào giáo án</h1>
+  <p class="lead">Phần lớn bài chúng ta đang dạy đã có hoạt động số: mô phỏng, tra catalog, vẽ CAD, nộp bài trực tuyến. Việc còn thiếu là gọi đúng tên, gắn đúng mã và có minh chứng. Trang này chỉ cách làm trong một bảng năm cột, kèm mẫu trống cho môn của thầy cô.</p>
+</header>
+
+<section>
+  <h2>Vì sao phải làm</h2>
+  <ul>
+    <li><b>Thông tư 02/2025/TT-BGDĐT</b> (hiệu lực 11/3/2025) ban hành Khung năng lực số cho người học, áp dụng cho mọi cơ sở giáo dục và chương trình đào tạo trong hệ thống giáo dục quốc dân. Trường tự chủ bổ sung yêu cầu năng lực số vào chương trình và tài liệu học tập.</li>
+    <li><b>Quyết định 2222/QĐ-TTg</b> (30/12/2021) đặt chỉ tiêu cho giáo dục nghề nghiệp: đến 2030, 100% chuẩn đầu ra chương trình đào tạo được tích hợp năng lực số.</li>
+    <li>Khi rà soát hay kiểm định chương trình, "tích hợp" phải chỉ ra được ở bài nào, hoạt động nào, minh chứng gì. Bảng ở dưới chính là thứ đó.</li>
+  </ul>
+  <div class="note"><b>Cần biết:</b> đến 28/11/2026 chưa có công văn hướng dẫn riêng cho cao đẳng, và Thông tư 02 không ấn định bậc hay thời hạn cho trình độ cao đẳng. Các công văn 3456/BGDĐT-GDPT và 2132/SGDĐT-GDPT chỉ dành cho phổ thông. Bộ môn vì vậy được tự chọn cách làm, miễn bám đúng Khung.</div>
+</section>
+
+<section>
+  <h2>Sáu miền, nói gọn</h2>
+  <p>Khung có 6 miền, chia thành 24 năng lực thành phần mang mã từ <span class="code">1.1</span> đến <span class="code">6.3</span>. Ví dụ bên dưới lấy từ xưởng cơ khí.</p>
+  <div class="domains">
+    <div><span class="n">I · 1.1–1.3</span><b>Khai thác dữ liệu và thông tin</b><span>Tra sổ tay máy, catalog dao, tiêu chuẩn; biết nguồn nào tin được; quản lý tệp bản vẽ, chương trình.</span></div>
+    <div><span class="n">II · 2.1–2.6</span><b>Giao tiếp và hợp tác trong môi trường số</b><span>Làm đồ án nhóm trên thư mục dùng chung, nộp bài và nhận xét trực tuyến đúng mực.</span></div>
+    <div><span class="n">III · 3.1–3.4</span><b>Sáng tạo nội dung số</b><span>Vẽ CAD, quay video thao tác, viết chương trình G-code hay PLC, dùng lại tài liệu có ghi nguồn.</span></div>
+    <div><span class="n">IV · 4.1–4.4</span><b>An toàn</b><span>Chép dữ liệu vào máy công nghiệp bằng thiết bị sạch, sao lưu, giữ dữ liệu cá nhân.</span></div>
+    <div><span class="n">V · 5.1–5.4</span><b>Giải quyết vấn đề</b><span>Chạy mô phỏng để tìm và sửa lỗi trước khi làm thật; chọn đúng phần mềm cho việc cần làm.</span></div>
+    <div><span class="n">VI · 6.1–6.3</span><b>Ứng dụng trí tuệ nhân tạo</b><span>Dùng AI để tra cứu, soát lỗi, và tự kiểm lại được điều AI nói.</span></div>
+  </div>
+  <details>
+    <summary>Xem đủ 24 năng lực thành phần</summary>
+    <div class="scroll"><table>
+      <tr><th>Mã</th><th>Năng lực thành phần (đúng tên trong Thông tư)</th></tr>
+      <tr><td class="code">1.1</td><td>Duyệt, tìm kiếm và lọc dữ liệu, thông tin và nội dung số</td></tr>
+      <tr><td class="code">1.2</td><td>Đánh giá dữ liệu, thông tin và nội dung số</td></tr>
+      <tr><td class="code">1.3</td><td>Quản lý dữ liệu, thông tin và nội dung số</td></tr>
+      <tr><td class="code">2.1</td><td>Tương tác thông qua công nghệ số</td></tr>
+      <tr><td class="code">2.2</td><td>Chia sẻ thông tin và nội dung thông qua công nghệ số</td></tr>
+      <tr><td class="code">2.3</td><td>Sử dụng công nghệ số để thực hiện trách nhiệm công dân</td></tr>
+      <tr><td class="code">2.4</td><td>Hợp tác thông qua công nghệ số</td></tr>
+      <tr><td class="code">2.5</td><td>Thực hiện quy tắc ứng xử trên mạng</td></tr>
+      <tr><td class="code">2.6</td><td>Quản lý danh tính số</td></tr>
+      <tr><td class="code">3.1</td><td>Phát triển nội dung số</td></tr>
+      <tr><td class="code">3.2</td><td>Tích hợp và tạo lập lại nội dung số</td></tr>
+      <tr><td class="code">3.3</td><td>Thực thi bản quyền và giấy phép</td></tr>
+      <tr><td class="code">3.4</td><td>Lập trình</td></tr>
+      <tr><td class="code">4.1</td><td>Bảo vệ thiết bị</td></tr>
+      <tr><td class="code">4.2</td><td>Bảo vệ dữ liệu cá nhân và quyền riêng tư</td></tr>
+      <tr><td class="code">4.3</td><td>Bảo vệ sức khỏe và an sinh số</td></tr>
+      <tr><td class="code">4.4</td><td>Bảo vệ môi trường</td></tr>
+      <tr><td class="code">5.1</td><td>Giải quyết các vấn đề kỹ thuật</td></tr>
+      <tr><td class="code">5.2</td><td>Xác định nhu cầu và giải pháp công nghệ</td></tr>
+      <tr><td class="code">5.3</td><td>Sử dụng sáng tạo công nghệ số</td></tr>
+      <tr><td class="code">5.4</td><td>Xác định các vấn đề cần cải thiện về năng lực số</td></tr>
+      <tr><td class="code">6.1</td><td>Hiểu biết về AI (trong đó có Gen AI)</td></tr>
+      <tr><td class="code">6.2</td><td>Sử dụng AI có đạo đức và trách nhiệm</td></tr>
+      <tr><td class="code">6.3</td><td>Đánh giá các công cụ AI</td></tr>
+    </table></div>
+  </details>
+</section>
+
+<section>
+  <h2>Tám bậc: chọn theo mức tự chủ</h2>
+  <p>Mỗi năng lực có 8 bậc, xếp trong 4 trình độ. Khi soạn bài chỉ cần hỏi: người học làm việc này tự chủ đến đâu?</p>
+  <div class="scroll"><table>
+    <tr><th>Người học…</th><th>Bậc</th><th>Trình độ</th></tr>
+    <tr><td>làm theo từng bước, có người kèm</td><td class="num">1–2</td><td>Cơ bản</td></tr>
+    <tr><td>tự làm việc quen thuộc theo quy trình có sẵn</td><td class="num">3</td><td>Trung cấp</td></tr>
+    <tr><td>tự làm việc không thường gặp, tự chọn cách làm</td><td class="num">4</td><td>Trung cấp</td></tr>
+    <tr><td>làm được nhiều loại việc và chỉ lại cho bạn</td><td class="num">5</td><td>Nâng cao</td></tr>
+    <tr><td>xử lý tình huống phức tạp, tự đánh giá và điều chỉnh</td><td class="num">6</td><td>Nâng cao</td></tr>
+    <tr><td>tạo giải pháp mới, đóng góp cho nghề</td><td class="num">7–8</td><td>Chuyên sâu</td></tr>
+  </table></div>
+  <p>Hướng dẫn cho phổ thông đặt lớp 10–12 ở bậc 5. Với sinh viên cao đẳng, mức hợp lý là bậc 5–6 cho những năng lực gắn với nghề. Kỹ năng số đầu vào thường chênh lệch, nên khảo sát lớp trước khi chốt bậc.</p>
+</section>
+
+<section>
+  <h2>Cách ghi vào giáo án</h2>
+  <ol>
+    <li><b>Liệt kê việc người học tự làm với công cụ số.</b> Chỉ tính việc tạo ra thứ nộp được. Giảng viên trình chiếu thì không tính.</li>
+    <li><b>Gắn mỗi việc với một hoặc hai mã gần nhất.</b> Một bài không cần phủ đủ sáu miền; ba đến năm dòng là đủ.</li>
+    <li><b>Ghi bậc và minh chứng.</b> Minh chứng là tệp, ảnh chụp màn hình, video, bảng số liệu hoặc phiếu, chấm theo tiêu chí báo trước cho người học.</li>
+  </ol>
+</section>
+
+<section>
+  <h2>Ví dụ 1: Thực hành CNC Fanuc</h2>
+  <p>Bài cài đặt dao, gốc phôi và chạy thử chương trình, một buổi thực hành.</p>
+  <div class="scroll"><table class="wide">
+    <tr><th>Hoạt động của người học</th><th>Mã</th><th>Bậc</th><th>Công cụ số</th><th>Minh chứng và cách đánh giá</th></tr>
+    <tr><td>Trước buổi học, tra sổ tay hệ điều khiển và catalog dao để lấy ý nghĩa lệnh và chế độ cắt</td><td class="code">1.1 · 1.2</td><td class="num">4</td><td>Sổ tay PDF, catalog trực tuyến của nhà sản xuất</td><td>Phiếu tra cứu ghi tên tài liệu và trang cho từng thông số</td></tr>
+    <tr><td>Chạy mô phỏng chương trình trước khi lên máy; tìm, ghi lại và sửa lỗi</td><td class="code">5.1</td><td class="num">5</td><td>Phần mềm mô phỏng CNC của xưởng</td><td>Ảnh đường chạy dao trước và sau khi sửa, bảng lỗi (dòng lệnh, lỗi, cách sửa)</td></tr>
+    <tr><td>Nhờ AI soát G-code, rồi tự đối chiếu từng nhận xét với sổ tay máy</td><td class="code">6.2 · 6.3</td><td class="num">4</td><td>Một công cụ AI do giảng viên chỉ định</td><td>Bảng ba cột: AI nói gì, đúng hay sai, căn cứ trang nào. Vấn đáp: giải thích bất kỳ dòng lệnh nào được hỏi</td></tr>
+    <tr><td>Theo nhóm, quay video quy trình cài dao và đặt gốc phôi, có chú thích và lưu ý an toàn</td><td class="code">3.1 · 2.4</td><td class="num">4</td><td>Điện thoại, phần mềm dựng video miễn phí</td><td>Video dưới 3 phút, chấm theo phiếu: đủ bước, đúng thứ tự, đọc được số offset</td></tr>
+    <tr><td>Đặt tên tệp theo quy ước xưởng, lưu vào thư mục chung, chép vào máy bằng thiết bị đã quét</td><td class="code">1.3 · 4.1</td><td class="num">3</td><td>Thư mục dùng chung, USB của xưởng</td><td>Kiểm thư mục: đúng tên, đúng phiên bản, có ghi chú thay đổi</td></tr>
+  </table></div>
+  <p>Hai điểm cần giữ: mô phỏng đặt sau phần thị phạm trên máy thật chứ không thay thị phạm, và người học chỉ đạt năng lực AI khi tự kiểm được điều AI nói.</p>
+</section>
+
+<section>
+  <h2>Ví dụ 2: Vật lí 10</h2>
+  <p>Bài thực hành xác định gia tốc của chuyển động thẳng biến đổi đều, một tiết trên lớp và phần làm nhóm.</p>
+  <div class="scroll"><table class="wide">
+    <tr><th>Hoạt động của người học</th><th>Mã</th><th>Bậc</th><th>Công cụ số</th><th>Minh chứng và cách đánh giá</th></tr>
+    <tr><td>Dự đoán dạng đồ thị vận tốc theo thời gian, rồi thử trên mô phỏng</td><td class="code">5.3</td><td class="num">5</td><td>Mô phỏng PhET</td><td>Phiếu dự đoán và kết quả, một câu giải thích chỗ khác nhau</td></tr>
+    <tr><td>Quay video xe lăn trên máng nghiêng, lấy bảng vị trí theo thời gian từ video</td><td class="code">5.2 · 1.3</td><td class="num">5</td><td>Điện thoại, Tracker</td><td>Tệp số liệu gốc, ảnh màn hình có thước chuẩn; ít nhất 8 điểm đo</td></tr>
+    <tr><td>Nhập số liệu vào bảng tính, vẽ đồ thị, lấy đường khớp, tính gia tốc và sai số</td><td class="code">1.2 · 3.1</td><td class="num">5</td><td>Google Sheets hoặc Excel</td><td>Bảng tính có công thức, đồ thị có tên trục và đơn vị</td></tr>
+    <tr><td>Nhóm cùng viết báo cáo trên một tài liệu chung, nhận xét chéo, nộp trực tuyến</td><td class="code">2.4 · 2.2</td><td class="num">5</td><td>Tài liệu dùng chung, trang nộp bài của lớp</td><td>Lịch sử chỉnh sửa cho thấy mọi thành viên đều viết</td></tr>
+    <tr><td>Ghi nguồn và giấy phép của mô phỏng, hình ảnh lấy từ ngoài</td><td class="code">3.3</td><td class="num">5</td><td></td><td>Mục Nguồn cuối báo cáo: tác giả, giấy phép, đường dẫn</td></tr>
+  </table></div>
+</section>
+
+<section>
+  <h2>Triển khai dần cho các môn của bộ môn</h2>
+  <ol class="steps">
+    <li><span class="when">Học kỳ này</span><div><h3>Thí điểm một hoặc hai bài</h3><p>Hai giảng viên, mỗi người điền bảng cho một bài đang dạy, dạy thử, giữ lại minh chứng của người học. Ghi lại chỗ nào khó điền.</p></div></li>
+    <li><span class="when">Cuối kỳ</span><div><h3>Chốt mẫu chung</h3><p>Bộ môn họp 30 phút: xem hai bài thí điểm, thống nhất cách gắn mã cho những việc lặp lại nhiều (mô phỏng, tra catalog, CAD) và bậc đích cho từng năm học.</p></div></li>
+    <li><span class="when">Học kỳ sau</span><div><h3>Mỗi môn tự điền</h3><p>Mỗi môn chọn hai đến ba bài có sẵn hoạt động số để điền. Hai giảng viên đọc chéo bài của nhau trước khi nộp.</p></div></li>
+    <li><span class="when">Cuối năm</span><div><h3>Ghép thành ma trận</h3><p>Gom các bảng thành một ma trận môn học × 24 năng lực. Ô nào trống ở mọi môn thì bàn xem môn nào nhận, hoặc để môn Tin học lo. Ma trận này đưa thẳng vào đề cương và hồ sơ rà soát chương trình.</p></div></li>
+  </ol>
+  <p>Lý do đi chậm: một trường cao đẳng báo cáo gần 30% môn đăng ký dạy kết hợp trực tuyến nhưng 80% bài giảng đăng ký không xong đúng hạn. Ít bài mà làm xong thì có mẫu thật cho người sau.</p>
+</section>
+
+<section>
+  <h2>Mẫu trống cho môn của thầy cô</h2>
+  <div class="scroll"><table class="wide">
+    <tr><th>#</th><th>Hoạt động của người học</th><th>Miền / mã (TT 02/2025)</th><th>Bậc cần đạt</th><th>Công cụ số</th><th>Minh chứng và cách đánh giá</th></tr>
+    <tr><td class="num">1</td><td>&nbsp;</td><td></td><td></td><td></td><td></td></tr>
+    <tr><td class="num">2</td><td>&nbsp;</td><td></td><td></td><td></td><td></td></tr>
+    <tr><td class="num">3</td><td>&nbsp;</td><td></td><td></td><td></td><td></td></tr>
+    <tr><td class="num">4</td><td>&nbsp;</td><td></td><td></td><td></td><td></td></tr>
+    <tr><td class="num">5</td><td>&nbsp;</td><td></td><td></td><td></td><td></td></tr>
+  </table></div>
+  <div class="tools">
+    <button id="copy-btn" type="button">Sao chép mẫu</button>
+    <span id="copy-status" role="status">Dán được thẳng vào Word, Excel hoặc Google Sheets.</span>
+  </div>
+  <textarea id="tpl" rows="9" readonly aria-label="Mẫu trống dạng bảng">Môn / mô-đun:
+Bài:
+Thời lượng:
+Người soạn:
+
+#	Hoạt động của người học	Miền / mã năng lực (TT 02/2025)	Bậc cần đạt	Công cụ số	Minh chứng và cách đánh giá
+1
+2
+3
+4
+5					</textarea>
+  <h3>Tự soát trước khi nộp</h3>
+  <ul class="check">
+    <li>Mỗi dòng là việc người học làm và có sản phẩm nộp được.</li>
+    <li>Mã chép đúng từ bảng 24 năng lực, không tự đặt.</li>
+    <li>Minh chứng chấm được bằng tiêu chí đã báo trước.</li>
+    <li>Hoạt động số không thay thao tác thật mà bài yêu cầu (đo, gá, vận hành).</li>
+    <li>Người học không có thiết bị riêng vẫn làm được.</li>
+  </ul>
+  <h3>Việc thường có sẵn trong môn kỹ thuật</h3>
+  <div class="scroll"><table>
+    <tr><th>Việc đang làm</th><th>Mã gần nhất</th></tr>
+    <tr><td>Tra tiêu chuẩn, sổ tay, catalog, bảng dung sai trực tuyến</td><td class="code">1.1 · 1.2</td></tr>
+    <tr><td>Quản lý tệp bản vẽ, chương trình, phiên bản</td><td class="code">1.3</td></tr>
+    <tr><td>Vẽ CAD, làm báo cáo, quay video thao tác</td><td class="code">3.1</td></tr>
+    <tr><td>Dùng lại thư viện chi tiết, bản vẽ mẫu có ghi nguồn</td><td class="code">3.2 · 3.3</td></tr>
+    <tr><td>Viết G-code, PLC, macro, bảng tính có công thức</td><td class="code">3.4</td></tr>
+    <tr><td>Mô phỏng CAM, mạch, thuỷ khí, PLC để sửa lỗi trước khi làm thật</td><td class="code">5.1</td></tr>
+    <tr><td>Chọn phần mềm, thiết bị đo số cho một nhiệm vụ</td><td class="code">5.2</td></tr>
+    <tr><td>Làm đồ án nhóm trên tài liệu dùng chung</td><td class="code">2.2 · 2.4</td></tr>
+    <tr><td>Chép dữ liệu vào máy công nghiệp an toàn, sao lưu</td><td class="code">4.1</td></tr>
+    <tr><td>Anh văn chuyên ngành: so bản dịch máy với tài liệu gốc</td><td class="code">1.2 · 6.3</td></tr>
+  </table></div>
+  <p class="src">Việc gắn hoạt động với mã trong trang này là đề xuất để bộ môn bàn, chưa phải quy định.</p>
+</section>
+
+<section>
+  <h2>Bằng chứng nói gì, và chưa nói gì</h2>
+  <ul>
+    <li><b>Lồng vào môn chuyên ngành là đúng hướng nhưng không đủ một mình.</b> Tổng hợp của Cedefop trên 8 nước châu Âu kết luận nên có nền chung bắt buộc cộng với lồng ghép theo ngành.</li>
+    <li><b>Mô phỏng CNC: bằng chứng ở mức vừa.</b> Một nghiên cứu trên 46 sinh viên cơ khí cho thấy nhóm học kết hợp mô phỏng có tải tinh thần thấp hơn (54,3 so với 58,3 điểm NASA-TLX). Đây không phải điểm tay nghề. Chưa tìm thấy nghiên cứu có đối chứng nào đo tay nghề trên học sinh nghề.</li>
+    <li><b>Có bằng chứng ngược chiều.</b> Một thí nghiệm trên 106 người mới học cho thấy thị phạm trực tiếp hiệu quả hơn thực tế ảo. Mô phỏng nên bổ sung cho thị phạm.</li>
+    <li><b>Trong nước</b> mới có một thực nghiệm có đối chứng (Toán 11, gần 200 học sinh): lớp học theo hướng phát triển năng lực số đạt 7,83 điểm so với 6,51. Chưa có nghiên cứu nào cho ngành cơ khí bậc cao đẳng. Bài thí điểm của bộ môn vì vậy cũng là dữ liệu đáng ghi lại.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Nguồn</h2>
+  <ul class="src">
+    <li>Thông tư 02/2025/TT-BGDĐT, Khung năng lực số cho người học (24/01/2025).</li>
+    <li>Quyết định 2222/QĐ-TTg, Chương trình chuyển đổi số trong giáo dục nghề nghiệp (30/12/2021). <a href="https://vanban.chinhphu.vn/default.aspx?pageid=27160&docid=204888">vanban.chinhphu.vn</a></li>
+    <li>Công văn 3456/BGDĐT-GDPT (27/6/2025), hướng dẫn cho phổ thông và giáo dục thường xuyên.</li>
+    <li>Papazoglou, Psifidou &amp; Kamopoulou (2026). Digital skills integration in IVET curricula. Cedefop. <a href="https://www.cedefop.europa.eu/files/6230_en.pdf">cedefop.europa.eu</a></li>
+    <li>Hoang và cs. (2024). International Journal of Mechanical Engineering Education, 52(2). DOI 10.1177/03064190231185326 (mới đọc tóm tắt).</li>
+    <li>Grecu và cs. (2025). Applied Sciences, 15(23), 12534. DOI 10.3390/app152312534 (mới đọc tóm tắt).</li>
+    <li>Nguyễn Thụy Phương Trâm &amp; Tạ Thị Ngọc Ánh (2025). Tạp chí Giáo dục, 25(23), 29–34.</li>
+    <li>Nguyễn Thị Mỹ &amp; Huỳnh Thị Thu Hương (2024). Tạp chí Thiết bị Giáo dục, số 322, 104–106.</li>
+    <li>Vuorikari, Kluzer &amp; Punie (2022). DigComp 2.2. DOI 10.2760/115376. Khung châu Âu mà Thông tư 02 tham chiếu.</li>
+  </ul>
+</section>
+
+<footer>Nguồn đối chiếu ngày 28/11/2026. Tên và mã 24 năng lực chép từ văn bản gốc của Thông tư 02/2025; phần mô tả bậc là diễn đạt lại, câu chữ chính thức xem Bảng C của Thông tư.</footer>
+
+</div>
+
+<script>
+(function(){
+  var btn=document.getElementById('copy-btn'),ta=document.getElementById('tpl'),st=document.getElementById('copy-status');
+  function fallback(){ta.focus();ta.select();st.textContent='Đã bôi chọn mẫu. Nhấn Ctrl+C (hoặc ⌘C) để sao chép.';}
+  btn.addEventListener('click',function(){
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(ta.value).then(function(){st.textContent='Đã sao chép. Dán vào Word, Excel hoặc Google Sheets.';},fallback);
+    }else{fallback();}
+  });
+})();
+</script>
