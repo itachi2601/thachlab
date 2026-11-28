@@ -79,7 +79,7 @@ Nạp mỗi phiên, giữ dưới 15 KB: hiện trạng + ĐANG CHỜ (1–2 dò
 
 - P2/P4 xong 26–27/11: L10–12, KHTN 9, CNC (file nguồn CNC đã khớp DB, có neo `muc-N`), bài 31, 38, 39; P3 đã lên site. Sao lưu `scripts/logs/p2p4-2026-11-26/`, `ly-thuyet-bai*-backup-17957*`.
 - Clip L12 lô 32 (Việc 4): ĐÃ GHI DB 27/11 07:20 (20/20 ✓, bài 10 kèm sửa câu Quan sát tutruong-02). 27/11: 150 clip tự dựng L9/L10/L11 chưa qua cổng mới (chưa `cau_chot`) giao 5 phiên nhánh `clip-cong-moi-*` (L9, L10a, L10b, L11a, L11b), mỗi phiên dừng ở lô duyệt.
-- Clip L10b cổng mới (nhánh `clip-cong-moi-l10b`): nhóm A+C 16 clip ĐÃ GHI DB 27/11 18:05 (bài 68–75, kèm sửa hộp); nhóm B (8) qua cổng B chờ sửa nhẹ; D đang dựng; E chưa làm. Sổ: `so-clip-anh-dong.md` mục L10b.
+- Clip L10b cổng mới (nhánh `clip-cong-moi-l10b`): XONG 28/11 09:58 — 38/38 clip đã ghi DB 17 bài (63–79), kèm sửa hộp; sổ `so-clip-anh-dong.md` mục L10b.
 - Clip L9 cổng mới (nhánh `claude/clip-cong-moi-l9-896df8`): đợt 1 12/36 ĐÃ GHI DB 27/11 17:53 (bài 89–92, 129); đợt 2 14 clip ĐÃ GHI DB 27/11 22:53 (bài 84–88, 92–94, kèm sửa hộp exp); nhóm C 10 clip đang dựng (sổ clip mục "Cổng mới — L9").
 - Clip cổng mới L10a (bài 46–62): mẻ 1 13 clip ĐÃ GHI DB 27/11 17:53 (8 bài 46–53, kèm sửa 4 hộp exp lộ Dự đoán); 16 clip còn lại đang dựng/soát, bỏ do-toc-do-03 (không có trong bài). Sổ clip mục "Cổng mới — L10a".
 - Clip cổng mới L10a mẻ 2: 7 clip ĐÃ GHI DB 27/11 22:44 (bài 54, 55, 56, 51; kèm sửa 3 hộp exp ctbdd-01, do-g-02, do-g-03). Nhóm C (9 clip, bài 57–62) đang dựng/soát.
