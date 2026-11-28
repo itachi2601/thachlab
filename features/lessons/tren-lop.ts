@@ -7,14 +7,25 @@
 export type BanChieuTrenLop = { lessonId: number; slug: string; ten: string; ghiChu: string };
 
 export const BAN_CHIEU_TREN_LOP: BanChieuTrenLop[] = [
+  { lessonId: 46, slug: "l10-lam-quen-voi-vat-li", ten: "Vật lí 10 · Bài 1 · Làm quen với Vật lí", ghiChu: "26 màn · cuối tiết đề 1222 (QR)" },
+  { lessonId: 47, slug: "l10-an-toan-phong-thuc-hanh", ten: "Vật lí 10 · Bài 2 · An toàn phòng thực hành", ghiChu: "24 màn · cuối tiết đề 1223 (QR)" },
   { lessonId: 61, slug: "l10-dinh-luat-3-newton", ten: "Vật lí 10 · Bài 16 · Định luật 3 Newton", ghiChu: "25 màn · cuối tiết đề 1237 (QR)" },
+  { lessonId: 62, slug: "l10-trong-luc-luc-cang", ten: "Vật lí 10 · Bài 17 · Trọng lực và lực căng", ghiChu: "27 màn · cuối tiết đề 1238 (QR)" },
   { lessonId: 63, slug: "l10-luc-ma-sat", ten: "Vật lí 10 · Bài 18 · Lực ma sát", ghiChu: "22 màn · cuối tiết đề 1239 (QR)" },
   { lessonId: 64, slug: "l10-luc-can-luc-nang", ten: "Vật lí 10 · Bài 19 · Lực cản và lực nâng", ghiChu: "22 màn · cuối tiết đề 1240 (QR)" },
+  { lessonId: 65, slug: "l10-giai-bai-toan-dong-luc-hoc", ten: "Vật lí 10 · Bài 20 · Giải bài toán động lực học", ghiChu: "24 màn · cuối tiết đề 1241 (QR)" },
+  { lessonId: 66, slug: "l10-moment-luc", ten: "Vật lí 10 · Bài 21 · Moment lực. Cân bằng của vật rắn", ghiChu: "24 màn · cuối tiết đề 1242 (QR)" },
   { lessonId: 35, slug: "l11-luc-coulomb", ten: "Vật lí 11 · Bài 16 · Lực tương tác giữa hai điện tích", ghiChu: "24 màn · cuối tiết đề 1211 (QR)" },
   { lessonId: 39, slug: "l11-dien-the", ten: "Vật lí 11 · Bài 20 · Điện thế", ghiChu: "22 màn · cuối tiết đề 1215 (QR)" },
   { lessonId: 40, slug: "l11-tu-dien", ten: "Vật lí 11 · Bài 21 · Tụ điện", ghiChu: "23 màn · cuối tiết đề 1216 (QR)" },
   { lessonId: 41, slug: "l11-cuong-do-dong-dien", ten: "Vật lí 11 · Bài 22 · Cường độ dòng điện", ghiChu: "22 màn · cuối tiết đề 1217 (QR)" },
+  { lessonId: 42, slug: "l11-dien-tro-dinh-luat-ohm", ten: "Vật lí 11 · Bài 23 · Điện trở. Định luật Ohm", ghiChu: "24 màn · cuối tiết đề 1218 (QR)" },
+  { lessonId: 43, slug: "l11-nguon-dien", ten: "Vật lí 11 · Bài 24 · Nguồn điện", ghiChu: "23 màn · cuối tiết đề 1219 (QR)" },
+  { lessonId: 44, slug: "l11-nang-luong-cong-suat-dien", ten: "Vật lí 11 · Bài 25 · Năng lượng điện và công suất điện", ghiChu: "24 màn · cuối tiết đề 1220 (QR)" },
   { lessonId: 15, slug: "l12-hat-nhan-mo-hinh-nguyen-tu", ten: "Vật lí 12 · Bài 14 · Hạt nhân và mô hình nguyên tử", ghiChu: "27 màn · cuối tiết đề 1191 (QR)" },
+  { lessonId: 16, slug: "l12-nang-luong-lien-ket", ten: "Vật lí 12 · Bài 15 · Năng lượng liên kết", ghiChu: "24 màn · cuối tiết đề 1192 (QR)" },
+  { lessonId: 17, slug: "l12-phan-hach-nhiet-hach", ten: "Vật lí 12 · Bài 16 · Phân hạch, nhiệt hạch", ghiChu: "24 màn · cuối tiết đề 1193 (QR)" },
+  { lessonId: 18, slug: "l12-phong-xa", ten: "Vật lí 12 · Bài 17 · Hiện tượng phóng xạ", ghiChu: "29 màn · cuối tiết đề 1194 (QR)" },
 ];
 
 export const banChieuCuaBai = (lessonId: number) => BAN_CHIEU_TREN_LOP.find((b) => b.lessonId === lessonId);

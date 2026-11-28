@@ -34,7 +34,7 @@ const thanh = (x0, x1, y) => `<rect x="${x0}" y="${y - 6}" width="${x1 - x0}" he
 
 export const hinhL10b21 = {
   // Tr.1 · Dự đoán: búa nhổ đinh, hai chỗ đặt tay. Chú thích chỉ nhắc lại số liệu, không nêu kết luận.
-  buaNhoDinh: (cap = 'Đầu búa tì lên gỗ tại O. Minh ấn 300 N cách O 8 cm; anh Tuấn ấn 150 N cách O 30 cm.') => {
+  buaNhoDinh: (cap = 'O: trục quay, chỗ đầu búa tì lên gỗ. Nét đứt: giá của lực (đường thẳng chứa lực). Minh ấn 300 N cách O 8 cm; anh Tuấn ấn 150 N cách O 30 cm.') => {
     const O = [46, 136], a = 20, c = Math.cos(R(a)), s = Math.sin(R(a)), k = 7.6; // 7,6 đơn vị / cm dọc cán
     const P = (cm) => [O[0] + cm * k * c, O[1] - cm * k * s];
     const [mx, my] = P(8), [tx, ty] = P(30), [ex, ey] = P(34);
@@ -45,6 +45,7 @@ export const hinhL10b21 = {
       + `<line x1="${O[0]}" y1="${O[1] - 6}" x2="${f1(ex)}" y2="${f1(ey - 6)}" stroke="#fff" stroke-width="4" stroke-linecap="round"/>`;
     b += `<circle cx="${O[0]}" cy="${O[1]}" r="3.5" fill="${INK}"/>` + T(O[0] - 32, O[1] + 2, 'O', { w: 700, a: 'end' });
     const L1 = 66, L2 = 44; // không vẽ theo tỉ lệ độ lớn
+    b += ln(mx, my - 10, mx + 30 * s, my - 10 + 30 * c, GREY, 2, '5 4') + ln(tx, ty - 10, tx + 30 * s, ty - 10 + 30 * c, GREY, 2, '5 4');
     b += arr(mx - L1 * s, my - 6 - L1 * c, mx, my - 10, 'bnA', RED) + T(mx - L1 * s - 4, my - L1 * c - 14, 'Minh', { c: RED, w: 700, a: 'middle' });
     b += arr(tx - L2 * s, ty - 6 - L2 * c, tx, ty - 10, 'bnB', BLUE, '7 4') + T(tx - L2 * s - 8, ty - L2 * c + 18, 'Tuấn', { c: BLUE, w: 700, a: 'end' });
     // đoạn đo dọc cán, phía dưới cán (khung xoay theo cán), từ O tới chỗ đặt tay
@@ -100,17 +101,17 @@ export const hinhL10b21 = {
     return wrap('0 0 320 236', b, cap, 'Ngẫu lực trên vô lăng');
   },
 
-  // Tr.4 · Bài toán mẫu: thanh gỗ trên giá đỡ, túi gạo ở A. Mũi tên KHÔNG theo tỉ lệ (P1 là ẩn).
-  thanhMau: (cap = 'Ba lực lên thanh: P<sub>1</sub> ở A, P ở G, N ở O. Mũi tên không vẽ theo tỉ lệ.') => {
+  // Tr.4 · Bài toán mẫu: thanh gỗ trên giá đỡ, túi gạo ở A. Thứ tự A–O–G–B; VỊ TRÍ vẽ đúng tỉ lệ (OA = 0,4; OG = 0,2), mũi tên lực KHÔNG theo tỉ lệ (P1 là ẩn).
+  thanhMau: (cap = 'Vị trí vẽ đúng tỉ lệ, mũi tên lực thì không.') => {
     const y = 104, A = 22, B = 298, k = (B - A) / 1.2, O = A + 0.4 * k, G = A + 0.6 * k;
     let b = defs('tmA') + defs('tmB');
     b += thanh(A, B, y) + giaDo(O, y + 6);
-    b += arr(A + 4, y, A + 4, y + 62, 'tmA', RED) + T(A + 16, y + 52, `P${sb('1')}`, { c: RED, w: 700 });
-    b += arr(G, y, G, y + 62, 'tmA', RED) + T(G + 14, y + 52, 'P', { c: RED, w: 700 });
+    b += arr(A + 4, y, A + 4, y + 62, 'tmA', RED) + T(A + 14, y + 56, `P${sb('1')} (túi gạo)`, { c: RED, w: 700 });
+    b += arr(G, y, G, y + 62, 'tmA', RED) + T(G + 14, y + 56, 'P (thanh)', { c: RED, w: 700 });
     b += arr(O, y, O, y - 70, 'tmB', BLUE, '7 4') + T(O + 14, y - 48, 'N', { c: BLUE, w: 700 });
-    b += T(A, y - 14, 'A', { w: 700 }) + T(B - 14, y - 14, 'B', { w: 700 }) + T(O - 30, y + 30, 'O', { w: 700 }) + T(G - 4, y - 14, 'G', { w: 700, a: 'end' });
-    b += doDai(A, O, 196, '0,4 m') + doDai(A, B, 226, '1,2 m');
-    return wrap('0 0 320 236', b, cap, 'Thanh gỗ trên giá đỡ');
+    b += T(A, y - 14, 'A', { w: 700, a: 'middle' }) + T(B - 14, y - 14, 'B', { w: 700 }) + T(O - 30, y + 30, 'O', { w: 700 }) + T(G + 2, y - 14, 'G', { w: 700, a: 'middle' });
+    b += doDai(A, O, 196, 'OA = 0,4 m') + doDai(O, G, 228, 'OG = 0,2 m');
+    return wrap('0 0 320 240', b, cap, 'Thanh gỗ trên giá đỡ, thứ tự A, O, G, B');
   },
 
   // Tr.5 · Thử thách ⭐⭐⭐: thanh nhẹ trên hai giá
@@ -126,7 +127,7 @@ export const hinhL10b21 = {
   },
 
   // Tr.5 · ảnh thật (dọc 2:3) đặt cột hẹp cạnh khối Mang về
-  anhBua: (cap = 'Cầm cuối cán khi nhổ đinh.') => anh('nho-dinh-bang-bua.jpg', `${cap}<br><span style="font-size:2.4mm">Ảnh: Wikimedia Commons (File:Claw_hammer.JPG), CC BY-SA 4.0</span>`),
+  anhBua: (cap = 'Búa nhổ đinh.') => anh('nho-dinh-bang-bua.jpg', `${cap}<br><span style="font-size:2.4mm">Ảnh: Wikimedia Commons (File:Claw_hammer.JPG), CC BY-SA 4.0</span>`),
 
   // Tr.6 · Dạng 2: cối xay nhìn từ trên xuống
   coiXay: (cap = 'Nhìn từ trên xuống: tâm O, núm A.') => {

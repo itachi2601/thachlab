@@ -1,52 +1,69 @@
 {
   "id": "tn-l10-giaibt-dlh-02",
-  "ten": "Xe lăn và quả nặng: a đo so với số tính thế nào?",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-giaibt-dlh-02-20261030.mp4",
-  "tong_giay": 48.8,
+  "ten": "Xe lăn và quả nặng: thả ra, lực căng dây đổi thế nào?",
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-giaibt-dlh-02-20261127.mp4",
+  "tong_giay": 49.7,
   "o": [
     {
       "khoa": "gia_thuyet",
       "giay": 0,
-      "chu": "Lực cản làm a đo lệch về một phía so với số tính.",
-      "kiem": "Gia tốc đo thật so với số tính?"
+      "chu": "Vật treo tăng tốc đi xuống thì lực căng dây nhỏ hơn trọng lực của nó.",
+      "kiem": "Thả ra, lực căng dây đổi thế nào?"
     },
     {
       "khoa": "du_doan",
-      "giay": 3.3,
-      "chu": "Tính theo định luật II: a = 2,0 m/s². Đo thật 5 lần, a đo so với 2,0 thế nào?"
+      "giay": 3.0,
+      "chu": "Giữ xe đứng yên: dây căng T = 1,0 N. Thả ra cho hệ chạy, T lớn hơn hay nhỏ hơn 1,0 N?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 9.5,
-      "chu": "Xe 0,40 kg, quả nặng 0,10 kg, ròng rọc; đo thời gian đi 0,80 m."
+      "giay": 9.8,
+      "chu": "Xe, quả nặng, ròng rọc, cổng quang."
     },
     {
       "khoa": "quan_sat",
-      "giay": 16.6,
+      "giay": 17.0,
       "chu": "t quanh 0,93 s; a đo từ 1,77 đến 1,89 m/s², cả 5 lần đều dưới 2,0."
     },
     {
       "khoa": "rut_ra",
-      "giay": 30.4,
-      "chu": "Bỏ ma sát: a = m₂g/(m₁ + m₂) = 2,0 m/s². Đo luôn nhỏ hơn: ma sát ở trục và ròng rọc, sai số hệ thống."
+      "giay": 30.0,
+      "chu": "T = m₂(g − a) ≈ 0,8 N, nhỏ hơn 1,0 N. Bỏ ma sát a = 2,0 m/s²; đo nhỏ hơn: có lực cản."
     },
     {
       "khoa": "chua_noi",
-      "giay": 37.8,
+      "giay": 40.2,
       "chu": "Lực cản nằm ở bánh xe hay ở ròng rọc: thí nghiệm này chưa tách được."
     }
   ],
   "dung_dua": {
-    "giay": 8.8,
-    "cau_hoi": "Tính theo định luật II được a = 2,0 m/s². Đo thật 5 lần, a đo so với 2,0 thế nào?",
+    "giay": 9.4,
+    "cau_hoi": "Xe lăn 0,40 kg nối dây qua ròng rọc với quả nặng 0,10 kg. Giữ xe đứng yên thì dây căng T = 1,0 N. Thả tay cho hệ chạy, lực căng dây T lúc đó thế nào?",
     "chon": [
-      "A. Lớn hơn 2,0 ở cả 5 lần",
-      "B. Lúc lớn, lúc nhỏ hơn 2,0",
-      "C. Nhỏ hơn 2,0 ở cả 5 lần",
-      "D. Đúng bằng 2,0 ở cả 5 lần"
+      "A. Lớn hơn 1,0 N",
+      "B. Vẫn bằng 1,0 N",
+      "C. Nhỏ hơn 1,0 N",
+      "D. Bằng 0, dây chùng"
     ],
     "dung": 2,
-    "giai_thich_dung": "Cả 5 lần a đo đều dưới 2,0: lực cản ở trục bánh xe và ròng rọc luôn ngược chiều chuyển động, nên kết quả lệch về một phía.",
-    "giai_thich_sai": "Lực cản thật có mặt ở mọi lần đo và luôn ngược chiều chuyển động; nó làm a đo lệch về phía nào?"
+    "giai_thich_dung": "Quả nặng tăng tốc đi xuống nên hợp lực lên nó hướng xuống: P₂ − T = m₂a > 0, tức T nhỏ hơn P₂ = 1,0 N (khoảng 0,8 N).",
+    "giai_thich_sai": "Xem đoạn kế: quả nặng đi xuống nhanh dần, nên trọng lực phải thắng lực căng. T = m₂(g − a) nhỏ hơn m₂g, nhưng dây vẫn căng vì còn kéo xe."
+  },
+  "cau_chot": {
+    "giay": 44.7,
+    "cau_hoi": "Xe lăn 0,90 kg nối dây qua ròng rọc với quả nặng 0,10 kg, bỏ qua ma sát, g = 10 m/s². Thả từ nghỉ, gia tốc của hệ bao nhiêu?",
+    "chon": [
+      "A. 2,0 m/s²",
+      "B. 1,0 m/s²",
+      "C. 1,1 m/s²",
+      "D. 10 m/s²"
+    ],
+    "dung": 1,
+    "giai_thich": [
+      "2,0 m/s² là số của xe 0,40 kg. Xe nặng hơn thì a = m₂g/(m₁ + m₂) = 1,0/1,0 = 1,0 m/s².",
+      "a = m₂g/(m₁ + m₂) = 0,10·10/(0,90 + 0,10) = 1,0 m/s².",
+      "1,1 = m₂g/m₁ là quên cộng khối lượng quả nặng: cả hai vật cùng tăng tốc, mẫu số là m₁ + m₂.",
+      "10 m/s² là coi quả nặng rơi tự do. Dây kéo nó lại, và lực m₂g phải làm tăng tốc cả hệ: a = 1,0 m/s²."
+    ]
   }
 }

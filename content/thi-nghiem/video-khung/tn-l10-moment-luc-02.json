@@ -1,51 +1,69 @@
 {
   "id": "tn-l10-moment-luc-02",
-  "ten": "Thước có trục ở giữa, quả nặng và lực kế",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-moment-luc-02-20261118.mp4",
-  "tong_giay": 48.1,
+  "ten": "Thước có trục quay ở giữa",
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-moment-luc-02-20261127.mp4",
+  "tong_giay": 49.8,
   "o": [
     {
       "khoa": "gia_thuyet",
       "giay": 0,
-      "chu": "Mỗi lần F2·d2 xấp xỉ P1·d1: móc xa gấp đôi thì lực chỉ còn một nửa.",
-      "kiem": "Móc xa trục hơn, lực kế chỉ sao?"
+      "chu": "Thước có trục quay cố định nằm ngang khi moment hai bên trục bằng nhau, không phải khi hai lực bằng nhau.",
+      "kiem": "Lực kế 5 N móc ở 5 cm có đủ?"
     },
     {
       "khoa": "du_doan",
-      "giay": 3.2,
-      "chu": "Ở 10 cm lực kế chỉ 3,10 N. Móc ở 20 cm (xa gấp đôi), lực kế chỉ khoảng mấy N?"
+      "giay": 3.4,
+      "chu": "Móc lực kế ở 5 cm: lực kế 5 N có đủ giữ thước ngang?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 11.5,
-      "chu": "Thước quay quanh trục O; quả nặng 2,0 N; lực kế."
+      "giay": 9.6,
+      "chu": "Thước có trục, quả nặng, lực kế."
     },
     {
       "khoa": "quan_sat",
-      "giay": 15.7,
-      "chu": "Móc xa trục hơn, lực kế chỉ nhỏ hơn: 10 cm chỉ 3,10 N; 15 cm chỉ 2,00 N."
+      "giay": 17.4,
+      "chu": "Quả nặng 2,0 N ở 15 cm. Lực kế chỉ: 10 cm 3,10 N; 15 cm 2,00 N; 20 cm 1,52 N; 30 cm 0,99 N."
     },
     {
       "khoa": "rut_ra",
-      "giay": 25.1,
-      "chu": "P1·d1 = 2,0 × 15 = 30 N·cm. Mỗi lần F2·d2 ≈ 30 N·cm: moment hai bên bằng nhau."
+      "giay": 29.6,
+      "chu": "Lực kế × chỗ móc ≈ 30 N·cm = 2,0 N × 15 cm: moment hai bên trục bằng nhau thì thước ngang."
     },
     {
       "khoa": "chua_noi",
-      "giay": 33.3,
-      "chu": "Trục ở giữa thước. Trục lệch hay nhiều quả nặng thì chưa thử."
+      "giay": 40.5,
+      "chu": "Kéo lực kế xiên thì số chỉ thế nào: chưa thử."
     }
   ],
   "dung_dua": {
-    "giay": 11.3,
-    "cau_hoi": "Ở 10 cm lực kế chỉ 3,10 N. Móc ở 20 cm (xa gấp đôi), lực kế chỉ khoảng mấy N?",
+    "giay": 9.4,
+    "cau_hoi": "Quả nặng 2,0 N treo cách trục 15 cm. Móc lực kế 0–5 N sát trục, ở 5 cm, kéo thẳng đứng. Lực kế có đủ giữ thước nằm ngang không?",
     "chon": [
-      "A. khoảng 6,2 N",
-      "B. khoảng 3,1 N",
-      "C. khoảng 1,5 N"
+      "A. Đủ, vì 5 N lớn hơn 3,10 N",
+      "B. Đủ, vì 5 N lớn hơn quả nặng 2,0 N",
+      "C. Không đủ, kéo hết thang thước vẫn nghiêng",
+      "D. Đủ, chỗ móc không ảnh hưởng"
     ],
     "dung": 2,
-    "giai_thich_dung": "Móc xa gấp đôi thì lực cần chỉ còn khoảng một nửa 3,10 N, tức khoảng 1,5 N, vì F2·d2 gần như không đổi.",
-    "giai_thich_sai": "Xem số chỉ lực kế khi dời móc ra xa trục ở đoạn kế."
+    "giai_thich_dung": "Móc càng gần trục thì lực cần càng lớn. Ở 5 cm, kéo hết thang 5 N thước vẫn nghiêng về phía quả nặng (theo mô hình).",
+    "giai_thich_sai": "Xem đoạn kế: dời chỗ móc gần trục thì số chỉ lực kế đổi thế nào, rồi xem lần móc ở 5 cm."
+  },
+  "cau_chot": {
+    "giay": 44.6,
+    "cau_hoi": "Dời quả nặng 2,0 N ra cách trục 20 cm. Móc lực kế ở 25 cm bên kia, kéo thẳng đứng cho thước nằm ngang. Lực kế chỉ khoảng bao nhiêu?",
+    "chon": [
+      "A. 2,5 N",
+      "B. 2,0 N",
+      "C. 1,6 N",
+      "D. 1,2 N"
+    ],
+    "dung": 2,
+    "giai_thich": [
+      "2,5 N là làm ngược tỉ lệ khoảng cách. Moment quả nặng 2,0 × 20 = 40 N·cm, nên lực kế chỉ 40 : 25 = 1,6 N.",
+      "2,0 N là so lực hai bên. Thước ngang khi moment bằng nhau: F × 25 = 2,0 × 20, F = 1,6 N.",
+      "2,0 N × 20 cm = 40 N·cm; lực kế ở 25 cm cần 40 : 25 = 1,6 N.",
+      "1,2 N là dùng 30 N·cm cũ (quả nặng ở 15 cm). Quả nặng đã dời ra 20 cm: 2,0 × 20 = 40 N·cm, nên F = 40 : 25 = 1,6 N."
+    ]
   }
 }

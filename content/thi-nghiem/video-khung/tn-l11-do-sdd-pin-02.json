@@ -1,52 +1,69 @@
 {
   "id": "tn-l11-do-sdd-pin-02",
   "ten": "Pin cũ và pin mới trên cùng đồ thị U–I",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-do-sdd-pin-02-20261031-2.mp4",
-  "tong_giay": 49.8,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-do-sdd-pin-02-20261127.mp4",
+  "tong_giay": 49.7,
   "o": [
     {
       "khoa": "gia_thuyet",
       "giay": 0,
-      "chu": "Hai pin cùng loại: E gần nhau, r khác nhiều.",
-      "kiem": "Pin mới cho đường U–I ra sao?"
+      "chu": "Hai pin cùng loại đo trong cùng một mạch, cùng sáu nấc Rx.",
+      "kiem": "Pin mới khác pin cũ ở chỗ nào?"
     },
     {
       "khoa": "du_doan",
       "giay": 3.8,
-      "chu": "Thay pin mới cùng loại, giữ nguyên mạch và 6 lần đo. Đường U–I của pin mới thế nào?"
+      "chu": "K mở: pin mới 1,58 V, pin cũ 1,50 V. Đóng K, Rx = 0 Ω: hai pin chênh hơn hay kém 0,08 V?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 10.0,
-      "chu": "Cùng mạch, thay pin mới: ampe kế nối tiếp, vôn kế ở hai cực pin."
+      "giay": 9.7,
+      "chu": "Cùng mạch lần trước, thay pin mới: ampe kế nối tiếp, vôn kế ở hai cực pin, sáu nấc Rx."
     },
     {
       "khoa": "quan_sat",
-      "giay": 20.2,
-      "chu": "U chỉ tụt từ 1,58 V xuống 1,40 V; đường thoải hơn hẳn."
+      "giay": 18.3,
+      "chu": "Pin mới: U từ 1,58 chỉ tụt tới 1,40 V. Ở Rx = 0 Ω, pin cũ 1,06 V: chênh 0,34 V."
     },
     {
       "khoa": "rut_ra",
-      "giay": 24.2,
-      "chu": "Giao trục U cho E gần nhau (1,58 V và 1,50 V).\nPin mới thoải hơn: r nhỏ hơn hẳn."
+      "giay": 26.2,
+      "chu": "Hai đường cắt trục U gần nhau (1,58 V và 1,50 V); đường pin mới thoải hơn hẳn."
     },
     {
       "khoa": "chua_noi",
-      "giay": 30.0,
-      "chu": "Trong pin, điều gì làm r tăng?"
+      "giay": 37.3,
+      "chu": "Trong pin, điều gì làm r tăng dần?"
     }
   ],
   "dung_dua": {
-    "giay": 9.8,
-    "cau_hoi": "Thay pin mới cùng loại, giữ nguyên mạch và 6 lần đo. Đường U–I của pin mới thế nào?",
+    "giay": 9.55,
+    "cau_hoi": "K mở: pin mới chỉ 1,58 V, pin cũ 1,50 V (chênh 0,08 V). Đóng K, vặn Rx = 0 Ω. Hai pin chênh nhau thế nào?",
     "chon": [
-      "A. Song song với đường pin cũ, nằm cao hơn",
-      "B. Thoải hơn hẳn, cắt trục U gần chỗ cũ",
-      "C. Dốc hơn, cắt trục U cao hơn hẳn",
-      "D. Trùng với đường pin cũ"
+      "A. Vẫn chênh khoảng 0,08 V",
+      "B. Chênh hơn hẳn 0,08 V",
+      "C. Chênh kém hẳn 0,08 V",
+      "D. Bằng nhau, không còn chênh"
     ],
     "dung": 1,
-    "giai_thich_dung": "Đường pin mới cắt trục U ở 1,58 V, gần 1,50 V của pin cũ, nhưng thoải hơn hẳn: U chỉ tụt tới 1,40 V dù I lên 0,701 A, nên r nhỏ hơn nhiều.",
-    "giai_thich_sai": "Pin cũ và pin mới cùng loại có E gần nhau; chỗ khác là độ dốc, tức điện trở trong r. Xem các điểm pin mới ở đoạn kế, so với đường pin cũ."
+    "giai_thich_dung": "Ở Rx = 0 Ω pin mới còn 1,40 V, pin cũ chỉ 1,06 V: chênh 0,34 V. Pin cũ tụt nhiều hơn hẳn khi có dòng.",
+    "giai_thich_sai": "Hở mạch chỉ cho thấy ℰ. Khi có dòng, mỗi pin tụt thêm một phần; pin cũ tụt 0,44 V, pin mới chỉ 0,18 V, nên chênh lệch tăng lên 0,34 V."
+  },
+  "cau_chot": {
+    "giay": 44.3,
+    "cau_hoi": "Cùng Rx = 0 Ω. Pin mới: ℰ = 1,58 V, U = 1,40 V, I = 0,701 A. Pin cũ: ℰ = 1,50 V, U = 1,06 V, I = 0,534 A. Hiệu suất H = U/ℰ của pin cũ kém pin mới khoảng:",
+    "chon": [
+      "A. Khoảng 5 điểm %",
+      "B. Khoảng 18 điểm %",
+      "C. Khoảng 34 điểm %",
+      "D. Không kém, cùng mạch"
+    ],
+    "dung": 1,
+    "giai_thich": [
+      "5 % chỉ là chênh ℰ (0,08/1,58), lúc chưa có dòng. Có dòng thì H = U/ℰ: pin mới 1,40/1,58 ≈ 89 %, pin cũ 1,06/1,50 ≈ 71 %, kém khoảng 18 điểm %.",
+      "H = U/ℰ: pin mới 1,40/1,58 ≈ 0,89 = 89 %, pin cũ 1,06/1,50 ≈ 0,71 = 71 %. Pin cũ kém khoảng 18 điểm %, vì r lớn làm U tụt nhiều.",
+      "0,34 V là chênh U, không phải chênh hiệu suất. Phải chia cho ℰ của từng pin: pin mới ≈ 89 %, pin cũ ≈ 71 %, kém khoảng 18 điểm %.",
+      "Cùng mạch ngoài nhưng r khác nên U khác: pin mới 1,40/1,58 ≈ 89 %, pin cũ 1,06/1,50 ≈ 71 %, kém khoảng 18 điểm %."
+    ]
   }
 }

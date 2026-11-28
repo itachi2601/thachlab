@@ -1,52 +1,69 @@
 {
   "id": "tn-l10-moment-luc-03",
-  "ten": "Đẩy hai đầu thước ngược chiều: thước làm gì?",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-moment-luc-03-20261030.mp4",
-  "tong_giay": 48.9,
+  "ten": "Thước bị đẩy bằng ngẫu lực",
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-moment-luc-03-20261127.mp4",
+  "tong_giay": 47.9,
   "o": [
     {
       "khoa": "gia_thuyet",
       "giay": 0,
-      "chu": "Ngẫu lực chỉ làm quay; vật tự do quay quanh trọng tâm.",
-      "kiem": "Hai lực ngược chiều làm thước chuyển động thế nào?"
+      "chu": "Ngẫu lực có tổng lực bằng 0 nên chỉ làm vật quay; vật tự do quay quanh trọng tâm, dù hai lực đặt ở đâu.",
+      "kiem": "Đẩy ở vạch 5 và 20: quay quanh đâu?"
     },
     {
       "khoa": "du_doan",
-      "giay": 3.8,
-      "chu": "Đẩy hai đầu thước ngược chiều, mạnh như nhau. Thước chuyển động thế nào?"
+      "giay": 3.4,
+      "chu": "Đẩy ở vạch 5 và vạch 20. Thước quay quanh vạch nào?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 9.4,
+      "giay": 9.6,
       "chu": "Thước 30 cm trên mặt bàn nhẵn."
     },
     {
       "khoa": "quan_sat",
-      "giay": 13.6,
-      "chu": "Thước quay tại chỗ, không trượt đi.\nVạch 15 cm (giữa thước) đứng yên suốt lúc quay."
+      "giay": 20.6,
+      "chu": "Cả hai lần, thước đều quay tại chỗ quanh vạch 15 cm, không trượt đi."
     },
     {
       "khoa": "rut_ra",
-      "giay": 25.6,
-      "chu": "Tổng hai lực bằng 0 nên thước không trượt, chỉ quay.\nVật tự do quay quanh trọng tâm.\nM = F·d, d là khoảng cách giữa hai giá."
+      "giay": 28.6,
+      "chu": "Ngẫu lực chỉ làm quay, vật tự do quay quanh trọng tâm. Moment ngẫu lực M = F·d, d là khoảng cách hai giá."
     },
     {
       "khoa": "chua_noi",
-      "giay": 36.8,
-      "chu": "Chỉ thử thước tự do: chưa thử khi giữ cố định một điểm của thước."
+      "giay": 38.6,
+      "chu": "Giữ cố định một điểm của thước thì quay quanh đâu: chưa thử."
     }
   ],
   "dung_dua": {
-    "giay": 9.25,
-    "cau_hoi": "Hai ngón tay đẩy hai đầu thước theo hai chiều ngược nhau, vuông góc thước, mạnh như nhau. Thước sẽ:",
+    "giay": 9.4,
+    "cau_hoi": "Thước 30 cm trên mặt bàn nhẵn. Hai ngón tay đẩy vuông góc thước, ngược chiều, mỗi lực 1,0 N, ở vạch 5 và vạch 20. Thước quay quanh vạch nào?",
     "chon": [
-      "A. Đứng yên",
-      "B. Trượt theo chiều một lực",
-      "C. Quay quanh điểm giữa thước",
-      "D. Quay quanh một đầu thước"
+      "A. Vạch 12,5 (giữa hai lực)",
+      "B. Vạch 15 (giữa thước)",
+      "C. Vạch 5",
+      "D. Không quay, chỉ trượt đi"
     ],
-    "dung": 2,
-    "giai_thich_dung": "Tổng hai lực bằng 0 nên thước không trượt, nhưng hai lực cùng làm nó quay. Xem đoạn kế.",
-    "giai_thich_sai": "Xem thước chuyển động thật ở đoạn kế rồi so với dự đoán của em."
+    "dung": 1,
+    "giai_thich_dung": "Tổng hai lực bằng 0 nên trọng tâm (vạch 15) đứng yên; thước tự do quay quanh trọng tâm, không phụ thuộc chỗ đặt hai lực.",
+    "giai_thich_sai": "Xem đoạn kế: chấm đỏ ở vạch 15 cm có dời đi không, khi đẩy ở hai đầu và khi đẩy ở vạch 5 và 20."
+  },
+  "cau_chot": {
+    "giay": 42.8,
+    "cau_hoi": "Thước 30 cm nằm trên mặt bàn nhẵn. Hai ngón tay đẩy hai lực 2,0 N song song, ngược chiều, vuông góc với thước, đặt ở vạch 5 và vạch 25. Moment ngẫu lực bằng bao nhiêu?",
+    "chon": [
+      "A. 0,40 N·m",
+      "B. 0,20 N·m",
+      "C. 0,60 N·m",
+      "D. 40 N·m"
+    ],
+    "dung": 0,
+    "giai_thich": [
+      "Khoảng cách giữa hai giá lực d = 25 − 5 = 20 cm = 0,20 m, nên M = F·d = 2,0 · 0,20 = 0,40 N·m.",
+      "0,20 N·m là lấy F·(d/2). Moment ngẫu lực dùng cả khoảng cách giữa hai giá lực: M = 2,0 · 0,20 = 0,40 N·m.",
+      "0,60 N·m là lấy cả chiều dài thước 0,30 m. Hai lực đặt ở vạch 5 và 25 nên d = 0,20 m, M = 0,40 N·m.",
+      "40 N·m là để d theo cm. Đổi 20 cm = 0,20 m: M = 2,0 · 0,20 = 0,40 N·m."
+    ]
   }
 }

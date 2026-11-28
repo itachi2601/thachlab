@@ -1,8 +1,8 @@
 {
   "id": "tn-l11-tudien-03",
   "ten": "Tụ phẳng tự chế từ hai tấm nhôm",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-tudien-03-20261116.mp4",
-  "tong_giay": 48.6,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-tudien-03-20261127.mp4",
+  "tong_giay": 49.9,
   "o": [
     {
       "khoa": "gia_thuyet",
@@ -12,33 +12,33 @@
     },
     {
       "khoa": "du_doan",
-      "giay": 4.2,
-      "chu": "Trượt tấm trên lệch, chỉ còn nửa phần chồng nhau. C đo được thế nào?"
+      "giay": 3.6,
+      "chu": "Trượt tấm trên lệch, chỉ còn nửa phần chồng nhau. C sẽ thế nào?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 10.9,
-      "chu": "Đo C bằng đồng hồ vạn năng, mỗi lần chỉ đổi một yếu tố."
+      "giay": 10.1,
+      "chu": "Hai tấm nhôm, tấm nhựa, máy đo C."
     },
     {
       "khoa": "quan_sat",
-      "giay": 15.7,
-      "chu": "Gốc 354 pF; d gấp đôi, lệch nửa tấm đều còn 177 pF."
+      "giay": 20.6,
+      "chu": "Gốc 354 pF; d = 2 mm hoặc lệch nửa tấm: 177 pF; chèn nhựa: 1061 pF."
     },
     {
       "khoa": "rut_ra",
-      "giay": 20.1,
-      "chu": "Chèn nhựa ε = 3: 1061 pF, gấp 3 lần. C tỉ lệ thuận với S đối diện và ε, tỉ lệ nghịch với d."
+      "giay": 26.7,
+      "chu": "C tỉ lệ thuận với S đối diện và ε, tỉ lệ nghịch với d; chỉ phần hai tấm đối diện nhau mới tính."
     },
     {
       "khoa": "chua_noi",
-      "giay": 29.9,
-      "chu": "Dây đo thêm C. Tụ trữ bao nhiêu năng lượng?"
+      "giay": 38.0,
+      "chu": "Dây đo có góp thêm điện dung không?"
     }
   ],
   "dung_dua": {
-    "giay": 10.8,
-    "cau_hoi": "Trượt tấm trên lệch, chỉ còn nửa phần chồng nhau. C đo được thế nào?",
+    "giay": 9.6,
+    "cau_hoi": "Hai tấm nhôm cách nhau 1 mm, đo được 354 pF. Trượt tấm trên lệch, chỉ còn nửa phần chồng nhau. C đo được thế nào?",
     "chon": [
       "A. Vẫn như lúc đầu, vì tấm không đổi",
       "B. Còn khoảng một nửa lúc đầu",
@@ -46,7 +46,24 @@
       "D. Về 0, vì hai tấm không còn chồng kín"
     ],
     "dung": 1,
-    "giai_thich_dung": "Gốc là 354 pF, lệch nửa tấm còn 177 pF, tức một nửa: chỉ phần hai tấm đối diện nhau góp vào C.",
-    "giai_thich_sai": "Xem hàng lệch nửa tấm trong bảng, so số chỉ C với 354 pF của lần gốc."
+    "giai_thich_dung": "Gốc 354 pF, lệch nửa tấm còn 177 pF, tức một nửa: chỉ phần hai tấm đối diện nhau góp vào C.",
+    "giai_thich_sai": "Xem hàng lệch nửa trong bảng ở cảnh Tiến hành, so số chỉ C với 354 pF của lần gốc."
+  },
+  "cau_chot": {
+    "giay": 42.7,
+    "cau_hoi": "Vẫn hai tấm nhôm chồng kín nhau như lần gốc (354 pF, khe 1 mm). Nới khe ra 4 mm rồi chèn tấm nhựa ε = 3 kín khe. Đồng hồ chỉ khoảng bao nhiêu?",
+    "chon": [
+      "A. Khoảng 1061 pF",
+      "B. Khoảng 88 pF",
+      "C. Khoảng 265 pF",
+      "D. Khoảng 4240 pF"
+    ],
+    "dung": 2,
+    "giai_thich": [
+      "1061 pF là chỉ tính tấm nhựa (× 3) mà quên khe đã rộng gấp 4. Khe rộng ra thì C giảm.",
+      "88 pF là chỉ tính khe 4 mm (354 : 4) mà quên tấm nhựa. Nhựa kín khe làm C gấp 3.",
+      "C tỉ lệ nghịch với d: khe gấp 4 thì C còn 1/4. Nhựa ε = 3 kín khe thì C gấp 3. 354 · 3/4 ≈ 265 pF (tự suy từ mô hình C = εS/(9·10⁹·4πd)).",
+      "4240 pF là nhân cả hai: coi khe rộng làm C tăng. Clip cho thấy khe 2 mm thì C còn một nửa, nên khe 4 mm phải chia cho 4."
+    ]
   }
 }

@@ -1,0 +1,5 @@
+# Phản hồi điểm dừng 6/6 · Trả bài, quay lại hoá đơn, đề 1220, về nhà (ô 40·2, 37·3, 40·3, 41·x)
+- **Làm được:** [4]–[6] đối chiếu hoá đơn (HS nhận quên đổi W→kW); trả bài [82]–[87] viết được hết từ nội dung vừa học (gồm nhiều "(đoán)" ở câu 3, 5, 6 vì chỉ nhớ nửa vời); [94]–[107] tính đúng bài toán mẫu và 41·2 (các số đều khớp bảng).
+- **Phải đoán / bỏ trống:** [90] ô Tập cần đọc lại (đoán 37·4); [88]–[89] trống vì không có bạn kiểm (đúng chủ ý); [91]–[93] không có đề 1220 (HS chỉ đọc sach-trong, de-hs-6 không chứa 19 câu); [108] trống; [111] ★★★ thử số R=0,5/1,0/2,0, kết luận R=r không chứng minh (không chắc).
+- **Do tài liệu:** hàng 2 "(ngầm) mạch kín" cột kiến thức [94] — HS không chắc phải viết gì ("không có ví dụ"); trang 41 dài 18 ô, toàn về nhà nên chưa kiểm được thời gian thực. Tiêu đề "Quay lại hoá đơn" phải lật ngược 40→37→40 (hs-6 màn 6b); HS ghi ô [4]–[6] trong phần 6b nên không thấy khó về mặt chữ.
+- **Không hiểu chữ:** "bài toán mẫu", "Câu trong đề → Dữ liệu → kiến thức", "(ngầm)", "A_ci", mcΔt/c.

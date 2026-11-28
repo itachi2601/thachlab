@@ -45,8 +45,8 @@ def seg_bar(d, y, t, t0, t1, col, a=1.0):
         else: card(d, (x, y, x + 130, y + 70), fill=A(WHITE, a), outline=A(EMPTY, a), r=18, w=4)
 
 # ---------------- gia treo, hai lo xo, hai thuoc ----------------
-SX = (140, 420)                                  # truc hai lo xo
-RX = (225, 515)                                  # mep trai hai thuoc
+SX = (130, 400)                                  # truc hai lo xo
+RX = (210, 490)                                  # mep trai hai thuoc
 TOP, Y0N, PX = 400, 630, 90                      # moc tren ; dau duoi luc chua treo ; px moi cm
 MW, MH = 150, 84
 BASE = 1150
@@ -136,16 +136,16 @@ def s_do(img, d, t, sc):
     IMG_REF[0] = img
     dl, hung, fr, doc = state(t, DA1, DA2)
     rig(d, dl, hung, fr)
-    card(d, (620, 290, 1045, 660), fill=WHITE, outline=NAVY, w=4)
-    lab_l(d, 840, 350, "Δ", " (cm)", 56, NOTE)
-    d.line([(640, 390), (1025, 390)], fill=LIGHT, width=4)
+    card(d, (640, 290, 1045, 660), fill=WHITE, outline=NAVY, w=4)
+    lab_l(d, 842, 350, "Δ", " (cm)", 56, NOTE)
+    d.line([(660, 390), (1025, 390)], fill=LIGHT, width=4)
     for i in (0, 1):
         y = 460 + i * 120
-        text(d, (752, y), NAME[i], 55, INK)
-        if i in doc: text(d, (972, y), vn(doc[i]), 60, RED)
+        text(d, (775, y), NAME[i], 55, INK)
+        if i in doc: text(d, (982, y), vn(doc[i]), 60, RED)
     k = appear(t, t_dapan(), 0.4)
     if k > 0:
-        card(d, (640, 700, 1040, 900), fill=A(NAVY, k), r=30)
+        card(d, (645, 700, 1040, 900), fill=A(NAVY, k), r=30)
         text(d, (840, 760), "Dây mảnh dãn", 58, WHITE, alpha=k)
         text(d, (840, 840), "gấp đôi dây to", 58, (253, 224, 71), alpha=k)
 
@@ -183,7 +183,7 @@ def s_rut(img, d, t, sc):
     kb = appear(t, M[1] - 0.1, 0.4)
     if kb > 0:
         card(d, (40, 900, 1040, 1530), fill=A(WHITE, kb), outline=A(NAVY, kb), w=4)
-        lab_l(d, W / 2, 990, "k = F : Δ", "", 64, BLUE, kb)
+        lab_l(d, W / 2, 990, "k (độ cứng) = F : Δ", "", 64, BLUE, kb)
         for i, kk in enumerate((50, 25)):
             y = 1110 + i * 120
             text(d, (300, y), NAME[i], 60, INK, alpha=kb)
@@ -213,11 +213,11 @@ def s_bay(img, d, t, sc):
             bx = x + 115
             d.line([(bx, BN), (bx, yb)], fill=A(RED, a1), width=5)
             for y in (BN, yb): d.line([(bx - 10, y), (bx + 10, y)], fill=A(RED, a1), width=5)
-            lab_l(d, bx + 16, (BN + yb) / 2, "Δ", "", 56, RED, a1, anchor="l")
+            lab_l(d, bx + 16, (BN + yb) / 2, "Δ", " (độ dãn)" if i == 0 else "", 56, RED, a1, anchor="l")
             if ok > 0:                           # luc lo xo len qua nang: bang nhau
                 xa = x - 115; y1 = yb + 4 + 18 + MH / 2
                 arrow(d, (xa, y1), (xa, y1 - 170), A(GREEN, ok), w=8, head=24)
-                text(d, (x, yb + 4 + 18 + MH + 50), "0,98 N", 55, GREEN, alpha=ok)
+                text(d, (x, yb + 4 + 18 + MH + 50), "F = 0,98 N", 55, GREEN, alpha=ok)
         text(d, (530, BN - 42), "chưa treo", 55, NOTE, alpha=a1)
         k2 = appear(t, M[1] + 3.0, 0.45) * a1
         if k2 > 0:
@@ -227,7 +227,7 @@ def s_bay(img, d, t, sc):
         card(d, (40, 290, 1040, 1100), fill=A(WHITE, k3), outline=A(NAVY, k3), w=6)
         pill(d, W / 2, 360, "CHƯA NÓI ĐƯỢC", NAVY, k3)
         text(d, (W / 2, 480), "Mới thử một lực.", 60, INK, alpha=k3)
-        text(d, (W / 2, 580), "Đổi lực, k có đổi?", 60, INK, alpha=k3)
+        text(d, (W / 2, 580), "Đổi lực, độ cứng k có đổi?", 60, INK, alpha=k3)
         x, top = W / 2, 690                      # lo xo day to + qua nang mo, dau ?
         d.rounded_rectangle([x - 80, top - 22, x + 80, top], radius=6, fill=A(BAR, k3))
         spring(d, x, top, top + 200, 0, k3)
@@ -241,7 +241,7 @@ def s_end(img, d, t, sc):
     k = appear(t, 0.15, 0.4)
     card(d, (40, 230, 1040, 1180), fill=A(WHITE, k), outline=A(ORANGE, k), w=6)
     pill(d, W / 2, 305, "THỬ NGHĨ", ORANGE, k)
-    text(d, (W / 2, 450), "Coi k không đổi.", 60, NOTE, alpha=k)
+    text(d, (W / 2, 450), "Coi độ cứng k không đổi.", 60, NOTE, alpha=k)
     text(d, (W / 2, 620), "Vật X: dây mảnh dãn 5,0 cm.", 62, INK, alpha=k)
     text(d, (W / 2, 800), "Dây to dãn bao nhiêu cm?", 64, DORANGE, alpha=k)
     seg_bar(d, 1000, t, 1.0, sc["T"] - 0.2, ORANGE, k)
@@ -268,7 +268,7 @@ CLIP = dict(id="tn-l10-biendang-03", header="VẬT LÍ 10 · THÍ NGHIỆM", cue
    ("Chia lực cho độ dãn.", 4.4)]),
  dict(key="bay", title="Bẫy hay gặp", draw=s_bay, tail=0.4, caps=[
    ("Đúng không?", 3.0),
-   ("Cùng một quả 100 g.", 6.1),
+   ("Cùng quả 100 g.", 6.1),
    ("Chưa nói được.", 3.4)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.4, caps=[
    ("Dừng lại, tự tính.", 6.8)]),

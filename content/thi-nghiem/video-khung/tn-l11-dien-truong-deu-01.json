@@ -1,9 +1,9 @@
 {
   "id": "tn-l11-dien-truong-deu-01",
   "ten": "Hạt bột trong dầu: đưa hai lá đồng lại gần",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-dien-truong-deu-01-20261119.mp4",
-  "poster": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-dien-truong-deu-01-20261119.webp",
-  "tong_giay": 48.5,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-dien-truong-deu-01-20261127.mp4",
+  "poster": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-dien-truong-deu-01-20261127.webp",
+  "tong_giay": 49.2,
   "o": [
     {
       "khoa": "gia_thuyet",
@@ -13,32 +13,32 @@
     },
     {
       "khoa": "du_doan",
-      "giay": 4.6,
+      "giay": 4.4,
       "chu": "Giữ U = 15 kV, đưa hai lá từ 4 cm còn 2 cm. Điện trường vùng giữa thế nào?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 10.9,
+      "giay": 10.7,
       "chu": "Khay dầu, bột, hai lá đồng, máy phát tĩnh điện."
     },
     {
       "khoa": "quan_sat",
-      "giay": 15.5,
-      "chu": "Hạt xếp thẳng, song song ở 4 cm và 2 cm."
+      "giay": 17.1,
+      "chu": "Hạt xếp thẳng, song song ở 4 cm và ở 2 cm."
     },
     {
       "khoa": "rut_ra",
-      "giay": 25.2,
-      "chu": "Hai lá gần lại, điện trường vùng giữa mạnh lên (375 000 thành 750 000 V/m) mà vẫn đều."
+      "giay": 24.9,
+      "chu": "Hai lá gần lại: E vùng giữa gấp đôi mà vẫn đều."
     },
     {
       "khoa": "chua_noi",
-      "giay": 35.4,
+      "giay": 36.3,
       "chu": "Hạt bột chỉ cho thấy hướng điện trường, chưa đo được E bằng bao nhiêu."
     }
   ],
   "dung_dua": {
-    "giay": 10.4,
+    "giay": 10.5,
     "cau_hoi": "Giữ U = 15 kV, đưa hai lá đồng từ 4 cm lại còn 2 cm. Điện trường vùng giữa hai lá thế nào?",
     "chon": [
       "A. Mạnh lên, vẫn đều",
@@ -49,5 +49,22 @@
     "dung": 0,
     "giai_thich_dung": "Hai lá gần lại mà U giữ nguyên thì điện trường vùng giữa mạnh lên gấp đôi (375 000 thành 750 000 V/m); hạt vẫn xếp thẳng, song song nên điện trường vẫn đều.",
     "giai_thich_sai": "Cùng một U trên quãng ngắn hơn thì điện trường mạnh hơn, không yếu đi hay giữ nguyên. Vùng giữa xa mép vẫn có đường sức thẳng, song song: chỉ gần mép đường mới cong."
+  },
+  "cau_chot": {
+    "giay": 41.4,
+    "cau_hoi": "Giữ U = 15 kV, đặt hai lá cách 3 cm. E vùng giữa bằng…",
+    "chon": [
+      "A. 250 000 V/m",
+      "B. 500 000 V/m",
+      "C. 750 000 V/m",
+      "D. 1 125 000 V/m"
+    ],
+    "dung": 1,
+    "giai_thich": [
+      "Hai lá gần hơn 4 cm thì E phải lớn hơn 375 000 V/m, không nhỏ đi.",
+      "E tỉ lệ nghịch với khoảng cách: 4 cm có 375 000 V/m, 3 cm thì E = 375 000 · 4/3 = 500 000 V/m (hay 750 000 · 2/3).",
+      "750 000 V/m là E ở 2 cm. Ở 3 cm hai lá xa hơn nên E nhỏ hơn.",
+      "Đó là nhân 375 000 với 3, nhầm E tỉ lệ thuận với khoảng cách."
+    ]
   }
 }

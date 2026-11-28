@@ -1,8 +1,8 @@
 {
   "id": "tn-l11-do-sdd-pin-01",
   "ten": "Pin cũ nối với biến trở, ampe kế và vôn kế",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-do-sdd-pin-01-20261116.mp4",
-  "tong_giay": 49.3,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-do-sdd-pin-01-20261127.mp4",
+  "tong_giay": 49.5,
   "o": [
     {
       "khoa": "gia_thuyet",
@@ -12,41 +12,58 @@
     },
     {
       "khoa": "du_doan",
-      "giay": 3.0,
-      "chu": "Giảm Rx: 100, 20, 10, 5, 2, 0 Ω. Số chỉ vôn kế ở hai cực pin đổi thế nào qua từng nấc?"
+      "giay": 3.8,
+      "chu": "Giảm Rx từng nấc: 100, 20, 10, 5, 2, 0 Ω. Mỗi nấc vôn kế tụt đều hay không đều?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 9.2,
-      "chu": "Pin cũ, biến trở Rx, ampe kế nối tiếp, vôn kế ở hai cực pin."
+      "giay": 9.7,
+      "chu": "Pin cũ, biến trở Rx, điện trở R0 = 2 Ω, khoá K, ampe kế nối tiếp, vôn kế ở hai cực pin."
     },
     {
       "khoa": "quan_sat",
-      "giay": 15.2,
-      "chu": "Rx giảm: I từ 0,014 tới 0,534 A, U từ 1,48 xuống 1,06 V."
+      "giay": 18.7,
+      "chu": "Rx giảm: I từ 0,014 tới 0,534 A, U từ 1,48 xuống 1,06 V; mỗi nấc U tụt 0,04 → 0,19 V, mạnh dần ở cuối."
     },
     {
       "khoa": "rut_ra",
-      "giay": 21.4,
-      "chu": "Vẽ U theo I: 6 điểm thẳng hàng, U tụt tỉ lệ với I."
+      "giay": 26.5,
+      "chu": "Vẽ U theo I: sáu điểm gần một đường thẳng dốc xuống; kéo dài cắt trục U tại ℰ ≈ 1,50 V."
     },
     {
       "khoa": "chua_noi",
-      "giay": 28.2,
-      "chu": "Dòng lớn hơn 0,534 A: còn thẳng?"
+      "giay": 38.0,
+      "chu": "Dòng lớn hơn 0,53 A thì các điểm còn thẳng hàng không?"
     }
   ],
   "dung_dua": {
-    "giay": 9.1,
-    "cau_hoi": "Giảm Rx: 100, 20, 10, 5, 2, 0 Ω. Số chỉ vôn kế ở hai cực pin đổi thế nào qua từng nấc?",
+    "giay": 9.55,
+    "cau_hoi": "Giảm Rx từng nấc: 100, 20, 10, 5, 2, 0 Ω. Số chỉ vôn kế ở hai cực pin tụt thế nào qua từng nấc?",
     "chon": [
       "A. Tụt đều, mỗi nấc như nhau",
-      "B. Tụt ít lúc đầu, tụt mạnh ở các nấc cuối",
+      "B. Tụt ít lúc đầu, mạnh ở các nấc cuối",
       "C. Tụt mạnh lúc đầu, ít ở các nấc cuối",
       "D. Không đổi, vẫn 1,50 V"
     ],
     "dung": 1,
-    "giai_thich_dung": "Mỗi nấc U tụt 0,04; 0,04; 0,05; 0,10; 0,19 V: càng về cuối dòng tăng càng mạnh nên U tụt càng nhiều.",
-    "giai_thich_sai": "Xem cột U trong bảng: lấy U ở nấc trước trừ U ở nấc sau rồi so các hiệu với nhau."
+    "giai_thich_dung": "Mỗi nấc U tụt 0,04; 0,04; 0,05; 0,10; 0,19 V: Rx càng nhỏ dòng tăng càng mạnh, nên U tụt càng nhiều.",
+    "giai_thich_sai": "Lấy U ở nấc trước trừ U ở nấc sau: 0,04; 0,04; 0,05; 0,10; 0,19 V. Các nấc cuối dòng tăng mạnh nên U tụt mạnh."
+  },
+  "cau_chot": {
+    "giay": 44.8,
+    "cau_hoi": "Vẫn pin cũ đó, thay R0 = 2 Ω bằng R0 = 5 Ω rồi đo lại 6 nấc. Đường U–I mới so với đường cũ thế nào?",
+    "chon": [
+      "A. Thấp hơn, cùng độ dốc",
+      "B. Cùng điểm cắt trục U, dốc hơn",
+      "C. Trùng đường cũ, cùng độ dốc",
+      "D. Cao hơn, cùng độ dốc"
+    ],
+    "dung": 2,
+    "giai_thich": [
+      "Đường U–I chỉ phụ thuộc pin: U = ℰ − Ir. Đổi R0 không đổi ℰ, r nên đường không dời xuống; chỉ dòng nhỏ đi, các điểm dồn về I ≤ 0,26 A.",
+      "Độ dốc là r của pin, không phải của mạch ngoài. R0 lớn hơn không làm pin có r lớn hơn: đường giữ nguyên độ dốc và trùng đường cũ, chỉ các điểm dồn về I ≤ 0,26 A.",
+      "Pin không đổi nên ℰ, r không đổi: U = ℰ − Ir vẫn là đường cũ, cùng độ dốc. R0 = 5 Ω chỉ làm dòng lớn nhất còn 1,50/(5,0 + 0,80) ≈ 0,26 A, các điểm dồn về phía I nhỏ.",
+      "Giao trục U là ℰ của pin, không phụ thuộc R0. Đường không dời lên; nó trùng đường cũ, chỉ các điểm dồn về phía I nhỏ."
+    ]
   }
 }

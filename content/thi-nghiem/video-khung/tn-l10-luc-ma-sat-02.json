@@ -1,52 +1,69 @@
 {
   "id": "tn-l10-luc-ma-sat-02",
   "ten": "Trượt hay lăn?",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-luc-ma-sat-02-20261118.mp4",
-  "tong_giay": 49.4,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-luc-ma-sat-02-20261127.mp4",
+  "tong_giay": 48.5,
   "o": [
     {
       "khoa": "gia_thuyet",
       "giay": 0,
-      "chu": "Lăn nhẹ hơn trượt rất nhiều.",
-      "kiem": "Trượt hay lăn, lực kế chỉ thế nào?"
+      "chu": "Lăn thì lực cản nhỏ hơn trượt rất nhiều; còn đổi mặt tiếp xúc hay tốc độ thì ma sát trượt gần như không đổi.",
+      "kiem": "Cho hộp lăn thì số chỉ lực kế ra sao?"
     },
     {
       "khoa": "du_doan",
       "giay": 3.8,
-      "chu": "Kê hộp lên bút chì cho lăn. So với khi trượt, lực kế chỉ thế nào?"
+      "chu": "Hộp lăn trên bút chì. So với lúc trượt, số chỉ lực kế ra sao?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 10.1,
-      "chu": "Hộp 0,40 kg, lực kế, hai bút chì."
+      "giay": 9.6,
+      "chu": "Hộp gỗ 0,40 kg, lực kế, hai bút chì."
     },
     {
       "khoa": "quan_sat",
-      "giay": 24.2,
-      "chu": "So bốn cột: ba lần trượt, một lần lăn."
+      "giay": 19.7,
+      "chu": "Nằm, dựng đứng, kéo nhanh hơn: đều 1,2 N. Lăn: dưới 0,1 N."
     },
     {
       "khoa": "rut_ra",
-      "giay": 27.6,
-      "chu": "Lăn: lực kế gần như không nhích, nhẹ hơn trượt."
+      "giay": 26.8,
+      "chu": "Ba lần trượt cùng 1,2 N; lăn nhỏ hơn trượt rất nhiều."
     },
     {
       "khoa": "chua_noi",
-      "giay": 37.1,
-      "chu": "Kéo nhanh hơn không làm ma sát trượt lớn hơn.\nMặt bàn ướt, đánh sáp: chưa thử."
+      "giay": 37.9,
+      "chu": "Mặt bàn ướt hay đánh sáp thì sao: chưa thử."
     }
   ],
   "dung_dua": {
-    "giay": 10.0,
-    "cau_hoi": "Kê hộp lên bút chì cho lăn. So với khi trượt, lực kế chỉ thế nào?",
+    "giay": 9.4,
+    "cau_hoi": "Kê hộp gỗ lên hai bút chì cho lăn, kéo đều. So với lúc kéo trượt, số chỉ lực kế thế nào?",
     "chon": [
-      "A. Như khi trượt",
+      "A. Như lúc trượt",
       "B. Lớn hơn",
       "C. Khoảng một nửa",
       "D. Nhỏ hơn rất nhiều"
     ],
     "dung": 3,
-    "giai_thich_dung": "Lăn nhẹ hơn trượt rất nhiều nên lực kế gần như không nhích.",
-    "giai_thich_sai": "Xem cột số chỉ khi lăn ở đoạn kế rồi so lại."
+    "giai_thich_dung": "Lúc trượt lực kế chỉ 1,2 N, lúc lăn chỉ dưới 0,1 N: ma sát lăn nhỏ hơn ma sát trượt rất nhiều.",
+    "giai_thich_sai": "Xem cột thứ tư ở đoạn kế, so với ba cột trượt."
+  },
+  "cau_chot": {
+    "giay": 43.0,
+    "cau_hoi": "Thêm 0,10 kg gia trọng lên hộp (tổng 0,50 kg), hộp nằm, kéo trượt đều trên cùng mặt bàn. Lực kế chỉ khoảng bao nhiêu?",
+    "chon": [
+      "A. 1,2 N",
+      "B. 1,5 N",
+      "C. 2,4 N",
+      "D. 0,1 N"
+    ],
+    "dung": 1,
+    "giai_thich": [
+      "1,2 N là của hộp 0,40 kg. Thêm khối lượng thì áp lực tăng, ma sát trượt tăng theo: 1,2 × 0,50 : 0,40 = 1,5 N.",
+      "Ma sát trượt tỉ lệ với áp lực: 0,50 kg gấp 1,25 lần 0,40 kg, nên 1,2 × 1,25 = 1,5 N.",
+      "2,4 N là gấp đôi, ứng với 0,80 kg. Tổng 0,50 kg chỉ gấp 1,25 lần: 1,2 × 1,25 = 1,5 N.",
+      "Dưới 0,1 N là lúc lăn. Hộp nằm trượt trên bàn nên ma sát trượt: 1,2 × 0,50 : 0,40 = 1,5 N."
+    ]
   }
 }

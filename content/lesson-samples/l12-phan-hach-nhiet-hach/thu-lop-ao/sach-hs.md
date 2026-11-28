@@ -7,8 +7,8 @@ Vật lí 12 · Chương 4: Vật lí hạt nhân. Trang đánh số liền cả
 ## TRANG 25 — BÀI 19 · PHÂN HẠCH · NHIỆT HẠCH
 
 ### 25·1 · Mục tiêu
-- ☐ Nêu được **phản ứng hạt nhân** và các đại lượng **bảo toàn**
-- ☐ Tính **năng lượng toả ra** $W$ từ độ hụt khối của phản ứng
+- ☑ Nêu được **phản ứng hạt nhân** và các đại lượng **bảo toàn**
+- ☑ Tính **năng lượng toả ra** $W$ từ độ hụt khối của phản ứng
 - ☐ Mô tả **phân hạch, dây chuyền** (hệ số $k$), lò phản ứng và **nhiệt hạch**
 
 ### 25·2 · Dự đoán trước khi học
@@ -24,8 +24,8 @@ Vì sao? [__2__ Vì có E = mc² mà em nhớ là khối lượng hụt thì th�
 [Hình: một nơtron chậm làm vỡ U-235: hai mảnh, thêm 2–3 nơtron, tia $\gamma$. Chú thích: "Một nơtron chậm làm vỡ U-235: hai mảnh, thêm 2–3 nơtron, tia γ."]
 
 ### 25·3 · Học xong, em sửa lại
-Đáp án đúng là: [__3__]  Em đoán ☐ đúng ☐ sai · Điều em hiểu sai hoặc mới biết:
-[__4__] (1 dòng)
+Đáp án đúng là: B. Hạt nhân urani vỡ ra; phần khối lượng nghỉ hụt thành năng lượng $W=\Delta m\,c^2$.  Em đoán ☑ đúng ☐ sai · Điều em hiểu sai hoặc mới biết:
+Em tưởng khối lượng bảo toàn như THCS; mới biết phần hụt thành W, còn hoá học chỉ đụng êlectron nên toả ít hơn hàng triệu lần (1 dòng)
 
 ### 25·4 · II.1 · Phản ứng hạt nhân và các định luật bảo toàn
 Biến hạt nhân này thành hạt nhân khác: tự [__1__ phát (phóng xạ)] hoặc do [__2__ kích thích (va chạm hạt khác)].
@@ -70,19 +70,19 @@ Nơi có nhiệt hạch tự nhiên: [__6__ Mặt trời, các sao].
 ## TRANG 27 — BẪY · TRẢ BÀI · KẾT QUẢ TỰ KIỂM TRA
 
 ### 27·1 · III · Ba cái bẫy hay sập
-- ☐ **"U-235 tự vỡ như chất phóng xạ."** Phân hạch cần **nơtron** bắn vào, điều khiển được bằng $k$.
-- ☐ **"Khối lượng được bảo toàn."** Khối lượng nghỉ **không** bảo toàn: phần hụt là năng lượng.
+- ☑ **"U-235 tự vỡ như chất phóng xạ."** Phân hạch cần **nơtron** bắn vào, điều khiển được bằng $k$. (sập một nửa, ô 25·2)
+- ☑ **"Khối lượng được bảo toàn."** Khối lượng nghỉ **không** bảo toàn: phần hụt là năng lượng.
 - ☐ **"Phân hạch và nhiệt hạch là một."** Ngược chiều: nặng vỡ ra – nhẹ ghép lại.
 
 ### 27·2 · IV · Trả bài 6 câu
-1. Phản ứng hạt nhân là gì? Bốn đại lượng nào bảo toàn? ☐  [__1__] (2 dòng)
-2. Viết hệ thức năng lượng phản ứng. Khi nào toả, khi nào thu? ☐  [__2__] (2 dòng)
-3. Phân hạch là gì? Vì sao phân hạch U-235 toả năng lượng? ☐  [__3__] (2 dòng)
-4. Hệ số nhân nơtron k là gì? Ý nghĩa ba trường hợp? ☐  [__4__] (2 dòng)
-5. Nhà máy điện hạt nhân gồm bộ phận nào? Thanh điều khiển để làm gì? ☐  [__5__] (2 dòng)
-6. Nhiệt hạch là gì? Điều kiện và một nơi có nhiệt hạch tự nhiên? ☐  [__6__] (2 dòng)
+1. Phản ứng hạt nhân là gì? Bốn đại lượng nào bảo toàn? ☐  (về nhà)
+2. Viết hệ thức năng lượng phản ứng. Khi nào toả, khi nào thu? ☐  (về nhà)
+3. Phân hạch là gì? Vì sao phân hạch U-235 toả năng lượng? ☐  Hạt nhân rất nặng hấp thụ nơtron chậm, vỡ thành hai mảnh nhẹ hơn, thả 2–3 nơtron và tia γ. Toả vì hai mảnh bền hơn (E_lkr tăng), tổng khối lượng nghỉ giảm, phần hụt thành W. (Sau đáp án: đúng ý chính, không sửa lớn.)
+4. Hệ số nhân nơtron k là gì? Ý nghĩa ba trường hợp? ☐  k = N sau / N trước. k < 1 tắt dần; k = 1 tự duy trì (công suất không đổi); k > 1 tăng nhanh. (Sau đáp án: đúng; "khối lượng tới hạn" em chưa hiểu liên hệ với k.)
+5. Nhà máy điện hạt nhân gồm bộ phận nào? Thanh điều khiển để làm gì? ☐  (về nhà)
+6. Nhiệt hạch là gì? Điều kiện và một nơi có nhiệt hạch tự nhiên? ☐  (về nhà)
 
-**Bạn cùng bàn kiểm:** nói được ……/6 câu · câu chưa thuộc: [__7__] → đọc lại ô Tập [__8__]
+**Bạn cùng bàn kiểm:** nói được (chưa kiểm, không có ghi nhận trong tiết) · câu chưa thuộc: 1, 2, 5, 6 → đọc lại ô Tập 25·4, 25·5, 26·3, 26·4
 
 ### 27·3 · Kết quả tự kiểm tra (đề chiếu trên lớp)
 Hai bảng, mỗi hàng: Câu | Em chọn | Chắc? ☐ | Đúng? ☐
@@ -94,7 +94,7 @@ Hai bảng, mỗi hàng: Câu | Em chọn | Chắc? ☐ | Đúng? ☐
   - Câu 5: Em chọn **A** · Chắc? ☑ · Đúng? ☑
   - Câu 6: Em chọn **A** · Chắc? ☑ · Đúng? ☑
   - Câu 7: Em chọn **A** · Chắc? ☑ · Đúng? ☑
-(ô "Em chọn" trống [__a__]; mỗi câu một dòng)
+(ô "Em chọn" đã điền; mỗi câu một dòng)
 
 ---
 
@@ -122,7 +122,7 @@ d) [__d__ $7{,}1\cdot10^{10}/2{,}7\cdot10^{7}\approx2{,}6\cdot10^{3}$ kg ≈ 2,6
 ### Mở rộng: trung bình 200 MeV một phân hạch
 **Bước 1 (cho sẵn):** $200\ \mathrm{MeV}=3{,}2\cdot10^{-11}\ \mathrm{J}$ (đề trên làm tròn khối lượng nên ra 173 MeV; trung bình thực tế ≈ 200 MeV).
 Bước 2: muốn có đúng 1 J cần … phân hạch [__B2__ $1/3{,}2\cdot10^{-11}\approx3{,}1\cdot10^{10}$ phân hạch] (2 dòng)
-Bước 3: con số đó nói lên điều gì về nhiên liệu hạt nhân? [__B3__] (2 dòng)
+Bước 3: con số đó nói lên điều gì về nhiên liệu hạt nhân? Chỉ vài gam U-235 đã cho năng lượng ngang hàng nghìn kg than (1 g U-235 ≈ 2,6 tấn than); một phân hạch đã cho ~200 MeV, lớn hơn một phản ứng hoá học hàng triệu lần. (Phần so sánh hàng triệu lần là em suy từ đáp án ô 25·3, không tự tính.) (2 dòng)
 
 **Em tự kiểm:** ☐ cộng đủ nơtron cả hai vế  ☐ đổi MeV ra J  ☐ có ghi đơn vị
 
@@ -131,21 +131,21 @@ Bước 3: con số đó nói lên điều gì về nhiên liệu hạt nhân? [
 ## TRANG 29 — BÀI TẬP VỀ NHÀ · MANG VỀ · THỬ THÁCH
 
 ### Đề BTVN
-**Đề:** [__1__]  **Số câu:** [__2__]
+**Đề:** (về nhà — đề thầy giao trên web)  **Số câu:** (về nhà)
 **Làm ở:** ☐ thachlab ☐ Azota ☐ giấy · **Hạn:** ……/……
-Ghi chú của thầy về đề: [__3__] (2 dòng)
-☐ **Đã nộp** · **Điểm:** ……/…… · **Câu sai:** [__4__]
+Ghi chú của thầy về đề: (về nhà — chưa có ghi chú trong tiết)
+☐ **Đã nộp** · **Điểm:** ……/…… · **Câu sai:** (về nhà)
 
 ### VI · Mang về: điều em dễ quên nhất
-1. [__M1__] (2 dòng)
-2. [__M2__] (2 dòng)
-3. [__M3__] (2 dòng)
+1. Khối lượng nghỉ không bảo toàn: phần hụt thành W = Δm c², đừng dùng bảo toàn khối lượng kiểu THCS. (Em đã quên cộng đủ nơtron vế phải khi làm bài mẫu.)
+2. Đổi MeV ra J: 1 MeV = 1,6·10⁻¹³ J; quên đổi là sai cả bài tính năng lượng.
+3. k = N sau / N trước: k < 1 tắt dần, k = 1 ổn định (lò), k > 1 tăng nhanh; thanh điều khiển hấp thụ nơtron để chỉnh k.
 
 ### Thử thách phân tầng
-★ Bốn bộ phận chính của nhà máy điện hạt nhân và vai trò thanh điều khiển: [__T1__] (3 dòng)
-★★ Vì sao trong lò phải giữ k = 1 mà không để k lớn hơn một chút? [__T2__] (3 dòng)
-★★★ (HS giỏi) Mặt trời chỉ 1,5·10⁷ K, thấp hơn 10⁸ K; vì sao vẫn cháy? [__T3__] (3 dòng)
-Câu 7: 200 MeV/phân hạch; số phân hạch để toả 1 J = … [__T4__] (1 dòng)
+★ Bốn bộ phận chính của nhà máy điện hạt nhân và vai trò thanh điều khiển: (đoán một phần) lõi lò (nơi phân hạch, toả nhiệt); bình sinh hơi (nhận nhiệt từ chất tải nhiệt đun nước); tua bin + máy phát (nhiệt thành điện); bình ngưng (làm lạnh hơi). Thanh điều khiển hấp thụ nơtron để chỉnh k. (Tên bốn bộ phận em lấy từ chú thích hình lò, không chắc đã đủ.)
+★★ Vì sao trong lò phải giữ k = 1 mà không để k lớn hơn một chút? (không biết chắc) Đoán: k > 1 một chút thì số phân hạch tăng dần, nhiệt tăng dần, khó kiểm soát công suất.
+★★★ (HS giỏi) Mặt trời chỉ 1,5·10⁷ K, thấp hơn 10⁸ K; vì sao vẫn cháy? (không biết) Em không biết; chưa được học phần này và không đoán thêm.
+Câu 7: 200 MeV/phân hạch; số phân hạch để toả 1 J = ≈ 3,1·10¹⁰ phân hạch (1 J / 3,2·10⁻¹¹ J).
 
 ### Xem hình: Mặt trời là lò nhiệt hạch
 [Hình: chu trình proton–proton. Chú thích: "Chu trình p–p: 4 prôtôn → He-4 + 2 nơtrinô + 6γ, toả 26,7 MeV. e⁺ pôzitron, ν nơtrinô, γ phôtôn, Q năng lượng toả ra của từng bước. (Halliday 43.5.1)"]

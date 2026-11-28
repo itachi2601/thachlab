@@ -85,6 +85,7 @@ Nạp mỗi phiên, giữ dưới 15 KB: hiện trạng + ĐANG CHỜ (1–2 dò
 - Clip cổng mới L10a mẻ 2: 7 clip ĐÃ GHI DB 27/11 22:44 (bài 54, 55, 56, 51; kèm sửa 3 hộp exp ctbdd-01, do-g-02, do-g-03). Nhóm C (9 clip, bài 57–62) đang dựng/soát.
 - Clip cổng mới L10a mẻ 3: 9 clip nhóm C ĐÃ GHI DB 28/11 09:48 (bài 57–62, kèm sửa 4 hộp exp). L10a xong 29/29 clip (bỏ do-toc-do-03, không có trong bài).
 - Cổng mới L11a: 21 clip L11 ĐÃ GHI DB 27/11 17:54 (12/12 bài, kèm giấu số đọc 5 hộp exp); chi tiết sổ clip mục "Cổng mới — L11a".
+- Cổng mới L11b (27/11): 25 clip L11 bài 34–45 + tdhphantu-04 đã dựng lại, tải `-20261127` (HEAD 200), hộp exp + kho sửa; CHỜ THẦY DUYỆT → `doi-ban-l11b.py --apply` + `dang-cong-moi-l11b.sh --yes`. Bảng: `so-clip-anh-dong.md` mục "Cổng mới — L11b".
 
 ## CHƯA làm (roadmap)
 - `/luyen-tap` lọc Lớp → Chương → Bài → YCCĐ → mức; `/lo-trinh`; Động học 10 ≥30 câu/bài.

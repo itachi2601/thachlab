@@ -186,10 +186,11 @@ def s_end(img, d, t, sc):
     k = appear(t, 0.15, 0.4)
     card(d, (40, 880, 1040, 1560), fill=A(WHITE, k), outline=A(ORANGE, k), w=6)
     pill(d, W / 2, 945, "THỬ NGHĨ", ORANGE, k)
-    text(d, (W / 2, 1065), "Đầu nhọn còn 0,2 mm².", 62, INK, alpha=k)
-    text(d, (W / 2, 1165), "Áp suất lên ngón trỏ", 62, INK, alpha=k)
-    text(d, (W / 2, 1255), "gấp mấy lần ngón cái?", 64, DORANGE, alpha=k)
-    seg_bar(d, 1400, t, 1.0, sc["T"] - 0.2, ORANGE, k)
+    text(d, (W / 2, 1050), "Đầu bằng: 30 mm²,", 62, INK, alpha=k)
+    text(d, (W / 2, 1140), "đầu nhọn: 0,2 mm².", 62, INK, alpha=k)
+    text(d, (W / 2, 1235), "Áp suất lên ngón trỏ", 62, INK, alpha=k)
+    text(d, (W / 2, 1325), "gấp mấy lần ngón cái?", 64, DORANGE, alpha=k)
+    seg_bar(d, 1440, t, 1.0, sc["T"] - 0.2, ORANGE, k)
 
 def _cues(clip):
     sc = {s["key"]: s for s in clip["scenes"]}

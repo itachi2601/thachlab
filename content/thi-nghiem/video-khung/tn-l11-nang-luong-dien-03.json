@@ -1,52 +1,69 @@
 {
   "id": "tn-l11-nang-luong-dien-03",
   "ten": "Hai pin AA và hộp điện trở: đo hiệu suất nguồn",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-nang-luong-dien-03-20261031-2.mp4",
-  "tong_giay": 49.6,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-nang-luong-dien-03-20261127.mp4",
+  "tong_giay": 49.8,
   "o": [
     {
       "khoa": "gia_thuyet",
       "giay": 0,
       "chu": "H = U/E = R/(R + r): R càng lớn so với r, H càng gần 1 nhưng không chạm.",
-      "kiem": "Đổi R thì hiệu suất pin thay đổi ra sao?"
+      "kiem": "Hiệu suất của pin phụ thuộc điện trở R ra sao?"
     },
     {
       "khoa": "du_doan",
-      "giay": 4.6,
-      "chu": "Lần lượt đặt R = 1,0; 2,0; 4,0; 9,0 Ω. Ở R nào, hiệu suất H của pin lớn nhất?"
+      "giay": 3.6,
+      "chu": "Đặt R = 1,0 Ω, bằng r của pin. Hiệu suất H khoảng bao nhiêu?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 10.7,
+      "giay": 9.3,
       "chu": "Hai pin AA (E = 3,0 V, r = 1,0 Ω), hộp điện trở R, ampe kế nối tiếp, vôn kế song song với R, khoá K."
     },
     {
       "khoa": "quan_sat",
-      "giay": 20.0,
-      "chu": "R tăng: I giảm, U tăng; H = U/E: 0,50 → 0,667 → 0,80 → 0,90."
+      "giay": 22.8,
+      "chu": "R = 1,0 → 9,0 Ω: I giảm 1,50 → 0,30 A, U tăng 1,50 → 2,70 V, H = U/E tăng 0,50 → 0,90."
     },
     {
       "khoa": "rut_ra",
-      "giay": 24.2,
-      "chu": "Bốn điểm nằm trên đường H = R/(R + r). Luôn có r > 0 (hao phí I²r trong pin) nên H không chạm 1 (100 phần trăm)."
+      "giay": 28.3,
+      "chu": "Một phần E luôn mất trên r (toả nhiệt trong pin), nên H = R/(R + r) luôn dưới 1; R lớn thì H gần 1."
     },
     {
       "khoa": "chua_noi",
-      "giay": 37.0,
-      "chu": "Chưa biết đo r của pin thế nào; pin dùng lâu thì E, r có đổi không. Lưu ý: R = r cho P = UI lớn nhất, nhưng H chỉ 0,50."
+      "giay": 40.0,
+      "chu": "Chưa đo được E và r của pin: đo bằng cách nào?"
     }
   ],
   "dung_dua": {
-    "giay": 10.55,
-    "cau_hoi": "Lần lượt đặt R = 1,0; 2,0; 4,0; 9,0 Ω. Ở R nào, hiệu suất H của pin lớn nhất?",
+    "giay": 9.15,
+    "cau_hoi": "Hai pin AA (E = 3,0 V, r = 1,0 Ω) nối với hộp điện trở. Đặt R = 1,0 Ω, bằng r. Hiệu suất H của pin khoảng bao nhiêu?",
     "chon": [
-      "A. R = 1,0 Ω (bằng r)",
-      "B. R = 2,0 Ω",
-      "C. R = 9,0 Ω",
-      "D. Như nhau ở cả bốn giá trị R"
+      "A. Khoảng 100 %",
+      "B. Khoảng 75 %",
+      "C. Khoảng 50 %",
+      "D. Khoảng 25 %"
     ],
     "dung": 2,
-    "giai_thich_dung": "H đo được 50 %; 66,7 %; 80 %; 90 %: R càng lớn so với r = 1,0 Ω thì phần hao phí trong pin càng nhỏ, H = R/(R + r) càng gần 100 %.",
-    "giai_thich_sai": "R = r là lúc công suất mạch ngoài P = UI lớn nhất (2,25 W), không phải lúc H lớn nhất; khi đó H chỉ 50 %. H = U/E đi theo U, mà U tăng khi R tăng."
+    "giai_thich_dung": "Đo được U = 1,50 V trong khi E = 3,0 V, nên H = U/E = 50 %: nửa kia toả nhiệt ngay trong pin vì R bằng r.",
+    "giai_thich_sai": "Vôn kế chỉ U = 1,50 V, E = 3,0 V, nên H = U/E = 50 %. R bằng r thì năng lượng chia đôi: nửa ra mạch ngoài, nửa toả nhiệt trong pin."
+  },
+  "cau_chot": {
+    "giay": 45.9,
+    "cau_hoi": "Hai pin cùng E = 3,0 V, cùng nối R = 9,0 Ω: pin mới r = 1,0 Ω và pin cũ r = 3,0 Ω. Pin nào toả nhiệt bên trong nhiều hơn?",
+    "chon": [
+      "A. Pin mới, vì dòng qua nó lớn hơn",
+      "B. Pin cũ, vì r của nó lớn hơn",
+      "C. Bằng nhau, vì cùng E và cùng R",
+      "D. Pin mới, vì hiệu suất cao hơn"
+    ],
+    "dung": 1,
+    "giai_thich": [
+      "Pin mới có dòng lớn hơn (0,30 A so với 0,25 A) nhưng nhiệt trong pin là I²r, mà r của pin cũ gấp ba: pin mới 0,30² · 1,0 = 0,09 W, pin cũ 0,25² · 3,0 ≈ 0,19 W.",
+      "Pin cũ: I = 3,0/(9,0 + 3,0) = 0,25 A, nhiệt trong pin I²r = 0,25² · 3,0 ≈ 0,19 W. Pin mới: I = 0,30 A, I²r = 0,09 W. Dòng nhỏ hơn một chút nhưng r gấp ba nên pin cũ nóng hơn.",
+      "Cùng E, cùng R nhưng r khác nên dòng khác và nhiệt I²r khác: pin mới 0,09 W, pin cũ ≈ 0,19 W.",
+      "Hiệu suất cao nghĩa là phần hao phí chiếm tỉ lệ nhỏ hơn, không phải nhiệt trong pin nhiều hơn. Nhiệt trong pin I²r: pin cũ ≈ 0,19 W, pin mới 0,09 W."
+    ]
   }
 }

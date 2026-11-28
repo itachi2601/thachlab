@@ -1,52 +1,68 @@
 {
   "id": "tn-l10-huongtam-02",
   "ten": "Đồng xu trên bàn xoay quay nhanh dần",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-huongtam-02-20261110-2.mp4",
-  "tong_giay": 49.2,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-huongtam-02-20261127.mp4",
+  "tong_giay": 49.8,
   "o": [
     {
       "khoa": "gia_thuyet",
       "giay": 0,
-      "chu": "Ma sát nghỉ của đĩa giữ xu đi vòng; quay đủ nhanh thì ma sát nghỉ không đủ, xu trượt và rời đi gần theo tiếp tuyến.",
-      "kiem": "Quay nhanh dần, đồng xu ra sao?"
+      "chu": "Ma sát nghỉ của đĩa giữ xu đi vòng; quay đủ nhanh thì ma sát nghỉ không còn đủ giữ.",
+      "kiem": "Xu nặng hay nhẹ trượt trước?"
     },
     {
       "khoa": "du_doan",
       "giay": 3.0,
-      "chu": "Quay nhanh dần tới lúc xu trượt. Ngay khi trượt, so với mặt bàn đứng yên, xu đi theo hướng nào?"
+      "chu": "Thêm xu to nặng gấp đôi, cùng cách tâm 10 cm. Quay nhanh dần: xu nào trượt trước?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 9.8,
-      "chu": "Bàn xoay, đồng xu đặt cách tâm 10 cm; tăng dần tốc độ quay."
+      "giay": 8.8,
+      "chu": "Bàn xoay, hai đồng xu cách tâm 10 cm, xu to nặng gấp đôi."
     },
     {
       "khoa": "quan_sat",
-      "giay": 17.0,
-      "chu": "20, 30, 45 vòng/phút: xu đi theo đĩa. 60 vòng/phút: a_ht cần có 3,95 m/s², hơn giới hạn 3 m/s², xu trượt."
+      "giay": 15.0,
+      "chu": "20, 30, 45 vòng/phút: hai xu đi theo đĩa. 60 vòng/phút: cần 3,95 m/s², quá 3 m/s², hai xu trượt cùng lúc."
     },
     {
       "khoa": "rut_ra",
-      "giay": 27.3,
-      "chu": "Ma sát nghỉ của đĩa đóng vai lực hướng tâm."
+      "giay": 26.5,
+      "chu": "Ma sát nghỉ là lực hướng tâm; ngưỡng trượt không phụ thuộc khối lượng xu."
     },
     {
       "khoa": "chua_noi",
-      "giay": 31.4,
+      "giay": 32.2,
       "chu": "Giới hạn 3 m/s² (k = 0,3) chỉ là số giả định; đĩa và xu thật chưa đo."
     }
   ],
   "dung_dua": {
-    "giay": 9.65,
-    "cau_hoi": "Đồng xu đặt trên bàn xoay, cách tâm 10 cm. Quay nhanh dần tới lúc xu trượt. Ngay khi trượt, so với mặt bàn đứng yên, xu đi theo hướng nào?",
+    "giay": 8.6,
+    "cau_hoi": "Hai đồng xu đặt trên bàn xoay, cùng cách tâm 10 cm, xu to nặng gấp đôi xu nhỏ, cùng loại mặt tiếp xúc. Quay nhanh dần. Xu nào trượt trước?",
     "chon": [
-      "A. Thẳng ra xa tâm",
-      "B. Gần theo tiếp tuyến của vòng tròn",
-      "C. Lệch vào phía tâm của đĩa",
-      "D. Đứng yên, đĩa trượt dưới xu"
+      "A. Xu nhỏ, nhẹ hơn",
+      "B. Xu to, nặng hơn",
+      "C. Cùng lúc"
+    ],
+    "dung": 2,
+    "giai_thich_dung": "Xu cần lực hướng tâm m·ω²·r, ma sát nghỉ tối đa k·m·g: cả hai tỉ lệ với m, nên ngưỡng ω²·r = k·g như nhau, hai xu trượt cùng lúc.",
+    "giai_thich_sai": "Xu nặng cần lực hướng tâm lớn hơn, nhưng cũng được ép xuống mạnh hơn nên ma sát tối đa lớn hơn đúng bấy nhiêu lần. Xem đoạn kế: hai xu rời chỗ ở cùng tốc độ quay."
+  },
+  "cau_chot": {
+    "giay": 44.3,
+    "cau_hoi": "Cùng đĩa, cùng đồng xu, nhưng đặt xu cách tâm 20 cm và quay 45 vòng/phút (ω = 4,71 rad/s). Gia tốc hướng tâm cần có bao nhiêu, xu có trượt không? (ma sát nghỉ tối đa cho 3 m/s²)",
+    "chon": [
+      "A. 2,22 m/s², không trượt",
+      "B. 4,44 m/s², trượt",
+      "C. 1,11 m/s², không trượt",
+      "D. 8,88 m/s², trượt"
     ],
     "dung": 1,
-    "giai_thich_dung": "Ma sát nghỉ không còn đủ kéo xu vào tâm, nên xu giữ hướng vận tốc lúc vừa trượt; trong chuyển động tròn, vận tốc nằm theo tiếp tuyến.",
-    "giai_thich_sai": "Xem đoạn kế: không có lực nào đẩy xu ra theo bán kính. Xu chỉ thiếu lực kéo vào tâm, nên đi gần thẳng theo hướng vận tốc lúc đó, tức theo tiếp tuyến."
+    "giai_thich": [
+      "2,22 m/s² là của xu cách tâm 10 cm. Cùng ω mà r gấp đôi thì a_ht = ω²·r gấp đôi: 4,71² × 0,20 ≈ 4,44 m/s² > 3 m/s², xu trượt.",
+      "a_ht = ω²·r = 4,71² × 0,20 ≈ 4,44 m/s², lớn hơn 3 m/s² ma sát nghỉ cho được, nên xu trượt.",
+      "1,11 m/s² là chia r cho 2. Xu ra xa tâm hơn nên cần gia tốc lớn hơn: 4,71² × 0,20 ≈ 4,44 m/s² > 3 m/s², trượt.",
+      "8,88 m/s² là coi a_ht tỉ lệ với r². Thật ra a_ht = ω²·r tỉ lệ bậc một với r: 4,71² × 0,20 ≈ 4,44 m/s², vẫn trượt."
+    ]
   }
 }

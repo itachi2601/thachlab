@@ -6,7 +6,9 @@
 // Đáp số Bài tương tự (tuongTu.dap) và các ô "em tự tính" tính bằng Python 12/11/2026.
 // Chạy: node scripts/ruot-tap/l12-bai2.mjs [file.pdf]       → scripts/ruot-tap/out/ruot-tap-vl12-bai2.pdf
 //       node scripts/ruot-tap/l12-bai2.mjs --hinh           → chụp từng hình ở cỡ in (46 mm) vào out/hinh-l12-bai2/ để soát chữ/nét
-import { khoiTao, m, lines, wl, fill as f, nw, ck, box, opt, chon, rkHai } from './khung.mjs';
+import { khoiTao, m, lines, wl, fill as f, nw, ck, box, opt, chon, rkHai, MOC } from './khung.mjs';
+// Kiểu mộc (RUOT_TAP_KIEU=moc): bỏ ô tick tự đánh giá (ô tick là lựa chọn trả lời thì giữ), nhãn viết như lời nói thường
+const ckM = MOC ? '' : ck;
 import { hinhL12b2 as H } from './hinh-l12-bai2.mjs';
 
 if (process.argv[2] === '--hinh') {
@@ -37,9 +39,9 @@ if (process.argv[2] === '--hinh') {
 const K = khoiTao({ bai: 2, lid: 3, ten: 'THANG NHIỆT ĐỘ', lop: 12, baiDau: 1, sub: 'Vật lí 12 · Chương 1: Vật lí nhiệt' });
 const { head, h3, foot } = K;
 const fs = (w, extra = '') => `grid-template-columns:1fr ${w}mm;${extra}`;
-const tb = (s) => `<div><b>${s}</b><span class="ck" style="float:right;margin:0"></span></div>`;
+const tb = (s) => `<div><b>${s}</b>${MOC ? '' : '<span class="ck" style="float:right;margin:0"></span>'}</div>`;
 const cau = (s, k) => `<div style="padding-top:1mm;line-height:1.35">${s}</div>${lines(k)}`;
-const dong = (s) => `<div style="margin:.3mm 0">${s}</div>`;
+const dong = (s) => `<div style="margin:.3mm 0">${MOC ? '– ' : ''}${s}</div>`;
 const dC = (s) => nw(m(`${s}\\ ^\\circ\\mathrm C`)), dF = (s) => nw(m(`${s}\\ ^\\circ\\mathrm F`)), dK = (s) => nw(m(`${s}\\ \\mathrm K`));
 const oC = m('^\\circ\\mathrm C'), oF = m('^\\circ\\mathrm F'), oK = m('\\mathrm K');
 const cK = nw(m('T=t+273')), cF = nw(m('t_F=1{,}8\\,t+32'));
@@ -52,11 +54,11 @@ const ttCss = '<style>.yo{display:flex;justify-content:space-between;align-items
 
 const p1 = `${ttCss}<section class="page">
 ${head('BÀI 2 · THANG NHIỆT ĐỘ', K.sub)}
-${h3(1, 'Mục tiêu', '1·1')}
+${h3(1, MOC ? 'Học xong bài này, em làm được' : 'Mục tiêu', '1·1')}
 <div class="card soft">
-${dong(`${ck}Nêu ý nghĩa của nhiệt độ: <b>cân bằng nhiệt</b>, <b>chiều truyền nhiệt năng</b>`)}
-${dong(`${ck}Đọc ba thang Celsius – Kelvin – Fahrenheit; đổi <b>một giá trị</b>, <b>một khoảng chênh</b>`)}
-${dong(`${ck}Kể được nguyên lí các loại <b>nhiệt kế</b>`)}
+${dong(`${ckM}Nêu ý nghĩa của nhiệt độ: <b>cân bằng nhiệt</b>, <b>chiều truyền nhiệt năng</b>`)}
+${dong(`${ckM}Đọc ba thang Celsius – Kelvin – Fahrenheit; đổi <b>một giá trị</b>, <b>một khoảng chênh</b>`)}
+${dong(`${ckM}Kể được nguyên lí các loại <b>nhiệt kế</b>`)}
 </div>
 ${h3(2, 'Dự đoán trước khi học', '1·2')}
 <div class="card">
@@ -67,7 +69,7 @@ ${h3(2, 'Dự đoán trước khi học', '1·2')}
 ${H.baThang()}</div>
 </div>
 ${h3(3, 'Học xong, em sửa lại', '1·3')}
-<div class="card soft"><div>Đáp án đúng là: ${f()} &nbsp; Em đoán ${ck}đúng &nbsp;${ck}sai &nbsp;· <span class="hint">Điều em hiểu sai hoặc mới biết:</span></div>${lines(1)}</div>
+<div class="card soft"><div>Đáp án đúng là: ${f()}${MOC ? '. ' : ` &nbsp; Em đoán ${ck}đúng &nbsp;${ck}sai &nbsp;· `}<span class="hint">Điều em hiểu sai hoặc mới biết:</span></div>${lines(1)}</div>
 ${h3(4, 'II.1 · Nhiệt độ và cân bằng nhiệt', '1·4')}
 <div class="card fig-side" style="${fs(34)};padding:1.2mm 3mm"><div>
 <div>Tiếp xúc, chênh nhiệt độ: nhiệt năng truyền từ vật ${f(14)} sang vật ${f(14)}.</div>
@@ -157,9 +159,9 @@ ${h3(2, 'II.5 · Nhiệt kế: mỗi loại dựa trên tính chất gì?', '4·
 ${H.hongNgoai()}</div>
 ${h3(3, 'III · Ba cái bẫy hay sập', '4·3')}
 <div class="card" style="padding:.6mm 3mm">
-<div class="trap">${ck}<span><b>“Nhiệt truyền từ vật nhiều nhiệt năng hơn.”</b> Chiều truyền do <b>nhiệt độ</b> quyết định.</span></div>
-<div class="trap">${ck}<span><b>“${dC('0')} là ${dK('0')}.”</b> Hai thang khác gốc; so tỉ số nhiệt độ phải đổi ra K.</span></div>
-<div class="trap">${ck}<span><b>“Khoảng chênh cũng cộng 273 (hay 32).”</b> Sai: khoảng chênh không cộng 273, không cộng 32.</span></div>
+<div class="trap">${MOC ? '<b>1.</b>' : ck}<span><b>“Nhiệt truyền từ vật nhiều nhiệt năng hơn.”</b> Chiều truyền do <b>nhiệt độ</b> quyết định.</span></div>
+<div class="trap">${MOC ? '<b>2.</b>' : ck}<span><b>“${dC('0')} là ${dK('0')}.”</b> Hai thang khác gốc; so tỉ số nhiệt độ phải đổi ra K.</span></div>
+<div class="trap">${MOC ? '<b>3.</b>' : ck}<span><b>“Khoảng chênh cũng cộng 273 (hay 32).”</b> Sai: khoảng chênh không cộng 273, không cộng 32.</span></div>
 </div>
 ${h3(4, 'IV · Trả bài 6 câu', '4·4')}
 ${box(`${tb('1. Nhiệt độ cho biết gì? Nhiệt năng truyền theo chiều nào?')}${lines(1)}
@@ -168,7 +170,7 @@ ${tb('3. Độ không tuyệt đối bằng bao nhiêu °C? Nhiệt độ điể
 ${tb('4. Công thức đổi °C ↔ K và °C ↔ °F. Vì sao không viết “°K”?')}${lines(1)}
 ${tb('5. Khoảng chênh 10 °C bằng bao nhiêu K, bao nhiêu °F? Vì sao khác nhau?')}${lines(1)}
 ${tb('6. Kể tên các loại nhiệt kế và tính chất mỗi loại dựa vào.')}${lines(1)}`)}
-<div class="card soft" style="margin-top:.8mm;padding:.8mm 3mm"><b>Bạn cùng bàn kiểm:</b> ……/6 câu · chưa thuộc: ${f(25)} ${nw(`→ đọc lại ô ${f(12)} Tập`)}</div>
+<div class="card soft" style="margin-top:.8mm;padding:.8mm 3mm"><b>Bạn cùng bàn kiểm:</b> ……/6 câu${MOC ? `. Câu chưa thuộc: ${f(22)}, lật lại trang: ${f(14)}` : ` · chưa thuộc: ${f(25)} ${nw(`→ đọc lại ô ${f(12)} Tập`)}`}</div>
 ${foot(4)}</section>`;
 
 const p5 = `<section class="page">
@@ -183,7 +185,7 @@ ${H.loNuong()}</div>
 <div style="background:#fff;border:.3mm solid var(--navy);border-radius:1.5mm;padding:0 3mm;margin-top:1mm">
 ${wl('a)', 1)}${wl('b)', 2)}${wl(`c) giá trị hay khoảng chênh? ${m('\\Delta t=')}`, 2)}${wl('d)', 1)}</div>
 ${K.btvn().replace('<i>1</i>', '<i>3</i>')}
-${h3(4, 'Thử thách phân tầng', '5·4')}
+${h3(4, MOC ? 'Thử sức' : 'Thử thách phân tầng', '5·4')}
 ${box(wl(`${m('\\bigstar')} Nước đá đang tan ở ${dC('0')}. Đổi sang K và ${oF} ${dung3}.`, 1)
  + cau(`${m('\\bigstar\\bigstar')} Vì sao công thức chất khí dùng kelvin mà không dùng độ C?`, 1)
  + cau(`${m('\\bigstar\\bigstar\\bigstar')} Nhiệt kế hồng ngoại đo trán được ${dC('36{,}5')}, nhưng bắn vào mảnh giấy bạc dán trên trán chỉ được ${dC('30')}. Vì sao?`, 1))}

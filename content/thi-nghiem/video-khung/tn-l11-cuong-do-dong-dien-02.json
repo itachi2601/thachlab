@@ -1,52 +1,69 @@
 {
   "id": "tn-l11-cuong-do-dong-dien-02",
   "ten": "Sạc điện thoại qua đồng hồ USB, ghi số mAh",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-cuong-do-dong-dien-02-20261105.mp4",
-  "tong_giay": 49.5,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-cuong-do-dong-dien-02-20261127.mp4",
+  "tong_giay": 49.6,
   "o": [
     {
       "khoa": "gia_thuyet",
       "giay": 0,
       "chu": "Dòng không đổi thì điện lượng tỉ lệ thuận với thời gian: Δq = I·Δt.",
-      "kiem": "Dòng giữ nguyên thì số mAh tăng ra sao?"
+      "kiem": "Số mAh tăng theo thời gian ra sao?"
     },
     {
       "khoa": "du_doan",
       "giay": 3.6,
-      "chu": "Dòng giữ 1,50 A. Cứ sau 10 phút, số mAh trên đồng hồ thay đổi thế nào?"
+      "chu": "Dòng giữ 1,50 A. Vẽ số mAh theo thời gian: năm điểm nằm trên đường nào?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 10.8,
-      "chu": "Đồng hồ USB mắc nối tiếp giữa cục sạc và điện thoại, hiện I và số mAh; đồng hồ bấm giờ đo Δt."
+      "giay": 10.1,
+      "chu": "Cục sạc, đồng hồ USB, điện thoại, đồng hồ bấm giờ."
     },
     {
       "khoa": "quan_sat",
-      "giay": 20.7,
-      "chu": "Mỗi 10 phút thêm 250 mAh, tới 1250 mAh ở phút 50; dòng quanh 1,50 A."
+      "giay": 21.4,
+      "chu": "Năm điểm và gốc toạ độ nằm trên một đường thẳng."
     },
     {
       "khoa": "rut_ra",
-      "giay": 26.4,
-      "chu": "Δq = I·Δt: đường thẳng qua gốc.\n10 phút = 600 s: 1,50·600 = 900 C = 250 mAh, nên 1 mAh = 3,6 C."
+      "giay": 25.4,
+      "chu": "Dòng không đổi: điện lượng tỉ lệ thuận với thời gian.\n1 mAh = 3,6 C, nên 250 mAh = 900 C."
     },
     {
       "khoa": "chua_noi",
-      "giay": 35.7,
-      "chu": "Mới đo khi pin còn xa đầy: gần đầy pin, dòng còn 1,50 A không? Pin nhận bao nhiêu năng lượng?"
+      "giay": 37.1,
+      "chu": "Gần đầy pin, dòng còn giữ 1,50 A không?"
     }
   ],
   "dung_dua": {
-    "giay": 10.7,
-    "cau_hoi": "Dòng giữ 1,50 A. Cứ sau 10 phút, số mAh trên đồng hồ thay đổi thế nào?",
+    "giay": 9.6,
+    "cau_hoi": "Sạc điện thoại ở dòng giữ 1,50 A, cứ 10 phút ghi số mAh một lần. Vẽ số mAh theo thời gian, năm điểm nằm trên đường nào?",
     "chon": [
-      "A. Mỗi 10 phút thêm cùng một lượng",
-      "B. Mỗi 10 phút thêm nhiều hơn lần trước",
-      "C. Mỗi 10 phút thêm ít hơn lần trước",
-      "D. Không tăng, vì dòng không đổi"
+      "A. Đường thẳng đi qua gốc toạ độ",
+      "B. Đường cong, càng lúc càng dốc",
+      "C. Đường cong, thoải dần rồi nằm ngang",
+      "D. Đường thẳng không qua gốc toạ độ"
     ],
     "dung": 0,
-    "giai_thich_dung": "Đồng hồ báo 250; 500; 750; 1000; 1250 mAh, mỗi 10 phút thêm đúng 250 mAh: dòng không đổi nên Δq = I·Δt tăng đều theo thời gian.",
-    "giai_thich_sai": "Dòng không đổi nghĩa là mỗi giây có cùng một lượng điện tích đi qua, không phải điện lượng đứng yên. Xem bảng ở đoạn kế và trừ hai hàng liền nhau."
+    "giai_thich_dung": "Đồng hồ báo 250; 500; 750; 1000; 1250 mAh: mỗi 10 phút thêm đúng 250 mAh, và lúc bắt đầu là 0. Các điểm thẳng hàng với gốc: dòng không đổi thì điện lượng tỉ lệ thuận với thời gian.",
+    "giai_thich_sai": "Xem bảng ở cảnh Tiến hành: trừ hai hàng liền nhau xem mỗi 10 phút thêm bao nhiêu, và nghĩ lúc chưa sạc đồng hồ báo mấy mAh."
+  },
+  "cau_chot": {
+    "giay": 41.9,
+    "cau_hoi": "Vẫn đồng hồ USB đó, sạc ở dòng không đổi 0,80 A trong 15 phút. Số mAh trên đồng hồ tăng thêm khoảng bao nhiêu?",
+    "chon": [
+      "A. Khoảng 720 mAh",
+      "B. Khoảng 375 mAh",
+      "C. Khoảng 200 mAh",
+      "D. Khoảng 3,3 mAh"
+    ],
+    "dung": 2,
+    "giai_thich": [
+      "720 là điện lượng tính bằng cu-lông (0,80 · 900 s = 720 C). Muốn ra mAh còn phải chia cho 3,6.",
+      "375 mAh là lấy 250 mAh mỗi 10 phút nhân 1,5, coi như dòng vẫn 1,50 A. Dòng giảm còn 0,80 A thì mỗi giây ít điện tích qua hơn.",
+      "15 phút = 900 s, nên Δq = 0,80 · 900 = 720 C. Đổi ra mAh: 720 : 3,6 = 200 mAh (cũng là 800 mA · 0,25 h).",
+      "3,3 mAh là nhân 0,80 với 15 phút (12 C) rồi chia 3,6: chưa đổi phút ra giây."
+    ]
   }
 }
