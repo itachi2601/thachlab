@@ -2,33 +2,33 @@
   "id": "tn-l10-huongtam-02",
   "ten": "Đồng xu trên bàn xoay quay nhanh dần",
   "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-huongtam-02-20261127.mp4",
-  "tong_giay": 49.6,
+  "tong_giay": 49.8,
   "o": [
     {
       "khoa": "gia_thuyet",
       "giay": 0,
       "chu": "Ma sát nghỉ của đĩa giữ xu đi vòng; quay đủ nhanh thì ma sát nghỉ không còn đủ giữ.",
-      "kiem": "Quay nhanh dần, đồng xu ra sao?"
+      "kiem": "Xu nặng hay nhẹ trượt trước?"
     },
     {
       "khoa": "du_doan",
       "giay": 3.0,
-      "chu": "Quay nhanh dần tới lúc xu trượt. Lúc trượt, so với mặt bàn đứng yên, xu đi theo hướng nào?"
+      "chu": "Thêm xu to nặng gấp đôi, cùng cách tâm 10 cm. Quay nhanh dần: xu nào trượt trước?"
     },
     {
       "khoa": "dung_cu",
       "giay": 8.8,
-      "chu": "Bàn xoay, đồng xu cách tâm 10 cm."
+      "chu": "Bàn xoay, hai đồng xu cách tâm 10 cm, xu to nặng gấp đôi."
     },
     {
       "khoa": "quan_sat",
       "giay": 15.0,
-      "chu": "20, 30, 45 vòng/phút: xu đi theo đĩa. 60 vòng/phút: cần 3,95 m/s², quá 3 m/s², xu trượt."
+      "chu": "20, 30, 45 vòng/phút: hai xu đi theo đĩa. 60 vòng/phút: cần 3,95 m/s², quá 3 m/s², hai xu trượt cùng lúc."
     },
     {
       "khoa": "rut_ra",
       "giay": 26.5,
-      "chu": "Ma sát nghỉ đóng vai lực hướng tâm; thiếu nó, xu đi theo tiếp tuyến."
+      "chu": "Ma sát nghỉ là lực hướng tâm; ngưỡng trượt không phụ thuộc khối lượng xu."
     },
     {
       "khoa": "chua_noi",
@@ -38,16 +38,15 @@
   ],
   "dung_dua": {
     "giay": 8.6,
-    "cau_hoi": "Đồng xu đặt trên bàn xoay, cách tâm 10 cm. Quay nhanh dần tới lúc xu trượt. Lúc trượt, so với mặt bàn đứng yên, xu đi theo hướng nào?",
+    "cau_hoi": "Hai đồng xu đặt trên bàn xoay, cùng cách tâm 10 cm, xu to nặng gấp đôi xu nhỏ, cùng loại mặt tiếp xúc. Quay nhanh dần. Xu nào trượt trước?",
     "chon": [
-      "A. Thẳng ra xa tâm",
-      "B. Gần theo tiếp tuyến của vòng tròn",
-      "C. Lệch vào phía tâm của đĩa",
-      "D. Đứng yên, đĩa trượt dưới xu"
+      "A. Xu nhỏ, nhẹ hơn",
+      "B. Xu to, nặng hơn",
+      "C. Cùng lúc"
     ],
-    "dung": 1,
-    "giai_thich_dung": "Ma sát nghỉ không còn đủ kéo xu vào tâm, nên xu giữ hướng vận tốc lúc vừa trượt; trong chuyển động tròn, vận tốc nằm theo tiếp tuyến.",
-    "giai_thich_sai": "Xem đoạn kế: không có lực nào đẩy xu ra theo bán kính. Xu chỉ thiếu lực kéo vào tâm, nên đi gần thẳng theo hướng vận tốc lúc đó, tức theo tiếp tuyến."
+    "dung": 2,
+    "giai_thich_dung": "Xu cần lực hướng tâm m·ω²·r, ma sát nghỉ tối đa k·m·g: cả hai tỉ lệ với m, nên ngưỡng ω²·r = k·g như nhau, hai xu trượt cùng lúc.",
+    "giai_thich_sai": "Xu nặng cần lực hướng tâm lớn hơn, nhưng cũng được ép xuống mạnh hơn nên ma sát tối đa lớn hơn đúng bấy nhiêu lần. Xem đoạn kế: hai xu rời chỗ ở cùng tốc độ quay."
   },
   "cau_chot": {
     "giay": 44.3,

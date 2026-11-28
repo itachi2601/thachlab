@@ -24,7 +24,7 @@ export default function TeacherCompetencyHub({ courseId, students }: { courseId:
 
     {view === "approvals" && <TeacherDrawingApprovals courseId={courseId} onPendingCountChange={setPendingCount} />}
     {view === "checklist" && <TeacherChecklistPanel courseId={courseId} students={students.map(item => ({ id: item.id, name: item.name, className: item.className }))} />}
-    {view === "rubric" && <TeacherRubricExamPanel courseId={courseId} students={students.map(item => ({ id: item.id, name: item.name, className: item.className }))} />}
+    {view === "rubric" && <TeacherRubricExamPanel courseId={courseId} students={students} />}
     {view === "matrix" && <ClassCompetencyMatrix courseId={courseId} students={students} />}
   </div>;
 }

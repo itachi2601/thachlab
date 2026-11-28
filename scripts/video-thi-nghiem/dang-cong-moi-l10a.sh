@@ -13,6 +13,8 @@ DS=("l10-lam-quen-voi-vat-li 46" "l10-an-toan-phong-thuc-hanh 47" "l10-thuc-hanh
          "l10-toc-do-van-toc 50" "l10-thuc-hanh-do-toc-do 51" "l10-do-thi-dich-chuyen-thoi-gian 52" "l10-chuyen-dong-bien-doi-gia-toc 53")
 KHAC_BAI="50 51 53"
 if [ "${ME:-1}" = "2" ]; then DS=("l10-chuyen-dong-thang-bien-doi-deu 54" "l10-su-roi-tu-do 55" "l10-thuc-hanh-do-g 56" "l10-thuc-hanh-do-toc-do 51"); KHAC_BAI="54 56"; fi
+# ME=3: mẻ 3 (thầy duyệt 28/11 "sửa hộp"): 9 clip nhóm C, bài 57–62; 57, 58, 62 có sửa hộp exp
+if [ "${ME:-1}" = "3" ]; then DS=("l10-chuyen-dong-nem 57" "l10-tong-hop-phan-tich-luc 58" "l10-dinh-luat-1-newton 59" "l10-dinh-luat-2-newton 60" "l10-dinh-luat-3-newton 61" "l10-trong-luc-luc-cang 62"); KHAC_BAI="57 58 62"; fi
 for p in "${DS[@]}"; do
   set -- $p
   KHAC=""; case " $KHAC_BAI " in *" $2 "*) KHAC="--cho-phep-khac" ;; esac

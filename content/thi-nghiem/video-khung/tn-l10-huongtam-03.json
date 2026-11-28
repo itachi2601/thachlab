@@ -1,8 +1,8 @@
 {
   "id": "tn-l10-huongtam-03",
   "ten": "Nút cao su quay trên đầu ống, quả nặng treo dưới",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-huongtam-03-20261110-2.mp4",
-  "tong_giay": 49.8,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-huongtam-03-20261127.mp4",
+  "tong_giay": 50.0,
   "o": [
     {
       "khoa": "gia_thuyet",
@@ -12,41 +12,58 @@
     },
     {
       "khoa": "du_doan",
-      "giay": 3.0,
-      "chu": "Đang có t₁₀ = 10,2 s với M = 0,10 kg. Đổi M = 0,30 kg, kẹp đứng yên: t₁₀ đổi thế nào?"
+      "giay": 2.9,
+      "chu": "Giữ quả nặng M = 0,10 kg, quay nút nhanh hơn. Kẹp trên dây đi lên hay đi xuống?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 9.8,
-      "chu": "Nút cao su 0,050 kg quay quanh ống, r = 0,50 m; quả nặng M treo dưới; bấm giờ 10 vòng (t₁₀)."
+      "giay": 8.7,
+      "chu": "Nút cao su, ống, quả nặng, kẹp, đồng hồ."
     },
     {
       "khoa": "quan_sat",
-      "giay": 19.9,
+      "giay": 18.6,
       "chu": "M = 0,10; 0,20; 0,30 kg: t₁₀ = 10,2; 7,0; 5,7 s."
     },
     {
       "khoa": "rut_ra",
-      "giay": 31.8,
-      "chu": "Lực căng dây Mg kéo nút vào tâm. m·v²/r = 0,95; 2,01; 3,04 N, so với Mg = 0,98; 1,96; 2,94 N."
+      "giay": 26.3,
+      "chu": "Lực căng dây bằng Mg, đóng vai lực hướng tâm; quay nhanh hơn thì Mg không đủ giữ, kẹp đi lên."
     },
     {
       "khoa": "chua_noi",
-      "giay": 43.2,
+      "giay": 40.4,
       "chu": "Mới thử một bán kính r = 0,50 m và một nút m = 0,050 kg."
     }
   ],
   "dung_dua": {
-    "giay": 9.65,
-    "cau_hoi": "Với M = 0,10 kg, t₁₀ (thời gian 10 vòng) = 10,2 s. Đổi sang M = 0,30 kg (gấp 3), vẫn giữ kẹp đứng yên. t₁₀ đổi thế nào?",
+    "giay": 8.5,
+    "cau_hoi": "Nút cao su quay đều, kẹp đứng yên cách miệng ống vài cm, quả nặng M = 0,10 kg. Giữ nguyên quả nặng, quay nút nhanh hơn. Kẹp trên dây đi lên hay đi xuống?",
     "chon": [
-      "A. Giảm đúng một nửa (5,1 s)",
-      "B. Không đổi, vì r vẫn 0,50 m",
-      "C. Giảm còn khoảng một phần ba",
-      "D. Giảm, nhưng vẫn lớn hơn 5,1 s (một nửa của 10,2 s)"
+      "A. Đi xuống, xa miệng ống",
+      "B. Đứng yên, vì M không đổi",
+      "C. Đi lên, về phía miệng ống",
+      "D. Lên xuống theo từng vòng"
     ],
-    "dung": 3,
-    "giai_thich_dung": "Lực căng gấp 3 nên m·v²/r gấp 3: v² gấp 3, còn v chỉ gấp √3 lần. Vì thế t₁₀ chỉ giảm từ 10,2 s xuống 5,7 s, vẫn lớn hơn 5,1 s.",
-    "giai_thich_sai": "Xem đoạn kế: lực hướng tâm m·v²/r tỉ lệ với v², không với v. Lực gấp 3 thì v tăng chưa tới 2 lần, nên t₁₀ còn lớn hơn một nửa của 10,2 s."
+    "dung": 2,
+    "giai_thich_dung": "Quay nhanh hơn thì cần m·v²/r lớn hơn, mà lực căng chỉ bằng Mg. Lực căng không đủ giữ nút trên vòng cũ, nút ra xa, r tăng, kéo dây lên: kẹp đi lên.",
+    "giai_thich_sai": "Xem đoạn kế: lực hướng tâm cần có m·v²/r tăng khi quay nhanh, còn lực căng vẫn chỉ Mg. Thiếu lực kéo vào, nút ra xa tâm và kéo dây, kẹp đi lên."
+  },
+  "cau_chot": {
+    "giay": 45.2,
+    "cau_hoi": "Treo 4 quả nặng (M = 0,40 kg), quay nút sao cho kẹp đứng yên, r = 0,50 m. Lấy g = 9,8 m/s². m·v²/r khoảng bao nhiêu?",
+    "chon": [
+      "A. 0,40 N",
+      "B. 3,92 N",
+      "C. 2,94 N",
+      "D. 0,49 N"
+    ],
+    "dung": 1,
+    "giai_thich": [
+      "0,40 là khối lượng (kg), chưa nhân g. Kẹp đứng yên thì m·v²/r = lực căng = Mg = 0,40 × 9,8 ≈ 3,92 N.",
+      "Kẹp đứng yên nên lực căng = Mg, và lực căng đóng vai lực hướng tâm: m·v²/r = 0,40 × 9,8 ≈ 3,92 N.",
+      "2,94 N là của 3 quả (0,30 kg). Với 4 quả: Mg = 0,40 × 9,8 ≈ 3,92 N.",
+      "0,49 N là lấy khối lượng nút (0,050 kg) nhân g. Lực căng bằng trọng lượng quả nặng M: 0,40 × 9,8 ≈ 3,92 N."
+    ]
   }
 }

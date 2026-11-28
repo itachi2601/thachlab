@@ -18,6 +18,8 @@ export const RUBRIC_LEVELS: RubricLevel[] = ["E", "G", "P", "F"];
 export interface RubricCriterion {
   id: string;
   label: string;
+  /** Tên ngắn — dùng trên màn chấm điện thoại, bảng điểm SV (cnc_grades.detail) và thông báo. */
+  short: string;
   maxScore: number;
   descriptors: Record<RubricLevel, string>;
 }
@@ -41,6 +43,8 @@ export interface RubricDefinition {
   gatedGroupId: string;
   gateThreshold: number;
   zeroTolerance: readonly string[];
+  /** Tên ngắn từng lỗi loại trực tiếp, cùng thứ tự với zeroTolerance (ghi vào cnc_grades.detail.violations). */
+  zeroToleranceShort: readonly string[];
   classification: RubricClassificationBand[];
 }
 
@@ -51,6 +55,13 @@ const CLASSIFICATION: RubricClassificationBand[] = [
   { label: "Không đạt (Failed)", min: 0 },
 ];
 
+const ZERO_TOLERANCE_SHORT = [
+  "Đâm dao/va chạm do bấm nhầm",
+  "Vi phạm an toàn nghiêm trọng",
+  "Chạy AUTO khi chưa mô phỏng/Test Offset",
+  "Báo sai kết quả đo",
+] as const;
+
 export const RUBRIC_TURN: RubricDefinition = {
   machine: "tien",
   title: "Rubric đánh giá thi thực hành tổng hợp — Tiện CNC",
@@ -58,6 +69,7 @@ export const RUBRIC_TURN: RubricDefinition = {
   gatedGroupId: "thanh-phan",
   gateThreshold: 3.5,
   classification: CLASSIFICATION,
+  zeroToleranceShort: ZERO_TOLERANCE_SHORT,
   zeroTolerance: [
     "Để xảy ra đâm dao vào phôi, mâm cặp hoặc bộ phận máy do bấm nhầm nút hay di chuyển sai hướng.",
     "Vi phạm an toàn nghiêm trọng (mở cửa/đưa tay vào vùng cắt khi trục chính còn quay, không mặc bảo hộ...).",
@@ -71,6 +83,7 @@ export const RUBRIC_TURN: RubricDefinition = {
       criteria: [
         {
           id: "lap-trinh",
+          short: "Lập trình",
           label: "1. Lập trình (đọc bản vẽ, lập quy trình công nghệ, viết chương trình tiện)",
           maxScore: 1.5,
           descriptors: {
@@ -82,6 +95,7 @@ export const RUBRIC_TURN: RubricDefinition = {
         },
         {
           id: "mo-phong",
+          short: "Mô phỏng",
           label: "2. Mô phỏng (kiểm tra quỹ đạo dao, không va chạm, đúng biên dạng)",
           maxScore: 1.0,
           descriptors: {
@@ -93,6 +107,7 @@ export const RUBRIC_TURN: RubricDefinition = {
         },
         {
           id: "cai-dat",
+          short: "Cài đặt dao, phôi",
           label: "3. Cài đặt dao và phôi (đối chiếu checklist thao tác chi tiết cùng bài)",
           maxScore: 2.5,
           descriptors: {
@@ -104,6 +119,7 @@ export const RUBRIC_TURN: RubricDefinition = {
         },
         {
           id: "gia-cong",
+          short: "Gia công, đo kiểm",
           label: "4. Gia công và đo kiểm sản phẩm",
           maxScore: 2.0,
           descriptors: {
@@ -121,6 +137,7 @@ export const RUBRIC_TURN: RubricDefinition = {
       criteria: [
         {
           id: "van-hanh-an-toan",
+          short: "Vận hành, Test Offset MDI",
           label: "5. Thao tác vận hành và Test Offset bằng MDI trước khi chạy thật",
           maxScore: 1.0,
           descriptors: {
@@ -132,6 +149,7 @@ export const RUBRIC_TURN: RubricDefinition = {
         },
         {
           id: "an-toan-lao-dong",
+          short: "An toàn lao động",
           label: "6. An toàn lao động trong suốt quá trình thi",
           maxScore: 1.0,
           descriptors: {
@@ -143,6 +161,7 @@ export const RUBRIC_TURN: RubricDefinition = {
         },
         {
           id: "5s",
+          short: "5S",
           label: "7. Sắp xếp nơi làm việc (5S)",
           maxScore: 0.5,
           descriptors: {
@@ -154,6 +173,7 @@ export const RUBRIC_TURN: RubricDefinition = {
         },
         {
           id: "thoi-gian",
+          short: "Thời gian",
           label: "8. Thời gian hoàn thành",
           maxScore: 0.5,
           descriptors: {
@@ -175,6 +195,7 @@ export const RUBRIC_MILL: RubricDefinition = {
   gatedGroupId: "thanh-phan",
   gateThreshold: 3.5,
   classification: CLASSIFICATION,
+  zeroToleranceShort: ZERO_TOLERANCE_SHORT,
   zeroTolerance: [
     "Để xảy ra đâm dao vào phôi, ê-tô hoặc bộ phận máy do bấm nhầm nút hay di chuyển sai hướng.",
     "Vi phạm an toàn nghiêm trọng (mở cửa/đưa tay vào vùng dao khi trục chính còn quay, không mặc bảo hộ...).",
@@ -188,6 +209,7 @@ export const RUBRIC_MILL: RubricDefinition = {
       criteria: [
         {
           id: "lap-trinh",
+          short: "Lập trình",
           label: "1. Lập trình (đọc bản vẽ, lập quy trình công nghệ, viết chương trình phay)",
           maxScore: 1.5,
           descriptors: {
@@ -199,6 +221,7 @@ export const RUBRIC_MILL: RubricDefinition = {
         },
         {
           id: "mo-phong",
+          short: "Mô phỏng",
           label: "2. Mô phỏng (kiểm tra quỹ đạo dao, không va chạm, đúng biên dạng)",
           maxScore: 1.0,
           descriptors: {
@@ -210,6 +233,7 @@ export const RUBRIC_MILL: RubricDefinition = {
         },
         {
           id: "cai-dat",
+          short: "Cài đặt dao, phôi",
           label: "3. Cài đặt dao và phôi (đối chiếu checklist thao tác chi tiết cùng bài)",
           maxScore: 2.5,
           descriptors: {
@@ -221,6 +245,7 @@ export const RUBRIC_MILL: RubricDefinition = {
         },
         {
           id: "gia-cong",
+          short: "Gia công, đo kiểm",
           label: "4. Gia công và đo kiểm sản phẩm",
           maxScore: 2.0,
           descriptors: {
@@ -238,6 +263,7 @@ export const RUBRIC_MILL: RubricDefinition = {
       criteria: [
         {
           id: "van-hanh-an-toan",
+          short: "Vận hành, Test Offset MDI",
           label: "5. Thao tác vận hành và Test Offset bằng MDI trước khi chạy thật",
           maxScore: 1.0,
           descriptors: {
@@ -249,6 +275,7 @@ export const RUBRIC_MILL: RubricDefinition = {
         },
         {
           id: "an-toan-lao-dong",
+          short: "An toàn lao động",
           label: "6. An toàn lao động trong suốt quá trình thi",
           maxScore: 1.0,
           descriptors: {
@@ -260,6 +287,7 @@ export const RUBRIC_MILL: RubricDefinition = {
         },
         {
           id: "5s",
+          short: "5S",
           label: "7. Sắp xếp nơi làm việc (5S)",
           maxScore: 0.5,
           descriptors: {
@@ -271,6 +299,7 @@ export const RUBRIC_MILL: RubricDefinition = {
         },
         {
           id: "thoi-gian",
+          short: "Thời gian",
           label: "8. Thời gian hoàn thành",
           maxScore: 0.5,
           descriptors: {
@@ -330,4 +359,94 @@ export function gradeRubricExam(
   const xepLoai = zeroToleranceFailed ? "Không đạt (lỗi loại trực tiếp)" : (band?.label ?? "Không đạt (Failed)");
 
   return { groupScores, gatePassed, totalScore, xepLoai, zeroToleranceFailed };
+}
+
+// ---------------------------------------------------------------------------
+// CHUẨN CHẤM CHUNG (28/11/2026): mọi nơi chấm/gửi điểm thi CNC — màn chấm của giảng viên trên web,
+// bảng điểm SV (cnc_grades), thông báo — đều đi qua các hàm dưới đây để cùng một cách tính,
+// cùng tên tiêu chí, cùng chữ xếp loại. Lỗi loại trực tiếp ở màn giảng viên là "đánh dấu VI PHẠM"
+// (mặc định không vi phạm); lưu vào rubric_exam_attempts dạng zero_tolerance_confirmed[i] = !viPham.
+// ---------------------------------------------------------------------------
+
+/** Chữ xếp loại ngắn ghi vào cnc_grades.grade (khớp bảng điểm đã gửi bằng file chấm offline). */
+export function rubricGradeShort(result: RubricScoreResult, complete: boolean) {
+  if (!complete) return "Chưa chấm xong";
+  if (result.zeroToleranceFailed) return "Không đạt (loại trực tiếp)";
+  return result.xepLoai.split(" (")[0];
+}
+
+export function violationsToConfirmed(rubric: RubricDefinition, violated: Record<number, boolean>) {
+  return Object.fromEntries(rubric.zeroTolerance.map((_, i) => [i, !violated[i]])) as Record<number, boolean>;
+}
+
+export function confirmedToViolations(rubric: RubricDefinition, confirmed: Record<number, boolean> | undefined) {
+  // Bài chưa có dữ liệu (undefined) coi là không vi phạm — giảng viên chỉ đánh dấu khi có lỗi.
+  if (!confirmed || !Object.keys(confirmed).length) return {} as Record<number, boolean>;
+  return Object.fromEntries(rubric.zeroTolerance.map((_, i) => [i, !confirmed[i]])) as Record<number, boolean>;
+}
+
+const r2 = (x: number) => Math.round(x * 100) / 100;
+const vn = (x: number) => String(r2(x)).replace(".", ",");
+
+export interface CncGradeDetailRow {
+  ky_thuat: number;
+  thanh_phan: number;
+  total: number;
+  grade: string;
+  detail: {
+    criteria: { name: string; level: RubricLevel | null; points: number | null; max: number }[];
+    violations: string[];
+  };
+}
+
+/** Dòng cnc_grades (cùng dạng script gửi điểm offline đã ghi) từ mức đã chọn + lỗi vi phạm. */
+export function buildCncGradeRow(
+  rubric: RubricDefinition,
+  levels: Record<string, RubricLevel | undefined>,
+  violated: Record<number, boolean>,
+): CncGradeDetailRow {
+  const result = gradeRubricExam(rubric, levels, violationsToConfirmed(rubric, violated));
+  const criteria = rubric.groups.flatMap((g) => g.criteria).map((c) => {
+    const level = levels[c.id] ?? null;
+    return { name: c.short, level, points: level ? r2(RUBRIC_LEVEL_PCT[level] * c.maxScore) : null, max: c.maxScore };
+  });
+  const gate = result.groupScores[rubric.gateGroupId] ?? 0;
+  return {
+    ky_thuat: r2(gate),
+    thanh_phan: r2(result.gatePassed ? (result.groupScores[rubric.gatedGroupId] ?? 0) : 0),
+    total: result.totalScore,
+    grade: rubricGradeShort(result, isRubricComplete(rubric, levels)),
+    detail: { criteria, violations: rubric.zeroToleranceShort.filter((_, i) => violated[i]) },
+  };
+}
+
+/** Ngược lại: đọc dòng cnc_grades cũ (nạp từ file chấm offline) thành mức + vi phạm để chấm/sửa tiếp. */
+export function parseCncGradeDetail(
+  rubric: RubricDefinition,
+  detail: { criteria?: { name: string; level: string | null }[]; violations?: string[] } | null | undefined,
+) {
+  const all = rubric.groups.flatMap((g) => g.criteria);
+  const levels: Record<string, RubricLevel | undefined> = {};
+  (detail?.criteria ?? []).forEach((row, i) => {
+    const c = all.find((x) => row.name.startsWith(x.short)) ?? all[i];
+    if (c && row.level && (RUBRIC_LEVELS as string[]).includes(row.level)) levels[c.id] = row.level as RubricLevel;
+  });
+  const violated: Record<number, boolean> = {};
+  (detail?.violations ?? []).forEach((v) => {
+    const i = rubric.zeroToleranceShort.findIndex((s) => s === v);
+    if (i >= 0) violated[i] = true;
+  });
+  return { levels, violated };
+}
+
+/** Nội dung thông báo gửi SV — cùng mẫu với script gui-diem-thi-tien-cnc.mts. */
+export function cncGradeNotificationBody(rubric: RubricDefinition, row: CncGradeDetailRow) {
+  const mod = rubric.machine === "tien" ? "tiện" : "phay";
+  const lines = row.detail.criteria.map((c) =>
+    `• ${c.name}: ${c.level ? `${RUBRIC_LEVEL_LABEL[c.level]} (${vn(c.points ?? 0)}/${vn(c.max)})` : "chưa chấm"}`);
+  const v = row.detail.violations;
+  return `Điểm bài thi ${mod} CNC của em:\n${lines.join("\n")}` +
+    `\nI. Kỹ thuật: ${vn(row.ky_thuat)}/7` + (row.ky_thuat < rubric.gateThreshold ? " (dưới 3,5 nên nhóm II tính 0)" : "") +
+    `\nLỗi loại trực tiếp: ${v.length ? `${v.join("; ")} → bài tính Không đạt` : "không vi phạm"}` +
+    `\nTổng: ${vn(row.total)}/10 · ${row.grade}`;
 }
