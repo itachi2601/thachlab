@@ -66,3 +66,9 @@ Thầy chốt 27/10/2026: thí nghiệm không tìm được clip YouTube thì t
 - 20/11/2026 11h: thầy duyệt 3 clip mẫu việc 4 (nemngang1 bài 57, khucxa2 bài 83, thuchanhtu4 bài 12, bản `-20261120`); repo đã đổi + gắn khung, hẹn ghi DB 22:05 (`dang-viec4.sh --yes --22h05`, tab terminal). Chờ: kiểm log; chọn lô 20 clip L12; deploy việc 1, 2, 6 (trước đó chạy migration 20261118150000).
 - 21/11/2026 06:29: hẹn `sleep` tới 22:05 bị treo vì Mac ngủ (caffeinate -i không chặn gập máy) → ghi DB 3 clip việc 4 lúc 06:29, 3/3 ✓. Không hẹn giờ bằng sleep. Lô 20 clip L12 giao phiên nhánh `clip-l12-lo20`.
 - 25/11/2026: `lesson_clip_views` và `lesson_clip_choices` đều 0 dòng (64 HS đọc 38 bài có khung từ 21/11) — KhungPortals chỉ ghi khi có tổ tiên `[data-lesson-id]`, mà chỉ InlineLessonAccordion đặt; trang `/lop-hoc/bai` không có. Đã đặt ở khối Lý thuyết (chỉ HS), deploy 25/11. Chờ: đếm lại bảng sau buổi học; chạy `scripts/sql/ty-le-clip-thi-nghiem.sql`.
+
+## Cổng mới — L10a (bài 46–62), XONG 2026-11-28 (nhánh `claude/clip-cong-moi-l10a-d353cc`, main 5f6e37c2ea)
+- 29/29 clip qua cổng A+B, tải `lesson-clips/clip/<tn>-20261127.{mp4,webp}`, ĐÃ GHI DB 3 mẻ: mẻ 1 27/11 17:53 (bài 46–53), mẻ 2 27/11 22:44 (54, 55, 56, 51), mẻ 3 28/11 09:48 (57–62). Bỏ do-toc-do-03 (không bài nào có `data-exp`). Chi tiết từng clip: sổ `content/thi-nghiem/so-clip-anh-dong.md` mục "Cổng mới — L10a".
+- Công cụ: `scripts/video-thi-nghiem/{tai,doi,dang}-cong-moi-l10a.sh/.py` (`ME=2|3` chọn mẻ), sửa hộp exp bằng `sua-hop-exp.py sua-hop-l10a-{,2..7}.json`.
+- Quyết định: kho do-g-03 hàng 60 khung/s GIỮ n = 19 (mô hình làm tròn(0,3214·60) = 19,3) dù lô 2 đề xuất 19 → 20 (đề xuất sai do bên dựng làm tròn lên) — đã báo phiên mẹ để báo thầy.
+- Không còn việc treo của L10a. Ghi chú/handover các clip: thư mục side-session-notes của phiên mẹ `l10a/`.
