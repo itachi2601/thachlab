@@ -31,7 +31,7 @@ Lập 28/11/2026. Mọi nguồn trong thư mục đã được mở lại và đ
 ## Những điều bản tổng hợp ban đầu nói chưa đúng
 
 - **Thông tư 18/2026** không áp dụng cho giảng viên cao đẳng (chỉ mầm non, phổ thông, giáo dục thường xuyên).
-- **Chưa có văn bản hướng dẫn riêng** việc áp dụng Thông tư 02/2025 cho cao đẳng; trường tự chủ theo Điều 4.2.
+- ~~Chưa có văn bản riêng cho cao đẳng~~ — **sửa 28/11/2026:** Thông tư 55/2026/TT-BGDĐT (30/6/2026) đặt chuẩn đầu ra cao đẳng tối thiểu **bậc 6/8** và có môn chung Năng lực số 3 tín chỉ. Vẫn chưa có hướng dẫn chi tiết cách dạy, cách đánh giá; trường tự chủ theo Điều 4.2 TT 02. Xem `van-ban-phap-ly.md` mục 1b.
 - Nghiên cứu **Swansoft** chỉ là khảo sát cảm nhận 32 học sinh, không đo kết quả học hay số lỗi.
 - Số **54,3 / 58,3** là điểm tải tinh thần NASA-TLX của sinh viên đại học (46 người), không phải điểm kết quả học.
 - **HELLER + Siemens**: có máy tập Tokn kèm bản sao số, không thấy "bộ đào tạo" cho trường nghề.

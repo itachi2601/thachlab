@@ -20,7 +20,7 @@ Việc gắn hoạt động nào với mã nào trong hai ví dụ là **đề x
 | xử lý tình huống phức tạp, tự đánh giá và điều chỉnh | 6 |
 
 - THPT: Phụ lục Công văn 3456 đặt lớp 10–12 ở bậc 5.
-- Cao đẳng: Thông tư 02 không ấn định bậc. Hết lớp 12 đã là bậc 5 nên mức hợp lý là bậc 5–6 cho năng lực gắn với nghề. Nên khảo sát đầu vào trước khi chốt, vì kỹ năng số đầu vào của sinh viên cao đẳng thường chênh lệch.
+- Cao đẳng: Thông tư 55/2026 (Điều 5.3) đặt chuẩn đầu ra **tối thiểu bậc 6** khi tốt nghiệp. Bài ở năm 1 có thể đặt bậc 5, nhưng tới mô-đun cuối khoá các năng lực gắn với nghề phải đạt bậc 6. Nên khảo sát đầu vào, vì kỹ năng số đầu vào của sinh viên cao đẳng thường chênh lệch.
 
 ## Mẫu trống
 

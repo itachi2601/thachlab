@@ -4,9 +4,9 @@
 
 ## Tóm tắt cho giảng viên cao đẳng
 
-- Căn cứ trực tiếp: **Thông tư 02/2025/TT-BGDĐT** (áp dụng cho toàn hệ thống giáo dục quốc dân) và **Quyết định 2222/QĐ-TTg** (chỉ tiêu 100% chuẩn đầu ra chương trình GDNN tích hợp năng lực số vào năm 2030).
-- Thông tư 02 **không ấn định bậc** cho trình độ cao đẳng và **không có thời hạn**; trường tự chủ đưa yêu cầu năng lực số vào chương trình (Điều 4.2).
-- **Chưa có** công văn hướng dẫn riêng cho cao đẳng, trung cấp. Các công văn 3456, 2132, kế hoạch 1459 chỉ dành cho phổ thông và giáo dục thường xuyên, nhưng cách làm (xác định "địa chỉ" tích hợp trong từng bài) dùng tham khảo được.
+- Căn cứ trực tiếp: **Thông tư 02/2025/TT-BGDĐT** (áp dụng cho toàn hệ thống giáo dục quốc dân), **Thông tư 55/2026/TT-BGDĐT** (chuẩn chương trình đào tạo GDNN, xem mục 1b) và **Quyết định 2222/QĐ-TTg** (chỉ tiêu 100% chuẩn đầu ra chương trình GDNN tích hợp năng lực số vào năm 2030).
+- **Cập nhật 28/11/2026:** Thông tư 55/2026 (30/6/2026) đặt chuẩn đầu ra cao đẳng **tối thiểu bậc 6/8** về năng lực số và có **môn chung Năng lực số 3 tín chỉ** (Điều 5.3, Phụ lục VII). Thông tư 02 tự nó không ấn định bậc; trường vẫn tự chủ đưa yêu cầu vào chương trình (Điều 4.2 TT 02).
+- **Chưa có** công văn hướng dẫn chi tiết cách dạy, cách đánh giá năng lực số cho cao đẳng, trung cấp. Các công văn 3456, 2132, kế hoạch 1459 chỉ dành cho phổ thông và giáo dục thường xuyên, nhưng cách làm (xác định "địa chỉ" tích hợp trong từng bài) dùng tham khảo được.
 - **Thông tư 18/2026** (khung năng lực số cho giáo viên) **không áp dụng** cho giảng viên cao đẳng.
 
 ## 1. Thông tư 02/2025/TT-BGDĐT — Khung năng lực số cho người học · Gốc
@@ -61,6 +61,17 @@ Mô tả dưới đây là diễn đạt lại; câu chữ chính thức xem B�
 | Chuyên sâu | 7 | Tạo giải pháp cho vấn đề phức tạp, đóng góp cho thực tiễn nghề |
 | Chuyên sâu | 8 | Giải quyết vấn đề phức tạp nhiều yếu tố, đề xuất ý tưởng và quy trình mới cho lĩnh vực |
 
+## 1b. Thông tư 55/2026/TT-BGDĐT — Chuẩn chương trình đào tạo GDNN · Đăng lại
+
+- Ban hành và hiệu lực 30/6/2026; căn cứ Luật GDNN 124/2025/QH15. Áp dụng cho chương trình trung cấp, cao đẳng.
+- Nguồn: toàn văn trên [luatvietnam](https://luatvietnam.vn/giao-duc/thong-tu-55-2026-tt-bgddt-quy-dinh-chuan-chuong-trinh-dao-tao-giao-duc-nghe-nghiep-440521-d1.html), đối chiếu [giaoduc.net.vn 17/7/2026](https://giaoduc.net.vn/chuan-ctdt-giao-duc-nghe-nghiep-yeu-cau-nguoi-hoc-co-nang-luc-so-ky-nang-xanh-trong-chuan-dau-ra-post261480.gd). Chưa tìm được PDF ký số.
+- **Điều 5 khoản 3 (cao đẳng):** chuẩn đầu ra phải có năng lực số **tối thiểu bậc 6/8**, ngoại ngữ tối thiểu bậc 3/6, và kỹ năng xanh (điểm a). Thang 8 bậc trùng thang của Thông tư 02; chưa xác minh văn bản có dẫn chiếu đích danh Thông tư 02 hay không.
+- **Phụ lục VII — môn chung cao đẳng:** Năng lực số 3 tín chỉ (cùng Ngoại ngữ 4, Chính trị 5, Pháp luật 3, GDTC 2). Thông tư 82/2026 sửa phụ lục này chỉ ở phần ngoại ngữ.
+- **Điều 7:** lý thuyết 30–50%, thực hành 50–70%; 1 tín chỉ = 45 giờ.
+- **Điều 12 (chuyển tiếp):** chương trình đang chạy dùng tiếp đến hết khoá; có mốc 31/12/2026 cho rà soát, cập nhật. Đọc nguyên văn trước khi lập kế hoạch sửa chương trình.
+- Ý nghĩa với bộ môn: môn chung 3 tín chỉ lo phần nền; mô-đun chuyên ngành (CNC, CAD/CAM) vẫn phải góp phần đưa sinh viên tới bậc 6 ở năng lực gắn với nghề — đúng hướng "nền chung + lồng ghép theo ngành" mà Cedefop 2026 khuyến nghị (xem `nghien-cuu.md`).
+- Chi tiết phần kỹ năng xanh: [../ky-nang-xanh/van-ban-phap-ly.md](../ky-nang-xanh/van-ban-phap-ly.md).
+
 ## 2. Quyết định 2222/QĐ-TTg — Chuyển đổi số trong giáo dục nghề nghiệp · Gốc
 
 - Ngày 30/12/2021. Tên: Phê duyệt Chương trình chuyển đổi số trong giáo dục nghề nghiệp đến năm 2025, định hướng đến năm 2030.
@@ -103,12 +114,13 @@ Mô tả dưới đây là diễn đạt lại; câu chữ chính thức xem B�
 |---|---|---|
 | Thông tư 79/2026/TT-BGDĐT (25/9/2026), Quy chế đào tạo trong GDNN — <https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/9/79-bgddt.signed.pdf> | Nhà giáo dạy trực tuyến hoặc kết hợp phải có năng lực số và được bồi dưỡng; không dẫn chiếu khung nào | Gốc |
 | Thông tư 49/2026/TT-BGDĐT (30/6/2026, hiệu lực 15/8/2026) — <https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/7/49-bgddt.signed.pdf> | Ứng dụng công nghệ số và AI trong giáo dục đại học, GDNN; áp dụng cho cả cao đẳng. Mới đọc 2 trang đầu | Gốc, đọc chưa hết |
-| Thông tư 55/2026/TT-BGDĐT, chuẩn chương trình đào tạo GDNN | Theo một bài báo, chuẩn đầu ra phải nêu yêu cầu năng lực số, ngoại ngữ, kỹ năng xanh. Chưa mở toàn văn, chưa rõ ngày và có dẫn Thông tư 02 hay không | **Chưa kiểm chứng** |
 | Quyết định 2422/QĐ-BGDĐT (18/8/2026), Khung nội dung giáo dục AI cho học sinh phổ thông | Viện dẫn Thông tư 02/2025; liên quan phần Vật lí THPT | Đăng lại |
 
-**Việc nên làm tiếp:** mở toàn văn Thông tư 55/2026 và Thông tư 49/2026 để xem có yêu cầu cụ thể nào về năng lực số trong chuẩn đầu ra cao đẳng.
+(Thông tư 55/2026 đã chuyển lên mục 1b vì áp dụng trực tiếp.)
+
+**Việc nên làm tiếp:** tìm PDF ký số Thông tư 55/2026; đọc hết Thông tư 49/2026.
 
 ## 7. Không tìm thấy
 
-- Công văn hướng dẫn riêng việc áp dụng Thông tư 02/2025 cho cao đẳng, trung cấp (2025–2026).
+- Công văn hướng dẫn chi tiết cách dạy, đánh giá năng lực số cho cao đẳng, trung cấp (2025–2026). Yêu cầu bậc tối thiểu thì đã có ở Thông tư 55/2026.
 - Khung năng lực số cho nhà giáo giáo dục nghề nghiệp (đã ban hành hoặc dự thảo).
