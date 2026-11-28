@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Năng lượng điện và công suất điện · ghi chú dạy</title>
+<link rel="stylesheet" href="/fonts/be-vietnam-pro/be-vietnam-pro.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body,{delimiters:[{left:'$',right:'$',display:false}],throwOnError:false})"></script>
+<style>
+/* token nền sáng của web (app/globals.css) */
+:root{--bg:#f5f7fa;--ink:#0f172a;--muted:#475569;--line:rgba(15,23,42,.12);--accent:#1d4ed8;--warn:#b45309;--warn-bg:#fffbeb}
+*{box-sizing:border-box}
+body{margin:0 auto;max-width:860px;padding:20px 16px 40px;background:var(--bg);color:var(--ink);font-family:"Be Vietnam Pro","Segoe UI",system-ui,-apple-system,sans-serif;font-size:16px;line-height:1.5}
+h1{font-size:1.5em;margin:.2em 0}
+h2{font-size:1.15em;margin:1.4em 0 .3em;padding-top:.6em;border-top:2px solid var(--line)}
+h2 small{color:var(--muted);font-weight:400}
+ul{margin:.3em 0;padding-left:1.3em}
+li{margin:.15em 0}
+.k{font-weight:700;color:var(--accent)}
+.sai{background:var(--warn-bg);border-left:4px solid var(--warn);padding:.3em .7em;border-radius:0 8px 8px 0;margin:.4em 0}
+table{border-collapse:collapse;width:100%;margin:.4em 0}
+th,td{border:1px solid var(--line);padding:.25em .5em;text-align:left;vertical-align:top}
+th{background:#eef2f7}
+.nho{color:var(--muted);font-size:.92em}
+@media print{body{max-width:none;font-size:12pt}h2{break-after:avoid}}
+</style>
+</head>
+<body>
+<h1>Năng lượng điện và công suất điện (L11 Bài 25) — ghi chú dạy một tiết</h1>
+<p class="nho">Đi kèm màn chiếu <code>tren-lop.html</code> (cùng thư mục). Trang này không chiếu. Đã chạy lớp ảo 3 lượt (thu-lop-ao/gop-y.md).</p>
+
+<h2>Chuẩn bị trước giờ</h2>
+<ul>
+  <li><b>Chiếu tivi 50 inch:</b> 24 màn, mỗi màn một ý, mở toàn màn hình (F11 hoặc ⌃⌘F). Cần mạng để tải công thức (KaTeX) và hai clip; mở trước giờ cho trình duyệt nhớ sẵn.</li>
+  <li><b>Chữ gạch chân xanh</b> trên màn = đúng chữ của chỗ trống trong Tập; góc phải màn ghi trang, ô. Tập in số trang thật của quyển Chương 4: bài này là <b>tr.37–41</b>, mã ô <b>37·1 … 41·4</b>. Đọc to: "chữ gạch chân là chữ điền vào ô".</li>
+  <li><b>Hai clip tự dựng</b> (có điểm dừng, Enter/Space/bấm video = phát tiếp): đèn xe máy 12 V – 21 W (điểm dừng 3), hai pin AA + hộp điện trở (điểm dừng 4). Không có PhET hợp bài.</li>
+  <li>Mang sẵn một hoá đơn tiền điện thật (hoặc ảnh) để chỉ dòng "kWh" ở điểm dừng 1 và 6.</li>
+  <li>Cuối tiết làm <b>đề 1220 (19 câu, 15 phút, mục 213)</b> trên điện thoại: màn 6c có mã QR (đã giải mã lại, mở đúng đề). Điều khiển: → / PageDown sang màn sau, ← / PageUp quay lại, <b>Enter</b> mở ô kế tiếp.</li>
+</ul>
+
+<h2>Cách biểu quyết (dùng cho mọi câu A/B/C/D)</h2>
+<ul>
+  <li>Đọc câu, cho 30 giây tự nghĩ, cả lớp giơ tay theo từng phương án. Đếm nhanh, nói to tỉ lệ.</li>
+  <li>Gọi hai em chọn khác nhau, mỗi em 30 giây thuyết phục bạn. Biểu quyết lại rồi mới bấm Mở.</li>
+  <li>Đáp án đúng chiếm &gt; 80% ngay lần đầu: bỏ qua bước thuyết phục. &lt; 30%: giảng lại trước khi biểu quyết lần hai.</li>
+</ul>
+
+<h2>Đi theo Tập bài 25 <small>thứ tự lật: tr.37 → 38 → 39 → 40 → quay về 37 → 40 → 41</small></h2>
+<table>
+<thead><tr><th>Điểm dừng</th><th>Phút</th><th>Ô trong Tập</th><th>Điền trên lớp</th></tr></thead>
+<tbody>
+<tr><td>1 · Dự đoán "số điện"</td><td>0–2</td><td>tr.37 ô 37·2</td><td>khoanh A–D, chắc/không chắc, 1 dòng "Vì sao". KHÔNG mở đáp án</td></tr>
+<tr><td>2 · Năng lượng điện, kWh, công tơ</td><td>2–8</td><td>tr.37 ô 37·4, 37·5 → tr.38 ô 38·1</td><td>chỗ điền $A=UIt$, dạng năng lượng, $Q$, đọc công tơ ấm 1800 W, làm nhanh bàn là</td></tr>
+<tr><td>3 · Công suất, nhãn, đèn xe máy</td><td>8–16</td><td>tr.38 ô 38·2, 38·3, 38·4</td><td>định nghĩa $P$, nhãn 220 V – 100 W, bảng $I$, $P$, $R$ từ clip, làm nhanh 110 V</td></tr>
+<tr><td>4 · Công suất nguồn, hiệu suất</td><td>16–22</td><td>tr.39 ô 39·1, 39·2</td><td>$\mathcal EI=UI+I^2r$, $H$, hàng $I$ và $H$ của bảng hai pin AA</td></tr>
+<tr><td>5 · Đoản mạch, cầu chì, bẫy</td><td>22–27</td><td>tr.39 ô 39·3 → tr.40 ô 40·1</td><td>$I$ đoản mạch, chọn cầu chì, Bẫy 1 và Bẫy 3 (Bẫy 2 thiếu giờ thì về nhà)</td></tr>
+<tr><td>6 · Trả bài, quay lại hoá đơn, đề 1220</td><td>27–30, đề 30–45</td><td>tr.40 ô 40·2 → tr.37 ô 37·3, 37·1 → tr.40 ô 40·3</td><td>câu 1 và 3 trả bài (viết 1,5 phút) · sửa dự đoán · tích mục tiêu 37·1 · điểm …/19</td></tr>
+</tbody>
+</table>
+<p class="nho">Về nhà (tr.41, ô 41·1 … 41·4 và tr.40 trả bài câu 2, 4, 5, 6 + Bẫy 2): màn "Về nhà" ghi đủ.</p>
+
+<h2>Điểm dừng 1 · Dự đoán "số điện" <small>phút 0–2 · tr.37 ô 37·2</small></h2>
+<ul>
+  <li>Màn mở nêu ba câu cuối giờ tự trả lời được. Màn 1: hoá đơn "312 kWh", đèn 100 W sáng 10 giờ ăn bao nhiêu số? Khoanh, đánh dấu chắc/không chắc, viết "Vì sao".</li>
+  <li>Không mở đáp án; ghi tỉ lệ biểu quyết lên góc bảng, hẹn "cuối giờ chính các em tính ra" (màn "Quay lại hoá đơn").</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> A (100 số, quên nhân thời gian), B (1000, quên chia 1000), D (10, lấy số giờ).</div>
+
+<h2>Điểm dừng 2 · Năng lượng điện, kWh, công tơ <small>phút 2–8 · tr.37 ô 37·4, 37·5 → tr.38 ô 38·1</small></h2>
+<ul>
+  <li>Màn 2a–2b: hỏi từng dòng, lớp nghĩ rồi bấm Mở, chép chữ gạch chân. Điện năng biến thành nhiệt/cơ năng/hoá năng/quang. Công tơ đếm năng lượng (kWh), không đo công suất.</li>
+  <li>Màn 2c: ấm 1800 W chạy 10 phút, công tơ từ 1234,5 lên 1234,8 kWh. Lớp tính 30 giây trước khi mở ($0{,}3$ kWh; $A=Pt=1{,}8\cdot\tfrac16=0{,}3$ kWh $=1{,}08\cdot10^6$ J).</li>
+  <li>Màn 2d (làm nhanh, lật sang tr.38 ô 38·1): bàn là 220 V, 4,0 A, 15 phút. Có phương án kJ; nhắc lớp ghi thêm kWh ($0{,}22$ kWh) vì Tập hỏi cả hai.</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> đổi 15 phút ra giờ sai (0,15 h); lẫn kW (công suất) với kWh (năng lượng).</div>
+
+<h2>Điểm dừng 3 · Công suất, nhãn, đèn xe máy <small>phút 8–16 · tr.38 ô 38·2, 38·3, 38·4</small></h2>
+<ul>
+  <li>Màn 3a–3b: định nghĩa $P=A/t$, đơn vị oát $=1$ J/s; nhãn 220 V – 100 W: "định mức" là con số nhà sản xuất ghi cho dùng đúng. Lớp tự tính $I_{\text{đm}}\approx0{,}45$ A, $R=484\ \Omega$ rồi mở.</li>
+  <li><span class="k">Màn 3c clip đèn xe máy, 3 điểm dừng.</span> Hàng $I$ của bảng ô 38·3 để trống: lớp ghi $1{,}75$; $1{,}55$; $1{,}30$ A từ clip. Dừng ①: hạ xuống 6 V, đoán công suất, rồi tính. Dừng ②: $P=7{,}8$ W, hàng $P$. Dừng ③: $12$ V khớp nhãn, hàng $R$.</li>
+  <li>Màn 3d: rút ra — đèn mờ thì $R$ nhỏ hơn vì dây tóc nguội hơn (chữ gợi ý "nhiệt độ" đã in cạnh ô); "coi $R$ không đổi" là gần đúng.</li>
+  <li>Màn 3e: đèn 220 V – 100 W mắc vào 110 V. Gợi ý: so 110 với 220 rồi bình phương → $P=25$ W.</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> chia đôi hiệu điện thế thì công suất cũng chia đôi (50 W); nghĩ "định mức" là giá trị tối đa.</div>
+
+<h2>Điểm dừng 4 · Công suất nguồn, hiệu suất <small>phút 16–22 · tr.39 ô 39·1, 39·2</small></h2>
+<ul>
+  <li>Màn 4a: dòng $I$ chạy qua cả nguồn lẫn mạch ngoài (đã nhắc ở đầu ô). Nhân $U=\mathcal E-Ir$ với $I$ → $\mathcal EI=UI+I^2r$: mạch ngoài nhận $UI$, nguồn tự nóng $I^2r$.</li>
+  <li>Màn 4b: $H=A_{\text{ci}}/A_{\text{tp}}=U/\mathcal E$; thuần điện trở $H=R/(R+r)$. Có quạt, động cơ, pin đang sạc: chỉ dùng $H=A_{\text{ci}}/A_{\text{tp}}$ (vì $U\ne IR$).</li>
+  <li><span class="k">Màn 4c clip hai pin AA, 3 điểm dừng.</span> Bảng ô 39·2 in sẵn $U$; lớp tự điền hàng $I=\mathcal E/(R+r)$ rồi $H=U/\mathcal E$: $50;\ 66{,}7;\ 80;\ 90\ \%$. Câu cuối: $H$ tăng nhưng không bao giờ đạt 100 % vì $r&gt;0$.</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> cho rằng $H$ càng cao càng tốt cho mọi mục đích (quên rằng $P_R$ cực đại ở $R=r$ lúc $H=50\%$ — ★★★ ô 41·4).</div>
+
+<h2>Điểm dừng 5 · Đoản mạch, cầu chì, ba bẫy <small>phút 22–27 · tr.39 ô 39·3 → tr.40 ô 40·1</small></h2>
+<ul>
+  <li>Màn 5a: $R\to0$ thì $I=\mathcal E/r$ rất lớn; ắc quy 12 V, $r=0{,}02\ \Omega$: $600$ A, nhiệt $I^2r=7200$ W. Màn 5b: cầu chì tự ngắt; ấm 1800 W → $8{,}2$ A → chọn 10 A (phương án 5 A, 10 A, 16 A).</li>
+  <li>Màn bẫy (biểu quyết A–D): Bẫy 1 kW và kWh (điều hoà 1,2 kW × 8 h × 30 = 288 kWh); Bẫy 3 đèn nào sáng hơn (nối tiếp dùng $P=I^2R$, song song dùng $P=U^2/R$). <b>Bẫy 2</b> (nguồn $\ne$ mạch ngoài: $18$ W và $16$ W, chênh $I^2r=2$ W): thiếu giờ thì bỏ, làm ở nhà.</li>
+  <li>Điểm dừng 5 dày (khoảng 17 ô trong 5 phút): ưu tiên 5a, 5b, Bẫy 1, Bẫy 3.</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> chọn cầu chì 5 A (nhỏ hơn dòng làm việc, đứt ngay); nghĩ đèn công suất lớn luôn sáng hơn.</div>
+
+<h2>Điểm dừng 6 · Trả bài, quay lại hoá đơn, đề 1220 <small>phút 27–30 · đề 30–45</small></h2>
+<ul>
+  <li>Màn 6a: không nhìn Tập, viết câu 1 và câu 3 của ô 40·2 trong 1,5 phút, rồi mở đáp án tự đối chiếu. Câu 2, 4, 5, 6 và dòng "Bạn cùng bàn kiểm" làm ở nhà.</li>
+  <li><span class="k">Màn 6b (1 phút):</span> nói rõ "lật NGƯỢC về tr.37". Lớp ghi đáp án ô 37·3 (đèn 100 W × 10 h = 1 kWh = 1 số), đúng/sai, điều hiểu sai; rồi tích ba mục tiêu ở ô 37·1 (20 giây). Lật lại tr.40.</li>
+  <li>Màn 6c: quét QR, làm đề 1220 trong 15 phút; nộp xong ghi tr.40 ô 40·3 (điểm …/19, câu sai, câu đoán mò). Đề: xem trước trên web khi có mạng, soát câu chạm phần chưa dạy trên lớp.</li>
+  <li>Màn "Về nhà": chụp lại màn cho cả lớp.</li>
+</ul>
+
+<h2>Phiếu giấy dự phòng (mất mạng / thiếu điện thoại)</h2>
+<ol>
+<li>Bàn là 220 V, 2,0 A dùng 30 phút. Năng lượng tiêu thụ: A. $0{,}22$ kWh · B. $0{,}44$ kWh · C. $13{,}2$ kWh · D. $0{,}11$ kWh</li>
+<li>Đèn 12 V – 24 W. Điện trở (coi không đổi): A. $2{,}0\ \Omega$ · B. $6{,}0\ \Omega$ · C. $0{,}50\ \Omega$ · D. $288\ \Omega$</li>
+<li>Nguồn $\mathcal E=9{,}0$ V, $r=1{,}0\ \Omega$, $R=8{,}0\ \Omega$. Hiệu suất nguồn: A. $100\ \%$ · B. $89\ \%$ · C. $11\ \%$ · D. $72\ \%$</li>
+</ol>
+<table>
+<thead><tr><th>Câu</th><th>Đáp án</th><th>Lời giải</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>A</td><td>$A=UIt=220\cdot2{,}0\cdot0{,}5\ \mathrm h=220$ Wh $=0{,}22$ kWh (B: quên 0,5; C: dùng 30 h)</td></tr>
+<tr><td>2</td><td>B</td><td>$R=U^2/P=144/24=6{,}0\ \Omega$ (A: lấy $P/U$ ra dòng, D: nhân $U\cdot P$)</td></tr>
+<tr><td>3</td><td>B</td><td>$H=R/(R+r)=8/9\approx89\ \%$ (C: $r/(R+r)$)</td></tr>
+</tbody>
+</table>
+
+<h2>Nếu thiếu giờ / dư giờ</h2>
+<ul>
+  <li>Thiếu: bỏ Bẫy 2; màn 3e nói miệng; màn 6a chỉ làm câu 1; không cắt giờ làm đề 1220 — chưa xong thì làm nốt ở nhà trong ngày.</li>
+  <li>Dư: thử thách ★★★ ô 41·4 ($R=r$ thì $P_R$ cực đại, $H=50\ \%$), hoặc Bẫy 2.</li>
+</ul>
+
+<h2>Sau buổi dạy — ghi lại để quyết có làm bài khác không</h2>
+<ul>
+  <li>Bàn cuối đọc được những màn nào; hình công tơ, nhãn thiết bị có rõ không.</li>
+  <li>Tỉ lệ đoán đúng ô dự đoán (C) đầu giờ.</li>
+  <li>Đề 1220: điểm trung bình, câu sai nhiều nhất, số em chưa nộp kịp trong 15 phút.</li>
+  <li>Điểm dừng nào vượt mốc phút (dự đoán: 3 và 5).</li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hiện tượng phóng xạ · ghi chú dạy</title>
+<link rel="stylesheet" href="/fonts/be-vietnam-pro/be-vietnam-pro.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body,{delimiters:[{left:'$',right:'$',display:false}],throwOnError:false})"></script>
+<style>
+/* token nền sáng của web (app/globals.css) */
+:root{--bg:#f5f7fa;--ink:#0f172a;--muted:#475569;--line:rgba(15,23,42,.12);--accent:#1d4ed8;--warn:#b45309;--warn-bg:#fffbeb}
+*{box-sizing:border-box}
+body{margin:0 auto;max-width:860px;padding:20px 16px 40px;background:var(--bg);color:var(--ink);font-family:"Be Vietnam Pro","Segoe UI",system-ui,-apple-system,sans-serif;font-size:16px;line-height:1.5}
+h1{font-size:1.5em;margin:.2em 0}
+h2{font-size:1.15em;margin:1.4em 0 .3em;padding-top:.6em;border-top:2px solid var(--line)}
+h2 small{color:var(--muted);font-weight:400}
+ul{margin:.3em 0;padding-left:1.3em}
+li{margin:.15em 0}
+.k{font-weight:700;color:var(--accent)}
+.sai{background:var(--warn-bg);border-left:4px solid var(--warn);padding:.3em .7em;border-radius:0 8px 8px 0;margin:.4em 0}
+table{border-collapse:collapse;width:100%;margin:.4em 0}
+th,td{border:1px solid var(--line);padding:.25em .5em;text-align:left;vertical-align:top}
+th{background:#eef2f7}
+.nho{color:var(--muted);font-size:.92em}
+@media print{body{max-width:none;font-size:12pt}h2{break-after:avoid}}
+</style>
+</head>
+<body>
+<h1>Hiện tượng phóng xạ (L12 · Tập bài 20 · web Bài 17) — ghi chú dạy một tiết</h1>
+<p class="nho">Đi kèm màn chiếu <code>tren-lop.html</code> (cùng thư mục). Trang này không chiếu. Bản thử, chưa đăng lên web. Tập in số bài <b>20</b>, trang <b>37–41</b> (số trang và mã ô trên giấy là số tuyệt đối trong quyển: "Tập 37·4"); trang web là "Bài 17" — đọc to "Tập bài 20, trang 37" để học sinh lật đúng.</p>
+
+<h2>Chuẩn bị trước giờ</h2>
+<ul>
+  <li>Màn chiếu cần mạng để tải công thức (KaTeX từ cdn.jsdelivr.net). Không có mạng thì công thức hiện dạng ký hiệu đô-la thô — mở trước khi vào lớp để trình duyệt nhớ sẵn.</li>
+  <li>Cuối tiết làm <b>đề 1194 "Kiểm tra nhanh — Bài 17. Hiện tượng phóng xạ"</b> (20 câu: 14 câu A–D + 6 câu Đúng/Sai, 15 phút, mục Lý thuyết id 160) trên điện thoại: màn 6e có mã QR (cao 62% màn) (đã giải mã lại, ra đúng <code>thachlab.id.vn/kiem-tra/lam/?id=1194&amp;item=160</code>) và số đề để gõ tay ở trang Quét mã. Hỏi trước lớp có đủ điện thoại + mạng không; thiếu máy thì dùng phiếu giấy dự phòng cuối trang này.</li>
+  <li><b>Hai clip tự dựng</b> (cần mạng): màn 2b "Đếm xung năm lần liền" (dừng 3 lần) và màn 4a "Đếm xung mỗi 5 phút" (dừng 3 lần). Enter / bấm video = phát tiếp, ↺ xem lại đoạn. Trước giờ tới từng màn bấm ▶ rồi ↺ để máy tải sẵn.</li>
+  <li><b>PhET "Phân rã beta"</b> (màn 3f, bản tiếng Việt): mở sẵn một tab, chọn màn "Một nguyên tử", đồng vị Carbon-14, tốc độ Chậm. <b>PhET "Phân rã alpha"</b> (màn 4e) mặc định bỏ qua vì clip 4a đã có chu kì bán rã; chỉ mở khi dư giờ (màn "Nhiều nguyên tử", Polonium-211).</li>
+  <li><b>Chiếu tivi 50 inch:</b> 29 màn, mỗi màn một ý. Chữ thường = 5,2% chiều cao màn; nhãn trong hình ≥ 0,7 chữ thường. Mở toàn màn hình (F11 hoặc ⌃⌘F). Trước giờ ngồi thử ở bàn cuối: màn nào không đọc được thì ghi lại.</li>
+  <li><b>Chữ gạch chân xanh</b> trên màn = đúng chữ của chỗ trống trong Tập; góc phải màn ghi trang · ô · dòng. Đọc to: "chữ gạch chân là chữ điền vào ô…".</li>
+  <li>Hình 2 và Hình 4 của bài web vẽ cho nền tối; màn chiếu đổi màu đậm bằng CSS (xanh lá → lục đậm, xanh trời → lam đậm, đỏ nhạt → đỏ đậm) để đọc được trên nền trắng.</li>
+  <li>Video YouTube "ống đếm GM trước nguồn beta" trong bài web không chiếu trên lớp (trùng ý clip 2b) — học sinh xem khi ôn.</li>
+  <li>Điều khiển: → / PageDown sang màn sau, ← / PageUp quay lại, <b>Enter</b> mở ô kế tiếp trong màn đang chiếu (ở màn clip: Enter = phát tiếp).</li>
+</ul>
+
+<h2>Cách biểu quyết (dùng cho mọi câu A/B/C/D)</h2>
+<ul>
+  <li>Đọc câu, cho 30 giây tự nghĩ, cả lớp giơ tay theo từng phương án. Đếm nhanh, nói to tỉ lệ.</li>
+  <li>Gọi hai em chọn khác nhau, mỗi em 30 giây thuyết phục bạn. Biểu quyết lại rồi mới bấm Mở.</li>
+  <li>Đáp án đúng chiếm &gt; 80% ngay lần đầu: bỏ qua bước thuyết phục, đi tiếp. &lt; 30%: giảng lại trước khi biểu quyết lần hai.</li>
+  <li>Câu 2–7 (màn chiếu) không in đề trong Tập: học sinh ghi vào bảng ô 39·3 "Kết quả tự kiểm tra (đề chiếu trên lớp)" (tr.39) cột "Em chọn" + "Chắc?" trước khi mở, cột "Đúng?" sau khi mở. Câu 1 = câu dự đoán in sẵn ở ô 37·2. Câu 8 (C-14) để về nhà (tr.41).</li>
+  <li>Hai câu dừng trong clip (đếm năm lần, phút 10 còn bao nhiêu) chỉ biểu quyết miệng, không ghi bảng.</li>
+</ul>
+
+<h2>Đi theo Tập bài 20 <small>thứ tự lật: tr.37 → tr.39 (ghi câu) → tr.38 → tr.40 → tr.39 → tr.37</small></h2>
+<table>
+<thead><tr><th>Điểm dừng</th><th>Phút</th><th>Ô trong Tập</th><th>Ô trống điền trên lớp</th></tr></thead>
+<tbody>
+<tr><td>1 · Dự đoán nitơ lỏng</td><td>0–3</td><td>tr.37 ô 37·2</td><td>khoanh 1 phương án, 1 dòng "Vì sao"</td></tr>
+<tr><td>2 · Phóng xạ là gì + clip đếm xung + câu 2</td><td>3–10</td><td>tr.37 ô 37·4, 37·5 → tr.39 ô 39·3 câu 2</td><td>10 chỗ điền ô 37·4 + 6 chỗ ô 37·5 + câu 2 = 17</td></tr>
+<tr><td>3 · Bốn loại tia, dịch ô + PhET + câu 3, 6</td><td>10–17</td><td>tr.38 ô 38·1, 38·2 → ô 39·3 câu 3, 6</td><td>11 chỗ ô 38·1 + 11 chỗ ô 38·2 + 2 câu = 24</td></tr>
+<tr><td>4 · Định luật phóng xạ + clip mỗi 5 phút + câu 4</td><td>17–23</td><td>tr.38 ô 38·3 → ô 39·3 câu 4</td><td>8 chỗ công thức + 6 ô "còn / đã rã" + câu 4 = 15</td></tr>
+<tr><td>5 · Độ phóng xạ, bài mẫu Na-24 + câu 5, 7</td><td>23–28</td><td>tr.38 ô 38·4 → ô 39·3 câu 5 → tr.40 → ô 39·3 câu 7</td><td>8 chỗ ô 38·4 + 6 ô bảng phân tích + 3 dòng giải + 2 câu = 19</td></tr>
+<tr><td>6 · Bẫy, chia đôi mẫu, trả bài, quay lại, đề 1194</td><td>28–30, đề 30–45</td><td>tr.39 ô 39·1, 39·2 câu 2, 4 → tr.37 ô 37·3, 37·1 → đề xong: ghi điểm dưới ô 39·3</td><td>tick bẫy + 2 câu trả bài + đáp án dự đoán, đúng/sai + điểm đề</td></tr>
+</tbody>
+</table>
+<p>Điểm dừng 3 dày nhất (24 chỗ) nhưng hầu hết là một từ hoặc $A-4$, $Z+1$ — chiếu màn, đọc to từng dòng, cho chép 1 phút rồi mới chuyển. Thiếu giờ: bỏ màn 3e (Hình 4 chốt dịch ô) và PhET 3f, giữ câu 6. Điểm dừng 5: bảng phân tích đề (tr.40) cho cả lớp nói miệng từng dòng rồi mở, chép sau.</p>
+
+<h2>Điểm dừng 1 · Dự đoán nitơ lỏng <small>phút 0–3 · Tập tr.37 ô 37·2</small></h2>
+<ul>
+  <li>Gợi mở: "Mẫu quặng đặt cạnh ống đếm Geiger, máy kêu tách tách khoảng 500 tiếng mỗi phút. Thử ngâm nước đá, đun nóng, nhúng vào nitơ lỏng $-196\ ^\circ\mathrm{C}$. Nhịp đếm có đổi không?"</li>
+  <li>Màn 1 không có ô đáp án (tránh bấm nhầm lộ): khoanh vào Tập, viết một dòng "Vì sao". Ghi tỉ lệ biểu quyết lên góc bảng, nói "cuối giờ quay lại câu này" (điểm dừng 6, màn 6d, ô 37·3).</li>
+  <li>Câu và 3 phương án trên màn chép y chữ Tập; hình = hình ô 37·2 của Tập (nhãn "≈500 xung/phút" là nhịp trước khi nhúng, không lộ đáp án).</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> chọn A (lạnh làm phản ứng chậm lại) vì quen phản ứng hoá học — hỏi "nhiệt độ tác động tới phần nào của nguyên tử: lớp vỏ hay hạt nhân?" (để mở dần, chưa chốt).</div>
+
+<h2>Điểm dừng 2 · Phóng xạ là gì, đếm xung <small>phút 3–10 · tr.37 ô 37·4, 37·5 → tr.39 ô 39·3</small></h2>
+<ul>
+  <li>Màn 2a: định nghĩa + ba tính chất "tự phát · ngẫu nhiên · không phụ thuộc bên ngoài" + đồng vị phóng xạ tự nhiên/nhân tạo. Điền 10 chỗ ô 37·4. Đề 1194 câu 1 hỏi đúng định nghĩa này.</li>
+  <li>Màn 2b clip (khoảng 2,5 phút kể cả dừng): dừng 1 ở cảnh "Năm số đếm sẽ thế nào?" — biểu quyết A/B/C (C); dừng 2 khi đủ năm số + phông 23 — cả lớp bấm máy tính trung bình rồi trừ phông (ghi ô 37·5); dừng 3 "Nguồn cho 506 xung/phút — đúng hay sai?" (sai, quên trừ phông). Clip hết ở cảnh "Cái bẫy", không chiếu cảnh "Chốt lại".</li>
+  <li>Màn 2c: điền 6 chỗ ô 37·5 rồi mở. Tập tr.37 để trống cả năm số đếm và phông nền: HS chép từ màn khi clip dừng 2 (đừng cho xem trước). Chỗ "một phút lệch trung bình cỡ ±…": ghi <b>20</b> (≈ √506 ≈ 22, màn có ghi sẵn cách tính).</li>
+  <li>Màn 2d: Câu 2 (C — ngẫu nhiên), ghi ô 39·3 tr.39.</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> nghĩ năm số khác nhau là "máy hỏng" (đề 1194 câu 15c); quên trừ phông nền; tưởng hạt nhân nóng hoặc ở mặt ngoài phân rã trước (câu 2 A, B).</div>
+
+<h2>Điểm dừng 3 · Bốn loại tia, dịch chuyển ô <small>phút 10–17 · tr.38 ô 38·1, 38·2 → tr.39 ô 39·3</small></h2>
+<ul>
+  <li>Màn 3a: hình ba tia trong điện trường (cùng hình ô 38·1) + 4 dòng điền. Chữ nhỏ "giấy – nhôm – chì" là thứ tự đâm xuyên: đề 1194 câu 5 hỏi, đọc to.</li>
+  <li>Màn 3b: Hình 2 của bài (có nhãn chiều lệch) để chốt. Màn 3c: Câu 3 (B — do dấu điện tích).</li>
+  <li>Màn 3d: bảng $A_Y$, $Z_Y$ cho $\alpha$, $\beta^-$, $\beta^+$ + dòng $\gamma$ (ô 38·2). Quy tắc đọc: "trên khớp số khối, dưới khớp điện tích". Màn 3e: Hình 4 (ô 89–93) chốt chiều dịch.</li>
+  <li>Màn 3f PhET (khoảng 1,5 phút): lớp đoán C-14 sau $\beta^-$ có mấy prôtôn, mấy nơtron, rồi mới bấm. Kết quả N-14 (7 p, 7 n). PhET còn hiện một hạt thứ ba rất nhẹ (phản nơtrinô) — nói "chương trình không học hạt này", không mở rộng. Tập không có dòng ghi PhET: chỉ nói miệng.</li>
+  <li>Màn 3g: Câu 6 (U-238 phóng xạ $\alpha$ → C), ghi ô 39·3. Đề 1194 câu 18 hỏi lại đúng hạt nhân này.</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> nhầm $\beta^+$ lệch về bản dương (câu 16c); với $\alpha$ trừ $A$ mà cộng $Z$; nghĩ phát $\gamma$ làm giảm số khối (câu 18d).</div>
+
+<h2>Điểm dừng 4 · Định luật phóng xạ <small>phút 17–23 · tr.38 ô 38·3 → tr.39 ô 39·3</small></h2>
+<ul>
+  <li>Màn 4a clip (khoảng 2 phút): dừng 1 "phút 10 còn khoảng?" — biểu quyết A–D (B, 200); dừng 2 khi bảng đủ 5 mốc — lớp chia số trước cho số sau (≈ 2); dừng 3 "Cứ 5 phút còn một nửa: $T\approx5$ phút. Giảm vì mỗi hạt nhân rã chậm dần?" — để lớp tranh luận, clip trả lời ở cảnh "Vì sao còn một nửa". Clip hết trước cảnh "Bẫy".</li>
+  <li>Màn 4b: định nghĩa $T$ + $N_t$, $m_t$, $H_t$, $\Delta N$ (5 dòng đầu ô 38·3). Màn 4c: $\lambda$, $N_0$ và bảng "còn / đã rã" sau $T$, $2T$, $3T$ (dòng cuối ô 38·3) — hỏi miệng từng ô rồi mở.</li>
+  <li>Màn 4d: Câu 4 (phát biểu <u>sai</u>: C), ghi ô 39·3. Nói cho lớp: bốn ý hiện tượng – kết luận – cơ chế – giới hạn là kiểu Phần II đề tốt nghiệp.</li>
+  <li>Clip 4a: sau dừng 3 ("Số đếm giảm vì mỗi hạt nhân phân rã chậm dần?") bấm ngay → sang màn 4b, KHÔNG phát cảnh cuối "cùng một xác suất rã" (đó là đáp án Câu 4 ở màn 4d). Clip 2b tương tự: không chiếu cảnh bảng chốt cuối, sang màn 2c ngay.</li>
+  <li>Thứ tự lật Tập: ghi chữ cái đáp án vào lề từng câu rồi chép bảng ô 39·3 một lượt cuối giờ, đỡ lật 38↔39 chín lần. Tr.41 gọi "BTVN 1, 2" (I-131, C-14), không phải Câu 7, 8 của ô 39·3.</li>
+  <li>Màn 4e PhET nhiều hạt nhân: <b>mặc định bỏ qua</b> (bấm → qua luôn).</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> nghĩ số đếm giảm đều (phút 10 về 0, clip A); lẫn "còn lại" với "đã phân rã" (sau $2T$ đã rã 75%, không phải 25% — câu 17b); viết $\Delta N=N_0\,2^{-t/T}$ (câu 17a).</div>
+
+<h2>Điểm dừng 5 · Độ phóng xạ, bài toán mẫu Na-24 <small>phút 23–28 · tr.38 ô 38·4 → tr.40</small></h2>
+<ul>
+  <li>Màn 5a: $H=\lambda N$, Bq, Ci (ô 38·4). Nhấn "Ci rất lớn nên đổi Bq ra Ci thì con số nhỏ đi" và "$H$ đo mạnh/yếu, không đo nguy hiểm". Màn 5b: Câu 5 (D).</li>
+  <li>Màn 5c: bài toán mẫu tr.40 — dòng đầu bảng phân tích in sẵn, lớp nói miệng 3 dòng còn lại rồi mở. Màn 5d: làm mẫu a), lớp tự làm b) (đổi giờ ra giây!), c) $t/T=3$. Chữ nhỏ "$H$ cũng chia 8, không phải $H_0/3$" khớp đề 1194 câu 20d. d), e) và "Mở rộng 60 giờ" về nhà.</li>
+  <li>Màn 5e: Câu 7 (I-131, 16 ngày → D 25%), ghi ô 39·3.</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> không đổi $T$ ra giây khi tính $\lambda$; ghi đơn vị của $\lambda$ là "s" (câu 20a); lấy 75% (phần đã rã) cho câu 7; đổi Bq ra Ci bằng cách nhân.</div>
+
+<h2>Điểm dừng 6 · Bẫy, trả bài, quay lại, đề 1194 <small>phút 28–30 · 30–45 làm đề · tr.39 → tr.37 ô 37·3</small></h2>
+<ul>
+  <li>Màn 6a (20 giây): ba bẫy ô 39·1 in sẵn — mỗi em tick bẫy mình từng sập. Màn 6b: bẫy 2 bằng hình chia đôi mẫu (hình ở tr.41): $T$ giữ nguyên — đề 1194 câu 7 hỏi đúng tình huống này.</li>
+  <li>Màn 6c: trả bài 2 câu của ô 39·2, nhãn <b>T2, T4</b> (khác "câu" của đề 1194: T2 bốn tia + dịch ô, T4 $T$ và $\lambda$ — hai nhóm đề 1194 hỏi nhiều nhất). Viết 1 phút, rồi mở từng câu để tự sửa bằng bút khác màu. T1, T3, T5, T6 về nhà. Màn 6c chỉ xin 4 phút: nếu thiếu giờ chỉ làm T4.</li>
+  <li>Màn 6d "Quay lại nitơ lỏng" (1 phút): mở đáp án C. Lớp lật tr.37 ô 37·3: ghi đáp án, đúng/sai, dòng "điều em hiểu sai" (VD "tưởng lạnh làm phân rã chậm như phản ứng hoá học"). 20 giây: đánh dấu ô 37·1.</li>
+  <li>Chiếu mã QR (màn 6e), cả lớp quét, làm đề 1194 trong 15 phút. Tập tr.39 có dòng <b>"Đề cuối tiết 1194: điểm ……/20 · câu sai"</b> ngay dưới bảng ô 39·3: nộp xong thì ghi vào đó.</li>
+  <li>Đọc màn "Về nhà theo Tập bài 20" — liệt kê đúng trang, ô; tr.41 ghi đề BTVN thầy giao trên web.</li>
+</ul>
+<div class="sai"><b>Đề 1194 so với phần học trên lớp:</b>
+<ul>
+  <li>Đã dạy trực tiếp: câu 1, 15 (b, c, d) ở điểm dừng 2 (câu 15 = đúng thí nghiệm clip 2b); câu 3, 4, 5 (chữ nhỏ màn 3a), 13, 16, 18 ở điểm dừng 3; câu 6, 9, 10, 12 (bảng màn 4c), 17 (a–c) ở điểm dừng 4; câu 8, 11, 14, 19 (a, b, d), 20 ở điểm dừng 5; câu 7 ở màn 6b.</li>
+  <li>Hỏi lại đúng tình huống đã chữa (đo "nhớ lại"): câu 2 và 15a (nước đá/đun nóng = câu dự đoán), câu 18 (U-238 = Câu 6), câu 20 (Na-24 = bài mẫu), câu 7 (chia đôi mẫu = màn 6b).</li>
+  <li>Chuyển sang tình huống mới: câu 17d ($H_t=H_0e^{-\lambda t}$ — trên lớp chỉ viết dạng $e^{-\lambda t}$ cho $N$); câu 19c (cùng $N$, $T$ gấp đôi thì $H$ giảm một nửa — suy từ $H=\lambda N$, $\lambda=\ln2/T$).</li>
+  <li>Phần về nhà / chưa dạy: không có câu nào nằm ngoài phần trên lớp.</li>
+</ul></div>
+
+<h2>Phiếu giấy dự phòng (mất mạng / thiếu điện thoại) <small>5 câu, số liệu khác mọi câu đã chữa · $1\ \mathrm{Ci}=3{,}7\cdot10^{10}$ Bq · 1 năm = 365 ngày</small></h2>
+<ol>
+<li>Hạt nhân ${}^{210}_{84}\mathrm{Po}$ phóng xạ $\alpha$. Hạt nhân con là: A. ${}^{206}_{82}\mathrm{Pb}$ · B. ${}^{210}_{85}\mathrm{At}$ · C. ${}^{206}_{86}\mathrm{Rn}$ · D. ${}^{210}_{82}\mathrm{Pb}$</li>
+<li>Hạt nhân ${}^{60}_{27}\mathrm{Co}$ phóng xạ $\beta^-$. Hạt nhân con là: A. ${}^{60}_{28}\mathrm{Ni}$ · B. ${}^{60}_{26}\mathrm{Fe}$ · C. ${}^{56}_{25}\mathrm{Mn}$ · D. ${}^{61}_{27}\mathrm{Co}$</li>
+<li>Một chất có $T=6$ giờ. Sau 24 giờ, số hạt nhân còn lại bằng bao nhiêu phần số ban đầu? A. $1/4$ · B. $1/16$ · C. $1/8$ · D. $1/24$</li>
+<li>Cs-137 có $T=30$ năm. Hằng số phóng xạ: A. $7{,}3\cdot10^{-10}\ \mathrm{s}^{-1}$ · B. $2{,}3\cdot10^{-2}\ \mathrm{s}^{-1}$ · C. $1{,}4\cdot10^{9}\ \mathrm{s}^{-1}$ · D. $2{,}7\cdot10^{-7}\ \mathrm{s}^{-1}$</li>
+<li>Một nguồn có độ phóng xạ $7{,}4\cdot10^{9}$ Bq, bằng: A. $0{,}2$ Ci · B. $2$ Ci · C. $2{,}7\cdot10^{20}$ Ci · D. $5$ Ci</li>
+</ol>
+<table>
+<thead><tr><th>Câu</th><th>Đáp án</th><th>Lời giải</th><th>Phương án sai thường do</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>A</td><td>$A=210-4=206$, $Z=84-2=82$ (chì)</td><td>B: kiểu $\beta^-$ · C: cộng $Z$ · D: quên trừ $A$</td></tr>
+<tr><td>2</td><td>A</td><td>$A$ giữ 60, $Z=27+1=28$ (niken)</td><td>B: kiểu $\beta^+$ · C: kiểu $\alpha$ · D: cộng vào $A$</td></tr>
+<tr><td>3</td><td>B</td><td>$n=24/6=4$ → $1/2^4=1/16$</td><td>A: lấy $1/n$ · C: 3 chu kì · D: chia $1/t$</td></tr>
+<tr><td>4</td><td>A</td><td>$T=30\cdot365\cdot86\,400\approx9{,}46\cdot10^{8}$ s → $\lambda=0{,}693/T\approx7{,}3\cdot10^{-10}\ \mathrm{s}^{-1}$</td><td>B: không đổi ra giây · C: lấy $T/0{,}693$ · D: coi 30 ngày</td></tr>
+<tr><td>5</td><td>A</td><td>$7{,}4\cdot10^{9}:3{,}7\cdot10^{10}=0{,}2$ Ci</td><td>B: sai số mũ · C: nhân thay vì chia · D: chia ngược</td></tr>
+</tbody>
+</table>
+
+<h2>Nếu thiếu giờ / dư giờ</h2>
+<ul>
+  <li>Thiếu: bỏ màn 3e (Hình 4) và PhET 3f; ở clip 2b bỏ dừng 3 (bẫy phông nền, đã nói ở màn 2c); bảng phân tích đề tr.40 chép ở nhà, chỉ giữ giải b), c); trả bài chỉ câu 4. Không cắt giờ làm đề 1194 — học sinh chưa xong thì làm nốt ở nhà trong ngày.</li>
+  <li>Dư: PhET "Phân rã alpha" màn 4e (10 hạt rồi 1 000 hạt: từng hạt ngẫu nhiên, cả mẫu theo quy luật); hoặc thử thách ★★ tr.41 (vì sao nhiệt độ, axit không xử lí được chất thải phóng xạ) — nối lại câu dự đoán.</li>
+</ul>
+
+<h2>Sau buổi dạy — ghi lại để quyết có làm bài khác không</h2>
+<ul>
+  <li>Bàn cuối đọc được những màn nào; nhãn trong Hình 2 (màn 3b), Hình 4 (màn 3e) sau khi đổi màu có đọc được không.</li>
+  <li>Tỉ lệ đúng lần đầu câu dự đoán (ô 37·2) — so với câu 2 đề 1194; tỉ lệ chọn A "gần 0" ở dừng 1 clip 4a.</li>
+  <li>Đề 1194: điểm trung bình lớp, câu sai nhiều nhất (dự kiến 16c, 17b, 19c, 20a), số em chưa nộp kịp trong 15 phút.</li>
+  <li>Điểm dừng 3 (24 chỗ) có vượt 7 phút không; hai clip có vượt thời lượng dự kiến không.</li>
+</ul>
+</body>
+</html>
