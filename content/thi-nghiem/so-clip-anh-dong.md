@@ -539,7 +539,7 @@ Agent Opus theo nhóm (A điện 9, B điện từ–năng lượng 9, C cơ–�
 | tieucu-02 | tn-l9-tieucu-02 | 133 | 0 | 49,7 | 1336 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-tieucu-02-20261127.mp4) | — |
 | tieucu-03 | tn-l9-tieucu-03 | 142 | 0 | 49,6 | 1357 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-tieucu-03-20261127.mp4) | chốt tự suy theo mô hình: ảnh nét cao gấp đôi vật, vẫn tính f = L : 4 → lớn hơn f thật |
 
-**Đợt 3 (nhóm C) — 10 clip qua cổng A + B (kiem-code 2 vòng: 3 ĐẠT ngay, 7 sửa nhẹ; congco1 thêm vòng 3), ĐÃ TẢI Storage (HEAD 200), CHỜ THẦY DUYỆT** (27/11 ~23h45). Clip commit 29576aa9fa, d4d7774d66; bài 128 mở đầu, 130 cơ năng, 131 công, 95 tái tạo, 150 HSG âm thanh.
+**Đợt 3 (nhóm C) — 10 clip qua cổng A + B (kiem-code 2 vòng: 3 ĐẠT ngay, 7 sửa nhẹ; congco1 thêm vòng 3), ĐÃ TẢI Storage (HEAD 200), CHỜ THẦY DUYỆT** (27/11 ~23h45). **Thầy DUYỆT 28/11 ("Duyệt, sửa cả hộp"; giữ Bẫy conang-03, chấp nhận chốt "theo mô hình") → ĐÃ GHI DB 28/11 10:07** bài 130, 131, 128, 150, 95 (`--cho-phep-khac`, log `ra/l9-dang-ghi4.log`; dry-run lại `ra/l9-dang-kiem4.log`: 5/5 KHÔNG khác, độ dài DB = repo). Sửa hộp/đoạn lộ đáp án 7f22189812 + gập bảng dưới video conang-01, congco-01 20c305511f; bài 150 Thử thách 2 đổi 0,4/0,6 s → 0,5/0,8 s (221 m); kho ghi_chu 7ae1c946fe; đổi URL 1b46a4c79c. **Cổng mới L9 xong 36/36 clip.** Clip commit 29576aa9fa, d4d7774d66; bài 128 mở đầu, 130 cơ năng, 131 công, 95 tái tạo, 150 HSG âm thanh.
 
 | Clip | tn | Từ/phút | LỖI | Giây | KB | mp4 | Điểm cần quyết |
 |---|---|---|---|---|---|---|---|
