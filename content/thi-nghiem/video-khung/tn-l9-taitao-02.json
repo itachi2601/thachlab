@@ -1,44 +1,44 @@
 {
   "id": "tn-l9-taitao-02",
   "ten": "Pin mặt trời mini dưới đèn bàn",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-taitao-02-20261118.mp4",
-  "poster": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-taitao-02-20261118.webp",
-  "tong_giay": 49.8,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-taitao-02-20261127.mp4",
+  "poster": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-taitao-02-20261127.webp",
+  "tong_giay": 49.0,
   "o": [
     {
       "khoa": "gia_thuyet",
       "giay": 0,
-      "chu": "Điện do pin mặt trời tạo ra theo lượng ánh sáng nhận được: che bớt thì quạt quay chậm, tắt đèn thì quạt dừng.",
+      "chu": "Tấm pin mặt trời đổi ánh sáng đèn thành điện để chạy quạt nhỏ.",
       "kiem": "Che bớt pin, quạt quay ra sao?"
     },
     {
       "khoa": "du_doan",
-      "giay": 3.8,
+      "giay": 3.1,
       "chu": "Lấy bìa che nửa tấm pin. Quạt nhỏ sẽ ra sao?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 10.2,
+      "giay": 9.6,
       "chu": "Đèn bàn, pin mặt trời mini, quạt nhỏ, bìa."
     },
     {
       "khoa": "quan_sat",
-      "giay": 17.5,
+      "giay": 17.7,
       "chu": "Che nửa pin: quạt quay chậm. Bỏ bìa: quay lại như cũ. Tắt đèn: quạt dừng."
     },
     {
       "khoa": "rut_ra",
-      "giay": 30.2,
+      "giay": 24.5,
       "chu": "Pin đổi ánh sáng thành điện: ít ánh sáng thì ít điện, không ánh sáng thì không điện."
     },
     {
       "khoa": "chua_noi",
-      "giay": 38.4,
-      "chu": "Số liệu minh hoạ theo mô hình. Pin thật: che một phần giảm nhiều hơn nửa."
+      "giay": 38.9,
+      "chu": "Pin thật ngoài nắng thật: chưa nói được. Số liệu minh hoạ theo mô hình."
     }
   ],
   "dung_dua": {
-    "giay": 10.0,
+    "giay": 9.3,
     "cau_hoi": "Lấy bìa che nửa tấm pin. Quạt nhỏ sẽ ra sao?",
     "chon": [
       "A. Vẫn quay như cũ",
@@ -48,5 +48,22 @@
     "dung": 1,
     "giai_thich_dung": "Che nửa pin thì pin nhận ít ánh sáng hơn nên cho ít điện hơn, quạt quay chậm hơn lúc đủ sáng.",
     "giai_thich_sai": "Pin nhận ít ánh sáng thì cho ít điện, nên quạt không thể quay như cũ hay nhanh hơn; nó quay chậm hơn."
+  },
+  "cau_chot": {
+    "giay": 42.8,
+    "cau_hoi": "Theo mô hình trong clip, đủ sáng thì P = 1,0 W. Che nửa tấm pin và vặn đèn tối còn một nửa. P khoảng bao nhiêu?",
+    "chon": [
+      "A. 0 W",
+      "B. 0,25 W",
+      "C. 0,5 W",
+      "D. 0,75 W"
+    ],
+    "dung": 1,
+    "giai_thich": [
+      "Che nửa pin thì pin nhận nửa ánh sáng: 1,0 W còn 0,5 W. Đèn tối còn nửa thì ánh sáng lại giảm một nửa nữa: 0,5 W còn 0,25 W.",
+      "0 W chỉ xảy ra khi không còn ánh sáng tới pin. Ở đây đèn vẫn sáng và nửa tấm pin vẫn nhận sáng, nên vẫn có điện, chỉ ít đi: khoảng 0,25 W.",
+      "0,5 W là mới tính một lần giảm (che nửa pin). Đèn tối còn nửa làm ánh sáng giảm thêm một nửa nữa, nên còn khoảng 0,25 W.",
+      "0,75 W là trừ mỗi lần một phần tư. Mỗi yếu tố làm ánh sáng tới pin còn một nửa, hai lần còn một phần tư: khoảng 0,25 W."
+    ]
   }
 }

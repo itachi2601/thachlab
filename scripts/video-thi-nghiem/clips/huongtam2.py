@@ -3,8 +3,9 @@
 #   tham_so: r = 0,10 m (mac dinh), k = 0,3, g = 10 (gia_thiet) ; ghi_chu: nguong a = 3 m/s^2, khoang 52 vong/phut.
 #   so_lieu_mau: n = 20 / 30 / 45 / 60 vong/phut -> omega 2,09 / 3,14 / 4,71 / 6,28 rad/s, a_ht 0,44 / 0,99 / 2,22 / 3,95 ;
 #   truot: khong / khong / khong / co.
-# Du doan (K10: chi cau hoi + hinh): ngay khi truot, xu di theo huong nao? Dap an: gan theo tiep tuyen (kho:
-#   hien_tuong_hay_sai "roi di gan theo tiep tuyen"). Nhieu (khung): theo ban kinh ra xa, vao tam, nguoc chieu quay.
+# Du doan (K10; v2 theo kiem-code 27/11): them xu to nang gap doi, cung cach tam 10 cm (doi dien). Quay nhanh dan,
+#   xu nao truot truoc? Dap an: cung luc (k = Fms max / P co dinh trong tham_so -> nguong a = k.g khong phu thuoc m;
+#   suy tu mo hinh, kho chua ghi thanh cau). Ca cu (huong tiep tuyen) bi bai noi o hop Bai 4 + bang "Dut day".
 # Truc chinh: DIA NHIN TU TREN (mui ten ma sat nghi chi vao tam, dai ti le a_ht, chan o 3) + bieu do thanh a_ht vs nguong 3.
 # Bay: "luc li tam day xu ra" (kho) -> ma sat nghi toi da 3 < can co 3,95.
 # Cau chot (27/11, cong moi): r = 20 cm (tham_so 0,03-0,3 m), n = 45 vong/phut (tham_so 10-90), cung dia, cung xu:
@@ -71,9 +72,10 @@ def disc(d, th, path=True):
     d.ellipse([CX - 30, CY - 30, CX + 30, CY + 30], fill=(148, 163, 184), outline=DISC_D, width=4)
     dot(d, CX, CY, 8, NAVY)
 
-def coin(d, x, y, k=1.0):
-    d.ellipse([x - 26, y - 26, x + 26, y + 26], fill=A(COIN, k), outline=A(COIN_D, k), width=4)
-    d.ellipse([x - 14, y - 14, x + 14, y + 14], outline=A(COIN_D, k), width=3)
+def coin(d, x, y, k=1.0, big=False):
+    r1, r2 = (38, 22) if big else (26, 14)
+    d.ellipse([x - r1, y - r1, x + r1, y + r1], fill=A(COIN, k), outline=A(COIN_D, k), width=5 if big else 4)
+    d.ellipse([x - r2, y - r2, x + r2, y + r2], outline=A(COIN_D, k), width=3)
 
 # ---------------- dong thoi gian canh Tien hanh ----------------
 ST = [0.4, 1.9, 3.4, 4.9]                         # moc bat dau tung n
@@ -107,6 +109,7 @@ def theta(t): return TH0 + theta_raw(t)
 TH_S = 1.5 * math.pi
 V_SLOW = OM[3] / SLOW * RP                        # px/s luc quay cham
 S_MAX = 330
+S_MAX2 = 270                                      # xu to (ben phai tam) roi xuong: dung truoc mep khung dia
 
 def coin_pos(t):
     if t < TS:
@@ -114,6 +117,17 @@ def coin_pos(t):
     s = min(S_MAX, (t - TS) * V_SLOW)
     p0 = P(TH_S, RP); u = UT(TH_S)
     return (p0[0] + u[0] * s, p0[1] + u[1] * s)
+
+def coin2_pos(t):                                 # xu to, doi dien: cung nguong a = k.g -> truot cung luc TS
+    if t < TS:
+        return P(theta(t) + math.pi, RP)
+    s = min(S_MAX2, (t - TS) * V_SLOW)
+    p0 = P(TH_S + math.pi, RP); u = UT(TH_S + math.pi)
+    return (p0[0] + u[0] * s, p0[1] + u[1] * s)
+
+def trail(d, th0, s_end):
+    p0 = P(th0, RP); u = UT(th0)
+    for i in range(0, int(s_end), 22): dot(d, p0[0] + u[0] * i, p0[1] + u[1] * i, 5, COIN_D)
 
 def a_now(t, scene_do=True):
     if t < ST[0]: return AHT[0]
@@ -139,7 +153,7 @@ ROWY = [1235, 1320, 1405, 1490]
 def bars(d, grow):
     """grow[i] in [0,1]: thanh hang i da moc toi dau."""
     card(d, (40, 1030, 1040, 1590), fill=WHITE, outline=LIGHT, w=3)
-    eqr(d, W / 2, 1085, "a_{ht} cần có (m/s^{2})", 55, INK)
+    eqr(d, W / 2, 1085, "gia tốc hướng tâm (m/s^{2})", 55, INK)
     text(d, (120, 1160), "vòng/phút", 55, INK, anchor="lm")
     xl = X0B + LIM * PXU
     for yy in range(1195, 1525, 24):
@@ -180,17 +194,19 @@ def s_hook(img, d, t, sc):
     M = sc["M"]
     th = TH0 + OM[0] * t
     disc(d, th, path=False)
-    x, y = P(th, RP)
-    dashed(d, (CX, CY), (x, y), ORANGE, w=5)
-    coin(d, x, y)
-    text(d, (850, 440), "Xu cách tâm", 55, COIN_D)
-    text(d, (850, 520), "10 cm", 55, INK)
+    x, y = P(th, RP); x2, y2 = P(th + math.pi, RP)
+    dashed(d, (CX, CY), (x, y), ORANGE, w=5); dashed(d, (CX, CY), (x2, y2), ORANGE, w=5)
+    coin(d, x, y); coin(d, x2, y2, big=True)
+    text(d, (850, 420), "Cùng cách", 55, INK)
+    text(d, (850, 500), "tâm 10 cm", 55, INK)
+    text(d, (850, 650), "Xu to:", 55, COIN_D)
+    text(d, (850, 730), "nặng gấp đôi", 55, COIN_D)
     k = appear(t, M[1] - 0.2, 0.5)
     if k <= 0: return
     y0 = 1085 + (1 - k) * 30
     card(d, (40, y0, 1040, y0 + 500), fill=A(WHITE, k), outline=A(PURPLE, k), w=6)
     pill(d, W / 2, y0 + 70, "DỰ ĐOÁN", PURPLE, k)
-    for j, s1 in enumerate(("Lúc trượt, so với bàn,", "xu đi hướng nào?")):
+    for j, s1 in enumerate(("Quay nhanh dần:", "xu nào trượt trước?")):
         text(d, (W / 2, y0 + 190 + j * 85), s1, 60, PURPLE if j == 1 else INK, alpha=k)
     seg_bar(d, y0 + 400, t, M[1] + 0.4, sc["T"] - 0.3, PURPLE, k)
 
@@ -198,14 +214,12 @@ def s_hook(img, d, t, sc):
 def s_do(img, d, t, sc):
     th = theta(t)
     disc(d, th)
-    cx, cy = coin_pos(t)
+    cx, cy = coin_pos(t); c2 = coin2_pos(t)
     if t >= TS:
-        p0 = P(TH_S, RP)
-        for i in range(0, int(math.hypot(cx - p0[0], cy - p0[1])), 22):
-            u = UT(TH_S); dot(d, p0[0] + u[0] * i, p0[1] + u[1] * i, 5, COIN_D)
-        coin(d, cx, cy)
+        trail(d, TH_S, min(S_MAX, (t - TS) * V_SLOW)); trail(d, TH_S + math.pi, min(S_MAX2, (t - TS) * V_SLOW))
+        coin(d, cx, cy); coin(d, *c2, big=True)
     else:
-        coin(d, cx, cy)
+        coin(d, *c2, big=True); coin(d, cx, cy)
         forces(d, th, a_now(t), om_vis(t))
     j = stage(t)
     card(d, (690, 310, 1010, 500), fill=NAVY, r=26)
@@ -226,19 +240,19 @@ def s_dapan(img, d, t, sc):
     disc(d, th)
     p0 = P(TH_S, RP); u = UT(TH_S)
     ke = (p0[0] + u[0] * S_MAX, p0[1] + u[1] * S_MAX)
+    q0 = P(TH_S + math.pi, RP); v = UT(TH_S + math.pi)
     k1 = appear(t, 0.5, 0.4)
     dashed(d, (p0[0] - u[0] * 260, p0[1] - u[1] * 260), (p0[0] + u[0] * 360, p0[1] + u[1] * 360), A(BLUE, k1), w=5)
-    rb = (p0[0] + UR(TH_S)[0] * 120, p0[1] + UR(TH_S)[1] * 120)
-    dashed(d, (CX, CY), rb, A(GRAY, k1), w=5)
-    for i in range(0, S_MAX, 22): dot(d, p0[0] + u[0] * i, p0[1] + u[1] * i, 5, COIN_D)
-    coin(d, *ke)
+    trail(d, TH_S, S_MAX); trail(d, TH_S + math.pi, S_MAX2)
+    coin(d, *ke); coin(d, q0[0] + v[0] * S_MAX2, q0[1] + v[1] * S_MAX2, big=True)
     text(d, (p0[0] + 45, p0[1] - 330), "tiếp tuyến", 55, BLUE, anchor="lm", alpha=k1)
-    text(d, (850, CY + 10), "bán kính", 55, MUTED, alpha=k1)
-    arrow(d, (730, CY + 10), (CX - 60, CY + 10), A(GRAY, k1), w=4, head=16)
+    text(d, (850, 600), "60", 80, NAVY, alpha=k1)
+    text(d, (850, 690), "vòng/phút", 55, INK, alpha=k1)
     ka = appear(t, M[1], 0.45)
-    card(d, (40, 1060, 1040, 1400), fill=A(WHITE, ka), outline=A(NAVY, ka), w=6)
+    card(d, (40, 1060, 1040, 1440), fill=A(WHITE, ka), outline=A(NAVY, ka), w=6)
     pill(d, W / 2, 1140, "ĐÁP ÁN", NAVY, ka)
-    text(d, (W / 2, 1290), "gần theo tiếp tuyến", 64, BLUE, alpha=ka)
+    text(d, (W / 2, 1255), "cùng lúc", 64, BLUE, alpha=ka)
+    text(d, (W / 2, 1360), "nặng gấp đôi, ma sát gấp đôi", 55, INK, alpha=ka)
 
 # ---------------- canh 4: Rut ra ----------------
 def s_rutra(img, d, t, sc):
@@ -307,8 +321,9 @@ def s_end(img, d, t, sc):
     text(d, (860, 635), "20 cm", 55, DORANGE, alpha=k)
     text(d, (860, 800), "45", 55, DORANGE, alpha=k)
     text(d, (860, 875), "vòng/phút", 55, INK, alpha=k)
-    text(d, (W / 2, 1200), "Cùng xu: có trượt không?", 60, DORANGE, alpha=k)
-    seg_bar(d, 1360, t, 1.0, sc["T"] - 0.2, ORANGE, k)
+    text(d, (W / 2, 1170), "Gia tốc hướng tâm?", 60, DORANGE, alpha=k)
+    text(d, (W / 2, 1260), "Có trượt không?", 60, DORANGE, alpha=k)
+    seg_bar(d, 1380, t, 1.0, sc["T"] - 0.2, ORANGE, k)
 
 def _cues(clip):
     sc = {s["key"]: s for s in clip["scenes"]}
@@ -330,8 +345,8 @@ CLIP = dict(id="tn-l10-huongtam-02", header="VẬT LÍ 10 · THÍ NGHIỆM", foo
    ("Mũi tên đỏ dài dần.", 3.0),
    ("Cần hơn 3 m/s²: xu trượt.", 3.2)]),
  dict(key="dapan", title="Kết quả", draw=s_dapan, tail=0.3, caps=[
-   ("So vệt xu với hai đường.", 3.2),
-   ("Đáp án: gần theo tiếp tuyến.", 3.4)]),
+   ("Hai xu trượt ở 60 vòng/phút.", 3.4),
+   ("Đáp án: cùng lúc.", 3.2)]),
  dict(key="rutra", title="Rút ra", draw=s_rutra, tail=0.3, caps=[
    ("Ma sát nghỉ đóng vai lực hướng tâm.", 4.3),
    ("Giới hạn 3 m/s² chỉ là giả định.", 4.3)]),
@@ -339,5 +354,5 @@ CLIP = dict(id="tn-l10-huongtam-02", header="VẬT LÍ 10 · THÍ NGHIỆM", foo
    ("Lực li tâm đẩy xu ra?", 3.4),
    ("Ma sát không đủ kéo vào tâm.", 3.8)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.3, caps=[
-   ("Dừng lại, tự trả lời.", 5.6)]),
+   ("Dừng lại, tự trả lời.", 6.0)]),
 ])

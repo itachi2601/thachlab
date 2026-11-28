@@ -1,51 +1,69 @@
 {
   "id": "tn-l10-trondeu-02",
   "ten": "Sợi chỉ dài bằng bán kính quấn quanh nắp nồi: góc ở tâm bao nhiêu?",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-trondeu-02-20261109.mp4",
-  "tong_giay": 49.6,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-trondeu-02-20261127.mp4",
+  "tong_giay": 49.9,
   "o": [
     {
       "khoa": "gia_thuyet",
       "giay": 0,
-      "chu": "Góc ở tâm chắn cung dài bằng bán kính không phụ thuộc cỡ nắp, khoảng 57°.",
-      "kiem": "Góc AOB có phụ thuộc cỡ nắp không?"
+      "chu": "Cung dài bằng bán kính chắn góc ở tâm 1 rad, khoảng 57°.",
+      "kiem": "Cả vành nắp ứng với mấy radian?"
     },
     {
       "khoa": "du_doan",
-      "giay": 3.3,
-      "chu": "Quấn chỉ dài bằng bán kính sát vành từ A tới B. Nắp to hơn thì góc AOB thế nào?"
+      "giay": 3.0,
+      "chu": "Quấn nối tiếp các sợi chỉ, mỗi sợi dài bằng bán kính, sát vành nắp. Bao nhiêu sợi thì kín vành?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 9.4,
-      "chu": "Ba nắp r = 8,0; 10,0; 12,5 cm, sợi chỉ dài bằng r, thước đo độ."
+      "giay": 8.8,
+      "chu": "Ba nắp, chỉ dài bằng r, thước đo độ."
     },
     {
       "khoa": "quan_sat",
-      "giay": 21.3,
-      "chu": "Góc AOB đo được 56°, 58°, 57° ở ba nắp."
+      "giay": 17.8,
+      "chu": "Ba nắp r = 8,0; 10,0; 12,5 cm: góc AOB đo được 56°, 58°, 57°."
     },
     {
       "khoa": "rut_ra",
-      "giay": 28.0,
-      "chu": "1 rad là góc ở tâm chắn cung dài bằng bán kính: θ = s/r."
+      "giay": 26.5,
+      "chu": "θ = s/r; 1 rad ≈ 57,3°. Cả vòng 2π ≈ 6,28 rad, nên cần hơn 6 sợi một chút."
     },
     {
       "khoa": "chua_noi",
-      "giay": 32.2,
+      "giay": 40.4,
       "chu": "Thước đo độ chỉ đọc tới 1°: số 57,3° có nhờ tính 180°/π, không đo ra."
     }
   ],
   "dung_dua": {
-    "giay": 9.25,
-    "cau_hoi": "Sợi chỉ dài đúng bằng bán kính, quấn sát vành nắp từ A, điểm cuối là B. Làm với nắp nhỏ (r = 8,0 cm) rồi nắp to (r = 12,5 cm). Ở nắp to, góc AOB thế nào?",
+    "giay": 8.6,
+    "cau_hoi": "Quấn nối tiếp các sợi chỉ sát vành một nắp nồi, mỗi sợi dài đúng bằng bán kính nắp. Bao nhiêu sợi thì kín vành?",
     "chon": [
-      "A. Lớn hơn",
-      "B. Nhỏ hơn",
-      "C. Gần như bằng nhau"
+      "A. Đúng 6 sợi",
+      "B. Hơn 6 sợi một chút",
+      "C. Khoảng 3 sợi",
+      "D. Tuỳ nắp to hay nhỏ"
     ],
-    "dung": 2,
-    "giai_thich_dung": "Nắp to thì cung dài hơn, nhưng bán kính cũng lớn hơn đúng bằng ấy lần; tỉ số s/r giữ nguyên nên góc vẫn khoảng 57°.",
-    "giai_thich_sai": "Xem đoạn kế: cung dài hơn nhưng bán kính cũng lớn hơn theo cùng tỉ lệ; ba nắp đo được 56°, 58°, 57°."
+    "dung": 1,
+    "giai_thich_dung": "Chu vi vành là 2πr ≈ 6,28 r, nên 6 sợi dài r chưa kín, còn hở một đoạn khoảng 0,28 r. Mỗi sợi chắn 1 rad, cả vòng là 2π rad.",
+    "giai_thich_sai": "Xem đoạn kế: quấn 6 sợi vẫn còn hở. Chu vi 2πr ≈ 6,28 r, nên cần hơn 6 sợi một chút, nắp to hay nhỏ đều vậy."
+  },
+  "cau_chot": {
+    "giay": 44.6,
+    "cau_hoi": "Nắp nồi bán kính r = 15 cm. Quấn sát vành từ A một sợi chỉ dài 30 cm, điểm cuối là B. Góc AOB khoảng bao nhiêu độ?",
+    "chon": [
+      "A. 57°",
+      "B. 115°",
+      "C. 30°",
+      "D. 180°"
+    ],
+    "dung": 1,
+    "giai_thich": [
+      "57° là góc khi chỉ dài bằng bán kính. Ở đây chỉ dài 30 cm = 2r nên θ = s/r = 2 rad ≈ 2 × 57,3° ≈ 115°.",
+      "θ = s/r = 30/15 = 2 rad, mà 1 rad ≈ 57,3° nên góc AOB ≈ 115°.",
+      "30 là độ dài chỉ (cm), không phải số đo góc. θ = s/r = 2 rad ≈ 115°.",
+      "180° = π ≈ 3,14 rad, cần chỉ dài khoảng 47 cm. Chỉ 30 cm chỉ cho 2 rad ≈ 115°."
+    ]
   }
 }

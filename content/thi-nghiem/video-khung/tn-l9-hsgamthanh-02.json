@@ -1,45 +1,45 @@
 {
   "id": "tn-l9-hsgamthanh-02",
   "ten": "Đo tốc độ âm bằng tiếng vang trước bức tường lớn",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-hsgamthanh-02-20261118.mp4",
-  "poster": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-hsgamthanh-02-20261118.webp",
-  "tong_giay": 49.8,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-hsgamthanh-02-20261127-2.mp4",
+  "poster": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-hsgamthanh-02-20261127.webp",
+  "tong_giay": 49.7,
   "o": [
     {
       "khoa": "gia_thuyet",
       "giay": 0,
-      "chu": "Càng đứng xa tường, tiếng vang về càng muộn; từ d và t tính được tốc độ âm.",
-      "kiem": "Đứng xa tường hơn, t thế nào?"
+      "chu": "Tiếng vang là âm dội lại từ tường; từ d và t tính được tốc độ âm.",
+      "kiem": "Đứng xa hơn thì sao?"
     },
     {
       "khoa": "du_doan",
-      "giay": 3.8,
-      "chu": "Ở 34 m đọc t = 0,21 s. Lùi ra 68 m, xa gấp đôi. Khoảng t lúc đó cỡ bao nhiêu?"
+      "giay": 2.7,
+      "chu": "Ở 34 m đọc t = 0,21 s. Lùi ra 68 m. t khoảng bao nhiêu?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 10.2,
+      "giay": 8.6,
       "chu": "Vỗ tay, điện thoại ghi âm, thước đo khoảng cách."
     },
     {
       "khoa": "quan_sat",
-      "giay": 18.4,
+      "giay": 16.4,
       "chu": "Ở 34 m: t = 0,21 s. Ở 51 m: t = 0,30 s. Ở 68 m: t = 0,41 s."
     },
     {
       "khoa": "rut_ra",
-      "giay": 26.0,
-      "chu": "Âm tới tường rồi quay lại; t là thời gian âm đi và về."
+      "giay": 23.7,
+      "chu": "Âm tới tường rồi quay lại, đi quãng 2d. Tốc độ âm 2d : t ≈ 330–340 m/s."
     },
     {
       "khoa": "chua_noi",
-      "giay": 38.2,
-      "chu": "Số liệu minh hoạ, chưa đo thật.\nCoi như không có gió."
+      "giay": 39.6,
+      "chu": "Gió thổi thì sao (coi như không gió)? Số liệu minh hoạ."
     }
   ],
   "dung_dua": {
-    "giay": 10.0,
-    "cau_hoi": "Ở 34 m đọc t = 0,21 s. Lùi ra 68 m (xa gấp đôi). Khoảng t lúc đó cỡ bao nhiêu?",
+    "giay": 8.3,
+    "cau_hoi": "Ở 34 m đọc t = 0,21 s. Lùi ra 68 m. Khoảng t lúc đó cỡ bao nhiêu?",
     "chon": [
       "A. Khoảng 0,2 s",
       "B. Khoảng 0,4 s",
@@ -49,5 +49,22 @@
     "dung": 1,
     "giai_thich_dung": "Ở 68 m số đọc là 0,41 s, gần gấp đôi 0,21 s: xa tường gấp đôi thì tiếng vang về muộn gần gấp đôi.",
     "giai_thich_sai": "Xa tường hơn thì âm phải đi xa hơn nên t phải lớn hơn 0,21 s, và chỉ tăng vừa phải: ở 68 m đọc được 0,41 s. Khoảng 0,2 s hay 0,1 s là không tăng hoặc còn giảm; 0,8 s là tăng quá nhiều."
+  },
+  "cau_chot": {
+    "giay": 43.6,
+    "cau_hoi": "Đứng trước tường, đọc được t = 0,25 s. Lùi xa tường thêm 17 m rồi vỗ tay lại. t đọc được khoảng bao nhiêu?",
+    "chon": [
+      "A. 0,30 s",
+      "B. 0,35 s",
+      "C. 0,42 s",
+      "D. 0,50 s"
+    ],
+    "dung": 1,
+    "giai_thich": [
+      "0,30 s là chỉ tính âm đi thêm 17 m. Âm đi tới tường rồi quay về, nên quãng thêm là 2 · 17 = 34 m.",
+      "Âm đi thêm 2 · 17 = 34 m (đi và về). Với tốc độ khoảng 340 m/s, mất thêm 34 : 340 = 0,10 s, nên t ≈ 0,25 + 0,10 = 0,35 s.",
+      "0,42 s là cộng thẳng 17 vào phần trăm giây. Phải đổi quãng đường thêm ra thời gian bằng tốc độ âm.",
+      "0,50 s là nhân đôi t. Lùi thêm 17 m không phải xa gấp đôi, nên t không gấp đôi."
+    ]
   }
 }
