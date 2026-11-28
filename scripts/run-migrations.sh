@@ -154,6 +154,7 @@ FILES=(
   "supabase/migrations/20261127200000_abet_thu_du_lieu_pi.sql|ABET MET: 4 bảng abet_* (RLS admin) + RPC abet_nop_* theo token cho giáo viên nộp điểm câu PI + bucket riêng tư abet-minh-chung + seed 23 dòng kế hoạch PI và % đạt các năm trước; chỉ tạo mới, rollback cuối file|lúc nào cũng được (chỉ tạo bảng mới + chèn ~50 dòng)"
   "supabase/migrations/20261128100000_cnc_grades_giang_vien_ghi.sql|CNC: cho giảng viên (is_admin) ghi cnc_grades từ màn chấm web (2 policy insert/update + grant); không đụng dữ liệu, rollback cuối file|lúc nào cũng được (chỉ thêm quyền)"
 )
+# ĐÃ CHẠY 28/11/2026 09:54: 20261128100000_cnc_grades_giang_vien_ghi
 # ĐÃ CHẠY 27/11/2026: 20261127200000_abet_thu_du_lieu_pi
 # ĐÃ ÁP 19/11/2026 (memory AVCN: lesson 202 chương 12, đề 1387–1396 đã có trên DB; file idempotent): 20261119150000_avcn_bai_12_de_thi_thu
 # ĐÃ CHẠY 19/11/2026 08:05: 20261119090000_dinh_duong
