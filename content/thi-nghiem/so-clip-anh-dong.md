@@ -554,7 +554,7 @@ Agent Opus theo nhóm (A điện 9, B điện từ–năng lượng 9, C cơ–�
 | taitao-01 | tn-l9-taitao-01 | 134 | 0 | 49,2 | 1884 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-taitao-01-20261127.mp4) | chốt "gió 1 m/s → ≈ 0 V" dựa kéo dài đường thẳng của mô hình |
 | taitao-02 | tn-l9-taitao-02 | 157 | 0 | 49,0 | 1810 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-taitao-02-20261127.mp4) | chốt mới 0,25 W; đoạn dưới video bài 95 lộ "che nửa → chậm hẳn"; kho còn 0,5 W |
 
-## Cổng mới — L10b (bài 63–79, 38 clip; phiên `clip-cong-moi-l10b`, 27/11/2026) — **đang dựng, chờ thầy duyệt từng nhóm**
+## Cổng mới — L10b (bài 63–79, 38 clip; phiên `clip-cong-moi-l10b`, 27/11/2026) — **XONG 28/11: 38/38 clip đã ghi DB (17 bài)**
 Brief: thư mục ghi chú phiên `l10b-brief-dung.md`/`l10b-brief-kiem.md`. 1 agent Opus dựng + 1 kiem-code song song; tối đa 2 vòng kiem-code/clip, sau v2 sửa lượt cuối tự crop. Script: `tai-cong-moi-l10b.sh` (Storage), `dang-cong-moi-l10b.sh` (DB, `--chi-video`; dry-run 17/17 sạch 27/11). Kho `<tn>.json` + bài giữ bản cũ tới khi duyệt.
 
 **Nhóm A (8 clip) — qua cổng A + B (kiem-code 2 vòng), đã tải `-20261127.{mp4,webp}` HEAD 200 — ✅ THẦY DUYỆT 27/11, ĐÃ GHI DB 27/11 18:03–18:05 (bài 68–75, kèm sửa hộp)**
@@ -582,7 +582,9 @@ Duyệt A+C ("Duyệt, sửa cả hộp"): 16 clip đổi URL kho/bài sang `-20
 | hieusuat2 | tn-l10-hieu-suat-02 | 184 → 122 | 15 → 0 | 49,8 | 1597 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-hieu-suat-02-20261127.mp4) | Dự đoán đổi sang công có ích 15° vs 45° (ca cũ trùng Bấm xem) |
 | nlcong1 | tn-l10-nang-luong-cong-01 | 198 → 148 | 14 → 0 | 49,8 | 1317 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-nang-luong-cong-01-20261127.mp4) | Bẫy đổi sang "sàn cứng nảy lại 1,0 m" (cũ trùng Bấm xem) |
 | nlcong2 | tn-l10-nang-luong-cong-02 | 185 → 139 | 15 → 0 | 49,3 | 1671 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-nang-luong-cong-02-20261127.mp4) | Bẫy đổi sang "máng dài → công trọng lực lớn hơn" (bản cos θ trùng Tự kiểm tra Câu 5); A_P = −P·h = −0,40 J |
-**Nhóm B L10b (8 clip) — qua cổng A + B (kiem-code: ĐƯỢC MERGE, lượt sửa cuối tự crop), đã tải `-20261127.{mp4,webp}` HEAD 200 — chờ thầy duyệt**
+Duyệt B+D+E ("Duyệt, sửa hộp"): moment1 bỏ "≥ 2 N·m", klr1 thêm ρ nhôm ≈ 2,7 (render lại, `-20261128`); 20 clip còn lại `-20261127`. Sửa hộp 2 đợt (`sua-hop-l10b-bde.py` 14 câu, `-bde2.py` 2 câu + vá class) qua kiem-code `hop-kiem-bde-v1`; 16 `ghi_chu` kho khớp câu chốt. Ghi DB: `dang-cong-moi-l10b.sh --chi/--khac 63,…,79 --yes` → 9/9 ✓, log `ra/l10b-ghi2.log`. **L10b xong 38/38 clip, 17/17 bài trên DB.**
+
+**Nhóm B L10b (8 clip) — qua cổng A + B (kiem-code: ĐƯỢC MERGE, lượt sửa cuối tự crop), đã tải `-20261127.{mp4,webp}` HEAD 200 — ✅ THẦY DUYỆT 28/11, ĐÃ GHI DB 28/11 09:58 (bài 63–67, 76–79, kèm sửa hộp)**
 | Clip | tn | Từ/phút | LỖI | Giây | KB | mp4 | Điểm cần quyết |
 |---|---|---|---|---|---|---|---|
 | biendang1 | tn-l10-biendang-01 | 155 | 0 | 49,9 | 1406 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-biendang-01-20261127.mp4) | chốt 1,5 N → 4,75 cm |
@@ -594,7 +596,7 @@ Duyệt A+C ("Duyệt, sửa cả hộp"): 16 clip đổi URL kho/bài sang `-20
 | luccan2 | tn-l10-luc-can-luc-nang-02 | 147 | 0 | 49,1 | 1278 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-luc-can-luc-nang-02-20261127.mp4) | — |
 | lucnang3 | tn-l10-luc-can-luc-nang-03 | 164 | 0 | 49,9 | 1394 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-luc-can-luc-nang-03-20261127.mp4) | Bẫy trùng ý Câu 6 bài (số khác) — giữ? |
 
-**Nhóm D L10b (7/7 clip; thuchanhthl1 thêm sau, sửa Dự đoán lượt 3) — qua cổng A + B (kiem-code 2 vòng, ĐƯỢC MERGE), đã tải `-20261127.{mp4,webp}` HEAD 200 — chờ thầy duyệt**
+**Nhóm D L10b (7/7 clip; thuchanhthl1 thêm sau, sửa Dự đoán lượt 3) — qua cổng A + B (kiem-code 2 vòng, ĐƯỢC MERGE), đã tải `-20261127.{mp4,webp}` HEAD 200 — ✅ THẦY DUYỆT 28/11, ĐÃ GHI DB 28/11 09:58 (bài 63–67, 76–79, kèm sửa hộp)**
 | Clip | tn | Từ/phút | LỖI | Giây | KB | mp4 | Điểm cần quyết |
 |---|---|---|---|---|---|---|---|
 | masat1 | tn-l10-luc-ma-sat-01 | 168 | 0 | 49,4 | 1349 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-luc-ma-sat-01-20261127.mp4) | chốt 1,00 kg → 3,5 N; không có điểm cần quyết |
@@ -605,7 +607,7 @@ Duyệt A+C ("Duyệt, sửa cả hộp"): 16 clip đổi URL kho/bài sang `-20
 | moment3 | tn-l10-moment-luc-03 | 124 | 0 | 47,9 | 1834 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-moment-luc-03-20261127.mp4) | chốt mới 2,0 N ở vạch 5 và 25 → 0,40 N·m |
 | thuchanhthl1 | tn-l10-thuchanhthl-01 | 159 | 0 | 49,1 | 1720 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-thuchanhthl-01-20261127.mp4) | Dự đoán F1 = F2 = 2,0 N, α = 120° → lực kế 3 chỉ 2,0 N (suy từ mô hình, ngoài bảng kho) — chấp nhận? |
 
-**Nhóm E L10b (7 clip) — qua cổng A + B (kiem-code 2 vòng, ĐƯỢC MERGE), đã tải `-20261127.{mp4,webp}` HEAD 200 — chờ thầy duyệt**
+**Nhóm E L10b (7 clip) — qua cổng A + B (kiem-code 2 vòng, ĐƯỢC MERGE), đã tải `-20261127.{mp4,webp}` HEAD 200 — ✅ THẦY DUYỆT 28/11, ĐÃ GHI DB 28/11 09:58 (bài 63–67, 76–79, kèm sửa hộp)**
 | Clip | tn | Từ/phút | LỖI | Giây | KB | mp4 | Điểm cần quyết |
 |---|---|---|---|---|---|---|---|
 | huongtam2 | tn-l10-huongtam-02 | 158 | 0 | 49,8 | 1973 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-huongtam-02-20261127.mp4) | Dự đoán mới 2 xu (nặng gấp đôi, cùng 10 cm) → trượt cùng lúc; suy từ mô hình |

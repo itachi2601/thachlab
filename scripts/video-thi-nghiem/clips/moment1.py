@@ -182,7 +182,7 @@ def s_dapan(img, d, t, sc):
     card(d, (40, y0, 1040, y0 + 380), fill=A(WHITE, kr), outline=A(GREEN, kr), w=6)
     pill(d, W / 2, y0 + 70, "RÚT RA", GREEN, kr)
     text(d, (W / 2, y0 + 190), "Cửa quay khi", 58, DGREEN, alpha=kr)
-    text(d, (W / 2, y0 + 280), "lực × cánh tay đòn ≥ 2 N·m", 58, DGREEN, alpha=kr)
+    text(d, (W / 2, y0 + 280), "lực × cánh tay đòn đủ lớn", 58, DGREEN, alpha=kr)
 
 # ---------------- canh 5: Bay + chua noi duoc ----------------
 def s_bay(img, d, t, sc):
