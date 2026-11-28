@@ -72,3 +72,10 @@ Thầy chốt 27/10/2026: thí nghiệm không tìm được clip YouTube thì t
 - Công cụ: `scripts/video-thi-nghiem/{tai,doi,dang}-cong-moi-l10a.sh/.py` (`ME=2|3` chọn mẻ), sửa hộp exp bằng `sua-hop-exp.py sua-hop-l10a-{,2..7}.json`.
 - Quyết định: kho do-g-03 hàng 60 khung/s GIỮ n = 19 (mô hình làm tròn(0,3214·60) = 19,3) dù lô 2 đề xuất 19 → 20 (đề xuất sai do bên dựng làm tròn lên) — đã báo phiên mẹ để báo thầy.
 - Không còn việc treo của L10a. Ghi chú/handover các clip: thư mục side-session-notes của phiên mẹ `l10a/`.
+
+## Cổng mới — L10b (bài 63–79), XONG 2026-11-28 (nhánh `claude/clip-cong-moi-l10b-d523a4`, main 94bf4c7767)
+- 38/38 clip qua cổng A+B, tải `lesson-clips/clip/<tn>-20261127.{mp4,webp}` (moment-luc-01, klr-apsuat-01 là `-20261128` vì render lại sau 07:00, ngày theo UTC). ĐÃ GHI DB 17 bài: A+C (68–75) 27/11, B+D+E (63–67, 76–79) 28/11 09:58. Sổ `content/thi-nghiem/so-clip-anh-dong.md` mục L10b.
+- Công cụ: `scripts/video-thi-nghiem/dang-cong-moi-l10b.sh [--chi 63,64] [--khac 63,..] [--yes]` (--khac thêm --cho-phep-khac cho bài có sửa hộp), sửa hộp lộ đáp án bằng `sua-hop-l10b.py [--dot2]`, `sua-hop-l10b-bde{,2}.py`; `render-l10b.sh clip:tn` render + tải. Dry-run chỉ báo khác biệt đầu tiên → kiểm thêm bằng `git diff --word-diff` lọc bỏ URL/data-khung.
+- Quyết định thầy: chấp nhận số "theo mô hình"/"giả định" có nhãn (klr2, moment2, thuchanhthl1 120°, huongtam2/3/4, trondeu2/3); bỏ "≥ 2 N·m" ở Rút ra moment1; thẻ chốt klr1 thêm "ρ nhôm ≈ 2,7"; giữ Bẫy lucnang3, Dự đoán giaibtdlh2.
+- Treo nhẹ (ngoài phạm vi): bài 67 "Bấm xem" thuchanhthl-03 hiện T = 2,0 N ở 120° — gợi đáp Dự đoán thuchanhthl1; gợi ý gập số đo hộp bien-dang-03 và giaibtdlh1 vào "xem sau video" chưa làm.
+- Lưu ý kỹ thuật: `tai-cong-moi-l10b.sh` chạy `git checkout` trên kho sau khi tải → sửa ghi_chu kho SAU khi tải xong; tab terminal chỉ nhận lệnh ASCII. Ghi chú từng clip: side-session-notes phiên mẹ `l10b/`.
