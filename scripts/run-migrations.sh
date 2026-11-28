@@ -152,6 +152,7 @@ FILES=(
   "supabase/migrations/20261127170000_gcpt_lop_hoc_phan_cdck_25b.sql|GCPT CĐ CK 25B: chuyển lớp học phần 'Các PPGCPTT' từ môn 'khac' sang môn 'gcpt' + ghi danh SV đang học lớp 'gcpt' vào lớp học phần (course_enrollments active); chỉ sửa dữ liệu, idempotent, rollback cuối file|lúc nào cũng được (chỉ sửa vài dòng dữ liệu)"
   "supabase/migrations/20261127180000_cnctm1_lop_hoc_phan_cdck_25c.sql|CNCTM 1 CĐ CK 25C: trigger đồng bộ user_classes (active) → course_enrollments khi môn chỉ có 1 lớp học phần + backfill SV lớp 'cnctm'/'gcpt' vào lớp học phần; idempotent, rollback cuối file|lúc nào cũng được (thêm 1 trigger + ghi danh vài dòng)"
   "supabase/migrations/20261127200000_abet_thu_du_lieu_pi.sql|ABET MET: 4 bảng abet_* (RLS admin) + RPC abet_nop_* theo token cho giáo viên nộp điểm câu PI + bucket riêng tư abet-minh-chung + seed 23 dòng kế hoạch PI và % đạt các năm trước; chỉ tạo mới, rollback cuối file|lúc nào cũng được (chỉ tạo bảng mới + chèn ~50 dòng)"
+  "supabase/migrations/20261128100000_cnc_grades_giang_vien_ghi.sql|CNC: cho giảng viên (is_admin) ghi cnc_grades từ màn chấm web (2 policy insert/update + grant); không đụng dữ liệu, rollback cuối file|lúc nào cũng được (chỉ thêm quyền)"
 )
 # ĐÃ CHẠY 27/11/2026: 20261127200000_abet_thu_du_lieu_pi
 # ĐÃ ÁP 19/11/2026 (memory AVCN: lesson 202 chương 12, đề 1387–1396 đã có trên DB; file idempotent): 20261119150000_avcn_bai_12_de_thi_thu
